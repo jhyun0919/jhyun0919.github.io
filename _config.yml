@@ -71,7 +71,6 @@ theme_settings:
 # PAGINATION
 paginate: 5
 paginate_path: "blog/page:num"
-animation: true
 
 # BUILD SETTINGS
 markdown: kramdown
@@ -79,8 +78,7 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
-plugins: [jekyll-paginate, jekyll-category-pages]
-
+plugins: [jekyll-paginate]
 exclude:
   - Gemfile
   - Gemfile.lock
