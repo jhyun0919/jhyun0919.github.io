@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Type Theme | Park's Archive</title>
+	<meta name="description"
+		content="A website with blog posts and pages">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/untitled%20folder/">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Park's Archive"
+		href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="/assets/img/avatar.png" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">Park's Archive</a>
+		</h1>
+		<nav class="site-nav">
+				<ul>
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+							<li>
+								<a class="page-link" href="/about/">
+									About
+								</a>
+							</li>
+						
+					
+						
+							<li>
+								<a class="page-link" href="/about/">
+									About
+								</a>
+							</li>
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+
+					<!-- Search bar -->
+					
+					<li>
+					<form action="/search.html" method="get">
+						<input type="text" id="search-box" name="query" placeholder="Search" class="">
+						<button type="submit" class="">
+							<i class="fa fa-fw fa-search"></i>
+						</button>
+					</form>
+					</li>
+					
+				</ul>
+		</nav>
+	</div>
+
+	<div class="site-category">
+			<ul class='cat1'>
+				<li><a href="/">Home</a></li>
+				<li><a href="/">Daily</a>
+					<ul>
+							<li><a href="/Daily/Essay">Essay</a></li>
+					</ul>
+				</li>
+				<li><a href="/">Research</a>
+					<ul>
+						<li><a href="/Research/Energy">Energy</a></li>
+						<li><a href="/Research/ML&DL">ML&DL</a></li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Type Theme</h1>
+    
+  </header>
+  <section class="post-content"><h1 id="type-theme">Type Theme</h1>
+
+<p><img src="https://user-images.githubusercontent.com/816965/30518919-d5978024-9bcd-11e7-81b3-3dd07e99a1f9.png" alt="Default Type Theme blog" /></p>
+
+<p>A free and open-source <a href="https://jekyllrb.com">Jekyll</a> theme. Great for blogs and easy to customize.</p>
+
+<p><a href="https://rohanchandra.github.io/type-theme/">Demo</a></p>
+
+<h2 id="usage">Usage</h2>
+
+<ol>
+  <li>Fork and clone the <a href="https://github.com/rohanchandra/type-theme">Type Theme repo</a>: <code class="language-plaintext highlighter-rouge">git clone https://github.com/rohanchandra/type-theme</code></li>
+  <li><a href="https://jekyllrb.com/docs/installation/">Install Jekyll</a>: <code class="language-plaintext highlighter-rouge">gem install jekyll</code></li>
+  <li>Install the theme’s dependencies: <code class="language-plaintext highlighter-rouge">bundle install</code></li>
+  <li>Customize the theme (see below)</li>
+  <li>Run the Jekyll server: <code class="language-plaintext highlighter-rouge">jekyll serve</code></li>
+</ol>
+
+<h2 id="customizing-type-theme">Customizing Type Theme</h2>
+
+<p>Open <code class="language-plaintext highlighter-rouge">_config.yml</code> in a text editor to change most of the blog’s settings.</p>
+
+<p>If a variable in this document is marked as “optional”, disable the feature by removing all text from the variable. For example, to prevent the avatar from rendering in the header, the avatar line should read:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">theme</span><span class="pi">:</span>
+  <span class="na">title</span><span class="pi">:</span> <span class="s">Type Theme</span>
+  <span class="na">avatar</span><span class="pi">:</span>
+  <span class="na">gravatar</span><span class="pi">:</span>
+</code></pre></div></div>
+
+<p>Notice the avatar variable is left intentionally blank.</p>
+
+<p>Below is a summary of the configuration options in Type Theme.</p>
+
+<h3 id="site-configuration">Site configuration</h3>
+<p>The most common configurations, included here for guidance, are:</p>
+
+<p>Jekyll website <em>without</em> a subpath (such as a GitHub Pages website for a given username):</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># SITE CONFIGURATION</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://username.github.io"</span>
+</code></pre></div></div>
+
+<p>Jekyll website <em>with</em> subpath (like the Type Theme demo page):</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># SITE CONFIGURATION</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/sub-directory"</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://username.github.io/"</span>
+</code></pre></div></div>
+
+<p>Please configure this in <code class="language-plaintext highlighter-rouge">_config.yml</code> before using the theme.</p>
+
+<h3 id="meta">Meta</h3>
+
+<p>Meta variables hold basic information about your Jekyll site which will be used throughout the site and as meta properties for search engines, browsers, and the site’s RSS feed.</p>
+
+<p>Change these variables in <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Example</th>
+      <th>Description</th>
+      <th>Optional</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>My Jekyll Blog</td>
+      <td>Name of website</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>avatar</td>
+      <td>assets/img/avatar.png</td>
+      <td>Path of avatar image, to be displayed in the theme’s header</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>gravatar</td>
+      <td>f9879d71855b5ff21e4963273a886bfc</td>
+      <td><a href="https://secure.gravatar.com/site/implement/hash/">MD5 hash of your email address</a> to load your Gravatar in the theme’s header</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>My blog posts</td>
+      <td>Short description, primarily used by search engines</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="header-and-footer-text">Header and footer text</h3>
+
+<p>Change these variables in <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Example</th>
+      <th>Description</th>
+      <th>Optional</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>header_text</td>
+      <td>Welcome to my Jekyll blog</td>
+      <td>HTML (shown below the navigation) with a background colour for emphasis</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>header_text_feature_image</td>
+      <td>assets/img/sample_feature_img_3.png</td>
+      <td>Background image for the header text</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>footer_text</td>
+      <td>Copyright 2014</td>
+      <td>HTML (shown at end of the site) with lighter text</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="icons">Icons</h3>
+
+<p>Add your username on selected websites in the icon section of the <code class="language-plaintext highlighter-rouge">_config.yml</code> file to display the site’s icon from <a href="https://fortawesome.github.io/Font-Awesome/">Font Awesome</a> in the header navigation. All icon variables should be your username enclosed in quotes (e.g. “username”), except for the following variables:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Example</th>
+      <th>Description</th>
+      <th>Optional</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rss</td>
+      <td>true</td>
+      <td>Takes boolean value (true/false) to show RSS feed icon</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>email_address</td>
+      <td>type@example.com</td>
+      <td>Email address</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>linkedin</td>
+      <td>https://www.linkedin.com/in/FirstLast</td>
+      <td>Full URL to profile on LinkedIn</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>stack_exchange</td>
+      <td>https://stackoverflow.com/users/0000/first-last</td>
+      <td>Full URL to profile on Stack Exchange</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="scripts">Scripts</h3>
+
+<p>Change these variables in <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Example</th>
+      <th>Description</th>
+      <th>Optional</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>google_analytics</td>
+      <td>UA-123456-01</td>
+      <td>Google Analytics <a href="https://support.google.com/analytics/answer/1032385?hl=en">tracking ID</a></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>disqus_shortname</td>
+      <td>shortname</td>
+      <td>Disqus <a href="https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-">shortname</a></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>katex</td>
+      <td>true</td>
+      <td>Takes boolean value (true/false) to conditionally load <a href="https://khan.github.io/KaTeX/">KaTeX</a> scripts required for math typesetting</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Scripts listed here are only loaded if you provide a value in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
+
+<h3 id="localization-strings">Localization strings</h3>
+
+<p>Change localization string variables in <code class="language-plaintext highlighter-rouge">_config.yml</code>.</p>
+
+<p>English text used in the theme (such as the “continue reading” label) has been grouped  so you can quickly translate the theme or change labels to suit your needs.</p>
+
+<h3 id="colours-typography-padding">Colours, typography, padding</h3>
+
+<p><img src="https://cloud.githubusercontent.com/assets/816965/5142488/130869a6-71d7-11e4-8a38-a69ec1673436.png" alt="A selection of colours set in Type Theme by modifying the CSS" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Example</th>
+      <th>Description</th>
+      <th>Optional</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>google_fonts</td>
+      <td>“Playfair+Display:400,700\</td>
+      <td>PT+Sans:400,700,700italic,400italic”</td>
+      <td><a href="https://www.google.com/fonts">Google Fonts</a> to load for use</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Navigate to the <code class="language-plaintext highlighter-rouge">_sass &gt; base</code> directory and open <code class="language-plaintext highlighter-rouge">_variables.scss</code> to change colours, typography and padding used in the theme with CSS.</p>
+
+<p>Once you have loaded a Google Font in <code class="language-plaintext highlighter-rouge">config.yml</code>, you can integrate the fonts into your CSS by changing the font-family in <code class="language-plaintext highlighter-rouge">_variables.scss</code>. For example, after loading the Playfair Display and PT Sans fonts from Google:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span> <span class="nt">Typography</span>
+<span class="err">$</span><span class="nt">font-family-main</span><span class="o">:</span> <span class="s2">'PT Sans'</span><span class="o">,</span> <span class="nt">Helvetica</span><span class="o">,</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
+<span class="err">$</span><span class="nt">font-family-headings</span><span class="o">:</span> <span class="s2">'Playfair Display'</span><span class="o">,</span> <span class="nt">Helvetica</span><span class="o">,</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>Mozilla’s <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool">ColorPicker</a> is a helpful tool to get your preferred colours in hexadecimal or RGBA form for use in <code class="language-plaintext highlighter-rouge">_variables.scss</code>.</p>
+
+<h3 id="customize-style-when-using-the-remote_theme">Customize style when using the remote_theme</h3>
+
+<p>If you’re using Type Theme as a <code class="language-plaintext highlighter-rouge">remote_theme</code>, you can override variables and styles.
+To do so, simply create a <code class="language-plaintext highlighter-rouge">assets/css/main.scss</code> file on your website with the following content:</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// assets/css/main.scss</span>
+<span class="nt">---</span>
+<span class="nt">---</span>
+
+<span class="o">@</span><span class="nt">import</span> <span class="s2">"type-theme"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">@import "type-theme";</code> includes the theme styles, so you can add custom imports before and after it, depending on your needs.
+Best practice is to put your custom files in the <code class="language-plaintext highlighter-rouge">_sass</code> folder of your project. Jekyll will automatically look for them there.
+For example, say you wanted to override some theme variables and add some custom styles, you can create the following files:</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// _sass/_variables.scss</span>
+<span class="nv">$background-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// _sass/_custom.sass</span>
+
+<span class="c1">// SASS is supported as well, just note the file extension is .sass</span>
+<span class="nc">.feature-image</span> <span class="nt">header</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">300px</span>
+</code></pre></div></div>
+
+<p>Then import them both into <code class="language-plaintext highlighter-rouge">main.scss</code>:</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// assets/css/main.scss</span>
+<span class="nt">---</span>
+<span class="nt">---</span>
+
+<span class="o">@</span><span class="nt">import</span> <span class="s2">"variables"</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">"type-theme"</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">"custom"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="posts-and-pages-in-type-theme">Posts and pages in Type Theme</h2>
+<p>Please refer to the <a href="https://jekyllrb.com/docs/posts/">Jekyll docs for writing posts</a>. Non-standard features are documented below.</p>
+
+<h3 id="math-typesetting">Math typesetting</h3>
+<p>Wrap math expressions with <code class="language-plaintext highlighter-rouge">$$</code> signs in your posts and make sure you have set the <code class="language-plaintext highlighter-rouge">katex</code> variable in <code class="language-plaintext highlighter-rouge">_config.yml</code> to <code class="language-plaintext highlighter-rouge">true</code> for math typesetting.</p>
+
+<p>For inline math typesetting, type your math expression on the <em>same line</em> as your content. For example:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Type math within a sentence <span class="p">$$</span><span class="m">2</span><span class="nb">x</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> x </span><span class="o">+</span><span class="nb"> c</span><span class="p">$$</span> to display inline
+</code></pre></div></div>
+
+<p>For display math typesetting, type your math expression on a <em>new line</em>. For example:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb">
+  </span><span class="nv">\bar</span><span class="p">{</span><span class="nb">y</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="p">{</span><span class="m">1</span><span class="nb"> </span><span class="nv">\over</span><span class="nb"> n</span><span class="p">}</span><span class="nb"> </span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">i </span><span class="o">=</span><span class="nb"> </span><span class="m">1</span><span class="p">}^{</span><span class="nb">n</span><span class="p">}</span><span class="nb">y</span><span class="p">_</span><span class="nb">i
+</span><span class="p">$$</span>
+</code></pre></div></div>
+
+<p>Type Theme makes use for <a href="https://khan.github.io/KaTeX/">KaTeX</a> for typesetting.</p>
+
+<h3 id="feature-images">Feature images</h3>
+
+<p><img src="https://cloud.githubusercontent.com/assets/816965/5142406/19726478-71d6-11e4-8111-94f788b0e44d.png" alt="Posts with geometric feature images" /></p>
+
+<p>Add a feature image by specifying a path to an image in the <a href="http://jekyllrb.com/docs/frontmatter/">front matter</a> in the form of <code class="language-plaintext highlighter-rouge">feature-img: "img/PATH_TO_IMAGE.png"</code>.</p>
+
+<p>For example:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Hello World</span>
+<span class="na">feature-img</span><span class="pi">:</span> <span class="s2">"</span><span class="s">assets/img/sample_feature_img.png"</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>By default, the page title is displayed on top of the feature image, as well as on the browser’s tab. You can change the feature image’s displayed title by specifying a <code class="language-plaintext highlighter-rouge">feature-title</code> in the front matter:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Short title</span>
+<span class="na">feature-title</span><span class="pi">:</span> <span class="s">A much longer title</span>
+<span class="na">feature-img</span><span class="pi">:</span> <span class="s2">"</span><span class="s">assets/img/sample_feature_img.png"</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h3 id="hiding-pages-from-navigation">Hiding pages from navigation</h3>
+
+<p>In the front matter of a page, add <code class="language-plaintext highlighter-rouge">hide: true</code> to prevent the page from showing up in the header’s navigation bar (visitors can still visit the URL through other means).</p>
+
+<p>For example:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">page</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Error</span><span class="nv"> </span><span class="s">404:</span><span class="nv"> </span><span class="s">Page</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">found"</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/404.html</span>
+<span class="na">hide</span><span class="pi">:</span> <span class="no">true</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h3 id="sorting-pages-in-navigation">Sorting pages in navigation</h3>
+
+<p>You can configure this theme to <strong>sort your pages</strong> in the header’s navigation bar.</p>
+
+<ul>
+  <li>Set <code class="language-plaintext highlighter-rouge">site_navigation_sort</code> in theme settings to a property name e.g. <code class="language-plaintext highlighter-rouge">'order'</code></li>
+  <li>In the front matter of a non-hidden page, add <code class="language-plaintext highlighter-rouge">order: n</code></li>
+</ul>
+
+<p>For example:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">page</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Team</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/team/</span>
+<span class="na">order</span><span class="pi">:</span> <span class="m">4</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h3 id="tags">Tags</h3>
+
+<p>Post tags should be placed between <code class="language-plaintext highlighter-rouge">[]</code> in your post metadata. Separate each tag with a comma.</p>
+
+<p>For example:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Markdown and HTML</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">sample</span><span class="pi">,</span> <span class="nv">markdown</span><span class="pi">,</span> <span class="nv">html</span><span class="pi">]</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>A tags listing will be automatically generated using the <code class="language-plaintext highlighter-rouge">tags.html</code> file provided in Type Theme. If you’re not using the tags feature it is safe to delete <code class="language-plaintext highlighter-rouge">tags.html</code>.</p>
+
+<h3 id="search">Search</h3>
+
+<p>The search feature can be activated in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file by changing its value from <code class="language-plaintext highlighter-rouge">false</code> to <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">#Scripts</span>
+  <span class="na">search</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Once activated, the search bar will appear in the header. This feature uses <a href="https://lunrjs.com/">Lunr</a> and searches through the title, tags and content of your posts.</p>
+
+<h3 id="subtitles">Subtitles</h3>
+<p>A subtitle can be displayed below your title on permalink post pages.</p>
+
+<p>To enable this feature, add <code class="language-plaintext highlighter-rouge">subtitle</code> to your post metadata.</p>
+
+<p>For example:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">title"</span>
+<span class="na">subtitle</span><span class="pi">:</span> <span class="s2">"</span><span class="s">This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">subtitle"</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h2 id="license">License</h2>
+<p><a href="https://github.com/rohanchandra/type-theme/blob/master/LICENSE">The MIT License (MIT)</a></p>
+</section>
+</article>
+
+    </div>
+    
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>
