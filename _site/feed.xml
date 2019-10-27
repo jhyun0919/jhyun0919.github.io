@@ -3,9 +3,9 @@
   <channel>
     <title>Park's Archive</title>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <link>http://localhost:4000/</link>
+    <link>https://username.github.io/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sun, 27 Oct 2019 15:21:44 -0500</pubDate>
+    <pubDate>Sun, 27 Oct 2019 15:35:38 -0500</pubDate>
     
       <item>
         <title>Sample post</title>
