@@ -54,58 +54,25 @@
 		<h1 class="site-title">
 			<a href="/">Park's Archive</a>
 		</h1>
-	</div>
-	<nav class="site-nav">
-		<ul>
+
+		<nav class="site-nav">
+			<ul>
 			
 			
-			
-			
-			
-			<li>
-				<a class="page-link" href="/Research/Energy">
-					Research/Energy
-				</a>
-			</li>
-			
-			
-			
-			<li>
-				<a class="page-link" href="/Daily/Essay">
-					Daily/Essay
-				</a>
-			</li>
-			
-			
-			
-			<li>
-				<a class="page-link" href="/Research/ML&DL">
-					Research/ML&DL
-				</a>
-			</li>
-			
-			
-			
-			<li>
-				<a class="page-link" href="/about/">
-					About
-				</a>
-			</li>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			<!-- Social icons from Font Awesome, if enabled  -->
+
+            <!-- Search bar -->
+            
+				<li>
+					<form action="/search.html" method="get">
+						<input type="text" id="search-box" name="query" placeholder="Search" class="">
+							<button type="submit" class="">
+								<i class="fa fa-fw fa-search"></i>
+							</button>
+						</form>
+					</li>
+            
+
+			<!-- Social icons from Font Awesome, ifenabled  -->
 			
 <li>
 	<a href="/feed.xml" title="Follow RSS feed">
@@ -186,13 +153,39 @@
 
 
 
+				</ul>
+			</nav>
+		</div>
 
-            <!-- Search bar -->
-            
-		</ul>
-	</nav>
+		<div class="site-category">
+			<ul class='cat1'>
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/">Daily</a>
+					<ul>
+						<li>
+							<a href="/Daily/Essay">Essay</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/">Research</a>
+					<ul>
+						<li>
+							<a href="/Research/Energy">Energy</a>
+						</li>
+						<li>
+							<a href="/Research/ML&DL">ML&DL</a>
+						</li>
+					</ul>
+				</li>
 
-</header>
+			</ul>
+		</div>
+
+	</header>
 
     <div class="content">
       <article >

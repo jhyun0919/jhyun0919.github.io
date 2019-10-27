@@ -12,38 +12,62 @@
 		<h1 class="site-title">
 			<a href="{{ site.baseurl }}/">{{ site.theme_settings.title }}</a>
 		</h1>
-	</div>
-	<nav class="site-nav">
-		<ul>
+
+		<nav class="site-nav">
+			<ul>
 			{% if site.theme_settings.site_navigation_sort %}
 				{% assign site_pages = site.pages | sort: site.theme_settings.site_navigation_sort %}
 			{% else %}
 				{% assign site_pages = site.pages %}
 			{% endif %}
 			{% for page in site_pages %}
-			{% if page.title and page.hide != true %}
-			<li>
-				<a class="page-link" href="{{ page.url | relative_url }}">
-					{{ page.title }}
-				</a>
-			</li>
-			{% endif %}
+			
 			{% endfor %}
-			<!-- Social icons from Font Awesome, if enabled  -->
-			{% include icons.html %}
 
             <!-- Search bar -->
             {% if site.theme_settings.search %}
-            <li>
-            <form action="{{ site.baseurl }}/search.html" method="get">
-                <input type="text" id="search-box" name="query" placeholder="Search" class="">
-                <button type="submit" class="">
-                    <i class="fa fa-fw fa-search"></i>
-                </button>
-            </form>
-            </li>
+				<li>
+					<form action="{{ site.baseurl }}/search.html" method="get">
+						<input type="text" id="search-box" name="query" placeholder="Search" class="">
+							<button type="submit" class="">
+								<i class="fa fa-fw fa-search"></i>
+							</button>
+						</form>
+					</li>
             {% endif %}
-		</ul>
-	</nav>
 
-</header>
+			<!-- Social icons from Font Awesome, ifenabled  -->
+			{% include icons.html %}
+				</ul>
+			</nav>
+		</div>
+
+		<div class="site-category">
+			<ul class='cat1'>
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/">Daily</a>
+					<ul>
+						<li>
+							<a href="/Daily/Essay">Essay</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/">Research</a>
+					<ul>
+						<li>
+							<a href="/Research/Energy">Energy</a>
+						</li>
+						<li>
+							<a href="/Research/ML&DL">ML&DL</a>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+
+	</header>
