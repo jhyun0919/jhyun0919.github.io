@@ -3,6 +3,7 @@ layout: default
 ---
 
 <div class="home">
+
   {% if site.theme_settings.header_text %}
   <div class="call-out"
   style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
@@ -10,27 +11,31 @@ layout: default
   </div>
   {% endif %}
 
+  <hr>
   <div class="posts">
+  	<h2 class="post-title">Recent Post</h2>
+
     {% for post in paginator.posts %}
     <div class="post-teaser">
       <header>
-        <h1>
+        <h2>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title }}
           </a>
-        </h1>
+        </h2>
         <p class="meta">
           {{ post.date | date: "%B %-d, %Y" }}
         </p>
+        <div class="excerpt">
+          <!--{{ post.excerpt }}
+          <a class="button" href="{{ post.url | relative_url }}">
+            {{ site.theme_settings.str_continue_reading }}
+          </a>-->
+        </div>
       </header>
-      <div class="excerpt">
-        {{ post.excerpt }}
-        <a class="button" href="{{ post.url | relative_url }}">
-          {{ site.theme_settings.str_continue_reading }}
-        </a>
-      </div>
     </div>
     {% endfor %}
+
   </div>
 
   {% if paginator.total_pages > 1 %}
