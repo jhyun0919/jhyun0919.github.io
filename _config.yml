@@ -5,7 +5,7 @@ url: "https://username.github.io"
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type Theme
+  title: Park's Archive
   avatar: assets/img/avatar.png
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
@@ -13,27 +13,26 @@ theme_settings:
 
   # Header and footer text
   header_text: >
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+     <p>Park's Daily & Research Life.</p>
 
-     <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
   # Icons
-  rss: false
-  email_address: # Full email address, e.g. "sam@example.com"
+  rss: true
+  email_address: "jhyun0919@utexas.edu"# Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
-  facebook:
+  facebook: "jhyun0919"
   flickr:
   gitlab:
   github: "jhyun0919"
   gitter:
   google_plus:
-  instagram:
-  linkedin:  # Full URL
+  instagram: "park._.shape"
+  linkedin:  "https://www.linkedin.com/in/jhyun0919/"# Full URL
   pinterest:
   reddit:
   soundcloud:
@@ -48,7 +47,7 @@ theme_settings:
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname:
   katex: true # Enable if using math markup
-  search: false # Enable the search feature
+  search: ture # Enable the search feature
 
   # Localization strings
   str_follow_on: "Follow on"
@@ -67,11 +66,12 @@ theme_settings:
   google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
 
   # Post navigation
-  post_navigation: false
+  post_navigation: true
 
 # PAGINATION
 paginate: 5
 paginate_path: "blog/page:num"
+animation: true
 
 # BUILD SETTINGS
 markdown: kramdown
@@ -79,7 +79,8 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
-plugins: [jekyll-paginate]
+plugins: [jekyll-paginate, jekyll-category-pages]
+
 exclude:
   - Gemfile
   - Gemfile.lock
