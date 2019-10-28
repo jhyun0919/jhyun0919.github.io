@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://jhyun0919.github.io//</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sun, 27 Oct 2019 23:21:10 -0500</pubDate>
+    <pubDate>Mon, 28 Oct 2019 01:29:21 -0500</pubDate>
     
       <item>
         <title>(TF vs. PyTorch) MNIST tutorial</title>
@@ -71,16 +71,44 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;h2 id=&quot;optional-explanation-of-the-modelslayers&quot;&gt;(Optional) Explanation of the model’s layers&lt;/h2&gt;
 &lt;h3 id=&quot;conv2d&quot;&gt;Conv2D&lt;/h3&gt;
 
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/23864fd2886e8f830bc9c51fd9d58126.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/abba71c6f22cbea27508d86ceb237d28.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
 &lt;h3 id=&quot;activation&quot;&gt;Activation&lt;/h3&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/b07a9e88c704dee068f02ad5b4209899.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
 
 &lt;h3 id=&quot;pooling&quot;&gt;Pooling&lt;/h3&gt;
 
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/bd63d77214bede85f1645fac80c1273d.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
 &lt;h3 id=&quot;fully-connected&quot;&gt;Fully Connected&lt;/h3&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/2a076dd09f8ccc2ee7513a63065bba80.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
 
 &lt;h2 id=&quot;graph&quot;&gt;Graph&lt;/h2&gt;
 &lt;p&gt;Training a model requires proper loss object and optimizer.&lt;/p&gt;
 
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/d29c97ffd5c1c90bc8929fcab9a4d5c8.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
 &lt;h2 id=&quot;train-evaluate&quot;&gt;Train &amp;amp; Evaluate&lt;/h2&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/7d03cc893c623050f2c8f70d8103ffe7.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -90,16 +118,40 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 &lt;h2 id=&quot;data-preprocess-1&quot;&gt;Data preprocess&lt;/h2&gt;
 
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/7c10b669c3bb37bdc67f88319d289b1c.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
 &lt;h2 id=&quot;model-1&quot;&gt;Model&lt;/h2&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/cb044b69d00d46428994c0acb8581477.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
 
 &lt;h2 id=&quot;optional-explanation-of-the-modelslayers-1&quot;&gt;(Optional) Explanation of the model’s layers&lt;/h2&gt;
 &lt;h3 id=&quot;conv2d-1&quot;&gt;Conv2d&lt;/h3&gt;
 
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/55a740e7ebde8aa3ffc4d90a2c2a2fa8.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
 &lt;h3 id=&quot;pooling-1&quot;&gt;Pooling&lt;/h3&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/8e670553e9d4717074c030cbe4dccc60.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
 
 &lt;h3 id=&quot;fully-connected-1&quot;&gt;Fully Connected&lt;/h3&gt;
 
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/3fed97e3a62e1fcccf6955a9ace5f323.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
 &lt;h2 id=&quot;train-evaluate-1&quot;&gt;Train &amp;amp; Evaluate&lt;/h2&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/0ed55ae6f1eb58961088f792eba03ff6.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
 
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
 &lt;p&gt;[1] A. J. SpiderCloud Wireless, “Why using one-hot encoding for training classifier,” LinkedIn. [Online]. Available: https://www.linkedin.com/pulse/why-using-one-hot-encoding-classifier-training-adwin-jahn. [Accessed: 26-Oct-2019].&lt;/p&gt;
@@ -119,19 +171,19 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
     
       <item>
         <title>(TF vs. PyTorch) Introduction of becoming adept in deep learning frameworks</title>
-        <link>/research/ml&dl/2019/10/21/deeplearning_framework.html</link>
-        <guid isPermaLink="true">/research/ml&dl/2019/10/21/deeplearning_framework.html</guid>
+        <link>/research/ml&dl/2019/10/21/dl_intro.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2019/10/21/dl_intro.html</guid>
         <description>&lt;p&gt;Due to rapid improvements in computing performance and the amount of data that is accumulated, deep learning is gaining strength. Accordingly, IT Giants develop their deep learning framework to provide developers with a development environment, such as Google’s Tensorflow and Facebook’s PyTorch.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img//2019-10-21-01.png&quot; width=&quot;80%&quot; /&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-21-dl_intro/01.png&quot; width=&quot;80%&quot; /&gt;
   &lt;figcaption&gt;Figure 1. Deep learning frameworks&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Each framework has its characteristics and strength, and they are properly used for appropriate purposes. For engineers with research purposes, it is necessary to note Figure 2. According to data from RISELab, the recent trend in the papers uploaded on arXiv.org shows that TensorFlow and PyTorch are mainly used in research purposes. It seems that choosing Tensorflow or PyTorch would be the best choice for people who are planning to dive in deep learning. It will allow understanding other’s research more easily and quickly.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img//2019-10-21-02.png&quot; width=&quot;90%&quot; /&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-21-dl_intro/02.png&quot; width=&quot;90%&quot; /&gt;
   &lt;figcaption&gt;Figure 2. The number of papers posted on arXiv.org that mention each framework. Source: Data from RISELab and graphic by Ben Lorica.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
