@@ -24,7 +24,7 @@
 			
 			{% endfor %}
 
-            <!-- Search bar -->
+            																<!-- Search bar -->
             {% if site.theme_settings.search %}
 				<li>
 					<form action="{{ site.baseurl }}/search.html" method="get">
@@ -36,7 +36,7 @@
 					</li>
             {% endif %}
 
-			<!-- Social icons from Font Awesome, ifenabled  -->
+																							<!-- Social icons from Font Awesome, ifenabled  -->
 			{% include icons.html %}
 				</ul>
 			</nav>
@@ -47,14 +47,7 @@
 				<li>
 					<a href="/">Home</a>
 				</li>
-				<li>
-					<a href="/">Daily</a>
-					<ul>
-						<li>
-							<a href="/Daily/Essay">Essay</a>
-						</li>
-					</ul>
-				</li>
+
 				<li>
 					<a href="/">Research</a>
 					<ul>
@@ -64,7 +57,26 @@
 						<li>
 							<a href="/Research/ML&DL">ML&DL</a>
 						</li>
+						<li>
+							<a href="/Research/Mathematics">Mathematics</a>
+						</li>
 					</ul>
+				</li>
+
+				<li>
+					<a href="/">Daily</a>
+					<ul>
+						<li>
+							<a href="/Daily/Essay">Essay</a>
+						</li>
+						<li>
+							<a href="/Daily/English">English</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="/About">About</a>
 				</li>
 
 			</ul>
