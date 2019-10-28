@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://jhyun0919.github.io//</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sun, 27 Oct 2019 23:06:53 -0500</pubDate>
+    <pubDate>Sun, 27 Oct 2019 23:19:16 -0500</pubDate>
     
       <item>
         <title>(TF vs. PyTorch) MNIST tutorial</title>
@@ -124,14 +124,14 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
         <description>&lt;p&gt;Due to rapid improvements in computing performance and the amount of data that is accumulated, deep learning is gaining strength. Accordingly, IT Giants develop their deep learning framework to provide developers with a development environment, such as Google’s Tensorflow and Facebook’s PyTorch.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img//2019-10-21-01.png&quot; width=&quot;600&quot; /&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img//2019-10-21-01.png&quot; width=&quot;80%&quot; /&gt;
   &lt;figcaption&gt;Figure 1. Deep learning frameworks&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Each framework has its characteristics and strength, and they are properly used for appropriate purposes. For engineers with research purposes, it is necessary to note Figure 2. According to data from RISELab, the recent trend in the papers uploaded on arXiv.org shows that TensorFlow and PyTorch are mainly used in research purposes. It seems that choosing Tensorflow or PyTorch would be the best choice for people who are planning to dive in deep learning. It will allow understanding other’s research more easily and quickly.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img//2019-10-21-02.png&quot; width=&quot;800&quot; /&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img//2019-10-21-02.png&quot; width=&quot;90%&quot; /&gt;
   &lt;figcaption&gt;Figure 2. The number of papers posted on arXiv.org that mention each framework. Source: Data from RISELab and graphic by Ben Lorica.&lt;/figcaption&gt;
 &lt;/figure&gt;
 

@@ -5,8 +5,10 @@ permalink: /about
 feature-img: "assets/img/sample_feature_img_2.png"
 ---
 
-Type Theme is a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
+# Profile
+I have a strong enthusiasm for time series data analysis and artificial intelligence. Especially I have a great interest in distributed energy source management and energy efficiency through power load prediction.
+My primary goal is to create a business model that can contribute substantially to the energy sector, through gaining a deep insight from practical experiences in the artificial intelligence field.
 
-Head over to the [theme's documentation](https://rohanchandra.github.io/project/type/) for much more information about Type Theme or to install this theme on your own Jekyll site.
+# Employment History
 
-This file is an example of a page in Jekyll, that automatically shows up in the header navigation, you can delete or modify this file freely.
+# Education
