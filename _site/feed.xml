@@ -5,7 +5,16 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://jhyun0919.github.io//</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Mon, 28 Oct 2019 02:23:53 -0500</pubDate>
+    <pubDate>Mon, 28 Oct 2019 04:48:58 -0500</pubDate>
+    
+      <item>
+        <title>Matrix Caculus</title>
+        <link>/research/mathematics/2019/10/28/matrix-calculus.html</link>
+        <guid isPermaLink="true">/research/mathematics/2019/10/28/matrix-calculus.html</guid>
+        <description>&lt;p&gt;matrtix&lt;/p&gt;
+</description>
+        <pubDate>Mon, 28 Oct 2019 00:00:00 -0500</pubDate>
+      </item>
     
       <item>
         <title>(Book Review) Future of Utilities - Utilities of The Future; Smart Grid</title>
@@ -38,7 +47,7 @@
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;tensorflow-version&quot;&gt;Tensorflow version&lt;/h1&gt;
-&lt;h2 id=&quot;eda-exploratory-data-analysis&quot;&gt;EDA (Exploratory Data Analysis)&lt;/h2&gt;
+&lt;h2 id=&quot;1-eda-exploratory-data-analysis&quot;&gt;1. EDA (Exploratory Data Analysis)&lt;/h2&gt;
 &lt;p&gt;In order to train a deep learning model, the first thing to do is to explore and analyze the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;
 First we need to check size and shape of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp;amp; output data for our model; Input data shape is 28 by 28 matrix(or tensor) and output is a scalar.&lt;/p&gt;
 
@@ -71,7 +80,7 @@ Also, we need to check that the distribution of labels in train and test dataset
 
 &lt;p&gt;Plot a real image of feature dataSample image of feature data&lt;/p&gt;
 
-&lt;h2 id=&quot;data-preprocess&quot;&gt;Data preprocess&lt;/h2&gt;
+&lt;h2 id=&quot;2-data-preprocess&quot;&gt;2. Data preprocess&lt;/h2&gt;
 &lt;p&gt;First, the given dataset need to be reshaped properly. In this step, feature data need an additional dimension to use convolution layers. Also, label data need to be reshaped label encoding into one-hot-encoding for a classification model [1].
 Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.
 Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It’s worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.&lt;/p&gt;
@@ -80,7 +89,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;script src=&quot;https://gist.github.com/jhyun0919/a581e5d32df2034ee7507847e2c0d9da.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&quot;model&quot;&gt;Model&lt;/h2&gt;
+&lt;h2 id=&quot;3-model&quot;&gt;3. Model&lt;/h2&gt;
 &lt;p&gt;The model is comprised of two parts, feature extraction and classification. In the feature extraction stage, the model use two dimension convolution filter (Conv2D) since the input feature data is image data. Addition to Conv2D, rectified linear unit (ReLU), pooling and dropout unit [4] are used. In classification stage, a fully connected network (FCN) is used. Also, softmax function is attached at the end of the FCN which give us probabilities for each class label.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
@@ -136,14 +145,14 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;script src=&quot;https://gist.github.com/jhyun0919/2a076dd09f8ccc2ee7513a63065bba80.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&quot;graph&quot;&gt;Graph&lt;/h2&gt;
+&lt;h2 id=&quot;4-graph&quot;&gt;4. Graph&lt;/h2&gt;
 &lt;p&gt;Training a model requires proper loss object and optimizer.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/d29c97ffd5c1c90bc8929fcab9a4d5c8.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&quot;train-evaluate&quot;&gt;Train &amp;amp; Evaluate&lt;/h2&gt;
+&lt;h2 id=&quot;5-train-evaluate&quot;&gt;5. Train &amp;amp; Evaluate&lt;/h2&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/7d03cc893c623050f2c8f70d8103ffe7.js&quot;&gt;&lt;/script&gt;
@@ -152,16 +161,16 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;pytorch-version&quot;&gt;PyTorch version&lt;/h1&gt;
-&lt;h2 id=&quot;eda&quot;&gt;EDA&lt;/h2&gt;
+&lt;h2 id=&quot;1-eda&quot;&gt;1. EDA&lt;/h2&gt;
 &lt;p&gt;EDA is skipped because it is similar to the process performed using Tensorflow.&lt;/p&gt;
 
-&lt;h2 id=&quot;data-preprocess-1&quot;&gt;Data preprocess&lt;/h2&gt;
+&lt;h2 id=&quot;2-data-preprocess-1&quot;&gt;2. Data preprocess&lt;/h2&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/7c10b669c3bb37bdc67f88319d289b1c.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&quot;model-1&quot;&gt;Model&lt;/h2&gt;
+&lt;h2 id=&quot;3-model-1&quot;&gt;3. Model&lt;/h2&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/cb044b69d00d46428994c0acb8581477.js&quot;&gt;&lt;/script&gt;
@@ -196,7 +205,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;script src=&quot;https://gist.github.com/jhyun0919/3fed97e3a62e1fcccf6955a9ace5f323.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&quot;train-evaluate-1&quot;&gt;Train &amp;amp; Evaluate&lt;/h2&gt;
+&lt;h2 id=&quot;4-train-evaluate&quot;&gt;4. Train &amp;amp; Evaluate&lt;/h2&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/0ed55ae6f1eb58961088f792eba03ff6.js&quot;&gt;&lt;/script&gt;
@@ -219,7 +228,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
       </item>
     
       <item>
-        <title>(TF vs. PyTorch) Introduction of becoming adept in deep learning frameworks</title>
+        <title>(TF vs. PyTorch) Introduction of becoming adept in DL frameworks</title>
         <link>/research/ml&dl/2019/10/21/dl_intro.html</link>
         <guid isPermaLink="true">/research/ml&dl/2019/10/21/dl_intro.html</guid>
         <description>&lt;p&gt;Due to rapid improvements in computing performance and the amount of data that is accumulated, deep learning is gaining strength. Accordingly, IT Giants develop their deep learning framework to provide developers with a development environment, such as Google’s Tensorflow and Facebook’s PyTorch.&lt;/p&gt;
@@ -262,6 +271,15 @@ While I was getting tired of this feeling, I read confession of one man which ch
 &lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Sep 2019 00:00:00 -0500</pubDate>
+      </item>
+    
+      <item>
+        <title>Daily English Exercise</title>
+        <link>/daily/english/2018/10/28/daily-eng.html</link>
+        <guid isPermaLink="true">/daily/english/2018/10/28/daily-eng.html</guid>
+        <description>&lt;p&gt;…&lt;/p&gt;
+</description>
+        <pubDate>Sun, 28 Oct 2018 00:00:00 -0500</pubDate>
       </item>
     
   </channel>

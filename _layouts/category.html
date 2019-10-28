@@ -2,14 +2,14 @@
 layout: default
 ---
 
-<ul class="category-title" align="left">
-  <h1>{{page.title}}</h1>
+<ul class="category-title" style="width:77%; margin:0 auto;">
+  <h2>{{page.title}}</h2>
 </ul>
 
-<ul class="posts-list">
+<ul class="posts-list" style="width:77%; margin:0 auto;">
   {% assign category = page.category | default: page.title %}
   {% for post in site.categories[category] %}
-  <li align="left">
+  <li>
     <h3 >
       <a href="{{ site.baseurl }}{{ post.url }}">
           {{ post.title }}

@@ -212,12 +212,12 @@
   <header style="background-image: url('/')">
     <h1 class="title">(TF vs. PyTorch) MNIST tutorial</h1>
     
-    <p class="meta">
+    <p class="meta" >
       October 22, 2019
       
     </p>
   </header>
-  <section class="post-content"><p>MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most popular and appropriate subject for the purpose of entering deep learning.</p>
+  <section class="post-content" style="width:66%; margin:0 auto;"><p>MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most popular and appropriate subject for the purpose of entering deep learning.</p>
 
 <p>Through this post, piece of codes with explanation will be provided and full codes are upload on the following links;</p>
 <ul>
@@ -235,7 +235,7 @@
 <hr />
 
 <h1 id="tensorflow-version">Tensorflow version</h1>
-<h2 id="eda-exploratory-data-analysis">EDA (Exploratory Data Analysis)</h2>
+<h2 id="1-eda-exploratory-data-analysis">1. EDA (Exploratory Data Analysis)</h2>
 <p>In order to train a deep learning model, the first thing to do is to explore and analyze the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;
 First we need to check size and shape of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp; output data for our model; Input data shape is 28 by 28 matrix(or tensor) and output is a scalar.</p>
 
@@ -268,7 +268,7 @@ Also, we need to check that the distribution of labels in train and test dataset
 
 <p>Plot a real image of feature dataSample image of feature data</p>
 
-<h2 id="data-preprocess">Data preprocess</h2>
+<h2 id="2-data-preprocess">2. Data preprocess</h2>
 <p>First, the given dataset need to be reshaped properly. In this step, feature data need an additional dimension to use convolution layers. Also, label data need to be reshaped label encoding into one-hot-encoding for a classification model [1].
 Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.
 Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It’s worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.</p>
@@ -277,7 +277,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 <script src="https://gist.github.com/jhyun0919/a581e5d32df2034ee7507847e2c0d9da.js"></script>
 </p>
 
-<h2 id="model">Model</h2>
+<h2 id="3-model">3. Model</h2>
 <p>The model is comprised of two parts, feature extraction and classification. In the feature extraction stage, the model use two dimension convolution filter (Conv2D) since the input feature data is image data. Addition to Conv2D, rectified linear unit (ReLU), pooling and dropout unit [4] are used. In classification stage, a fully connected network (FCN) is used. Also, softmax function is attached at the end of the FCN which give us probabilities for each class label.</p>
 
 <p align="center">
@@ -333,14 +333,14 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 <script src="https://gist.github.com/jhyun0919/2a076dd09f8ccc2ee7513a63065bba80.js"></script>
 </p>
 
-<h2 id="graph">Graph</h2>
+<h2 id="4-graph">4. Graph</h2>
 <p>Training a model requires proper loss object and optimizer.</p>
 
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/d29c97ffd5c1c90bc8929fcab9a4d5c8.js"></script>
 </p>
 
-<h2 id="train-evaluate">Train &amp; Evaluate</h2>
+<h2 id="5-train-evaluate">5. Train &amp; Evaluate</h2>
 
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/7d03cc893c623050f2c8f70d8103ffe7.js"></script>
@@ -349,16 +349,16 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 <hr />
 
 <h1 id="pytorch-version">PyTorch version</h1>
-<h2 id="eda">EDA</h2>
+<h2 id="1-eda">1. EDA</h2>
 <p>EDA is skipped because it is similar to the process performed using Tensorflow.</p>
 
-<h2 id="data-preprocess-1">Data preprocess</h2>
+<h2 id="2-data-preprocess-1">2. Data preprocess</h2>
 
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/7c10b669c3bb37bdc67f88319d289b1c.js"></script>
 </p>
 
-<h2 id="model-1">Model</h2>
+<h2 id="3-model-1">3. Model</h2>
 
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/cb044b69d00d46428994c0acb8581477.js"></script>
@@ -393,7 +393,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 <script src="https://gist.github.com/jhyun0919/3fed97e3a62e1fcccf6955a9ace5f323.js"></script>
 </p>
 
-<h2 id="train-evaluate-1">Train &amp; Evaluate</h2>
+<h2 id="4-train-evaluate">4. Train &amp; Evaluate</h2>
 
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/0ed55ae6f1eb58961088f792eba03ff6.js"></script>

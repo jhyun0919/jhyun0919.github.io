@@ -10,12 +10,13 @@ layout: default
   </div>
   {% endif %}
 
-  <hr>
-  <div class="posts">
-    <h1 class="post-title" align="center">Recent Post</h1>
+    <hr>
+    <h1 class="post-title" style="width:55%; margin:0 auto;">Recent Post</h1>
+    <hr>
+
     {% for post in paginator.posts %}
     <div class="post-teaser">
-      <header>
+      <header style="width:55%; margin:0 auto;">
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title }}
@@ -25,17 +26,17 @@ layout: default
           {{ post.date | date: "%B %-d, %Y" }}
         </p>
       </header>
-      <div class="excerpt">
-        {{ post.excerpt | truncatewords:30 }}
+      <div class="excerpt" style="width:55%; margin:0 auto;" >
+        {{ post.excerpt | truncatewords:25 }}
         <br>
-        <a class="button" href="{{ post.url | relative_url }}">
+        <a class="button" href="{{ post.url | relative_url }}" >
           {{ site.theme_settings.str_continue_reading }}
         </a>
+        <br>
       </div>
     </div>
     {% endfor %}
-    
-  </div>
+
 
   {% if paginator.total_pages > 1 %}
   <div class="pagination">
