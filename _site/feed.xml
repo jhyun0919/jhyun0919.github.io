@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://jhyun0919.github.io//</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Mon, 28 Oct 2019 01:29:21 -0500</pubDate>
+    <pubDate>Mon, 28 Oct 2019 01:43:50 -0500</pubDate>
     
       <item>
         <title>(TF vs. PyTorch) MNIST tutorial</title>
@@ -44,11 +44,21 @@ Also, we need to check that the distribution of labels in train and test dataset
 &lt;script src=&quot;https://gist.github.com/jhyun0919/f262d68508dd323dd06c3e69a08c5cb0.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Check distribution of labelsDistribution of label dataset(Optional) Check the real image of feature data. Checking how the feature data looks like is not necessary in training and evaluating the model. However, this will allows you intuitive understanding for analyzing dataset and designing a structure of the model.&lt;/p&gt;
+&lt;figure align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (1).png&quot; width=&quot;90%&quot; /&gt;
+  &lt;figcaption&gt;Figure 1. Distribution of label dataset&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;(Optional) Check the real image of feature data. Checking how the feature data looks like is not necessary in training and evaluating the model. However, this will allows you intuitive understanding for analyzing dataset and designing a structure of the model.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/64fcc0c48751abad1f4553241581a744.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download.png&quot; width=&quot;60%&quot; /&gt;
+  &lt;figcaption&gt;Figure 2. Plot a real image of feature dataSample image of feature data&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Plot a real image of feature dataSample image of feature data&lt;/p&gt;
 
@@ -75,9 +85,19 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;script src=&quot;https://gist.github.com/jhyun0919/23864fd2886e8f830bc9c51fd9d58126.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
+&lt;figure align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (2).png&quot; width=&quot;80%&quot; /&gt;
+  &lt;figcaption&gt;Figure 3. &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/abba71c6f22cbea27508d86ceb237d28.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (3).png&quot; width=&quot;90%&quot; /&gt;
+  &lt;figcaption&gt;Figure 4. &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;h3 id=&quot;activation&quot;&gt;Activation&lt;/h3&gt;
 
@@ -85,11 +105,21 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;script src=&quot;https://gist.github.com/jhyun0919/b07a9e88c704dee068f02ad5b4209899.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
+&lt;figure align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (4).png&quot; width=&quot;80%&quot; /&gt;
+  &lt;figcaption&gt;Figure 5. &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;h3 id=&quot;pooling&quot;&gt;Pooling&lt;/h3&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/bd63d77214bede85f1645fac80c1273d.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (5).png&quot; width=&quot;80%&quot; /&gt;
+  &lt;figcaption&gt;Figure 6. &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;h3 id=&quot;fully-connected&quot;&gt;Fully Connected&lt;/h3&gt;
 
@@ -135,11 +165,21 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;script src=&quot;https://gist.github.com/jhyun0919/55a740e7ebde8aa3ffc4d90a2c2a2fa8.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
+&lt;figure align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (6).png&quot; width=&quot;80%&quot; /&gt;
+  &lt;figcaption&gt;Figure 7. &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;h3 id=&quot;pooling-1&quot;&gt;Pooling&lt;/h3&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/8e670553e9d4717074c030cbe4dccc60.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (7).png&quot; width=&quot;80%&quot; /&gt;
+  &lt;figcaption&gt;Figure 8. &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;h3 id=&quot;fully-connected-1&quot;&gt;Fully Connected&lt;/h3&gt;
 
