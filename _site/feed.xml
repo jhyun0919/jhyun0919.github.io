@@ -5,7 +5,16 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://jhyun0919.github.io//</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Mon, 28 Oct 2019 02:02:56 -0500</pubDate>
+    <pubDate>Mon, 28 Oct 2019 02:23:53 -0500</pubDate>
+    
+      <item>
+        <title>(Book Review) Future of Utilities - Utilities of The Future; Smart Grid</title>
+        <link>/research/energy/2019/10/28/future-of-utilities.html</link>
+        <guid isPermaLink="true">/research/energy/2019/10/28/future-of-utilities.html</guid>
+        <description>
+</description>
+        <pubDate>Mon, 28 Oct 2019 00:00:00 -0500</pubDate>
+      </item>
     
       <item>
         <title>(TF vs. PyTorch) MNIST tutorial</title>
