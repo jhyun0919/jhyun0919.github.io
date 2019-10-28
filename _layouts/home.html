@@ -12,7 +12,7 @@ layout: default
 
   <hr>
   <div class="posts">
-    <h1 class="post-title">Recent Post</h1>
+    <h1 class="post-title" align="center">Recent Post</h1>
     {% for post in paginator.posts %}
     <div class="post-teaser">
       <header>
@@ -26,7 +26,8 @@ layout: default
         </p>
       </header>
       <div class="excerpt">
-        {{ post.excerpt }}
+        {{ post.excerpt | truncatewords:40 }}
+        <br>
         <a class="button" href="{{ post.url | relative_url }}">
           {{ site.theme_settings.str_continue_reading }}
         </a>

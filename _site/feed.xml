@@ -5,7 +5,117 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>https://jhyun0919.github.io//</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sun, 27 Oct 2019 20:19:28 -0500</pubDate>
+    <pubDate>Sun, 27 Oct 2019 22:47:47 -0500</pubDate>
+    
+      <item>
+        <title>(TF vs. PyTorch) MNIST tutorial</title>
+        <link>/research/ml&dl/2019/10/22/mnist.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2019/10/22/mnist.html</guid>
+        <description>&lt;p&gt;MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most popular and appropriate subject for the purpose of entering deep learning.&lt;/p&gt;
+
+&lt;p&gt;Through this post, piece of codes with explanation will be provided and full codes are upload on the following links;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/exercise/fastcampus/mnist_explained.ipynb&quot;&gt;MNIST code-TF ver.ipynb&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/exercise/fast_campus/pytorch_mnist_explained.ipynb&quot;&gt;MNIST code-PyTorch ver.ipynb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also, this post is written with reference to the following sources;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/quickstart/advanced&quot;&gt;Tensorflow 2 quickstart for experts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html#sphx-glr-beginner-blitz-neural-networks-tutorial-py&quot;&gt;PyTorch &amp;gt; Tutorials &amp;gt; Neural Networks&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://online.fastcampus.co.kr/p/data_online_deep&quot;&gt;FastCampus &amp;gt; DeepLearningLecture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;tensorflow-version&quot;&gt;Tensorflow version&lt;/h1&gt;
+&lt;h2 id=&quot;eda-exploratory-data-analysis&quot;&gt;EDA (Exploratory Data Analysis)&lt;/h2&gt;
+&lt;p&gt;In order to train a deep learning model, the first thing to do is to explore and analyze the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;
+First we need to check size and shape of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp;amp; output data for our model; Input data shape is 28 by 28 matrix(or tensor) and output is a scalar.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/05ee6cbb224ee868d324648a8a9a9641.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Second, we we have to check the value of target data. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. 
+Also, we need to check that the distribution of labels in train and test dataset is not biased. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/f262d68508dd323dd06c3e69a08c5cb0.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Check distribution of labelsDistribution of label dataset(Optional) Check the real image of feature data. Checking how the feature data looks like is not necessary in training and evaluating the model. However, this will allows you intuitive understanding for analyzing dataset and designing a structure of the model.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/64fcc0c48751abad1f4553241581a744.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Plot a real image of feature dataSample image of feature data&lt;/p&gt;
+
+&lt;h2 id=&quot;data-preprocess&quot;&gt;Data preprocess&lt;/h2&gt;
+&lt;p&gt;First, the given dataset need to be reshaped properly. In this step, feature data need an additional dimension to use convolution layers. Also, label data need to be reshaped label encoding into one-hot-encoding for a classification model [1].
+Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.
+Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It’s worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/a581e5d32df2034ee7507847e2c0d9da.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;model&quot;&gt;Model&lt;/h2&gt;
+&lt;p&gt;The model is comprised of two parts, feature extraction and classification. In the feature extraction stage, the model use two dimension convolution filter (Conv2D) since the input feature data is image data. Addition to Conv2D, rectified linear unit (ReLU), pooling and dropout unit [4] are used. In classification stage, a fully connected network (FCN) is used. Also, softmax function is attached at the end of the FCN which give us probabilities for each class label.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/3ca0add7088a59a2707075b3b30e8419.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;optional-explanation-of-the-modelslayers&quot;&gt;(Optional) Explanation of the model’s layers&lt;/h2&gt;
+&lt;h3 id=&quot;conv2d&quot;&gt;Conv2D&lt;/h3&gt;
+
+&lt;h3 id=&quot;activation&quot;&gt;Activation&lt;/h3&gt;
+
+&lt;h3 id=&quot;pooling&quot;&gt;Pooling&lt;/h3&gt;
+
+&lt;h3 id=&quot;fully-connected&quot;&gt;Fully Connected&lt;/h3&gt;
+
+&lt;h2 id=&quot;graph&quot;&gt;Graph&lt;/h2&gt;
+&lt;p&gt;Training a model requires proper loss object and optimizer.&lt;/p&gt;
+
+&lt;h2 id=&quot;train-evaluate&quot;&gt;Train &amp;amp; Evaluate&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;pytorch-version&quot;&gt;PyTorch version&lt;/h1&gt;
+&lt;h2 id=&quot;eda&quot;&gt;EDA&lt;/h2&gt;
+&lt;p&gt;EDA is skipped because it is similar to the process performed using Tensorflow.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-preprocess-1&quot;&gt;Data preprocess&lt;/h2&gt;
+
+&lt;h2 id=&quot;model-1&quot;&gt;Model&lt;/h2&gt;
+
+&lt;h2 id=&quot;optional-explanation-of-the-modelslayers-1&quot;&gt;(Optional) Explanation of the model’s layers&lt;/h2&gt;
+&lt;h3 id=&quot;conv2d-1&quot;&gt;Conv2d&lt;/h3&gt;
+
+&lt;h3 id=&quot;pooling-1&quot;&gt;Pooling&lt;/h3&gt;
+
+&lt;h3 id=&quot;fully-connected-1&quot;&gt;Fully Connected&lt;/h3&gt;
+
+&lt;h2 id=&quot;train-evaluate-1&quot;&gt;Train &amp;amp; Evaluate&lt;/h2&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;p&gt;[1] A. J. SpiderCloud Wireless, “Why using one-hot encoding for training classifier,” LinkedIn. [Online]. Available: https://www.linkedin.com/pulse/why-using-one-hot-encoding-classifier-training-adwin-jahn. [Accessed: 26-Oct-2019].&lt;/p&gt;
+
+&lt;p&gt;[2] U. Jaitley, “Why Data Normalization is necessary for Machine Learning models,” Medium, 09-Apr-2019. [Online]. Available: https://medium.com/@urvashilluniya/why-data-normalization-is-necessary-for-machine-learning-models-681b65a05029. [Accessed: 26-Oct-2019].&lt;/p&gt;
+
+&lt;p&gt;[3] J. Brownlee, “How to Control the Stability of Training Neural Networks With the Batch Size,” Machine Learning Mastery, 03-Oct-2019. [Online]. Available: https://machinelearningmastery.com/how-to-control-the-speed-and-stability-of-training-neural-networks-with-gradient-descent-batch-size/. [Accessed: 26-Oct-2019].&lt;/p&gt;
+
+&lt;p&gt;[4] Hinton, G., Srivastava, N., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R. (2019). Improving neural networks by preventing co-adaptation of feature detectors. [online] arXiv.org. Available at: https://arxiv.org/abs/1207.0580 [Accessed 26 Oct. 2019].&lt;/p&gt;
+
+&lt;p&gt;[5] A. S. V, “Understanding Activation Functions in Neural Networks,” Medium, 30-Mar-2017. [Online]. Available: https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0. [Accessed: 26-Oct-2019].&lt;/p&gt;
+
+&lt;p&gt;[6] “Pooling,” Unsupervised Feature Learning and Deep Learning Tutorial. [Online]. Available: http://deeplearning.stanford.edu/tutorial/supervised/Pooling/. [Accessed: 26-Oct-2019].&lt;/p&gt;
+</description>
+        <pubDate>Tue, 22 Oct 2019 00:00:00 -0500</pubDate>
+      </item>
     
       <item>
         <title>What makes me nervous these days</title>
@@ -70,8 +180,8 @@ While I was getting tired of this feeling, I read confession of one man which ch
     
       <item>
         <title>Markdown and HTML</title>
-        <link>/2014/11/28/markdown-and-html.html</link>
-        <guid isPermaLink="true">/2014/11/28/markdown-and-html.html</guid>
+        <link>/daily/essay/2014/11/28/markdown-and-html.html</link>
+        <guid isPermaLink="true">/daily/essay/2014/11/28/markdown-and-html.html</guid>
         <description>&lt;p&gt;Jekyll supports the use of &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt; with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.&lt;/p&gt;
 
 &lt;p&gt;Tables have also been extended from Markdown:&lt;/p&gt;

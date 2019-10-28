@@ -1,8 +1,8 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 1;
+  padding: 1;
   box-sizing: border-box;
-  line-height: 2;
+  line-height: 1;
 }
 figure {
   margin: 0;
@@ -30,20 +30,20 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-headings;
-  line-height: 1;
+  line-height: 1.5;
   margin: 0.1em 0;
   a {
     color: $text-color;
   }
 }
 h1 {
-  font-size: 2em;
-}
-h2 {
   font-size: 1.5em;
 }
+h2 {
+  font-size: 1.3em;
+}
 h3 {
-  font-size: 1.25em;
+  font-size: 1.2em;
   font-weight: 500;
 }
 h4 {
@@ -95,7 +95,7 @@ dd {
 }
 p, ol, ul, dl, .math-display {
   line-height: 1.5;
-  margin-bottom: 1em;
+  margin-bottom: 0em;
 }
 // KaTeX math display
 .math-display {
@@ -127,7 +127,8 @@ a {
 }
 // Responsive media
 iframe, img, embed, object, video {
-  max-width: 100%; } img[align=left] {
-  margin-right: 3%; } img[align=right] {
+  max-width: 100%; margin: 2em;} 
+  img[align=left] {margin-right: 3%; } 
+  img[align=right] {
   margin-left: 3%;
 }
