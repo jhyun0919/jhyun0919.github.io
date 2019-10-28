@@ -231,22 +231,22 @@
 <p>In order to train a deep learning model, the first thing to do is to explore and analyze the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;
 First we need to check size and shape of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp; output data for our model; Input data shape is 28 by 28 matrix(or tensor) and output is a scalar.</p>
 
-<p><br />
+<p align="center">
 <script src="https://gist.github.com/jhyun0919/05ee6cbb224ee868d324648a8a9a9641.js"></script>
-<br /></p>
+</p>
 
 <p>Second, we we have to check the value of target data. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. 
 Also, we need to check that the distribution of labels in train and test dataset is not biased. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.</p>
 
-<p><br />
+<p align="center">
 <script src="https://gist.github.com/jhyun0919/f262d68508dd323dd06c3e69a08c5cb0.js"></script>
-<br /></p>
+</p>
 
 <p>Check distribution of labelsDistribution of label dataset(Optional) Check the real image of feature data. Checking how the feature data looks like is not necessary in training and evaluating the model. However, this will allows you intuitive understanding for analyzing dataset and designing a structure of the model.</p>
 
-<p><br />
+<p align="center">
 <script src="https://gist.github.com/jhyun0919/64fcc0c48751abad1f4553241581a744.js"></script>
-<br /></p>
+</p>
 
 <p>Plot a real image of feature dataSample image of feature data</p>
 
@@ -255,16 +255,16 @@ Also, we need to check that the distribution of labels in train and test dataset
 Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.
 Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It’s worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.</p>
 
-<p><br />
+<p align="center">
 <script src="https://gist.github.com/jhyun0919/a581e5d32df2034ee7507847e2c0d9da.js"></script>
-<br /></p>
+</p>
 
 <h2 id="model">Model</h2>
 <p>The model is comprised of two parts, feature extraction and classification. In the feature extraction stage, the model use two dimension convolution filter (Conv2D) since the input feature data is image data. Addition to Conv2D, rectified linear unit (ReLU), pooling and dropout unit [4] are used. In classification stage, a fully connected network (FCN) is used. Also, softmax function is attached at the end of the FCN which give us probabilities for each class label.</p>
 
-<p><br />
+<p align="center">
 <script src="https://gist.github.com/jhyun0919/3ca0add7088a59a2707075b3b30e8419.js"></script>
-<br /></p>
+</p>
 
 <h2 id="optional-explanation-of-the-modelslayers">(Optional) Explanation of the model’s layers</h2>
 <h3 id="conv2d">Conv2D</h3>
