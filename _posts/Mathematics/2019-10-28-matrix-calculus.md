@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Matrix Caculus
-subtitle: 
+title: (editing...)Matrix Calculus
+subtitle:
 categories: [Research/Mathematics]
 tags: [Matrix, Calculus]
 ---

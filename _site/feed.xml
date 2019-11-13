@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Wed, 30 Oct 2019 15:01:24 -0500</pubDate>
+    <pubDate>Fri, 08 Nov 2019 12:40:19 -0600</pubDate>
     
       <item>
         <title>What I learned in UT as a first-year master's degree student</title>
@@ -56,16 +56,16 @@
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;tensorflow-version&quot;&gt;Tensorflow version&lt;/h1&gt;
-&lt;h2 id=&quot;1-eda-exploratory-data-analysis&quot;&gt;1. EDA (Exploratory Data Analysis)&lt;/h2&gt;
-&lt;p&gt;In order to train a deep learning model, the first thing to do is to explore and analyze the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;
-First we need to check size and shape of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp;amp; output data for our model; Input data shape is 28 by 28 matrix(or tensor) and output is a scalar.&lt;/p&gt;
+&lt;h2 id=&quot;1-exploratory-data-analysis-eda&quot;&gt;1. Exploratory Data Analysis (EDA)&lt;/h2&gt;
+&lt;p&gt;In order to train a deep learning model, the first thing to do is to &lt;strong&gt;explore and analyze&lt;/strong&gt; the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;&lt;/p&gt;
+
+&lt;p&gt;First we need to &lt;strong&gt;check size and shape&lt;/strong&gt; of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp;amp; output data for our model; Input data shape is 28 by 28 matrix(or tensor) and output is a scalar.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/05ee6cbb224ee868d324648a8a9a9641.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Second, we we have to check the value of target data. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. 
-Also, we need to check that the distribution of labels in train and test dataset is not biased. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.&lt;/p&gt;
+&lt;p&gt;Second, we we have to &lt;strong&gt;check the value of target data&lt;/strong&gt;. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. Also, we need to &lt;strong&gt;check whether the distribution of labels in train and test dataset is biased or not&lt;/strong&gt;. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/f262d68508dd323dd06c3e69a08c5cb0.js&quot;&gt;&lt;/script&gt;

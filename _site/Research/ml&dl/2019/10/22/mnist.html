@@ -235,16 +235,16 @@
 <hr />
 
 <h1 id="tensorflow-version">Tensorflow version</h1>
-<h2 id="1-eda-exploratory-data-analysis">1. EDA (Exploratory Data Analysis)</h2>
-<p>In order to train a deep learning model, the first thing to do is to explore and analyze the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;
-First we need to check size and shape of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp; output data for our model; Input data shape is 28 by 28 matrix(or tensor) and output is a scalar.</p>
+<h2 id="1-exploratory-data-analysis-eda">1. Exploratory Data Analysis (EDA)</h2>
+<p>In order to train a deep learning model, the first thing to do is to <strong>explore and analyze</strong> the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;</p>
+
+<p>First we need to <strong>check size and shape</strong> of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp; output data for our model; Input data shape is 28 by 28 matrix(or tensor) and output is a scalar.</p>
 
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/05ee6cbb224ee868d324648a8a9a9641.js"></script>
 </p>
 
-<p>Second, we we have to check the value of target data. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. 
-Also, we need to check that the distribution of labels in train and test dataset is not biased. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.</p>
+<p>Second, we we have to <strong>check the value of target data</strong>. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. Also, we need to <strong>check whether the distribution of labels in train and test dataset is biased or not</strong>. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.</p>
 
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/f262d68508dd323dd06c3e69a08c5cb0.js"></script>
