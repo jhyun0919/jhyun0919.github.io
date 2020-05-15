@@ -28,6 +28,8 @@ My primary goal is to create a business model that can contribute substantially 
 ## Skills
 - Python (Tensorflow, PyTorch)
 
+---
+
 ## Languages
 - Korean
 - English
