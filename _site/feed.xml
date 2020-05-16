@@ -5,10 +5,10 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Fri, 08 Nov 2019 12:40:19 -0600</pubDate>
+    <pubDate>Wed, 13 Nov 2019 15:49:00 -0600</pubDate>
     
       <item>
-        <title>What I learned in UT as a first-year master's degree student</title>
+        <title>(editing...)What I learned in UT as a first-year master's degree student</title>
         <link>/daily/essay/2019/10/29/AW.html</link>
         <guid isPermaLink="true">/daily/essay/2019/10/29/AW.html</guid>
         <description>&lt;p&gt;Proof of your existence in Academic Community is predicated on your writing.&lt;/p&gt;
@@ -17,7 +17,7 @@
       </item>
     
       <item>
-        <title>Matrix Caculus</title>
+        <title>(editing...)Matrix Calculus</title>
         <link>/research/mathematics/2019/10/28/matrix-calculus.html</link>
         <guid isPermaLink="true">/research/mathematics/2019/10/28/matrix-calculus.html</guid>
         <description>&lt;p&gt;matrtix&lt;/p&gt;
@@ -26,7 +26,7 @@
       </item>
     
       <item>
-        <title>(Book Review) Future of Utilities - Utilities of The Future; Smart Grid</title>
+        <title>(editing...)(Book Review) Future of Utilities - Utilities of The Future; Micro Grid</title>
         <link>/research/energy/2019/10/28/future-of-utilities.html</link>
         <guid isPermaLink="true">/research/energy/2019/10/28/future-of-utilities.html</guid>
         <description>
@@ -35,7 +35,7 @@
       </item>
     
       <item>
-        <title>(TF vs. PyTorch) MNIST tutorial</title>
+        <title>(editing...)(TF vs. PyTorch) MNIST tutorial</title>
         <link>/research/ml&dl/2019/10/22/mnist.html</link>
         <guid isPermaLink="true">/research/ml&dl/2019/10/22/mnist.html</guid>
         <description>&lt;p&gt;MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most popular and appropriate subject for the purpose of entering deep learning.&lt;/p&gt;
