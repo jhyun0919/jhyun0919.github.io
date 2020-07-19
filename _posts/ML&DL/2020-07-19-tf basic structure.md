@@ -18,7 +18,7 @@ Full code can be found at the following git repository.
 ---
 ## 1. Load & pre-process the dataset
 <p align="center">
-<script src="https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js"></script></script>
+<script src="https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js"></script>
 </p>
 
 ## 2. Set up a model
@@ -57,6 +57,11 @@ Full code can be found at the following git repository.
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/e196847e8797b94e947fb43081c69014.js"></script>
 </p>
+
+<figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (7).png" width="80%" />
+  <figcaption>Figure 8. Checking the training process with tensorboard.</figcaption>
+</figure>
 
 ## (Optional) Load the best weights
 <p align="center">
