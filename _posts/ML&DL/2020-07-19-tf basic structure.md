@@ -58,10 +58,8 @@ Full code can be found at the following git repository.
 <script src="https://gist.github.com/jhyun0919/e196847e8797b94e947fb43081c69014.js"></script>
 </p>
 
-![picture 1](../../images/30cb46e50461d91ed9a6c3cd5dee984c92ab99a035c8be7de63f624cdddb08c4.png)<center>Figure 1. Checking the training process with tensorboard.</center>
-
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2020-07-19-tf basic structure/tensorboard eg.png" width="100%" />
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-19-tf basic structure/tensorboard eg.png" width="95%" />
   <figcaption>Figure 1. Checking the training process with tensorboard.</figcaption>
 </figure>
 
