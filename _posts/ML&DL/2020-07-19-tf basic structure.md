@@ -59,7 +59,7 @@ Full code can be found at the following git repository.
 </p>
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2020-07-19-tf basic structure/tensorboard eg.png" width="150%" />
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-19-tf basic structure/tensorboard eg.png" width="130%" />
   <figcaption>Figure 1. Checking the training process with tensorboard.</figcaption>
 </figure>
 
