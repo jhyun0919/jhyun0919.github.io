@@ -5,7 +5,7 @@ categories: [Research/ML&DL]
 tags: [ML&DL, Tensorflow]
 ---
 
-Tesorflow is one of the most well-known deep learning frameworks. This post will describe the basic sturcture of traing a model with Tensorflow. Briefly, the basic structure of how to train a model through Tensorflow is as follows.
+TesorFlow is one of the most well-known deep learning frameworks. This post will describe the basic sturcture of traing a model with Tensorflow. Briefly, the basic structure of how to train a model through TensorFlow is as follows.
 
 - Data pre-process
 - Set up a Model
@@ -13,13 +13,13 @@ Tesorflow is one of the most well-known deep learning frameworks. This post will
 - Compile & Fit the Model
 
 Full code can be found at the following git repository.
-- [Basic Structure of Training a Model](https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/TF_Basic/basic%20structure.ipynb)
+- [Park's GitHub > Basic Structure of Training a Model](https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/TF_Basic/basic%20structure.ipynb)
 
 
 This post was written with reference to the following materials.
-- [TensorFlow 2 quickstart for beginners](https://www.tensorflow.org/tutorials/quickstart/beginner)
-- [TensorFlow 2 quickstart for experts](https://www.tensorflow.org/tutorials/quickstart/advanced)
-- [Get started with TensorBoard](https://www.tensorflow.org/tensorboard/get_started)
+- [TensorFlow official website > TensorFlow 2 quickstart for beginners](https://www.tensorflow.org/tutorials/quickstart/beginner)
+- [TensorFlow official website > TensorFlow 2 quickstart for experts](https://www.tensorflow.org/tutorials/quickstart/advanced)
+- [TensorFlow official website > Get started with TensorBoard](https://www.tensorflow.org/tensorboard/get_started)
 
 ---
 ## 1. Load & pre-process the dataset

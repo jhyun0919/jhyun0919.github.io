@@ -6,6 +6,16 @@ tags: [ML&DL, MNIST]
 ---
 
 
+Full code can be found at the following git repository.
+- [Park's GitHub > How to choose layer](https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/MNIST/how%20to%20choose%20layer.ipynb)
+
+
+This post was written with reference to the following materials.
+- [Aymeric Damien's GitHub > Neural Network Example](https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/neural_network.ipynb)
+- [Aymeric Damien's GitHub > Convolutional Neural Network Example](https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/convolutional_network.ipynb)
+- [Irhum Shafkat's Medium posting > Intuitively Understanding Convolutions for Deep Learning](https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1)
+- [Aymeric Damien's GitHub > Recurrent Neural Network Example](https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/recurrent_network.ipynb)
+- [Park's SlideShare > Understanding LSTM](https://www.slideshare.net/JiHyunPark18/understanding-lstm-and-its-diagrams)
 
 
 ---
