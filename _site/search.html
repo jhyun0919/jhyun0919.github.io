@@ -217,52 +217,85 @@
 <script>
   window.store = {
     
-      "daily-essay-2019-10-29-aw-html": {
-        "title": "(editing...)What I learned in UT as a first-year master's degree student",
-        "tags": "Essay",
-        "date": "October 29, 2019",
-        "author": "",
-        "category": "",
-        "content": "Proof of your existence in Academic Community is predicated on your writing.",
-        "url": "//daily/essay/2019/10/29/AW.html"
-      }
-      ,
-    
-      "research-mathematics-2019-10-28-matrix-calculus-html": {
-        "title": "(editing...)Matrix Calculus",
-        "tags": "Matrix, Calculus",
-        "date": "October 28, 2019",
-        "author": "",
-        "category": "",
-        "content": "matrtix",
-        "url": "//research/mathematics/2019/10/28/matrix-calculus.html"
-      }
-      ,
-    
-      "research-energy-2019-10-28-future-of-utilities-html": {
-        "title": "(editing...)(Book Review) Future of Utilities - Utilities of The Future; Micro Grid",
-        "tags": "Energy, BookReview",
-        "date": "October 28, 2019",
+      "research-ml-dl-2020-07-20-transformer-with-language-html": {
+        "title": "(TF) Transformer model for language understanding",
+        "tags": "ML&DL, Tensorflow, Transformer",
+        "date": "July 20, 2020",
         "author": "",
         "category": "",
         "content": "",
-        "url": "//research/energy/2019/10/28/future-of-utilities.html"
+        "url": "//research/ml&amp;dl/2020/07/20/transformer_with_language.html"
       }
       ,
     
-      "research-ml-dl-2019-10-22-mnist-html": {
-        "title": "(editing...)(TF vs. PyTorch) MNIST tutorial",
+      "research-ml-dl-2020-07-20-how-to-choose-layer-html": {
+        "title": "(TF) Which Layer Do I Need?",
         "tags": "ML&DL, MNIST",
-        "date": "October 22, 2019",
+        "date": "July 20, 2020",
         "author": "",
         "category": "",
-        "content": "MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most popular and appropriate subject for the purpose of entering deep learning.Through this post, piece of codes with explanation will be provided and full codes are upload on the following links;  MNIST code-TF ver.ipynb  MNIST code-PyTorch ver.ipynbAlso, this post is written with reference to the following sources;  Tensorflow 2 quickstart for experts  PyTorch &gt; Tutorials &gt; Neural Networks  FastCampus &gt; DeepLearningLectureTensorflow version1. Exploratory Data Analysis (EDA)In order to train a deep learning model, the first thing to do is to explore and analyze the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;First we need to check size and shape of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp; output data for our model; Input data shape is 28 by 28 matrix(or tensor) and output is a scalar.Second, we we have to check the value of target data. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. Also, we need to check whether the distribution of labels in train and test dataset is biased or not. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.    Figure 1. Distribution of label dataset(Optional) Check the real image of feature data. Checking how the feature data looks like is not necessary in training and evaluating the model. However, this will allows you intuitive understanding for analyzing dataset and designing a structure of the model.    Figure 2. Plot a real image of feature dataSample image of feature dataPlot a real image of feature dataSample image of feature data2. Data preprocessFirst, the given dataset need to be reshaped properly. In this step, feature data need an additional dimension to use convolution layers. Also, label data need to be reshaped label encoding into one-hot-encoding for a classification model [1].Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It’s worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.3. ModelThe model is comprised of two parts, feature extraction and classification. In the feature extraction stage, the model use two dimension convolution filter (Conv2D) since the input feature data is image data. Addition to Conv2D, rectified linear unit (ReLU), pooling and dropout unit [4] are used. In classification stage, a fully connected network (FCN) is used. Also, softmax function is attached at the end of the FCN which give us probabilities for each class label.(Optional) Explanation of the model’s layersConv2D    Figure 3.     Figure 4. Activation    Figure 5. Pooling    Figure 6. Fully Connected4. GraphTraining a model requires proper loss object and optimizer.5. Train &amp; EvaluatePyTorch version1. EDAEDA is skipped because it is similar to the process performed using Tensorflow.2. Data preprocess3. Model(Optional) Explanation of the model’s layersConv2d    Figure 7. Pooling    Figure 8. Fully Connected4. Train &amp; EvaluateReferences[1] A. J. SpiderCloud Wireless, “Why using one-hot encoding for training classifier,” LinkedIn. [Online]. Available: https://www.linkedin.com/pulse/why-using-one-hot-encoding-classifier-training-adwin-jahn. [Accessed: 26-Oct-2019].[2] U. Jaitley, “Why Data Normalization is necessary for Machine Learning models,” Medium, 09-Apr-2019. [Online]. Available: https://medium.com/@urvashilluniya/why-data-normalization-is-necessary-for-machine-learning-models-681b65a05029. [Accessed: 26-Oct-2019].[3] J. Brownlee, “How to Control the Stability of Training Neural Networks With the Batch Size,” Machine Learning Mastery, 03-Oct-2019. [Online]. Available: https://machinelearningmastery.com/how-to-control-the-speed-and-stability-of-training-neural-networks-with-gradient-descent-batch-size/. [Accessed: 26-Oct-2019].[4] Hinton, G., Srivastava, N., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R. (2019). Improving neural networks by preventing co-adaptation of feature detectors. [online] arXiv.org. Available at: https://arxiv.org/abs/1207.0580 [Accessed 26 Oct. 2019].[5] A. S. V, “Understanding Activation Functions in Neural Networks,” Medium, 30-Mar-2017. [Online]. Available: https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0. [Accessed: 26-Oct-2019].[6] “Pooling,” Unsupervised Feature Learning and Deep Learning Tutorial. [Online]. Available: http://deeplearning.stanford.edu/tutorial/supervised/Pooling/. [Accessed: 26-Oct-2019].",
-        "url": "//research/ml&amp;dl/2019/10/22/mnist.html"
+        "content": "",
+        "url": "//research/ml&amp;dl/2020/07/20/how-to-choose-layer.html"
+      }
+      ,
+    
+      "research-ml-dl-2020-07-19-pytorch-basic-structure-html": {
+        "title": "(PyTorch) Basic Structure",
+        "tags": "ML&DL, PyTorch",
+        "date": "July 19, 2020",
+        "author": "",
+        "category": "",
+        "content": "PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic sturcture of traing a model with PyTorch. Briefly, the basic structure of how to train a model is as follows.Full code can be found at the following git repository.  Basic Structure of Training a Model1. Load &amp; pre-process the dataset2. Set up a model3. Set optimizer &amp; loss function4. Train the model  init the Gradient  forward propagation  calculate the loss  backward propagation  optimize (update) the weights5. Evaluate the model",
+        "url": "//research/ml&amp;dl/2020/07/19/pytorch-basic-structure.html"
+      }
+      ,
+    
+      "research-ml-dl-2020-07-18-tf-basic-structure-html": {
+        "title": "(TF) Basic Structure",
+        "tags": "ML&DL, Tensorflow",
+        "date": "July 18, 2020",
+        "author": "",
+        "category": "",
+        "content": "Tesorflow is one of the most well-known deep learning frameworks. This post will describe the basic sturcture of traing a model with Tensorflow. Briefly, the basic structure of how to train a model through Tensorflow is as follows.  Data pre-process  Set up a Model  Set up an Optimizer, a Loss function, &amp; Metrics  Compile &amp; Fit the ModelFull code can be found at the following git repository.  Basic Structure of Training a Model1. Load &amp; pre-process the dataset2. Set up a model(optional) Set callbackscheckpointtensorboardreduce learning rate3. Set optimizer, loss function, &amp; metrics4. Compile &amp; Fit the model(Optional) Check the training process via tensorboard    Figure 1. Checking the training process with tensorboard.(Optional) Load the best weights5. Evaluate the model",
+        "url": "//research/ml&amp;dl/2020/07/18/tf-basic-structure.html"
+      }
+      ,
+    
+      "research-energy-2020-07-07-uncertainty-realization-html": {
+        "title": "Optimal Power Flow",
+        "tags": "OPF",
+        "date": "July 7, 2020",
+        "author": "",
+        "category": "",
+        "content": "",
+        "url": "//research/energy/2020/07/07/uncertainty-realization.html"
+      }
+      ,
+    
+      "research-mathematics-2020-07-04-hessian-html": {
+        "title": "Hessian",
+        "tags": "Math, Linear Algebra, Mathematics",
+        "date": "July 4, 2020",
+        "author": "",
+        "category": "",
+        "content": "",
+        "url": "//research/mathematics/2020/07/04/Hessian.html"
+      }
+      ,
+    
+      "research-ml-dl-2020-06-01-mnist-html": {
+        "title": "(TF &amp; PyTorch) MNIST tutorial",
+        "tags": "ML&DL, MNIST",
+        "date": "June 1, 2020",
+        "author": "",
+        "category": "",
+        "content": "MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most popular and appropriate subject for the purpose of entering deep learning.Through this post, piece of codes with explanation will be provided and full codes are upload on the following links;  MNIST code-TF ver.ipynb  MNIST code-PyTorch ver.ipynbAlso, this post is written with reference to the following sources;  Tensorflow 2 quickstart for experts  PyTorch &gt; Tutorials &gt; Neural Networks  FastCampus &gt; DeepLearningLectureTensorflow version1. Exploratory Data Analysis (EDA)In order to train a deep learning model, the first thing to do is to explore and analyze the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;First we need to check size and shape of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp; output data for our model; Input data shape is 28 by 28 matrix (or tensor) and output is a scalar.Second, we we have to check the value of target data. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. Also, we need to check whether the distribution of labels in train and test dataset is biased or not. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.    Figure 1. Distribution of label dataset(Optional) Check the real image of feature data. Checking how the feature data looks like is not necessary in training and evaluating the model. However, this will allows you intuitive understanding for analyzing dataset and designing a structure of the model.    Figure 2. Plot a real image of feature dataSample image of feature data2. Data preprocessFirst, the given dataset need to be reshaped properly. In this step, feature data need an additional dimension to use convolution layers. Also, label data need to be reshaped label encoding into one-hot-encoding for a classification model [1].Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It is worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.3. ModelThe model is comprised of two parts, feature extraction and classification. In the feature extraction stage, the model use two dimension convolution filter (Conv2D) since the input feature data is image data. Addition to Conv2D, rectified linear unit (ReLU), pooling and dropout unit [4] are used. In classification stage, a fully connected network (FCN) is used. Also, softmax function is attached at the end of the FCN which give us probabilities for each class label.(Optional) Visualization of the model’s layersConv2D    Figure 3. Visualzation of the Conv2D layer's Input and Output.     Figure 4. Visualzation of the Conv2D layer's Output Values Distribution, Weights, and the Output Value.Activation    Figure 5. Visualzation of the activation (ReLU) layer's Output Values Distribution and the Output ValuePooling    Figure 6. Visualzation of the Pooling layer's Output Values Distribution and the Output ValueFully Connected4. GraphTraining a model requires proper loss object and optimizer. Also, we should set up graphs that can execute train step and test step using loss object and optimizer. In train step, we deploy the loss object to calculate the losses and optimizer to adjust weights variables. In test step, we implement loss object to clalulate the performance of the model and no optimizer.5. Train &amp; EvaluateWe can train the model and check the performance using the dataset and graphs prepared in the previous process.PyTorch version1. EDAEDA is skipped because it is similar to the process performed using Tensorflow.2. Data preprocess3. Model(Optional) Explanation of the model’s layersConv2d    Figure 7. Visualzation of the Conv2d layer's Input, Weights, and Output. Pooling    Figure 8. Visualzation of the Pooling layer's Input and Output.Fully Connected4. Train &amp; EvaluateReferences[1] A. J. SpiderCloud Wireless, “Why using one-hot encoding for training classifier,” LinkedIn. [Online]. Available: https://www.linkedin.com/pulse/why-using-one-hot-encoding-classifier-training-adwin-jahn. [Accessed: 26-Oct-2019].[2] U. Jaitley, “Why Data Normalization is necessary for Machine Learning models,” Medium, 09-Apr-2019. [Online]. Available: https://medium.com/@urvashilluniya/why-data-normalization-is-necessary-for-machine-learning-models-681b65a05029. [Accessed: 26-Oct-2019].[3] J. Brownlee, “How to Control the Stability of Training Neural Networks With the Batch Size,” Machine Learning Mastery, 03-Oct-2019. [Online]. Available: https://machinelearningmastery.com/how-to-control-the-speed-and-stability-of-training-neural-networks-with-gradient-descent-batch-size/. [Accessed: 26-Oct-2019].[4] Hinton, G., Srivastava, N., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R. (2019). Improving neural networks by preventing co-adaptation of feature detectors. [online] arXiv.org. Available at: https://arxiv.org/abs/1207.0580 [Accessed 26 Oct. 2019].[5] A. S. V, “Understanding Activation Functions in Neural Networks,” Medium, 30-Mar-2017. [Online]. Available: https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0. [Accessed: 26-Oct-2019].[6] “Pooling,” Unsupervised Feature Learning and Deep Learning Tutorial. [Online]. Available: http://deeplearning.stanford.edu/tutorial/supervised/Pooling/. [Accessed: 26-Oct-2019].",
+        "url": "//research/ml&amp;dl/2020/06/01/mnist.html"
       }
       ,
     
       "research-ml-dl-2019-10-21-dl-intro-html": {
-        "title": "(TF vs. PyTorch) Introduction of becoming adept in DL frameworks",
+        "title": "(TF &amp; PyTorch) Introduction of becoming adept in DL frameworks",
         "tags": "ML&DL, Deep Learning, Tensorflow, PyTorch",
         "date": "October 21, 2019",
         "author": "",
@@ -278,19 +311,8 @@
         "date": "September 22, 2019",
         "author": "",
         "category": "",
-        "content": "After Two years of working as a researcher at Korea Electronics Technolog Institute, I entered the University of Texas at Austin(UT Austin) as a master’s student. During four months, since I have got an admission offer from UT Austin, people showed different reactions. Some celebrated about entering UT Austin, and others were worried about studying abroad. Former voices, which were louder til I left my home town, become smaller and I got nervous.    Everything was going as I planned. The UT Cockrell School of Engineering was one of my dream school, and my registration was also well on it’s well. I had a great time during International Student OT and Department wise OT. Also, I added all the courses I wanted for my first semester. I thought there was no reason for getting nervous or anxious. However, I cannot ignore my anxiety, and it was getting worse as time went by.So I changed my strategy. I started to find out what made me nervous. After a week of figuring out, I found the most plausible reason. It was because of me being impatient with success.It was just a starting point of two years journey. The worst part was that I left the issue after I realized the problem since I did not know how to deal with it.While I was getting tired of this feeling, I read confession of one man which changed my mind. He was a man who just got discharged from the army and trying to settle in where he came from. He said, “I was nervous because I was doing nothing at that time.” At that moment, the words penetrated my heart and made me think, “I should do something, even if it looks not meaningful.” And my answer was to start recording my experience in writing. I believe it allows me to look back at myself and gives me an opportunity to do better next time.This writing is my first step to get rid of my anxiety and improve my school life. Although my first post in UT Austin starts with unfavorable story, I will end up my writing with good news about myself.    ",
+        "content": "After Two years of working as a researcher at Korea Electronics Technolog Institute, I entered the University of Texas at Austin(UT Austin) as a master’s student. During four months, since I have got an admission offer from UT Austin, people showed different reactions. Some celebrated about entering UT Austin, and others were worried about studying abroad. Former voices, which were louder til I left my home town, become smaller and I got nervous.    Everything was going as I planned. The UT Cockrell School of Engineering was one of my dream school, and my registration was also well on it’s well. I had a great time during International Student OT and Department wise OT. Also, I added all the courses I wanted for my first semester. I thought there was no reason for getting nervous or anxious. However, I cannot ignore my anxiety, and it was getting worse as time went by.So I changed my strategy. I started to find out what made me nervous. After a week of figuring out, I found the most plausible reason. It was because of me being impatient with success. It was just a starting point of two years journey. The worst part was that I left the issue after I realized the problem since I did not know how to deal with it.While I was getting tired of this feeling, I read confession of one man which changed my mind. He was a man who just got discharged from the army and trying to settle in where he came from. He said, “I was nervous because I was doing nothing at that time.” At that moment, the words penetrated my heart and made me think, “I should do something, even if it looks not meaningful.” And my answer was to start recording my experience in writing. I believe it allows me to look back at myself and gives me an opportunity to do better next time.This writing is my first step to get rid of my anxiety and improve my school life. Although my first post in UT Austin starts with unfavorable story, I will end up my writing with good news about myself.    ",
         "url": "//daily/essay/2019/09/22/essay.html"
-      }
-      ,
-    
-      "daily-english-2018-10-28-daily-eng-html": {
-        "title": "Daily English Exercise",
-        "tags": "Daily English",
-        "date": "October 28, 2018",
-        "author": "",
-        "category": "",
-        "content": "…",
-        "url": "//daily/english/2018/10/28/daily-eng.html"
       }
       
     

@@ -1,4 +1,10 @@
 {
-	"folders": [],
-	"settings": {}
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.pythonPath": "/Users/jeehyunpark/anaconda3/envs/DL/bin/python"
+	}
 }

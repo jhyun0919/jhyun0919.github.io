@@ -5,39 +5,178 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Wed, 13 Nov 2019 15:49:00 -0600</pubDate>
+    <pubDate>Mon, 20 Jul 2020 10:30:00 +0900</pubDate>
     
       <item>
-        <title>(editing...)What I learned in UT as a first-year master's degree student</title>
-        <link>/daily/essay/2019/10/29/AW.html</link>
-        <guid isPermaLink="true">/daily/essay/2019/10/29/AW.html</guid>
-        <description>&lt;p&gt;Proof of your existence in Academic Community is predicated on your writing.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 29 Oct 2019 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(editing...)Matrix Calculus</title>
-        <link>/research/mathematics/2019/10/28/matrix-calculus.html</link>
-        <guid isPermaLink="true">/research/mathematics/2019/10/28/matrix-calculus.html</guid>
-        <description>&lt;p&gt;matrtix&lt;/p&gt;
-</description>
-        <pubDate>Mon, 28 Oct 2019 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(editing...)(Book Review) Future of Utilities - Utilities of The Future; Micro Grid</title>
-        <link>/research/energy/2019/10/28/future-of-utilities.html</link>
-        <guid isPermaLink="true">/research/energy/2019/10/28/future-of-utilities.html</guid>
+        <title>(TF) Transformer model for language understanding</title>
+        <link>/research/ml&dl/2020/07/20/transformer_with_language.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2020/07/20/transformer_with_language.html</guid>
         <description>
 </description>
-        <pubDate>Mon, 28 Oct 2019 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 20 Jul 2020 00:00:00 +0900</pubDate>
       </item>
     
       <item>
-        <title>(editing...)(TF vs. PyTorch) MNIST tutorial</title>
-        <link>/research/ml&dl/2019/10/22/mnist.html</link>
-        <guid isPermaLink="true">/research/ml&dl/2019/10/22/mnist.html</guid>
+        <title>(TF) Which Layer Do I Need?</title>
+        <link>/research/ml&dl/2020/07/20/how-to-choose-layer.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2020/07/20/how-to-choose-layer.html</guid>
+        <description>
+</description>
+        <pubDate>Mon, 20 Jul 2020 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>(PyTorch) Basic Structure</title>
+        <link>/research/ml&dl/2020/07/19/pytorch-basic-structure.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2020/07/19/pytorch-basic-structure.html</guid>
+        <description>&lt;p&gt;PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic sturcture of traing a model with PyTorch. Briefly, the basic structure of how to train a model is as follows.&lt;/p&gt;
+
+&lt;p&gt;Full code can be found at the following git repository.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/tutorials/01.%20basic/pytorch%20basic%20structure.ipynb&quot;&gt;Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;2-set-up-a-model&quot;&gt;2. Set up a model&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;3-set-optimizer--loss-function&quot;&gt;3. Set optimizer &amp;amp; loss function&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;4-train-the-model&quot;&gt;4. Train the model&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;init the Gradient&lt;/li&gt;
+  &lt;li&gt;forward propagation&lt;/li&gt;
+  &lt;li&gt;calculate the loss&lt;/li&gt;
+  &lt;li&gt;backward propagation&lt;/li&gt;
+  &lt;li&gt;optimize (update) the weights&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 19 Jul 2020 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>(TF) Basic Structure</title>
+        <link>/research/ml&dl/2020/07/18/tf-basic-structure.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2020/07/18/tf-basic-structure.html</guid>
+        <description>&lt;p&gt;Tesorflow is one of the most well-known deep learning frameworks. This post will describe the basic sturcture of traing a model with Tensorflow. Briefly, the basic structure of how to train a model through Tensorflow is as follows.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Data pre-process&lt;/li&gt;
+  &lt;li&gt;Set up a Model&lt;/li&gt;
+  &lt;li&gt;Set up an Optimizer, a Loss function, &amp;amp; Metrics&lt;/li&gt;
+  &lt;li&gt;Compile &amp;amp; Fit the Model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Full code can be found at the following git repository.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/TF_Basic/basic%20structure.ipynb&quot;&gt;Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;2-set-up-a-model&quot;&gt;2. Set up a model&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/36bc28aa8f6e9005494d40603cccd5e7.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;optional-set-callbacks&quot;&gt;(optional) Set callbacks&lt;/h2&gt;
+&lt;h3 id=&quot;checkpoint&quot;&gt;checkpoint&lt;/h3&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/e5a2c5bc5d9f9634c2d97ee93c998c52.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&quot;tensorboard&quot;&gt;tensorboard&lt;/h3&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/b8688659e5d183e5d82863d0972fc16d.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&quot;reduce-learning-rate&quot;&gt;reduce learning rate&lt;/h3&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/cfea4379c657f506dd3dbf7d4f0adc3d.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;3-set-optimizer-loss-function--metrics&quot;&gt;3. Set optimizer, loss function, &amp;amp; metrics&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/0f16de0b5385716af46692a163dc51dd.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;4-compile--fit-the-model&quot;&gt;4. Compile &amp;amp; Fit the model&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/a5546b9e76e294ecc1362665cca1d048.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/bbc01cdfc18a32a1afe05c30ef846ccf.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;optional-check-the-training-process-via-tensorboard&quot;&gt;(Optional) Check the training process via tensorboard&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/e196847e8797b94e947fb43081c69014.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-19-tf basic structure/tensorboard eg.png&quot; width=&quot;95%&quot; /&gt;
+  &lt;figcaption&gt;Figure 1. Checking the training process with tensorboard.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;optional-load-the-best-weights&quot;&gt;(Optional) Load the best weights&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/e08262f64e42a6897de8cb360a7f3533.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;script src=&quot;https://gist.github.com/jhyun0919/b83301942dc8f6ac7facbeafe47c0eb4.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+</description>
+        <pubDate>Sat, 18 Jul 2020 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>Optimal Power Flow</title>
+        <link>/research/energy/2020/07/07/uncertainty-realization.html</link>
+        <guid isPermaLink="true">/research/energy/2020/07/07/uncertainty-realization.html</guid>
+        <description>
+</description>
+        <pubDate>Tue, 07 Jul 2020 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>Hessian</title>
+        <link>/research/mathematics/2020/07/04/Hessian.html</link>
+        <guid isPermaLink="true">/research/mathematics/2020/07/04/Hessian.html</guid>
+        <description>
+</description>
+        <pubDate>Sat, 04 Jul 2020 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>(TF &amp; PyTorch) MNIST tutorial</title>
+        <link>/research/ml&dl/2020/06/01/mnist.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2020/06/01/mnist.html</guid>
         <description>&lt;p&gt;MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most popular and appropriate subject for the purpose of entering deep learning.&lt;/p&gt;
 
 &lt;p&gt;Through this post, piece of codes with explanation will be provided and full codes are upload on the following links;&lt;/p&gt;
@@ -59,7 +198,7 @@
 &lt;h2 id=&quot;1-exploratory-data-analysis-eda&quot;&gt;1. Exploratory Data Analysis (EDA)&lt;/h2&gt;
 &lt;p&gt;In order to train a deep learning model, the first thing to do is to &lt;strong&gt;explore and analyze&lt;/strong&gt; the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;&lt;/p&gt;
 
-&lt;p&gt;First we need to &lt;strong&gt;check size and shape&lt;/strong&gt; of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp;amp; output data for our model; Input data shape is 28 by 28 matrix(or tensor) and output is a scalar.&lt;/p&gt;
+&lt;p&gt;First we need to &lt;strong&gt;check size and shape&lt;/strong&gt; of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp;amp; output data for our model; Input data shape is 28 by 28 matrix (or tensor) and output is a scalar.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/05ee6cbb224ee868d324648a8a9a9641.js&quot;&gt;&lt;/script&gt;
@@ -87,12 +226,10 @@
   &lt;figcaption&gt;Figure 2. Plot a real image of feature dataSample image of feature data&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;Plot a real image of feature dataSample image of feature data&lt;/p&gt;
-
 &lt;h2 id=&quot;2-data-preprocess&quot;&gt;2. Data preprocess&lt;/h2&gt;
 &lt;p&gt;First, the given dataset need to be reshaped properly. In this step, feature data need an additional dimension to use convolution layers. Also, label data need to be reshaped label encoding into one-hot-encoding for a classification model [1].
 Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.
-Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It’s worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.&lt;/p&gt;
+Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It is worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/a581e5d32df2034ee7507847e2c0d9da.js&quot;&gt;&lt;/script&gt;
@@ -105,7 +242,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;script src=&quot;https://gist.github.com/jhyun0919/3ca0add7088a59a2707075b3b30e8419.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&quot;optional-explanation-of-the-modelslayers&quot;&gt;(Optional) Explanation of the model’s layers&lt;/h2&gt;
+&lt;h2 id=&quot;optional-visualization-of-the-modelslayers&quot;&gt;(Optional) Visualization of the model’s layers&lt;/h2&gt;
 &lt;h3 id=&quot;conv2d&quot;&gt;Conv2D&lt;/h3&gt;
 
 &lt;p align=&quot;center&quot;&gt;
@@ -114,7 +251,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 &lt;figure align=&quot;center&quot;&gt;
   &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (2).png&quot; width=&quot;80%&quot; /&gt;
-  &lt;figcaption&gt;Figure 3. &lt;/figcaption&gt;
+  &lt;figcaption&gt;Figure 3. Visualzation of the Conv2D layer's Input and Output. &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p align=&quot;center&quot;&gt;
@@ -123,7 +260,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 &lt;figure align=&quot;center&quot;&gt;
   &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (3).png&quot; width=&quot;90%&quot; /&gt;
-  &lt;figcaption&gt;Figure 4. &lt;/figcaption&gt;
+  &lt;figcaption&gt;Figure 4. Visualzation of the Conv2D layer's Output Values Distribution, Weights, and the Output Value.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;activation&quot;&gt;Activation&lt;/h3&gt;
@@ -134,7 +271,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 &lt;figure align=&quot;center&quot;&gt;
   &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (4).png&quot; width=&quot;80%&quot; /&gt;
-  &lt;figcaption&gt;Figure 5. &lt;/figcaption&gt;
+  &lt;figcaption&gt;Figure 5. Visualzation of the activation (ReLU) layer's Output Values Distribution and the Output Value&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;pooling&quot;&gt;Pooling&lt;/h3&gt;
@@ -145,7 +282,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 &lt;figure align=&quot;center&quot;&gt;
   &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (5).png&quot; width=&quot;80%&quot; /&gt;
-  &lt;figcaption&gt;Figure 6. &lt;/figcaption&gt;
+  &lt;figcaption&gt;Figure 6. Visualzation of the Pooling layer's Output Values Distribution and the Output Value&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;fully-connected&quot;&gt;Fully Connected&lt;/h3&gt;
@@ -155,13 +292,14 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;/p&gt;
 
 &lt;h2 id=&quot;4-graph&quot;&gt;4. Graph&lt;/h2&gt;
-&lt;p&gt;Training a model requires proper loss object and optimizer.&lt;/p&gt;
+&lt;p&gt;Training a model requires proper loss object and optimizer. Also, we should set up graphs that can execute train step and test step using loss object and optimizer. In train step, we deploy the loss object to calculate the losses and optimizer to adjust weights variables. In test step, we implement loss object to clalulate the performance of the model and no optimizer.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/d29c97ffd5c1c90bc8929fcab9a4d5c8.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;5-train-evaluate&quot;&gt;5. Train &amp;amp; Evaluate&lt;/h2&gt;
+&lt;p&gt;We can train the model and check the performance using the dataset and graphs prepared in the previous process.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;script src=&quot;https://gist.github.com/jhyun0919/7d03cc893c623050f2c8f70d8103ffe7.js&quot;&gt;&lt;/script&gt;
@@ -185,7 +323,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;script src=&quot;https://gist.github.com/jhyun0919/cb044b69d00d46428994c0acb8581477.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&quot;optional-explanation-of-the-modelslayers-1&quot;&gt;(Optional) Explanation of the model’s layers&lt;/h2&gt;
+&lt;h2 id=&quot;optional-explanation-of-the-modelslayers&quot;&gt;(Optional) Explanation of the model’s layers&lt;/h2&gt;
 &lt;h3 id=&quot;conv2d-1&quot;&gt;Conv2d&lt;/h3&gt;
 
 &lt;p align=&quot;center&quot;&gt;
@@ -194,7 +332,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 &lt;figure align=&quot;center&quot;&gt;
   &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (6).png&quot; width=&quot;80%&quot; /&gt;
-  &lt;figcaption&gt;Figure 7. &lt;/figcaption&gt;
+  &lt;figcaption&gt;Figure 7. Visualzation of the Conv2d layer's Input, Weights, and Output. &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;pooling-1&quot;&gt;Pooling&lt;/h3&gt;
@@ -205,7 +343,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 &lt;figure align=&quot;center&quot;&gt;
   &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (7).png&quot; width=&quot;80%&quot; /&gt;
-  &lt;figcaption&gt;Figure 8. &lt;/figcaption&gt;
+  &lt;figcaption&gt;Figure 8. Visualzation of the Pooling layer's Input and Output.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;fully-connected-1&quot;&gt;Fully Connected&lt;/h3&gt;
@@ -233,11 +371,11 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 &lt;p&gt;[6] “Pooling,” Unsupervised Feature Learning and Deep Learning Tutorial. [Online]. Available: http://deeplearning.stanford.edu/tutorial/supervised/Pooling/. [Accessed: 26-Oct-2019].&lt;/p&gt;
 </description>
-        <pubDate>Tue, 22 Oct 2019 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 01 Jun 2020 00:00:00 +0900</pubDate>
       </item>
     
       <item>
-        <title>(TF vs. PyTorch) Introduction of becoming adept in DL frameworks</title>
+        <title>(TF &amp; PyTorch) Introduction of becoming adept in DL frameworks</title>
         <link>/research/ml&dl/2019/10/21/dl_intro.html</link>
         <guid isPermaLink="true">/research/ml&dl/2019/10/21/dl_intro.html</guid>
         <description>&lt;p&gt;Due to rapid improvements in computing performance and the amount of data that is accumulated, deep learning is gaining strength. Accordingly, IT Giants develop their deep learning framework to provide developers with a development environment, such as Google’s Tensorflow and Facebook’s PyTorch.&lt;/p&gt;
@@ -256,7 +394,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 &lt;p&gt;In the future, I will select various topics and upload a series of tutorials, and code will also be uploaded in two versions, Tensorflow and PyTorch. First, I will upload a post about basic topics, such as the MNIST tutorial. After that, I will discuss energy-related time series and reinforcement learning topics, which are my research interests. I hope this will help engineers who are new to using deep learning field or would like to be more adept at dealing with the frameworks.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 21 Oct 2019 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 21 Oct 2019 00:00:00 +0900</pubDate>
       </item>
     
       <item>
@@ -270,7 +408,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 &lt;/p&gt;
 
 &lt;p&gt;Everything was going as I planned. The UT Cockrell School of Engineering was one of my dream school, and my registration was also well on it’s well. I had a great time during International Student OT and Department wise OT. Also, I added all the courses I wanted for my first semester. I thought there was no reason for getting nervous or anxious. However, I cannot ignore my anxiety, and it was getting worse as time went by.
-So I changed my strategy. I started to find out what made me nervous. After a week of figuring out, I found the most plausible reason. It was because of me being impatient with success.It was just a starting point of two years journey. The worst part was that I left the issue after I realized the problem since I did not know how to deal with it.
+So I changed my strategy. I started to find out what made me nervous. After a week of figuring out, I found the most plausible reason. It was because of me being impatient with success. It was just a starting point of two years journey. The worst part was that I left the issue after I realized the problem since I did not know how to deal with it.
 While I was getting tired of this feeling, I read confession of one man which changed my mind. He was a man who just got discharged from the army and trying to settle in where he came from. He said, “I was nervous because I was doing nothing at that time.” At that moment, the words penetrated my heart and made me think, “I should do something, even if it looks not meaningful.” And my answer was to start recording my experience in writing. I believe it allows me to look back at myself and gives me an opportunity to do better next time.&lt;/p&gt;
 
 &lt;p&gt;This writing is my first step to get rid of my anxiety and improve my school life. Although my first post in UT Austin starts with unfavorable story, I will end up my writing with good news about myself.&lt;/p&gt;
@@ -279,16 +417,7 @@ While I was getting tired of this feeling, I read confession of one man which ch
     &lt;img src=&quot;https://media.giphy.com/media/pOZhmE42D1WrCWATLK/giphy.gif&quot; width=&quot;600&quot; /&gt;
 &lt;/p&gt;
 </description>
-        <pubDate>Sun, 22 Sep 2019 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>Daily English Exercise</title>
-        <link>/daily/english/2018/10/28/daily-eng.html</link>
-        <guid isPermaLink="true">/daily/english/2018/10/28/daily-eng.html</guid>
-        <description>&lt;p&gt;…&lt;/p&gt;
-</description>
-        <pubDate>Sun, 28 Oct 2018 00:00:00 -0500</pubDate>
+        <pubDate>Sun, 22 Sep 2019 00:00:00 +0900</pubDate>
       </item>
     
   </channel>

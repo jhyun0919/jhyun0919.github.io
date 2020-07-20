@@ -2,9 +2,9 @@
 <html class="no-js">
   <head>
 	<meta charset="utf-8">
-	<title>Daily English Exercise | Park's Archive</title>
+	<title>(TF) Basic Structure | Park's Archive</title>
 	<meta name="description"
-		content="…">
+		content="Tesorflow is one of the most well-known deep learning frameworks. This post will describe the basic sturcture of traing a model with Tensorflow. Briefly, the...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -14,7 +14,7 @@
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/daily/english/2018/10/28/daily-eng.html">
+	<link rel="canonical" href="/research/ml&dl/2020/07/18/tf-basic-structure.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Park's Archive"
@@ -210,14 +210,84 @@
     <div class="content">
       <article >
   <header style="background-image: url('/')">
-    <h1 class="title">Daily English Exercise</h1>
+    <h1 class="title">(TF) Basic Structure</h1>
     
     <p class="meta" >
-      October 28, 2018
+      July 18, 2020
       
     </p>
   </header>
-  <section class="post-content" style="width:66%; margin:0 auto;"><p>…</p>
+  <section class="post-content" style="width:66%; margin:0 auto;"><p>Tesorflow is one of the most well-known deep learning frameworks. This post will describe the basic sturcture of traing a model with Tensorflow. Briefly, the basic structure of how to train a model through Tensorflow is as follows.</p>
+
+<ul>
+  <li>Data pre-process</li>
+  <li>Set up a Model</li>
+  <li>Set up an Optimizer, a Loss function, &amp; Metrics</li>
+  <li>Compile &amp; Fit the Model</li>
+</ul>
+
+<p>Full code can be found at the following git repository.</p>
+<ul>
+  <li><a href="https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/TF_Basic/basic%20structure.ipynb">Basic Structure of Training a Model</a></li>
+</ul>
+
+<hr />
+<h2 id="1-load--pre-process-the-dataset">1. Load &amp; pre-process the dataset</h2>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js"></script>
+</p>
+
+<h2 id="2-set-up-a-model">2. Set up a model</h2>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/36bc28aa8f6e9005494d40603cccd5e7.js"></script>
+</p>
+
+<h2 id="optional-set-callbacks">(optional) Set callbacks</h2>
+<h3 id="checkpoint">checkpoint</h3>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/e5a2c5bc5d9f9634c2d97ee93c998c52.js"></script>
+</p>
+
+<h3 id="tensorboard">tensorboard</h3>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/b8688659e5d183e5d82863d0972fc16d.js"></script>
+</p>
+
+<h3 id="reduce-learning-rate">reduce learning rate</h3>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/cfea4379c657f506dd3dbf7d4f0adc3d.js"></script>
+</p>
+
+<h2 id="3-set-optimizer-loss-function--metrics">3. Set optimizer, loss function, &amp; metrics</h2>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/0f16de0b5385716af46692a163dc51dd.js"></script>
+</p>
+
+<h2 id="4-compile--fit-the-model">4. Compile &amp; Fit the model</h2>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/a5546b9e76e294ecc1362665cca1d048.js"></script>
+<script src="https://gist.github.com/jhyun0919/bbc01cdfc18a32a1afe05c30ef846ccf.js"></script>
+</p>
+
+<h2 id="optional-check-the-training-process-via-tensorboard">(Optional) Check the training process via tensorboard</h2>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/e196847e8797b94e947fb43081c69014.js"></script>
+</p>
+
+<figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-19-tf basic structure/tensorboard eg.png" width="95%" />
+  <figcaption>Figure 1. Checking the training process with tensorboard.</figcaption>
+</figure>
+
+<h2 id="optional-load-the-best-weights">(Optional) Load the best weights</h2>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/e08262f64e42a6897de8cb360a7f3533.js"></script>
+</p>
+
+<h2 id="5-evaluate-the-model">5. Evaluate the model</h2>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/b83301942dc8f6ac7facbeafe47c0eb4.js"></script>
+</p>
 </section>
 
   <br>
@@ -227,7 +297,9 @@
 <footer>
   <div class="tags">
     
-    <a class="tag" href="/tags#Daily+English">#Daily English</a>
+    <a class="tag" href="/tags#ML%26DL">#ML&DL</a>
+    
+    <a class="tag" href="/tags#Tensorflow">#Tensorflow</a>
     
   </div>
 </footer>

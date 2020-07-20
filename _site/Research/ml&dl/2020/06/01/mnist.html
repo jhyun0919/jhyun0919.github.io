@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
 	<meta charset="utf-8">
-	<title>(editing...)(TF vs. PyTorch) MNIST tutorial | Park's Archive</title>
+	<title>(TF & PyTorch) MNIST tutorial | Park's Archive</title>
 	<meta name="description"
 		content="MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most popular and appropriate subject for the purpose of e...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/research/ml&dl/2019/10/22/mnist.html">
+	<link rel="canonical" href="/research/ml&dl/2020/06/01/mnist.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Park's Archive"
@@ -210,10 +210,10 @@
     <div class="content">
       <article >
   <header style="background-image: url('/')">
-    <h1 class="title">(editing...)(TF vs. PyTorch) MNIST tutorial</h1>
+    <h1 class="title">(TF & PyTorch) MNIST tutorial</h1>
     
     <p class="meta" >
-      October 22, 2019
+      June 1, 2020
       
     </p>
   </header>
@@ -238,7 +238,7 @@
 <h2 id="1-exploratory-data-analysis-eda">1. Exploratory Data Analysis (EDA)</h2>
 <p>In order to train a deep learning model, the first thing to do is to <strong>explore and analyze</strong> the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;</p>
 
-<p>First we need to <strong>check size and shape</strong> of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp; output data for our model; Input data shape is 28 by 28 matrix(or tensor) and output is a scalar.</p>
+<p>First we need to <strong>check size and shape</strong> of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp; output data for our model; Input data shape is 28 by 28 matrix (or tensor) and output is a scalar.</p>
 
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/05ee6cbb224ee868d324648a8a9a9641.js"></script>
@@ -266,12 +266,10 @@
   <figcaption>Figure 2. Plot a real image of feature dataSample image of feature data</figcaption>
 </figure>
 
-<p>Plot a real image of feature dataSample image of feature data</p>
-
 <h2 id="2-data-preprocess">2. Data preprocess</h2>
 <p>First, the given dataset need to be reshaped properly. In this step, feature data need an additional dimension to use convolution layers. Also, label data need to be reshaped label encoding into one-hot-encoding for a classification model [1].
 Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.
-Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It’s worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.</p>
+Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It is worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.</p>
 
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/a581e5d32df2034ee7507847e2c0d9da.js"></script>
@@ -284,7 +282,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 <script src="https://gist.github.com/jhyun0919/3ca0add7088a59a2707075b3b30e8419.js"></script>
 </p>
 
-<h2 id="optional-explanation-of-the-modelslayers">(Optional) Explanation of the model’s layers</h2>
+<h2 id="optional-visualization-of-the-modelslayers">(Optional) Visualization of the model’s layers</h2>
 <h3 id="conv2d">Conv2D</h3>
 
 <p align="center">
@@ -293,7 +291,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (2).png" width="80%" />
-  <figcaption>Figure 3. </figcaption>
+  <figcaption>Figure 3. Visualzation of the Conv2D layer's Input and Output. </figcaption>
 </figure>
 
 <p align="center">
@@ -302,7 +300,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (3).png" width="90%" />
-  <figcaption>Figure 4. </figcaption>
+  <figcaption>Figure 4. Visualzation of the Conv2D layer's Output Values Distribution, Weights, and the Output Value.</figcaption>
 </figure>
 
 <h3 id="activation">Activation</h3>
@@ -313,7 +311,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (4).png" width="80%" />
-  <figcaption>Figure 5. </figcaption>
+  <figcaption>Figure 5. Visualzation of the activation (ReLU) layer's Output Values Distribution and the Output Value</figcaption>
 </figure>
 
 <h3 id="pooling">Pooling</h3>
@@ -324,7 +322,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (5).png" width="80%" />
-  <figcaption>Figure 6. </figcaption>
+  <figcaption>Figure 6. Visualzation of the Pooling layer's Output Values Distribution and the Output Value</figcaption>
 </figure>
 
 <h3 id="fully-connected">Fully Connected</h3>
@@ -334,13 +332,14 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 </p>
 
 <h2 id="4-graph">4. Graph</h2>
-<p>Training a model requires proper loss object and optimizer.</p>
+<p>Training a model requires proper loss object and optimizer. Also, we should set up graphs that can execute train step and test step using loss object and optimizer. In train step, we deploy the loss object to calculate the losses and optimizer to adjust weights variables. In test step, we implement loss object to clalulate the performance of the model and no optimizer.</p>
 
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/d29c97ffd5c1c90bc8929fcab9a4d5c8.js"></script>
 </p>
 
 <h2 id="5-train-evaluate">5. Train &amp; Evaluate</h2>
+<p>We can train the model and check the performance using the dataset and graphs prepared in the previous process.</p>
 
 <p align="center">
 <script src="https://gist.github.com/jhyun0919/7d03cc893c623050f2c8f70d8103ffe7.js"></script>
@@ -364,7 +363,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 <script src="https://gist.github.com/jhyun0919/cb044b69d00d46428994c0acb8581477.js"></script>
 </p>
 
-<h2 id="optional-explanation-of-the-modelslayers-1">(Optional) Explanation of the model’s layers</h2>
+<h2 id="optional-explanation-of-the-modelslayers">(Optional) Explanation of the model’s layers</h2>
 <h3 id="conv2d-1">Conv2d</h3>
 
 <p align="center">
@@ -373,7 +372,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (6).png" width="80%" />
-  <figcaption>Figure 7. </figcaption>
+  <figcaption>Figure 7. Visualzation of the Conv2d layer's Input, Weights, and Output. </figcaption>
 </figure>
 
 <h3 id="pooling-1">Pooling</h3>
@@ -384,7 +383,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (7).png" width="80%" />
-  <figcaption>Figure 8. </figcaption>
+  <figcaption>Figure 8. Visualzation of the Pooling layer's Input and Output.</figcaption>
 </figure>
 
 <h3 id="fully-connected-1">Fully Connected</h3>

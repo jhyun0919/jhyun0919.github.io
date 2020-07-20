@@ -2,9 +2,9 @@
 <html class="no-js">
   <head>
 	<meta charset="utf-8">
-	<title>(editing...)(Book Review) Future of Utilities - Utilities of The Future; Micro Grid | Park's Archive</title>
+	<title>(PyTorch) Basic Structure | Park's Archive</title>
 	<meta name="description"
-		content="">
+		content="PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic sturcture of traing a model with PyTo...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -14,7 +14,7 @@
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/research/energy/2019/10/28/future-of-utilities.html">
+	<link rel="canonical" href="/research/ml&dl/2020/07/19/pytorch-basic-structure.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Park's Archive"
@@ -210,14 +210,56 @@
     <div class="content">
       <article >
   <header style="background-image: url('/')">
-    <h1 class="title">(editing...)(Book Review) Future of Utilities - Utilities of The Future; Micro Grid</h1>
+    <h1 class="title">(PyTorch) Basic Structure</h1>
     
     <p class="meta" >
-      October 28, 2019
+      July 19, 2020
       
     </p>
   </header>
-  <section class="post-content" style="width:66%; margin:0 auto;">
+  <section class="post-content" style="width:66%; margin:0 auto;"><p>PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic sturcture of traing a model with PyTorch. Briefly, the basic structure of how to train a model is as follows.</p>
+
+<p>Full code can be found at the following git repository.</p>
+<ul>
+  <li><a href="https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/tutorials/01.%20basic/pytorch%20basic%20structure.ipynb">Basic Structure of Training a Model</a></li>
+</ul>
+
+<hr />
+
+<h2 id="1-load--pre-process-the-dataset">1. Load &amp; pre-process the dataset</h2>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js"></script>
+</p>
+
+<h2 id="2-set-up-a-model">2. Set up a model</h2>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js"></script>
+</p>
+
+<h2 id="3-set-optimizer--loss-function">3. Set optimizer &amp; loss function</h2>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js"></script>
+</p>
+
+<h2 id="4-train-the-model">4. Train the model</h2>
+
+<ol>
+  <li>init the Gradient</li>
+  <li>forward propagation</li>
+  <li>calculate the loss</li>
+  <li>backward propagation</li>
+  <li>optimize (update) the weights</li>
+</ol>
+
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js"></script>
+</p>
+
+<h2 id="5-evaluate-the-model">5. Evaluate the model</h2>
+<p align="center">
+<script src="https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js"></script>
+</p>
+
 </section>
 
   <br>
@@ -227,9 +269,9 @@
 <footer>
   <div class="tags">
     
-    <a class="tag" href="/tags#Energy">#Energy</a>
+    <a class="tag" href="/tags#ML%26DL">#ML&DL</a>
     
-    <a class="tag" href="/tags#BookReview">#BookReview</a>
+    <a class="tag" href="/tags#PyTorch">#PyTorch</a>
     
   </div>
 </footer>
