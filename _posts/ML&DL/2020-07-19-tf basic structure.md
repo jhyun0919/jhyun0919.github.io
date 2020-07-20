@@ -5,7 +5,7 @@ categories: [Research/ML&DL]
 tags: [ML&DL, Tensorflow]
 ---
 
-This post will describe the basic sturcture of traing a model with Tensorflow. Briefly, the basic structure of how to train a model through Tensorflow is as follows.
+Tesorflow is one of the most well-known deep learning frameworks. This post will describe the basic sturcture of traing a model with Tensorflow. Briefly, the basic structure of how to train a model through Tensorflow is as follows.
 
 - Data pre-process
 - Set up a Model
