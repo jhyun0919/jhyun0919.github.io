@@ -15,6 +15,12 @@ Tesorflow is one of the most well-known deep learning frameworks. This post will
 Full code can be found at the following git repository.
 - [Basic Structure of Training a Model](https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/TF_Basic/basic%20structure.ipynb)
 
+
+This post was written with reference to the following materials.
+- [TensorFlow 2 quickstart for beginners](https://www.tensorflow.org/tutorials/quickstart/beginner)
+- [TensorFlow 2 quickstart for experts](https://www.tensorflow.org/tutorials/quickstart/advanced)
+- [Get started with TensorBoard](https://www.tensorflow.org/tensorboard/get_started)
+
 ---
 ## 1. Load & pre-process the dataset
 <p align="center">
