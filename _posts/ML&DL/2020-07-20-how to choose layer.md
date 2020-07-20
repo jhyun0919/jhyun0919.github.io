@@ -32,7 +32,7 @@ This post was written with reference to the following materials.
 </p>
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif" width="75%" />
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif" width="60%" />
   <figcaption>Figure 1. Visualization of how convolutional neural network layer works.</figcaption>
 </figure>
 
