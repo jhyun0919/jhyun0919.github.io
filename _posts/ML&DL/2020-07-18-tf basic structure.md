@@ -12,7 +12,7 @@ TesorFlow is one of the most well-known deep learning frameworks. This post will
 - Set up an Optimizer, a Loss function, & Metrics
 - Compile & Fit the Model
 
-Full code can be found at the following git repository.
+Full code can be found at the following github repository.
 - [Park's GitHub > Basic Structure of Training a Model](https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/TF_Basic/basic%20structure.ipynb)
 
 

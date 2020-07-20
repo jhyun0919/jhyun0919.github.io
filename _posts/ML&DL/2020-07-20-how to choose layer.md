@@ -6,7 +6,8 @@ tags: [ML&DL, MNIST]
 ---
 
 
-Full code can be found at the following git repository.
+
+Full code can be found at the following github repository.
 - [Park's GitHub > How to choose layer](https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/MNIST/how%20to%20choose%20layer.ipynb)
 
 
@@ -30,6 +31,11 @@ This post was written with reference to the following materials.
 <script src="https://gist.github.com/jhyun0919/1043aeb7181b81ac0106d0bbcc0f74d3.js"></script>
 </p>
 
+<figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif" width="75%" />
+  <figcaption>Figure 1. Visualization of how convolutional neural network layer works.</figcaption>
+</figure>
+
 
 ## RNN(LSTM) Model
 <p align="center">
@@ -37,7 +43,9 @@ This post was written with reference to the following materials.
 </p>
 
 
+## Experiment Result
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/tensorboard result.png" width="95%" />
-  <figcaption>Figure 1. Checking the validation result with tensorboard.</figcaption>
+  <figcaption>Figure 2. Checking the validation result with tensorboard.</figcaption>
 </figure>
+

@@ -6,7 +6,7 @@ tags: [ML&DL, PyTorch]
 ---
 PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic sturcture of traing a model with PyTorch. Briefly, the basic structure of how to train a model is as follows.
 
-Full code can be found at the following git repository.
+Full code can be found at the following github repository.
 - [Park's GitHub > Basic Structure of Training a Model](https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/tutorials/01.%20basic/pytorch%20basic%20structure.ipynb)
 
 This post was written with reference to the following materials.
