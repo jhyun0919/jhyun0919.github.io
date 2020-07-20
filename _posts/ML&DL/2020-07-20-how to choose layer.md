@@ -28,6 +28,6 @@ tags: [ML&DL, MNIST]
 
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2020-07-20-tf basic structure/tensorboard result.png" width="95%" />
-  <figcaption>Figure 1. Checking the training process with tensorboard.</figcaption>
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/tensorboard result.png" width="95%" />
+  <figcaption>Figure 1. Checking the validation result with tensorboard.</figcaption>
 </figure>
