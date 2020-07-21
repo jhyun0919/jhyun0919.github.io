@@ -87,3 +87,8 @@ plugins: [jekyll-paginate]
 exclude:
   - Gemfile
   - Gemfile.lock
+
+# KRAMDOWN
+kramdown:
+  html_to_native: true
+  
