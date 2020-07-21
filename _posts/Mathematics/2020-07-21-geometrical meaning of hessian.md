@@ -8,7 +8,6 @@ Starting with the definition of Hessian Matrix, this post will focus on the geom
 
 This post was written with reference to the following materials.
 - [Donghoon Yeo's blog posting](https://angeloyeo.github.io/2020/06/17/Hessian.html)
-- [Kahn Academy > Hessian](https://www.youtube.com/watch?v=LbBcuZukCAw)
 - [Wikipedia > Hessian](https://en.wikipedia.org/wiki/Hessian_matrix)
 
 ---
@@ -21,7 +20,7 @@ Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian.png" width="60%" />
-  <figcaption>Figure 1. Hessian Matrix. [1]</figcaption>
+  <figcaption>Figure 1. Hessian matrix. [1]</figcaption>
 </figure>
 
 
@@ -30,25 +29,30 @@ Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$
 ## Geometrical Meaning
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian gif 01.gif" width="90%" />
-  <figcaption>Figure 2. . [2]</figcaption>
+  <figcaption>Figure 2. Example of Hessian transform making the given function more convex. [2]</figcaption>
 </figure>
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian gif 02.gif" width="90%" />
-  <figcaption>Figure 3. . [2]</figcaption>
+  <figcaption>Figure 3. Example of Hessian transform making the given function more concave. [2]</figcaption>
 </figure>
 
 
 
-## Meaning of Hessian's Eigenvalues and Eigenvectors
+### Meaning of Hessian's Eigenvalues and Eigenvectors
 
+The eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation.
 
 ## Applications
 
 <figure align="center">
     <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/application 01.png" width="60%" />
+  <figcaption>Figure 4. Hessian's applicaiton: Frangi filter for vessel detection. [2]</figcaption>
+</figure>
+
+<figure align="center">
     <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/application 02.png" width="60%" />
-  <figcaption>Figure 4. Hessian's Applicaiton: Vessel Detection. [2,3]</figcaption>
+  <figcaption>Figure 5. Contour determination using Hessian's eigenvalues [3]</figcaption>
 </figure>
 
 ---
