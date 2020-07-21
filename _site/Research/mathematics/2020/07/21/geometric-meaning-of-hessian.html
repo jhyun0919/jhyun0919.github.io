@@ -2,9 +2,9 @@
 <html class="no-js">
 <head>
 	<meta charset="utf-8">
-	<title>(TF & PyTorch) Introduction of becoming adept in DL frameworks | Park's Archive</title>
+	<title>Geometric Meaning of Hessian Matrix | Park's Archive</title>
 	<meta name="description"
-		content="Due to rapid improvements in computing performance and the amount of data that is accumulated, deep learning is gaining strength. Accordingly, IT Giants deve...">
+		content="Starting with the definition of Hessian Matrix, this post will focus on the geometric meaning of Hessian matrix. Also, we will descuss about eigenvalues and ...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -14,7 +14,7 @@
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/research/ml&dl/2019/10/21/dl_intro.html">
+	<link rel="canonical" href="/research/mathematics/2020/07/21/geometric-meaning-of-hessian.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Park's Archive"
@@ -211,30 +211,87 @@
   <div class="content">
     <article >
   <header style="background-image: url('/')">
-    <h1 class="title">(TF & PyTorch) Introduction of becoming adept in DL frameworks</h1>
+    <h1 class="title">Geometric Meaning of Hessian Matrix</h1>
     
     <p class="meta" >
-      October 21, 2019
+      July 21, 2020
       
     </p>
   </header>
-  <section class="post-content" style="width:66%; margin:0 auto;"><p>Due to rapid improvements in computing performance and the amount of data that is accumulated, deep learning is gaining strength. Accordingly, IT Giants develop their deep learning framework to provide developers with a development environment, such as Google’s Tensorflow and Facebook’s PyTorch.</p>
+  <section class="post-content" style="width:66%; margin:0 auto;"><p>Starting with the definition of Hessian Matrix, this post will focus on the geometric meaning of Hessian matrix. Also, we will descuss about eigenvalues and eigenvector of Hessian, and introduce the application of Hessian.</p>
+
+<p>This post was written with reference to the following materials.</p>
+<ul>
+  <li><a href="https://angeloyeo.github.io/2020/06/17/Hessian.html">Donghoon Yeo’s blog posting</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Hessian_matrix">Wikipedia &gt; Hessian</a></li>
+</ul>
+
+<hr />
+<h1 id="hessian-matrix">Hessian Matrix</h1>
+
+<h2 id="definition">Definition</h2>
+<p>In mathematics, the Hessian matrix or Hessian is a square matrix of second-order partial derivatives of a scalar-valued function, or scalar field. It describes the local curvature of a function of many variables. [1]</p>
+
+<p>Suppose <script type="math/tex">f : ℝ^n → ℝ</script> is a function taking as input a vector <script type="math/tex">x ∈ ℝ^n</script> and outputting a scalar <script type="math/tex">f(x) ∈ ℝ</script>. If all second partial derivatives of <script type="math/tex">f</script> exist and are continuous over the domain of the function, then the Hessian matrix <script type="math/tex">H</script> of <script type="math/tex">f</script> is a square n×n matrix, usually defined and arranged as follows; [1]</p>
 
 <figure align="center">
-<img src="https://jhyun0919.github.io/assets/img/2019-10-21-dl_intro/01.png" width="80%" />   <figcaption>
-Figure 1. Deep learning frameworks
+<img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian.png" width="60%" />   <figcaption>
+Figure 1. Definition of Hessian matrix. [1]
   </figcaption>
 </figure>
 
-<p>Each framework has its characteristics and strength, and they are properly used for appropriate purposes. For engineers with research purposes, it is necessary to note Figure 2. According to data from RISELab, the recent trend in the papers uploaded on arXiv.org shows that TensorFlow and PyTorch are mainly used in research purposes. It seems that choosing Tensorflow or PyTorch would be the best choice for people who are planning to dive in deep learning. It will allow understanding other’s research more easily and quickly.</p>
+<p><br /></p>
+
+<h2 id="geometric-meaning">Geometric Meaning</h2>
+
+<p>Before the explaination, it is known that all matrices can be considered as linear transformations. Likewise, we can think of a Hessian matrix as a linear transformation. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is to make a given function more convex or concave.</p>
+
+<p>Let’s look at Hessian’s geometric meaning in detail through examples.
+The Hessian matrices corresponding to Figure 2 and 3 are as follow;</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}2 & 1\\1 & 2\\\end{bmatrix} and \begin{bmatrix}2 & 0\\0 & -2\\\end{bmatrix}. %]]></script>
+
+<p>The things to note here are, the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation. More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, in case of if some of the eigenvalues are positive and some are negative (Figure 3), the given function is converted to a saddle shape. In simple terms, by using the main feature of the geometric transformation shown by Hessian, we could maximize the gradient change of a given function.</p>
 
 <figure align="center">
-<img src="https://jhyun0919.github.io/assets/img/2019-10-21-dl_intro/02.png" width="90%" />   <figcaption>
-Figure 2. The number of papers posted on arXiv.org that mention each framework. Source: Data from RISELab and graphic by Ben Lorica.
+<img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian gif 01.gif" width="90%" />   <figcaption>
+Figure 2. Example of Hessian transform making the given function more convex. [2]
   </figcaption>
 </figure>
 
-<p>In the future, I will select various topics and upload a series of tutorials, and code will also be uploaded in two versions, Tensorflow and PyTorch. First, I will upload a post about basic topics, such as the MNIST tutorial. After that, I will discuss energy-related time series and reinforcement learning topics, which are my research interests. I hope this will help engineers who are new to using deep learning field or would like to be more adept at dealing with the frameworks.</p>
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian gif 02.gif" width="90%" />   <figcaption>
+Figure 3. Example of Hessian transform making the given function to a saddle shape function. [2]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h2 id="applications">Applications</h2>
+
+<p>Using the feature that the Hessian emphasizes the gradient, it can be used as a filter that detects the contour (edge) of a specific object in a given image, which is considered as a function. Figure 4 shows the description of edge detection and Hessian’s eigenvalues, and Figure 5 shows an application detecting the vessel using Hessian.</p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/application 02.png" width="60%" />   <figcaption>
+Figure 4. Edge detection using Hessian's eigenvalues [3]
+  </figcaption>
+</figure>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/application 01.png" width="60%" />   <figcaption>
+Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]
+  </figcaption>
+</figure>
+
+<hr />
+
+<h2 id="references">References</h2>
+<p>[1] “Hessian matrix,” Wikipedia, 24-Jun-2020. [Online]. Available: https://en.wikipedia.org/wiki/Hessian_matrix. [Accessed: 21-Jul-2020].</p>
+
+<p>[2] Y. D. Yeo, “Geometrical meaning of Hessian Matrix,” 17-Jun-2020. [Online]. Available: https://angeloyeo.github.io/2020/06/17/Hessian.html. [Accessed: 21-Jul-2020].</p>
+
+<p>[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].</p>
 </section>
 
   <br>
@@ -244,13 +301,11 @@ Figure 2. The number of papers posted on arXiv.org that mention each framework. 
 <footer>
   <div class="tags">
     
-    <a class="tag" href="/tags#ML%26DL">#ML&DL</a>
+    <a class="tag" href="/tags#Math">#Math</a>
     
-    <a class="tag" href="/tags#Deep+Learning">#Deep Learning</a>
+    <a class="tag" href="/tags#Linear+Algebra">#Linear Algebra</a>
     
-    <a class="tag" href="/tags#Tensorflow">#Tensorflow</a>
-    
-    <a class="tag" href="/tags#PyTorch">#PyTorch</a>
+    <a class="tag" href="/tags#Mathematics">#Mathematics</a>
     
   </div>
 </footer>

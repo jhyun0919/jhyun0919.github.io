@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
+<head>
 	<meta charset="utf-8">
 	<title>Search | Park's Archive</title>
 	<meta name="description"
@@ -48,7 +48,7 @@
 	</script>
 	
 </head>
-  <header class="site-header">
+<header class="site-header">
 	<div class="branding">
 		
 		<h1 class="site-title">
@@ -199,9 +199,10 @@
 
 	</header>
 
-  <body>
-    <div class="content">
-      <article >
+
+<body>
+  <div class="content">
+    <article >
   <header style="background-image: url('/')">
     <h1 class="title">Search</h1>
       
@@ -217,14 +218,25 @@
 <script>
   window.store = {
     
-      "research-ml-dl-2020-07-20-transformer-with-language-html": {
+      "research-ml-dl-2020-07-22-transformer-with-language-html": {
         "title": "(TF) Transformer model for language understanding",
         "tags": "ML&DL, Tensorflow, Transformer",
-        "date": "July 20, 2020",
+        "date": "July 22, 2020",
         "author": "",
         "category": "",
         "content": "",
-        "url": "//research/ml&amp;dl/2020/07/20/transformer_with_language.html"
+        "url": "//research/ml&amp;dl/2020/07/22/transformer_with_language.html"
+      }
+      ,
+    
+      "research-mathematics-2020-07-21-geometric-meaning-of-hessian-html": {
+        "title": "Geometric Meaning of Hessian Matrix",
+        "tags": "Math, Linear Algebra, Mathematics",
+        "date": "July 21, 2020",
+        "author": "",
+        "category": "",
+        "content": "Starting with the definition of Hessian Matrix, this post will focus on the geometric meaning of Hessian matrix. Also, we will descuss about eigenvalues and eigenvector of Hessian, and introduce the application of Hessian.This post was written with reference to the following materials.  Donghoon Yeo’s blog posting  Wikipedia &gt; HessianHessian MatrixDefinitionIn mathematics, the Hessian matrix or Hessian is a square matrix of second-order partial derivatives of a scalar-valued function, or scalar field. It describes the local curvature of a function of many variables. [1]Suppose  is a function taking as input a vector  and outputting a scalar . If all second partial derivatives of  exist and are continuous over the domain of the function, then the Hessian matrix  of  is a square n×n matrix, usually defined and arranged as follows; [1]   Figure 1. Definition of Hessian matrix. [1]  Geometric MeaningBefore the explaination, it is known that all matrices can be considered as linear transformations. Likewise, we can think of a Hessian matrix as a linear transformation. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is to make a given function more convex or concave.Let’s look at Hessian’s geometric meaning in detail through examples.The Hessian matrices corresponding to Figure 2 and 3 are as follow;The things to note here are, the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation. More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, in case of if some of the eigenvalues are positive and some are negative (Figure 3), the given function is converted to a saddle shape. In simple terms, by using the main feature of the geometric transformation shown by Hessian, we could maximize the gradient change of a given function.   Figure 2. Example of Hessian transform making the given function more convex. [2]     Figure 3. Example of Hessian transform making the given function to a saddle shape function. [2]  ApplicationsUsing the feature that the Hessian emphasizes the gradient, it can be used as a filter that detects the contour (edge) of a specific object in a given image, which is considered as a function. Figure 4 shows the description of edge detection and Hessian’s eigenvalues, and Figure 5 shows an application detecting the vessel using Hessian.   Figure 4. Edge detection using Hessian's eigenvalues [3]     Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]  References[1] “Hessian matrix,” Wikipedia, 24-Jun-2020. [Online]. Available: https://en.wikipedia.org/wiki/Hessian_matrix. [Accessed: 21-Jul-2020].[2] Y. D. Yeo, “Geometrical meaning of Hessian Matrix,” 17-Jun-2020. [Online]. Available: https://angeloyeo.github.io/2020/06/17/Hessian.html. [Accessed: 21-Jul-2020].[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].",
+        "url": "//research/mathematics/2020/07/21/geometric-meaning-of-hessian.html"
       }
       ,
     
@@ -234,29 +246,29 @@
         "date": "July 20, 2020",
         "author": "",
         "category": "",
-        "content": "",
+        "content": "Full code can be found at the following github repository.  Park’s GitHub &gt; How to choose layerThis post was written with reference to the following materials.  Aymeric Damien’s GitHub &gt; Neural Network Example  Aymeric Damien’s GitHub &gt; Convolutional Neural Network Example  Irhum Shafkat’s Medium posting &gt; Intuitively Understanding Convolutions for Deep Learning  Aymeric Damien’s GitHub &gt; Recurrent Neural Network Example  Park’s SlideShare &gt; Understanding LSTMDense Model  CNN Model     Figure 1. Visualization of how convolutional neural network layer works.  RNN(LSTM) Model  Experiment Result   Figure 2. Checking the validation result with tensorboard.  ",
         "url": "//research/ml&amp;dl/2020/07/20/how-to-choose-layer.html"
       }
       ,
     
       "research-ml-dl-2020-07-19-pytorch-basic-structure-html": {
-        "title": "(PyTorch) Basic Structure",
+        "title": "(PyTorch) Basic Steps for Training a Model",
         "tags": "ML&DL, PyTorch",
         "date": "July 19, 2020",
         "author": "",
         "category": "",
-        "content": "PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic sturcture of traing a model with PyTorch. Briefly, the basic structure of how to train a model is as follows.Full code can be found at the following git repository.  Basic Structure of Training a Model1. Load &amp; pre-process the dataset2. Set up a model3. Set optimizer &amp; loss function4. Train the model  init the Gradient  forward propagation  calculate the loss  backward propagation  optimize (update) the weights5. Evaluate the model",
+        "content": "PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic steps for traing a model with PyTorch. Briefly, the basic steps of how to train a model are as follow.  Load &amp; pre-process the dataset  Set up a model  Set an optimizer &amp; a loss function  Train &amp; Evaluate the modelFull code can be found at the following github repository.  Park’s GitHub &gt; Basic Structure of Training a ModelThis post was written with reference to the following materials.  JiHyung Moon’s Meduim Posting  PyTorch official webpage &gt; Tutorials &gt; Visualizing Models, Data, and Training with TensorBoard1. Load &amp; pre-process the dataset  2. Set up a model  3. Set optimizer &amp; loss function  4. Train the model  init the Gradient  forward propagation  calculate the loss  backward propagation  optimize (update) the weights  5. Evaluate the model  ",
         "url": "//research/ml&amp;dl/2020/07/19/pytorch-basic-structure.html"
       }
       ,
     
       "research-ml-dl-2020-07-18-tf-basic-structure-html": {
-        "title": "(TF) Basic Structure",
+        "title": "(TF) Basic Steps for Training a Model",
         "tags": "ML&DL, Tensorflow",
         "date": "July 18, 2020",
         "author": "",
         "category": "",
-        "content": "Tesorflow is one of the most well-known deep learning frameworks. This post will describe the basic sturcture of traing a model with Tensorflow. Briefly, the basic structure of how to train a model through Tensorflow is as follows.  Data pre-process  Set up a Model  Set up an Optimizer, a Loss function, &amp; Metrics  Compile &amp; Fit the ModelFull code can be found at the following git repository.  Basic Structure of Training a Model1. Load &amp; pre-process the dataset2. Set up a model(optional) Set callbackscheckpointtensorboardreduce learning rate3. Set optimizer, loss function, &amp; metrics4. Compile &amp; Fit the model(Optional) Check the training process via tensorboard    Figure 1. Checking the training process with tensorboard.(Optional) Load the best weights5. Evaluate the model",
+        "content": "TesorFlow is one of the most well-known deep learning frameworks. This post will describe the basic steps for traing a model with Tensorflow. Briefly, the basic steps for how to train a model through TensorFlow are as follow.  Data pre-process  Set up a Model  Set up an Optimizer, a Loss function, &amp; Metrics  Compile, Fit, &amp; Evaluate the ModelFull code can be found at the following github repository.  Park’s GitHub &gt; Basic Structure of Training a ModelThis post was written with reference to the following materials.  TensorFlow official website &gt; TensorFlow 2 quickstart for beginners  TensorFlow official website &gt; TensorFlow 2 quickstart for experts  TensorFlow official website &gt; Get started with TensorBoard1. Load &amp; pre-process the dataset  2. Set up a model  (optional) Set callbackscheckpoint  tensorboard  reduce learning rate  3. Set optimizer, loss function, &amp; metrics  4. Compile &amp; Fit the model     (Optional) Check the training process via tensorboard     Figure 1. Checking the training process with tensorboard.  (Optional) Load the best weights  5. Evaluate the model  ",
         "url": "//research/ml&amp;dl/2020/07/18/tf-basic-structure.html"
       }
       ,
@@ -272,24 +284,13 @@
       }
       ,
     
-      "research-mathematics-2020-07-04-hessian-html": {
-        "title": "Hessian",
-        "tags": "Math, Linear Algebra, Mathematics",
-        "date": "July 4, 2020",
-        "author": "",
-        "category": "",
-        "content": "",
-        "url": "//research/mathematics/2020/07/04/Hessian.html"
-      }
-      ,
-    
       "research-ml-dl-2020-06-01-mnist-html": {
         "title": "(TF &amp; PyTorch) MNIST tutorial",
         "tags": "ML&DL, MNIST",
         "date": "June 1, 2020",
         "author": "",
         "category": "",
-        "content": "MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most popular and appropriate subject for the purpose of entering deep learning.Through this post, piece of codes with explanation will be provided and full codes are upload on the following links;  MNIST code-TF ver.ipynb  MNIST code-PyTorch ver.ipynbAlso, this post is written with reference to the following sources;  Tensorflow 2 quickstart for experts  PyTorch &gt; Tutorials &gt; Neural Networks  FastCampus &gt; DeepLearningLectureTensorflow version1. Exploratory Data Analysis (EDA)In order to train a deep learning model, the first thing to do is to explore and analyze the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;First we need to check size and shape of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp; output data for our model; Input data shape is 28 by 28 matrix (or tensor) and output is a scalar.Second, we we have to check the value of target data. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. Also, we need to check whether the distribution of labels in train and test dataset is biased or not. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.    Figure 1. Distribution of label dataset(Optional) Check the real image of feature data. Checking how the feature data looks like is not necessary in training and evaluating the model. However, this will allows you intuitive understanding for analyzing dataset and designing a structure of the model.    Figure 2. Plot a real image of feature dataSample image of feature data2. Data preprocessFirst, the given dataset need to be reshaped properly. In this step, feature data need an additional dimension to use convolution layers. Also, label data need to be reshaped label encoding into one-hot-encoding for a classification model [1].Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It is worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.3. ModelThe model is comprised of two parts, feature extraction and classification. In the feature extraction stage, the model use two dimension convolution filter (Conv2D) since the input feature data is image data. Addition to Conv2D, rectified linear unit (ReLU), pooling and dropout unit [4] are used. In classification stage, a fully connected network (FCN) is used. Also, softmax function is attached at the end of the FCN which give us probabilities for each class label.(Optional) Visualization of the model’s layersConv2D    Figure 3. Visualzation of the Conv2D layer's Input and Output.     Figure 4. Visualzation of the Conv2D layer's Output Values Distribution, Weights, and the Output Value.Activation    Figure 5. Visualzation of the activation (ReLU) layer's Output Values Distribution and the Output ValuePooling    Figure 6. Visualzation of the Pooling layer's Output Values Distribution and the Output ValueFully Connected4. GraphTraining a model requires proper loss object and optimizer. Also, we should set up graphs that can execute train step and test step using loss object and optimizer. In train step, we deploy the loss object to calculate the losses and optimizer to adjust weights variables. In test step, we implement loss object to clalulate the performance of the model and no optimizer.5. Train &amp; EvaluateWe can train the model and check the performance using the dataset and graphs prepared in the previous process.PyTorch version1. EDAEDA is skipped because it is similar to the process performed using Tensorflow.2. Data preprocess3. Model(Optional) Explanation of the model’s layersConv2d    Figure 7. Visualzation of the Conv2d layer's Input, Weights, and Output. Pooling    Figure 8. Visualzation of the Pooling layer's Input and Output.Fully Connected4. Train &amp; EvaluateReferences[1] A. J. SpiderCloud Wireless, “Why using one-hot encoding for training classifier,” LinkedIn. [Online]. Available: https://www.linkedin.com/pulse/why-using-one-hot-encoding-classifier-training-adwin-jahn. [Accessed: 26-Oct-2019].[2] U. Jaitley, “Why Data Normalization is necessary for Machine Learning models,” Medium, 09-Apr-2019. [Online]. Available: https://medium.com/@urvashilluniya/why-data-normalization-is-necessary-for-machine-learning-models-681b65a05029. [Accessed: 26-Oct-2019].[3] J. Brownlee, “How to Control the Stability of Training Neural Networks With the Batch Size,” Machine Learning Mastery, 03-Oct-2019. [Online]. Available: https://machinelearningmastery.com/how-to-control-the-speed-and-stability-of-training-neural-networks-with-gradient-descent-batch-size/. [Accessed: 26-Oct-2019].[4] Hinton, G., Srivastava, N., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R. (2019). Improving neural networks by preventing co-adaptation of feature detectors. [online] arXiv.org. Available at: https://arxiv.org/abs/1207.0580 [Accessed 26 Oct. 2019].[5] A. S. V, “Understanding Activation Functions in Neural Networks,” Medium, 30-Mar-2017. [Online]. Available: https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0. [Accessed: 26-Oct-2019].[6] “Pooling,” Unsupervised Feature Learning and Deep Learning Tutorial. [Online]. Available: http://deeplearning.stanford.edu/tutorial/supervised/Pooling/. [Accessed: 26-Oct-2019].",
+        "content": "MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most popular and appropriate subject for the purpose of entering deep learning.Through this post, piece of codes with explanation will be provided and full codes are upload on the following links;  MNIST code-TF ver.ipynb  MNIST code-PyTorch ver.ipynbAlso, this post is written with reference to the following sources;  Tensorflow 2 quickstart for experts  PyTorch &gt; Tutorials &gt; Neural Networks  FastCampus &gt; DeepLearningLectureTensorflow version1. Exploratory Data Analysis (EDA)In order to train a deep learning model, the first thing to do is to explore and analyze the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;First we need to check size and shape of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp; output data for our model; Input data shape is 28 by 28 matrix (or tensor) and output is a scalar.  Second, we we have to check the value of target data. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. Also, we need to check whether the distribution of labels in train and test dataset is biased or not. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.     Figure 1. Distribution of label dataset  (Optional) Check the real image of feature data. Checking how the feature data looks like is not necessary in training and evaluating the model. However, this will allows you intuitive understanding for analyzing dataset and designing a structure of the model.     Figure 2. Plot a real image of feature dataSample image of feature data  2. Data preprocessFirst, the given dataset need to be reshaped properly. In this step, feature data need an additional dimension to use convolution layers. Also, label data need to be reshaped label encoding into one-hot-encoding for a classification model [1].Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It is worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.  3. ModelThe model is comprised of two parts, feature extraction and classification. In the feature extraction stage, the model use two dimension convolution filter (Conv2D) since the input feature data is image data. Addition to Conv2D, rectified linear unit (ReLU), pooling and dropout unit [4] are used. In classification stage, a fully connected network (FCN) is used. Also, softmax function is attached at the end of the FCN which give us probabilities for each class label.  (Optional) Visualization of the model’s layersConv2D     Figure 3. Visualzation of the Conv2D layer's Input and Output.       Figure 4. Visualzation of the Conv2D layer's Output Values Distribution, Weights, and the Output Value.  Activation     Figure 5. Visualzation of the activation (ReLU) layer's Output Values Distribution and the Output Value  Pooling     Figure 6. Visualzation of the Pooling layer's Output Values Distribution and the Output Value  Fully Connected  4. GraphTraining a model requires proper loss object and optimizer. Also, we should set up graphs that can execute train step and test step using loss object and optimizer. In train step, we deploy the loss object to calculate the losses and optimizer to adjust weights variables. In test step, we implement loss object to clalulate the performance of the model and no optimizer.  5. Train &amp; EvaluateWe can train the model and check the performance using the dataset and graphs prepared in the previous process.  PyTorch version1. EDAEDA is skipped because it is similar to the process performed using Tensorflow.2. Data preprocess  3. Model  (Optional) Explanation of the model’s layersConv2d     Figure 7. Visualzation of the Conv2d layer's Input, Weights, and Output.  Pooling     Figure 8. Visualzation of the Pooling layer's Input and Output.  Fully Connected  4. Train &amp; Evaluate  References[1] A. J. SpiderCloud Wireless, “Why using one-hot encoding for training classifier,” LinkedIn. [Online]. Available: https://www.linkedin.com/pulse/why-using-one-hot-encoding-classifier-training-adwin-jahn. [Accessed: 26-Oct-2019].[2] U. Jaitley, “Why Data Normalization is necessary for Machine Learning models,” Medium, 09-Apr-2019. [Online]. Available: https://medium.com/@urvashilluniya/why-data-normalization-is-necessary-for-machine-learning-models-681b65a05029. [Accessed: 26-Oct-2019].[3] J. Brownlee, “How to Control the Stability of Training Neural Networks With the Batch Size,” Machine Learning Mastery, 03-Oct-2019. [Online]. Available: https://machinelearningmastery.com/how-to-control-the-speed-and-stability-of-training-neural-networks-with-gradient-descent-batch-size/. [Accessed: 26-Oct-2019].[4] Hinton, G., Srivastava, N., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R. (2019). Improving neural networks by preventing co-adaptation of feature detectors. [online] arXiv.org. Available at: https://arxiv.org/abs/1207.0580 [Accessed 26 Oct. 2019].[5] A. S. V, “Understanding Activation Functions in Neural Networks,” Medium, 30-Mar-2017. [Online]. Available: https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0. [Accessed: 26-Oct-2019].[6] “Pooling,” Unsupervised Feature Learning and Deep Learning Tutorial. [Online]. Available: http://deeplearning.stanford.edu/tutorial/supervised/Pooling/. [Accessed: 26-Oct-2019].",
         "url": "//research/ml&amp;dl/2020/06/01/mnist.html"
       }
       ,
@@ -300,7 +301,7 @@
         "date": "October 21, 2019",
         "author": "",
         "category": "",
-        "content": "Due to rapid improvements in computing performance and the amount of data that is accumulated, deep learning is gaining strength. Accordingly, IT Giants develop their deep learning framework to provide developers with a development environment, such as Google’s Tensorflow and Facebook’s PyTorch.    Figure 1. Deep learning frameworksEach framework has its characteristics and strength, and they are properly used for appropriate purposes. For engineers with research purposes, it is necessary to note Figure 2. According to data from RISELab, the recent trend in the papers uploaded on arXiv.org shows that TensorFlow and PyTorch are mainly used in research purposes. It seems that choosing Tensorflow or PyTorch would be the best choice for people who are planning to dive in deep learning. It will allow understanding other’s research more easily and quickly.    Figure 2. The number of papers posted on arXiv.org that mention each framework. Source: Data from RISELab and graphic by Ben Lorica.In the future, I will select various topics and upload a series of tutorials, and code will also be uploaded in two versions, Tensorflow and PyTorch. First, I will upload a post about basic topics, such as the MNIST tutorial. After that, I will discuss energy-related time series and reinforcement learning topics, which are my research interests. I hope this will help engineers who are new to using deep learning field or would like to be more adept at dealing with the frameworks.",
+        "content": "Due to rapid improvements in computing performance and the amount of data that is accumulated, deep learning is gaining strength. Accordingly, IT Giants develop their deep learning framework to provide developers with a development environment, such as Google’s Tensorflow and Facebook’s PyTorch.   Figure 1. Deep learning frameworks  Each framework has its characteristics and strength, and they are properly used for appropriate purposes. For engineers with research purposes, it is necessary to note Figure 2. According to data from RISELab, the recent trend in the papers uploaded on arXiv.org shows that TensorFlow and PyTorch are mainly used in research purposes. It seems that choosing Tensorflow or PyTorch would be the best choice for people who are planning to dive in deep learning. It will allow understanding other’s research more easily and quickly.   Figure 2. The number of papers posted on arXiv.org that mention each framework. Source: Data from RISELab and graphic by Ben Lorica.  In the future, I will select various topics and upload a series of tutorials, and code will also be uploaded in two versions, Tensorflow and PyTorch. First, I will upload a post about basic topics, such as the MNIST tutorial. After that, I will discuss energy-related time series and reinforcement learning topics, which are my research interests. I hope this will help engineers who are new to using deep learning field or would like to be more adept at dealing with the frameworks.",
         "url": "//research/ml&amp;dl/2019/10/21/dl_intro.html"
       }
       ,
@@ -311,7 +312,7 @@
         "date": "September 22, 2019",
         "author": "",
         "category": "",
-        "content": "After Two years of working as a researcher at Korea Electronics Technolog Institute, I entered the University of Texas at Austin(UT Austin) as a master’s student. During four months, since I have got an admission offer from UT Austin, people showed different reactions. Some celebrated about entering UT Austin, and others were worried about studying abroad. Former voices, which were louder til I left my home town, become smaller and I got nervous.    Everything was going as I planned. The UT Cockrell School of Engineering was one of my dream school, and my registration was also well on it’s well. I had a great time during International Student OT and Department wise OT. Also, I added all the courses I wanted for my first semester. I thought there was no reason for getting nervous or anxious. However, I cannot ignore my anxiety, and it was getting worse as time went by.So I changed my strategy. I started to find out what made me nervous. After a week of figuring out, I found the most plausible reason. It was because of me being impatient with success. It was just a starting point of two years journey. The worst part was that I left the issue after I realized the problem since I did not know how to deal with it.While I was getting tired of this feeling, I read confession of one man which changed my mind. He was a man who just got discharged from the army and trying to settle in where he came from. He said, “I was nervous because I was doing nothing at that time.” At that moment, the words penetrated my heart and made me think, “I should do something, even if it looks not meaningful.” And my answer was to start recording my experience in writing. I believe it allows me to look back at myself and gives me an opportunity to do better next time.This writing is my first step to get rid of my anxiety and improve my school life. Although my first post in UT Austin starts with unfavorable story, I will end up my writing with good news about myself.    ",
+        "content": "After Two years of working as a researcher at Korea Electronics Technolog Institute, I entered the University of Texas at Austin(UT Austin) as a master’s student. During four months, since I have got an admission offer from UT Austin, people showed different reactions. Some celebrated about entering UT Austin, and others were worried about studying abroad. Former voices, which were louder til I left my home town, become smaller and I got nervous.Everything was going as I planned. The UT Cockrell School of Engineering was one of my dream school, and my registration was also well on it’s well. I had a great time during International Student OT and Department wise OT. Also, I added all the courses I wanted for my first semester. I thought there was no reason for getting nervous or anxious. However, I cannot ignore my anxiety, and it was getting worse as time went by.So I changed my strategy. I started to find out what made me nervous. After a week of figuring out, I found the most plausible reason. It was because of me being impatient with success. It was just a starting point of two years journey. The worst part was that I left the issue after I realized the problem since I did not know how to deal with it.While I was getting tired of this feeling, I read confession of one man which changed my mind. He was a man who just got discharged from the army and trying to settle in where he came from. He said, “I was nervous because I was doing nothing at that time.” At that moment, the words penetrated my heart and made me think, “I should do something, even if it looks not meaningful.” And my answer was to start recording my experience in writing. I believe it allows me to look back at myself and gives me an opportunity to do better next time.This writing is my first step to get rid of my anxiety and improve my school life. Although my first post in UT Austin starts with unfavorable story, I will end up my writing with good news about myself.",
         "url": "//daily/essay/2019/09/22/essay.html"
       }
       
@@ -323,8 +324,8 @@
 <script src="/assets/js/search.js"></script></section>
 </article>
 
-    </div>
-    
+  </div>
+  
 
 
 <footer class="site-footer">
@@ -333,5 +334,17 @@
 </footer>
 
 
-  </body>
+</body>
+
 </html>
+
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script> -->

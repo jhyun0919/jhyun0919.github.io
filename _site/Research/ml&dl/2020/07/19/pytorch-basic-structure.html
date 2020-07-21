@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
+<head>
 	<meta charset="utf-8">
-	<title>(PyTorch) Basic Structure | Park's Archive</title>
+	<title>(PyTorch) Basic Steps for Training a Model | Park's Archive</title>
 	<meta name="description"
-		content="PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic sturcture of traing a model with PyTo...">
+		content="PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic steps for traing a model with PyTorch...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -55,7 +55,7 @@
 	</script>
 	
 </head>
-  <header class="site-header">
+<header class="site-header">
 	<div class="branding">
 		
 		<h1 class="site-title">
@@ -206,39 +206,50 @@
 
 	</header>
 
-  <body>
-    <div class="content">
-      <article >
+
+<body>
+  <div class="content">
+    <article >
   <header style="background-image: url('/')">
-    <h1 class="title">(PyTorch) Basic Structure</h1>
+    <h1 class="title">(PyTorch) Basic Steps for Training a Model</h1>
     
     <p class="meta" >
       July 19, 2020
       
     </p>
   </header>
-  <section class="post-content" style="width:66%; margin:0 auto;"><p>PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic sturcture of traing a model with PyTorch. Briefly, the basic structure of how to train a model is as follows.</p>
+  <section class="post-content" style="width:66%; margin:0 auto;"><p>PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic steps for traing a model with PyTorch. Briefly, the basic steps of how to train a model are as follow.</p>
 
-<p>Full code can be found at the following git repository.</p>
 <ul>
-  <li><a href="https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/tutorials/01.%20basic/pytorch%20basic%20structure.ipynb">Basic Structure of Training a Model</a></li>
+  <li>Load &amp; pre-process the dataset</li>
+  <li>Set up a model</li>
+  <li>Set an optimizer &amp; a loss function</li>
+  <li>Train &amp; Evaluate the model</li>
+</ul>
+
+<p>Full code can be found at the following github repository.</p>
+<ul>
+  <li><a href="https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/tutorials/01.%20basic/pytorch%20basic%20structure.ipynb">Park’s GitHub &gt; Basic Structure of Training a Model</a></li>
+</ul>
+
+<p>This post was written with reference to the following materials.</p>
+<ul>
+  <li><a href="https://medium.com/@inmoonlight/pytorch%EB%A1%9C-%EB%94%A5%EB%9F%AC%EB%8B%9D%ED%95%98%EA%B8%B0-intro-afd9c67404c3">JiHyung Moon’s Meduim Posting</a></li>
+  <li><a href="https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html">PyTorch official webpage &gt; Tutorials &gt; Visualizing Models, Data, and Training with TensorBoard</a></li>
 </ul>
 
 <hr />
 
 <h2 id="1-load--pre-process-the-dataset">1. Load &amp; pre-process the dataset</h2>
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js"></script>
 </p>
 
 <h2 id="2-set-up-a-model">2. Set up a model</h2>
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js"></script>
 </p>
 
 <h2 id="3-set-optimizer--loss-function">3. Set optimizer &amp; loss function</h2>
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js"></script>
 </p>
 
 <h2 id="4-train-the-model">4. Train the model</h2>
@@ -251,13 +262,11 @@
   <li>optimize (update) the weights</li>
 </ol>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js"></script>
 </p>
 
 <h2 id="5-evaluate-the-model">5. Evaluate the model</h2>
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js"></script>
 </p>
 
 </section>
@@ -309,8 +318,8 @@ s.setAttribute('data-timestamp', +new Date());
 <!-- Post navigation -->
 
 
-    </div>
-    
+  </div>
+  
 <script src="/assets/js/katex_init.js"></script>
 
 
@@ -321,5 +330,17 @@ s.setAttribute('data-timestamp', +new Date());
 </footer>
 
 
-  </body>
+</body>
+
 </html>
+
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script> -->

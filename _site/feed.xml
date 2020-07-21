@@ -5,52 +5,183 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Mon, 20 Jul 2020 10:30:00 +0900</pubDate>
+    <pubDate>Wed, 22 Jul 2020 00:07:00 +0900</pubDate>
     
       <item>
         <title>(TF) Transformer model for language understanding</title>
-        <link>/research/ml&dl/2020/07/20/transformer_with_language.html</link>
-        <guid isPermaLink="true">/research/ml&dl/2020/07/20/transformer_with_language.html</guid>
+        <link>/research/ml&dl/2020/07/22/transformer_with_language.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2020/07/22/transformer_with_language.html</guid>
         <description>
 </description>
-        <pubDate>Mon, 20 Jul 2020 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 22 Jul 2020 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>Geometric Meaning of Hessian Matrix</title>
+        <link>/research/mathematics/2020/07/21/geometric-meaning-of-hessian.html</link>
+        <guid isPermaLink="true">/research/mathematics/2020/07/21/geometric-meaning-of-hessian.html</guid>
+        <description>&lt;p&gt;Starting with the definition of Hessian Matrix, this post will focus on the geometric meaning of Hessian matrix. Also, we will descuss about eigenvalues and eigenvector of Hessian, and introduce the application of Hessian.&lt;/p&gt;
+
+&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://angeloyeo.github.io/2020/06/17/Hessian.html&quot;&gt;Donghoon Yeo’s blog posting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hessian_matrix&quot;&gt;Wikipedia &amp;gt; Hessian&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;hessian-matrix&quot;&gt;Hessian Matrix&lt;/h1&gt;
+
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;In mathematics, the Hessian matrix or Hessian is a square matrix of second-order partial derivatives of a scalar-valued function, or scalar field. It describes the local curvature of a function of many variables. [1]&lt;/p&gt;
+
+&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f : ℝ^n → ℝ&lt;/script&gt; is a function taking as input a vector &lt;script type=&quot;math/tex&quot;&gt;x ∈ ℝ^n&lt;/script&gt; and outputting a scalar &lt;script type=&quot;math/tex&quot;&gt;f(x) ∈ ℝ&lt;/script&gt;. If all second partial derivatives of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; exist and are continuous over the domain of the function, then the Hessian matrix &lt;script type=&quot;math/tex&quot;&gt;H&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is a square n×n matrix, usually defined and arranged as follows; [1]&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Definition of Hessian matrix. [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;geometric-meaning&quot;&gt;Geometric Meaning&lt;/h2&gt;
+
+&lt;p&gt;Before the explaination, it is known that all matrices can be considered as linear transformations. Likewise, we can think of a Hessian matrix as a linear transformation. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is to make a given function more convex or concave.&lt;/p&gt;
+
+&lt;p&gt;Let’s look at Hessian’s geometric meaning in detail through examples.
+The Hessian matrices corresponding to Figure 2 and 3 are as follow;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{bmatrix}2 &amp; 1\\1 &amp; 2\\\end{bmatrix} and \begin{bmatrix}2 &amp; 0\\0 &amp; -2\\\end{bmatrix}. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The things to note here are, the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation. More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, in case of if some of the eigenvalues are positive and some are negative (Figure 3), the given function is converted to a saddle shape. In simple terms, by using the main feature of the geometric transformation shown by Hessian, we could maximize the gradient change of a given function.&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian gif 01.gif&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
+Figure 2. Example of Hessian transform making the given function more convex. [2]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian gif 02.gif&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
+Figure 3. Example of Hessian transform making the given function to a saddle shape function. [2]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;applications&quot;&gt;Applications&lt;/h2&gt;
+
+&lt;p&gt;Using the feature that the Hessian emphasizes the gradient, it can be used as a filter that detects the contour (edge) of a specific object in a given image, which is considered as a function. Figure 4 shows the description of edge detection and Hessian’s eigenvalues, and Figure 5 shows an application detecting the vessel using Hessian.&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/application 02.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
+Figure 4. Edge detection using Hessian's eigenvalues [3]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/application 01.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
+Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;p&gt;[1] “Hessian matrix,” Wikipedia, 24-Jun-2020. [Online]. Available: https://en.wikipedia.org/wiki/Hessian_matrix. [Accessed: 21-Jul-2020].&lt;/p&gt;
+
+&lt;p&gt;[2] Y. D. Yeo, “Geometrical meaning of Hessian Matrix,” 17-Jun-2020. [Online]. Available: https://angeloyeo.github.io/2020/06/17/Hessian.html. [Accessed: 21-Jul-2020].&lt;/p&gt;
+
+&lt;p&gt;[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].&lt;/p&gt;
+</description>
+        <pubDate>Tue, 21 Jul 2020 00:00:00 +0900</pubDate>
       </item>
     
       <item>
         <title>(TF) Which Layer Do I Need?</title>
         <link>/research/ml&dl/2020/07/20/how-to-choose-layer.html</link>
         <guid isPermaLink="true">/research/ml&dl/2020/07/20/how-to-choose-layer.html</guid>
-        <description>
+        <description>&lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/MNIST/how%20to%20choose%20layer.ipynb&quot;&gt;Park’s GitHub &amp;gt; How to choose layer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/neural_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Neural Network Example&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/convolutional_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Convolutional Neural Network Example&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1&quot;&gt;Irhum Shafkat’s Medium posting &amp;gt; Intuitively Understanding Convolutions for Deep Learning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/recurrent_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Recurrent Neural Network Example&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.slideshare.net/JiHyunPark18/understanding-lstm-and-its-diagrams&quot;&gt;Park’s SlideShare &amp;gt; Understanding LSTM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;dense-model&quot;&gt;Dense Model&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/ff71e7f4416a2add611074ad39888eab.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;cnn-model&quot;&gt;CNN Model&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/1043aeb7181b81ac0106d0bbcc0f74d3.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Visualization of how convolutional neural network layer works.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;rnnlstm-model&quot;&gt;RNN(LSTM) Model&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/f6d3f2c79049c74b6a74b6b792e20ba7.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;experiment-result&quot;&gt;Experiment Result&lt;/h2&gt;
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/tensorboard result.png&quot; width=&quot;95%&quot; /&gt;   &lt;figcaption&gt;
+Figure 2. Checking the validation result with tensorboard.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 </description>
         <pubDate>Mon, 20 Jul 2020 00:00:00 +0900</pubDate>
       </item>
     
       <item>
-        <title>(PyTorch) Basic Structure</title>
+        <title>(PyTorch) Basic Steps for Training a Model</title>
         <link>/research/ml&dl/2020/07/19/pytorch-basic-structure.html</link>
         <guid isPermaLink="true">/research/ml&dl/2020/07/19/pytorch-basic-structure.html</guid>
-        <description>&lt;p&gt;PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic sturcture of traing a model with PyTorch. Briefly, the basic structure of how to train a model is as follows.&lt;/p&gt;
+        <description>&lt;p&gt;PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic steps for traing a model with PyTorch. Briefly, the basic steps of how to train a model are as follow.&lt;/p&gt;
 
-&lt;p&gt;Full code can be found at the following git repository.&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/tutorials/01.%20basic/pytorch%20basic%20structure.ipynb&quot;&gt;Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Load &amp;amp; pre-process the dataset&lt;/li&gt;
+  &lt;li&gt;Set up a model&lt;/li&gt;
+  &lt;li&gt;Set an optimizer &amp;amp; a loss function&lt;/li&gt;
+  &lt;li&gt;Train &amp;amp; Evaluate the model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/tutorials/01.%20basic/pytorch%20basic%20structure.ipynb&quot;&gt;Park’s GitHub &amp;gt; Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@inmoonlight/pytorch%EB%A1%9C-%EB%94%A5%EB%9F%AC%EB%8B%9D%ED%95%98%EA%B8%B0-intro-afd9c67404c3&quot;&gt;JiHyung Moon’s Meduim Posting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html&quot;&gt;PyTorch official webpage &amp;gt; Tutorials &amp;gt; Visualizing Models, Data, and Training with TensorBoard&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;2-set-up-a-model&quot;&gt;2. Set up a model&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;3-set-optimizer--loss-function&quot;&gt;3. Set optimizer &amp;amp; loss function&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;4-train-the-model&quot;&gt;4. Train the model&lt;/h2&gt;
@@ -63,13 +194,11 @@
   &lt;li&gt;optimize (update) the weights&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 </description>
@@ -77,79 +206,77 @@
       </item>
     
       <item>
-        <title>(TF) Basic Structure</title>
+        <title>(TF) Basic Steps for Training a Model</title>
         <link>/research/ml&dl/2020/07/18/tf-basic-structure.html</link>
         <guid isPermaLink="true">/research/ml&dl/2020/07/18/tf-basic-structure.html</guid>
-        <description>&lt;p&gt;Tesorflow is one of the most well-known deep learning frameworks. This post will describe the basic sturcture of traing a model with Tensorflow. Briefly, the basic structure of how to train a model through Tensorflow is as follows.&lt;/p&gt;
+        <description>&lt;p&gt;TesorFlow is one of the most well-known deep learning frameworks. This post will describe the basic steps for traing a model with Tensorflow. Briefly, the basic steps for how to train a model through TensorFlow are as follow.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Data pre-process&lt;/li&gt;
   &lt;li&gt;Set up a Model&lt;/li&gt;
   &lt;li&gt;Set up an Optimizer, a Loss function, &amp;amp; Metrics&lt;/li&gt;
-  &lt;li&gt;Compile &amp;amp; Fit the Model&lt;/li&gt;
+  &lt;li&gt;Compile, Fit, &amp;amp; Evaluate the Model&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Full code can be found at the following git repository.&lt;/p&gt;
+&lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/TF_Basic/basic%20structure.ipynb&quot;&gt;Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/TF_Basic/basic%20structure.ipynb&quot;&gt;Park’s GitHub &amp;gt; Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/quickstart/beginner&quot;&gt;TensorFlow official website &amp;gt; TensorFlow 2 quickstart for beginners&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/quickstart/advanced&quot;&gt;TensorFlow official website &amp;gt; TensorFlow 2 quickstart for experts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tensorboard/get_started&quot;&gt;TensorFlow official website &amp;gt; Get started with TensorBoard&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 &lt;h2 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;2-set-up-a-model&quot;&gt;2. Set up a model&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/36bc28aa8f6e9005494d40603cccd5e7.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/36bc28aa8f6e9005494d40603cccd5e7.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;optional-set-callbacks&quot;&gt;(optional) Set callbacks&lt;/h2&gt;
 &lt;h3 id=&quot;checkpoint&quot;&gt;checkpoint&lt;/h3&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/e5a2c5bc5d9f9634c2d97ee93c998c52.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e5a2c5bc5d9f9634c2d97ee93c998c52.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h3 id=&quot;tensorboard&quot;&gt;tensorboard&lt;/h3&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/b8688659e5d183e5d82863d0972fc16d.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b8688659e5d183e5d82863d0972fc16d.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h3 id=&quot;reduce-learning-rate&quot;&gt;reduce learning rate&lt;/h3&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/cfea4379c657f506dd3dbf7d4f0adc3d.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/cfea4379c657f506dd3dbf7d4f0adc3d.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;3-set-optimizer-loss-function--metrics&quot;&gt;3. Set optimizer, loss function, &amp;amp; metrics&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/0f16de0b5385716af46692a163dc51dd.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/0f16de0b5385716af46692a163dc51dd.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;4-compile--fit-the-model&quot;&gt;4. Compile &amp;amp; Fit the model&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/a5546b9e76e294ecc1362665cca1d048.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/bbc01cdfc18a32a1afe05c30ef846ccf.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/a5546b9e76e294ecc1362665cca1d048.js&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://gist.github.com/jhyun0919/bbc01cdfc18a32a1afe05c30ef846ccf.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;optional-check-the-training-process-via-tensorboard&quot;&gt;(Optional) Check the training process via tensorboard&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/e196847e8797b94e947fb43081c69014.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e196847e8797b94e947fb43081c69014.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-19-tf basic structure/tensorboard eg.png&quot; width=&quot;95%&quot; /&gt;
-  &lt;figcaption&gt;Figure 1. Checking the training process with tensorboard.&lt;/figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-19-tf basic structure/tensorboard eg.png&quot; width=&quot;95%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Checking the training process with tensorboard.
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;optional-load-the-best-weights&quot;&gt;(Optional) Load the best weights&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/e08262f64e42a6897de8cb360a7f3533.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e08262f64e42a6897de8cb360a7f3533.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/b83301942dc8f6ac7facbeafe47c0eb4.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b83301942dc8f6ac7facbeafe47c0eb4.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 </description>
         <pubDate>Sat, 18 Jul 2020 00:00:00 +0900</pubDate>
@@ -162,15 +289,6 @@
         <description>
 </description>
         <pubDate>Tue, 07 Jul 2020 00:00:00 +0900</pubDate>
-      </item>
-    
-      <item>
-        <title>Hessian</title>
-        <link>/research/mathematics/2020/07/04/Hessian.html</link>
-        <guid isPermaLink="true">/research/mathematics/2020/07/04/Hessian.html</guid>
-        <description>
-</description>
-        <pubDate>Sat, 04 Jul 2020 00:00:00 +0900</pubDate>
       </item>
     
       <item>
@@ -200,30 +318,29 @@
 
 &lt;p&gt;First we need to &lt;strong&gt;check size and shape&lt;/strong&gt; of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp;amp; output data for our model; Input data shape is 28 by 28 matrix (or tensor) and output is a scalar.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/05ee6cbb224ee868d324648a8a9a9641.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/05ee6cbb224ee868d324648a8a9a9641.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Second, we we have to &lt;strong&gt;check the value of target data&lt;/strong&gt;. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. Also, we need to &lt;strong&gt;check whether the distribution of labels in train and test dataset is biased or not&lt;/strong&gt;. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/f262d68508dd323dd06c3e69a08c5cb0.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/f262d68508dd323dd06c3e69a08c5cb0.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (1).png&quot; width=&quot;90%&quot; /&gt;
-  &lt;figcaption&gt;Figure 1. Distribution of label dataset&lt;/figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (1).png&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Distribution of label dataset
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;(Optional) Check the real image of feature data. Checking how the feature data looks like is not necessary in training and evaluating the model. However, this will allows you intuitive understanding for analyzing dataset and designing a structure of the model.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/64fcc0c48751abad1f4553241581a744.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/64fcc0c48751abad1f4553241581a744.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download.png&quot; width=&quot;60%&quot; /&gt;
-  &lt;figcaption&gt;Figure 2. Plot a real image of feature dataSample image of feature data&lt;/figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
+Figure 2. Plot a real image of feature dataSample image of feature data
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;2-data-preprocess&quot;&gt;2. Data preprocess&lt;/h2&gt;
@@ -231,78 +348,73 @@
 Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.
 Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It is worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/a581e5d32df2034ee7507847e2c0d9da.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/a581e5d32df2034ee7507847e2c0d9da.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;3-model&quot;&gt;3. Model&lt;/h2&gt;
 &lt;p&gt;The model is comprised of two parts, feature extraction and classification. In the feature extraction stage, the model use two dimension convolution filter (Conv2D) since the input feature data is image data. Addition to Conv2D, rectified linear unit (ReLU), pooling and dropout unit [4] are used. In classification stage, a fully connected network (FCN) is used. Also, softmax function is attached at the end of the FCN which give us probabilities for each class label.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/3ca0add7088a59a2707075b3b30e8419.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/3ca0add7088a59a2707075b3b30e8419.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;optional-visualization-of-the-modelslayers&quot;&gt;(Optional) Visualization of the model’s layers&lt;/h2&gt;
 &lt;h3 id=&quot;conv2d&quot;&gt;Conv2D&lt;/h3&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/23864fd2886e8f830bc9c51fd9d58126.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/23864fd2886e8f830bc9c51fd9d58126.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (2).png&quot; width=&quot;80%&quot; /&gt;
-  &lt;figcaption&gt;Figure 3. Visualzation of the Conv2D layer's Input and Output. &lt;/figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (2).png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+Figure 3. Visualzation of the Conv2D layer's Input and Output.
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/abba71c6f22cbea27508d86ceb237d28.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/abba71c6f22cbea27508d86ceb237d28.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (3).png&quot; width=&quot;90%&quot; /&gt;
-  &lt;figcaption&gt;Figure 4. Visualzation of the Conv2D layer's Output Values Distribution, Weights, and the Output Value.&lt;/figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (3).png&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
+Figure 4. Visualzation of the Conv2D layer's Output Values Distribution, Weights, and the Output Value.
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;activation&quot;&gt;Activation&lt;/h3&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/b07a9e88c704dee068f02ad5b4209899.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b07a9e88c704dee068f02ad5b4209899.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (4).png&quot; width=&quot;80%&quot; /&gt;
-  &lt;figcaption&gt;Figure 5. Visualzation of the activation (ReLU) layer's Output Values Distribution and the Output Value&lt;/figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (4).png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+Figure 5. Visualzation of the activation (ReLU) layer's Output Values Distribution and the Output Value
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;pooling&quot;&gt;Pooling&lt;/h3&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/bd63d77214bede85f1645fac80c1273d.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/bd63d77214bede85f1645fac80c1273d.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (5).png&quot; width=&quot;80%&quot; /&gt;
-  &lt;figcaption&gt;Figure 6. Visualzation of the Pooling layer's Output Values Distribution and the Output Value&lt;/figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (5).png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+Figure 6. Visualzation of the Pooling layer's Output Values Distribution and the Output Value
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;fully-connected&quot;&gt;Fully Connected&lt;/h3&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/2a076dd09f8ccc2ee7513a63065bba80.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/2a076dd09f8ccc2ee7513a63065bba80.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;4-graph&quot;&gt;4. Graph&lt;/h2&gt;
 &lt;p&gt;Training a model requires proper loss object and optimizer. Also, we should set up graphs that can execute train step and test step using loss object and optimizer. In train step, we deploy the loss object to calculate the losses and optimizer to adjust weights variables. In test step, we implement loss object to clalulate the performance of the model and no optimizer.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/d29c97ffd5c1c90bc8929fcab9a4d5c8.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/d29c97ffd5c1c90bc8929fcab9a4d5c8.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;5-train-evaluate&quot;&gt;5. Train &amp;amp; Evaluate&lt;/h2&gt;
 &lt;p&gt;We can train the model and check the performance using the dataset and graphs prepared in the previous process.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/7d03cc893c623050f2c8f70d8103ffe7.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/7d03cc893c623050f2c8f70d8103ffe7.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;hr /&gt;
@@ -313,49 +425,45 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 &lt;h2 id=&quot;2-data-preprocess-1&quot;&gt;2. Data preprocess&lt;/h2&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/7c10b669c3bb37bdc67f88319d289b1c.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/7c10b669c3bb37bdc67f88319d289b1c.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;3-model-1&quot;&gt;3. Model&lt;/h2&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/cb044b69d00d46428994c0acb8581477.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/cb044b69d00d46428994c0acb8581477.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;optional-explanation-of-the-modelslayers&quot;&gt;(Optional) Explanation of the model’s layers&lt;/h2&gt;
 &lt;h3 id=&quot;conv2d-1&quot;&gt;Conv2d&lt;/h3&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/55a740e7ebde8aa3ffc4d90a2c2a2fa8.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/55a740e7ebde8aa3ffc4d90a2c2a2fa8.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (6).png&quot; width=&quot;80%&quot; /&gt;
-  &lt;figcaption&gt;Figure 7. Visualzation of the Conv2d layer's Input, Weights, and Output. &lt;/figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (6).png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+Figure 7. Visualzation of the Conv2d layer's Input, Weights, and Output.
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;pooling-1&quot;&gt;Pooling&lt;/h3&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/8e670553e9d4717074c030cbe4dccc60.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/8e670553e9d4717074c030cbe4dccc60.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (7).png&quot; width=&quot;80%&quot; /&gt;
-  &lt;figcaption&gt;Figure 8. Visualzation of the Pooling layer's Input and Output.&lt;/figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (7).png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+Figure 8. Visualzation of the Pooling layer's Input and Output.
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;fully-connected-1&quot;&gt;Fully Connected&lt;/h3&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/3fed97e3a62e1fcccf6955a9ace5f323.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/3fed97e3a62e1fcccf6955a9ace5f323.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h2 id=&quot;4-train-evaluate&quot;&gt;4. Train &amp;amp; Evaluate&lt;/h2&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;script src=&quot;https://gist.github.com/jhyun0919/0ed55ae6f1eb58961088f792eba03ff6.js&quot;&gt;&lt;/script&gt;
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/0ed55ae6f1eb58961088f792eba03ff6.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
@@ -381,15 +489,17 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
         <description>&lt;p&gt;Due to rapid improvements in computing performance and the amount of data that is accumulated, deep learning is gaining strength. Accordingly, IT Giants develop their deep learning framework to provide developers with a development environment, such as Google’s Tensorflow and Facebook’s PyTorch.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-21-dl_intro/01.png&quot; width=&quot;80%&quot; /&gt;
-  &lt;figcaption&gt;Figure 1. Deep learning frameworks&lt;/figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-21-dl_intro/01.png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Deep learning frameworks
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Each framework has its characteristics and strength, and they are properly used for appropriate purposes. For engineers with research purposes, it is necessary to note Figure 2. According to data from RISELab, the recent trend in the papers uploaded on arXiv.org shows that TensorFlow and PyTorch are mainly used in research purposes. It seems that choosing Tensorflow or PyTorch would be the best choice for people who are planning to dive in deep learning. It will allow understanding other’s research more easily and quickly.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-21-dl_intro/02.png&quot; width=&quot;90%&quot; /&gt;
-  &lt;figcaption&gt;Figure 2. The number of papers posted on arXiv.org that mention each framework. Source: Data from RISELab and graphic by Ben Lorica.&lt;/figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-21-dl_intro/02.png&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
+Figure 2. The number of papers posted on arXiv.org that mention each framework. Source: Data from RISELab and graphic by Ben Lorica.
+  &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;In the future, I will select various topics and upload a series of tutorials, and code will also be uploaded in two versions, Tensorflow and PyTorch. First, I will upload a post about basic topics, such as the MNIST tutorial. After that, I will discuss energy-related time series and reinforcement learning topics, which are my research interests. I hope this will help engineers who are new to using deep learning field or would like to be more adept at dealing with the frameworks.&lt;/p&gt;
@@ -403,9 +513,7 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
         <guid isPermaLink="true">/daily/essay/2019/09/22/essay.html</guid>
         <description>&lt;p&gt;After Two years of working as a researcher at Korea Electronics Technolog Institute, I entered the University of Texas at Austin(UT Austin) as a master’s student. During four months, since I have got an admission offer from UT Austin, people showed different reactions. Some celebrated about entering UT Austin, and others were worried about studying abroad. Former voices, which were louder til I left my home town, become smaller and I got nervous.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-    &lt;img src=&quot;https://media.giphy.com/media/LytiZGHa3DbCE/giphy.gif&quot; width=&quot;600&quot; /&gt;
-&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://media.giphy.com/media/LytiZGHa3DbCE/giphy.gif&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Everything was going as I planned. The UT Cockrell School of Engineering was one of my dream school, and my registration was also well on it’s well. I had a great time during International Student OT and Department wise OT. Also, I added all the courses I wanted for my first semester. I thought there was no reason for getting nervous or anxious. However, I cannot ignore my anxiety, and it was getting worse as time went by.
 So I changed my strategy. I started to find out what made me nervous. After a week of figuring out, I found the most plausible reason. It was because of me being impatient with success. It was just a starting point of two years journey. The worst part was that I left the issue after I realized the problem since I did not know how to deal with it.
@@ -413,9 +521,7 @@ While I was getting tired of this feeling, I read confession of one man which ch
 
 &lt;p&gt;This writing is my first step to get rid of my anxiety and improve my school life. Although my first post in UT Austin starts with unfavorable story, I will end up my writing with good news about myself.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-    &lt;img src=&quot;https://media.giphy.com/media/pOZhmE42D1WrCWATLK/giphy.gif&quot; width=&quot;600&quot; /&gt;
-&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://media.giphy.com/media/pOZhmE42D1WrCWATLK/giphy.gif&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Sep 2019 00:00:00 +0900</pubDate>
       </item>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
+<head>
 	<meta charset="utf-8">
 	<title>(TF & PyTorch) MNIST tutorial | Park's Archive</title>
 	<meta name="description"
@@ -55,7 +55,7 @@
 	</script>
 	
 </head>
-  <header class="site-header">
+<header class="site-header">
 	<div class="branding">
 		
 		<h1 class="site-title">
@@ -206,9 +206,10 @@
 
 	</header>
 
-  <body>
-    <div class="content">
-      <article >
+
+<body>
+  <div class="content">
+    <article >
   <header style="background-image: url('/')">
     <h1 class="title">(TF & PyTorch) MNIST tutorial</h1>
     
@@ -240,30 +241,29 @@
 
 <p>First we need to <strong>check size and shape</strong> of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp; output data for our model; Input data shape is 28 by 28 matrix (or tensor) and output is a scalar.</p>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/05ee6cbb224ee868d324648a8a9a9641.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/05ee6cbb224ee868d324648a8a9a9641.js"></script>
 </p>
 
 <p>Second, we we have to <strong>check the value of target data</strong>. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. Also, we need to <strong>check whether the distribution of labels in train and test dataset is biased or not</strong>. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.</p>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/f262d68508dd323dd06c3e69a08c5cb0.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/f262d68508dd323dd06c3e69a08c5cb0.js"></script>
 </p>
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (1).png" width="90%" />
-  <figcaption>Figure 1. Distribution of label dataset</figcaption>
+<img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (1).png" width="90%" />   <figcaption>
+Figure 1. Distribution of label dataset
+  </figcaption>
 </figure>
 
 <p>(Optional) Check the real image of feature data. Checking how the feature data looks like is not necessary in training and evaluating the model. However, this will allows you intuitive understanding for analyzing dataset and designing a structure of the model.</p>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/64fcc0c48751abad1f4553241581a744.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/64fcc0c48751abad1f4553241581a744.js"></script>
 </p>
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download.png" width="60%" />
-  <figcaption>Figure 2. Plot a real image of feature dataSample image of feature data</figcaption>
+<img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download.png" width="60%" />   <figcaption>
+Figure 2. Plot a real image of feature dataSample image of feature data
+  </figcaption>
 </figure>
 
 <h2 id="2-data-preprocess">2. Data preprocess</h2>
@@ -271,78 +271,73 @@
 Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.
 Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It is worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.</p>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/a581e5d32df2034ee7507847e2c0d9da.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/a581e5d32df2034ee7507847e2c0d9da.js"></script>
 </p>
 
 <h2 id="3-model">3. Model</h2>
 <p>The model is comprised of two parts, feature extraction and classification. In the feature extraction stage, the model use two dimension convolution filter (Conv2D) since the input feature data is image data. Addition to Conv2D, rectified linear unit (ReLU), pooling and dropout unit [4] are used. In classification stage, a fully connected network (FCN) is used. Also, softmax function is attached at the end of the FCN which give us probabilities for each class label.</p>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/3ca0add7088a59a2707075b3b30e8419.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/3ca0add7088a59a2707075b3b30e8419.js"></script>
 </p>
 
 <h2 id="optional-visualization-of-the-modelslayers">(Optional) Visualization of the model’s layers</h2>
 <h3 id="conv2d">Conv2D</h3>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/23864fd2886e8f830bc9c51fd9d58126.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/23864fd2886e8f830bc9c51fd9d58126.js"></script>
 </p>
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (2).png" width="80%" />
-  <figcaption>Figure 3. Visualzation of the Conv2D layer's Input and Output. </figcaption>
+<img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (2).png" width="80%" />   <figcaption>
+Figure 3. Visualzation of the Conv2D layer's Input and Output.
+  </figcaption>
 </figure>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/abba71c6f22cbea27508d86ceb237d28.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/abba71c6f22cbea27508d86ceb237d28.js"></script>
 </p>
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (3).png" width="90%" />
-  <figcaption>Figure 4. Visualzation of the Conv2D layer's Output Values Distribution, Weights, and the Output Value.</figcaption>
+<img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (3).png" width="90%" />   <figcaption>
+Figure 4. Visualzation of the Conv2D layer's Output Values Distribution, Weights, and the Output Value.
+  </figcaption>
 </figure>
 
 <h3 id="activation">Activation</h3>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/b07a9e88c704dee068f02ad5b4209899.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/b07a9e88c704dee068f02ad5b4209899.js"></script>
 </p>
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (4).png" width="80%" />
-  <figcaption>Figure 5. Visualzation of the activation (ReLU) layer's Output Values Distribution and the Output Value</figcaption>
+<img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (4).png" width="80%" />   <figcaption>
+Figure 5. Visualzation of the activation (ReLU) layer's Output Values Distribution and the Output Value
+  </figcaption>
 </figure>
 
 <h3 id="pooling">Pooling</h3>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/bd63d77214bede85f1645fac80c1273d.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/bd63d77214bede85f1645fac80c1273d.js"></script>
 </p>
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (5).png" width="80%" />
-  <figcaption>Figure 6. Visualzation of the Pooling layer's Output Values Distribution and the Output Value</figcaption>
+<img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (5).png" width="80%" />   <figcaption>
+Figure 6. Visualzation of the Pooling layer's Output Values Distribution and the Output Value
+  </figcaption>
 </figure>
 
 <h3 id="fully-connected">Fully Connected</h3>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/2a076dd09f8ccc2ee7513a63065bba80.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/2a076dd09f8ccc2ee7513a63065bba80.js"></script>
 </p>
 
 <h2 id="4-graph">4. Graph</h2>
 <p>Training a model requires proper loss object and optimizer. Also, we should set up graphs that can execute train step and test step using loss object and optimizer. In train step, we deploy the loss object to calculate the losses and optimizer to adjust weights variables. In test step, we implement loss object to clalulate the performance of the model and no optimizer.</p>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/d29c97ffd5c1c90bc8929fcab9a4d5c8.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/d29c97ffd5c1c90bc8929fcab9a4d5c8.js"></script>
 </p>
 
 <h2 id="5-train-evaluate">5. Train &amp; Evaluate</h2>
 <p>We can train the model and check the performance using the dataset and graphs prepared in the previous process.</p>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/7d03cc893c623050f2c8f70d8103ffe7.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/7d03cc893c623050f2c8f70d8103ffe7.js"></script>
 </p>
 
 <hr />
@@ -353,49 +348,45 @@ Lastly, we will use batch to control stability of the training [3]. Also, data d
 
 <h2 id="2-data-preprocess-1">2. Data preprocess</h2>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/7c10b669c3bb37bdc67f88319d289b1c.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/7c10b669c3bb37bdc67f88319d289b1c.js"></script>
 </p>
 
 <h2 id="3-model-1">3. Model</h2>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/cb044b69d00d46428994c0acb8581477.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/cb044b69d00d46428994c0acb8581477.js"></script>
 </p>
 
 <h2 id="optional-explanation-of-the-modelslayers">(Optional) Explanation of the model’s layers</h2>
 <h3 id="conv2d-1">Conv2d</h3>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/55a740e7ebde8aa3ffc4d90a2c2a2fa8.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/55a740e7ebde8aa3ffc4d90a2c2a2fa8.js"></script>
 </p>
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (6).png" width="80%" />
-  <figcaption>Figure 7. Visualzation of the Conv2d layer's Input, Weights, and Output. </figcaption>
+<img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (6).png" width="80%" />   <figcaption>
+Figure 7. Visualzation of the Conv2d layer's Input, Weights, and Output.
+  </figcaption>
 </figure>
 
 <h3 id="pooling-1">Pooling</h3>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/8e670553e9d4717074c030cbe4dccc60.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/8e670553e9d4717074c030cbe4dccc60.js"></script>
 </p>
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (7).png" width="80%" />
-  <figcaption>Figure 8. Visualzation of the Pooling layer's Input and Output.</figcaption>
+<img src="https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (7).png" width="80%" />   <figcaption>
+Figure 8. Visualzation of the Pooling layer's Input and Output.
+  </figcaption>
 </figure>
 
 <h3 id="fully-connected-1">Fully Connected</h3>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/3fed97e3a62e1fcccf6955a9ace5f323.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/3fed97e3a62e1fcccf6955a9ace5f323.js"></script>
 </p>
 
 <h2 id="4-train-evaluate">4. Train &amp; Evaluate</h2>
 
-<p align="center">
-<script src="https://gist.github.com/jhyun0919/0ed55ae6f1eb58961088f792eba03ff6.js"></script>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/0ed55ae6f1eb58961088f792eba03ff6.js"></script>
 </p>
 
 <h1 id="references">References</h1>
@@ -459,8 +450,8 @@ s.setAttribute('data-timestamp', +new Date());
 <!-- Post navigation -->
 
 
-    </div>
-    
+  </div>
+  
 <script src="/assets/js/katex_init.js"></script>
 
 
@@ -471,5 +462,17 @@ s.setAttribute('data-timestamp', +new Date());
 </footer>
 
 
-  </body>
+</body>
+
 </html>
+
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script> -->

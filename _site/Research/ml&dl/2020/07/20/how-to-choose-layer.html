@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
+<head>
 	<meta charset="utf-8">
 	<title>(TF) Which Layer Do I Need? | Park's Archive</title>
 	<meta name="description"
-		content="">
+		content="Full code can be found at the following github repository.  Park’s GitHub &gt; How to choose layer">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -55,7 +55,7 @@
 	</script>
 	
 </head>
-  <header class="site-header">
+<header class="site-header">
 	<div class="branding">
 		
 		<h1 class="site-title">
@@ -206,9 +206,10 @@
 
 	</header>
 
-  <body>
-    <div class="content">
-      <article >
+
+<body>
+  <div class="content">
+    <article >
   <header style="background-image: url('/')">
     <h1 class="title">(TF) Which Layer Do I Need?</h1>
     
@@ -217,7 +218,46 @@
       
     </p>
   </header>
-  <section class="post-content" style="width:66%; margin:0 auto;">
+  <section class="post-content" style="width:66%; margin:0 auto;"><p>Full code can be found at the following github repository.</p>
+<ul>
+  <li><a href="https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/MNIST/how%20to%20choose%20layer.ipynb">Park’s GitHub &gt; How to choose layer</a></li>
+</ul>
+
+<p>This post was written with reference to the following materials.</p>
+<ul>
+  <li><a href="https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/neural_network.ipynb">Aymeric Damien’s GitHub &gt; Neural Network Example</a></li>
+  <li><a href="https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/convolutional_network.ipynb">Aymeric Damien’s GitHub &gt; Convolutional Neural Network Example</a></li>
+  <li><a href="https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1">Irhum Shafkat’s Medium posting &gt; Intuitively Understanding Convolutions for Deep Learning</a></li>
+  <li><a href="https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/recurrent_network.ipynb">Aymeric Damien’s GitHub &gt; Recurrent Neural Network Example</a></li>
+  <li><a href="https://www.slideshare.net/JiHyunPark18/understanding-lstm-and-its-diagrams">Park’s SlideShare &gt; Understanding LSTM</a></li>
+</ul>
+
+<hr />
+<h2 id="dense-model">Dense Model</h2>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/ff71e7f4416a2add611074ad39888eab.js"></script>
+</p>
+
+<h2 id="cnn-model">CNN Model</h2>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/1043aeb7181b81ac0106d0bbcc0f74d3.js"></script>
+</p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif" width="60%" />   <figcaption>
+Figure 1. Visualization of how convolutional neural network layer works.
+  </figcaption>
+</figure>
+
+<h2 id="rnnlstm-model">RNN(LSTM) Model</h2>
+<p align="center">  <script src="https://gist.github.com/jhyun0919/f6d3f2c79049c74b6a74b6b792e20ba7.js"></script>
+</p>
+
+<h2 id="experiment-result">Experiment Result</h2>
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/tensorboard result.png" width="95%" />   <figcaption>
+Figure 2. Checking the validation result with tensorboard.
+  </figcaption>
+</figure>
+
 </section>
 
   <br>
@@ -267,8 +307,8 @@ s.setAttribute('data-timestamp', +new Date());
 <!-- Post navigation -->
 
 
-    </div>
-    
+  </div>
+  
 <script src="/assets/js/katex_init.js"></script>
 
 
@@ -279,5 +319,17 @@ s.setAttribute('data-timestamp', +new Date());
 </footer>
 
 
-  </body>
+</body>
+
 </html>
+
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script> -->
