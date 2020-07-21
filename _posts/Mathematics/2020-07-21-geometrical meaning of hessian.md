@@ -23,6 +23,8 @@ Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$
     <figcaption>Figure 1. Definition of Hessian matrix. [1]</figcaption>
 </figure>
 
+<br/>
+
 ## Geometric Meaning
 
 Before the explaination, it is known that all matrices can be considered as linear transformations. Likewise, we can think of a Hessian matrix as a linear transformation. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is to make a given function more convex or concave.
@@ -41,6 +43,8 @@ The things to note here are, the eigenvectors of the Hessian matrix represent th
     <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian gif 02.gif" width="90%" />
     <figcaption>Figure 3. Example of Hessian transform making the given function to a saddle shape function. [2]</figcaption>
 </figure>
+
+<br/>
 
 ## Applications
 
