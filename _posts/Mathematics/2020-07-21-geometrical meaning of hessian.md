@@ -25,19 +25,23 @@ Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$
     <figcaption>Figure 1. Hessian Matrix. [1]</figcaption>
 </figure>
 
+<figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian.png" width="95%" />
+  <figcaption>Figure 1. Hessian Matrix. [1]</figcaption>
+</figure>
 
 
 
 
 ## Geometrical Meaning
 <figure align="center">
-    <img src="../../images/9fc28ff8bddf96a88f25c3c572628c727f09d21b54e7713e9c2b3d3398e8bbf3.png" width="80%"/>
-    <figcaption>Figure 2. Hessian Matrix. [2]</figcaption>
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian gif 01.gif" width="95%" />
+  <figcaption>Figure 2. . [2]</figcaption>
 </figure>
 
 <figure align="center">
-    <img src="../../images/343e29c8f3b61005203b2d42ccaaf07bc56659ba78834a868cc9646e63dd3d06.png" width="80%"/>
-    <figcaption>Figure 3. Hessian Matrix. [2]</figcaption>
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian gif 02.png" width="95%" />
+  <figcaption>Figure 3. . [2]</figcaption>
 </figure>
 
 
@@ -47,8 +51,14 @@ Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$
 
 ## Applications
 
+<figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/application.png" width="95%" />
+  <figcaption>Figure 4. Hessian's Applicaiton: Vessel Detection. [3]</figcaption>
+</figure>
+
 ---
 
 ## References
 [1] “Hessian matrix,” Wikipedia, 24-Jun-2020. [Online]. Available: https://en.wikipedia.org/wiki/Hessian_matrix. [Accessed: 21-Jul-2020].
 [2] Y. D. Yeo, “Geometrical meaning of Hessian Matrix,” 17-Jun-2020. [Online]. Available: https://angeloyeo.github.io/2020/06/17/Hessian.html. [Accessed: 21-Jul-2020].
+[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].
