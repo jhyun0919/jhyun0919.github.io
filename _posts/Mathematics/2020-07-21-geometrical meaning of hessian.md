@@ -19,14 +19,8 @@ In mathematics, the Hessian matrix or Hessian is a square matrix of second-order
 
 Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$ and outputting a scalar $f(x) ∈ ℝ$. If all second partial derivatives of $f$ exist and are continuous over the domain of the function, then the Hessian matrix $H$ of $f$ is a square n×n matrix, usually defined and arranged as follows; [1]
 
-
 <figure align="center">
-    <img src="../../images/81b2fef87985859ed36491fd79bec6cf16b500cb8f06daa32bad9a09a35c8c68.png" width="60%"/>
-    <figcaption>Figure 1. Hessian Matrix. [1]</figcaption>
-</figure>
-
-<figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian.png" width="95%" />
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian.png" width="60%" />
   <figcaption>Figure 1. Hessian Matrix. [1]</figcaption>
 </figure>
 
@@ -35,12 +29,12 @@ Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$
 
 ## Geometrical Meaning
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian gif 01.gif" width="95%" />
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian gif 01.gif" width="90%" />
   <figcaption>Figure 2. . [2]</figcaption>
 </figure>
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian gif 02.png" width="95%" />
+  <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/hessian gif 02.gif" width="90%" />
   <figcaption>Figure 3. . [2]</figcaption>
 </figure>
 
@@ -52,8 +46,9 @@ Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$
 ## Applications
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/application.png" width="95%" />
-  <figcaption>Figure 4. Hessian's Applicaiton: Vessel Detection. [3]</figcaption>
+    <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/application 01.png" width="60%" />
+    <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometrical meaning of hessian/application 02.png" width="60%" />
+  <figcaption>Figure 4. Hessian's Applicaiton: Vessel Detection. [2,3]</figcaption>
 </figure>
 
 ---
