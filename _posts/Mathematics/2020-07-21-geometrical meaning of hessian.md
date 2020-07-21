@@ -31,7 +31,9 @@ Before the explaination, it is known that all matrices can be considered as line
 
 Let's look at Hessian's geometric meaning in detail through examples.
 The Hessian matrices corresponding to Figure 2 and 3 are as follow;
-$$\begin{bmatrix}2 & 1\\1 & 2\\\end{bmatrix} and \begin{bmatrix}2 & 0\\0 & -2\\\end{bmatrix}.$$
+
+$\begin{bmatrix}2 & 1\\1 & 2\\\end{bmatrix} and \begin{bmatrix}2 & 0\\0 & -2\\\end{bmatrix}.$
+
 The things to note here are, the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation. More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, in case of if some of the eigenvalues are positive and some are negative (Figure 3), the given function is converted to a saddle shape. In simple terms, by using the main feature of the geometric transformation shown by Hessian, we could maximize the gradient change of a given function.
 
 <figure align="center">
