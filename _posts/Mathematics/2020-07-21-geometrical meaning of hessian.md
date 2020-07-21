@@ -39,7 +39,7 @@ Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$
 
 
 
-### Meaning of Hessian's Eigenvalues and Eigenvectors
+## Meaning of Hessian's Eigenvalues and Eigenvectors
 
 The eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation.
 
