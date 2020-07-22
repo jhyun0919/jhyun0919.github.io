@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Geometric Meaning of Hessian Matrix | Park's Archive</title>
 	<meta name="description"
-		content="Starting with the definition of Hessian Matrix, this post will focus on the geometric meaning of Hessian matrix. Also, we will descuss about eigenvalues and ...">
+		content="Starting with the definition of the Hessian Matrix, this post will focus on the geometric meaning of the Hessian matrix. Also, we will discuss the eigenvalue...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -218,7 +218,7 @@
       
     </p>
   </header>
-  <section class="post-content" style="width:66%; margin:0 auto;"><p>Starting with the definition of Hessian Matrix, this post will focus on the geometric meaning of Hessian matrix. Also, we will descuss about eigenvalues and eigenvector of Hessian, and introduce the application of Hessian.</p>
+  <section class="post-content" style="width:66%; margin:0 auto;"><p>Starting with the definition of the Hessian Matrix, this post will focus on the geometric meaning of the Hessian matrix. Also, we will discuss the eigenvalues and eigenvectors of the Hessian and introduce the application of it.</p>
 
 <p>This post was written with reference to the following materials.</p>
 <ul>
@@ -244,15 +244,15 @@ Figure 1. Definition of Hessian matrix. [1]
 
 <h2 id="geometric-meaning">Geometric Meaning</h2>
 
-<p>Before the explaination, it is known that all matrices can be considered as linear transformations. Likewise, we can think of a Hessian matrix as a linear transformation. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is to make a given function more convex or concave.</p>
+<p>First of all, it is well known that <strong>all matrices can be considered as linear transformations</strong>. Likewise, we can think of <strong>a Hessian matrix as a linear transformation</strong>. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is <strong>to make a given function more convex or concave</strong>.</p>
 
-<p>Let’s look at Hessian’s geometric meaning in detail through examples.
+<p>Let’s look at the Hessian’s geometric meaning in detail through examples.
 The Hessian matrices corresponding to Figure 2 and 3 are as follow;</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{bmatrix}2 & 1\\1 & 2\\\end{bmatrix} and \begin{bmatrix}2 & 0\\0 & -2\\\end{bmatrix}. %]]></script>
 
-<p>The things to note here are, the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation. More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, in case of if some of the eigenvalues are positive and some are negative (Figure 3), the given function is converted to a saddle shape. In simple terms, by using the main feature of the geometric transformation shown by Hessian, we could maximize the gradient change of a given function.</p>
+<p>The things to note here are, <strong>the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation.</strong> More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, if some of the eigenvalues are positive, and some are negative (Figure 3), the given function is converted to a saddle shape. To recapitulate, <strong>by using the main feature of the geometric transformation shown by the Hessian, we could emphasize the gradient change of the given function.</strong></p>
 
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian gif 01.gif" width="90%" />   <figcaption>
@@ -270,7 +270,7 @@ Figure 3. Example of Hessian transform making the given function to a saddle sha
 
 <h2 id="applications">Applications</h2>
 
-<p>Using the feature that the Hessian emphasizes the gradient, it can be used as a filter that detects the contour (edge) of a specific object in a given image, which is considered as a function. Figure 4 shows the description of edge detection and Hessian’s eigenvalues, and Figure 5 shows an application detecting the vessel using Hessian.</p>
+<p>Using the feature that the Hessian emphasizes the gradient change, it can be used as a filter that detects the contour (edge) of a specific object in a given image, which is considered as a function at this point. Figure 4 shows the description of edge detection and the Hessian’s eigenvalues, and Figure 5 shows an application detecting the vessel using the Hessian.</p>
 
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/application 02.png" width="60%" />   <figcaption>

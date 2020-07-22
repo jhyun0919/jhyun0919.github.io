@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>(TF) Basic Steps for Training a Model | Park's Archive</title>
 	<meta name="description"
-		content="TesorFlow is one of the most well-known deep learning frameworks. This post will describe the basic steps for traing a model with Tensorflow. Briefly, the ba...">
+		content="TesorFlow is one of the most well-known deep learning frameworks. This post will describe the basic steps for training a model with Tensorflow. Briefly, the ...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -218,14 +218,15 @@
       
     </p>
   </header>
-  <section class="post-content" style="width:66%; margin:0 auto;"><p>TesorFlow is one of the most well-known deep learning frameworks. This post will describe the basic steps for traing a model with Tensorflow. Briefly, the basic steps for how to train a model through TensorFlow are as follow.</p>
+  <section class="post-content" style="width:66%; margin:0 auto;"><p>TesorFlow is one of the most well-known deep learning frameworks. This post will describe the basic steps for training a model with Tensorflow. Briefly, the basic steps for how to train a model through TensorFlow are as follow.</p>
 
-<ul>
-  <li>Data pre-process</li>
-  <li>Set up a Model</li>
-  <li>Set up an Optimizer, a Loss function, &amp; Metrics</li>
-  <li>Compile, Fit, &amp; Evaluate the Model</li>
-</ul>
+<ol>
+  <li>Load &amp; pre-process the dataset</li>
+  <li>Set a model</li>
+  <li>Compile the model - set an optimizer, a loss function, &amp; metrics</li>
+  <li>Fit the model</li>
+  <li>Evaluate the model</li>
+</ol>
 
 <p>Full code can be found at the following github repository.</p>
 <ul>
@@ -240,37 +241,66 @@
 </ul>
 
 <hr />
-<h2 id="1-load--pre-process-the-dataset">1. Load &amp; pre-process the dataset</h2>
-<p align="center">  <script src="https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js"></script>
-</p>
+<h1 id="1-load--pre-process-the-dataset">1. Load &amp; pre-process the dataset</h1>
 
-<h2 id="2-set-up-a-model">2. Set up a model</h2>
+<p>For the experiment to show the basic process of training a model with TensorFlow, we used the MNIST dataset. The given images are a grayscale, so we need a preprocessing process to scale the image data features from 0 to 1.</p>
+
+<p align="center">  <script src="https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js"></script>
+<br /></p>
+
+<h1 id="2-set-a-model">2. Set a model</h1>
+
+<p>In this step, we designed the structure of a model. The model in this experiment was relatively simple, so it could be easier to construct the model using <a href="https://www.tensorflow.org/api_docs/python/tf/keras/Sequential">tf.keras.Sequential</a>. However, we use custumized model for the experiment. This is because a custumized model must be used when constructing a more complex model in the future, and it is necessary to become familiar with it. More specifically, in case of the model becomes complicated and the input features do not flow sequentially, the model must be constructed in a custum manner. <a href="https://www.tensorflow.org/tutorials/text/transformer">Transformer model</a> is a good example.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/36bc28aa8f6e9005494d40603cccd5e7.js"></script>
-</p>
+<br /></p>
 
 <h2 id="optional-set-callbacks">(optional) Set callbacks</h2>
-<h3 id="checkpoint">checkpoint</h3>
+<h2 id="checkpoint">checkpoint</h2>
+
+<p>We set <em>checkpoint</em> callback to record the training process of the model.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/e5a2c5bc5d9f9634c2d97ee93c998c52.js"></script>
-</p>
+<br /></p>
 
-<h3 id="tensorboard">tensorboard</h3>
+<h2 id="tensorboard">tensorboard</h2>
+
+<p>We set <em>tensorboard</em> callback to visualize the training process and strucutre of the model.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/b8688659e5d183e5d82863d0972fc16d.js"></script>
-</p>
+<br /></p>
 
-<h3 id="reduce-learning-rate">reduce learning rate</h3>
+<h2 id="reduce-learning-rate">reduce learning rate</h2>
+
+<p>We set <em>reduce-learning-rate</em> callback for better training result of the model.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/cfea4379c657f506dd3dbf7d4f0adc3d.js"></script>
-</p>
+<br /></p>
 
-<h2 id="3-set-optimizer-loss-function--metrics">3. Set optimizer, loss function, &amp; metrics</h2>
+<h1 id="3-compile-the-model">3. Compile the model</h1>
+<h2 id="set-optimizer-loss-function--metrics">Set optimizer, loss function, &amp; metrics</h2>
+
+<p>After constructing the model, you need to set the learning process by calling the <em>compile method</em>. Compile method has three important parameters; <em>optimizer, loss, and metrics</em>.</p>
+
+<p>The <em>optimizer</em> sets up the training process. The <em>loss</em> sets the loss function to be minimized during the optimization process. The <em>metrics</em> are used to monitor training. These should be set differently depending on the type of feature data and the purpose of the model.</p>
+
+<p>The model was compiled using the set optimizer, loss, and metrics.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/0f16de0b5385716af46692a163dc51dd.js"></script>
-</p>
+   <script src="https://gist.github.com/jhyun0919/a5546b9e76e294ecc1362665cca1d048.js"></script>
+<br /></p>
 
-<h2 id="4-compile--fit-the-model">4. Compile &amp; Fit the model</h2>
-<p align="center">  <script src="https://gist.github.com/jhyun0919/a5546b9e76e294ecc1362665cca1d048.js"></script>
-   <script src="https://gist.github.com/jhyun0919/bbc01cdfc18a32a1afe05c30ef846ccf.js"></script>
-</p>
+<h1 id="4-fit-the-model">4. Fit the model</h1>
+
+<p>We conducted training using the preprocessed dataset and the compiled model.</p>
+
+<p align="center">  <script src="https://gist.github.com/jhyun0919/bbc01cdfc18a32a1afe05c30ef846ccf.js"></script>
+<br /></p>
 
 <h2 id="optional-check-the-training-process-via-tensorboard">(Optional) Check the training process via tensorboard</h2>
+
+<p>Through the tensorboard callback set in the previous step, we visualized the training process and the model graph. Figure 1 shows the training process of the model.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/e196847e8797b94e947fb43081c69014.js"></script>
 </p>
 
@@ -279,12 +309,19 @@
 Figure 1. Checking the training process with tensorboard.
   </figcaption>
 </figure>
+<p><br /></p>
 
 <h2 id="optional-load-the-best-weights">(Optional) Load the best weights</h2>
-<p align="center">  <script src="https://gist.github.com/jhyun0919/e08262f64e42a6897de8cb360a7f3533.js"></script>
-</p>
 
-<h2 id="5-evaluate-the-model">5. Evaluate the model</h2>
+<p>Through the checkpoint callback set in the previous step, we loaded the weights showing the best performance.</p>
+
+<p align="center">  <script src="https://gist.github.com/jhyun0919/e08262f64e42a6897de8cb360a7f3533.js"></script>
+<br /></p>
+
+<h1 id="5-evaluate-the-model">5. Evaluate the model</h1>
+
+<p>As a final step, we evaluated the performance of the model using the test dataset.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/b83301942dc8f6ac7facbeafe47c0eb4.js"></script>
 </p>
 </section>

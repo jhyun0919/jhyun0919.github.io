@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Wed, 22 Jul 2020 00:07:00 +0900</pubDate>
+    <pubDate>Wed, 22 Jul 2020 15:03:56 +0900</pubDate>
     
       <item>
         <title>(TF) Transformer model for language understanding</title>
@@ -20,7 +20,7 @@
         <title>Geometric Meaning of Hessian Matrix</title>
         <link>/research/mathematics/2020/07/21/geometric-meaning-of-hessian.html</link>
         <guid isPermaLink="true">/research/mathematics/2020/07/21/geometric-meaning-of-hessian.html</guid>
-        <description>&lt;p&gt;Starting with the definition of Hessian Matrix, this post will focus on the geometric meaning of Hessian matrix. Also, we will descuss about eigenvalues and eigenvector of Hessian, and introduce the application of Hessian.&lt;/p&gt;
+        <description>&lt;p&gt;Starting with the definition of the Hessian Matrix, this post will focus on the geometric meaning of the Hessian matrix. Also, we will discuss the eigenvalues and eigenvectors of the Hessian and introduce the application of it.&lt;/p&gt;
 
 &lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
 &lt;ul&gt;
@@ -46,15 +46,15 @@ Figure 1. Definition of Hessian matrix. [1]
 
 &lt;h2 id=&quot;geometric-meaning&quot;&gt;Geometric Meaning&lt;/h2&gt;
 
-&lt;p&gt;Before the explaination, it is known that all matrices can be considered as linear transformations. Likewise, we can think of a Hessian matrix as a linear transformation. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is to make a given function more convex or concave.&lt;/p&gt;
+&lt;p&gt;First of all, it is well known that &lt;strong&gt;all matrices can be considered as linear transformations&lt;/strong&gt;. Likewise, we can think of &lt;strong&gt;a Hessian matrix as a linear transformation&lt;/strong&gt;. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is &lt;strong&gt;to make a given function more convex or concave&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Let’s look at Hessian’s geometric meaning in detail through examples.
+&lt;p&gt;Let’s look at the Hessian’s geometric meaning in detail through examples.
 The Hessian matrices corresponding to Figure 2 and 3 are as follow;&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{bmatrix}2 &amp; 1\\1 &amp; 2\\\end{bmatrix} and \begin{bmatrix}2 &amp; 0\\0 &amp; -2\\\end{bmatrix}. %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;The things to note here are, the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation. More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, in case of if some of the eigenvalues are positive and some are negative (Figure 3), the given function is converted to a saddle shape. In simple terms, by using the main feature of the geometric transformation shown by Hessian, we could maximize the gradient change of a given function.&lt;/p&gt;
+&lt;p&gt;The things to note here are, &lt;strong&gt;the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation.&lt;/strong&gt; More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, if some of the eigenvalues are positive, and some are negative (Figure 3), the given function is converted to a saddle shape. To recapitulate, &lt;strong&gt;by using the main feature of the geometric transformation shown by the Hessian, we could emphasize the gradient change of the given function.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian gif 01.gif&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
@@ -72,7 +72,7 @@ Figure 3. Example of Hessian transform making the given function to a saddle sha
 
 &lt;h2 id=&quot;applications&quot;&gt;Applications&lt;/h2&gt;
 
-&lt;p&gt;Using the feature that the Hessian emphasizes the gradient, it can be used as a filter that detects the contour (edge) of a specific object in a given image, which is considered as a function. Figure 4 shows the description of edge detection and Hessian’s eigenvalues, and Figure 5 shows an application detecting the vessel using Hessian.&lt;/p&gt;
+&lt;p&gt;Using the feature that the Hessian emphasizes the gradient change, it can be used as a filter that detects the contour (edge) of a specific object in a given image, which is considered as a function at this point. Figure 4 shows the description of edge detection and the Hessian’s eigenvalues, and Figure 5 shows an application detecting the vessel using the Hessian.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/application 02.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
@@ -152,12 +152,13 @@ Figure 2. Checking the validation result with tensorboard.
         <guid isPermaLink="true">/research/ml&dl/2020/07/19/pytorch-basic-structure.html</guid>
         <description>&lt;p&gt;PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic steps for traing a model with PyTorch. Briefly, the basic steps of how to train a model are as follow.&lt;/p&gt;
 
-&lt;ul&gt;
+&lt;ol&gt;
   &lt;li&gt;Load &amp;amp; pre-process the dataset&lt;/li&gt;
-  &lt;li&gt;Set up a model&lt;/li&gt;
+  &lt;li&gt;Set a model&lt;/li&gt;
   &lt;li&gt;Set an optimizer &amp;amp; a loss function&lt;/li&gt;
-  &lt;li&gt;Train &amp;amp; Evaluate the model&lt;/li&gt;
-&lt;/ul&gt;
+  &lt;li&gt;Train the model&lt;/li&gt;
+  &lt;li&gt;Evaluate the model&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
 &lt;ul&gt;
@@ -176,7 +177,7 @@ Figure 2. Checking the validation result with tensorboard.
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&quot;2-set-up-a-model&quot;&gt;2. Set up a model&lt;/h2&gt;
+&lt;h2 id=&quot;2-set-a-model&quot;&gt;2. Set a model&lt;/h2&gt;
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
@@ -209,14 +210,15 @@ Figure 2. Checking the validation result with tensorboard.
         <title>(TF) Basic Steps for Training a Model</title>
         <link>/research/ml&dl/2020/07/18/tf-basic-structure.html</link>
         <guid isPermaLink="true">/research/ml&dl/2020/07/18/tf-basic-structure.html</guid>
-        <description>&lt;p&gt;TesorFlow is one of the most well-known deep learning frameworks. This post will describe the basic steps for traing a model with Tensorflow. Briefly, the basic steps for how to train a model through TensorFlow are as follow.&lt;/p&gt;
+        <description>&lt;p&gt;TesorFlow is one of the most well-known deep learning frameworks. This post will describe the basic steps for training a model with Tensorflow. Briefly, the basic steps for how to train a model through TensorFlow are as follow.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Data pre-process&lt;/li&gt;
-  &lt;li&gt;Set up a Model&lt;/li&gt;
-  &lt;li&gt;Set up an Optimizer, a Loss function, &amp;amp; Metrics&lt;/li&gt;
-  &lt;li&gt;Compile, Fit, &amp;amp; Evaluate the Model&lt;/li&gt;
-&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;Load &amp;amp; pre-process the dataset&lt;/li&gt;
+  &lt;li&gt;Set a model&lt;/li&gt;
+  &lt;li&gt;Compile the model - set an optimizer, a loss function, &amp;amp; metrics&lt;/li&gt;
+  &lt;li&gt;Fit the model&lt;/li&gt;
+  &lt;li&gt;Evaluate the model&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
 &lt;ul&gt;
@@ -231,37 +233,66 @@ Figure 2. Checking the validation result with tensorboard.
 &lt;/ul&gt;
 
 &lt;hr /&gt;
-&lt;h2 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+&lt;h1 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h1&gt;
 
-&lt;h2 id=&quot;2-set-up-a-model&quot;&gt;2. Set up a model&lt;/h2&gt;
+&lt;p&gt;For the experiment to show the basic process of training a model with TensorFlow, we used the MNIST dataset. The given images are a grayscale, so we need a preprocessing process to scale the image data features from 0 to 1.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;2-set-a-model&quot;&gt;2. Set a model&lt;/h1&gt;
+
+&lt;p&gt;In this step, we designed the structure of a model. The model in this experiment was relatively simple, so it could be easier to construct the model using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/Sequential&quot;&gt;tf.keras.Sequential&lt;/a&gt;. However, we use custumized model for the experiment. This is because a custumized model must be used when constructing a more complex model in the future, and it is necessary to become familiar with it. More specifically, in case of the model becomes complicated and the input features do not flow sequentially, the model must be constructed in a custum manner. &lt;a href=&quot;https://www.tensorflow.org/tutorials/text/transformer&quot;&gt;Transformer model&lt;/a&gt; is a good example.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/36bc28aa8f6e9005494d40603cccd5e7.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;optional-set-callbacks&quot;&gt;(optional) Set callbacks&lt;/h2&gt;
-&lt;h3 id=&quot;checkpoint&quot;&gt;checkpoint&lt;/h3&gt;
+&lt;h2 id=&quot;checkpoint&quot;&gt;checkpoint&lt;/h2&gt;
+
+&lt;p&gt;We set &lt;em&gt;checkpoint&lt;/em&gt; callback to record the training process of the model.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e5a2c5bc5d9f9634c2d97ee93c998c52.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;tensorboard&quot;&gt;tensorboard&lt;/h3&gt;
+&lt;h2 id=&quot;tensorboard&quot;&gt;tensorboard&lt;/h2&gt;
+
+&lt;p&gt;We set &lt;em&gt;tensorboard&lt;/em&gt; callback to visualize the training process and strucutre of the model.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b8688659e5d183e5d82863d0972fc16d.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;reduce-learning-rate&quot;&gt;reduce learning rate&lt;/h3&gt;
+&lt;h2 id=&quot;reduce-learning-rate&quot;&gt;reduce learning rate&lt;/h2&gt;
+
+&lt;p&gt;We set &lt;em&gt;reduce-learning-rate&lt;/em&gt; callback for better training result of the model.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/cfea4379c657f506dd3dbf7d4f0adc3d.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;3-set-optimizer-loss-function--metrics&quot;&gt;3. Set optimizer, loss function, &amp;amp; metrics&lt;/h2&gt;
+&lt;h1 id=&quot;3-compile-the-model&quot;&gt;3. Compile the model&lt;/h1&gt;
+&lt;h2 id=&quot;set-optimizer-loss-function--metrics&quot;&gt;Set optimizer, loss function, &amp;amp; metrics&lt;/h2&gt;
+
+&lt;p&gt;After constructing the model, you need to set the learning process by calling the &lt;em&gt;compile method&lt;/em&gt;. Compile method has three important parameters; &lt;em&gt;optimizer, loss, and metrics&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;optimizer&lt;/em&gt; sets up the training process. The &lt;em&gt;loss&lt;/em&gt; sets the loss function to be minimized during the optimization process. The &lt;em&gt;metrics&lt;/em&gt; are used to monitor training. These should be set differently depending on the type of feature data and the purpose of the model.&lt;/p&gt;
+
+&lt;p&gt;The model was compiled using the set optimizer, loss, and metrics.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/0f16de0b5385716af46692a163dc51dd.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+   &lt;script src=&quot;https://gist.github.com/jhyun0919/a5546b9e76e294ecc1362665cca1d048.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;4-compile--fit-the-model&quot;&gt;4. Compile &amp;amp; Fit the model&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/a5546b9e76e294ecc1362665cca1d048.js&quot;&gt;&lt;/script&gt;
-   &lt;script src=&quot;https://gist.github.com/jhyun0919/bbc01cdfc18a32a1afe05c30ef846ccf.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+&lt;h1 id=&quot;4-fit-the-model&quot;&gt;4. Fit the model&lt;/h1&gt;
+
+&lt;p&gt;We conducted training using the preprocessed dataset and the compiled model.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/bbc01cdfc18a32a1afe05c30ef846ccf.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;optional-check-the-training-process-via-tensorboard&quot;&gt;(Optional) Check the training process via tensorboard&lt;/h2&gt;
+
+&lt;p&gt;Through the tensorboard callback set in the previous step, we visualized the training process and the model graph. Figure 1 shows the training process of the model.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e196847e8797b94e947fb43081c69014.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
@@ -270,12 +301,19 @@ Figure 2. Checking the validation result with tensorboard.
 Figure 1. Checking the training process with tensorboard.
   &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;optional-load-the-best-weights&quot;&gt;(Optional) Load the best weights&lt;/h2&gt;
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e08262f64e42a6897de8cb360a7f3533.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
 
-&lt;h2 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h2&gt;
+&lt;p&gt;Through the checkpoint callback set in the previous step, we loaded the weights showing the best performance.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e08262f64e42a6897de8cb360a7f3533.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h1&gt;
+
+&lt;p&gt;As a final step, we evaluated the performance of the model using the test dataset.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b83301942dc8f6ac7facbeafe47c0eb4.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 </description>
