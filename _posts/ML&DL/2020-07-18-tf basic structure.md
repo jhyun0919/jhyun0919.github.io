@@ -9,7 +9,7 @@ TesorFlow is one of the most well-known deep learning frameworks. This post will
 
 1. Load & pre-process the dataset
 2. Set a model
-3. Compile the model - set an optimizer, a loss function, & metrics
+3. Compile the model : set an optimizer, a loss function, & metrics
 4. Fit the model
 5. Evaluate the model
 
