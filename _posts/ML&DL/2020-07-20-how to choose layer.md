@@ -2,7 +2,7 @@
 layout: post
 title: (TF) Which Layer Do I Need?
 categories: [Research/ML&DL]
-tags: [ML&DL, MNIST]
+tags: [ML&DL, MNIST, CNN, RNN]
 ---
 
 The structure of the deep learning model is designed differently depending on the types of data features and the objective of the model. More specifically, in order to select the type of layer used in the model, the characteristics of data features and the learning objectives of the model must be considered.
@@ -48,6 +48,7 @@ This model consisted of convolutional layers. This model is suitable when there 
   <figcaption>Figure 1. Visualization of how the convolutional neural network layer works [1].</figcaption>
 </figure>
 <br/>
+
 
 ## RNN(LSTM) Model
 
