@@ -241,32 +241,46 @@
 
 <hr />
 
-<h2 id="1-load--pre-process-the-dataset">1. Load &amp; pre-process the dataset</h2>
+<h1 id="1-load--pre-process-the-dataset">1. Load &amp; pre-process the dataset</h1>
+
+<p>We used the <em>FashionMNIST</em> dataset for the experiment. The dataset can be downloaded through <em>torchvision.datasets</em>, and preprocessing can be performed through <em>transforms.Compose</em>.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js"></script>
-</p>
+<br /></p>
 
-<h2 id="2-set-a-model">2. Set a model</h2>
+<h1 id="2-set-a-model">2. Set a model</h1>
+
+<p>We constructed a simple convolutional neural network model.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js"></script>
-</p>
+<br /></p>
 
-<h2 id="3-set-optimizer--loss-function">3. Set optimizer &amp; loss function</h2>
+<h1 id="3-set-optimizer--loss-function">3. Set optimizer &amp; loss function</h1>
+
+<p>We set the optimizer and loss function to train the model constructed in the previous step. The optimizer and loss function types were selected according to the type of the features of the given input data and the purpose of the model.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js"></script>
-</p>
+<br /></p>
 
-<h2 id="4-train-the-model">4. Train the model</h2>
+<h1 id="4-train-the-model">4. Train the model</h1>
+
+<p>In order to train a model, we must follow the following 5 steps.</p>
 
 <ol>
-  <li>init the Gradient</li>
+  <li>initialize the gradient</li>
   <li>forward propagation</li>
   <li>calculate the loss</li>
   <li>backward propagation</li>
-  <li>optimize (update) the weights</li>
+  <li>optimize (update) the weights based on forward &amp; backward propagation</li>
 </ol>
 
 <p align="center">  <script src="https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js"></script>
-</p>
+<br /></p>
 
-<h2 id="5-evaluate-the-model">5. Evaluate the model</h2>
+<h1 id="5-evaluate-the-model">5. Evaluate the model</h1>
+
+<p>We used the validation dataset to measure the performance of the completed training model. Note that the evaluate process is very similar to the training process. However, in the evaluate process, <em>torch.no_grad()</em> is required because the weights must never change.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js"></script>
 </p>
 

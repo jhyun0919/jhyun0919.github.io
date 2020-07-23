@@ -5,7 +5,16 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Wed, 22 Jul 2020 15:03:56 +0900</pubDate>
+    <pubDate>Thu, 23 Jul 2020 13:02:47 +0900</pubDate>
+    
+      <item>
+        <title>(TF) Transformer model for optimal power flow - part. 1</title>
+        <link>/research/ml&dl/2020/07/23/transformer-&-opf-part-1.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2020/07/23/transformer-&-opf-part-1.html</guid>
+        <description>
+</description>
+        <pubDate>Thu, 23 Jul 2020 00:00:00 +0900</pubDate>
+      </item>
     
       <item>
         <title>(TF) Transformer model for language understanding</title>
@@ -102,7 +111,11 @@ Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]
         <title>(TF) Which Layer Do I Need?</title>
         <link>/research/ml&dl/2020/07/20/how-to-choose-layer.html</link>
         <guid isPermaLink="true">/research/ml&dl/2020/07/20/how-to-choose-layer.html</guid>
-        <description>&lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
+        <description>&lt;p&gt;The structure of the deep learning model is designed differently depending on the types of data features and the objective of the model. More specifically, in order to select the type of layer used in the model, the characteristics of data features and the learning objectives of the model must be considered.&lt;/p&gt;
+
+&lt;p&gt;In order to find out which structure is most suitable, we experimented with fixing the type of dataset and the target of the model and changing the structure of the model. The dataset used in the experiment is MNIST. The types of models used in the experiment were as follows; &lt;em&gt;DenseNet&lt;/em&gt; using only &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense&quot;&gt;dense layer&lt;/a&gt;, &lt;em&gt;ConvNet&lt;/em&gt; using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/Conv2D&quot;&gt;convolutional layer&lt;/a&gt;, and &lt;em&gt;LstmNet&lt;/em&gt; using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM&quot;&gt;LSTM layer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Full code of the experiments can be found at the following github repository.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/MNIST/how%20to%20choose%20layer.ipynb&quot;&gt;Park’s GitHub &amp;gt; How to choose layer&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -113,35 +126,102 @@ Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]
   &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/convolutional_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Convolutional Neural Network Example&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1&quot;&gt;Irhum Shafkat’s Medium posting &amp;gt; Intuitively Understanding Convolutions for Deep Learning&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/recurrent_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Recurrent Neural Network Example&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn&quot;&gt;Simplilearn &amp;gt; Recurrent Neural Network Tutorial&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.slideshare.net/JiHyunPark18/understanding-lstm-and-its-diagrams&quot;&gt;Park’s SlideShare &amp;gt; Understanding LSTM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
+&lt;h1 id=&quot;model-structures&quot;&gt;Model Structures&lt;/h1&gt;
 &lt;h2 id=&quot;dense-model&quot;&gt;Dense Model&lt;/h2&gt;
+
+&lt;p&gt;This model consisted only of dense layers. This is the simplest model of the neural network and works well for all types of data, but performance decreases when an input data becomes complicated or large. Therefore, dense layers are used in learning simple data. In addition, in the case of learning complex data, dense layers are used in the last part of the model, which is the stage where features are extracted and get simple enough.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/ff71e7f4416a2add611074ad39888eab.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;cnn-model&quot;&gt;CNN Model&lt;/h2&gt;
+
+&lt;p&gt;This model consisted of convolutional layers. This model is suitable when there are spatial relationship across the data. Figure 1 depicts how a convolutional layer works, and it helps understand why this model works well when there are spatial relationship across data.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/1043aeb7181b81ac0106d0bbcc0f74d3.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1. Visualization of how convolutional neural network layer works.
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif&quot; width=&quot;50%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Visualization of how the convolutional neural network layer works [1].
   &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;rnnlstm-model&quot;&gt;RNN(LSTM) Model&lt;/h2&gt;
+
+&lt;p&gt;This model consisted of LSTM layers. This model is suitable when there are temporal (sequential) relationship across the data. Figure 2 depicts how a LSTM layer works, and it helps understand why this model works well when there are temporal relationship across data.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/f6d3f2c79049c74b6a74b6b792e20ba7.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&quot;experiment-result&quot;&gt;Experiment Result&lt;/h2&gt;
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/rnn visualized.gif&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
+Figure 2. Visualization of how the recurrent neural network layer works [2].
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;experiment-result&quot;&gt;Experiment Result&lt;/h1&gt;
+
+&lt;p&gt;As a result of the experiment, the CNN model using a convolutional layer showed the highest performance for learning MNIST image data. Direct comparison was not possible because the number of trainable parameters differed for each model, but the result was obtained by adjusting hyper-parameters to obtain the best performance for each model.&lt;/p&gt;
+
+&lt;p&gt;To sum up, we have confirmed that it is best to use a convolutional layer when learning MNIST image data.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Accuracy&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Loss&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;DenseNet&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.9556&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1.5092&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;ConvNet&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;0.9817&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;1.4793&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;LstmNet&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.9603&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1.5015&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/tensorboard result.png&quot; width=&quot;95%&quot; /&gt;   &lt;figcaption&gt;
 Figure 2. Checking the validation result with tensorboard.
   &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;h1 id=&quot;future-study&quot;&gt;Future Study&lt;/h1&gt;
+
+&lt;p&gt;In some cases, such as image data or stock data, we can know the nature of the feature data in advance and use the CNN or RNN layers respectively. However, it is difficult to fully understand the charactieristic of completely new feature data. In this case, it is difficult to make assumptions about the temporal/spatial relationships across the data. As a result, it is not easy to decide which layer to use.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/text/transformer&quot;&gt;Transformer&lt;/a&gt; is a model designed to solve this problem. Transformer is a model based on attention, it make no assumptions about the temporal/spatial relationships across the data [3]. In the next posting, we will discuss the structure and application of the Transformer.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+
+&lt;p&gt;[1]I. Shafkat, “Intuitively Understanding Convolutions for Deep Learning,” Medium, 07-Jun-2018. [Online]. Available: https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1. [Accessed: 23-Jul-2020].&lt;/p&gt;
+
+&lt;p&gt;[2] A. Biswal, “Recurrent Neural Network Tutorial,” Simplilearn.com, 28-Apr-2020. [Online]. Available: https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn. [Accessed: 23-Jul-2020].&lt;/p&gt;
+
+&lt;p&gt;[3] “Transformer model for language understanding : TensorFlow Core,” TensorFlow. [Online]. Available: https://www.tensorflow.org/tutorials/text/transformer. [Accessed: 23-Jul-2020].&lt;/p&gt;
 </description>
         <pubDate>Mon, 20 Jul 2020 00:00:00 +0900</pubDate>
       </item>
@@ -173,32 +253,46 @@ Figure 2. Checking the validation result with tensorboard.
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h2&gt;
+&lt;h1 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h1&gt;
+
+&lt;p&gt;We used the &lt;em&gt;FashionMNIST&lt;/em&gt; dataset for the experiment. The dataset can be downloaded through &lt;em&gt;torchvision.datasets&lt;/em&gt;, and preprocessing can be performed through &lt;em&gt;transforms.Compose&lt;/em&gt;.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;2-set-a-model&quot;&gt;2. Set a model&lt;/h2&gt;
+&lt;h1 id=&quot;2-set-a-model&quot;&gt;2. Set a model&lt;/h1&gt;
+
+&lt;p&gt;We constructed a simple convolutional neural network model.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;3-set-optimizer--loss-function&quot;&gt;3. Set optimizer &amp;amp; loss function&lt;/h2&gt;
+&lt;h1 id=&quot;3-set-optimizer--loss-function&quot;&gt;3. Set optimizer &amp;amp; loss function&lt;/h1&gt;
+
+&lt;p&gt;We set the optimizer and loss function to train the model constructed in the previous step. The optimizer and loss function types were selected according to the type of the features of the given input data and the purpose of the model.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;4-train-the-model&quot;&gt;4. Train the model&lt;/h2&gt;
+&lt;h1 id=&quot;4-train-the-model&quot;&gt;4. Train the model&lt;/h1&gt;
+
+&lt;p&gt;In order to train a model, we must follow the following 5 steps.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;init the Gradient&lt;/li&gt;
+  &lt;li&gt;initialize the gradient&lt;/li&gt;
   &lt;li&gt;forward propagation&lt;/li&gt;
   &lt;li&gt;calculate the loss&lt;/li&gt;
   &lt;li&gt;backward propagation&lt;/li&gt;
-  &lt;li&gt;optimize (update) the weights&lt;/li&gt;
+  &lt;li&gt;optimize (update) the weights based on forward &amp;amp; backward propagation&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h2&gt;
+&lt;h1 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h1&gt;
+
+&lt;p&gt;We used the validation dataset to measure the performance of the completed training model. Note that the evaluate process is very similar to the training process. However, in the evaluate process, &lt;em&gt;torch.no_grad()&lt;/em&gt; is required because the weights must never change.&lt;/p&gt;
+
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 

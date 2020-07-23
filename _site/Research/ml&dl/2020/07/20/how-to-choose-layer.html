@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>(TF) Which Layer Do I Need? | Park's Archive</title>
 	<meta name="description"
-		content="Full code can be found at the following github repository.  Park’s GitHub &gt; How to choose layer">
+		content="The structure of the deep learning model is designed differently depending on the types of data features and the objective of the model. More specifically, i...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -218,7 +218,11 @@
       
     </p>
   </header>
-  <section class="post-content" style="width:66%; margin:0 auto;"><p>Full code can be found at the following github repository.</p>
+  <section class="post-content" style="width:66%; margin:0 auto;"><p>The structure of the deep learning model is designed differently depending on the types of data features and the objective of the model. More specifically, in order to select the type of layer used in the model, the characteristics of data features and the learning objectives of the model must be considered.</p>
+
+<p>In order to find out which structure is most suitable, we experimented with fixing the type of dataset and the target of the model and changing the structure of the model. The dataset used in the experiment is MNIST. The types of models used in the experiment were as follows; <em>DenseNet</em> using only <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense">dense layer</a>, <em>ConvNet</em> using <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Conv2D">convolutional layer</a>, and <em>LstmNet</em> using <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM">LSTM layer</a>.</p>
+
+<p>Full code of the experiments can be found at the following github repository.</p>
 <ul>
   <li><a href="https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/MNIST/how%20to%20choose%20layer.ipynb">Park’s GitHub &gt; How to choose layer</a></li>
 </ul>
@@ -229,35 +233,102 @@
   <li><a href="https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/convolutional_network.ipynb">Aymeric Damien’s GitHub &gt; Convolutional Neural Network Example</a></li>
   <li><a href="https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1">Irhum Shafkat’s Medium posting &gt; Intuitively Understanding Convolutions for Deep Learning</a></li>
   <li><a href="https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/recurrent_network.ipynb">Aymeric Damien’s GitHub &gt; Recurrent Neural Network Example</a></li>
+  <li><a href="https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn">Simplilearn &gt; Recurrent Neural Network Tutorial</a></li>
   <li><a href="https://www.slideshare.net/JiHyunPark18/understanding-lstm-and-its-diagrams">Park’s SlideShare &gt; Understanding LSTM</a></li>
 </ul>
 
 <hr />
+<h1 id="model-structures">Model Structures</h1>
 <h2 id="dense-model">Dense Model</h2>
+
+<p>This model consisted only of dense layers. This is the simplest model of the neural network and works well for all types of data, but performance decreases when an input data becomes complicated or large. Therefore, dense layers are used in learning simple data. In addition, in the case of learning complex data, dense layers are used in the last part of the model, which is the stage where features are extracted and get simple enough.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/ff71e7f4416a2add611074ad39888eab.js"></script>
-</p>
+<br /></p>
 
 <h2 id="cnn-model">CNN Model</h2>
+
+<p>This model consisted of convolutional layers. This model is suitable when there are spatial relationship across the data. Figure 1 depicts how a convolutional layer works, and it helps understand why this model works well when there are spatial relationship across data.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/1043aeb7181b81ac0106d0bbcc0f74d3.js"></script>
 </p>
 
 <figure align="center">
-<img src="https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif" width="60%" />   <figcaption>
-Figure 1. Visualization of how convolutional neural network layer works.
+<img src="https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif" width="50%" />   <figcaption>
+Figure 1. Visualization of how the convolutional neural network layer works [1].
   </figcaption>
 </figure>
+<p><br /></p>
 
 <h2 id="rnnlstm-model">RNN(LSTM) Model</h2>
+
+<p>This model consisted of LSTM layers. This model is suitable when there are temporal (sequential) relationship across the data. Figure 2 depicts how a LSTM layer works, and it helps understand why this model works well when there are temporal relationship across data.</p>
+
 <p align="center">  <script src="https://gist.github.com/jhyun0919/f6d3f2c79049c74b6a74b6b792e20ba7.js"></script>
 </p>
 
-<h2 id="experiment-result">Experiment Result</h2>
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/rnn visualized.gif" width="60%" />   <figcaption>
+Figure 2. Visualization of how the recurrent neural network layer works [2].
+  </figcaption>
+</figure>
+<p><br /></p>
+
+<h1 id="experiment-result">Experiment Result</h1>
+
+<p>As a result of the experiment, the CNN model using a convolutional layer showed the highest performance for learning MNIST image data. Direct comparison was not possible because the number of trainable parameters differed for each model, but the result was obtained by adjusting hyper-parameters to obtain the best performance for each model.</p>
+
+<p>To sum up, we have confirmed that it is best to use a convolutional layer when learning MNIST image data.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right"> </th>
+      <th style="text-align: right">Accuracy</th>
+      <th style="text-align: right">Loss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">DenseNet</td>
+      <td style="text-align: right">0.9556</td>
+      <td style="text-align: right">1.5092</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong>ConvNet</strong></td>
+      <td style="text-align: right"><strong>0.9817</strong></td>
+      <td style="text-align: right"><strong>1.4793</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: right">LstmNet</td>
+      <td style="text-align: right">0.9603</td>
+      <td style="text-align: right">1.5015</td>
+    </tr>
+  </tbody>
+</table>
+
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/tensorboard result.png" width="95%" />   <figcaption>
 Figure 2. Checking the validation result with tensorboard.
   </figcaption>
 </figure>
+<p><br /></p>
 
+<h1 id="future-study">Future Study</h1>
+
+<p>In some cases, such as image data or stock data, we can know the nature of the feature data in advance and use the CNN or RNN layers respectively. However, it is difficult to fully understand the charactieristic of completely new feature data. In this case, it is difficult to make assumptions about the temporal/spatial relationships across the data. As a result, it is not easy to decide which layer to use.</p>
+
+<p><a href="https://www.tensorflow.org/tutorials/text/transformer">Transformer</a> is a model designed to solve this problem. Transformer is a model based on attention, it make no assumptions about the temporal/spatial relationships across the data [3]. In the next posting, we will discuss the structure and application of the Transformer.</p>
+
+<p><br /></p>
+
+<h1 id="reference">Reference</h1>
+
+<p>[1]I. Shafkat, “Intuitively Understanding Convolutions for Deep Learning,” Medium, 07-Jun-2018. [Online]. Available: https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1. [Accessed: 23-Jul-2020].</p>
+
+<p>[2] A. Biswal, “Recurrent Neural Network Tutorial,” Simplilearn.com, 28-Apr-2020. [Online]. Available: https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn. [Accessed: 23-Jul-2020].</p>
+
+<p>[3] “Transformer model for language understanding : TensorFlow Core,” TensorFlow. [Online]. Available: https://www.tensorflow.org/tutorials/text/transformer. [Accessed: 23-Jul-2020].</p>
 </section>
 
   <br>
