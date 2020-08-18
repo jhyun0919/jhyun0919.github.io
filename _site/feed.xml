@@ -5,7 +5,22 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Thu, 30 Jul 2020 23:31:55 +0900</pubDate>
+    <pubDate>Tue, 18 Aug 2020 08:31:11 -0500</pubDate>
+    
+      <item>
+        <title>The shape of someone or something that I love</title>
+        <link>/daily/essay/2020/08/18/essay.html</link>
+        <guid isPermaLink="true">/daily/essay/2020/08/18/essay.html</guid>
+        <description>&lt;p&gt;Whenever I come back to Korea, 떡볶이 has always been the first food that I had. Briefly speaking, this food is just some rice cakes with spicy sauce. Compare to other Korean foods, 떡볶이 might seem shabby. However, this food is one of the reasons why I love and how I remember this place. Why did I pick 떡볶이 instead of other fancy dishes, and why am I so into it? I guess this is because it is my unique way of engraving memories in this country.&lt;/p&gt;
+
+&lt;p&gt;Likewise, most people who have not grown up in this country might come up with great landmarks when they imagine Korea. However, as a born and raised person in Korea, the shape of this country in my heart is not like that. It could be the small marketplace in my old hometown, or it could be the parking lot in front of my apartment building, where I used to ride a bike and roller skates. It is kind of a secret between me and the place that I love.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://media.giphy.com/media/9G0AdBbVrkV3O/giphy.gif&quot; width=&quot;444&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This pattern is identically applied to the people around me. The one who I love (or loved) is not remembered as her bright and shining moments that all the others could have seen. I memorized her in a way that no one could imagine. It does not have to be pretty or lovely. It just needs to be my little secret between her and me. These secrets comfort me and give strength, even though I can no longer be together with her.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 18 Aug 2020 00:00:00 -0500</pubDate>
+      </item>
     
       <item>
         <title>(TF) Transformer model for optimal power flow - part. 1</title>
@@ -13,7 +28,7 @@
         <guid isPermaLink="true">/research/ml&dl/2020/07/23/transformer-&-opf-part-1.html</guid>
         <description>
 </description>
-        <pubDate>Thu, 23 Jul 2020 00:00:00 +0900</pubDate>
+        <pubDate>Thu, 23 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
       <item>
@@ -22,7 +37,7 @@
         <guid isPermaLink="true">/research/ml&dl/2020/07/22/transformer_with_language.html</guid>
         <description>
 </description>
-        <pubDate>Wed, 22 Jul 2020 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 22 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
       <item>
@@ -104,7 +119,7 @@ Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]
 
 &lt;p&gt;[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].&lt;/p&gt;
 </description>
-        <pubDate>Tue, 21 Jul 2020 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 21 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
       <item>
@@ -223,7 +238,7 @@ Figure 2. Checking the validation result with tensorboard.
 
 &lt;p&gt;[3] “Transformer model for language understanding : TensorFlow Core,” TensorFlow. [Online]. Available: https://www.tensorflow.org/tutorials/text/transformer. [Accessed: 23-Jul-2020].&lt;/p&gt;
 </description>
-        <pubDate>Mon, 20 Jul 2020 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 20 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
       <item>
@@ -297,7 +312,7 @@ Figure 2. Checking the validation result with tensorboard.
 &lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 19 Jul 2020 00:00:00 +0900</pubDate>
+        <pubDate>Sun, 19 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
       <item>
@@ -411,7 +426,7 @@ Figure 1. Checking the training process with tensorboard.
 &lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b83301942dc8f6ac7facbeafe47c0eb4.js&quot;&gt;&lt;/script&gt;
 &lt;/p&gt;
 </description>
-        <pubDate>Sat, 18 Jul 2020 00:00:00 +0900</pubDate>
+        <pubDate>Sat, 18 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
       <item>
@@ -420,7 +435,7 @@ Figure 1. Checking the training process with tensorboard.
         <guid isPermaLink="true">/research/energy/2020/07/07/uncertainty-realization.html</guid>
         <description>
 </description>
-        <pubDate>Tue, 07 Jul 2020 00:00:00 +0900</pubDate>
+        <pubDate>Tue, 07 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
       <item>
@@ -611,7 +626,7 @@ Figure 8. Visualzation of the Pooling layer's Input and Output.
 
 &lt;p&gt;[6] “Pooling,” Unsupervised Feature Learning and Deep Learning Tutorial. [Online]. Available: http://deeplearning.stanford.edu/tutorial/supervised/Pooling/. [Accessed: 26-Oct-2019].&lt;/p&gt;
 </description>
-        <pubDate>Mon, 01 Jun 2020 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 01 Jun 2020 00:00:00 -0500</pubDate>
       </item>
     
       <item>
@@ -636,7 +651,7 @@ Figure 2. The number of papers posted on arXiv.org that mention each framework. 
 
 &lt;p&gt;In the future, I will select various topics and upload a series of tutorials, and code will also be uploaded in two versions, Tensorflow and PyTorch. First, I will upload a post about basic topics, such as the MNIST tutorial. After that, I will discuss energy-related time series and reinforcement learning topics, which are my research interests. I hope this will help engineers who are new to using deep learning field or would like to be more adept at dealing with the frameworks.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 21 Oct 2019 00:00:00 +0900</pubDate>
+        <pubDate>Mon, 21 Oct 2019 00:00:00 -0500</pubDate>
       </item>
     
       <item>
@@ -655,7 +670,7 @@ While I was getting tired of this feeling, I read confession of one man which ch
 
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://media.giphy.com/media/pOZhmE42D1WrCWATLK/giphy.gif&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 22 Sep 2019 00:00:00 +0900</pubDate>
+        <pubDate>Sun, 22 Sep 2019 00:00:00 -0500</pubDate>
       </item>
     
   </channel>
