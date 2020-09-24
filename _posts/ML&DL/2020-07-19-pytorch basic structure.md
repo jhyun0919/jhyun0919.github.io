@@ -4,7 +4,7 @@ title: (PyTorch) Basic Steps for Training a Model
 categories: [Research/ML&DL]
 tags: [ML&DL, PyTorch]
 ---
-PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This post will describe the basic steps for traing a model with PyTorch. Briefly, the basic steps of how to train a model are as follow.
+PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This posting will describe the basic steps for traing a model with PyTorch. Briefly, the basic steps of how to train a model are as follow.
 
 1. Load & pre-process the dataset
 2. Set a model

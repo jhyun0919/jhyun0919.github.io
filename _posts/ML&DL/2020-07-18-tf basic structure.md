@@ -5,7 +5,7 @@ categories: [Research/ML&DL]
 tags: [ML&DL, Tensorflow]
 ---
 
-TesorFlow is one of the most well-known deep learning frameworks. This post will describe the basic steps for training a model with Tensorflow. Briefly, the basic steps for how to train a model through TensorFlow are as follow.
+TesorFlow is one of the most well-known deep learning frameworks. This posting will describe the basic steps for training a model with Tensorflow. Briefly, the basic steps for how to train a model through TensorFlow are as follow.
 
 1. Load & pre-process the dataset
 2. Set a model
