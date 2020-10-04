@@ -5,33 +5,66 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Wed, 23 Sep 2020 21:46:44 -0500</pubDate>
+    <pubDate>Sat, 03 Oct 2020 22:42:34 -0500</pubDate>
     
       <item>
-        <title>What is PEP 8 and Tips for Following PEP 8</title>
-        <link>/research/cs/2020/09/23/pep8.html</link>
-        <guid isPermaLink="true">/research/cs/2020/09/23/pep8.html</guid>
-        <description>&lt;p&gt;This article&lt;/p&gt;
+        <title>(Python Dev Tips) PEP8</title>
+        <link>/research/cs/2020/10/03/pep8.html</link>
+        <guid isPermaLink="true">/research/cs/2020/10/03/pep8.html</guid>
+        <description>&lt;p&gt;This article covers what is PEP 8 and how to follow this convention with minimal effort and no difficult. This posting referred to the following articles.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.python.org/dev/peps/pep-0008/&quot;&gt;PEP 8 – Style Guide for Python Code&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://realpython.com/python-pep8/&quot;&gt;How to Write Beautiful Python Code With PEP 8&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Guidelines for writing Python&lt;/li&gt;
-  &lt;li&gt;Revisiting old project&lt;/li&gt;
-  &lt;li&gt;Collaboration&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://realpython.com/python-pep8/&quot;&gt;How to Write Beautiful Python Code With PEP 8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.freecodecamp.org/news/auto-format-your-python-code-with-black/&quot;&gt;How to Auto-Format Your Python Code with Black&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
+&lt;h1 id=&quot;what-is-pep-8&quot;&gt;What is PEP 8&lt;/h1&gt;
+
+&lt;h1 id=&quot;why-we-need-pep-8&quot;&gt;Why we need PEP 8&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Guidelines for writing Python.&lt;/li&gt;
+  &lt;li&gt;Good Readability&lt;/li&gt;
+  &lt;li&gt;Revisiting old project&lt;/li&gt;
+  &lt;li&gt;Easy to spot bugs&lt;/li&gt;
+  &lt;li&gt;Collaboration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;tips-for-python-coding&quot;&gt;Tips for Python coding&lt;/h1&gt;
+
+&lt;h2 id=&quot;auto-formatter&quot;&gt;Auto-formatter&lt;/h2&gt;
+
+&lt;h2 id=&quot;jupyter-extension&quot;&gt;Jupyter Extension&lt;/h2&gt;
+
+&lt;h2 id=&quot;gitkraken&quot;&gt;GitKraken&lt;/h2&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-09-23-pep8/programmer_meme.jpg&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-WTH?
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-03-pep8/programmer_meme.jpg&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+&quot;Any Questions?&quot;
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 </description>
-        <pubDate>Wed, 23 Sep 2020 00:00:00 -0500</pubDate>
+        <pubDate>Sat, 03 Oct 2020 00:00:00 -0500</pubDate>
+      </item>
+    
+      <item>
+        <title>(Python Dev Tips) Virtual Environment</title>
+        <link>/research/cs/2020/10/02/virtualenv.html</link>
+        <guid isPermaLink="true">/research/cs/2020/10/02/virtualenv.html</guid>
+        <description>
+</description>
+        <pubDate>Fri, 02 Oct 2020 00:00:00 -0500</pubDate>
+      </item>
+    
+      <item>
+        <title>(Python Dev Tips) Git Basic</title>
+        <link>/research/cs/2020/10/01/git-tips.html</link>
+        <guid isPermaLink="true">/research/cs/2020/10/01/git-tips.html</guid>
+        <description>
+</description>
+        <pubDate>Thu, 01 Oct 2020 00:00:00 -0500</pubDate>
       </item>
     
       <item>
