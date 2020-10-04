@@ -5,10 +5,10 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sun, 04 Oct 2020 14:50:04 -0500</pubDate>
+    <pubDate>Sun, 04 Oct 2020 15:00:30 -0500</pubDate>
     
       <item>
-        <title>(Python Dev Tips) Jupyter</title>
+        <title>(Python-Dev Tips) Jupyter</title>
         <link>/research/cs/2020/10/04/jupyter.html</link>
         <guid isPermaLink="true">/research/cs/2020/10/04/jupyter.html</guid>
         <description>&lt;ol&gt;
@@ -41,7 +41,7 @@
       </item>
     
       <item>
-        <title>(Python Dev Tips) PEP8</title>
+        <title>(Python-Dev Tips) PEP8</title>
         <link>/research/cs/2020/10/03/pep8.html</link>
         <guid isPermaLink="true">/research/cs/2020/10/03/pep8.html</guid>
         <description>&lt;ol&gt;
@@ -95,7 +95,7 @@
       </item>
     
       <item>
-        <title>(Python Dev Tips) Virtual Environment</title>
+        <title>(Python-Dev Tips) Virtual Environment</title>
         <link>/research/cs/2020/10/02/virtualenv.html</link>
         <guid isPermaLink="true">/research/cs/2020/10/02/virtualenv.html</guid>
         <description>&lt;ol&gt;
@@ -128,10 +128,10 @@
       </item>
     
       <item>
-        <title>(Python Dev Tips) Git Basic</title>
+        <title>(Python-Dev Tips) Git Basic</title>
         <link>/research/cs/2020/10/01/git-tips.html</link>
         <guid isPermaLink="true">/research/cs/2020/10/01/git-tips.html</guid>
-        <description>&lt;p&gt;Starting with this posting, I am going to upload a series of articles that can help with Python development. The series will be written in four articles, and the contents are as follows, and if necessary, additional posts will be uploaded as a separate series.&lt;/p&gt;
+        <description>&lt;p&gt;Starting with this posting, I will upload a series of articles that can help with Python development. The series will be written in four articles, and the contents are as follows, and if necessary, additional posts will be uploaded as a separate series.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Git Basic&lt;/strong&gt;&lt;/li&gt;
@@ -144,11 +144,11 @@
 
 &lt;h1 id=&quot;what-is-git&quot;&gt;What is Git&lt;/h1&gt;
 
-&lt;p&gt;Git is a free and open source distributed &lt;strong&gt;version control&lt;/strong&gt; system designed to handle everything from small to very large projects with speed and efficiency [1]. It provids us a history of content changes, and facilitates collaborative changes to files [2].&lt;/p&gt;
+&lt;p&gt;Git is a free and open-source distributed &lt;strong&gt;version control&lt;/strong&gt; system designed to handle everything from small to very large projects with speed and efficiency [1]. It provides us a history of content changes and facilitates collaborative changes to files [2].&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/git.jpeg&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1. Examples of using Git [3].
+Figure 1. Examples of Using Git [3].
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -164,7 +164,7 @@ Figure 1. Examples of using Git [3].
   &lt;li&gt;Save the things again.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;By repeating the above steps, we add new things, delete unnecessary ones, request modifications, and make corrections where necessary. In order to make this process clear and efficient, we turn to the help of &lt;strong&gt;version control&lt;/strong&gt;. Through the version control system, we can easily track the followings [2].&lt;/p&gt;
+&lt;p&gt;By repeating the above steps, we add new things, delete unnecessary ones, request modifications, and make corrections where necessary. To make this process straightforward and efficient, we turn to the help of &lt;strong&gt;version control&lt;/strong&gt;. Through the version control system, we can easily track the followings [2].&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;When we did it.&lt;/li&gt;
@@ -172,7 +172,7 @@ Figure 1. Examples of using Git [3].
   &lt;li&gt;What the contents of the change.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;This makes it possible to efficiently understand the process of the project, and to be more productive when revisiting the project in the future.&lt;/p&gt;
+&lt;p&gt;This makes it possible to efficiently understand the project’s process and be more productive when revisiting the project in the future.&lt;/p&gt;
 
 &lt;p&gt;For these reasons, we cannot overemphasize the necessity of version control when working on projects through collaboration as well as personal projects. We can take the benefits of version control through &lt;strong&gt;Git&lt;/strong&gt;.&lt;/p&gt;
 
@@ -186,9 +186,9 @@ Figure 2. Workflow with Git [4].
 
 &lt;h1 id=&quot;basic-git-commands&quot;&gt;Basic Git Commands&lt;/h1&gt;
 
-&lt;p&gt;The following are essential terminal commands for Git. It may be difficult to understand, but it is good to know only its purpose. As long as you understand the purpose of each command, you can easily use Git through the GUI, which will be covered in the following section.&lt;/p&gt;
+&lt;p&gt;The following are essential terminal commands for Git. It may be difficult to understand, but it is good to know only its purpose. As long as you understand each command’s purpose, you can easily use Git through the GUI, which will be covered in the following section.&lt;/p&gt;
 
-&lt;p&gt;For reference, the contents are referred to the following links.&lt;/p&gt;
+&lt;p&gt;For reference, the contents are referred to as the following links.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://dev.to/dhruv/essential-git-commands-every-developer-should-know-2fl&quot;&gt;Essential git commands every developer should know&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://dzone.com/articles/top-20-git-commands-with-examples&quot;&gt;Top 20 Git Commands With Examples&lt;/a&gt;&lt;/li&gt;
@@ -366,11 +366,11 @@ Figure 2. Workflow with Git [4].
 &lt;p&gt;There is an entry barrier to use the commands described above in a terminal window. There is a &lt;strong&gt;GUI&lt;/strong&gt; called &lt;strong&gt;GitKraken&lt;/strong&gt; for those who have difficulty using Git in a terminal window. With GitKraken, we can intuitively and easily manage projects without memorizing all the git commands. Figure 3. is a screenshot of GitKraken.&lt;/p&gt;
 
 &lt;p&gt;We can do the basic operation as the git commands described above through the buttons in Area 1.
-In Area 2, GitKraken shows about the files that have been modified compared to the log, whether these files are added in the staging area, and allows us to commit.
+In Area 2, GitKraken shows the files that have been modified compared to the log, whether these files are added in the staging area, and allows us to commit.
 Lastly, in Area 3, it shows us the workflow of the project.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/gitkraken_screenshot.png&quot; width=&quot;100%&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/gitkraken eg.png&quot; width=&quot;100%&quot; /&gt;   &lt;figcaption&gt;
 Figure 3. GitKraken Screenshot.
   &lt;/figcaption&gt;
 &lt;/figure&gt;
