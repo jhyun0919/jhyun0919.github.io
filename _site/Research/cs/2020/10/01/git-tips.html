@@ -227,9 +227,9 @@
 
 <ol>
   <li><strong>Git Basic</strong></li>
-  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html">Virtual Environment</a></li>
-  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html">PEP8</a></li>
-  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html">Jupyter</a></li>
+  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html">Virtual Environment</a> (editting…)</li>
+  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html">PEP8</a> (editting…)</li>
+  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html">Jupyter</a> (editting…)</li>
 </ol>
 
 <hr />
@@ -240,7 +240,7 @@
 
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2020-10-01-git/git.jpeg" width="80%" />   <figcaption>
-Examples of using Git [3].
+Figure 1. Examples of using Git [3].
   </figcaption>
 </figure>
 
@@ -269,8 +269,8 @@ Examples of using Git [3].
 <p>For these reasons, we cannot overemphasize the necessity of version control when working on projects through collaboration as well as personal projects. We can take the benefits of version control through <strong>Git</strong>.</p>
 
 <figure align="center">
-<img src="https://jhyun0919.github.io/assets/img/2020-10-01-git/git workflow.svg" width="80%" />   <figcaption>
-Workflow of Git.
+<img src="https://jhyun0919.github.io/assets/img/2020-10-01-git/gitflow.png" width="80%" />   <figcaption>
+Figure 2. Workflow with Git [4].
   </figcaption>
 </figure>
 
@@ -292,7 +292,7 @@ Workflow of Git.
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git init <span class="o">[</span>project-name]
 </code></pre></div></div>
 <ul>
-  <li>This command is used to create a new local GIT repository.</li>
+  <li>This command is used to start a new repository.</li>
 </ul>
 
 <p><br /></p>
@@ -311,6 +311,15 @@ Workflow of Git.
 </code></pre></div></div>
 <ul>
   <li>This command adds a file to the staging area.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="git-rm">git rm</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git <span class="nb">rm</span> <span class="o">[</span>file-name]
+</code></pre></div></div>
+<ul>
+  <li>This command deletes the file from your working directory and stages the deletion.</li>
 </ul>
 
 <p><br /></p>
@@ -334,29 +343,53 @@ Workflow of Git.
 <p><br /></p>
 
 <h2 id="git-push">git push</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git push <span class="o">[</span>variable name] <span class="o">[</span>branch] 
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git push <span class="o">[</span>variable name] master
 </code></pre></div></div>
 <ul>
   <li>This command sends the committed changes of master branch to your remote repository.</li>
 </ul>
 
-<p><br /></p>
-
-<h2 id="git-checkout">git checkout</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout <span class="o">[</span>branch]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git push <span class="o">[</span>variable name] <span class="o">[</span>branch-name]
 </code></pre></div></div>
-
-<p><br /></p>
-
-<h2 id="git-remote">git remote</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git remote –v
-</code></pre></div></div>
+<ul>
+  <li>This command sends the branch commits to your remote repository.</li>
+</ul>
 
 <p><br /></p>
 
 <h2 id="git-branch">git branch</h2>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch
 </code></pre></div></div>
+<ul>
+  <li>This command lists all the local branches in the current repository.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="o">[</span>branch-name]
+</code></pre></div></div>
+<ul>
+  <li>This command creates a new branch.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-d</span> <span class="o">[</span>branch-name]
+</code></pre></div></div>
+<ul>
+  <li>This command deletes the feature branch.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="git-checkout">git checkout</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout <span class="o">[</span>branch-name]
+</code></pre></div></div>
+<ul>
+  <li>This command is used to switch from one branch to another.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout <span class="nt">-b</span> <span class="o">[</span>branch-name]
+</code></pre></div></div>
+<ul>
+  <li>This command creates a new branch and also switches to it.</li>
+</ul>
 
 <p><br /></p>
 
@@ -372,46 +405,73 @@ Workflow of Git.
 <h2 id="git-merge">git merge</h2>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git merge <span class="o">[</span>branch-name]
 </code></pre></div></div>
+<ul>
+  <li>This command merges the specified branch’s history into the current branch.</li>
+</ul>
 
 <p><br /></p>
 
 <h2 id="git-diff">git diff</h2>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff
 </code></pre></div></div>
+<ul>
+  <li>This command shows the file differences which are not yet staged.</li>
+</ul>
 
-<p><br /></p>
-
-<h2 id="git-rm">git rm</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git <span class="nb">rm</span> <span class="o">[</span>file-name]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff <span class="o">[</span>first branch-name] <span class="o">[</span>second branch-name]
 </code></pre></div></div>
+<ul>
+  <li>This command shows the differences between the two branches mentioned.</li>
+</ul>
 
 <p><br /></p>
 
 <h2 id="git-stash">git stash</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash save
 </code></pre></div></div>
+<ul>
+  <li>This command temporarily stores all the modified tracked files.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash pop
+</code></pre></div></div>
+<ul>
+  <li>This command restores the most recently stashed files.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash list
+</code></pre></div></div>
+<ul>
+  <li>This command lists all stashed changesets.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash drop
+</code></pre></div></div>
+<ul>
+  <li>This command discards the most recently stashed changeset.</li>
+</ul>
 
 <p><br /></p>
 
-<h2 id="git-fetch">git fetch</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git fetch origin
-</code></pre></div></div>
+<h1 id="gitkraken">GitKraken</h1>
 
-<p><br /></p>
+<p>There is an entry barrier to use the commands described above in a terminal window. There is a <strong>GUI</strong> called <strong>GitKraken</strong> for those who have difficulty using Git in a terminal window. With GitKraken, we can intuitively and easily manage projects without memorizing all the git commands. Figure 3. is a screenshot of GitKraken.</p>
 
-<h1 id="gitkraken-gui">GitKraken GUI</h1>
+<p>We can do the basic operation as the git commands described above through the buttons in Area 1.
+In Area 2, GitKraken shows about the files that have been modified compared to the log, whether these files are added in the staging area, and allows us to commit.
+Lastly, in Area 3, it shows us the workflow of the project.</p>
 
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2020-10-01-git/gitkraken_screenshot.png" width="100%" />   <figcaption>
-GitKraken Screenshot.
+Figure 3. GitKraken Screenshot.
   </figcaption>
 </figure>
 
 <p><br /></p>
 
-<h1 id="one-more-thing">One More Thing</h1>
+<h1 id="one-more-thing-">One More Thing 😜</h1>
 
-<p>Those who want to use Git only with commands in a terminal window, not using a GUI, or who want to have a deeper understanding, can learn about Git without losing interest through the quest-type tutorial provided at the following link.</p>
+<p>Those who want to use Git only with commands in a terminal window, not using a GUI, or who want to have a deeper understanding, can learn without losing interest through the quest-game-type tutorial provided at the following link.</p>
 
 <ul>
   <li><a href="https://learngitbranching.js.org/?locale=en">Git Tutorial Quest Game</a></li>
@@ -419,17 +479,20 @@ GitKraken Screenshot.
 
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2020-10-01-git/git tutorial.gif" width="90%" />   <figcaption>
-Git Command Line Tutorial Screenshot.
+Figure 4. Git Command Line Tutorial Screenshot.
   </figcaption>
 </figure>
 
 <p><br /></p>
 
 <h1 id="reference">Reference</h1>
-<p>[1] Git. [Online]. Available: https://git-scm.com/. [Accessed: 01-Oct-2020].<br />
-[2] “Git Basics Episode 1,” Git. [Online]. Available: https://git-scm.com/video/what-is-version-control. [Accessed: 01-Oct-2020].<br />
-[3] S. C. Atuonwu, “5 Git Commands You Should Know, with Code Examples,” freeCodeCamp.org, 10-Jun-2020. [Online]. Available: https://www.freecodecamp.org/news/5-git-commands-you-should-know-with-code-examples/. [Accessed: 04-Oct-2020].</p>
+<p>[1] Git. [Online]. Available: https://git-scm.com/. [Accessed: 01-Oct-2020].</p>
 
+<p>[2] “Git Basics Episode 1,” Git. [Online]. Available: https://git-scm.com/video/what-is-version-control. [Accessed: 01-Oct-2020].</p>
+
+<p>[3] S. C. Atuonwu, “5 Git Commands You Should Know, with Code Examples,” freeCodeCamp.org, 10-Jun-2020. [Online]. Available: https://www.freecodecamp.org/news/5-git-commands-you-should-know-with-code-examples/. [Accessed: 01-Oct-2020].</p>
+
+<p>[4] Atlassian, “Gitflow Workflow: Atlassian Git Tutorial,” Atlassian. [Online]. Available: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow. [Accessed: 01-Oct-2020].</p>
 </section>
 
   <br>

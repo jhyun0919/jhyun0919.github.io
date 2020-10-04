@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sun, 04 Oct 2020 13:50:30 -0500</pubDate>
+    <pubDate>Sun, 04 Oct 2020 14:50:04 -0500</pubDate>
     
       <item>
         <title>(Python Dev Tips) Jupyter</title>
@@ -135,9 +135,9 @@
 
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Git Basic&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt; (editting…)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt; (editting…)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt; (editting…)&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
@@ -148,7 +148,7 @@
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/git.jpeg&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-Examples of using Git [3].
+Figure 1. Examples of using Git [3].
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -177,8 +177,8 @@ Examples of using Git [3].
 &lt;p&gt;For these reasons, we cannot overemphasize the necessity of version control when working on projects through collaboration as well as personal projects. We can take the benefits of version control through &lt;strong&gt;Git&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/git workflow.svg&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-Workflow of Git.
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/gitflow.png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+Figure 2. Workflow with Git [4].
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -200,7 +200,7 @@ Workflow of Git.
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git init &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;project-name]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;ul&gt;
-  &lt;li&gt;This command is used to create a new local GIT repository.&lt;/li&gt;
+  &lt;li&gt;This command is used to start a new repository.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -219,6 +219,15 @@ Workflow of Git.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;ul&gt;
   &lt;li&gt;This command adds a file to the staging area.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-rm&quot;&gt;git rm&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;file-name]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command deletes the file from your working directory and stages the deletion.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -242,29 +251,53 @@ Workflow of Git.
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;git-push&quot;&gt;git push&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;variable name] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch] 
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;variable name] master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;ul&gt;
   &lt;li&gt;This command sends the committed changes of master branch to your remote repository.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-checkout&quot;&gt;git checkout&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch]
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;variable name] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-remote&quot;&gt;git remote&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git remote –v
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command sends the branch commits to your remote repository.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;git-branch&quot;&gt;git branch&lt;/h2&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command lists all the local branches in the current repository.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command creates a new branch.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command deletes the feature branch.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-checkout&quot;&gt;git checkout&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command is used to switch from one branch to another.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command creates a new branch and also switches to it.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -280,46 +313,73 @@ Workflow of Git.
 &lt;h2 id=&quot;git-merge&quot;&gt;git merge&lt;/h2&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command merges the specified branch’s history into the current branch.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;git-diff&quot;&gt;git diff&lt;/h2&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git diff
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command shows the file differences which are not yet staged.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-rm&quot;&gt;git rm&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;file-name]
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git diff &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;first branch-name] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;second branch-name]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command shows the differences between the two branches mentioned.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;git-stash&quot;&gt;git stash&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash save
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command temporarily stores all the modified tracked files.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash pop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command restores the most recently stashed files.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command lists all stashed changesets.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash drop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command discards the most recently stashed changeset.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;git-fetch&quot;&gt;git fetch&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git fetch origin
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;gitkraken&quot;&gt;GitKraken&lt;/h1&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;There is an entry barrier to use the commands described above in a terminal window. There is a &lt;strong&gt;GUI&lt;/strong&gt; called &lt;strong&gt;GitKraken&lt;/strong&gt; for those who have difficulty using Git in a terminal window. With GitKraken, we can intuitively and easily manage projects without memorizing all the git commands. Figure 3. is a screenshot of GitKraken.&lt;/p&gt;
 
-&lt;h1 id=&quot;gitkraken-gui&quot;&gt;GitKraken GUI&lt;/h1&gt;
+&lt;p&gt;We can do the basic operation as the git commands described above through the buttons in Area 1.
+In Area 2, GitKraken shows about the files that have been modified compared to the log, whether these files are added in the staging area, and allows us to commit.
+Lastly, in Area 3, it shows us the workflow of the project.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/gitkraken_screenshot.png&quot; width=&quot;100%&quot; /&gt;   &lt;figcaption&gt;
-GitKraken Screenshot.
+Figure 3. GitKraken Screenshot.
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;one-more-thing&quot;&gt;One More Thing&lt;/h1&gt;
+&lt;h1 id=&quot;one-more-thing-&quot;&gt;One More Thing 😜&lt;/h1&gt;
 
-&lt;p&gt;Those who want to use Git only with commands in a terminal window, not using a GUI, or who want to have a deeper understanding, can learn about Git without losing interest through the quest-type tutorial provided at the following link.&lt;/p&gt;
+&lt;p&gt;Those who want to use Git only with commands in a terminal window, not using a GUI, or who want to have a deeper understanding, can learn without losing interest through the quest-game-type tutorial provided at the following link.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://learngitbranching.js.org/?locale=en&quot;&gt;Git Tutorial Quest Game&lt;/a&gt;&lt;/li&gt;
@@ -327,17 +387,20 @@ GitKraken Screenshot.
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/git tutorial.gif&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
-Git Command Line Tutorial Screenshot.
+Figure 4. Git Command Line Tutorial Screenshot.
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
-&lt;p&gt;[1] Git. [Online]. Available: https://git-scm.com/. [Accessed: 01-Oct-2020].&lt;br /&gt;
-[2] “Git Basics Episode 1,” Git. [Online]. Available: https://git-scm.com/video/what-is-version-control. [Accessed: 01-Oct-2020].&lt;br /&gt;
-[3] S. C. Atuonwu, “5 Git Commands You Should Know, with Code Examples,” freeCodeCamp.org, 10-Jun-2020. [Online]. Available: https://www.freecodecamp.org/news/5-git-commands-you-should-know-with-code-examples/. [Accessed: 04-Oct-2020].&lt;/p&gt;
+&lt;p&gt;[1] Git. [Online]. Available: https://git-scm.com/. [Accessed: 01-Oct-2020].&lt;/p&gt;
 
+&lt;p&gt;[2] “Git Basics Episode 1,” Git. [Online]. Available: https://git-scm.com/video/what-is-version-control. [Accessed: 01-Oct-2020].&lt;/p&gt;
+
+&lt;p&gt;[3] S. C. Atuonwu, “5 Git Commands You Should Know, with Code Examples,” freeCodeCamp.org, 10-Jun-2020. [Online]. Available: https://www.freecodecamp.org/news/5-git-commands-you-should-know-with-code-examples/. [Accessed: 01-Oct-2020].&lt;/p&gt;
+
+&lt;p&gt;[4] Atlassian, “Gitflow Workflow: Atlassian Git Tutorial,” Atlassian. [Online]. Available: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow. [Accessed: 01-Oct-2020].&lt;/p&gt;
 </description>
         <pubDate>Thu, 01 Oct 2020 00:00:00 -0500</pubDate>
       </item>
