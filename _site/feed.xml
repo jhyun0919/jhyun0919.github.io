@@ -5,13 +5,55 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sat, 03 Oct 2020 22:42:34 -0500</pubDate>
+    <pubDate>Sun, 04 Oct 2020 13:50:30 -0500</pubDate>
+    
+      <item>
+        <title>(Python Dev Tips) Jupyter</title>
+        <link>/research/cs/2020/10/04/jupyter.html</link>
+        <guid isPermaLink="true">/research/cs/2020/10/04/jupyter.html</guid>
+        <description>&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html&quot;&gt;Git Basic&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;what-is-jupyter&quot;&gt;What is Jupyter&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;why-do-we-need-to-use-jupyter&quot;&gt;Why Do We Need to Use Jupyter&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-set-up-a-development-environment-with-jupyter&quot;&gt;How to Set Up a Development Environment with Jupyter&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;jupyter-extensions&quot;&gt;Jupyter Extensions&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+</description>
+        <pubDate>Sun, 04 Oct 2020 00:00:00 -0500</pubDate>
+      </item>
     
       <item>
         <title>(Python Dev Tips) PEP8</title>
         <link>/research/cs/2020/10/03/pep8.html</link>
         <guid isPermaLink="true">/research/cs/2020/10/03/pep8.html</guid>
-        <description>&lt;p&gt;This article covers what is PEP 8 and how to follow this convention with minimal effort and no difficult. This posting referred to the following articles.&lt;/p&gt;
+        <description>&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html&quot;&gt;Git Basic&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;PEP8&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This article covers what is PEP 8 and how to follow this convention with minimal effort and no difficult. This posting referred to the following articles.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.python.org/dev/peps/pep-0008/&quot;&gt;PEP 8 – Style Guide for Python Code&lt;/a&gt;&lt;/li&gt;
@@ -21,6 +63,8 @@
 
 &lt;hr /&gt;
 &lt;h1 id=&quot;what-is-pep-8&quot;&gt;What is PEP 8&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;why-we-need-pep-8&quot;&gt;Why we need PEP 8&lt;/h1&gt;
 
@@ -32,19 +76,20 @@
   &lt;li&gt;Collaboration&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;tips-for-python-coding&quot;&gt;Tips for Python coding&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;auto-formatter&quot;&gt;Auto-formatter&lt;/h2&gt;
-
-&lt;h2 id=&quot;jupyter-extension&quot;&gt;Jupyter Extension&lt;/h2&gt;
-
-&lt;h2 id=&quot;gitkraken&quot;&gt;GitKraken&lt;/h2&gt;
+&lt;h1 id=&quot;auto-formatter&quot;&gt;Auto-formatter&lt;/h1&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-03-pep8/programmer_meme.jpg&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
 &quot;Any Questions?&quot;
   &lt;/figcaption&gt;
 &lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+
 </description>
         <pubDate>Sat, 03 Oct 2020 00:00:00 -0500</pubDate>
       </item>
@@ -53,7 +98,31 @@
         <title>(Python Dev Tips) Virtual Environment</title>
         <link>/research/cs/2020/10/02/virtualenv.html</link>
         <guid isPermaLink="true">/research/cs/2020/10/02/virtualenv.html</guid>
-        <description>
+        <description>&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html&quot;&gt;Git Basic&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Virtual Environment&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;what-is-virtual-environment&quot;&gt;What is Virtual Environment&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;why-do-we-need-to-set-up-a-virtual-environment&quot;&gt;Why Do We Need to Set Up a Virtual Environment&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;how-can-we-set-up-a-virtual-environment&quot;&gt;How Can We Set Up a Virtual Environment&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;anaconda-gui&quot;&gt;Anaconda GUI&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
 </description>
         <pubDate>Fri, 02 Oct 2020 00:00:00 -0500</pubDate>
       </item>
@@ -62,18 +131,215 @@
         <title>(Python Dev Tips) Git Basic</title>
         <link>/research/cs/2020/10/01/git-tips.html</link>
         <guid isPermaLink="true">/research/cs/2020/10/01/git-tips.html</guid>
-        <description>
+        <description>&lt;p&gt;Starting with this posting, I am going to upload a series of articles that can help with Python development. The series will be written in four articles, and the contents are as follows, and if necessary, additional posts will be uploaded as a separate series.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Git Basic&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;what-is-git&quot;&gt;What is Git&lt;/h1&gt;
+
+&lt;p&gt;Git is a free and open source distributed &lt;strong&gt;version control&lt;/strong&gt; system designed to handle everything from small to very large projects with speed and efficiency [1]. It provids us a history of content changes, and facilitates collaborative changes to files [2].&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/git.jpeg&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+Examples of using Git [3].
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;why-do-we-need-git&quot;&gt;Why Do We Need Git&lt;/h1&gt;
+&lt;p&gt;When we work on a project and do something creative and productive, we repeat the following four steps [2].&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create things.&lt;/li&gt;
+  &lt;li&gt;Save things.&lt;/li&gt;
+  &lt;li&gt;Edit things.&lt;/li&gt;
+  &lt;li&gt;Save the things again.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;By repeating the above steps, we add new things, delete unnecessary ones, request modifications, and make corrections where necessary. In order to make this process clear and efficient, we turn to the help of &lt;strong&gt;version control&lt;/strong&gt;. Through the version control system, we can easily track the followings [2].&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When we did it.&lt;/li&gt;
+  &lt;li&gt;Why we did it.&lt;/li&gt;
+  &lt;li&gt;What the contents of the change.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This makes it possible to efficiently understand the process of the project, and to be more productive when revisiting the project in the future.&lt;/p&gt;
+
+&lt;p&gt;For these reasons, we cannot overemphasize the necessity of version control when working on projects through collaboration as well as personal projects. We can take the benefits of version control through &lt;strong&gt;Git&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/git workflow.svg&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+Workflow of Git.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;basic-git-commands&quot;&gt;Basic Git Commands&lt;/h1&gt;
+
+&lt;p&gt;The following are essential terminal commands for Git. It may be difficult to understand, but it is good to know only its purpose. As long as you understand the purpose of each command, you can easily use Git through the GUI, which will be covered in the following section.&lt;/p&gt;
+
+&lt;p&gt;For reference, the contents are referred to the following links.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.to/dhruv/essential-git-commands-every-developer-should-know-2fl&quot;&gt;Essential git commands every developer should know&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dzone.com/articles/top-20-git-commands-with-examples&quot;&gt;Top 20 Git Commands With Examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-init&quot;&gt;git init&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git init &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;project-name]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command is used to create a new local GIT repository.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-clone&quot;&gt;git clone&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;url]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command is used to obtain a repository from an existing URL.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-add&quot;&gt;git add&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;file-name]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command adds a file to the staging area.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-commit&quot;&gt;git commit&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; “Message to go with the commit here”
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command records or snapshots the file permanently in the version history.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-status&quot;&gt;git status&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command lists all the files that have to be committed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-push&quot;&gt;git push&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;variable name] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch] 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command sends the committed changes of master branch to your remote repository.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-checkout&quot;&gt;git checkout&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-remote&quot;&gt;git remote&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git remote –v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-branch&quot;&gt;git branch&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-pull&quot;&gt;git pull&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git pull &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;repository &lt;span class=&quot;nb&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;This command fetches and merges changes on the remote server to your working directory.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-merge&quot;&gt;git merge&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-diff&quot;&gt;git diff&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git diff
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-rm&quot;&gt;git rm&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;file-name]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-stash&quot;&gt;git stash&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git-fetch&quot;&gt;git fetch&lt;/h2&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git fetch origin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;gitkraken-gui&quot;&gt;GitKraken GUI&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/gitkraken_screenshot.png&quot; width=&quot;100%&quot; /&gt;   &lt;figcaption&gt;
+GitKraken Screenshot.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;one-more-thing&quot;&gt;One More Thing&lt;/h1&gt;
+
+&lt;p&gt;Those who want to use Git only with commands in a terminal window, not using a GUI, or who want to have a deeper understanding, can learn about Git without losing interest through the quest-type tutorial provided at the following link.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learngitbranching.js.org/?locale=en&quot;&gt;Git Tutorial Quest Game&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/git tutorial.gif&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
+Git Command Line Tutorial Screenshot.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+&lt;p&gt;[1] Git. [Online]. Available: https://git-scm.com/. [Accessed: 01-Oct-2020].&lt;br /&gt;
+[2] “Git Basics Episode 1,” Git. [Online]. Available: https://git-scm.com/video/what-is-version-control. [Accessed: 01-Oct-2020].&lt;br /&gt;
+[3] S. C. Atuonwu, “5 Git Commands You Should Know, with Code Examples,” freeCodeCamp.org, 10-Jun-2020. [Online]. Available: https://www.freecodecamp.org/news/5-git-commands-you-should-know-with-code-examples/. [Accessed: 04-Oct-2020].&lt;/p&gt;
+
 </description>
         <pubDate>Thu, 01 Oct 2020 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(Paper Reivew)</title>
-        <link>/research/rl/2020/08/19/paper-review.html</link>
-        <guid isPermaLink="true">/research/rl/2020/08/19/paper-review.html</guid>
-        <description>
-</description>
-        <pubDate>Wed, 19 Aug 2020 00:00:00 -0500</pubDate>
       </item>
     
       <item>

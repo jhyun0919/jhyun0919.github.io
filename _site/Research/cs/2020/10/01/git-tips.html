@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>(Python Dev Tips) Git Basic | Park's Archive</title>
 	<meta name="description"
-		content="">
+		content="Starting with this posting, I am going to upload a series of articles that can help with Python development. The series will be written in four articles, and...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -223,7 +223,213 @@
       
     </p>
   </header>
-  <section class="post-content" style="width:66%; margin:0 auto;">
+  <section class="post-content" style="width:66%; margin:0 auto;"><p>Starting with this posting, I am going to upload a series of articles that can help with Python development. The series will be written in four articles, and the contents are as follows, and if necessary, additional posts will be uploaded as a separate series.</p>
+
+<ol>
+  <li><strong>Git Basic</strong></li>
+  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html">Virtual Environment</a></li>
+  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html">PEP8</a></li>
+  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html">Jupyter</a></li>
+</ol>
+
+<hr />
+
+<h1 id="what-is-git">What is Git</h1>
+
+<p>Git is a free and open source distributed <strong>version control</strong> system designed to handle everything from small to very large projects with speed and efficiency [1]. It provids us a history of content changes, and facilitates collaborative changes to files [2].</p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-10-01-git/git.jpeg" width="80%" />   <figcaption>
+Examples of using Git [3].
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h1 id="why-do-we-need-git">Why Do We Need Git</h1>
+<p>When we work on a project and do something creative and productive, we repeat the following four steps [2].</p>
+
+<ol>
+  <li>Create things.</li>
+  <li>Save things.</li>
+  <li>Edit things.</li>
+  <li>Save the things again.</li>
+</ol>
+
+<p>By repeating the above steps, we add new things, delete unnecessary ones, request modifications, and make corrections where necessary. In order to make this process clear and efficient, we turn to the help of <strong>version control</strong>. Through the version control system, we can easily track the followings [2].</p>
+
+<ul>
+  <li>When we did it.</li>
+  <li>Why we did it.</li>
+  <li>What the contents of the change.</li>
+</ul>
+
+<p>This makes it possible to efficiently understand the process of the project, and to be more productive when revisiting the project in the future.</p>
+
+<p>For these reasons, we cannot overemphasize the necessity of version control when working on projects through collaboration as well as personal projects. We can take the benefits of version control through <strong>Git</strong>.</p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-10-01-git/git workflow.svg" width="80%" />   <figcaption>
+Workflow of Git.
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h1 id="basic-git-commands">Basic Git Commands</h1>
+
+<p>The following are essential terminal commands for Git. It may be difficult to understand, but it is good to know only its purpose. As long as you understand the purpose of each command, you can easily use Git through the GUI, which will be covered in the following section.</p>
+
+<p>For reference, the contents are referred to the following links.</p>
+<ul>
+  <li><a href="https://dev.to/dhruv/essential-git-commands-every-developer-should-know-2fl">Essential git commands every developer should know</a></li>
+  <li><a href="https://dzone.com/articles/top-20-git-commands-with-examples">Top 20 Git Commands With Examples</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="git-init">git init</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git init <span class="o">[</span>project-name]
+</code></pre></div></div>
+<ul>
+  <li>This command is used to create a new local GIT repository.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="git-clone">git clone</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone <span class="o">[</span>url]
+</code></pre></div></div>
+<ul>
+  <li>This command is used to obtain a repository from an existing URL.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="git-add">git add</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add <span class="o">[</span>file-name]
+</code></pre></div></div>
+<ul>
+  <li>This command adds a file to the staging area.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="git-commit">git commit</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git commit <span class="nt">-m</span> “Message to go with the commit here”
+</code></pre></div></div>
+<ul>
+  <li>This command records or snapshots the file permanently in the version history.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="git-status">git status</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status
+</code></pre></div></div>
+<ul>
+  <li>This command lists all the files that have to be committed.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="git-push">git push</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git push <span class="o">[</span>variable name] <span class="o">[</span>branch] 
+</code></pre></div></div>
+<ul>
+  <li>This command sends the committed changes of master branch to your remote repository.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="git-checkout">git checkout</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout <span class="o">[</span>branch]
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="git-remote">git remote</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git remote –v
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="git-branch">git branch</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="git-pull">git pull</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull <span class="o">[</span>repository <span class="nb">link</span><span class="o">]</span>
+</code></pre></div></div>
+<ul>
+  <li>This command fetches and merges changes on the remote server to your working directory.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="git-merge">git merge</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git merge <span class="o">[</span>branch-name]
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="git-diff">git diff</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git diff
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="git-rm">git rm</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git <span class="nb">rm</span> <span class="o">[</span>file-name]
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="git-stash">git stash</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="git-fetch">git fetch</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git fetch origin
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="gitkraken-gui">GitKraken GUI</h1>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-10-01-git/gitkraken_screenshot.png" width="100%" />   <figcaption>
+GitKraken Screenshot.
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h1 id="one-more-thing">One More Thing</h1>
+
+<p>Those who want to use Git only with commands in a terminal window, not using a GUI, or who want to have a deeper understanding, can learn about Git without losing interest through the quest-type tutorial provided at the following link.</p>
+
+<ul>
+  <li><a href="https://learngitbranching.js.org/?locale=en">Git Tutorial Quest Game</a></li>
+</ul>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-10-01-git/git tutorial.gif" width="90%" />   <figcaption>
+Git Command Line Tutorial Screenshot.
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h1 id="reference">Reference</h1>
+<p>[1] Git. [Online]. Available: https://git-scm.com/. [Accessed: 01-Oct-2020].<br />
+[2] “Git Basics Episode 1,” Git. [Online]. Available: https://git-scm.com/video/what-is-version-control. [Accessed: 01-Oct-2020].<br />
+[3] S. C. Atuonwu, “5 Git Commands You Should Know, with Code Examples,” freeCodeCamp.org, 10-Jun-2020. [Online]. Available: https://www.freecodecamp.org/news/5-git-commands-you-should-know-with-code-examples/. [Accessed: 04-Oct-2020].</p>
+
 </section>
 
   <br>
