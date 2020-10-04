@@ -4,7 +4,7 @@ title: Geometric Meaning of Hessian Matrix
 categories: [Research/Mathematics]
 tags: [Math, Linear Algebra, Mathematics]
 ---
-Starting with the definition of the Hessian Matrix, this post will focus on the geometric meaning of the Hessian matrix. Also, we will discuss the eigenvalues and eigenvectors of the Hessian and introduce the application of it.
+Starting with the definition of the Hessian Matrix, this posting will focus on the geometric meaning of the Hessian matrix. Also, we will discuss the eigenvalues and eigenvectors of the Hessian and introduce the application of it.
 
 This post was written with reference to the following materials.
 - [Donghoon Yeo's blog posting](https://angeloyeo.github.io/2020/06/17/Hessian.html)
