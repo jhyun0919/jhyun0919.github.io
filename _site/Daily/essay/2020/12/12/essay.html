@@ -2,9 +2,9 @@
 <html class="no-js">
 <head>
 	<meta charset="utf-8">
-	<title>(PyTorch) Basic Steps for Training a Model | Park's Archive</title>
+	<title>Laïcité | Park's Archive</title>
 	<meta name="description"
-		content="PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This posting will describe the basic steps for traing a model with PyTo...">
+		content="Recently, I have finished two final exams, and one left next Thursday. I think it is a good moment to start again to write what I have been thinking these da...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -14,7 +14,7 @@
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/research/ml&dl/2020/07/19/pytorch-basic-structure.html">
+	<link rel="canonical" href="/daily/essay/2020/12/12/essay.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Park's Archive"
@@ -216,79 +216,25 @@
   <div class="content">
     <article >
   <header style="background-image: url('/')">
-    <h1 class="title">(PyTorch) Basic Steps for Training a Model</h1>
+    <h1 class="title">Laïcité</h1>
     
     <p class="meta" >
-      July 19, 2020
+      December 12, 2020
       
     </p>
   </header>
-  <section class="post-content" style="width:66%; margin:0 auto;"><p>PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This posting will describe the basic steps for traing a model with PyTorch. Briefly, the basic steps of how to train a model are as follow.</p>
+  <section class="post-content" style="width:66%; margin:0 auto;"><p>Recently, I have finished two final exams, and one left next Thursday. I think it is a good moment to start again to write what I have been thinking these days. Looking back at the end of the semester, I realized that a lot had happened globally, which I have not thought deeply about due to my hectic school life. For instance, the pandemic broke out, and we are living in the era of New Normal. Also, there was a presidential election in the US. In my thought, these are the most notable or significant events of this year. However, in this article, I would like to share my view about what happened in France.</p>
 
-<ol>
-  <li>Load &amp; pre-process the dataset</li>
-  <li>Set a model</li>
-  <li>Set an optimizer &amp; a loss function</li>
-  <li>Train the model</li>
-  <li>Evaluate the model</li>
-</ol>
-
-<p>Full code can be found at the following github repository.</p>
-<ul>
-  <li><a href="https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/tutorials/01.%20basic/pytorch%20basic%20structure.ipynb">Park’s GitHub &gt; Basic Structure of Training a Model</a></li>
-</ul>
-
-<p>This post was written with reference to the following materials.</p>
-<ul>
-  <li><a href="https://medium.com/@inmoonlight/pytorch%EB%A1%9C-%EB%94%A5%EB%9F%AC%EB%8B%9D%ED%95%98%EA%B8%B0-intro-afd9c67404c3">JiHyung Moon’s Meduim Posting</a></li>
-  <li><a href="https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html">PyTorch official webpage &gt; Tutorials &gt; Visualizing Models, Data, and Training with TensorBoard</a></li>
-</ul>
-
-<hr />
-
-<h1 id="1-load--pre-process-the-dataset">1. Load &amp; pre-process the dataset</h1>
-
-<p>We used the <em>FashionMNIST</em> dataset for the experiment. The dataset can be downloaded through <em>torchvision.datasets</em>, and preprocessing can be performed through <em>transforms.Compose</em>.</p>
-
-<p align="center">  <script src="https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js"></script>
+<p align="center"><img src="https://bdidier.fr/wp-content/uploads/1250_portail_laic.jpg" width="90%" />   <figcaption align="center">
+(https://bdidier.fr/4eme-la-laicite/)
+  </figcaption>
 <br /></p>
 
-<h1 id="2-set-a-model">2. Set a model</h1>
+<p>In October, a French middle school teacher was attacked and beheaded by a terrorist. Similar incidents have been happening after this incident, and it reminded me of the terror in Paris four years ago. Behind these tragedies, we all know there are complex religious problems. Several factors may be responsible for the continued occurrence of these incidents in France. In my respect, it has a lot to do with Laicite (Secularism).</p>
 
-<p>We constructed a simple convolutional neural network model.</p>
+<p>I know that it is nearly impossible for me, not French, to fully understand and describe the meaning of Laicite. To the best of my understanding, it means strict separation of religion from society, the secular world. There must be pros and cons of separating religion from our lives. I can agree that we can get an opportunity to consider religion on an equal footing with other values by taking it apart from society. For example, in Korea, many parents agree that their children can make decisions for their future by themselves. However, suddenly they change extremely conservative when it comes to religious choices, which is nonsense, given that it is just another decision like others. I think they act differently because they never take apart religion from their lives and always give a top priority to it. Suppose parents had tried to separate religion from society and consider it on an equal footing. In that case, they might have different conversations with their children and ended up with more rational conclusions.</p>
 
-<p align="center">  <script src="https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js"></script>
-<br /></p>
-
-<h1 id="3-set-optimizer--loss-function">3. Set optimizer &amp; loss function</h1>
-
-<p>We set the optimizer and loss function to train the model constructed in the previous step. The optimizer and loss function types were selected according to the type of the features of the given input data and the purpose of the model.</p>
-
-<p align="center">  <script src="https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js"></script>
-<br /></p>
-
-<h1 id="4-train-the-model">4. Train the model</h1>
-
-<p>In order to train a model, we must follow the following 5 steps.</p>
-
-<ol>
-  <li>initialize the gradient</li>
-  <li>forward propagation</li>
-  <li>calculate the loss</li>
-  <li>backward propagation</li>
-  <li>optimize (update) the weights based on forward &amp; backward propagation</li>
-</ol>
-
-<p align="center">  <script src="https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js"></script>
-<br /></p>
-
-<h1 id="5-evaluate-the-model">5. Evaluate the model</h1>
-
-<p>We used the validation dataset to measure the performance of the completed training model. Note that the evaluate process is very similar to the training process. However, in the evaluate process, <em>torch.no_grad()</em> is required because the weights must never change.</p>
-
-<p align="center">  <script src="https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js"></script>
-</p>
-
+<p>However, a series of these thoughts can be taken as a challenge or blasphemy for violent and radical religious groups. In my opinion, these groups are very likely to use violence in the form of retaliation when society becomes unstable. As a result, ironically, the society where rational judgment can be made is exposed to the risk of terror. As far as religion is concerned, I think France has a society with good conditions for making rational judgments. Simultaneously, the country is exposed to violence in an unstable period due to the pandemic. I hope they will overcome this crisis well without further tragedy, and others will be able to learn the unique way of their thinking.</p>
 </section>
 
   <br>
@@ -298,9 +244,9 @@
 <footer>
   <div class="tags">
     
-    <a class="tag" href="/tags#ML%26DL">#ML&DL</a>
+    <a class="tag" href="/tags#Essay">#Essay</a>
     
-    <a class="tag" href="/tags#PyTorch">#PyTorch</a>
+    <a class="tag" href="/tags#sharing+my+thought">#sharing my thought</a>
     
   </div>
 </footer>

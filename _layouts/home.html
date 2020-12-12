@@ -5,36 +5,37 @@ layout: default
 <div class="home">
 
   {% if site.theme_settings.header_text %}
-  <div class="call-out" style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
+  <div class="call-out"
+    style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
     {{ site.theme_settings.header_text }}
   </div>
   {% endif %}
-    <hr>
-    <h1 class="post-title" style="width:55%; margin:0 auto;">Recent Post</h1>
-    <br>
+  <hr>
+  <h1 class="post-title" style="width:55%; margin:0 auto;">Recent Post 🤘</h1>
+  <br>
 
-    {% for post in paginator.posts %}
-    <div class="post-teaser">
-      <header style="width:55%; margin:0 auto;">
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title }}
-          </a>
-        </h2>
-        <p class="meta">
-          {{ post.date | date: "%B %-d, %Y" }}
-        </p>
-      </header>
-      <div class="excerpt" style="width:55%; margin:0 auto;" >
-        {{ post.excerpt | truncatewords:25 }}
-        <br>
-        <a class="button" href="{{ post.url | relative_url }}" >
-          {{ site.theme_settings.str_continue_reading }}
+  {% for post in paginator.posts %}
+  <div class="post-teaser">
+    <header style="width:55%; margin:0 auto;">
+      <h2>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title }}
         </a>
-        <br>
-      </div>
+      </h2>
+      <p class="meta">
+        {{ post.date | date: "%B %-d, %Y" }}
+      </p>
+    </header>
+    <div class="excerpt" style="width:55%; margin:0 auto;">
+      {{ post.excerpt | truncatewords:25 }}
+      <br>
+      <a class="button" href="{{ post.url | relative_url }}">
+        {{ site.theme_settings.str_continue_reading }}
+      </a>
+      <br>
     </div>
-    {% endfor %}
+  </div>
+  {% endfor %}
 
 
   {% if paginator.total_pages > 1 %}

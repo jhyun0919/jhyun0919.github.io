@@ -5,7 +5,27 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sun, 04 Oct 2020 15:00:30 -0500</pubDate>
+    <pubDate>Sat, 12 Dec 2020 06:59:08 -0600</pubDate>
+    
+      <item>
+        <title>Laïcité</title>
+        <link>/daily/essay/2020/12/12/essay.html</link>
+        <guid isPermaLink="true">/daily/essay/2020/12/12/essay.html</guid>
+        <description>&lt;p&gt;Recently, I have finished two final exams, and one left next Thursday. I think it is a good moment to start again to write what I have been thinking these days. Looking back at the end of the semester, I realized that a lot had happened globally, which I have not thought deeply about due to my hectic school life. For instance, the pandemic broke out, and we are living in the era of New Normal. Also, there was a presidential election in the US. In my thought, these are the most notable or significant events of this year. However, in this article, I would like to share my view about what happened in France.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://bdidier.fr/wp-content/uploads/1250_portail_laic.jpg&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption align=&quot;center&quot;&gt;
+(https://bdidier.fr/4eme-la-laicite/)
+  &lt;/figcaption&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;In October, a French middle school teacher was attacked and beheaded by a terrorist. Similar incidents have been happening after this incident, and it reminded me of the terror in Paris four years ago. Behind these tragedies, we all know there are complex religious problems. Several factors may be responsible for the continued occurrence of these incidents in France. In my respect, it has a lot to do with Laicite (Secularism).&lt;/p&gt;
+
+&lt;p&gt;I know that it is nearly impossible for me, not French, to fully understand and describe the meaning of Laicite. To the best of my understanding, it means strict separation of religion from society, the secular world. There must be pros and cons of separating religion from our lives. I can agree that we can get an opportunity to consider religion on an equal footing with other values by taking it apart from society. For example, in Korea, many parents agree that their children can make decisions for their future by themselves. However, suddenly they change extremely conservative when it comes to religious choices, which is nonsense, given that it is just another decision like others. I think they act differently because they never take apart religion from their lives and always give a top priority to it. Suppose parents had tried to separate religion from society and consider it on an equal footing. In that case, they might have different conversations with their children and ended up with more rational conclusions.&lt;/p&gt;
+
+&lt;p&gt;However, a series of these thoughts can be taken as a challenge or blasphemy for violent and radical religious groups. In my opinion, these groups are very likely to use violence in the form of retaliation when society becomes unstable. As a result, ironically, the society where rational judgment can be made is exposed to the risk of terror. As far as religion is concerned, I think France has a society with good conditions for making rational judgments. Simultaneously, the country is exposed to violence in an unstable period due to the pandemic. I hope they will overcome this crisis well without further tragedy, and others will be able to learn the unique way of their thinking.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Dec 2020 00:00:00 -0600</pubDate>
+      </item>
     
       <item>
         <title>(Python-Dev Tips) Jupyter</title>
@@ -48,7 +68,7 @@
   &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html&quot;&gt;Git Basic&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;PEP8&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt; (editting…)&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
@@ -101,8 +121,8 @@
         <description>&lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html&quot;&gt;Git Basic&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Virtual Environment&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt; (editting…)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt; (editting…)&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
@@ -123,6 +143,7 @@
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+
 </description>
         <pubDate>Fri, 02 Oct 2020 00:00:00 -0500</pubDate>
       </item>
@@ -131,7 +152,7 @@
         <title>(Python-Dev Tips) Git Basic</title>
         <link>/research/cs/2020/10/01/git-tips.html</link>
         <guid isPermaLink="true">/research/cs/2020/10/01/git-tips.html</guid>
-        <description>&lt;p&gt;Starting with this posting, I will upload a series of articles that can help with Python development. The series will be written in four articles, and the contents are as follows, and if necessary, additional posts will be uploaded as a separate series.&lt;/p&gt;
+        <description>&lt;p&gt;Starting with this posting, we will upload a series of articles that can help with Python development. The series will be written in four articles, and the contents are as follows, and if necessary, additional posts will be uploaded as a separate series.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Git Basic&lt;/strong&gt;&lt;/li&gt;
@@ -174,7 +195,7 @@ Figure 1. Examples of Using Git [3].
 
 &lt;p&gt;This makes it possible to efficiently understand the project’s process and be more productive when revisiting the project in the future.&lt;/p&gt;
 
-&lt;p&gt;For these reasons, we cannot overemphasize the necessity of version control when working on projects through collaboration as well as personal projects. We can take the benefits of version control through &lt;strong&gt;Git&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;For these reasons, we cannot overemphasize the necessity of version control when working on projects through collaboration as well as personal projects. By using &lt;strong&gt;Git&lt;/strong&gt;, we can take these benefits of version control.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/gitflow.png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
@@ -186,7 +207,7 @@ Figure 2. Workflow with Git [4].
 
 &lt;h1 id=&quot;basic-git-commands&quot;&gt;Basic Git Commands&lt;/h1&gt;
 
-&lt;p&gt;The following are essential terminal commands for Git. It may be difficult to understand, but it is good to know only its purpose. As long as you understand each command’s purpose, you can easily use Git through the GUI, which will be covered in the following section.&lt;/p&gt;
+&lt;p&gt;The following are essential terminal commands for Git. It may be difficult to memorize, but it is good to understand only its purpose. As long as you understand each command’s purpose, you can easily use Git through a GUI, which will be covered in the following section.&lt;/p&gt;
 
 &lt;p&gt;For reference, the contents are referred to as the following links.&lt;/p&gt;
 &lt;ul&gt;
@@ -363,7 +384,7 @@ Figure 2. Workflow with Git [4].
 
 &lt;h1 id=&quot;gitkraken&quot;&gt;GitKraken&lt;/h1&gt;
 
-&lt;p&gt;There is an entry barrier to use the commands described above in a terminal window. There is a &lt;strong&gt;GUI&lt;/strong&gt; called &lt;strong&gt;GitKraken&lt;/strong&gt; for those who have difficulty using Git in a terminal window. With GitKraken, we can intuitively and easily manage projects without memorizing all the git commands. Figure 3. is a screenshot of GitKraken.&lt;/p&gt;
+&lt;p&gt;There is an entry barrier to use the commands described above in a terminal window. For those who have difficulty using Git in a terminal window, we suggest to use a &lt;strong&gt;GUI&lt;/strong&gt; called &lt;strong&gt;GitKraken&lt;/strong&gt;. With GitKraken, you can intuitively and easily manage projects without memorizing all the git commands. Figure 3. is a screenshot of GitKraken.&lt;/p&gt;
 
 &lt;p&gt;We can do the basic operation as the git commands described above through the buttons in Area 1.
 In Area 2, GitKraken shows the files that have been modified compared to the log, whether these files are added in the staging area, and allows us to commit.
