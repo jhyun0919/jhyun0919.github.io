@@ -16,7 +16,7 @@ This post was written with reference to the following materials.
 ## Definition
 In mathematics, the Hessian matrix or Hessian is a square matrix of second-order partial derivatives of a scalar-valued function, or scalar field. It describes the local curvature of a function of many variables. [1]
 
-Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $$x ∈ ℝ^n$$ and outputting a scalar $f(x) ∈ ℝ$. If all second partial derivatives of $$f$$ exist and are continuous over the domain of the function, then the Hessian matrix $$H$$ of $$f$$ is a square n×n matrix, usually defined and arranged as follows; [1]
+Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$ and outputting a scalar $f(x) ∈ ℝ$. If all second partial derivatives of $f$ exist and are continuous over the domain of the function, then the Hessian matrix $H$ of $f$ is a square n×n matrix, usually defined and arranged as follows; [1]
 
 <figure align="center">
     <img src="https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian.png" width="60%" />
