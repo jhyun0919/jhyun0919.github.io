@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sun, 03 Jan 2021 19:51:16 -0600</pubDate>
+    <pubDate>Sun, 03 Jan 2021 20:31:39 -0600</pubDate>
     
       <item>
         <title>(TIL) How to Speak</title>
@@ -67,25 +67,13 @@
 
 &lt;h1 id=&quot;gramschmidt-process&quot;&gt;Gram–Schmidt Process&lt;/h1&gt;
 
-&lt;p&gt;Given a set of linearly independent vectors 
-$Span({ a_0, … , a_{n-1} } ) \subset \mathbb{C}^m$, the &lt;strong&gt;Gram-Schimdt process&lt;/strong&gt; computes a new basis 
-${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1], i.e.&lt;/p&gt;
-
-&lt;p&gt;$Span({ a_0, … , a_{n-1} } ) = Span({ q_0, … , q_{n-1} } ).$&lt;/p&gt;
+&lt;p&gt;Given a set of linearly independent vectors $Span({ a_0, … , a_{n-1} } ) \subset \mathbb{C}^m$, the &lt;strong&gt;Gram-Schimdt process&lt;/strong&gt; computes a new basis ${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1], i.e. $Span({ a_0, … , a_{n-1} } ) = Span({ q_0, … , q_{n-1} } ).$&lt;/p&gt;
 
 &lt;p&gt;It should be noted that we would like to have the new basis, ${ q_0, … , q_{n-1} }$, having the following characteristics.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;All vectors are &lt;strong&gt;unit vectors&lt;/strong&gt; of length 1.
-    &lt;ul&gt;
-      &lt;li&gt;$|q_i| = 1$.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;All vectors are &lt;strong&gt;mutually perpendicular&lt;/strong&gt;.
-    &lt;ul&gt;
-      &lt;li&gt;$q_i \perp q_j$ where $i \neq j$.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;All vectors are &lt;strong&gt;unit vectors&lt;/strong&gt; of length 1, i.e. $|q_i| = 1$.&lt;/li&gt;
+  &lt;li&gt;All vectors are &lt;strong&gt;mutually perpendicular&lt;/strong&gt;, i.e. $q_i \perp q_j$ where $i \neq j$.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;These characteristics can be obtained through the following routine which is composed by three steps [1]:&lt;/p&gt;
@@ -104,7 +92,7 @@ ${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1
     &lt;ul&gt;
       &lt;li&gt;Step 1.
         &lt;ul&gt;
-          &lt;li&gt;skipped&lt;/li&gt;
+          &lt;li&gt;N.A.&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;Stpe 2.
@@ -117,13 +105,14 @@ ${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1
           &lt;li&gt;$q_0=a_0/\rho_{0, 0}$.&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;Result
-        &lt;ul&gt;
-          &lt;li&gt;$a_0=q_0\rho_{0, 0}$.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
+      &lt;li&gt;Result&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a_0=q_0\rho_{0, 0}&lt;/script&gt;
+
+&lt;ul&gt;
   &lt;li&gt;compute the vector $q_1$ ($i=1$)
     &lt;ul&gt;
       &lt;li&gt;Step 1.
@@ -206,22 +195,6 @@ ${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;!-- $$A =
-\left[
-\begin{array}{c|c|c|c|c|c|c}
-  a_0 &amp; ... &amp; a_{k-1} &amp; a_{k} &amp; a_{k+1} &amp; ... &amp; a_{n-1} \\
-\end{array}
-\right]
-$$
-
-$$Q =
-\left[
-\begin{array}{c|c|c|c|c|c|c}
-  q_0 &amp; ... &amp; q_{k-1} &amp; q_{k} &amp; q_{k+1} &amp; ... &amp; q_{n-1} \\
-\end{array}
-\right]
-$$ --&gt;
-
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;gram-schmidt-and-qr-factorization&quot;&gt;Gram-Schmidt and QR factorization&lt;/h1&gt;
@@ -258,7 +231,7 @@ $$ --&gt;
   &lt;li&gt;$Q_0^Ha_1=Q_0^HQ_0r_{0,1}+q_1\rho_{1,1}=r_{01}$.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Compute $r_{0,1}$, which are already known:&lt;/p&gt;
+&lt;p&gt;Compute $r_{0,1}$, which is already known:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$r_{0,1}:=Q_0^Ha_1$.&lt;/li&gt;
@@ -279,6 +252,12 @@ $$ --&gt;
 
 &lt;hr /&gt;
 
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-12-26-GS/CGS.png&quot; width=&quot;100%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of a matrix A [2]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/79fefe26187d174e154474e64516a8f1.js&quot;&gt;&lt;/script&gt;
  &lt;em&gt;Code. 1: CGS QR factorization in python&lt;/em&gt;&lt;/p&gt;
 
@@ -286,7 +265,7 @@ $$ --&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-12-26-GS/MGS-side-by-side.png&quot; width=&quot;100%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1. Alternative Modified Gram-Schmidt algorithm for computing the QR factorization of a matrix A [3]
+Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR factorization of a matrix A [3]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 

@@ -236,25 +236,13 @@
 
 <h1 id="gramschmidt-process">Gram–Schmidt Process</h1>
 
-<p>Given a set of linearly independent vectors 
-$Span({ a_0, … , a_{n-1} } ) \subset \mathbb{C}^m$, the <strong>Gram-Schimdt process</strong> computes a new basis 
-${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1], i.e.</p>
-
-<p>$Span({ a_0, … , a_{n-1} } ) = Span({ q_0, … , q_{n-1} } ).$</p>
+<p>Given a set of linearly independent vectors $Span({ a_0, … , a_{n-1} } ) \subset \mathbb{C}^m$, the <strong>Gram-Schimdt process</strong> computes a new basis ${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1], i.e. $Span({ a_0, … , a_{n-1} } ) = Span({ q_0, … , q_{n-1} } ).$</p>
 
 <p>It should be noted that we would like to have the new basis, ${ q_0, … , q_{n-1} }$, having the following characteristics.</p>
 
 <ul>
-  <li>All vectors are <strong>unit vectors</strong> of length 1.
-    <ul>
-      <li>$|q_i| = 1$.</li>
-    </ul>
-  </li>
-  <li>All vectors are <strong>mutually perpendicular</strong>.
-    <ul>
-      <li>$q_i \perp q_j$ where $i \neq j$.</li>
-    </ul>
-  </li>
+  <li>All vectors are <strong>unit vectors</strong> of length 1, i.e. $|q_i| = 1$.</li>
+  <li>All vectors are <strong>mutually perpendicular</strong>, i.e. $q_i \perp q_j$ where $i \neq j$.</li>
 </ul>
 
 <p>These characteristics can be obtained through the following routine which is composed by three steps [1]:</p>
@@ -273,7 +261,7 @@ ${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1
     <ul>
       <li>Step 1.
         <ul>
-          <li>skipped</li>
+          <li>N.A.</li>
         </ul>
       </li>
       <li>Stpe 2.
@@ -286,13 +274,14 @@ ${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1
           <li>$q_0=a_0/\rho_{0, 0}$.</li>
         </ul>
       </li>
-      <li>Result
-        <ul>
-          <li>$a_0=q_0\rho_{0, 0}$.</li>
-        </ul>
-      </li>
+      <li>Result</li>
     </ul>
   </li>
+</ul>
+
+<script type="math/tex; mode=display">a_0=q_0\rho_{0, 0}</script>
+
+<ul>
   <li>compute the vector $q_1$ ($i=1$)
     <ul>
       <li>Step 1.
@@ -375,22 +364,6 @@ ${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1
   </li>
 </ul>
 
-<!-- $$A =
-\left[
-\begin{array}{c|c|c|c|c|c|c}
-  a_0 & ... & a_{k-1} & a_{k} & a_{k+1} & ... & a_{n-1} \\
-\end{array}
-\right]
-$$
-
-$$Q =
-\left[
-\begin{array}{c|c|c|c|c|c|c}
-  q_0 & ... & q_{k-1} & q_{k} & q_{k+1} & ... & q_{n-1} \\
-\end{array}
-\right]
-$$ -->
-
 <p><br /></p>
 
 <h1 id="gram-schmidt-and-qr-factorization">Gram-Schmidt and QR factorization</h1>
@@ -427,7 +400,7 @@ $$ -->
   <li>$Q_0^Ha_1=Q_0^HQ_0r_{0,1}+q_1\rho_{1,1}=r_{01}$.</li>
 </ul>
 
-<p>Compute $r_{0,1}$, which are already known:</p>
+<p>Compute $r_{0,1}$, which is already known:</p>
 
 <ul>
   <li>$r_{0,1}:=Q_0^Ha_1$.</li>
@@ -448,6 +421,12 @@ $$ -->
 
 <hr />
 
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-12-26-GS/CGS.png" width="100%" />   <figcaption>
+Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of a matrix A [2]
+  </figcaption>
+</figure>
+
 <p>  <script src="https://gist.github.com/jhyun0919/79fefe26187d174e154474e64516a8f1.js"></script>
  <em>Code. 1: CGS QR factorization in python</em></p>
 
@@ -455,7 +434,7 @@ $$ -->
 
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2020-12-26-GS/MGS-side-by-side.png" width="100%" />   <figcaption>
-Figure 1. Alternative Modified Gram-Schmidt algorithm for computing the QR factorization of a matrix A [3]
+Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR factorization of a matrix A [3]
   </figcaption>
 </figure>
 
