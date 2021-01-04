@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sun, 03 Jan 2021 20:31:39 -0600</pubDate>
+    <pubDate>Sun, 03 Jan 2021 22:52:07 -0600</pubDate>
     
       <item>
         <title>(TIL) How to Speak</title>
@@ -65,9 +65,11 @@
 
 &lt;hr /&gt;
 
+&lt;!-- ###################################################################### --&gt;
+
 &lt;h1 id=&quot;gramschmidt-process&quot;&gt;Gram–Schmidt Process&lt;/h1&gt;
 
-&lt;p&gt;Given a set of linearly independent vectors $Span({ a_0, … , a_{n-1} } ) \subset \mathbb{C}^m$, the &lt;strong&gt;Gram-Schimdt process&lt;/strong&gt; computes a new basis ${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1], i.e. $Span({ a_0, … , a_{n-1} } ) = Span({ q_0, … , q_{n-1} } ).$&lt;/p&gt;
+&lt;p&gt;Given a set of linearly independent vectors $Span({ a_0, … , a_{n-1} } ) \subset \mathbb{C}^m$, the &lt;strong&gt;Gram-Schimdt process&lt;/strong&gt; computes a new basis $({q_0, … , q_{n-1}})$ that spans the same subspace as the original vectors, i.e. $Span({ a_0, … , a_{n-1} } ) = Span({ q_0, … , q_{n-1} } )$ [1].&lt;/p&gt;
 
 &lt;p&gt;It should be noted that we would like to have the new basis, ${ q_0, … , q_{n-1} }$, having the following characteristics.&lt;/p&gt;
 
@@ -81,9 +83,9 @@
 &lt;blockquote&gt;
 
   &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;Gram-Schmidt Process&amp;gt;
-  Step 1. compute the direction of the vectors.
-  Step 2. compute the magnitude of the vectors.
-  Step 3. get a unit vector.
+  Step 1. Compute the direction of the vectors.
+  Step 2. Compute the magnitude of the vectors.
+  Step 3. Compute a unit vector.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
 &lt;/blockquote&gt;
 
@@ -191,24 +193,42 @@
       &lt;li&gt;Step 1.&lt;/li&gt;
       &lt;li&gt;Step 2.&lt;/li&gt;
       &lt;li&gt;Step 3.&lt;/li&gt;
+      &lt;li&gt;Final Result&lt;/li&gt;
     &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A = QR&lt;/script&gt;
+
+&lt;p&gt;What we should pay attention to in the final result ($A = QR$) are…&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;All column vectors of $Q$, the new basis $({q_0, … , q_{n-1}})$, are unit vector and mutually orthogonal, which means $Q$ is an &lt;strong&gt;unitary matrix&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The matrix $R$ is &lt;strong&gt;upper triangular matrix&lt;/strong&gt; and $rank(R)=m$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The dot product of $Q$ and $R$, which is equal to $A$, can be regarded as a &lt;strong&gt;linear combination&lt;/strong&gt; of $Q$’s column vectors.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The result of &lt;strong&gt;Gram-Shmidt Process&lt;/strong&gt; can be regarded as a result of &lt;strong&gt;QR factorization&lt;/strong&gt; (decomposotion).&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;gram-schmidt-and-qr-factorization&quot;&gt;Gram-Schmidt and QR factorization&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;!-- ###################################################################### --&gt;
 
 &lt;h1 id=&quot;classical-gram-schmidt-cgs&quot;&gt;Classical Gram-Schmidt (CGS)&lt;/h1&gt;
 
-&lt;p&gt;[2]&lt;/p&gt;
+&lt;p&gt;The content discussed in the previous section can be summarized into an algorithm as follows, which is the CGS-QR algorithm [2].&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;p&gt;Consider $A=QR$.&lt;/p&gt;
 
-&lt;p&gt;Partition the given amtricws as follows.&lt;/p&gt;
+&lt;p&gt;Partition the given matrices as follows.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \left[\begin{array}{c|cc}A_{0} &amp; a_{1} &amp; A_{2}\end{array}
@@ -231,7 +251,7 @@
   &lt;li&gt;$Q_0^Ha_1=Q_0^HQ_0r_{0,1}+q_1\rho_{1,1}=r_{01}$.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Compute $r_{0,1}$, which is already known:&lt;/p&gt;
+&lt;p&gt;Compute $r_{0,1}$, which is already known.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$r_{0,1}:=Q_0^Ha_1$.&lt;/li&gt;
@@ -252,16 +272,70 @@
 
 &lt;hr /&gt;
 
+&lt;p&gt;Figure 1. shows Classical Gram-Schmidt algorithm for computing the QR factorization of a matrix A, and Code 1. shows the algorithms in python language.&lt;/p&gt;
+
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-12-26-GS/CGS.png&quot; width=&quot;100%&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-12-26-GS/CGS.png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
 Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of a matrix A [2]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/79fefe26187d174e154474e64516a8f1.js&quot;&gt;&lt;/script&gt;
- &lt;em&gt;Code. 1: CGS QR factorization in python&lt;/em&gt;&lt;/p&gt;
+ &lt;em&gt;Code. 1: CGS QR in python&lt;/em&gt;&lt;/p&gt;
+
+&lt;!-- ###################################################################### --&gt;
 
 &lt;h1 id=&quot;modified-gram-schmidt-mgs&quot;&gt;Modified Gram-Schmidt (MGS)&lt;/h1&gt;
+
+&lt;p&gt;Gram-Schmidt process can be performed differently from CGS, and the corresponding algorithm is as follows, which is called Modified Gram-Schmidt (MGS) [3].&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Consider $A=QR$.&lt;/p&gt;
+
+&lt;p&gt;Partition the given matrices as follows.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left[\begin{array}{c|cc}A_{0} &amp; a_{1} &amp; A_{2}\end{array}
+        \right]=
+        \left[\begin{array}{c|cc}Q_{0} &amp; q_{1} &amp; Q_{2}\end{array}
+        \right]
+        \left[\begin{array}{c|cc}
+        R_{0, 0}  &amp; r_{0, 1} &amp; R_{0, 2} \\
+        \hline
+        0 &amp; \rho_{1, 1} &amp; r_{1, 2}^T\\
+        0 &amp; 0 &amp; R_{2, 2}
+        \end{array}
+        \right] %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Assume that $a_1$ and $A_2$ are known.&lt;/p&gt;
+
+&lt;p&gt;Compute $\rho_{1,1}$ (compute the magnitude).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\rho_{1,1}:=|a_1|$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Compute $q_1$ (compute the unit vector)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$q_1:=a_1/\rho_{1,1}$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Compute $r_{0,1}^T$, which is already known&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$r_{0,1}^T:=q_1^H(A_2 - Q_2R_{22} = q_1^HA_2$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Compute $A_2$ (update $A_2$ for the orthogonal direction)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$A_2:=A_2-q_1r_{0,1}^T$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Figure 2. shows Modified Gram-Schmidt algorithm for computing the QR factorization of a matrix A, and Code 2. shows the algorithms in python language.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-12-26-GS/MGS-side-by-side.png&quot; width=&quot;100%&quot; /&gt;   &lt;figcaption&gt;
@@ -270,11 +344,26 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
 &lt;/figure&gt;
 
 &lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/c1395732ab7336b7a27b719af66213ab.js&quot;&gt;&lt;/script&gt;
- &lt;em&gt;Code. 2: MGS QR factorization in python&lt;/em&gt;&lt;/p&gt;
+ &lt;em&gt;Code. 2: MGS QR in python&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;where-we-can-use-this&quot;&gt;Where we can use this?&lt;/h1&gt;
+&lt;!-- ###################################################################### --&gt;
+
+&lt;h1 id=&quot;why-do-we-need-this&quot;&gt;Why do we need this?&lt;/h1&gt;
+
+&lt;p&gt;Through Gram-Schmidt process, we can obtain a orthonormal basis for $\mathbb{C}^m$.&lt;/p&gt;
+
+&lt;p&gt;The advantages of being able to have an orthonormal basis are following [4].&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;We can express any  $v \in \mathbb{C}^m$ as a lineawr combination of coefficients, which will allows us to have an explicit formula expressing $v$ with the orthonormal basis.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The explicit formula is very useful when dealing with projection onto subspace.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 &lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
@@ -283,6 +372,8 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
 &lt;p&gt;[2] M. M. Robert van de Geijn, “Advanced Linear Algebra: Foundations to Frontiers,” ALAFF Classical Gram-Schmidt algorithm. [Online]. Available: https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-cgs-algorithm.html. [Accessed: 03-Jan-2021].&lt;/p&gt;
 
 &lt;p&gt;[3] M. M. Robert van de Geijn, “Advanced Linear Algebra: Foundations to Frontiers,” ALAFF Modified Gram-Schmidt (MGS). [Online]. Available: https://www.cs.utexas.edu/users/flame/laff/alaff/Modified-Classical-Gram-Schmidt.html. [Accessed: 03-Jan-2021].&lt;/p&gt;
+
+&lt;p&gt;[4] Michael Albanese, “Why is orthogonal basis important?,” Mathematics Stack Exchange. [Online]. Available: https://math.stackexchange.com/questions/518600/why-is-orthogonal-basis-important. [Accessed: 03-Jan-2021].&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Dec 2020 00:00:00 -0600</pubDate>
       </item>
