@@ -1,6 +1,8 @@
 // Typography
-$font-family-main: 'Source Sans Pro', Helvetica, Arial, sans-serif !default;
-$font-family-headings: 'Source Sans Pro', Helvetica, Arial, sans-serif !default;
+$font-family-main: "Source Sans Pro", Helvetica, Arial, sans-serif !default;
+$font-family-headings: "Source Sans Pro", Helvetica, Arial, sans-serif !default;
+// $font-family-main: "JetBrains Mono", monospace !default;
+// $font-family-headings: "JetBrains Mono", monospace !default;
 $font-size: 1.2em !default;
 
 // Padding
@@ -12,12 +14,17 @@ $padding-x-small: 5%;
 // Brand colours
 $brand-color: #fff !default;
 $background-color: #fff !default;
-$border-color: rgba(0, 0, 0, 0.1) !default; // rgba recommended if using feature images
+$border-color: rgba(
+  0,
+  0,
+  0,
+  0.1
+) !default; // rgba recommended if using feature images
 
 // Typography colours
 $text-color: #383838 !default;
 $link-color: #38cef3 !default;
-$selection-color: #D4D4D4 !default; // visible when highlighting text
+$selection-color: #d4d4d4 !default; // visible when highlighting text
 
 // Tags color
 $tags-color: #b0b0b0 !default;
@@ -35,5 +42,5 @@ $feature-image-size: cover !default; // options include "cover", "contain", "aut
 
 // Header description box
 $header-desc-background-color: #38cef3 !default;
-$header-desc-text-color: #FFF !default;
-$header-desc-link-color: #02453D !default;
+$header-desc-text-color: #fff !default;
+$header-desc-link-color: #02453d !default;

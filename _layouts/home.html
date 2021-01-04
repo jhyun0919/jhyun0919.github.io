@@ -10,12 +10,14 @@ layout: default
     {{ site.theme_settings.header_text }}
   </div>
   {% endif %}
+
   <hr>
-  <h1 class="post-title" style="width:55%; margin:0 auto;">Recent Post 🤘</h1>
+  <h1 class="post-title" style="width:55%; margin:0 auto;">Recent Posts🤘</h1>
   <br>
 
   {% for post in paginator.posts %}
   <div class="post-teaser">
+
     <header style="width:55%; margin:0 auto;">
       <h2>
         <a class="post-link" href="{{ post.url | relative_url }}">
@@ -26,17 +28,18 @@ layout: default
         {{ post.date | date: "%B %-d, %Y" }}
       </p>
     </header>
+
     <div class="excerpt" style="width:55%; margin:0 auto;">
-      {{ post.excerpt | truncatewords:25 }}
+      {{ post.excerpt | truncatewords:19 }}
       <br>
       <a class="button" href="{{ post.url | relative_url }}">
         {{ site.theme_settings.str_continue_reading }}
       </a>
       <br>
     </div>
+
   </div>
   {% endfor %}
-
 
   {% if paginator.total_pages > 1 %}
   <div class="pagination">

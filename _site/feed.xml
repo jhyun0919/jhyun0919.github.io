@@ -5,37 +5,327 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sat, 12 Dec 2020 09:00:48 -0600</pubDate>
+    <pubDate>Sun, 03 Jan 2021 19:51:16 -0600</pubDate>
     
       <item>
-        <title>Laïcité</title>
-        <link>/daily/essay/2020/12/12/essay.html</link>
-        <guid isPermaLink="true">/daily/essay/2020/12/12/essay.html</guid>
-        <description>&lt;p&gt;Recently, I have finished two final exams, and one left next Thursday. I think it is a good moment to start again to write what I have been thinking these days. Looking back at the end of the semester, I realized that a lot had happened globally, which I have not thought deeply about due to my hectic school life. For instance, the pandemic broke out, and we are living in the era of New Normal. Also, there was a presidential election in the US. In my thought, these are the most notable or significant events of this year. However, in this article, I would like to share my view about what happened in France.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://bdidier.fr/wp-content/uploads/1250_portail_laic.jpg&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption align=&quot;center&quot;&gt;
-(https://bdidier.fr/4eme-la-laicite/)
-  &lt;/figcaption&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;In October, a French middle school teacher was attacked and beheaded by a terrorist. Similar incidents have been happening after this incident, and it reminded me of the terror in Paris four years ago. Behind these tragedies, we all know there are complex religious problems. Several factors may be responsible for the continued occurrence of these incidents in France. In my respect, it has a lot to do with Laicite (Secularism).&lt;/p&gt;
-
-&lt;p&gt;I know that it is nearly impossible for me, not French, to fully understand and describe the meaning of Laicite. To the best of my understanding, it means strict separation of religion from society, the secular world. There must be pros and cons of separating religion from our lives. I can agree that we can get an opportunity to consider religion on an equal footing with other values by taking it apart from society. For example, in Korea, many parents agree that their children can make decisions for their future by themselves. However, suddenly they change extremely conservative when it comes to religious choices, which is nonsense, given that it is just another decision like others. I think they act differently because they never take apart religion from their lives and always give a top priority to it. Suppose parents had tried to separate religion from society and consider it on an equal footing. In that case, they might have different conversations with their children and ended up with more rational conclusions.&lt;/p&gt;
-
-&lt;p&gt;However, a series of these thoughts can be taken as a challenge or blasphemy for violent and radical religious groups. In my opinion, these groups are very likely to use violence in the form of retaliation when society becomes unstable. As a result, ironically, the society where rational judgment can be made is exposed to the risk of terror. As far as religion is concerned, I think France has a society with good conditions for making rational judgments. Simultaneously, the country is exposed to violence in an unstable period due to the pandemic. I hope they will overcome this crisis well without further tragedy, and others will be able to learn the unique way of their thinking.&lt;/p&gt;
+        <title>(TIL) How to Speak</title>
+        <link>/daily/essay/2020/12/28/how-to-speak.html</link>
+        <guid isPermaLink="true">/daily/essay/2020/12/28/how-to-speak.html</guid>
+        <description>&lt;p&gt;&lt;a href=&quot;http://sixminutes.dlugan.com/speaking-tips-patrick-henry-winston-speak/&quot;&gt;How to Speak: 7 Speaking Tips from Patrick Henry Winston&lt;/a&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=Unzc731iCUY&quot;&gt;How To Speak by Patrick Winston&lt;/a&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=uylHeDdlMrc&amp;amp;amp%3Bab_channel=sergiusheartless&quot;&gt;How to Speak - The Big Four&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 12 Dec 2020 00:00:00 -0600</pubDate>
+        <pubDate>Mon, 28 Dec 2020 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>Householder QR Factorization</title>
+        <link>/research/mathematics/2020/12/26/Householder.html</link>
+        <guid isPermaLink="true">/research/mathematics/2020/12/26/Householder.html</guid>
+        <description>&lt;p&gt;This article was written by referring to the &lt;em&gt;Fall 2020 Numerical Analysis: Linear Algebra Course&lt;/em&gt; and the following links.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-gram-schmidt.html&quot;&gt;ALAFF: Gram-Schmidt Orthogonalization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ULAFF/ALAFF&quot;&gt;ALAFF Git Repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;unitary-matrix&quot;&gt;Unitary Matrix&lt;/h2&gt;
+
+&lt;h2 id=&quot;householder-transformation&quot;&gt;Householder transformation&lt;/h2&gt;
+
+&lt;h2 id=&quot;householder-qr-factorization-algorithm&quot;&gt;Householder QR factorization algorithm&lt;/h2&gt;
+
+&lt;h3 id=&quot;forming-q&quot;&gt;Forming Q&lt;/h3&gt;
+
+&lt;h3 id=&quot;applying-qh&quot;&gt;Applying QH&lt;/h3&gt;
+
+&lt;h3 id=&quot;orthogonality-of-resulting-q&quot;&gt;Orthogonality of resulting Q&lt;/h3&gt;
+
+&lt;h2 id=&quot;blocked-householder-qr-factorization&quot;&gt;Blocked Householder QR factorization&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;p&gt;[1]&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Dec 2020 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>Gram–Schmidt Process</title>
+        <link>/research/mathematics/2020/12/26/GS.html</link>
+        <guid isPermaLink="true">/research/mathematics/2020/12/26/GS.html</guid>
+        <description>&lt;p&gt;This article was written by referring to the &lt;em&gt;Fall 2020 Numerical Analysis: Linear Algebra Course&lt;/em&gt; and the following links.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-gram-schmidt.html&quot;&gt;ALAFF: Gram-Schmidt Orthogonalization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ULAFF/ALAFF&quot;&gt;ALAFF Git Repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;gramschmidt-process&quot;&gt;Gram–Schmidt Process&lt;/h1&gt;
+
+&lt;p&gt;Given a set of linearly independent vectors 
+$Span({ a_0, … , a_{n-1} } ) \subset \mathbb{C}^m$, the &lt;strong&gt;Gram-Schimdt process&lt;/strong&gt; computes a new basis 
+${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1], i.e.&lt;/p&gt;
+
+&lt;p&gt;$Span({ a_0, … , a_{n-1} } ) = Span({ q_0, … , q_{n-1} } ).$&lt;/p&gt;
+
+&lt;p&gt;It should be noted that we would like to have the new basis, ${ q_0, … , q_{n-1} }$, having the following characteristics.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;All vectors are &lt;strong&gt;unit vectors&lt;/strong&gt; of length 1.
+    &lt;ul&gt;
+      &lt;li&gt;$|q_i| = 1$.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;All vectors are &lt;strong&gt;mutually perpendicular&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;$q_i \perp q_j$ where $i \neq j$.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These characteristics can be obtained through the following routine which is composed by three steps [1]:&lt;/p&gt;
+
+&lt;blockquote&gt;
+
+  &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;Gram-Schmidt Process&amp;gt;
+  Step 1. compute the direction of the vectors.
+  Step 2. compute the magnitude of the vectors.
+  Step 3. get a unit vector.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Compute the vector $q_0$ ($i=0$)
+    &lt;ul&gt;
+      &lt;li&gt;Step 1.
+        &lt;ul&gt;
+          &lt;li&gt;skipped&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Stpe 2.
+        &lt;ul&gt;
+          &lt;li&gt;$\rho_{0, 0}=|a_0|_2$.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Step 3.
+        &lt;ul&gt;
+          &lt;li&gt;$q_0=a_0/\rho_{0, 0}$.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Result
+        &lt;ul&gt;
+          &lt;li&gt;$a_0=q_0\rho_{0, 0}$.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;compute the vector $q_1$ ($i=1$)
+    &lt;ul&gt;
+      &lt;li&gt;Step 1.
+        &lt;ul&gt;
+          &lt;li&gt;$\rho_{0, 1}=q_0^{H}a_1$.&lt;/li&gt;
+          &lt;li&gt;$a_{1}^{\perp}=a_1-\rho_{0, 1}q_0$.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Step 2.
+        &lt;ul&gt;
+          &lt;li&gt;$\rho_{1, 1}=|a_1^\perp|_2$.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Step 3.
+        &lt;ul&gt;
+          &lt;li&gt;$q_1=a_1^\perp/\rho_{1, 1}$.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Result&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left[\begin{array}{c|c}a_{0} &amp; a_{1}\end{array}
+        \right]=
+        \left[\begin{array}{c|c}q_{0} &amp; q_{1}\end{array}
+        \right]
+        \left[\begin{array}{c|c}
+        \rho_{0, 0} &amp; \rho_{0, 1} \\
+        \hline
+        0 &amp; \rho_{1, 1}
+        \end{array}
+        \right] %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;compute the vector $q_2$ ($i=2$)
+    &lt;ul&gt;
+      &lt;li&gt;Step 1.
+        &lt;ul&gt;
+          &lt;li&gt;$\begin{bmatrix}\rho_{0, 2} \ \rho_{1, 2}\end{bmatrix}=\begin{bmatrix}q_{0} &amp;amp; q_{1}\end{bmatrix}^Ha_2$.&lt;/li&gt;
+          &lt;li&gt;$a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} &amp;amp; q_{1}\end{bmatrix}\begin{bmatrix}\rho_{0, 2} \ \rho_{1, 2}\end{bmatrix}$.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Step 2.
+        &lt;ul&gt;
+          &lt;li&gt;$\rho_{2, 2}=|a_2^\perp|_2$.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Step 3.
+        &lt;ul&gt;
+          &lt;li&gt;$q_2=a_2^\perp/\rho_{2, 2}$.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Result&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left[\begin{array}{c|c}a_{0} \ a_{1}&amp; a_{2}\end{array}
+        \right]=
+        \left[\begin{array}{c|c}q_{0} \ q_{1} &amp; q_{2}\end{array}
+        \right]
+        \left[\begin{array}{cc|c}
+        \rho_{0, 0}  &amp; \rho_{0, 1} &amp; \rho_{0, 2} \\
+        0 &amp; \rho_{1, 1} &amp; \rho_{1, 2}\\
+        \hline
+        0 &amp; 0 &amp; \rho_{2, 2}
+        \end{array}
+        \right] %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;keep do the routine till $i=n-1$
+    &lt;ul&gt;
+      &lt;li&gt;Step 1.&lt;/li&gt;
+      &lt;li&gt;Step 2.&lt;/li&gt;
+      &lt;li&gt;Step 3.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- $$A =
+\left[
+\begin{array}{c|c|c|c|c|c|c}
+  a_0 &amp; ... &amp; a_{k-1} &amp; a_{k} &amp; a_{k+1} &amp; ... &amp; a_{n-1} \\
+\end{array}
+\right]
+$$
+
+$$Q =
+\left[
+\begin{array}{c|c|c|c|c|c|c}
+  q_0 &amp; ... &amp; q_{k-1} &amp; q_{k} &amp; q_{k+1} &amp; ... &amp; q_{n-1} \\
+\end{array}
+\right]
+$$ --&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;gram-schmidt-and-qr-factorization&quot;&gt;Gram-Schmidt and QR factorization&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;classical-gram-schmidt-cgs&quot;&gt;Classical Gram-Schmidt (CGS)&lt;/h1&gt;
+
+&lt;p&gt;[2]&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Consider $A=QR$.&lt;/p&gt;
+
+&lt;p&gt;Partition the given amtricws as follows.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left[\begin{array}{c|cc}A_{0} &amp; a_{1} &amp; A_{2}\end{array}
+        \right]=
+        \left[\begin{array}{c|cc}Q_{0} &amp; q_{1} &amp; Q_{2}\end{array}
+        \right]
+        \left[\begin{array}{c|cc}
+        R_{0, 0}  &amp; r_{0, 1} &amp; R_{0, 2} \\
+        \hline
+        0 &amp; \rho_{1, 1} &amp; r_{1, 2}^T\\
+        0 &amp; 0 &amp; R_{2, 2}
+        \end{array}
+        \right] %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Assume that $Q_0$ and $R_{0,0}$ have already been computed.&lt;/p&gt;
+
+&lt;p&gt;Since $Q$ is unitary matric ($Q_0^HQ_0=I$ and $Q_0^Hq_1=0$),&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$Q_0^Ha_1=Q_0^HQ_0r_{0,1}+q_1\rho_{1,1}=r_{01}$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Compute $r_{0,1}$, which are already known:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$r_{0,1}:=Q_0^Ha_1$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Compute $\rho_{1,1}$ (Step 1. &amp;amp; 2.)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$a_1^\perp:=a_1-Q_0r_{0,1}$.&lt;/li&gt;
+  &lt;li&gt;$\rho_{1,1}:=|a_1^\perp|$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Compute $q_1$ (Step 3.)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$q_1 := a_1^\perp / \rho_{1,1}$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/79fefe26187d174e154474e64516a8f1.js&quot;&gt;&lt;/script&gt;
+ &lt;em&gt;Code. 1: CGS QR factorization in python&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;modified-gram-schmidt-mgs&quot;&gt;Modified Gram-Schmidt (MGS)&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-12-26-GS/MGS-side-by-side.png&quot; width=&quot;100%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Alternative Modified Gram-Schmidt algorithm for computing the QR factorization of a matrix A [3]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/c1395732ab7336b7a27b719af66213ab.js&quot;&gt;&lt;/script&gt;
+ &lt;em&gt;Code. 2: MGS QR factorization in python&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;where-we-can-use-this&quot;&gt;Where we can use this?&lt;/h1&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;p&gt;[1] M. M. Robert van de Geijn, “Advanced Linear Algebra: Foundations to Frontiers,” ALAFF Classical Gram-Schmidt (CGS). [Online]. Available: https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-classical-gram-schmidt.html. [Accessed: 03-Jan-2021].&lt;/p&gt;
+
+&lt;p&gt;[2] M. M. Robert van de Geijn, “Advanced Linear Algebra: Foundations to Frontiers,” ALAFF Classical Gram-Schmidt algorithm. [Online]. Available: https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-cgs-algorithm.html. [Accessed: 03-Jan-2021].&lt;/p&gt;
+
+&lt;p&gt;[3] M. M. Robert van de Geijn, “Advanced Linear Algebra: Foundations to Frontiers,” ALAFF Modified Gram-Schmidt (MGS). [Online]. Available: https://www.cs.utexas.edu/users/flame/laff/alaff/Modified-Classical-Gram-Schmidt.html. [Accessed: 03-Jan-2021].&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Dec 2020 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>(Python-Dev Tips) Jupyter</title>
+        <link>/research/cs/2020/12/25/jupyter.html</link>
+        <guid isPermaLink="true">/research/cs/2020/12/25/jupyter.html</guid>
+        <description>
+</description>
+        <pubDate>Fri, 25 Dec 2020 00:00:00 -0600</pubDate>
       </item>
     
       <item>
         <title>(Python-Dev Tips) PEP8</title>
-        <link>/research/cs/2020/10/03/pep8.html</link>
-        <guid isPermaLink="true">/research/cs/2020/10/03/pep8.html</guid>
+        <link>/research/cs/2020/12/21/pep8.html</link>
+        <guid isPermaLink="true">/research/cs/2020/12/21/pep8.html</guid>
         <description>&lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html&quot;&gt;Git Basic&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;PEP8&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt; (editting…)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
@@ -78,19 +368,30 @@
 &lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
 
 </description>
-        <pubDate>Sat, 03 Oct 2020 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 21 Dec 2020 00:00:00 -0600</pubDate>
       </item>
     
       <item>
         <title>(Python-Dev Tips) Virtual Environment</title>
-        <link>/research/cs/2020/10/02/virtualenv.html</link>
-        <guid isPermaLink="true">/research/cs/2020/10/02/virtualenv.html</guid>
-        <description>&lt;ol&gt;
+        <link>/research/cs/2020/12/19/virtualenv.html</link>
+        <guid isPermaLink="true">/research/cs/2020/12/19/virtualenv.html</guid>
+        <description>&lt;p&gt;In this article, we are going to explain what is virtual environment in python and why do we need it. Also, we will show you how we can set up a virtual environment.&lt;/p&gt;
+
+&lt;p&gt;This posting is one of a series of tips for developing python following the previous post.&lt;/p&gt;
+
+&lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html&quot;&gt;Git Basic&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Virtual Environment&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt; (editting…)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt; (editting…)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/tutorial/venv.html&quot;&gt;Python Docs: Virtual Environments&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://realpython.com/python-virtual-environments-a-primer/&quot;&gt;Real Python: Python Virtual Environments&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 &lt;h1 id=&quot;what-is-virtual-environment&quot;&gt;What is Virtual Environment&lt;/h1&gt;
@@ -112,7 +413,75 @@
 &lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
 
 </description>
-        <pubDate>Fri, 02 Oct 2020 00:00:00 -0500</pubDate>
+        <pubDate>Sat, 19 Dec 2020 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>Cascading Outage Simulator</title>
+        <link>/research/energy/2020/12/15/Cascading-Outage-Sim.html</link>
+        <guid isPermaLink="true">/research/energy/2020/12/15/Cascading-Outage-Sim.html</guid>
+        <description>&lt;p&gt;pros and cons of various cascading outage simulators.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 15 Dec 2020 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>(Tutorial) EMTP - Line/Cable Modeling for EMT Simulations</title>
+        <link>/research/energy/2020/12/14/EMTP.html</link>
+        <guid isPermaLink="true">/research/energy/2020/12/14/EMTP.html</guid>
+        <description>&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLP4K-zG4OPTEWlzPJQvKxnDd1I0ObW4MS&quot;&gt;EMTP Tutorials&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 14 Dec 2020 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>(TIL) Reviewing Statictics and Probability</title>
+        <link>/research/mathematics/2020/12/13/prob.html</link>
+        <guid isPermaLink="true">/research/mathematics/2020/12/13/prob.html</guid>
+        <description>
+</description>
+        <pubDate>Sun, 13 Dec 2020 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>LMI and Power Systems</title>
+        <link>/research/energy/2020/12/13/LMI-and-Power-System.html</link>
+        <guid isPermaLink="true">/research/energy/2020/12/13/LMI-and-Power-System.html</guid>
+        <description>
+</description>
+        <pubDate>Sun, 13 Dec 2020 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>GNN</title>
+        <link>/research/energy/2020/12/13/GNN.html</link>
+        <guid isPermaLink="true">/research/energy/2020/12/13/GNN.html</guid>
+        <description>
+</description>
+        <pubDate>Sun, 13 Dec 2020 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>Laïcité</title>
+        <link>/daily/essay/2020/12/12/essay.html</link>
+        <guid isPermaLink="true">/daily/essay/2020/12/12/essay.html</guid>
+        <description>&lt;p&gt;Recently, I have finished two final exams, and one left next Thursday. I think it is a good moment to start again to write what I have been thinking these days. Looking back at the end of the semester, I realized that a lot had happened globally, which I have not thought deeply about due to my hectic school life. For instance, the pandemic broke out, and we are living in the era of New Normal. Also, there was a presidential election in the US. In my thought, these are the most notable or significant events of this year. However, in this article, I would like to share my view about what happened in France.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://bdidier.fr/wp-content/uploads/1250_portail_laic.jpg&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption align=&quot;center&quot;&gt;
+(https://bdidier.fr/4eme-la-laicite/)
+  &lt;/figcaption&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;In October, a French middle school teacher was attacked and beheaded by a terrorist. Similar incidents have been happening after this incident, and it reminded me of the terror in Paris four years ago. Behind these tragedies, we all know there are complex religious problems. Several factors may be responsible for the continued occurrence of these incidents in France. In my respect, it has a lot to do with Laicite (Secularism).&lt;/p&gt;
+
+&lt;p&gt;I know that it is nearly impossible for me, not French, to fully understand and describe the meaning of Laicite. To the best of my understanding, it means strict separation of religion from society, the secular world. There must be pros and cons of separating religion from our lives. I can agree that we can get an opportunity to consider religion on an equal footing with other values by taking it apart from society. For example, in Korea, many parents agree that their children can make decisions for their future by themselves. However, suddenly they change extremely conservative when it comes to religious choices, which is nonsense, given that it is just another decision like others. I think they act differently because they never take apart religion from their lives and always give a top priority to it. Suppose parents had tried to separate religion from society and consider it on an equal footing. In that case, they might have different conversations with their children and ended up with more rational conclusions.&lt;/p&gt;
+
+&lt;p&gt;However, a series of these thoughts can be taken as a challenge or blasphemy for violent and radical religious groups. In my opinion, these groups are very likely to use violence in the form of retaliation when society becomes unstable. As a result, ironically, the society where rational judgment can be made is exposed to the risk of terror. As far as religion is concerned, I think France has a society with good conditions for making rational judgments. Simultaneously, the country is exposed to violence in an unstable period due to the pandemic. I hope they will overcome this crisis well without further tragedy, and others will be able to learn the unique way of their thinking.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Dec 2020 00:00:00 -0600</pubDate>
       </item>
     
       <item>
@@ -121,11 +490,13 @@
         <guid isPermaLink="true">/research/cs/2020/10/01/git-tips.html</guid>
         <description>&lt;p&gt;Starting with this posting, we will upload a series of articles that can help with Python development. The series will be written in four articles, and the contents are as follows, and if necessary, additional posts will be uploaded as a separate series.&lt;/p&gt;
 
+&lt;p&gt;In this article, we will show you what Git is and Why do we need it. Also, we will give a brief intro to how we can start and use Git.&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Git Basic&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt; (editting…)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt; (editting…)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt; (editting…)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
@@ -426,7 +797,7 @@ Figure 4. Git Command Line Tutorial Screenshot.
 &lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
 &lt;p&gt;In mathematics, the Hessian matrix or Hessian is a square matrix of second-order partial derivatives of a scalar-valued function, or scalar field. It describes the local curvature of a function of many variables. [1]&lt;/p&gt;
 
-&lt;p&gt;Suppose &lt;script type=&quot;math/tex&quot;&gt;f : ℝ^n → ℝ&lt;/script&gt; is a function taking as input a vector &lt;script type=&quot;math/tex&quot;&gt;x ∈ ℝ^n&lt;/script&gt; and outputting a scalar &lt;script type=&quot;math/tex&quot;&gt;f(x) ∈ ℝ&lt;/script&gt;. If all second partial derivatives of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; exist and are continuous over the domain of the function, then the Hessian matrix &lt;script type=&quot;math/tex&quot;&gt;H&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is a square n×n matrix, usually defined and arranged as follows; [1]&lt;/p&gt;
+&lt;p&gt;Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$ and outputting a scalar $f(x) ∈ ℝ$. If all second partial derivatives of $f$ exist and are continuous over the domain of the function, then the Hessian matrix $H$ of $f$ is a square n×n matrix, usually defined and arranged as follows; [1]&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
@@ -488,548 +859,6 @@ Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]
 &lt;p&gt;[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].&lt;/p&gt;
 </description>
         <pubDate>Tue, 21 Jul 2020 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(TF) Which Layer Do I Need?</title>
-        <link>/research/ml&dl/2020/07/20/how-to-choose-layer.html</link>
-        <guid isPermaLink="true">/research/ml&dl/2020/07/20/how-to-choose-layer.html</guid>
-        <description>&lt;p&gt;The structure of the deep learning model is designed differently depending on the types of data features and the objective of the model. More specifically, in order to select the type of layer used in the model, the characteristics of data features and the learning objectives of the model must be considered.&lt;/p&gt;
-
-&lt;p&gt;In order to find out which structure is most suitable, we experimented with fixing the type of dataset and the target of the model and changing the structure of the model. The dataset used in the experiment is MNIST. The types of models used in the experiment were as follows; &lt;em&gt;DenseNet&lt;/em&gt; using only &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense&quot;&gt;dense layer&lt;/a&gt;, &lt;em&gt;ConvNet&lt;/em&gt; using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/Conv2D&quot;&gt;convolutional layer&lt;/a&gt;, and &lt;em&gt;LstmNet&lt;/em&gt; using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM&quot;&gt;LSTM layer&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Full code of the experiments can be found at the following github repository.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/MNIST/how%20to%20choose%20layer.ipynb&quot;&gt;Park’s GitHub &amp;gt; How to choose layer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/neural_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Neural Network Example&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/convolutional_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Convolutional Neural Network Example&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1&quot;&gt;Irhum Shafkat’s Medium posting &amp;gt; Intuitively Understanding Convolutions for Deep Learning&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/recurrent_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Recurrent Neural Network Example&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn&quot;&gt;Simplilearn &amp;gt; Recurrent Neural Network Tutorial&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.slideshare.net/JiHyunPark18/understanding-lstm-and-its-diagrams&quot;&gt;Park’s SlideShare &amp;gt; Understanding LSTM&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;model-structures&quot;&gt;Model Structures&lt;/h1&gt;
-&lt;h2 id=&quot;dense-model&quot;&gt;Dense Model&lt;/h2&gt;
-
-&lt;p&gt;This model consisted only of dense layers. This is the simplest model of the neural network and works well for all types of data, but performance decreases when an input data becomes complicated or large. Therefore, dense layers are used in learning simple data. In addition, in the case of learning complex data, dense layers are used in the last part of the model, which is the stage where features are extracted and get simple enough.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/ff71e7f4416a2add611074ad39888eab.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;cnn-model&quot;&gt;CNN Model&lt;/h2&gt;
-
-&lt;p&gt;This model consisted of convolutional layers. This model is suitable when there are spatial relationship across the data. Figure 1 depicts how a convolutional layer works, and it helps understand why this model works well when there are spatial relationship across data.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/1043aeb7181b81ac0106d0bbcc0f74d3.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif&quot; width=&quot;50%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1. Visualization of how the convolutional neural network layer works [1].
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;rnnlstm-model&quot;&gt;RNN(LSTM) Model&lt;/h2&gt;
-
-&lt;p&gt;This model consisted of LSTM layers. This model is suitable when there are temporal (sequential) relationship across the data. Figure 2 depicts how a LSTM layer works, and it helps understand why this model works well when there are temporal relationship across data.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/f6d3f2c79049c74b6a74b6b792e20ba7.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/rnn visualized.gif&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
-Figure 2. Visualization of how the recurrent neural network layer works [2].
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;experiment-result&quot;&gt;Experiment Result&lt;/h1&gt;
-
-&lt;p&gt;As a result of the experiment, the CNN model using a convolutional layer showed the highest performance for learning MNIST image data. Direct comparison was not possible because the number of trainable parameters differed for each model, but the result was obtained by adjusting hyper-parameters to obtain the best performance for each model.&lt;/p&gt;
-
-&lt;p&gt;To sum up, we have confirmed that it is best to use a convolutional layer when learning MNIST image data.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Accuracy&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Loss&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;DenseNet&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;0.9556&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;1.5092&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;ConvNet&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;0.9817&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;1.4793&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;LstmNet&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;0.9603&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;1.5015&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/tensorboard result.png&quot; width=&quot;95%&quot; /&gt;   &lt;figcaption&gt;
-Figure 2. Checking the validation result with tensorboard.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;future-study&quot;&gt;Future Study&lt;/h1&gt;
-
-&lt;p&gt;In some cases, such as image data or stock data, we can know the nature of the feature data in advance and use the CNN or RNN layers respectively. However, it is difficult to fully understand the charactieristic of completely new feature data. In this case, it is difficult to make assumptions about the temporal/spatial relationships across the data. As a result, it is not easy to decide which layer to use.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/text/transformer&quot;&gt;Transformer&lt;/a&gt; is a model designed to solve this problem. Transformer is a model based on attention, it make no assumptions about the temporal/spatial relationships across the data [3]. In the next posting, we will discuss the structure and application of the Transformer.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
-
-&lt;p&gt;[1]I. Shafkat, “Intuitively Understanding Convolutions for Deep Learning,” Medium, 07-Jun-2018. [Online]. Available: https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1. [Accessed: 23-Jul-2020].&lt;/p&gt;
-
-&lt;p&gt;[2] A. Biswal, “Recurrent Neural Network Tutorial,” Simplilearn.com, 28-Apr-2020. [Online]. Available: https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn. [Accessed: 23-Jul-2020].&lt;/p&gt;
-
-&lt;p&gt;[3] “Transformer model for language understanding : TensorFlow Core,” TensorFlow. [Online]. Available: https://www.tensorflow.org/tutorials/text/transformer. [Accessed: 23-Jul-2020].&lt;/p&gt;
-</description>
-        <pubDate>Mon, 20 Jul 2020 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(PyTorch) Basic Steps for Training a Model</title>
-        <link>/research/ml&dl/2020/07/19/pytorch-basic-structure.html</link>
-        <guid isPermaLink="true">/research/ml&dl/2020/07/19/pytorch-basic-structure.html</guid>
-        <description>&lt;p&gt;PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This posting will describe the basic steps for traing a model with PyTorch. Briefly, the basic steps of how to train a model are as follow.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Load &amp;amp; pre-process the dataset&lt;/li&gt;
-  &lt;li&gt;Set a model&lt;/li&gt;
-  &lt;li&gt;Set an optimizer &amp;amp; a loss function&lt;/li&gt;
-  &lt;li&gt;Train the model&lt;/li&gt;
-  &lt;li&gt;Evaluate the model&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/tutorials/01.%20basic/pytorch%20basic%20structure.ipynb&quot;&gt;Park’s GitHub &amp;gt; Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/@inmoonlight/pytorch%EB%A1%9C-%EB%94%A5%EB%9F%AC%EB%8B%9D%ED%95%98%EA%B8%B0-intro-afd9c67404c3&quot;&gt;JiHyung Moon’s Meduim Posting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html&quot;&gt;PyTorch official webpage &amp;gt; Tutorials &amp;gt; Visualizing Models, Data, and Training with TensorBoard&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h1&gt;
-
-&lt;p&gt;We used the &lt;em&gt;FashionMNIST&lt;/em&gt; dataset for the experiment. The dataset can be downloaded through &lt;em&gt;torchvision.datasets&lt;/em&gt;, and preprocessing can be performed through &lt;em&gt;transforms.Compose&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;2-set-a-model&quot;&gt;2. Set a model&lt;/h1&gt;
-
-&lt;p&gt;We constructed a simple convolutional neural network model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;3-set-optimizer--loss-function&quot;&gt;3. Set optimizer &amp;amp; loss function&lt;/h1&gt;
-
-&lt;p&gt;We set the optimizer and loss function to train the model constructed in the previous step. The optimizer and loss function types were selected according to the type of the features of the given input data and the purpose of the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;4-train-the-model&quot;&gt;4. Train the model&lt;/h1&gt;
-
-&lt;p&gt;In order to train a model, we must follow the following 5 steps.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;initialize the gradient&lt;/li&gt;
-  &lt;li&gt;forward propagation&lt;/li&gt;
-  &lt;li&gt;calculate the loss&lt;/li&gt;
-  &lt;li&gt;backward propagation&lt;/li&gt;
-  &lt;li&gt;optimize (update) the weights based on forward &amp;amp; backward propagation&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h1&gt;
-
-&lt;p&gt;We used the validation dataset to measure the performance of the completed training model. Note that the evaluate process is very similar to the training process. However, in the evaluate process, &lt;em&gt;torch.no_grad()&lt;/em&gt; is required because the weights must never change.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 19 Jul 2020 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(TF) Basic Steps for Training a Model</title>
-        <link>/research/ml&dl/2020/07/18/tf-basic-structure.html</link>
-        <guid isPermaLink="true">/research/ml&dl/2020/07/18/tf-basic-structure.html</guid>
-        <description>&lt;p&gt;TesorFlow is one of the most well-known deep learning frameworks. This posting will describe the basic steps for training a model with Tensorflow. Briefly, the basic steps for how to train a model through TensorFlow are as follow.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Load &amp;amp; pre-process the dataset&lt;/li&gt;
-  &lt;li&gt;Set a model&lt;/li&gt;
-  &lt;li&gt;Compile the model : set an optimizer, a loss function, &amp;amp; metrics&lt;/li&gt;
-  &lt;li&gt;Fit the model&lt;/li&gt;
-  &lt;li&gt;Evaluate the model&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/TF_Basic/basic%20structure.ipynb&quot;&gt;Park’s GitHub &amp;gt; Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/quickstart/beginner&quot;&gt;TensorFlow official website &amp;gt; TensorFlow 2 quickstart for beginners&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/quickstart/advanced&quot;&gt;TensorFlow official website &amp;gt; TensorFlow 2 quickstart for experts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tensorboard/get_started&quot;&gt;TensorFlow official website &amp;gt; Get started with TensorBoard&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h1&gt;
-
-&lt;p&gt;For the experiment to show the basic process of training a model with TensorFlow, we used the MNIST dataset. The given images are a grayscale, so we need a preprocessing process to scale the image data features from 0 to 1.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;2-set-a-model&quot;&gt;2. Set a model&lt;/h1&gt;
-
-&lt;p&gt;In this step, we designed the structure of a model. The model in this experiment was relatively simple, so it could be easier to construct the model using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/Sequential&quot;&gt;tf.keras.Sequential&lt;/a&gt;. However, we use custumized model for the experiment. This is because a custumized model must be used when constructing a more complex model in the future, and it is necessary to become familiar with it. More specifically, in case of the model becomes complicated and the input features do not flow sequentially, the model must be constructed in a custum manner. &lt;a href=&quot;https://www.tensorflow.org/tutorials/text/transformer&quot;&gt;Transformer model&lt;/a&gt; is a good example.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/36bc28aa8f6e9005494d40603cccd5e7.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;optional-set-callbacks&quot;&gt;(optional) Set callbacks&lt;/h2&gt;
-&lt;h2 id=&quot;checkpoint&quot;&gt;checkpoint&lt;/h2&gt;
-
-&lt;p&gt;We set &lt;em&gt;checkpoint&lt;/em&gt; callback to record the training process of the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e5a2c5bc5d9f9634c2d97ee93c998c52.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;tensorboard&quot;&gt;tensorboard&lt;/h2&gt;
-
-&lt;p&gt;We set &lt;em&gt;tensorboard&lt;/em&gt; callback to visualize the training process and strucutre of the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b8688659e5d183e5d82863d0972fc16d.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;reduce-learning-rate&quot;&gt;reduce learning rate&lt;/h2&gt;
-
-&lt;p&gt;We set &lt;em&gt;reduce-learning-rate&lt;/em&gt; callback for better training result of the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/cfea4379c657f506dd3dbf7d4f0adc3d.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;3-compile-the-model&quot;&gt;3. Compile the model&lt;/h1&gt;
-&lt;h2 id=&quot;set-optimizer-loss-function--metrics&quot;&gt;Set optimizer, loss function, &amp;amp; metrics&lt;/h2&gt;
-
-&lt;p&gt;After constructing the model, you need to set the learning process by calling the &lt;em&gt;compile method&lt;/em&gt;. Compile method has three important parameters; &lt;em&gt;optimizer, loss, and metrics&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;The &lt;em&gt;optimizer&lt;/em&gt; sets up the training process. The &lt;em&gt;loss&lt;/em&gt; sets the loss function to be minimized during the optimization process. The &lt;em&gt;metrics&lt;/em&gt; are used to monitor training. These should be set differently depending on the type of feature data and the purpose of the model.&lt;/p&gt;
-
-&lt;p&gt;The model was compiled using the set optimizer, loss, and metrics.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/0f16de0b5385716af46692a163dc51dd.js&quot;&gt;&lt;/script&gt;
-   &lt;script src=&quot;https://gist.github.com/jhyun0919/a5546b9e76e294ecc1362665cca1d048.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;4-fit-the-model&quot;&gt;4. Fit the model&lt;/h1&gt;
-
-&lt;p&gt;We conducted training using the preprocessed dataset and the compiled model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/bbc01cdfc18a32a1afe05c30ef846ccf.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;optional-check-the-training-process-via-tensorboard&quot;&gt;(Optional) Check the training process via tensorboard&lt;/h2&gt;
-
-&lt;p&gt;Through the tensorboard callback set in the previous step, we visualized the training process and the model graph. Figure 1 shows the training process of the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e196847e8797b94e947fb43081c69014.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-19-tf basic structure/tensorboard eg.png&quot; width=&quot;95%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1. Checking the training process with tensorboard.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;optional-load-the-best-weights&quot;&gt;(Optional) Load the best weights&lt;/h2&gt;
-
-&lt;p&gt;Through the checkpoint callback set in the previous step, we loaded the weights showing the best performance.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e08262f64e42a6897de8cb360a7f3533.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h1&gt;
-
-&lt;p&gt;As a final step, we evaluated the performance of the model using the test dataset.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b83301942dc8f6ac7facbeafe47c0eb4.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-</description>
-        <pubDate>Sat, 18 Jul 2020 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(TF &amp; PyTorch) MNIST tutorial</title>
-        <link>/research/ml&dl/2020/06/01/mnist.html</link>
-        <guid isPermaLink="true">/research/ml&dl/2020/06/01/mnist.html</guid>
-        <description>&lt;p&gt;MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most popular and appropriate subject for the purpose of entering deep learning.&lt;/p&gt;
-
-&lt;p&gt;Through this posting, piece of codes with explanation will be provided and full codes are upload on the following links;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/exercise/fastcampus/mnist_explained.ipynb&quot;&gt;MNIST code-TF ver.ipynb&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/exercise/fast_campus/pytorch_mnist_explained.ipynb&quot;&gt;MNIST code-PyTorch ver.ipynb&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Also, this post is written with reference to the following sources;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/quickstart/advanced&quot;&gt;Tensorflow 2 quickstart for experts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html#sphx-glr-beginner-blitz-neural-networks-tutorial-py&quot;&gt;PyTorch &amp;gt; Tutorials &amp;gt; Neural Networks&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://online.fastcampus.co.kr/p/data_online_deep&quot;&gt;FastCampus &amp;gt; DeepLearningLecture&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;tensorflow-version&quot;&gt;Tensorflow version&lt;/h1&gt;
-&lt;h2 id=&quot;1-exploratory-data-analysis-eda&quot;&gt;1. Exploratory Data Analysis (EDA)&lt;/h2&gt;
-&lt;p&gt;In order to train a deep learning model, the first thing to do is to &lt;strong&gt;explore and analyze&lt;/strong&gt; the given dataset. In this stage, we can get some hints for designing a structure of the model. The things we have to check in EDA are following;&lt;/p&gt;
-
-&lt;p&gt;First we need to &lt;strong&gt;check size and shape&lt;/strong&gt; of feature data and target data. Based on the result, we can confirm that a proper shape of input &amp;amp; output data for our model; Input data shape is 28 by 28 matrix (or tensor) and output is a scalar.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/05ee6cbb224ee868d324648a8a9a9641.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Second, we we have to &lt;strong&gt;check the value of target data&lt;/strong&gt;. Since the target data is discrete, we can confirm that the model will be a classification model, and we will refer target as label from now on. Also, we need to &lt;strong&gt;check whether the distribution of labels in train and test dataset is biased or not&lt;/strong&gt;. If dataset is biased, the model trained with this dataset will also biased. This is one of the main reason why we need to check and analyze the given dataset before build and train the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/f262d68508dd323dd06c3e69a08c5cb0.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (1).png&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1. Distribution of label dataset
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;(Optional) Check the real image of feature data. Checking how the feature data looks like is not necessary in training and evaluating the model. However, this will allows you intuitive understanding for analyzing dataset and designing a structure of the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/64fcc0c48751abad1f4553241581a744.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
-Figure 2. Plot a real image of feature dataSample image of feature data
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2 id=&quot;2-data-preprocess&quot;&gt;2. Data preprocess&lt;/h2&gt;
-&lt;p&gt;First, the given dataset need to be reshaped properly. In this step, feature data need an additional dimension to use convolution layers. Also, label data need to be reshaped label encoding into one-hot-encoding for a classification model [1].
-Second, feature data have to be normalized [2]. Through this process, all features data are scaled to a same unit preventing from one feature dominate others.
-Lastly, we will use batch to control stability of the training [3]. Also, data distribution of each batches might occur bias, so train data need to be shuffled before split into batches. It is worth noting at this step that Tensorflow provides a nice feature called tf.Data to help organize the given data.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/a581e5d32df2034ee7507847e2c0d9da.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;3-model&quot;&gt;3. Model&lt;/h2&gt;
-&lt;p&gt;The model is comprised of two parts, feature extraction and classification. In the feature extraction stage, the model use two dimension convolution filter (Conv2D) since the input feature data is image data. Addition to Conv2D, rectified linear unit (ReLU), pooling and dropout unit [4] are used. In classification stage, a fully connected network (FCN) is used. Also, softmax function is attached at the end of the FCN which give us probabilities for each class label.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/3ca0add7088a59a2707075b3b30e8419.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;optional-visualization-of-the-modelslayers&quot;&gt;(Optional) Visualization of the model’s layers&lt;/h2&gt;
-&lt;h3 id=&quot;conv2d&quot;&gt;Conv2D&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/23864fd2886e8f830bc9c51fd9d58126.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (2).png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-Figure 3. Visualzation of the Conv2D layer's Input and Output.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/abba71c6f22cbea27508d86ceb237d28.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (3).png&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
-Figure 4. Visualzation of the Conv2D layer's Output Values Distribution, Weights, and the Output Value.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;activation&quot;&gt;Activation&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b07a9e88c704dee068f02ad5b4209899.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (4).png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-Figure 5. Visualzation of the activation (ReLU) layer's Output Values Distribution and the Output Value
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;pooling&quot;&gt;Pooling&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/bd63d77214bede85f1645fac80c1273d.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (5).png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-Figure 6. Visualzation of the Pooling layer's Output Values Distribution and the Output Value
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;fully-connected&quot;&gt;Fully Connected&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/2a076dd09f8ccc2ee7513a63065bba80.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;4-graph&quot;&gt;4. Graph&lt;/h2&gt;
-&lt;p&gt;Training a model requires proper loss object and optimizer. Also, we should set up graphs that can execute train step and test step using loss object and optimizer. In train step, we deploy the loss object to calculate the losses and optimizer to adjust weights variables. In test step, we implement loss object to clalulate the performance of the model and no optimizer.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/d29c97ffd5c1c90bc8929fcab9a4d5c8.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;5-train-evaluate&quot;&gt;5. Train &amp;amp; Evaluate&lt;/h2&gt;
-&lt;p&gt;We can train the model and check the performance using the dataset and graphs prepared in the previous process.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/7d03cc893c623050f2c8f70d8103ffe7.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;pytorch-version&quot;&gt;PyTorch version&lt;/h1&gt;
-&lt;h2 id=&quot;1-eda&quot;&gt;1. EDA&lt;/h2&gt;
-&lt;p&gt;EDA is skipped because it is similar to the process performed using Tensorflow.&lt;/p&gt;
-
-&lt;h2 id=&quot;2-data-preprocess-1&quot;&gt;2. Data preprocess&lt;/h2&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/7c10b669c3bb37bdc67f88319d289b1c.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;3-model-1&quot;&gt;3. Model&lt;/h2&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/cb044b69d00d46428994c0acb8581477.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;optional-explanation-of-the-modelslayers&quot;&gt;(Optional) Explanation of the model’s layers&lt;/h2&gt;
-&lt;h3 id=&quot;conv2d-1&quot;&gt;Conv2d&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/55a740e7ebde8aa3ffc4d90a2c2a2fa8.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (6).png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-Figure 7. Visualzation of the Conv2d layer's Input, Weights, and Output.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;pooling-1&quot;&gt;Pooling&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/8e670553e9d4717074c030cbe4dccc60.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-22-mnist/download (7).png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-Figure 8. Visualzation of the Pooling layer's Input and Output.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;fully-connected-1&quot;&gt;Fully Connected&lt;/h3&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/3fed97e3a62e1fcccf6955a9ace5f323.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;4-train-evaluate&quot;&gt;4. Train &amp;amp; Evaluate&lt;/h2&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/0ed55ae6f1eb58961088f792eba03ff6.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
-&lt;p&gt;[1] A. J. SpiderCloud Wireless, “Why using one-hot encoding for training classifier,” LinkedIn. [Online]. Available: https://www.linkedin.com/pulse/why-using-one-hot-encoding-classifier-training-adwin-jahn. [Accessed: 26-Oct-2019].&lt;/p&gt;
-
-&lt;p&gt;[2] U. Jaitley, “Why Data Normalization is necessary for Machine Learning models,” Medium, 09-Apr-2019. [Online]. Available: https://medium.com/@urvashilluniya/why-data-normalization-is-necessary-for-machine-learning-models-681b65a05029. [Accessed: 26-Oct-2019].&lt;/p&gt;
-
-&lt;p&gt;[3] J. Brownlee, “How to Control the Stability of Training Neural Networks With the Batch Size,” Machine Learning Mastery, 03-Oct-2019. [Online]. Available: https://machinelearningmastery.com/how-to-control-the-speed-and-stability-of-training-neural-networks-with-gradient-descent-batch-size/. [Accessed: 26-Oct-2019].&lt;/p&gt;
-
-&lt;p&gt;[4] Hinton, G., Srivastava, N., Krizhevsky, A., Sutskever, I. and Salakhutdinov, R. (2019). Improving neural networks by preventing co-adaptation of feature detectors. [online] arXiv.org. Available at: https://arxiv.org/abs/1207.0580 [Accessed 26 Oct. 2019].&lt;/p&gt;
-
-&lt;p&gt;[5] A. S. V, “Understanding Activation Functions in Neural Networks,” Medium, 30-Mar-2017. [Online]. Available: https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0. [Accessed: 26-Oct-2019].&lt;/p&gt;
-
-&lt;p&gt;[6] “Pooling,” Unsupervised Feature Learning and Deep Learning Tutorial. [Online]. Available: http://deeplearning.stanford.edu/tutorial/supervised/Pooling/. [Accessed: 26-Oct-2019].&lt;/p&gt;
-</description>
-        <pubDate>Mon, 01 Jun 2020 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(TF &amp; PyTorch) Introduction of becoming adept in DL frameworks</title>
-        <link>/research/ml&dl/2019/10/21/dl_intro.html</link>
-        <guid isPermaLink="true">/research/ml&dl/2019/10/21/dl_intro.html</guid>
-        <description>&lt;p&gt;Due to rapid improvements in computing performance and the amount of data that is accumulated, deep learning is gaining strength. Accordingly, IT Giants develop their deep learning framework to provide developers with a development environment, such as Google’s Tensorflow and Facebook’s PyTorch.&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-21-dl_intro/01.png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1. Deep learning frameworks
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Each framework has its characteristics and strength, and they are properly used for appropriate purposes. For engineers with research purposes, it is necessary to note Figure 2. According to data from RISELab, the recent trend in the papers uploaded on arXiv.org shows that TensorFlow and PyTorch are mainly used in research purposes. It seems that choosing Tensorflow or PyTorch would be the best choice for people who are planning to dive in deep learning. It will allow understanding other’s research more easily and quickly.&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2019-10-21-dl_intro/02.png&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
-Figure 2. The number of papers posted on arXiv.org that mention each framework. Source: Data from RISELab and graphic by Ben Lorica.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;In the future, I will select various topics and upload a series of tutorials, and code will also be uploaded in two versions, Tensorflow and PyTorch. First, I will upload a post about basic topics, such as the MNIST tutorial. After that, I will discuss energy-related time series and reinforcement learning topics, which are my research interests. I hope this will help engineers who are new to using deep learning field or would like to be more adept at dealing with the frameworks.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 21 Oct 2019 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>What makes me nervous these days</title>
-        <link>/daily/essay/2019/09/22/essay.html</link>
-        <guid isPermaLink="true">/daily/essay/2019/09/22/essay.html</guid>
-        <description>&lt;p&gt;After Two years of working as a researcher at Korea Electronics Technolog Institute, I entered the University of Texas at Austin(UT Austin) as a master’s student. During four months, since I have got an admission offer from UT Austin, people showed different reactions. Some celebrated about entering UT Austin, and others were worried about studying abroad. Former voices, which were louder til I left my home town, become smaller and I got nervous.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://media.giphy.com/media/LytiZGHa3DbCE/giphy.gif&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Everything was going as I planned. The UT Cockrell School of Engineering was one of my dream school, and my registration was also well on it’s well. I had a great time during International Student OT and Department wise OT. Also, I added all the courses I wanted for my first semester. I thought there was no reason for getting nervous or anxious. However, I cannot ignore my anxiety, and it was getting worse as time went by.
-So I changed my strategy. I started to find out what made me nervous. After a week of figuring out, I found the most plausible reason. It was because of me being impatient with success. It was just a starting point of two years journey. The worst part was that I left the issue after I realized the problem since I did not know how to deal with it.
-While I was getting tired of this feeling, I read confession of one man which changed my mind. He was a man who just got discharged from the army and trying to settle in where he came from. He said, “I was nervous because I was doing nothing at that time.” At that moment, the words penetrated my heart and made me think, “I should do something, even if it looks not meaningful.” And my answer was to start recording my experience in writing. I believe it allows me to look back at myself and gives me an opportunity to do better next time.&lt;/p&gt;
-
-&lt;p&gt;This writing is my first step to get rid of my anxiety and improve my school life. Although my first post in UT Austin starts with unfavorable story, I will end up my writing with good news about myself.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://media.giphy.com/media/pOZhmE42D1WrCWATLK/giphy.gif&quot; width=&quot;600&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 22 Sep 2019 00:00:00 -0500</pubDate>
       </item>
     
   </channel>

@@ -188,9 +188,6 @@
 				<a href="/">Daily</a>
 				<ul>
 					<li>
-						<a href="/Daily/English">English</a>
-					</li>
-					<li>
 						<a href="/Daily/Essay">Essay</a>
 					</li>
 					<li>
@@ -202,6 +199,7 @@
 			<li>
 				<a href="/about">About</a>
 			</li>
+
 
 		</ul>
 	</div>
@@ -226,6 +224,127 @@
 <script>
   window.store = {
     
+      "daily-essay-2020-12-28-how-to-speak-html": {
+        "title": "(TIL) How to Speak",
+        "tags": "Essay, Today I Learned",
+        "date": "December 28, 2020",
+        "author": "",
+        "category": "",
+        "content": "How to Speak: 7 Speaking Tips from Patrick Henry WinstonHow To Speak by Patrick WinstonHow to Speak - The Big Four",
+        "url": "//daily/essay/2020/12/28/how-to-speak.html"
+      }
+      ,
+    
+      "research-mathematics-2020-12-26-householder-html": {
+        "title": "Householder QR Factorization",
+        "tags": "Math, Linear Algebra, Mathematics, ALAFF",
+        "date": "December 26, 2020",
+        "author": "",
+        "category": "",
+        "content": "This article was written by referring to the Fall 2020 Numerical Analysis: Linear Algebra Course and the following links.  ALAFF: Gram-Schmidt Orthogonalization  ALAFF Git RepositoryUnitary MatrixHouseholder transformationHouseholder QR factorization algorithmForming QApplying QHOrthogonality of resulting QBlocked Householder QR factorizationReferences[1]",
+        "url": "//research/mathematics/2020/12/26/Householder.html"
+      }
+      ,
+    
+      "research-mathematics-2020-12-26-gs-html": {
+        "title": "Gram–Schmidt Process",
+        "tags": "Math, Linear Algebra, Mathematics, ALAFF",
+        "date": "December 26, 2020",
+        "author": "",
+        "category": "",
+        "content": "This article was written by referring to the Fall 2020 Numerical Analysis: Linear Algebra Course and the following links.  ALAFF: Gram-Schmidt Orthogonalization  ALAFF Git RepositoryGram–Schmidt ProcessGiven a set of linearly independent vectors $Span({ a_0, … , a_{n-1} } ) \\subset \\mathbb{C}^m$, the Gram-Schimdt process computes a new basis ${ q_0, … , q_{n-1} }$ that spans the same subspace as the original vectors [1], i.e.$Span({ a_0, … , a_{n-1} } ) = Span({ q_0, … , q_{n-1} } ).$It should be noted that we would like to have the new basis, ${ q_0, … , q_{n-1} }$, having the following characteristics.  All vectors are unit vectors of length 1.          $|q_i| = 1$.        All vectors are mutually perpendicular.          $q_i \\perp q_j$ where $i \\neq j$.      These characteristics can be obtained through the following routine which is composed by three steps [1]:  &lt;Gram-Schmidt Process&gt;  Step 1. compute the direction of the vectors.  Step 2. compute the magnitude of the vectors.  Step 3. get a unit vector.    Compute the vector $q_0$ ($i=0$)          Step 1.                  skipped                    Stpe 2.                  $\\rho_{0, 0}=|a_0|_2$.                    Step 3.                  $q_0=a_0/\\rho_{0, 0}$.                    Result                  $a_0=q_0\\rho_{0, 0}$.                      compute the vector $q_1$ ($i=1$)          Step 1.                  $\\rho_{0, 1}=q_0^{H}a_1$.          $a_{1}^{\\perp}=a_1-\\rho_{0, 1}q_0$.                    Step 2.                  $\\rho_{1, 1}=|a_1^\\perp|_2$.                    Step 3.                  $q_1=a_1^\\perp/\\rho_{1, 1}$.                    Result        compute the vector $q_2$ ($i=2$)          Step 1.                  $\\begin{bmatrix}\\rho_{0, 2} \\ \\rho_{1, 2}\\end{bmatrix}=\\begin{bmatrix}q_{0} &amp; q_{1}\\end{bmatrix}^Ha_2$.          $a_{2}^{\\perp}=a_2-\\begin{bmatrix}q_{0} &amp; q_{1}\\end{bmatrix}\\begin{bmatrix}\\rho_{0, 2} \\ \\rho_{1, 2}\\end{bmatrix}$.                    Step 2.                  $\\rho_{2, 2}=|a_2^\\perp|_2$.                    Step 3.                  $q_2=a_2^\\perp/\\rho_{2, 2}$.                    Result        keep do the routine till $i=n-1$          Step 1.      Step 2.      Step 3.      Gram-Schmidt and QR factorizationClassical Gram-Schmidt (CGS)[2]Consider $A=QR$.Partition the given amtricws as follows.Assume that $Q_0$ and $R_{0,0}$ have already been computed.Since $Q$ is unitary matric ($Q_0^HQ_0=I$ and $Q_0^Hq_1=0$),  $Q_0^Ha_1=Q_0^HQ_0r_{0,1}+q_1\\rho_{1,1}=r_{01}$.Compute $r_{0,1}$, which are already known:  $r_{0,1}:=Q_0^Ha_1$.Compute $\\rho_{1,1}$ (Step 1. &amp; 2.)  $a_1^\\perp:=a_1-Q_0r_{0,1}$.  $\\rho_{1,1}:=|a_1^\\perp|$.Compute $q_1$ (Step 3.)  $q_1 := a_1^\\perp / \\rho_{1,1}$.   Code. 1: CGS QR factorization in pythonModified Gram-Schmidt (MGS)   Figure 1. Alternative Modified Gram-Schmidt algorithm for computing the QR factorization of a matrix A [3]     Code. 2: MGS QR factorization in pythonWhere we can use this?References[1] M. M. Robert van de Geijn, “Advanced Linear Algebra: Foundations to Frontiers,” ALAFF Classical Gram-Schmidt (CGS). [Online]. Available: https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-classical-gram-schmidt.html. [Accessed: 03-Jan-2021].[2] M. M. Robert van de Geijn, “Advanced Linear Algebra: Foundations to Frontiers,” ALAFF Classical Gram-Schmidt algorithm. [Online]. Available: https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-cgs-algorithm.html. [Accessed: 03-Jan-2021].[3] M. M. Robert van de Geijn, “Advanced Linear Algebra: Foundations to Frontiers,” ALAFF Modified Gram-Schmidt (MGS). [Online]. Available: https://www.cs.utexas.edu/users/flame/laff/alaff/Modified-Classical-Gram-Schmidt.html. [Accessed: 03-Jan-2021].",
+        "url": "//research/mathematics/2020/12/26/GS.html"
+      }
+      ,
+    
+      "research-cs-2020-12-25-jupyter-html": {
+        "title": "(Python-Dev Tips) Jupyter",
+        "tags": "CS, Dev, Python, Jupyter",
+        "date": "December 25, 2020",
+        "author": "",
+        "category": "",
+        "content": "",
+        "url": "//research/cs/2020/12/25/jupyter.html"
+      }
+      ,
+    
+      "research-cs-2020-12-21-pep8-html": {
+        "title": "(Python-Dev Tips) PEP8",
+        "tags": "CS, Dev, Python",
+        "date": "December 21, 2020",
+        "author": "",
+        "category": "",
+        "content": "  Git Basic  Virtual Environment  PEP8  JupyterThis article covers what is PEP 8 and how to follow this convention with minimal effort and no difficult. This posting referred to the following articles.  PEP 8 – Style Guide for Python Code  How to Write Beautiful Python Code With PEP 8  How to Auto-Format Your Python Code with BlackWhat is PEP 8Why we need PEP 8  Guidelines for writing Python.  Good Readability  Revisiting old project  Easy to spot bugs  CollaborationAuto-formatter   \"Any Questions?\"  Reference",
+        "url": "//research/cs/2020/12/21/pep8.html"
+      }
+      ,
+    
+      "research-cs-2020-12-19-virtualenv-html": {
+        "title": "(Python-Dev Tips) Virtual Environment",
+        "tags": "CS, Dev, Python",
+        "date": "December 19, 2020",
+        "author": "",
+        "category": "",
+        "content": "In this article, we are going to explain what is virtual environment in python and why do we need it. Also, we will show you how we can set up a virtual environment.This posting is one of a series of tips for developing python following the previous post.  Git Basic  Virtual Environment  PEP8  JupyterThis post was written with reference to the following materials.  Python Docs: Virtual Environments  Real Python: Python Virtual EnvironmentsWhat is Virtual EnvironmentWhy Do We Need to Set Up a Virtual EnvironmentHow Can We Set Up a Virtual EnvironmentAnaconda GUIReference",
+        "url": "//research/cs/2020/12/19/virtualenv.html"
+      }
+      ,
+    
+      "research-energy-2020-12-15-cascading-outage-sim-html": {
+        "title": "Cascading Outage Simulator",
+        "tags": "Energy, Power, Cascading Outage",
+        "date": "December 15, 2020",
+        "author": "",
+        "category": "",
+        "content": "pros and cons of various cascading outage simulators.",
+        "url": "//research/energy/2020/12/15/Cascading-Outage-Sim.html"
+      }
+      ,
+    
+      "research-energy-2020-12-14-emtp-html": {
+        "title": "(Tutorial) EMTP - Line/Cable Modeling for EMT Simulations",
+        "tags": "Energy, Power, EMTP",
+        "date": "December 14, 2020",
+        "author": "",
+        "category": "",
+        "content": "  EMTP Tutorials",
+        "url": "//research/energy/2020/12/14/EMTP.html"
+      }
+      ,
+    
+      "research-mathematics-2020-12-13-prob-html": {
+        "title": "(TIL) Reviewing Statictics and Probability",
+        "tags": "Math, Statictics, Probability, Mathematics",
+        "date": "December 13, 2020",
+        "author": "",
+        "category": "",
+        "content": "",
+        "url": "//research/mathematics/2020/12/13/prob.html"
+      }
+      ,
+    
+      "research-energy-2020-12-13-lmi-and-power-system-html": {
+        "title": "LMI and Power Systems",
+        "tags": "Energy, Power, LMI",
+        "date": "December 13, 2020",
+        "author": "",
+        "category": "",
+        "content": "",
+        "url": "//research/energy/2020/12/13/LMI-and-Power-System.html"
+      }
+      ,
+    
+      "research-energy-2020-12-13-gnn-html": {
+        "title": "GNN",
+        "tags": "Energy, Power, GNN",
+        "date": "December 13, 2020",
+        "author": "",
+        "category": "",
+        "content": "",
+        "url": "//research/energy/2020/12/13/GNN.html"
+      }
+      ,
+    
       "daily-essay-2020-12-12-essay-html": {
         "title": "Laïcité",
         "tags": "Essay, Sharing My Thought",
@@ -237,35 +356,13 @@
       }
       ,
     
-      "research-cs-2020-10-03-pep8-html": {
-        "title": "(Python-Dev Tips) PEP8",
-        "tags": "CS, Dev, Python",
-        "date": "October 3, 2020",
-        "author": "",
-        "category": "",
-        "content": "  Git Basic  Virtual Environment  PEP8  Jupyter (editting…)This article covers what is PEP 8 and how to follow this convention with minimal effort and no difficult. This posting referred to the following articles.  PEP 8 – Style Guide for Python Code  How to Write Beautiful Python Code With PEP 8  How to Auto-Format Your Python Code with BlackWhat is PEP 8Why we need PEP 8  Guidelines for writing Python.  Good Readability  Revisiting old project  Easy to spot bugs  CollaborationAuto-formatter   \"Any Questions?\"  Reference",
-        "url": "//research/cs/2020/10/03/pep8.html"
-      }
-      ,
-    
-      "research-cs-2020-10-02-virtualenv-html": {
-        "title": "(Python-Dev Tips) Virtual Environment",
-        "tags": "CS, Dev, Python",
-        "date": "October 2, 2020",
-        "author": "",
-        "category": "",
-        "content": "  Git Basic  Virtual Environment  PEP8 (editting…)  Jupyter (editting…)What is Virtual EnvironmentWhy Do We Need to Set Up a Virtual EnvironmentHow Can We Set Up a Virtual EnvironmentAnaconda GUIReference",
-        "url": "//research/cs/2020/10/02/virtualenv.html"
-      }
-      ,
-    
       "research-cs-2020-10-01-git-tips-html": {
         "title": "(Python-Dev Tips) Git Basic",
         "tags": "CS, Dev, Git",
         "date": "October 1, 2020",
         "author": "",
         "category": "",
-        "content": "Starting with this posting, we will upload a series of articles that can help with Python development. The series will be written in four articles, and the contents are as follows, and if necessary, additional posts will be uploaded as a separate series.  Git Basic  Virtual Environment (editting…)  PEP8 (editting…)  Jupyter (editting…)What is GitGit is a free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency [1]. It provides us a history of content changes and facilitates collaborative changes to files [2].   Figure 1. Examples of Using Git [3].  Why Do We Need GitWhen we work on a project and do something creative and productive, we repeat the following four steps [2].  Create things.  Save things.  Edit things.  Save the things again.By repeating the above steps, we add new things, delete unnecessary ones, request modifications, and make corrections where necessary. To make this process straightforward and efficient, we turn to the help of version control. Through the version control system, we can easily track the followings [2].  When we did it.  Why we did it.  What the contents of the change.This makes it possible to efficiently understand the project’s process and be more productive when revisiting the project in the future.For these reasons, we cannot overemphasize the necessity of version control when working on projects through collaboration as well as personal projects. By using Git, we can take these benefits of version control.   Figure 2. Workflow with Git [4].  Basic Git CommandsThe following are essential terminal commands for Git. It may be difficult to memorize, but it is good to understand only its purpose. As long as you understand each command’s purpose, you can easily use Git through a GUI, which will be covered in the following section.For reference, the contents are referred to as the following links.  Essential git commands every developer should know  Top 20 Git Commands With Examplesgit init$ git init [project-name]  This command is used to start a new repository.git clone$ git clone [url]  This command is used to obtain a repository from an existing URL.git add$ git add [file-name]  This command adds a file to the staging area.git rm$ git rm [file-name]  This command deletes the file from your working directory and stages the deletion.git commit$ git commit -m “Message to go with the commit here”  This command records or snapshots the file permanently in the version history.git status$ git status  This command lists all the files that have to be committed.git push$ git push [variable name] master  This command sends the committed changes of master branch to your remote repository.$ git push [variable name] [branch-name]  This command sends the branch commits to your remote repository.git branch$ git branch  This command lists all the local branches in the current repository.$ git branch [branch-name]  This command creates a new branch.$ git branch -d [branch-name]  This command deletes the feature branch.git checkout$ git checkout [branch-name]  This command is used to switch from one branch to another.$ git checkout -b [branch-name]  This command creates a new branch and also switches to it.git pull$ git pull [repository link]  This command fetches and merges changes on the remote server to your working directory.git merge$ git merge [branch-name]  This command merges the specified branch’s history into the current branch.git diff$ git diff  This command shows the file differences which are not yet staged.$ git diff [first branch-name] [second branch-name]  This command shows the differences between the two branches mentioned.git stash$ git stash save  This command temporarily stores all the modified tracked files.$ git stash pop  This command restores the most recently stashed files.$ git stash list  This command lists all stashed changesets.$ git stash drop  This command discards the most recently stashed changeset.GitKrakenThere is an entry barrier to use the commands described above in a terminal window. For those who have difficulty using Git in a terminal window, we suggest to use a GUI called GitKraken. With GitKraken, you can intuitively and easily manage projects without memorizing all the git commands. Figure 3. is a screenshot of GitKraken.We can do the basic operation as the git commands described above through the buttons in Area 1.In Area 2, GitKraken shows the files that have been modified compared to the log, whether these files are added in the staging area, and allows us to commit.Lastly, in Area 3, it shows us the workflow of the project.   Figure 3. GitKraken Screenshot.  One More Thing 😜Those who want to use Git only with commands in a terminal window, not using a GUI, or who want to have a deeper understanding, can learn without losing interest through the quest-game-type tutorial provided at the following link.  Git Tutorial Quest Game   Figure 4. Git Command Line Tutorial Screenshot.  Reference[1] Git. [Online]. Available: https://git-scm.com/. [Accessed: 01-Oct-2020].[2] “Git Basics Episode 1,” Git. [Online]. Available: https://git-scm.com/video/what-is-version-control. [Accessed: 01-Oct-2020].[3] S. C. Atuonwu, “5 Git Commands You Should Know, with Code Examples,” freeCodeCamp.org, 10-Jun-2020. [Online]. Available: https://www.freecodecamp.org/news/5-git-commands-you-should-know-with-code-examples/. [Accessed: 01-Oct-2020].[4] Atlassian, “Gitflow Workflow: Atlassian Git Tutorial,” Atlassian. [Online]. Available: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow. [Accessed: 01-Oct-2020].",
+        "content": "Starting with this posting, we will upload a series of articles that can help with Python development. The series will be written in four articles, and the contents are as follows, and if necessary, additional posts will be uploaded as a separate series.In this article, we will show you what Git is and Why do we need it. Also, we will give a brief intro to how we can start and use Git.  Git Basic  Virtual Environment  PEP8  JupyterWhat is GitGit is a free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency [1]. It provides us a history of content changes and facilitates collaborative changes to files [2].   Figure 1. Examples of Using Git [3].  Why Do We Need GitWhen we work on a project and do something creative and productive, we repeat the following four steps [2].  Create things.  Save things.  Edit things.  Save the things again.By repeating the above steps, we add new things, delete unnecessary ones, request modifications, and make corrections where necessary. To make this process straightforward and efficient, we turn to the help of version control. Through the version control system, we can easily track the followings [2].  When we did it.  Why we did it.  What the contents of the change.This makes it possible to efficiently understand the project’s process and be more productive when revisiting the project in the future.For these reasons, we cannot overemphasize the necessity of version control when working on projects through collaboration as well as personal projects. By using Git, we can take these benefits of version control.   Figure 2. Workflow with Git [4].  Basic Git CommandsThe following are essential terminal commands for Git. It may be difficult to memorize, but it is good to understand only its purpose. As long as you understand each command’s purpose, you can easily use Git through a GUI, which will be covered in the following section.For reference, the contents are referred to as the following links.  Essential git commands every developer should know  Top 20 Git Commands With Examplesgit init$ git init [project-name]  This command is used to start a new repository.git clone$ git clone [url]  This command is used to obtain a repository from an existing URL.git add$ git add [file-name]  This command adds a file to the staging area.git rm$ git rm [file-name]  This command deletes the file from your working directory and stages the deletion.git commit$ git commit -m “Message to go with the commit here”  This command records or snapshots the file permanently in the version history.git status$ git status  This command lists all the files that have to be committed.git push$ git push [variable name] master  This command sends the committed changes of master branch to your remote repository.$ git push [variable name] [branch-name]  This command sends the branch commits to your remote repository.git branch$ git branch  This command lists all the local branches in the current repository.$ git branch [branch-name]  This command creates a new branch.$ git branch -d [branch-name]  This command deletes the feature branch.git checkout$ git checkout [branch-name]  This command is used to switch from one branch to another.$ git checkout -b [branch-name]  This command creates a new branch and also switches to it.git pull$ git pull [repository link]  This command fetches and merges changes on the remote server to your working directory.git merge$ git merge [branch-name]  This command merges the specified branch’s history into the current branch.git diff$ git diff  This command shows the file differences which are not yet staged.$ git diff [first branch-name] [second branch-name]  This command shows the differences between the two branches mentioned.git stash$ git stash save  This command temporarily stores all the modified tracked files.$ git stash pop  This command restores the most recently stashed files.$ git stash list  This command lists all stashed changesets.$ git stash drop  This command discards the most recently stashed changeset.GitKrakenThere is an entry barrier to use the commands described above in a terminal window. For those who have difficulty using Git in a terminal window, we suggest to use a GUI called GitKraken. With GitKraken, you can intuitively and easily manage projects without memorizing all the git commands. Figure 3. is a screenshot of GitKraken.We can do the basic operation as the git commands described above through the buttons in Area 1.In Area 2, GitKraken shows the files that have been modified compared to the log, whether these files are added in the staging area, and allows us to commit.Lastly, in Area 3, it shows us the workflow of the project.   Figure 3. GitKraken Screenshot.  One More Thing 😜Those who want to use Git only with commands in a terminal window, not using a GUI, or who want to have a deeper understanding, can learn without losing interest through the quest-game-type tutorial provided at the following link.  Git Tutorial Quest Game   Figure 4. Git Command Line Tutorial Screenshot.  Reference[1] Git. [Online]. Available: https://git-scm.com/. [Accessed: 01-Oct-2020].[2] “Git Basics Episode 1,” Git. [Online]. Available: https://git-scm.com/video/what-is-version-control. [Accessed: 01-Oct-2020].[3] S. C. Atuonwu, “5 Git Commands You Should Know, with Code Examples,” freeCodeCamp.org, 10-Jun-2020. [Online]. Available: https://www.freecodecamp.org/news/5-git-commands-you-should-know-with-code-examples/. [Accessed: 01-Oct-2020].[4] Atlassian, “Gitflow Workflow: Atlassian Git Tutorial,” Atlassian. [Online]. Available: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow. [Accessed: 01-Oct-2020].",
         "url": "//research/cs/2020/10/01/git-tips.html"
       }
       ,
@@ -287,7 +384,7 @@
         "date": "July 21, 2020",
         "author": "",
         "category": "",
-        "content": "Starting with the definition of the Hessian Matrix, this posting will focus on the geometric meaning of the Hessian matrix. Also, we will discuss the eigenvalues and eigenvectors of the Hessian and introduce the application of it.This post was written with reference to the following materials.  Donghoon Yeo’s blog posting  Wikipedia &gt; HessianHessian MatrixDefinitionIn mathematics, the Hessian matrix or Hessian is a square matrix of second-order partial derivatives of a scalar-valued function, or scalar field. It describes the local curvature of a function of many variables. [1]Suppose  is a function taking as input a vector  and outputting a scalar . If all second partial derivatives of  exist and are continuous over the domain of the function, then the Hessian matrix  of  is a square n×n matrix, usually defined and arranged as follows; [1]   Figure 1. Definition of Hessian matrix. [1]  Geometric MeaningFirst of all, it is well known that all matrices can be considered as linear transformations. Likewise, we can think of a Hessian matrix as a linear transformation. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is to make a given function more convex or concave.Let’s look at the Hessian’s geometric meaning in detail through examples.The Hessian matrices corresponding to Figure 2 and 3 are as follow;The things to note here are, the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation. More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, if some of the eigenvalues are positive, and some are negative (Figure 3), the given function is converted to a saddle shape. To recapitulate, by using the main feature of the geometric transformation shown by the Hessian, we could emphasize the gradient change of the given function.   Figure 2. Example of Hessian transform making the given function more convex. [2]     Figure 3. Example of Hessian transform making the given function to a saddle shape function. [2]  ApplicationsUsing the feature that the Hessian emphasizes the gradient change, it can be used as a filter that detects the contour (edge) of a specific object in a given image, which is considered as a function at this point. Figure 4 shows the description of edge detection and the Hessian’s eigenvalues, and Figure 5 shows an application detecting the vessel using the Hessian.   Figure 4. Edge detection using Hessian's eigenvalues [3]     Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]  References[1] “Hessian matrix,” Wikipedia, 24-Jun-2020. [Online]. Available: https://en.wikipedia.org/wiki/Hessian_matrix. [Accessed: 21-Jul-2020].[2] Y. D. Yeo, “Geometrical meaning of Hessian Matrix,” 17-Jun-2020. [Online]. Available: https://angeloyeo.github.io/2020/06/17/Hessian.html. [Accessed: 21-Jul-2020].[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].",
+        "content": "Starting with the definition of the Hessian Matrix, this posting will focus on the geometric meaning of the Hessian matrix. Also, we will discuss the eigenvalues and eigenvectors of the Hessian and introduce the application of it.This post was written with reference to the following materials.  Donghoon Yeo’s blog posting  Wikipedia &gt; HessianHessian MatrixDefinitionIn mathematics, the Hessian matrix or Hessian is a square matrix of second-order partial derivatives of a scalar-valued function, or scalar field. It describes the local curvature of a function of many variables. [1]Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$ and outputting a scalar $f(x) ∈ ℝ$. If all second partial derivatives of $f$ exist and are continuous over the domain of the function, then the Hessian matrix $H$ of $f$ is a square n×n matrix, usually defined and arranged as follows; [1]   Figure 1. Definition of Hessian matrix. [1]  Geometric MeaningFirst of all, it is well known that all matrices can be considered as linear transformations. Likewise, we can think of a Hessian matrix as a linear transformation. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is to make a given function more convex or concave.Let’s look at the Hessian’s geometric meaning in detail through examples.The Hessian matrices corresponding to Figure 2 and 3 are as follow;The things to note here are, the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation. More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, if some of the eigenvalues are positive, and some are negative (Figure 3), the given function is converted to a saddle shape. To recapitulate, by using the main feature of the geometric transformation shown by the Hessian, we could emphasize the gradient change of the given function.   Figure 2. Example of Hessian transform making the given function more convex. [2]     Figure 3. Example of Hessian transform making the given function to a saddle shape function. [2]  ApplicationsUsing the feature that the Hessian emphasizes the gradient change, it can be used as a filter that detects the contour (edge) of a specific object in a given image, which is considered as a function at this point. Figure 4 shows the description of edge detection and the Hessian’s eigenvalues, and Figure 5 shows an application detecting the vessel using the Hessian.   Figure 4. Edge detection using Hessian's eigenvalues [3]     Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]  References[1] “Hessian matrix,” Wikipedia, 24-Jun-2020. [Online]. Available: https://en.wikipedia.org/wiki/Hessian_matrix. [Accessed: 21-Jul-2020].[2] Y. D. Yeo, “Geometrical meaning of Hessian Matrix,” 17-Jun-2020. [Online]. Available: https://angeloyeo.github.io/2020/06/17/Hessian.html. [Accessed: 21-Jul-2020].[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].",
         "url": "//research/mathematics/2020/07/21/geometric-meaning-of-hessian.html"
       }
       ,
