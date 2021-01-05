@@ -25,19 +25,25 @@ This post was written with reference to the following materials.
 ---
 # What is Virtual Environment
 
-<br/>
+<br>
 
 # Why Do We Need to Set Up a Virtual Environment
 
-<br/>
+<br>
 
 # How Can We Set Up a Virtual Environment
 
-<br/>
+<br>
 
 # Anaconda GUI
 
-<br/>
+<br>
 
+<figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2020-10-01-git/git.jpeg" width="80%" />
+  <figcaption>Figure 1. Examples of Using Git [3].</figcaption>
+</figure>
+
+---
 # Reference
-
+[1] 
