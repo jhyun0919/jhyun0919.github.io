@@ -5,57 +5,12 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sun, 03 Jan 2021 22:52:07 -0600</pubDate>
-    
-      <item>
-        <title>(TIL) How to Speak</title>
-        <link>/daily/essay/2020/12/28/how-to-speak.html</link>
-        <guid isPermaLink="true">/daily/essay/2020/12/28/how-to-speak.html</guid>
-        <description>&lt;p&gt;&lt;a href=&quot;http://sixminutes.dlugan.com/speaking-tips-patrick-henry-winston-speak/&quot;&gt;How to Speak: 7 Speaking Tips from Patrick Henry Winston&lt;/a&gt;
-&lt;a href=&quot;https://www.youtube.com/watch?v=Unzc731iCUY&quot;&gt;How To Speak by Patrick Winston&lt;/a&gt;
-&lt;a href=&quot;https://www.youtube.com/watch?v=uylHeDdlMrc&amp;amp;amp%3Bab_channel=sergiusheartless&quot;&gt;How to Speak - The Big Four&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 28 Dec 2020 00:00:00 -0600</pubDate>
-      </item>
-    
-      <item>
-        <title>Householder QR Factorization</title>
-        <link>/research/mathematics/2020/12/26/Householder.html</link>
-        <guid isPermaLink="true">/research/mathematics/2020/12/26/Householder.html</guid>
-        <description>&lt;p&gt;This article was written by referring to the &lt;em&gt;Fall 2020 Numerical Analysis: Linear Algebra Course&lt;/em&gt; and the following links.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-gram-schmidt.html&quot;&gt;ALAFF: Gram-Schmidt Orthogonalization&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/ULAFF/ALAFF&quot;&gt;ALAFF Git Repository&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;unitary-matrix&quot;&gt;Unitary Matrix&lt;/h2&gt;
-
-&lt;h2 id=&quot;householder-transformation&quot;&gt;Householder transformation&lt;/h2&gt;
-
-&lt;h2 id=&quot;householder-qr-factorization-algorithm&quot;&gt;Householder QR factorization algorithm&lt;/h2&gt;
-
-&lt;h3 id=&quot;forming-q&quot;&gt;Forming Q&lt;/h3&gt;
-
-&lt;h3 id=&quot;applying-qh&quot;&gt;Applying QH&lt;/h3&gt;
-
-&lt;h3 id=&quot;orthogonality-of-resulting-q&quot;&gt;Orthogonality of resulting Q&lt;/h3&gt;
-
-&lt;h2 id=&quot;blocked-householder-qr-factorization&quot;&gt;Blocked Householder QR factorization&lt;/h2&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-&lt;p&gt;[1]&lt;/p&gt;
-</description>
-        <pubDate>Sat, 26 Dec 2020 00:00:00 -0600</pubDate>
-      </item>
+    <pubDate>Mon, 04 Jan 2021 12:55:35 -0600</pubDate>
     
       <item>
         <title>Gram–Schmidt Process</title>
-        <link>/research/mathematics/2020/12/26/GS.html</link>
-        <guid isPermaLink="true">/research/mathematics/2020/12/26/GS.html</guid>
+        <link>/research/mathematics/2021/01/03/GS.html</link>
+        <guid isPermaLink="true">/research/mathematics/2021/01/03/GS.html</guid>
         <description>&lt;p&gt;This article was written by referring to the &lt;em&gt;Fall 2020 Numerical Analysis: Linear Algebra Course&lt;/em&gt; and the following links.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -69,7 +24,7 @@
 
 &lt;h1 id=&quot;gramschmidt-process&quot;&gt;Gram–Schmidt Process&lt;/h1&gt;
 
-&lt;p&gt;Given a set of linearly independent vectors $Span({ a_0, … , a_{n-1} } ) \subset \mathbb{C}^m$, the &lt;strong&gt;Gram-Schimdt process&lt;/strong&gt; computes a new basis $({q_0, … , q_{n-1}})$ that spans the same subspace as the original vectors, i.e. $Span({ a_0, … , a_{n-1} } ) = Span({ q_0, … , q_{n-1} } )$ [1].&lt;/p&gt;
+&lt;p&gt;Given a set of linearly independent vectors $Span({ a_0, … , a_{n-1} } ) \subset \mathbb{C}^m$, the Gram-Schimdt process computes a new basis {$q_0, … , q_{n-1}$} that &lt;strong&gt;spans the same subspace&lt;/strong&gt; as the original vectors, i.e. $Span({ a_0, … , a_{n-1} } ) = Span({ q_0, … , q_{n-1} } )$ [1].&lt;/p&gt;
 
 &lt;p&gt;It should be noted that we would like to have the new basis, ${ q_0, … , q_{n-1} }$, having the following characteristics.&lt;/p&gt;
 
@@ -84,7 +39,7 @@
 
   &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;Gram-Schmidt Process&amp;gt;
   Step 1. Compute the direction of the vectors.
-  Step 2. Compute the magnitude of the vectors.
+  Step 2. Compute the magnitude of the normalizer.
   Step 3. Compute a unit vector.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
 &lt;/blockquote&gt;
@@ -92,107 +47,111 @@
 &lt;ul&gt;
   &lt;li&gt;Compute the vector $q_0$ ($i=0$)
     &lt;ul&gt;
-      &lt;li&gt;Step 1.
-        &lt;ul&gt;
-          &lt;li&gt;N.A.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Stpe 2.
-        &lt;ul&gt;
-          &lt;li&gt;$\rho_{0, 0}=|a_0|_2$.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Step 3.
-        &lt;ul&gt;
-          &lt;li&gt;$q_0=a_0/\rho_{0, 0}$.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
+      &lt;li&gt;Step 1. Compute the direction of the vectors.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;N.A.&lt;/script&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Stpe 2. Compute the magnitude of the normalizer.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\rho_{0, 0}=\|a_0\|_2&lt;/script&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Step 3. Compute a unit vector.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;q_0=a_0/\rho_{0, 0}&lt;/script&gt;
+
+    &lt;ul&gt;
       &lt;li&gt;Result&lt;/li&gt;
     &lt;/ul&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;a_0=q_0\rho_{0, 0}&lt;/script&gt;
   &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a_0=q_0\rho_{0, 0}&lt;/script&gt;
-
-&lt;ul&gt;
   &lt;li&gt;compute the vector $q_1$ ($i=1$)
     &lt;ul&gt;
-      &lt;li&gt;Step 1.
-        &lt;ul&gt;
-          &lt;li&gt;$\rho_{0, 1}=q_0^{H}a_1$.&lt;/li&gt;
-          &lt;li&gt;$a_{1}^{\perp}=a_1-\rho_{0, 1}q_0$.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Step 2.
-        &lt;ul&gt;
-          &lt;li&gt;$\rho_{1, 1}=|a_1^\perp|_2$.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Step 3.
-        &lt;ul&gt;
-          &lt;li&gt;$q_1=a_1^\perp/\rho_{1, 1}$.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
+      &lt;li&gt;Step 1. Compute the direction of the vectors.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\rho_{0, 1}=q_0^{H}a_1&lt;/script&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;a_{1}^{\perp}=a_1-\rho_{0, 1}q_0&lt;/script&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Step 2. Compute the magnitude of the normalizer.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\rho_{1, 1}=\|a_1^\perp\|_2&lt;/script&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Step 3. Compute a unit vector.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;q_1=a_1^\perp/\rho_{1, 1}&lt;/script&gt;
+
+    &lt;ul&gt;
       &lt;li&gt;Result&lt;/li&gt;
     &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \left[\begin{array}{c|c}a_{0} &amp; a_{1}\end{array}
-        \right]=
-        \left[\begin{array}{c|c}q_{0} &amp; q_{1}\end{array}
-        \right]
-        \left[\begin{array}{c|c}
-        \rho_{0, 0} &amp; \rho_{0, 1} \\
-        \hline
-        0 &amp; \rho_{1, 1}
-        \end{array}
-        \right] %]]&gt;&lt;/script&gt;
-
-&lt;ul&gt;
+      \right]=
+      \left[\begin{array}{c|c}q_{0} &amp; q_{1}\end{array}
+      \right]
+      \left[\begin{array}{c|c}
+      \rho_{0, 0} &amp; \rho_{0, 1} \\
+      \hline
+      0 &amp; \rho_{1, 1}
+      \end{array}
+      \right] %]]&gt;&lt;/script&gt;
+  &lt;/li&gt;
   &lt;li&gt;compute the vector $q_2$ ($i=2$)
     &lt;ul&gt;
-      &lt;li&gt;Step 1.
-        &lt;ul&gt;
-          &lt;li&gt;$\begin{bmatrix}\rho_{0, 2} \ \rho_{1, 2}\end{bmatrix}=\begin{bmatrix}q_{0} &amp;amp; q_{1}\end{bmatrix}^Ha_2$.&lt;/li&gt;
-          &lt;li&gt;$a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} &amp;amp; q_{1}\end{bmatrix}\begin{bmatrix}\rho_{0, 2} \ \rho_{1, 2}\end{bmatrix}$.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Step 2.
-        &lt;ul&gt;
-          &lt;li&gt;$\rho_{2, 2}=|a_2^\perp|_2$.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Step 3.
-        &lt;ul&gt;
-          &lt;li&gt;$q_2=a_2^\perp/\rho_{2, 2}$.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
+      &lt;li&gt;Step 1. Compute the direction of the vectors.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{bmatrix}\rho_{0, 2} \\ \rho_{1, 2}\end{bmatrix}=\begin{bmatrix}q_{0} &amp; q_{1}\end{bmatrix}^Ha_2 %]]&gt;&lt;/script&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} &amp; q_{1}\end{bmatrix}\begin{bmatrix}\rho_{0, 2} \\ \rho_{1, 2}\end{bmatrix} %]]&gt;&lt;/script&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Step 2. Compute the magnitude of the normalizer.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\rho_{2, 2}=\|a_2^\perp\|_2&lt;/script&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Step 3. Compute a unit vector.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;q_2=a_2^\perp/\rho_{2, 2}&lt;/script&gt;
+
+    &lt;ul&gt;
       &lt;li&gt;Result&lt;/li&gt;
     &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \left[\begin{array}{c|c}a_{0} \ a_{1}&amp; a_{2}\end{array}
-        \right]=
-        \left[\begin{array}{c|c}q_{0} \ q_{1} &amp; q_{2}\end{array}
-        \right]
-        \left[\begin{array}{cc|c}
-        \rho_{0, 0}  &amp; \rho_{0, 1} &amp; \rho_{0, 2} \\
-        0 &amp; \rho_{1, 1} &amp; \rho_{1, 2}\\
-        \hline
-        0 &amp; 0 &amp; \rho_{2, 2}
-        \end{array}
-        \right] %]]&gt;&lt;/script&gt;
-
-&lt;ul&gt;
+      \right]=
+      \left[\begin{array}{c|c}q_{0} \ q_{1} &amp; q_{2}\end{array}
+      \right]
+      \left[\begin{array}{cc|c}
+      \rho_{0, 0}  &amp; \rho_{0, 1} &amp; \rho_{0, 2} \\
+      0 &amp; \rho_{1, 1} &amp; \rho_{1, 2}\\
+      \hline
+      0 &amp; 0 &amp; \rho_{2, 2}
+      \end{array}
+      \right] %]]&gt;&lt;/script&gt;
+  &lt;/li&gt;
   &lt;li&gt;keep do the routine till $i=n-1$
     &lt;ul&gt;
-      &lt;li&gt;Step 1.&lt;/li&gt;
-      &lt;li&gt;Step 2.&lt;/li&gt;
-      &lt;li&gt;Step 3.&lt;/li&gt;
+      &lt;li&gt;Step 1. Compute the direction of the vectors.&lt;/li&gt;
+      &lt;li&gt;Step 2. Compute the magnitude of the normalizer.&lt;/li&gt;
+      &lt;li&gt;Step 3. Compute a unit vector.&lt;/li&gt;
       &lt;li&gt;Final Result&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -200,11 +159,11 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;A = QR&lt;/script&gt;
 
-&lt;p&gt;What we should pay attention to in the final result ($A = QR$) are…&lt;/p&gt;
+&lt;p&gt;What we should pay attention to in the final result ($A = QR$) are …&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;All column vectors of $Q$, the new basis $({q_0, … , q_{n-1}})$, are unit vector and mutually orthogonal, which means $Q$ is an &lt;strong&gt;unitary matrix&lt;/strong&gt;.&lt;/p&gt;
+    &lt;p&gt;All column vectors of $Q$, the new basis {$q_0, … , q_{n-1}$}, are unit vector and mutually orthogonal, which means $Q$ is an &lt;strong&gt;unitary matrix&lt;/strong&gt;.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;The matrix $R$ is &lt;strong&gt;upper triangular matrix&lt;/strong&gt; and $rank(R)=m$.&lt;/p&gt;
@@ -248,40 +207,47 @@
 &lt;p&gt;Since $Q$ is unitary matric ($Q_0^HQ_0=I$ and $Q_0^Hq_1=0$),&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$Q_0^Ha_1=Q_0^HQ_0r_{0,1}+q_1\rho_{1,1}=r_{01}$.&lt;/li&gt;
+  &lt;li&gt;$Q_0^Ha_1=Q_0^HQ_0r_{0,1}+q_1\rho_{1,1}=r_{01}$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Compute $r_{0,1}$, which is already known.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$r_{0,1}:=Q_0^Ha_1$.&lt;/li&gt;
+  &lt;li&gt;$r_{0,1}:=Q_0^Ha_1$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Compute $\rho_{1,1}$ (Step 1. &amp;amp; 2.)&lt;/p&gt;
+&lt;p&gt;Compute $\rho_{1,1}$ (Step 1. &amp;amp; 2.).&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$a_1^\perp:=a_1-Q_0r_{0,1}$.&lt;/li&gt;
-  &lt;li&gt;$\rho_{1,1}:=|a_1^\perp|$.&lt;/li&gt;
+  &lt;li&gt;$a_1^\perp:=a_1-Q_0r_{0,1}$&lt;/li&gt;
+  &lt;li&gt;$\rho_{1,1}:=|a_1^\perp|$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Compute $q_1$ (Step 3.)&lt;/p&gt;
+&lt;p&gt;Compute $q_1$ (Step 3.).&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$q_1 := a_1^\perp / \rho_{1,1}$.&lt;/li&gt;
+  &lt;li&gt;$q_1 := a_1^\perp / \rho_{1,1}$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;Figure 1. shows Classical Gram-Schmidt algorithm for computing the QR factorization of a matrix A, and Code 1. shows the algorithms in python language.&lt;/p&gt;
+&lt;p&gt;Figure 1. shows Classical Gram-Schmidt algorithm for computing the QR factorization of a matrix A. The algorithm used &lt;a href=&quot;https://github.com/jhyun0919/ALAFF-in-python/blob/main/Assignments/flame_tests.ipynb&quot;&gt;FLAME notation&lt;/a&gt;.&lt;br /&gt;
+Code 1. shows the algorithms in python language.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-12-26-GS/CGS.png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-12-26-GS/CGS.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
 Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of a matrix A [2]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/79fefe26187d174e154474e64516a8f1.js&quot;&gt;&lt;/script&gt;
  &lt;em&gt;Code. 1: CGS QR in python&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/ALAFF-in-python/blob/main/Assignments/week03/test_CGS_QR.ipynb&quot;&gt;Test_CGS_QR.ipynb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;!-- ###################################################################### --&gt;
 
@@ -312,22 +278,22 @@ Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of
 &lt;p&gt;Compute $\rho_{1,1}$ (compute the magnitude).&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$\rho_{1,1}:=|a_1|$.&lt;/li&gt;
+  &lt;li&gt;$\rho_{1,1}:=|a_1|$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Compute $q_1$ (compute the unit vector)&lt;/p&gt;
+&lt;p&gt;Compute $q_1$ (compute the unit vector).&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$q_1:=a_1/\rho_{1,1}$.&lt;/li&gt;
+  &lt;li&gt;$q_1:=a_1/\rho_{1,1}$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Compute $r_{0,1}^T$, which is already known&lt;/p&gt;
+&lt;p&gt;Compute $r_{0,1}^T$, which is already known.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$r_{0,1}^T:=q_1^H(A_2 - Q_2R_{22} = q_1^HA_2$.&lt;/li&gt;
+  &lt;li&gt;$r_{0,1}^T:=q_1^H(A_2 - Q_2R_{22}) = q_1^HA_2$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Compute $A_2$ (update $A_2$ for the orthogonal direction)&lt;/p&gt;
+&lt;p&gt;Compute $A_2$ (update $A_2$ for the orthogonality).&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$A_2:=A_2-q_1r_{0,1}^T$&lt;/li&gt;
@@ -335,7 +301,8 @@ Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of
 
 &lt;hr /&gt;
 
-&lt;p&gt;Figure 2. shows Modified Gram-Schmidt algorithm for computing the QR factorization of a matrix A, and Code 2. shows the algorithms in python language.&lt;/p&gt;
+&lt;p&gt;Figure 2. shows Modified Gram-Schmidt algorithm for computing the QR factorization of a matrix A. The algorithm used &lt;a href=&quot;https://github.com/jhyun0919/ALAFF-in-python/blob/main/Assignments/flame_tests.ipynb&quot;&gt;FLAME notation&lt;/a&gt;.&lt;br /&gt;
+Code 2. shows the algorithms in python language.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-12-26-GS/MGS-side-by-side.png&quot; width=&quot;100%&quot; /&gt;   &lt;figcaption&gt;
@@ -346,22 +313,26 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
 &lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/c1395732ab7336b7a27b719af66213ab.js&quot;&gt;&lt;/script&gt;
  &lt;em&gt;Code. 2: MGS QR in python&lt;/em&gt;&lt;/p&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/ALAFF-in-python/blob/main/Assignments/week03/test_MGS_QR.ipynb&quot;&gt;Test_MGS_QR.ipynb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;!-- ###################################################################### --&gt;
 
 &lt;h1 id=&quot;why-do-we-need-this&quot;&gt;Why do we need this?&lt;/h1&gt;
 
-&lt;p&gt;Through Gram-Schmidt process, we can obtain a orthonormal basis for $\mathbb{C}^m$.&lt;/p&gt;
+&lt;p&gt;Through Gram-Schmidt process, we can obtain a &lt;strong&gt;orthonormal basis&lt;/strong&gt; for $\mathbb{C}^m$.&lt;/p&gt;
 
 &lt;p&gt;The advantages of being able to have an orthonormal basis are following [4].&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;We can express any  $v \in \mathbb{C}^m$ as a lineawr combination of coefficients, which will allows us to have an explicit formula expressing $v$ with the orthonormal basis.&lt;/p&gt;
+    &lt;p&gt;We can express any  $v \in \mathbb{C}^m$ as a &lt;strong&gt;lineawr combination of coefficients&lt;/strong&gt;, which will allows us to have an &lt;strong&gt;explicit formula&lt;/strong&gt; expressing $v$ with the orthonormal basis.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The explicit formula is very useful when dealing with projection onto subspace.&lt;/p&gt;
+    &lt;p&gt;The explicit formula is very useful when dealing with &lt;strong&gt;projection onto subspace&lt;/strong&gt;.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -374,6 +345,97 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
 &lt;p&gt;[3] M. M. Robert van de Geijn, “Advanced Linear Algebra: Foundations to Frontiers,” ALAFF Modified Gram-Schmidt (MGS). [Online]. Available: https://www.cs.utexas.edu/users/flame/laff/alaff/Modified-Classical-Gram-Schmidt.html. [Accessed: 03-Jan-2021].&lt;/p&gt;
 
 &lt;p&gt;[4] Michael Albanese, “Why is orthogonal basis important?,” Mathematics Stack Exchange. [Online]. Available: https://math.stackexchange.com/questions/518600/why-is-orthogonal-basis-important. [Accessed: 03-Jan-2021].&lt;/p&gt;
+</description>
+        <pubDate>Sun, 03 Jan 2021 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>(Python-Dev Tips) Virtual Environment</title>
+        <link>/research/cs/2021/01/01/virtualenv.html</link>
+        <guid isPermaLink="true">/research/cs/2021/01/01/virtualenv.html</guid>
+        <description>&lt;p&gt;In this article, we are going to explain what is virtual environment in python and why do we need it. Also, we will show you how we can set up a virtual environment.&lt;/p&gt;
+
+&lt;p&gt;This posting is one of a series of tips for developing python following the previous post.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html&quot;&gt;Git Basic&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Virtual Environment&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/tutorial/venv.html&quot;&gt;Python Docs: Virtual Environments&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://realpython.com/python-virtual-environments-a-primer/&quot;&gt;Real Python: Python Virtual Environments&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;what-is-virtual-environment&quot;&gt;What is Virtual Environment&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;why-do-we-need-to-set-up-a-virtual-environment&quot;&gt;Why Do We Need to Set Up a Virtual Environment&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;how-can-we-set-up-a-virtual-environment&quot;&gt;How Can We Set Up a Virtual Environment&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;anaconda-gui&quot;&gt;Anaconda GUI&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+&lt;p&gt;[1]&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2021 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>(TIL) How to Speak</title>
+        <link>/daily/essay/2020/12/28/how-to-speak.html</link>
+        <guid isPermaLink="true">/daily/essay/2020/12/28/how-to-speak.html</guid>
+        <description>&lt;p&gt;&lt;a href=&quot;http://sixminutes.dlugan.com/speaking-tips-patrick-henry-winston-speak/&quot;&gt;How to Speak: 7 Speaking Tips from Patrick Henry Winston&lt;/a&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=Unzc731iCUY&quot;&gt;How To Speak by Patrick Winston&lt;/a&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=uylHeDdlMrc&amp;amp;amp%3Bab_channel=sergiusheartless&quot;&gt;How to Speak - The Big Four&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 28 Dec 2020 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>Householder QR Factorization</title>
+        <link>/research/mathematics/2020/12/26/Householder.html</link>
+        <guid isPermaLink="true">/research/mathematics/2020/12/26/Householder.html</guid>
+        <description>&lt;p&gt;This article was written by referring to the &lt;em&gt;Fall 2020 Numerical Analysis: Linear Algebra Course&lt;/em&gt; and the following links.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-gram-schmidt.html&quot;&gt;ALAFF: Gram-Schmidt Orthogonalization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ULAFF/ALAFF&quot;&gt;ALAFF Git Repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;unitary-matrix&quot;&gt;Unitary Matrix&lt;/h2&gt;
+
+&lt;h2 id=&quot;householder-transformation&quot;&gt;Householder transformation&lt;/h2&gt;
+
+&lt;h2 id=&quot;householder-qr-factorization-algorithm&quot;&gt;Householder QR factorization algorithm&lt;/h2&gt;
+
+&lt;h3 id=&quot;forming-q&quot;&gt;Forming Q&lt;/h3&gt;
+
+&lt;h3 id=&quot;applying-qh&quot;&gt;Applying QH&lt;/h3&gt;
+
+&lt;h3 id=&quot;orthogonality-of-resulting-q&quot;&gt;Orthogonality of resulting Q&lt;/h3&gt;
+
+&lt;h2 id=&quot;blocked-householder-qr-factorization&quot;&gt;Blocked Householder QR factorization&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;p&gt;[1]&lt;/p&gt;
 </description>
         <pubDate>Sat, 26 Dec 2020 00:00:00 -0600</pubDate>
       </item>
@@ -442,54 +504,18 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
       </item>
     
       <item>
-        <title>(Python-Dev Tips) Virtual Environment</title>
-        <link>/research/cs/2020/12/19/virtualenv.html</link>
-        <guid isPermaLink="true">/research/cs/2020/12/19/virtualenv.html</guid>
-        <description>&lt;p&gt;In this article, we are going to explain what is virtual environment in python and why do we need it. Also, we will show you how we can set up a virtual environment.&lt;/p&gt;
-
-&lt;p&gt;This posting is one of a series of tips for developing python following the previous post.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html&quot;&gt;Git Basic&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Virtual Environment&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/tutorial/venv.html&quot;&gt;Python Docs: Virtual Environments&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://realpython.com/python-virtual-environments-a-primer/&quot;&gt;Real Python: Python Virtual Environments&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;what-is-virtual-environment&quot;&gt;What is Virtual Environment&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;why-do-we-need-to-set-up-a-virtual-environment&quot;&gt;Why Do We Need to Set Up a Virtual Environment&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;how-can-we-set-up-a-virtual-environment&quot;&gt;How Can We Set Up a Virtual Environment&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;anaconda-gui&quot;&gt;Anaconda GUI&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
-
+        <title>Cascading Outage Simulator - Dynamic</title>
+        <link>/research/energy/2020/12/15/Cascading-Outage-Sim-QSS.html</link>
+        <guid isPermaLink="true">/research/energy/2020/12/15/Cascading-Outage-Sim-QSS.html</guid>
+        <description>&lt;p&gt;pros and cons of various cascading outage simulators.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 19 Dec 2020 00:00:00 -0600</pubDate>
+        <pubDate>Tue, 15 Dec 2020 00:00:00 -0600</pubDate>
       </item>
     
       <item>
-        <title>Cascading Outage Simulator</title>
-        <link>/research/energy/2020/12/15/Cascading-Outage-Sim.html</link>
-        <guid isPermaLink="true">/research/energy/2020/12/15/Cascading-Outage-Sim.html</guid>
+        <title>Cascading Outage Simulator - QSS</title>
+        <link>/research/energy/2020/12/15/Cascading-Outage-Sim-Dynamic.html</link>
+        <guid isPermaLink="true">/research/energy/2020/12/15/Cascading-Outage-Sim-Dynamic.html</guid>
         <description>&lt;p&gt;pros and cons of various cascading outage simulators.&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 Dec 2020 00:00:00 -0600</pubDate>
@@ -497,8 +523,8 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
     
       <item>
         <title>(Tutorial) EMTP - Line/Cable Modeling for EMT Simulations</title>
-        <link>/research/energy/2020/12/14/EMTP.html</link>
-        <guid isPermaLink="true">/research/energy/2020/12/14/EMTP.html</guid>
+        <link>/research/energy/2020/12/14/EMTP-Line-Cable-Modeling.html</link>
+        <guid isPermaLink="true">/research/energy/2020/12/14/EMTP-Line-Cable-Modeling.html</guid>
         <description>&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLP4K-zG4OPTEWlzPJQvKxnDd1I0ObW4MS&quot;&gt;EMTP Tutorials&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -518,17 +544,8 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
     
       <item>
         <title>LMI and Power Systems</title>
-        <link>/research/energy/2020/12/13/LMI-and-Power-System.html</link>
-        <guid isPermaLink="true">/research/energy/2020/12/13/LMI-and-Power-System.html</guid>
-        <description>
-</description>
-        <pubDate>Sun, 13 Dec 2020 00:00:00 -0600</pubDate>
-      </item>
-    
-      <item>
-        <title>GNN</title>
-        <link>/research/energy/2020/12/13/GNN.html</link>
-        <guid isPermaLink="true">/research/energy/2020/12/13/GNN.html</guid>
+        <link>/research/energy/2020/12/13/LMI-and-Power-Sys.html</link>
+        <guid isPermaLink="true">/research/energy/2020/12/13/LMI-and-Power-Sys.html</guid>
         <description>
 </description>
         <pubDate>Sun, 13 Dec 2020 00:00:00 -0600</pubDate>
