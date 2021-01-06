@@ -25,28 +25,31 @@ This post was written with reference to the following materials.
 
 Python **virtual environment** is an isolated environment for a Python project. This allows each project can have its **own dependencies**, regardless of what dependencies every other project has [1].
 
+This provides the advantage of being able to build each development environment for multiple projects on one local PC. For an example, Figure 1. shows how one can manage virtual environments for serveral projects. More specifically, it shows how to manage each python projection for a web app that uses a different version of the Django package.
+
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-04-virtualenv/virtualenv_concept.png" width="555" />
   <figcaption>Figure 1. Examples of Python Virtual Environment [2].</figcaption>
 </figure>
 
-
 <br>
 
-# How to Set Up a Virtual-Env
+---
 
-<br>
+# Basic Virtual-Env Usages
 
-## Anaconda
+There are two ways to set up and manage virtual envoronment, **pip** and **anaconda**. In this article, we will explain how to set up and manage virtual envoronment using anaconda.
 
-[Anaconda](https://www.anaconda.com) is a package manager, an environment manager, a Python/R data science distribution, and a collection of over 7,500+ open-source packages [3]. Through this, we can set up and manage a virtual emvironment for each projects.
+[**Anaconda**](https://www.anaconda.com) is a package manager, an environment manager, a Python/R data science distribution, and a collection of over 7,500+ open-source packages [3]. Through this, we can set up and manage a virtual emvironment for each projects.
 
-In this article we will introduce how to create a virtual environment and how to export the dependencies of the environment. For more details, you can refer to the following Documentation or Cheat-Sheet.
+We will introduce basic anaconda usages. For more details, you can refer to the following Documentation or Cheat-Sheet.
 
 - [Anaconda Documentation](https://docs.anaconda.com/anaconda/)
 - [Conda Cheat-Sheet](https://conda.io/projects/conda/en/latest/user-guide/cheatsheet.html)
 
+---
 
+We can create a new virtual environment with the following commands and manage packages in the corresponding virtual environment for each project.
 
 - Create a new virtual environmnet
 
@@ -54,22 +57,48 @@ In this article we will introduce how to create a virtual environment and how to
     $ conda create --name ENVNAME
     ```
 
-- Exporting the environment.yml file
+- Activate a named environment
+
+    ```shell
+    $ conda activate ENVNAME
+    ```
+
+- Install a package
+
+    ```shell
+    $ conda install PKGNAME
+    ```
+
+- Deactivate current environment
+
+    ```shell
+    $ conda deactivate ENVNAME
+    ```
+
+<br>
+
+And, we can clearly provide the dependency for the project to other developers through the following commands.
+
+- Exporting the *envname.yml*
 
     ```shell
     $ conda env export --name ENVNAME > envname.yml
     ```
 
-- Creating an environment from an envname.yml file
+<br>
+
+Finally, we can create a virtual environment that matches the developer's development environment on our local PC through the *envname.yml*.
+
+- Creating an environment from an *envname.yml*
 
     ```shell
     $ conda env create --file envname.yml
     ```
 
-<figure align="center">
+<!-- <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-04-virtualenv/anaconda_gui.png" width="900" />
   <figcaption>Figure 2. Example of Anaconda GUI.</figcaption>
-</figure>
+</figure> -->
 
 <br>
 
