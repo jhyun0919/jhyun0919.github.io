@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>(Python-Dev Tips) Virtual Environment | Park's Archive</title>
 	<meta name="description"
-		content="In this article, we are going to explain what is virtual environment in python and why do we need it. Also, we will show you how we can set up a virtual envi...">
+		content="In this article, we are going to explain what is virtual environment in python and why do we need it. Also, we will show you how to set up a virtual environm...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -225,7 +225,7 @@
     </p>
   </header>
   <section class="post-content" style="width:77%; margin:0 auto;">
-    <p>In this article, we are going to explain what is virtual environment in python and why do we need it. Also, we will show you how we can set up a virtual environment.</p>
+    <p>In this article, we are going to explain what is virtual environment in python and why do we need it. Also, we will show you how to set up a virtual environment and introduce basic commands.</p>
 
 <p>This posting is one of a series of tips for developing python following the previous post.</p>
 
@@ -244,25 +244,107 @@
 </ul>
 
 <hr />
-<h1 id="what-is-virtual-environment">What is Virtual Environment</h1>
+
+<h1 id="what-is-virtual-env--why-do-we-need-it">What is Virtual-Env &amp; Why Do We Need it?</h1>
+
+<p>Python <strong>virtual environment</strong> is an isolated environment for a Python project. This allows each project can have its <strong>own dependencies</strong>, regardless of what dependencies every other project has [1].</p>
+
+<p>This provides the advantage of being able to build each development environment for multiple projects on one local PC. For an example, Figure 1. shows how one can manage virtual environments for serveral projects. More specifically, it shows how to manage each python projection for a web app that uses a different version of the Django package.</p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-04-virtualenv/virtualenv_concept.png" width="555" />   <figcaption>
+Figure 1. Examples of Python Virtual Environment [2].
+  </figcaption>
+</figure>
 
 <p><br /></p>
 
-<h1 id="why-do-we-need-to-set-up-a-virtual-environment">Why Do We Need to Set Up a Virtual Environment</h1>
+<hr />
+
+<h1 id="basic-virtual-env-usages">Basic Virtual-Env Usages</h1>
+
+<p>There are two ways to set up and manage virtual envoronment, <strong>pip</strong> and <strong>anaconda</strong>. In this article, we will explain how to set up and manage virtual envoronment using anaconda.</p>
+
+<p><a href="https://www.anaconda.com"><strong>Anaconda</strong></a> is a package manager, an environment manager, a Python/R data science distribution, and a collection of over 7,500+ open-source packages [3]. Through this, we can set up and manage a virtual emvironment for each projects.</p>
+
+<p>We will introduce basic anaconda usages. For more details, you can refer to the following Documentation or Cheat-Sheet.</p>
+
+<ul>
+  <li><a href="https://docs.anaconda.com/anaconda/">Anaconda Documentation</a></li>
+  <li><a href="https://conda.io/projects/conda/en/latest/user-guide/cheatsheet.html">Conda Cheat-Sheet</a></li>
+</ul>
+
+<hr />
+
+<p>We can create a new virtual environment with the following commands and manage packages in the corresponding virtual environment for each project.</p>
+
+<ul>
+  <li>
+    <p>Create a new virtual environmnet</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda create <span class="nt">--name</span> ENVNAME
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Activate a named environment</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda activate ENVNAME
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install a package</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda <span class="nb">install </span>PKGNAME
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Deactivate current environment</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda deactivate ENVNAME
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 <p><br /></p>
 
-<h1 id="how-can-we-set-up-a-virtual-environment">How Can We Set Up a Virtual Environment</h1>
+<p>And, we can clearly provide the dependency for the project to other developers through the following commands.</p>
+
+<ul>
+  <li>
+    <p>Exporting the <em>envname.yml</em></p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda <span class="nb">env export</span> <span class="nt">--name</span> ENVNAME <span class="o">&gt;</span> envname.yml
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 <p><br /></p>
 
-<h1 id="anaconda-gui">Anaconda GUI</h1>
+<p>Finally, we can create a virtual environment that matches the developer’s development environment on our local PC through the <em>envname.yml</em>.</p>
+
+<ul>
+  <li>
+    <p>Creating an environment from an <em>envname.yml</em></p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda <span class="nb">env </span>create <span class="nt">--file</span> envname.yml
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<!-- <figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2021-01-04-virtualenv/anaconda_gui.png" width="900" />
+  <figcaption>Figure 2. Example of Anaconda GUI.</figcaption>
+</figure> -->
 
 <p><br /></p>
 
 <hr />
 <h1 id="reference">Reference</h1>
-<p>[1]</p>
+<p>[1] Real Python, “Python Virtual Environments: A Primer,” Real Python, 17-Jul-2020. [Online]. Available: https://realpython.com/python-virtual-environments-a-primer/. [Accessed: 05-Jan-2021].</p>
+
+<p>[2] S. Shakya, “Virtual Environment in Python,” Medium, 02-May-2019. [Online]. Available: https://medium.com/incwell-bootcamp/virtual-environment-in-python-54db665b9939. [Accessed: 05-Jan-2021].</p>
+
+<p>[3] “Anaconda Individual Edition¶,” Anaconda Individual Edition - Anaconda documentation. [Online]. Available: https://docs.anaconda.com/anaconda/. [Accessed: 05-Jan-2021].</p>
 
   </section>
 
@@ -278,6 +360,10 @@
     <a class="tag" href="/tags#Dev">#Dev</a>
     
     <a class="tag" href="/tags#Python">#Python</a>
+    
+    <a class="tag" href="/tags#virtualenv">#virtualenv</a>
+    
+    <a class="tag" href="/tags#Anaconda">#Anaconda</a>
     
   </div>
 </footer>

@@ -264,7 +264,7 @@
       <li>Step 1. Compute the direction of the vectors.</li>
     </ul>
 
-    <script type="math/tex; mode=display">N.A.</script>
+    <script type="math/tex; mode=display">N.A. \ (q_0 \parallel a_0)</script>
 
     <ul>
       <li>Stpe 2. Compute the magnitude of the normalizer.</li>
@@ -284,7 +284,7 @@
 
     <script type="math/tex; mode=display">a_0=q_0\rho_{0, 0}</script>
   </li>
-  <li>compute the vector $q_1$ ($i=1$)
+  <li>Compute the vector $q_1$ ($i=1$)
     <ul>
       <li>Step 1. Compute the direction of the vectors.</li>
     </ul>
@@ -321,7 +321,7 @@
       \end{array}
       \right] %]]></script>
   </li>
-  <li>compute the vector $q_2$ ($i=2$)
+  <li>Compute the vector $q_2$ ($i=2$)
     <ul>
       <li>Step 1. Compute the direction of the vectors.</li>
     </ul>
@@ -430,7 +430,7 @@ a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} & q_{1}\end{bmatrix}\begin{bmatrix}\rho_{
   <li>$r_{0,1}:=Q_0^Ha_1$</li>
 </ul>
 
-<p>Compute $\rho_{1,1}$ (Step 1. &amp; 2.).</p>
+<p>Compute $a_1^\perp$ and $\rho_{1,1}$ (Step 1. &amp; 2.).</p>
 
 <ul>
   <li>$a_1^\perp:=a_1-Q_0r_{0,1}$</li>
@@ -453,6 +453,8 @@ Code 1. shows the algorithms in python language.</p>
 Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of a matrix A [2]
   </figcaption>
 </figure>
+
+<p><br /></p>
 
 <p>  <script src="https://gist.github.com/jhyun0919/79fefe26187d174e154474e64516a8f1.js"></script>
  <em>Code. 1: CGS QR in python</em></p>
@@ -489,13 +491,13 @@ Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of
 
 <p>Assume that $a_1$ and $A_2$ are known.</p>
 
-<p>Compute $\rho_{1,1}$ (compute the magnitude).</p>
+<p>Compute $\rho_{1,1}$ (compute the magnitude ↔︎ Step 2.).</p>
 
 <ul>
   <li>$\rho_{1,1}:=|a_1|$</li>
 </ul>
 
-<p>Compute $q_1$ (compute the unit vector).</p>
+<p>Compute $q_1$ (compute the unit vector ↔︎ Step 3.).</p>
 
 <ul>
   <li>$q_1:=a_1/\rho_{1,1}$</li>
@@ -507,7 +509,7 @@ Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of
   <li>$r_{0,1}^T:=q_1^H(A_2 - Q_2R_{22}) = q_1^HA_2$</li>
 </ul>
 
-<p>Compute $A_2$ (update $A_2$ for the orthogonality).</p>
+<p>Compute $A_2$ (update $A_2$ for the orthogonality ↔︎ Step 1.).</p>
 
 <ul>
   <li>$A_2:=A_2-q_1r_{0,1}^T$</li>
@@ -524,6 +526,8 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
   </figcaption>
 </figure>
 
+<p><br /></p>
+
 <p>  <script src="https://gist.github.com/jhyun0919/c1395732ab7336b7a27b719af66213ab.js"></script>
  <em>Code. 2: MGS QR in python</em></p>
 
@@ -537,13 +541,13 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
 
 <h1 id="why-do-we-need-this">Why do we need this?</h1>
 
-<p>Through Gram-Schmidt process, we can obtain a <strong>orthonormal basis</strong> for $\mathbb{C}^m$.</p>
+<p>Through Gram-Schmidt process, we can obtain an <strong>orthonormal basis</strong> of the matrix $A$’s subspace, which has a set of lineary independent vectors {$a_0, …, a_{n-1}$}.</p>
 
 <p>The advantages of being able to have an orthonormal basis are following [4].</p>
 
 <ul>
   <li>
-    <p>We can express any  $v \in \mathbb{C}^m$ as a <strong>lineawr combination of coefficients</strong>, which will allows us to have an <strong>explicit formula</strong> expressing $v$ with the orthonormal basis.</p>
+    <p>We can express any  $v \in \mathbb{C}^n$ as a <strong>linear combination of coefficients</strong>, which will allows us to have an <strong>explicit formula</strong> expressing $v$ with the orthonormal basis.</p>
   </li>
   <li>
     <p>The explicit formula is very useful when dealing with <strong>projection onto subspace</strong>.</p>

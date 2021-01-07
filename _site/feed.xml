@@ -5,7 +5,615 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Mon, 04 Jan 2021 12:55:35 -0600</pubDate>
+    <pubDate>Thu, 07 Jan 2021 17:30:53 -0600</pubDate>
+    
+      <item>
+        <title></title>
+        <link>/2021/01/07/2020-12-15-Cascading-Outage-Sim-QSS.html</link>
+        <guid isPermaLink="true">/2021/01/07/2020-12-15-Cascading-Outage-Sim-QSS.html</guid>
+        <description>&lt;p&gt;pros and cons of various cascading outage simulators.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 07 Jan 2021 17:30:53 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>(Research Proj) Cascading Outage Simulator - Dynamic</title>
+        <link>/research/energy/2021/01/05/Cascading-Outage-Sim-Dynamic.html</link>
+        <guid isPermaLink="true">/research/energy/2021/01/05/Cascading-Outage-Sim-Dynamic.html</guid>
+        <description>&lt;hr /&gt;
+
+&lt;h1 id=&quot;1-cascading-outage-simulator&quot;&gt;1. CASCADING OUTAGE SIMULATOR&lt;/h1&gt;
+
+&lt;p&gt;The vital significance of studying cascading outages has been recognized [].&lt;/p&gt;
+
+&lt;p&gt;However, since electrical power networks are very large and complex systems [], understanding the many mechanisms by which cascading outages propagate is challenging.&lt;/p&gt;
+
+&lt;p&gt;Cadcading outage simulators allow us to study a wide variety of different mechanisms of cascading outages.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;2-in-this-paper&quot;&gt;2. IN THIS PAPER&lt;/h1&gt;
+
+&lt;p&gt;This paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system, &lt;strong&gt;“Cascading Outage Simulator with Multiprocess Integration Capabilities” (COSMIC)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In COSMIC, …&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Dynamic components&lt;/strong&gt; are modeled using &lt;strong&gt;differential equations&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Power flows&lt;/strong&gt; are represented using &lt;strong&gt;non-linear power flow equations&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Discrete changes&lt;/strong&gt; (e.g., components failures, load shedding) are described by &lt;strong&gt;a set of equations (constraints)&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Given dynamic data for a power system and a set of exogenous disturbances that may trigger a cascade, COSMIC uses a recursive process to compute the impact of the triggering event by solving the differential-algebraic equations (DAEs).&lt;/p&gt;
+
+&lt;p&gt;Benefits&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;providing an open platform for research and development that allows one to explicitly test the impact of the many assumptions that are necessary for dynamic cascading failure modeling. e.g. users can modify the existing system components, add new ones, and integrate advanced remedial control actions.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;the dynamic/adaptive time step and recursive islanded time horizons implemented in this simulator allow for faster computations during, near, steady-state regimes, and fine resolution during transient phases.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;can be easily integrated with High Performance Computing (HPC) clusters to run many simulations simultaneously at a much lower cost.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;3-hybrid-system-modeling-in-cosmic&quot;&gt;3. HYBRID SYSTEM MODELING IN COSMIC&lt;/h1&gt;
+
+&lt;h2 id=&quot;a-hybrid-differential-algebraic-formulation&quot;&gt;A. Hybrid differential-algebraic formulation&lt;/h2&gt;
+
+&lt;p&gt;Dynamic power networks are modeled as sets of DAEs.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-set-of-differential-equations&quot;&gt;A set of Differential equations&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{d\mathbf{x}}{dt}=\mathbf{f}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) \tag{1}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;$\mathbf{x}$ is a vector of continuous state variables that change with time according to a set of differential equations.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(1) represent the machine dynamics.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;check appendix for more details.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;a-set-of-algebraic-equations&quot;&gt;A set of Algebraic equations&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) =0 \tag{2}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;$\mathbf{y}$ is a vector fo continuous state variables that have pure algebraic relationships to other variables in the system.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(2) encapsulate the standard ac power flow equations.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;load models are an important part of the algebraic equations. (ZIPE)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/COSMIC_load_type.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Illustrates a dramatic impact of load models on algebraic convergence. [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;a-set-of-constarints&quot;&gt;A set of Constarints&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t))&lt;0 \tag{3} %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;$\mathbf{z}$ is a vector of state variables that can only take integer states $( z_i ∈ [0, 1])$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;constraints $\mathbf{h_i}(…)&amp;lt;0$ fails, an associated counter function $\mathbf{d_i}$ activates.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;During cascading failures, power systems undergo many discrete changes.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;exogenous events (e.g., manual operations, weather)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;endogenous events (e.g., automatic protective relay actions)&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The discrete event(s) will consequently change algebraic equations and the systems dynamic response, which may result in cascading failures, system islanding, and large blackouts.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;b-relay-modeling&quot;&gt;B. Relay modeling&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Major disturbances cause system oscillations as the system seeks a new equilibrium.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;These oscillations may naturally die out due to the interactions of system inertia, damping, and exciter and governor controls.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In order to ensure that relays do not trip due to brief transient state changes, time-delays are added to each protective relay in COSMIC.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;We implemented in this model two types of time-delayed triggering algorithms:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;fixed-time delay&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://www.electrical4u.com/inverse-time-relay-definite-time-lag-relay/&quot;&gt;time-inverse delay&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Five types of protective relays are modeled in COSMIC:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;over-current (OC) relays&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;distance (DIST) relays&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;temperature (TEMP) relays&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;under-voltage load shedding (UVLS) relays&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;under-frequency load shedding (UFLS)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;c-solving-the-hybrid-dae&quot;&gt;C. Solving the hybrid DAE&lt;/h2&gt;
+
+&lt;p&gt;Because of its numerical stability advantages, COSMIC uses the trapezoidal rule to simultaneously integrate and solve the differential and algebraic equations.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;0 = \mathbf{x} + \frac{t_d-d}{2} [\mathbf{f}+\mathbf{f}(t_d, \mathbf{x}_d, \mathbf{y}_d, \mathbf{z}_d)] \tag{4}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;0=\mathbf{g}(t_d, \mathbf{x}_+, \mathbf{y}_+, \mathbf{z}) \tag{5}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;0&gt;\mathbf{h}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{6}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;0=\mathbf{d}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{7}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Whereas many of the common tools in the literature use a fixed time step-size, COSMIC implements a variable time step-size in order to trade-off between the diverse time-scales of the dynamics that we implement.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TRADE-OFF&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;small&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;large&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;trapezoidal-rule&quot;&gt;Trapezoidal Rule&lt;/h3&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Trapezoidal_Rule.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Figure . Trapezoidal Rule []
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\int_{a}^{b} f(x) \,dx = \frac{\Delta x}{2}[f(x_0) + 2f(x_1) +... + 2f(x_{n-1}) + f(x_n)]&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;simulation-algorithm&quot;&gt;Simulation Algorithm&lt;/h3&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Algorithm.png&quot; width=&quot;555&quot; /&gt;   &lt;figcaption&gt;
+Figure . Algorithm [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/COSMIC_Flowchart.png&quot; width=&quot;900&quot; /&gt;   &lt;figcaption&gt;
+Figure . Algorithm Flowchart []
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;d-validation&quot;&gt;D. Validation&lt;/h2&gt;
+
+&lt;p&gt;To validate COSMIC, we compared the dynamic response in COSMIC against commercial software—PowerWorld— using the classic 9-bus test case.&lt;/p&gt;
+
+&lt;p&gt;From a random contingency simulation, the Mean Absolute Error (MAE) between the results produced by COSMIC and PowerWorld was within 0.11%.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;4-experiments-and-results&quot;&gt;4. EXPERIMENTS AND RESULTS&lt;/h1&gt;
+
+&lt;p&gt;Three test systems are prepared:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;9-bus system&lt;/li&gt;
+  &lt;li&gt;39-bus system&lt;/li&gt;
+  &lt;li&gt;2383-bus system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;a-polar-formulation-vs-rectangular-formulation-in-computational-efficiency&quot;&gt;A. Polar formulation vs. Rectangular formulation in computational efficiency&lt;/h2&gt;
+
+&lt;h3 id=&quot;purpose&quot;&gt;Purpose&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To compare the computational efficiency of the two formulations.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;used-test-systems&quot;&gt;Used test systems&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the 39-bus system&lt;/li&gt;
+  &lt;li&gt;the 2383-bus system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;results&quot;&gt;Results&lt;/h3&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/rect_polar_performance.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Figure . performance [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;b-relay-event-illustration&quot;&gt;B. Relay event illustration&lt;/h2&gt;
+
+&lt;h3 id=&quot;purpose-1&quot;&gt;Purpose&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To depict the functionality of how protective relays integrate with COSMIC’s time delay features.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;used-test-systems-1&quot;&gt;Used test systems&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the 9-bus system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;results-1&quot;&gt;Results&lt;/h3&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Relay_Events.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Figure . Relay Events [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;c-cascading-outage-examples&quot;&gt;C. Cascading outage examples&lt;/h2&gt;
+
+&lt;h3 id=&quot;purpose-2&quot;&gt;Purpose&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To demonstrates cascading outage examples.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;used-test-systems-2&quot;&gt;Used test systems&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the 39-bus system&lt;/li&gt;
+  &lt;li&gt;the 2383-bus system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;results-2&quot;&gt;Results&lt;/h3&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/39Bus_Case_Cascading_Outage_Example.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Figure . 39-Bus Case Cascading Outage Example [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/2383Bus_Case_Cascading_Outage_Example.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Figure . 2383-Bus Case Cascading Outage Example[1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Branch_Outage_and_Load_Shedding.png&quot; width=&quot;900&quot; /&gt;   &lt;figcaption&gt;
+Figure . [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;d-n-2-contingency-analysis&quot;&gt;D. N-2 contingency analysis&lt;/h2&gt;
+
+&lt;h3 id=&quot;purpose-3&quot;&gt;Purpose&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For contingency analysis&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;used-test-systems-3&quot;&gt;Used test systems&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the 2383-bus system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;results-3&quot;&gt;Results&lt;/h3&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Demand_Loss.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Figure . CCDF Demand Loss [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Event_Length.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Figure . CCDF Event Length [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Number_of_Branch_Outages.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Figure . CCDF Number of Branch Outages [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;e-comparison-with-a-dc-cascading-outage-simulator&quot;&gt;E. Comparison with a dc cascading outage simulator&lt;/h2&gt;
+
+&lt;h3 id=&quot;purpose-4&quot;&gt;Purpose&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To compare COSMIC vs. DC Simulator.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;used-test-systems-4&quot;&gt;Used test systems&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the 2383-bus system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;results-4&quot;&gt;Results&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The probabilities of demand losses&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_COSMIC_vs_DC.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Figure . CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Path Agreement Measurement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;R(m_1, m_2) = \sum_{i=1}^{|C|}\frac{1}{C} \frac{|A_i \cap B_i|}{|A_i \cup B_i|} \tag{8}&lt;/script&gt;
+
+&lt;p&gt;where models $m_1$ and $m_2$ are both subjected to the same set of exogenous contingencies $C=${$c_1,c_2,…$}. It measures the average agreement in the set of dependent events that result from each contingency in each model.&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/PAM.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Figure . Statical Results for the Comparison between COSMIC &amp;amp; DC Simulator [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;5-conclusion&quot;&gt;5. CONCLUSION&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;COSMIC represents a power system as a set of hybrid discrete/continuous differential algebraic equations, simultaneously simulating protection systems and machine dynamics.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;By simulating 1200 randomly chosen N−2 contingencies for a 2383-bus test case, we found that COSMIC produces heavy-tailed blackout size distributions, which are typically found in both historical blackout data and cascading failure models [].&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;WHY???&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The relative frequency of very large events may be exaggerated in dynamic model due to numerical non-convergence (about 3% of cases).&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;WHY???&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The blackout size results show that load models can substantially impact cascade sizes—cases that used constant impedance loads showed consistently smaller blackouts, relative to constant current, power or exponential models.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The contingency simulation results from COSMIC were compared to corresponding simulations from a dc power flow based quasi-steady-state cascading failure simulator, using a new metric. The two models largely agreed for the initial periods of cascading (for about 10 events), then diverged for later stages where dynamic phenomena drive the sequence of events.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Together these results illustrate that detailed dynamic models of cascading failure can be useful in understanding the relative importance of various features of these models.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The particular model used in this paper, COSMIC, is likely &lt;strong&gt;too slow&lt;/strong&gt; for many large-scale statistical analyses, but comparing detailed models to simpler ones can be helpful in understanding the relative importance of various modeling assumptions that are necessary to understand complicated phenomena such as cascading.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;6-my-reseasrch-project&quot;&gt;6. MY RESEASRCH PROJECT&lt;/h1&gt;
+
+&lt;h2 id=&quot;purpose-5&quot;&gt;Purpose&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Forcast or detect cascading outages in power systems.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;approach&quot;&gt;Approach&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use a GNN based model to predict cascading outages.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;experiments&quot;&gt;Experiments&lt;/h2&gt;
+
+&lt;h3 id=&quot;step-1-data-generation&quot;&gt;Step 1. Data Generation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Need to introduce randomness to create large size of dataset.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;How?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;step-2-model-gnn-model-structure&quot;&gt;Step 2. Model GNN Model Structure&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Does the model sturcture is proper for the goal?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the strength of the model? and why?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;step-3-train-the-model--tune-the-hyper-parameters&quot;&gt;Step 3. Train the Model &amp;amp; Tune the Hyper-parameters&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;🤔&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;7-appendix&quot;&gt;7. APPENDIX&lt;/h1&gt;
+
+&lt;h2 id=&quot;a-differential-equations-in-dynamic-power-system&quot;&gt;A. Differential equations in dynamic power system&lt;/h2&gt;
+
+&lt;h3 id=&quot;equation-for-rotor-speed&quot;&gt;Equation for rotor speed&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;M \frac{dw_i}{dt} = P_{m,i} - P_{g,i} - D(w_i-1)&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;$w_i$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$P_{m,i}$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$P_{g,i}$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$D$&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;equation-for-rotor-angle&quot;&gt;Equation for rotor angle&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{d\delta_i(t)}{dt} = 2 \pi f_0 (w_i-1)&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;$delta_i(t)$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$f_0$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$w_i$&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;references&quot;&gt;REFERENCES&lt;/h1&gt;
+&lt;p&gt;[1] J. Song, E. Cotilla-Sanchez, G. Ghanavati and P. D. H. Hines, “Dynamic Modeling of Cascading Failure in Power Systems,” in IEEE Transactions on Power Systems, vol. 31, no. 3, pp. 2085-2095, May 2016.&lt;/p&gt;
+
+&lt;p&gt;[2]&lt;/p&gt;
+</description>
+        <pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>LMI and Power Systems</title>
+        <link>/research/energy/2021/01/04/LMI-and-Power-Sys.html</link>
+        <guid isPermaLink="true">/research/energy/2021/01/04/LMI-and-Power-Sys.html</guid>
+        <description>
+</description>
+        <pubDate>Mon, 04 Jan 2021 00:00:00 -0600</pubDate>
+      </item>
     
       <item>
         <title>Gram–Schmidt Process</title>
@@ -50,7 +658,7 @@
       &lt;li&gt;Step 1. Compute the direction of the vectors.&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;N.A.&lt;/script&gt;
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;N.A. \ (q_0 \parallel a_0)&lt;/script&gt;
 
     &lt;ul&gt;
       &lt;li&gt;Stpe 2. Compute the magnitude of the normalizer.&lt;/li&gt;
@@ -70,7 +678,7 @@
 
     &lt;script type=&quot;math/tex; mode=display&quot;&gt;a_0=q_0\rho_{0, 0}&lt;/script&gt;
   &lt;/li&gt;
-  &lt;li&gt;compute the vector $q_1$ ($i=1$)
+  &lt;li&gt;Compute the vector $q_1$ ($i=1$)
     &lt;ul&gt;
       &lt;li&gt;Step 1. Compute the direction of the vectors.&lt;/li&gt;
     &lt;/ul&gt;
@@ -107,7 +715,7 @@
       \end{array}
       \right] %]]&gt;&lt;/script&gt;
   &lt;/li&gt;
-  &lt;li&gt;compute the vector $q_2$ ($i=2$)
+  &lt;li&gt;Compute the vector $q_2$ ($i=2$)
     &lt;ul&gt;
       &lt;li&gt;Step 1. Compute the direction of the vectors.&lt;/li&gt;
     &lt;/ul&gt;
@@ -216,7 +824,7 @@ a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} &amp; q_{1}\end{bmatrix}\begin{bmatrix}\r
   &lt;li&gt;$r_{0,1}:=Q_0^Ha_1$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Compute $\rho_{1,1}$ (Step 1. &amp;amp; 2.).&lt;/p&gt;
+&lt;p&gt;Compute $a_1^\perp$ and $\rho_{1,1}$ (Step 1. &amp;amp; 2.).&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$a_1^\perp:=a_1-Q_0r_{0,1}$&lt;/li&gt;
@@ -239,6 +847,8 @@ Code 1. shows the algorithms in python language.&lt;/p&gt;
 Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of a matrix A [2]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/79fefe26187d174e154474e64516a8f1.js&quot;&gt;&lt;/script&gt;
  &lt;em&gt;Code. 1: CGS QR in python&lt;/em&gt;&lt;/p&gt;
@@ -275,13 +885,13 @@ Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of
 
 &lt;p&gt;Assume that $a_1$ and $A_2$ are known.&lt;/p&gt;
 
-&lt;p&gt;Compute $\rho_{1,1}$ (compute the magnitude).&lt;/p&gt;
+&lt;p&gt;Compute $\rho_{1,1}$ (compute the magnitude ↔︎ Step 2.).&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$\rho_{1,1}:=|a_1|$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Compute $q_1$ (compute the unit vector).&lt;/p&gt;
+&lt;p&gt;Compute $q_1$ (compute the unit vector ↔︎ Step 3.).&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$q_1:=a_1/\rho_{1,1}$&lt;/li&gt;
@@ -293,7 +903,7 @@ Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of
   &lt;li&gt;$r_{0,1}^T:=q_1^H(A_2 - Q_2R_{22}) = q_1^HA_2$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Compute $A_2$ (update $A_2$ for the orthogonality).&lt;/p&gt;
+&lt;p&gt;Compute $A_2$ (update $A_2$ for the orthogonality ↔︎ Step 1.).&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$A_2:=A_2-q_1r_{0,1}^T$&lt;/li&gt;
@@ -310,6 +920,8 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/c1395732ab7336b7a27b719af66213ab.js&quot;&gt;&lt;/script&gt;
  &lt;em&gt;Code. 2: MGS QR in python&lt;/em&gt;&lt;/p&gt;
 
@@ -323,13 +935,13 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
 
 &lt;h1 id=&quot;why-do-we-need-this&quot;&gt;Why do we need this?&lt;/h1&gt;
 
-&lt;p&gt;Through Gram-Schmidt process, we can obtain a &lt;strong&gt;orthonormal basis&lt;/strong&gt; for $\mathbb{C}^m$.&lt;/p&gt;
+&lt;p&gt;Through Gram-Schmidt process, we can obtain an &lt;strong&gt;orthonormal basis&lt;/strong&gt; of the matrix $A$’s subspace, which has a set of lineary independent vectors {$a_0, …, a_{n-1}$}.&lt;/p&gt;
 
 &lt;p&gt;The advantages of being able to have an orthonormal basis are following [4].&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;We can express any  $v \in \mathbb{C}^m$ as a &lt;strong&gt;lineawr combination of coefficients&lt;/strong&gt;, which will allows us to have an &lt;strong&gt;explicit formula&lt;/strong&gt; expressing $v$ with the orthonormal basis.&lt;/p&gt;
+    &lt;p&gt;We can express any  $v \in \mathbb{C}^n$ as a &lt;strong&gt;linear combination of coefficients&lt;/strong&gt;, which will allows us to have an &lt;strong&gt;explicit formula&lt;/strong&gt; expressing $v$ with the orthonormal basis.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;The explicit formula is very useful when dealing with &lt;strong&gt;projection onto subspace&lt;/strong&gt;.&lt;/p&gt;
@@ -353,7 +965,7 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
         <title>(Python-Dev Tips) Virtual Environment</title>
         <link>/research/cs/2021/01/01/virtualenv.html</link>
         <guid isPermaLink="true">/research/cs/2021/01/01/virtualenv.html</guid>
-        <description>&lt;p&gt;In this article, we are going to explain what is virtual environment in python and why do we need it. Also, we will show you how we can set up a virtual environment.&lt;/p&gt;
+        <description>&lt;p&gt;In this article, we are going to explain what is virtual environment in python and why do we need it. Also, we will show you how to set up a virtual environment and introduce basic commands.&lt;/p&gt;
 
 &lt;p&gt;This posting is one of a series of tips for developing python following the previous post.&lt;/p&gt;
 
@@ -372,25 +984,107 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
 &lt;/ul&gt;
 
 &lt;hr /&gt;
-&lt;h1 id=&quot;what-is-virtual-environment&quot;&gt;What is Virtual Environment&lt;/h1&gt;
+
+&lt;h1 id=&quot;what-is-virtual-env--why-do-we-need-it&quot;&gt;What is Virtual-Env &amp;amp; Why Do We Need it?&lt;/h1&gt;
+
+&lt;p&gt;Python &lt;strong&gt;virtual environment&lt;/strong&gt; is an isolated environment for a Python project. This allows each project can have its &lt;strong&gt;own dependencies&lt;/strong&gt;, regardless of what dependencies every other project has [1].&lt;/p&gt;
+
+&lt;p&gt;This provides the advantage of being able to build each development environment for multiple projects on one local PC. For an example, Figure 1. shows how one can manage virtual environments for serveral projects. More specifically, it shows how to manage each python projection for a web app that uses a different version of the Django package.&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-virtualenv/virtualenv_concept.png&quot; width=&quot;555&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Examples of Python Virtual Environment [2].
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;why-do-we-need-to-set-up-a-virtual-environment&quot;&gt;Why Do We Need to Set Up a Virtual Environment&lt;/h1&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;basic-virtual-env-usages&quot;&gt;Basic Virtual-Env Usages&lt;/h1&gt;
+
+&lt;p&gt;There are two ways to set up and manage virtual envoronment, &lt;strong&gt;pip&lt;/strong&gt; and &lt;strong&gt;anaconda&lt;/strong&gt;. In this article, we will explain how to set up and manage virtual envoronment using anaconda.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.anaconda.com&quot;&gt;&lt;strong&gt;Anaconda&lt;/strong&gt;&lt;/a&gt; is a package manager, an environment manager, a Python/R data science distribution, and a collection of over 7,500+ open-source packages [3]. Through this, we can set up and manage a virtual emvironment for each projects.&lt;/p&gt;
+
+&lt;p&gt;We will introduce basic anaconda usages. For more details, you can refer to the following Documentation or Cheat-Sheet.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.anaconda.com/anaconda/&quot;&gt;Anaconda Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://conda.io/projects/conda/en/latest/user-guide/cheatsheet.html&quot;&gt;Conda Cheat-Sheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;We can create a new virtual environment with the following commands and manage packages in the corresponding virtual environment for each project.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a new virtual environmnet&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda create &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; ENVNAME
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Activate a named environment&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda activate ENVNAME
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install a package&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;PKGNAME
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deactivate current environment&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda deactivate ENVNAME
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;how-can-we-set-up-a-virtual-environment&quot;&gt;How Can We Set Up a Virtual Environment&lt;/h1&gt;
+&lt;p&gt;And, we can clearly provide the dependency for the project to other developers through the following commands.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Exporting the &lt;em&gt;envname.yml&lt;/em&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;env export&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; ENVNAME &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; envname.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;anaconda-gui&quot;&gt;Anaconda GUI&lt;/h1&gt;
+&lt;p&gt;Finally, we can create a virtual environment that matches the developer’s development environment on our local PC through the &lt;em&gt;envname.yml&lt;/em&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Creating an environment from an &lt;em&gt;envname.yml&lt;/em&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;env &lt;/span&gt;create &lt;span class=&quot;nt&quot;&gt;--file&lt;/span&gt; envname.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- &lt;figure align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-virtualenv/anaconda_gui.png&quot; width=&quot;900&quot; /&gt;
+  &lt;figcaption&gt;Figure 2. Example of Anaconda GUI.&lt;/figcaption&gt;
+&lt;/figure&gt; --&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
-&lt;p&gt;[1]&lt;/p&gt;
+&lt;p&gt;[1] Real Python, “Python Virtual Environments: A Primer,” Real Python, 17-Jul-2020. [Online]. Available: https://realpython.com/python-virtual-environments-a-primer/. [Accessed: 05-Jan-2021].&lt;/p&gt;
+
+&lt;p&gt;[2] S. Shakya, “Virtual Environment in Python,” Medium, 02-May-2019. [Online]. Available: https://medium.com/incwell-bootcamp/virtual-environment-in-python-54db665b9939. [Accessed: 05-Jan-2021].&lt;/p&gt;
+
+&lt;p&gt;[3] “Anaconda Individual Edition¶,” Anaconda Individual Edition - Anaconda documentation. [Online]. Available: https://docs.anaconda.com/anaconda/. [Accessed: 05-Jan-2021].&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Jan 2021 00:00:00 -0600</pubDate>
       </item>
@@ -419,106 +1113,106 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;unitary-matrix&quot;&gt;Unitary Matrix&lt;/h2&gt;
-
-&lt;h2 id=&quot;householder-transformation&quot;&gt;Householder transformation&lt;/h2&gt;
-
-&lt;h2 id=&quot;householder-qr-factorization-algorithm&quot;&gt;Householder QR factorization algorithm&lt;/h2&gt;
-
-&lt;h3 id=&quot;forming-q&quot;&gt;Forming Q&lt;/h3&gt;
-
-&lt;h3 id=&quot;applying-qh&quot;&gt;Applying QH&lt;/h3&gt;
-
-&lt;h3 id=&quot;orthogonality-of-resulting-q&quot;&gt;Orthogonality of resulting Q&lt;/h3&gt;
-
-&lt;h2 id=&quot;blocked-householder-qr-factorization&quot;&gt;Blocked Householder QR factorization&lt;/h2&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-&lt;p&gt;[1]&lt;/p&gt;
-</description>
-        <pubDate>Sat, 26 Dec 2020 00:00:00 -0600</pubDate>
-      </item>
-    
-      <item>
-        <title>(Python-Dev Tips) Jupyter</title>
-        <link>/research/cs/2020/12/25/jupyter.html</link>
-        <guid isPermaLink="true">/research/cs/2020/12/25/jupyter.html</guid>
-        <description>
-</description>
-        <pubDate>Fri, 25 Dec 2020 00:00:00 -0600</pubDate>
-      </item>
-    
-      <item>
-        <title>(Python-Dev Tips) PEP8</title>
-        <link>/research/cs/2020/12/21/pep8.html</link>
-        <guid isPermaLink="true">/research/cs/2020/12/21/pep8.html</guid>
-        <description>&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html&quot;&gt;Git Basic&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;PEP8&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;This article covers what is PEP 8 and how to follow this convention with minimal effort and no difficult. This posting referred to the following articles.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.python.org/dev/peps/pep-0008/&quot;&gt;PEP 8 – Style Guide for Python Code&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://realpython.com/python-pep8/&quot;&gt;How to Write Beautiful Python Code With PEP 8&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.freecodecamp.org/news/auto-format-your-python-code-with-black/&quot;&gt;How to Auto-Format Your Python Code with Black&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;what-is-pep-8&quot;&gt;What is PEP 8&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;why-we-need-pep-8&quot;&gt;Why we need PEP 8&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Guidelines for writing Python.&lt;/li&gt;
-  &lt;li&gt;Good Readability&lt;/li&gt;
-  &lt;li&gt;Revisiting old project&lt;/li&gt;
-  &lt;li&gt;Easy to spot bugs&lt;/li&gt;
-  &lt;li&gt;Collaboration&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;auto-formatter&quot;&gt;Auto-formatter&lt;/h1&gt;
+&lt;h1 id=&quot;unitary-matrix&quot;&gt;Unitary Matrix&lt;/h1&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-03-pep8/programmer_meme.jpg&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-&quot;Any Questions?&quot;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/reflector.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1.
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+&lt;!-- ###################################################################### --&gt;
 
+&lt;h1 id=&quot;householder-transformation&quot;&gt;Householder transformation&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/Housev.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 2.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/d8e7ad29b9e0de1bc78e7b4b70bd9b2f.js&quot;&gt;&lt;/script&gt;
+ &lt;em&gt;Code 1. Householder transformation in python.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!-- ###################################################################### --&gt;
+
+&lt;h1 id=&quot;householder-qr-factorization-algorithm&quot;&gt;Householder QR factorization algorithm&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR_how.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 3.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 4.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/c65f24fb8416e3f50c8319d9da21f812.js&quot;&gt;&lt;/script&gt;
+ &lt;em&gt;Code 2. Householder QR factorization in python.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/867a0d120db1ebe0e4ec0a19201f511a.js&quot;&gt;&lt;/script&gt;
+ &lt;em&gt;Code 3. Householder LQ factorization in python.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!-- ###################################################################### --&gt;
+
+&lt;h1 id=&quot;forming-q&quot;&gt;Forming Q&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/FormQ_how.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 5.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/FormQ.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 6.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/9e626b4fa8f7066550540ab721b1114e.js&quot;&gt;&lt;/script&gt;
+ &lt;em&gt;Code 4. Form Q from Householder QR factorization in python.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!-- ###################################################################### --&gt;
+
+&lt;h1 id=&quot;applying-qh&quot;&gt;Applying QH&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!-- ###################################################################### --&gt;
+
+&lt;h1 id=&quot;orthogonality-of-resulting-q&quot;&gt;Orthogonality of resulting Q&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/ALAFF-in-python/blob/main/Assignments/week03/test_orthogonality.ipynb&quot;&gt;test_orthogonality.ipynb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- ###################################################################### --&gt;
+&lt;h1 id=&quot;blocked-householder-qr-factorization&quot;&gt;Blocked Householder QR factorization&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR_blk.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 7.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;&lt;br /&gt;&lt;/h2&gt;
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;p&gt;[1]&lt;/p&gt;
 </description>
-        <pubDate>Mon, 21 Dec 2020 00:00:00 -0600</pubDate>
-      </item>
-    
-      <item>
-        <title>Cascading Outage Simulator - Dynamic</title>
-        <link>/research/energy/2020/12/15/Cascading-Outage-Sim-QSS.html</link>
-        <guid isPermaLink="true">/research/energy/2020/12/15/Cascading-Outage-Sim-QSS.html</guid>
-        <description>&lt;p&gt;pros and cons of various cascading outage simulators.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 15 Dec 2020 00:00:00 -0600</pubDate>
-      </item>
-    
-      <item>
-        <title>Cascading Outage Simulator - QSS</title>
-        <link>/research/energy/2020/12/15/Cascading-Outage-Sim-Dynamic.html</link>
-        <guid isPermaLink="true">/research/energy/2020/12/15/Cascading-Outage-Sim-Dynamic.html</guid>
-        <description>&lt;p&gt;pros and cons of various cascading outage simulators.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 15 Dec 2020 00:00:00 -0600</pubDate>
+        <pubDate>Sat, 26 Dec 2020 00:00:00 -0600</pubDate>
       </item>
     
       <item>
@@ -537,15 +1231,6 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
         <title>(TIL) Reviewing Statictics and Probability</title>
         <link>/research/mathematics/2020/12/13/prob.html</link>
         <guid isPermaLink="true">/research/mathematics/2020/12/13/prob.html</guid>
-        <description>
-</description>
-        <pubDate>Sun, 13 Dec 2020 00:00:00 -0600</pubDate>
-      </item>
-    
-      <item>
-        <title>LMI and Power Systems</title>
-        <link>/research/energy/2020/12/13/LMI-and-Power-Sys.html</link>
-        <guid isPermaLink="true">/research/energy/2020/12/13/LMI-and-Power-Sys.html</guid>
         <description>
 </description>
         <pubDate>Sun, 13 Dec 2020 00:00:00 -0600</pubDate>
@@ -581,7 +1266,7 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
 
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Git Basic&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2021/01/01/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -946,6 +1631,199 @@ Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]
 &lt;p&gt;[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].&lt;/p&gt;
 </description>
         <pubDate>Tue, 21 Jul 2020 00:00:00 -0500</pubDate>
+      </item>
+    
+      <item>
+        <title>(TF) Which Layer Do I Need?</title>
+        <link>/research/ml&dl/2020/07/20/how-to-choose-layer.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2020/07/20/how-to-choose-layer.html</guid>
+        <description>&lt;p&gt;The structure of the deep learning model is designed differently depending on the types of data features and the objective of the model. More specifically, in order to select the type of layer used in the model, the characteristics of data features and the learning objectives of the model must be considered.&lt;/p&gt;
+
+&lt;p&gt;In order to find out which structure is most suitable, we experimented with fixing the type of dataset and the target of the model and changing the structure of the model. The dataset used in the experiment is MNIST. The types of models used in the experiment were as follows; &lt;em&gt;DenseNet&lt;/em&gt; using only &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense&quot;&gt;dense layer&lt;/a&gt;, &lt;em&gt;ConvNet&lt;/em&gt; using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/Conv2D&quot;&gt;convolutional layer&lt;/a&gt;, and &lt;em&gt;LstmNet&lt;/em&gt; using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM&quot;&gt;LSTM layer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Full code of the experiments can be found at the following github repository.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/MNIST/how%20to%20choose%20layer.ipynb&quot;&gt;Park’s GitHub &amp;gt; How to choose layer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/neural_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Neural Network Example&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/convolutional_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Convolutional Neural Network Example&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1&quot;&gt;Irhum Shafkat’s Medium posting &amp;gt; Intuitively Understanding Convolutions for Deep Learning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/recurrent_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Recurrent Neural Network Example&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn&quot;&gt;Simplilearn &amp;gt; Recurrent Neural Network Tutorial&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.slideshare.net/JiHyunPark18/understanding-lstm-and-its-diagrams&quot;&gt;Park’s SlideShare &amp;gt; Understanding LSTM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;model-structures&quot;&gt;Model Structures&lt;/h1&gt;
+&lt;h2 id=&quot;dense-model&quot;&gt;Dense Model&lt;/h2&gt;
+
+&lt;p&gt;This model consisted only of dense layers. This is the simplest model of the neural network and works well for all types of data, but performance decreases when an input data becomes complicated or large. Therefore, dense layers are used in learning simple data. In addition, in the case of learning complex data, dense layers are used in the last part of the model, which is the stage where features are extracted and get simple enough.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/ff71e7f4416a2add611074ad39888eab.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;cnn-model&quot;&gt;CNN Model&lt;/h2&gt;
+
+&lt;p&gt;This model consisted of convolutional layers. This model is suitable when there are spatial relationship across the data. Figure 1 depicts how a convolutional layer works, and it helps understand why this model works well when there are spatial relationship across data.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/1043aeb7181b81ac0106d0bbcc0f74d3.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif&quot; width=&quot;50%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Visualization of how the convolutional neural network layer works [1].
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;rnnlstm-model&quot;&gt;RNN(LSTM) Model&lt;/h2&gt;
+
+&lt;p&gt;This model consisted of LSTM layers. This model is suitable when there are temporal (sequential) relationship across the data. Figure 2 depicts how a LSTM layer works, and it helps understand why this model works well when there are temporal relationship across data.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/f6d3f2c79049c74b6a74b6b792e20ba7.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/rnn visualized.gif&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
+Figure 2. Visualization of how the recurrent neural network layer works [2].
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;experiment-result&quot;&gt;Experiment Result&lt;/h1&gt;
+
+&lt;p&gt;As a result of the experiment, the CNN model using a convolutional layer showed the highest performance for learning MNIST image data. Direct comparison was not possible because the number of trainable parameters differed for each model, but the result was obtained by adjusting hyper-parameters to obtain the best performance for each model.&lt;/p&gt;
+
+&lt;p&gt;To sum up, we have confirmed that it is best to use a convolutional layer when learning MNIST image data.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Accuracy&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Loss&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;DenseNet&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.9556&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1.5092&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;ConvNet&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;0.9817&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;1.4793&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;LstmNet&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;0.9603&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1.5015&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/tensorboard result.png&quot; width=&quot;95%&quot; /&gt;   &lt;figcaption&gt;
+Figure 2. Checking the validation result with tensorboard.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;future-study&quot;&gt;Future Study&lt;/h1&gt;
+
+&lt;p&gt;In some cases, such as image data or stock data, we can know the nature of the feature data in advance and use the CNN or RNN layers respectively. However, it is difficult to fully understand the charactieristic of completely new feature data. In this case, it is difficult to make assumptions about the temporal/spatial relationships across the data. As a result, it is not easy to decide which layer to use.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/text/transformer&quot;&gt;Transformer&lt;/a&gt; is a model designed to solve this problem. Transformer is a model based on attention, it make no assumptions about the temporal/spatial relationships across the data [3]. In the next posting, we will discuss the structure and application of the Transformer.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+
+&lt;p&gt;[1]I. Shafkat, “Intuitively Understanding Convolutions for Deep Learning,” Medium, 07-Jun-2018. [Online]. Available: https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1. [Accessed: 23-Jul-2020].&lt;/p&gt;
+
+&lt;p&gt;[2] A. Biswal, “Recurrent Neural Network Tutorial,” Simplilearn.com, 28-Apr-2020. [Online]. Available: https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn. [Accessed: 23-Jul-2020].&lt;/p&gt;
+
+&lt;p&gt;[3] “Transformer model for language understanding : TensorFlow Core,” TensorFlow. [Online]. Available: https://www.tensorflow.org/tutorials/text/transformer. [Accessed: 23-Jul-2020].&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Jul 2020 00:00:00 -0500</pubDate>
+      </item>
+    
+      <item>
+        <title>(PyTorch) Basic Steps for Training a Model</title>
+        <link>/research/ml&dl/2020/07/19/pytorch-basic-structure.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2020/07/19/pytorch-basic-structure.html</guid>
+        <description>&lt;p&gt;PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This posting will describe the basic steps for traing a model with PyTorch. Briefly, the basic steps of how to train a model are as follow.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Load &amp;amp; pre-process the dataset&lt;/li&gt;
+  &lt;li&gt;Set a model&lt;/li&gt;
+  &lt;li&gt;Set an optimizer &amp;amp; a loss function&lt;/li&gt;
+  &lt;li&gt;Train the model&lt;/li&gt;
+  &lt;li&gt;Evaluate the model&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/tutorials/01.%20basic/pytorch%20basic%20structure.ipynb&quot;&gt;Park’s GitHub &amp;gt; Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@inmoonlight/pytorch%EB%A1%9C-%EB%94%A5%EB%9F%AC%EB%8B%9D%ED%95%98%EA%B8%B0-intro-afd9c67404c3&quot;&gt;JiHyung Moon’s Meduim Posting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html&quot;&gt;PyTorch official webpage &amp;gt; Tutorials &amp;gt; Visualizing Models, Data, and Training with TensorBoard&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h1&gt;
+
+&lt;p&gt;We used the &lt;em&gt;FashionMNIST&lt;/em&gt; dataset for the experiment. The dataset can be downloaded through &lt;em&gt;torchvision.datasets&lt;/em&gt;, and preprocessing can be performed through &lt;em&gt;transforms.Compose&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;2-set-a-model&quot;&gt;2. Set a model&lt;/h1&gt;
+
+&lt;p&gt;We constructed a simple convolutional neural network model.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;3-set-optimizer--loss-function&quot;&gt;3. Set optimizer &amp;amp; loss function&lt;/h1&gt;
+
+&lt;p&gt;We set the optimizer and loss function to train the model constructed in the previous step. The optimizer and loss function types were selected according to the type of the features of the given input data and the purpose of the model.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;4-train-the-model&quot;&gt;4. Train the model&lt;/h1&gt;
+
+&lt;p&gt;In order to train a model, we must follow the following 5 steps.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;initialize the gradient&lt;/li&gt;
+  &lt;li&gt;forward propagation&lt;/li&gt;
+  &lt;li&gt;calculate the loss&lt;/li&gt;
+  &lt;li&gt;backward propagation&lt;/li&gt;
+  &lt;li&gt;optimize (update) the weights based on forward &amp;amp; backward propagation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h1&gt;
+
+&lt;p&gt;We used the validation dataset to measure the performance of the completed training model. Note that the evaluate process is very similar to the training process. However, in the evaluate process, &lt;em&gt;torch.no_grad()&lt;/em&gt; is required because the weights must never change.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 19 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
   </channel>

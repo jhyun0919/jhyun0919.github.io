@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<title>(Research Proj) Cascading Outage Simulator - Dynamic | Park's Archive</title>
+	<meta name="description"
+		content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/research/energy/2021/01/05/Cascading-Outage-Sim-Dynamic.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Park's Archive"
+		href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+		integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
+		integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
+		crossorigin="anonymous"></script>
+	
+
+	<!-- Google Analytics -->
+	
+	<script>
+		(function (i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-151012240-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	
+</head>
+<header class="site-header">
+	<div class="branding">
+		
+		<h1 class="site-title">
+			<a href="/">Park's Archive</a>
+		</h1>
+
+		<nav class="site-nav">
+			<ul>
+				
+				
+
+				<!-- Search bar -->
+				
+				<li>
+					<form action="/search.html" method="get">
+						<input type="text" id="search-box" name="query" placeholder="Search" class="">
+						<button type="submit" class="">
+							<i class="fa fa-fw fa-search"></i>
+						</button>
+					</form>
+				</li>
+				
+
+				<!-- Social icons from Font Awesome, ifenabled  -->
+				
+<li>
+	<a href="/feed.xml" title="Follow RSS feed">
+		<i class="fas fa-fw fa-rss"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="mailto:jhyun0919@utexas.edu" title="Email">
+		<i class="fas fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.facebook.com/park.jhyun0919" title="Follow on Facebook">
+		<i class="fab fa-fw fa-facebook"></i>
+	</a>
+</li>
+
+
+
+
+
+<li>
+	<a href="https://github.com/jhyun0919" title="Follow on GitHub">
+		<i class="fab fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+<li>
+	<a href="http://instagram.com/park._.shape" title="Follow on Instagram">
+		<i class="fab fa-fw fa-instagram"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/jhyun0919/" title="Follow on LinkedIn">
+		<i class="fab fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</ul>
+		</nav>
+	</div>
+
+	<div class="site-category">
+		<ul class='cat1'>
+			<li>
+				<a href="/">Home</a>
+			</li>
+
+			<li>
+				<a href="/">Research</a>
+				<ul>
+					<li>
+						<a href="/Research/CS">CS</a>
+					</li>
+					<li>
+						<a href="/Research/Energy">Energy</a>
+					</li>
+					<li>
+						<a href="/Research/Mathematics">Mathematics</a>
+					</li>
+					<li>
+						<a href="/Research/ML&DL">ML & DL</a>
+					</li>
+					<li>
+						<a href="/Research/RL">RL</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="/">Daily</a>
+				<ul>
+					<li>
+						<a href="/Daily/Essay">Essay</a>
+					</li>
+					<li>
+						<a href="/Daily/Travel">Travel</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="/about">About</a>
+			</li>
+
+
+		</ul>
+	</div>
+
+</header>
+
+<body>
+  <div class="content">
+    <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">(Research Proj) Cascading Outage Simulator - Dynamic</h1>
+    
+    <p class="meta">
+      January 5, 2021
+      
+    </p>
+  </header>
+  <section class="post-content" style="width:77%; margin:0 auto;">
+    <hr />
+
+<h1 id="1-cascading-outage-simulator">1. CASCADING OUTAGE SIMULATOR</h1>
+
+<p>The vital significance of studying cascading outages has been recognized [].</p>
+
+<p>However, since electrical power networks are very large and complex systems [], understanding the many mechanisms by which cascading outages propagate is challenging.</p>
+
+<p>Cadcading outage simulators allow us to study a wide variety of different mechanisms of cascading outages.</p>
+
+<p><br /></p>
+
+<h1 id="2-in-this-paper">2. IN THIS PAPER</h1>
+
+<p>This paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system, <strong>“Cascading Outage Simulator with Multiprocess Integration Capabilities” (COSMIC)</strong>.</p>
+
+<p>In COSMIC, …</p>
+
+<ul>
+  <li>
+    <p><strong>Dynamic components</strong> are modeled using <strong>differential equations</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Power flows</strong> are represented using <strong>non-linear power flow equations</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Discrete changes</strong> (e.g., components failures, load shedding) are described by <strong>a set of equations (constraints)</strong>.</p>
+  </li>
+</ul>
+
+<p>Given dynamic data for a power system and a set of exogenous disturbances that may trigger a cascade, COSMIC uses a recursive process to compute the impact of the triggering event by solving the differential-algebraic equations (DAEs).</p>
+
+<p>Benefits</p>
+
+<ul>
+  <li>
+    <p>providing an open platform for research and development that allows one to explicitly test the impact of the many assumptions that are necessary for dynamic cascading failure modeling. e.g. users can modify the existing system components, add new ones, and integrate advanced remedial control actions.</p>
+  </li>
+  <li>
+    <p>the dynamic/adaptive time step and recursive islanded time horizons implemented in this simulator allow for faster computations during, near, steady-state regimes, and fine resolution during transient phases.</p>
+  </li>
+  <li>
+    <p>can be easily integrated with High Performance Computing (HPC) clusters to run many simulations simultaneously at a much lower cost.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="3-hybrid-system-modeling-in-cosmic">3. HYBRID SYSTEM MODELING IN COSMIC</h1>
+
+<h2 id="a-hybrid-differential-algebraic-formulation">A. Hybrid differential-algebraic formulation</h2>
+
+<p>Dynamic power networks are modeled as sets of DAEs.</p>
+
+<h3 id="a-set-of-differential-equations">A set of Differential equations</h3>
+
+<script type="math/tex; mode=display">\frac{d\mathbf{x}}{dt}=\mathbf{f}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) \tag{1}</script>
+
+<ul>
+  <li>
+    <p>$\mathbf{x}$ is a vector of continuous state variables that change with time according to a set of differential equations.</p>
+  </li>
+  <li>
+    <p>(1) represent the machine dynamics.</p>
+  </li>
+  <li>
+    <p>check appendix for more details.</p>
+  </li>
+</ul>
+
+<h3 id="a-set-of-algebraic-equations">A set of Algebraic equations</h3>
+
+<script type="math/tex; mode=display">\mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) =0 \tag{2}</script>
+
+<ul>
+  <li>
+    <p>$\mathbf{y}$ is a vector fo continuous state variables that have pure algebraic relationships to other variables in the system.</p>
+  </li>
+  <li>
+    <p>(2) encapsulate the standard ac power flow equations.</p>
+  </li>
+  <li>
+    <p>load models are an important part of the algebraic equations. (ZIPE)</p>
+  </li>
+</ul>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/COSMIC_load_type.png" width="666" />   <figcaption>
+Figure 1. Illustrates a dramatic impact of load models on algebraic convergence. [1]
+  </figcaption>
+</figure>
+
+<h3 id="a-set-of-constarints">A set of Constarints</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t))<0 \tag{3} %]]></script>
+
+<ul>
+  <li>
+    <p>$\mathbf{z}$ is a vector of state variables that can only take integer states $( z_i ∈ [0, 1])$.</p>
+  </li>
+  <li>
+    <p>constraints $\mathbf{h_i}(…)&lt;0$ fails, an associated counter function $\mathbf{d_i}$ activates.</p>
+  </li>
+  <li>
+    <p>During cascading failures, power systems undergo many discrete changes.</p>
+
+    <ul>
+      <li>
+        <p>exogenous events (e.g., manual operations, weather)</p>
+      </li>
+      <li>
+        <p>endogenous events (e.g., automatic protective relay actions)</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>The discrete event(s) will consequently change algebraic equations and the systems dynamic response, which may result in cascading failures, system islanding, and large blackouts.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="b-relay-modeling">B. Relay modeling</h2>
+
+<ul>
+  <li>
+    <p>Major disturbances cause system oscillations as the system seeks a new equilibrium.</p>
+  </li>
+  <li>
+    <p>These oscillations may naturally die out due to the interactions of system inertia, damping, and exciter and governor controls.</p>
+  </li>
+  <li>
+    <p>In order to ensure that relays do not trip due to brief transient state changes, time-delays are added to each protective relay in COSMIC.</p>
+  </li>
+  <li>
+    <p>We implemented in this model two types of time-delayed triggering algorithms:</p>
+
+    <ul>
+      <li>
+        <p>fixed-time delay</p>
+      </li>
+      <li>
+        <p><a href="https://www.electrical4u.com/inverse-time-relay-definite-time-lag-relay/">time-inverse delay</a></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Five types of protective relays are modeled in COSMIC:</p>
+
+<ul>
+  <li>
+    <p>over-current (OC) relays</p>
+  </li>
+  <li>
+    <p>distance (DIST) relays</p>
+  </li>
+  <li>
+    <p>temperature (TEMP) relays</p>
+  </li>
+  <li>
+    <p>under-voltage load shedding (UVLS) relays</p>
+  </li>
+  <li>
+    <p>under-frequency load shedding (UFLS)</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="c-solving-the-hybrid-dae">C. Solving the hybrid DAE</h2>
+
+<p>Because of its numerical stability advantages, COSMIC uses the trapezoidal rule to simultaneously integrate and solve the differential and algebraic equations.</p>
+
+<script type="math/tex; mode=display">0 = \mathbf{x} + \frac{t_d-d}{2} [\mathbf{f}+\mathbf{f}(t_d, \mathbf{x}_d, \mathbf{y}_d, \mathbf{z}_d)] \tag{4}</script>
+
+<script type="math/tex; mode=display">0=\mathbf{g}(t_d, \mathbf{x}_+, \mathbf{y}_+, \mathbf{z}) \tag{5}</script>
+
+<script type="math/tex; mode=display">0>\mathbf{h}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{6}</script>
+
+<script type="math/tex; mode=display">0=\mathbf{d}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{7}</script>
+
+<ul>
+  <li>
+    <p>Whereas many of the common tools in the literature use a fixed time step-size, COSMIC implements a variable time step-size in order to trade-off between the diverse time-scales of the dynamics that we implement.</p>
+  </li>
+  <li>
+    <p>TRADE-OFF</p>
+
+    <ul>
+      <li>
+        <p>small</p>
+      </li>
+      <li>
+        <p>large</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="trapezoidal-rule">Trapezoidal Rule</h3>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Trapezoidal_Rule.png" width="600" />   <figcaption>
+Figure . Trapezoidal Rule []
+  </figcaption>
+</figure>
+
+<script type="math/tex; mode=display">\int_{a}^{b} f(x) \,dx = \frac{\Delta x}{2}[f(x_0) + 2f(x_1) +... + 2f(x_{n-1}) + f(x_n)]</script>
+
+<p><br /></p>
+
+<h3 id="simulation-algorithm">Simulation Algorithm</h3>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Algorithm.png" width="555" />   <figcaption>
+Figure . Algorithm [1]
+  </figcaption>
+</figure>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/COSMIC_Flowchart.png" width="900" />   <figcaption>
+Figure . Algorithm Flowchart []
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h2 id="d-validation">D. Validation</h2>
+
+<p>To validate COSMIC, we compared the dynamic response in COSMIC against commercial software—PowerWorld— using the classic 9-bus test case.</p>
+
+<p>From a random contingency simulation, the Mean Absolute Error (MAE) between the results produced by COSMIC and PowerWorld was within 0.11%.</p>
+
+<p><br /></p>
+
+<h1 id="4-experiments-and-results">4. EXPERIMENTS AND RESULTS</h1>
+
+<p>Three test systems are prepared:</p>
+<ul>
+  <li>9-bus system</li>
+  <li>39-bus system</li>
+  <li>2383-bus system</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="a-polar-formulation-vs-rectangular-formulation-in-computational-efficiency">A. Polar formulation vs. Rectangular formulation in computational efficiency</h2>
+
+<h3 id="purpose">Purpose</h3>
+
+<ul>
+  <li>To compare the computational efficiency of the two formulations.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="used-test-systems">Used test systems</h3>
+
+<ul>
+  <li>the 39-bus system</li>
+  <li>the 2383-bus system</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="results">Results</h3>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/rect_polar_performance.png" width="600" />   <figcaption>
+Figure . performance [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h2 id="b-relay-event-illustration">B. Relay event illustration</h2>
+
+<h3 id="purpose-1">Purpose</h3>
+
+<ul>
+  <li>To depict the functionality of how protective relays integrate with COSMIC’s time delay features.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="used-test-systems-1">Used test systems</h3>
+
+<ul>
+  <li>the 9-bus system</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="results-1">Results</h3>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Relay_Events.png" width="600" />   <figcaption>
+Figure . Relay Events [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h2 id="c-cascading-outage-examples">C. Cascading outage examples</h2>
+
+<h3 id="purpose-2">Purpose</h3>
+
+<ul>
+  <li>To demonstrates cascading outage examples.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="used-test-systems-2">Used test systems</h3>
+
+<ul>
+  <li>the 39-bus system</li>
+  <li>the 2383-bus system</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="results-2">Results</h3>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/39Bus_Case_Cascading_Outage_Example.png" width="600" />   <figcaption>
+Figure . 39-Bus Case Cascading Outage Example [1]
+  </figcaption>
+</figure>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/2383Bus_Case_Cascading_Outage_Example.png" width="600" />   <figcaption>
+Figure . 2383-Bus Case Cascading Outage Example[1]
+  </figcaption>
+</figure>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Branch_Outage_and_Load_Shedding.png" width="900" />   <figcaption>
+Figure . [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h2 id="d-n-2-contingency-analysis">D. N-2 contingency analysis</h2>
+
+<h3 id="purpose-3">Purpose</h3>
+
+<ul>
+  <li>For contingency analysis</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="used-test-systems-3">Used test systems</h3>
+
+<ul>
+  <li>the 2383-bus system</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="results-3">Results</h3>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Demand_Loss.png" width="600" />   <figcaption>
+Figure . CCDF Demand Loss [1]
+  </figcaption>
+</figure>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Event_Length.png" width="600" />   <figcaption>
+Figure . CCDF Event Length [1]
+  </figcaption>
+</figure>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Number_of_Branch_Outages.png" width="600" />   <figcaption>
+Figure . CCDF Number of Branch Outages [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h2 id="e-comparison-with-a-dc-cascading-outage-simulator">E. Comparison with a dc cascading outage simulator</h2>
+
+<h3 id="purpose-4">Purpose</h3>
+
+<ul>
+  <li>To compare COSMIC vs. DC Simulator.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="used-test-systems-4">Used test systems</h3>
+
+<ul>
+  <li>the 2383-bus system</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="results-4">Results</h3>
+
+<ul>
+  <li>The probabilities of demand losses</li>
+</ul>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_COSMIC_vs_DC.png" width="600" />   <figcaption>
+Figure . CCDF Demand Loss for COSMIC &amp; DC Simulator [1]
+  </figcaption>
+</figure>
+
+<ul>
+  <li>Path Agreement Measurement</li>
+</ul>
+
+<script type="math/tex; mode=display">R(m_1, m_2) = \sum_{i=1}^{|C|}\frac{1}{C} \frac{|A_i \cap B_i|}{|A_i \cup B_i|} \tag{8}</script>
+
+<p>where models $m_1$ and $m_2$ are both subjected to the same set of exogenous contingencies $C=${$c_1,c_2,…$}. It measures the average agreement in the set of dependent events that result from each contingency in each model.</p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/PAM.png" width="600" />   <figcaption>
+Figure . Statical Results for the Comparison between COSMIC &amp; DC Simulator [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h1 id="5-conclusion">5. CONCLUSION</h1>
+
+<ul>
+  <li>
+    <p>COSMIC represents a power system as a set of hybrid discrete/continuous differential algebraic equations, simultaneously simulating protection systems and machine dynamics.</p>
+  </li>
+  <li>
+    <p>By simulating 1200 randomly chosen N−2 contingencies for a 2383-bus test case, we found that COSMIC produces heavy-tailed blackout size distributions, which are typically found in both historical blackout data and cascading failure models [].</p>
+
+    <ul>
+      <li>WHY???</li>
+    </ul>
+  </li>
+  <li>
+    <p>The relative frequency of very large events may be exaggerated in dynamic model due to numerical non-convergence (about 3% of cases).</p>
+
+    <ul>
+      <li>WHY???</li>
+    </ul>
+  </li>
+  <li>
+    <p>The blackout size results show that load models can substantially impact cascade sizes—cases that used constant impedance loads showed consistently smaller blackouts, relative to constant current, power or exponential models.</p>
+  </li>
+  <li>
+    <p>The contingency simulation results from COSMIC were compared to corresponding simulations from a dc power flow based quasi-steady-state cascading failure simulator, using a new metric. The two models largely agreed for the initial periods of cascading (for about 10 events), then diverged for later stages where dynamic phenomena drive the sequence of events.</p>
+  </li>
+  <li>
+    <p>Together these results illustrate that detailed dynamic models of cascading failure can be useful in understanding the relative importance of various features of these models.</p>
+  </li>
+  <li>
+    <p>The particular model used in this paper, COSMIC, is likely <strong>too slow</strong> for many large-scale statistical analyses, but comparing detailed models to simpler ones can be helpful in understanding the relative importance of various modeling assumptions that are necessary to understand complicated phenomena such as cascading.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="6-my-reseasrch-project">6. MY RESEASRCH PROJECT</h1>
+
+<h2 id="purpose-5">Purpose</h2>
+
+<ul>
+  <li>Forcast or detect cascading outages in power systems.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="approach">Approach</h2>
+
+<ul>
+  <li>Use a GNN based model to predict cascading outages.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="experiments">Experiments</h2>
+
+<h3 id="step-1-data-generation">Step 1. Data Generation</h3>
+
+<ul>
+  <li>
+    <p>Need to introduce randomness to create large size of dataset.</p>
+  </li>
+  <li>
+    <p>How?</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="step-2-model-gnn-model-structure">Step 2. Model GNN Model Structure</h3>
+
+<ul>
+  <li>
+    <p>Does the model sturcture is proper for the goal?</p>
+  </li>
+  <li>
+    <p>What is the strength of the model? and why?</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="step-3-train-the-model--tune-the-hyper-parameters">Step 3. Train the Model &amp; Tune the Hyper-parameters</h3>
+
+<ul>
+  <li>🤔</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="7-appendix">7. APPENDIX</h1>
+
+<h2 id="a-differential-equations-in-dynamic-power-system">A. Differential equations in dynamic power system</h2>
+
+<h3 id="equation-for-rotor-speed">Equation for rotor speed</h3>
+
+<script type="math/tex; mode=display">M \frac{dw_i}{dt} = P_{m,i} - P_{g,i} - D(w_i-1)</script>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p>$w_i$</p>
+  </li>
+  <li>
+    <p>$P_{m,i}$</p>
+  </li>
+  <li>
+    <p>$P_{g,i}$</p>
+  </li>
+  <li>
+    <p>$D$</p>
+  </li>
+</ul>
+
+<h3 id="equation-for-rotor-angle">Equation for rotor angle</h3>
+
+<script type="math/tex; mode=display">\frac{d\delta_i(t)}{dt} = 2 \pi f_0 (w_i-1)</script>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p>$delta_i(t)$</p>
+  </li>
+  <li>
+    <p>$f_0$</p>
+  </li>
+  <li>
+    <p>$w_i$</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p>etc.</p>
+
+<p><br /></p>
+
+<hr />
+<h1 id="references">REFERENCES</h1>
+<p>[1] J. Song, E. Cotilla-Sanchez, G. Ghanavati and P. D. H. Hines, “Dynamic Modeling of Cascading Failure in Power Systems,” in IEEE Transactions on Power Systems, vol. 31, no. 3, pp. 2085-2095, May 2016.</p>
+
+<p>[2]</p>
+
+  </section>
+
+  <br>
+  <br>
+  <br>
+  
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#Energy">#Energy</a>
+    
+    <a class="tag" href="/tags#Power">#Power</a>
+    
+    <a class="tag" href="/tags#Cascading+Outage">#Cascading Outage</a>
+    
+    <a class="tag" href="/tags#Dynamic">#Dynamic</a>
+    
+    <a class="tag" href="/tags#DAE">#DAE</a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://park-archive.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+</div>
+
+
+<!-- Post navigation -->
+
+  </div>
+  
+<script src="/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+</body>
+
+</html>
+
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script> -->
