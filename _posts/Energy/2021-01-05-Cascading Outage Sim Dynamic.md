@@ -6,22 +6,21 @@ tags: [Energy, Power, Cascading Outage, Dynamic, DAE]
 ---
 
 
+- [GoodNote](https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wMkdiT3EyOTc0TERRd0NUdWtmeVF3MzBnI0R5bmFtaWNfTW9kZWxpbmdfb2ZfQ2FzY2FkaW5nX0ZhaWx1cmVfaW5fUG93ZXJfU3lzdGVtcw== )
 
 ---
 
 # 1. CASCADING OUTAGE SIMULATOR
 
-The vital significance of studying cascading outages has been recognized [].
-
-However, since electrical power networks are very large and complex systems [], understanding the many mechanisms by which cascading outages propagate is challenging.
+The importance of studying cascading outages has been recognized []. However, since electrical power networks are very large and complex systems [], understanding the many mechanisms by which cascading outages propagate is challenging [1].
 
 Cadcading outage simulators allow us to study a wide variety of different mechanisms of cascading outages.
 
 <br>
 
-# 2. IN THIS PAPER
+## IN THE PAPER
 
-This paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system, **“Cascading Outage Simulator with Multiprocess Integration Capabilities” (COSMIC)**.
+This paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system,  called **“Cascading Outage Simulator with Multiprocess Integration Capabilities” (COSMIC)**.
 
 In COSMIC, ...
 
@@ -33,107 +32,145 @@ In COSMIC, ...
 
 Given dynamic data for a power system and a set of exogenous disturbances that may trigger a cascade, COSMIC uses a recursive process to compute the impact of the triggering event by solving the differential-algebraic equations (DAEs).
 
-Benefits
+COSMIC has the following advantages.
 
-- providing an open platform for research and development that allows one to explicitly test the impact of the many assumptions that are necessary for dynamic cascading failure modeling. e.g. users can modify the existing system components, add new ones, and integrate advanced remedial control actions.
+- It provids an **open platform** for research and development.
 
-- the dynamic/adaptive time step and recursive islanded time horizons implemented in this simulator allow for faster computations during, near, steady-state regimes, and fine resolution during transient phases.
+- The **dynamic/adaptive time step** and **recursive islanded time horizons** implemented in this simulator which allows for faster computations during, near, steady-state regimes, and fine resolution during transient phases.
 
-- can be easily integrated with High Performance Computing (HPC) clusters to run many simulations simultaneously at a much lower cost.
+- It can be easily integrated with High Performance Computing (HPC) clusters to **run many simulations simultaneously** at a much lower cost.
 
 <br>
 
-# 3. HYBRID SYSTEM MODELING IN COSMIC
+---
+
+# 2. HYBRID SYSTEM MODELING IN COSMIC
 
 ## A. Hybrid differential-algebraic formulation
 
 Dynamic power networks are modeled as sets of DAEs.
 
-### A set of Differential equations
+<br>
+
+### i. A set of Differential equations
 
 $$
 \frac{d\mathbf{x}}{dt}=\mathbf{f}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) \tag{1}
 $$
 
-- $\mathbf{x}$ is a vector of continuous state variables that change with time according to a set of differential equations.
+- $\mathbf{x}$ is a vector of **continuous state variables** that change with time according to a set of **differential equations**.
 
 - (1) represent the machine dynamics.
 
-- check appendix for more details.
+- Check *APPENDIX* for more details.
 
+<br>
 
-### A set of Algebraic equations
+### ii. A set of Algebraic equations
 
 $$
 \mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) =0 \tag{2}
 $$
 
-- $\mathbf{y}$ is a vector fo continuous state variables that have pure algebraic relationships to other variables in the system.
+- $\mathbf{y}$ is a vector fo **continuous state variables** that have pure **algebraic relationships** to other variables in the system.
 
 - (2) encapsulate the standard ac power flow equations.
 
-- load models are an important part of the algebraic equations. (ZIPE)
+- The algebraic equations are largely dependent on the load models (ZIPE).
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/COSMIC_load_type.png" width="666" />
   <figcaption>Figure 1. Illustrates a dramatic impact of load models on algebraic convergence. [1]</figcaption>
 </figure>
 
-### A set of Constarints
+<br>
+
+### iii. A set of Constarints
 
 $$
 \mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t))<0 \tag{3}
 $$
 
-- $\mathbf{z}$ is a vector of state variables that can only take integer states $( z_i ∈ [0, 1])$.
+- $\mathbf{z}$ is a vector of **state variables** that can only take **integer states** $( z_i ∈ [0, 1])$.
 
-- constraints $\mathbf{h_i}(...)<0$ fails, an associated counter function $\mathbf{d_i}$ activates.
+- A constraint $\mathbf{h_i}(...)<0$ fails (outage occurs), an associated **counter function** $\mathbf{d_i}$ (relay) activates.
 
-- During cascading failures, power systems undergo many discrete changes.
+<br>
 
-  - exogenous events (e.g., manual operations, weather)
+**During cascading failures**, power systems undergo many discrete changes. The discrete event(s) will consequently **change the systems dynamic response and algebraic equations**, which may result in cascading failures, system islanding, and large blackouts.
 
-  - endogenous events (e.g., automatic protective relay actions)
+  <!-- - exogenous events (e.g., manual operations, weather) -->
 
-- The discrete event(s) will consequently change algebraic equations and the systems dynamic response, which may result in cascading failures, system islanding, and large blackouts.
+  <!-- - endogenous events (e.g., automatic protective relay actions) -->
 
 <br>
 
 ## B. Relay modeling
 
-- Major disturbances cause system oscillations as the system seeks a new equilibrium.
+<!-- Major disturbances cause system oscillations as the system seeks a new equilibrium. These oscillations may naturally die out due to the interactions of system inertia, damping, and exciter and governor controls. In order to ensure that relays do not trip due to brief transient state changes, time-delays are added to each protective relay in COSMIC. -->
 
-- These oscillations may naturally die out due to the interactions of system inertia, damping, and exciter and governor controls.
-
-- In order to ensure that relays do not trip due to brief transient state changes, time-delays are added to each protective relay in COSMIC.
-
-- We implemented in this model two types of time-delayed triggering algorithms:
-
-  - fixed-time delay
-
-  - [time-inverse delay](https://www.electrical4u.com/inverse-time-relay-definite-time-lag-relay/)
+Major disturbances cause system oscillations, and these oscillations may naturally die out as the system adjusts to a new equilibrium. In order to ensure that relays do not trip due to brief transient state changes, time-delays are added to each protective relay in COSMIC.
 
 Five types of protective relays are modeled in COSMIC:
 
-- over-current (OC) relays
+- Over-current (OC) relays
 
-- distance (DIST) relays
+- Distance (DIST) relays
 
-- temperature (TEMP) relays
+- Temperature (TEMP) relays
 
-- under-voltage load shedding (UVLS) relays
+- Under-voltage load shedding (UVLS) relays
 
-- under-frequency load shedding (UFLS)
-
+- Under-frequency load shedding (UFLS)
 
 <br>
 
 ## C. Solving the hybrid DAE
 
-Because of its numerical stability advantages, COSMIC uses the trapezoidal rule to simultaneously integrate and solve the differential and algebraic equations.
+COSMIC used the following two strategies to solve the hybrid DAE.
+
+- COSMIC uses the **trapezoidal rule** to simultaneously integrate and solve the differential and algebraic equations.
+  <!-- - numerical stability -->
+
+- COSMIC implements a **variable time-step size** in order to trade-off between the diverse time-scales of the dynamics.
+
+  - During transition periods: small step size → fine resolution.
+
+  - During steady-state periods: large step size → faster computations.
+
+<br>
+
+### i. Trapezoidal Rule
+
+<figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Trapezoidal_Rule.png" width="600" />
+  <figcaption>Figure 2.  Trapezoidal Rule []</figcaption>
+</figure>
 
 $$
-0 = \mathbf{x} + \frac{t_d-d}{2} [\mathbf{f}+\mathbf{f}(t_d, \mathbf{x}_d, \mathbf{y}_d, \mathbf{z}_d)] \tag{4}
+\int_{a}^{b} f(x) \,dx = \frac{\Delta x}{2}[f(x_0) + 2f(x_1) +... + 2f(x_{n-1}) + f(x_n)]
+$$
+
+<!-- <p style="text-align: center;"> ↓ </p>
+
+
+$$
+\mathbf{x}_+ = \mathbf{x} + \frac{\Delta t}{2} [\mathbf{f}(t)+\mathbf{f}(t_+, \mathbf{x}_+, \mathbf{y}_+, \mathbf{z})]
+$$
+
+$$
+0 = \mathbf{g}(t_+, \mathbf{x}_+, \mathbf{y}_+, \mathbf{z})
+$$
+
+- $\mathbf{x}_+=\mathbf{x}(t+\Delta t)$
+- $\mathbf{y}_+=\mathbf{y}(t+\Delta t)$ -->
+
+<br>
+
+### ii. DAE during discrete event
+
+$$
+0 = \mathbf{x} + \frac{t_d-t}{2} [\mathbf{f}(t)+\mathbf{f}(t_d, \mathbf{x}_d, \mathbf{y}_d, \mathbf{z}_d)] \tag{4}
 $$
 
 $$
@@ -148,57 +185,41 @@ $$
 0=\mathbf{d}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{7}
 $$
 
-- Whereas many of the common tools in the literature use a fixed time step-size, COSMIC implements a variable time step-size in order to trade-off between the diverse time-scales of the dynamics that we implement.
+where
 
-- TRADE-OFF
+- $t$ is the previous time point.
 
-  - small
+- $t_d$ is the point a discrete event occurs.
 
-  - large
-
-<br>
-
-### Trapezoidal Rule
-
-<figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Trapezoidal_Rule.png" width="600" />
-  <figcaption>Figure .  Trapezoidal Rule []</figcaption>
-</figure>
-
-$$
-\int_{a}^{b} f(x) \,dx = \frac{\Delta x}{2}[f(x_0) + 2f(x_1) +... + 2f(x_{n-1}) + f(x_n)]
-$$
+Because of the adaptive time step size, COSMIC retains $t_d$ from $t_d = t + \Delta t_d$, in which $\Delta t_d$ is found by **linear interpolation** of two time steps.
 
 <br>
 
-### Simulation Algorithm
+### iii. Time-Domain Simulation Algorithm
+
+The feature of this algorithm is that when network separation or a discrete event occurs, each sub-network or varied DAE are calculated in recursive in a **parallel** manner.
+
+A description of the algorithm and a corresponding flowchart are as follows.
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Algorithm.png" width="555" />
-  <figcaption>Figure .  Algorithm [1]</figcaption>
+  <figcaption>Figure 3. Time-Domain Simulation Algorithm [1]</figcaption>
 </figure>
+
+<br>
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/COSMIC_Flowchart.png" width="900" />
-  <figcaption>Figure .  Algorithm Flowchart []</figcaption>
+  <figcaption>Figure 4. Flowchart of Time-Domain Simulation Algorithm</figcaption>
 </figure>
 
 <br>
 
-## D. Validation
+---
 
-To validate COSMIC, we compared the dynamic response in COSMIC against commercial software—PowerWorld— using the classic 9-bus test case.
+# 3. EXPERIMENTS AND RESULTS
 
-From a random contingency simulation, the Mean Absolute Error (MAE) between the results produced by COSMIC and PowerWorld was within 0.11%.
-
-<br>
-
-# 4. EXPERIMENTS AND RESULTS
-
-Three test systems are prepared:
-- 9-bus system
-- 39-bus system
-- 2383-bus system
+다음과 같은 실험들을 통해.... 를 알아보았다고 한다...
 
 <br>
 
@@ -212,8 +233,9 @@ Three test systems are prepared:
 
 ### Used test systems
 
-- the 39-bus system
-- the 2383-bus system
+- 39-bus system
+
+- 2383-bus system
 
 <br>
 
@@ -221,7 +243,7 @@ Three test systems are prepared:
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/rect_polar_performance.png" width="600" />
-  <figcaption>Figure . performance [1]</figcaption>
+  <figcaption>Figure 5. performance [1]</figcaption>
 </figure>
 
 <br>
@@ -236,7 +258,7 @@ Three test systems are prepared:
 
 ### Used test systems
 
-- the 9-bus system
+- 9-bus system
 
 <br>
 
@@ -244,8 +266,18 @@ Three test systems are prepared:
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Relay_Events.png" width="600" />
-  <figcaption>Figure . Relay Events [1]</figcaption>
+  <figcaption>Figure 6. Bus voltage magnitudes when the branch from bus 6 to bus 9 in the 9-bus system is tripped.  [1]</figcaption>
 </figure>
+
+- A single-line outage was occured at $t=10$ seconds, and  DIST relay timer activate.
+
+- $t_{preset-delay}=0.5$
+
+- $P_1 (t=10.5)$: $t_{delay}$ ran out, and another line outage was occured.
+
+- $P_2$: the magenta voltage trace violated the limit, and UVLS relay timer activate.
+
+- $P_3$: UVLS relay took action and shed 25% of the initial load at the bus.
 
 <br>
 
@@ -259,28 +291,48 @@ Three test systems are prepared:
 
 ### Used test systems
 
-- the 39-bus system
-- the 2383-bus system
+- 39-bus system
+
+- 2383-bus system
 
 <br>
 
 ### Results
 
+#### 39-Bus Case
+
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/39Bus_Case_Cascading_Outage_Example.png" width="600" />
-  <figcaption>Figure . 39-Bus Case Cascading Outage Example [1]</figcaption>
+  <figcaption>Figure 7. 39-Bus Case Cascading Outage Example [1]</figcaption>
 </figure>
+
+<br>
+
+#### 2383-Bus Case
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/2383Bus_Case_Cascading_Outage_Example.png" width="600" />
-  <figcaption>Figure .  2383-Bus Case Cascading Outage Example[1]</figcaption>
+  <figcaption>Figure 8.  2383-Bus Case Cascading Outage Example [1]</figcaption>
 </figure>
+
+- Number 0 with black highlights denotes the two initial events (N-2 contingency).
+
+- Other sequential numbers indicate the rest of the branch outages.
+
+- In this example, 24 branches are off-line and cause a small island (within the dashed circle) in the end.
+
+- The dots with additional red squares indicate buses where load shedding happens.
+
+<br>
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Branch_Outage_and_Load_Shedding.png" width="900" />
-  <figcaption>Figure .  [1]</figcaption>
+  <figcaption>Figure 9. Top panel shows the timeline of all branch outage events listed in Figure 8. Lower panel zooms in the associated load-shedding events [1]</figcaption>
 </figure>
 
+The top panel in Fig. 9 shows the timeline of all branch outage events for the above cascading scenario, and the lower panel zooms in the load-shedding events.
+
+In the early phase of this cascading outages, the occurrence of the components failed rela- tively slowly, however, it speeds up as the number of failures increased. Eventually the system condition was substantially compromised, which caused fast collapse and the majority of the branch outages as well as the load shedding events (see lower panel in Fig. 4).
 
 <br>
 
@@ -294,27 +346,36 @@ Three test systems are prepared:
 
 ### Used test systems
 
-- the 2383-bus system
+- 2383-bus system
 
 <br>
 
 ### Results
 
+#### Demand Loss
+
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Demand_Loss.png" width="600" />
-  <figcaption>Figure .  CCDF Demand Loss [1]</figcaption>
+  <figcaption>Figure 10.  CCDF Demand Loss [1]</figcaption>
 </figure>
+
+<br>
+
+#### Event Length
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Event_Length.png" width="600" />
-  <figcaption>Figure .  CCDF Event Length [1]</figcaption>
+  <figcaption>Figure 11.  CCDF Event Length [1]</figcaption>
 </figure>
+
+<br>
+
+#### Number of Branch Outages
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Number_of_Branch_Outages.png" width="600" />
-  <figcaption>Figure .  CCDF Number of Branch Outages [1]</figcaption>
+  <figcaption>Figure 12.  CCDF Number of Branch Outages [1]</figcaption>
 </figure>
-
 
 <br>
 
@@ -328,37 +389,43 @@ Three test systems are prepared:
 
 ### Used test systems
 
-- the 2383-bus system
+- 2383-bus system
 
 <br>
 
 ### Results
 
--  The probabilities of demand losses
+#### The probabilities of demand losses
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_COSMIC_vs_DC.png" width="600" />
-  <figcaption>Figure .  CCDF Demand Loss for COSMIC & DC Simulator [1]</figcaption>
+  <figcaption>Figure 13.  CCDF Demand Loss for COSMIC & DC Simulator [1]</figcaption>
 </figure>
 
+<br>
 
--  Path Agreement Measurement
+#### Path Agreement Measurement
 
 $$
 R(m_1, m_2) = \sum_{i=1}^{|C|}\frac{1}{C} \frac{|A_i \cap B_i|}{|A_i \cup B_i|} \tag{8}
 $$
 
-where models $m_1$ and $m_2$ are both subjected to the same set of exogenous contingencies $C=${$c_1,c_2,...$}. It measures the average agreement in the set of dependent events that result from each contingency in each model.
+where
+
+- models $m_1$ and $m_2$ are both subjected to the same set of exogenous contingencies $C=${$c_1,c_2,...$}.
+
+- It measures the average agreement in the set of dependent events that result from each contingency in each model.
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/PAM.png" width="600" />
-  <figcaption>Figure . Statical Results for the Comparison between COSMIC & DC Simulator [1]</figcaption>
+  <figcaption>Figure 14. Statical Results for the Comparison between COSMIC & DC Simulator [1]</figcaption>
 </figure>
-
 
 <br>
 
-# 5. CONCLUSION
+---
+
+# 4. CONCLUSION
 
 - COSMIC represents a power system as a set of hybrid discrete/continuous differential algebraic equations, simultaneously simulating protection systems and machine dynamics.
 
@@ -382,7 +449,7 @@ where models $m_1$ and $m_2$ are both subjected to the same set of exogenous con
 
 ---
 
-# 6. MY RESEASRCH PROJECT
+# 5. MY RESEASRCH PROJECT
 
 ## Purpose
 
@@ -422,7 +489,7 @@ where models $m_1$ and $m_2$ are both subjected to the same set of exogenous con
 
 ---
 
-# 7. APPENDIX
+# 6. APPENDIX
 
 ## A. Differential equations in dynamic power system
 
@@ -462,8 +529,17 @@ etc.
 
 <br>
 
+## B. AC power flow equation
+
+
+<br>
+
 ---
 # REFERENCES
 [1] J. Song, E. Cotilla-Sanchez, G. Ghanavati and P. D. H. Hines, "Dynamic Modeling of Cascading Failure in Power Systems," in IEEE Transactions on Power Systems, vol. 31, no. 3, pp. 2085-2095, May 2016.
 
 [2] 
+
+[] “Trapezoidal Rule,” Math24, 30-Apr-2020. [Online]. Available: https://www.math24.net/trapezoidal-rule/. [Accessed: 07-Jan-2021].
+
+[] 
