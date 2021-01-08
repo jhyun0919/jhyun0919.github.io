@@ -27,6 +27,8 @@ Cadcading outage simulators are designed to set and reproduce scenarios that can
 
 <br>
 
+---
+
 ## IN THE PAPER
 
 This paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system,  called **“Cascading Outage Simulator with Multiprocess Integration Capabilities” (COSMIC)**.
@@ -122,6 +124,8 @@ During cascading failures, power systems many undergo **discrete changes**. The 
 
 <br>
 
+---
+
 ## B. Relay modeling
 
 <!-- Major disturbances cause system oscillations as the system seeks a new equilibrium. These oscillations may naturally die out due to the interactions of system inertia, damping, and exciter and governor controls. In order to ensure that relays do not trip due to brief transient state changes, time-delays are added to each protective relay in COSMIC. -->
@@ -142,6 +146,8 @@ Five types of protective relays are modeled in COSMIC:
 
 <br>
 
+---
+
 ## C. Solving the hybrid DAE
 
 COSMIC used the following two strategies to solve the hybrid DAE.
@@ -151,11 +157,13 @@ COSMIC used the following two strategies to solve the hybrid DAE.
 
 - COSMIC implements a **variable time-step size** in order to trade-off between the diverse time-scales of the dynamics.
 
-  - During transition periods: small step size → fine resolution.
+  - During transition periods: small step size → **fine resolution**.
 
-  - During steady-state periods: large step size → faster computations.
+  - During steady-state periods: large step size → **faster computation**s.
 
 <br>
+
+---
 
 ### Trapezoidal Rule
 
@@ -183,6 +191,8 @@ $$
 - $\mathbf{y}_+=\mathbf{y}(t+\Delta t)$ -->
 
 <br>
+
+---
 
 ### DAE during discrete event
 
@@ -212,6 +222,8 @@ Because of the adaptive time step size, COSMIC retains $t_d$ from $t_d = t + \De
 
 <br>
 
+---
+
 ### Time-Domain Simulation Algorithm
 
 The description of Time-Domain Simulation Algorithm implemented in COSMIC and a corresponding flowchart are as follows.
@@ -240,6 +252,8 @@ In this paper, the performance and characteristics of COSMIC were explored throu
 
 <br>
 
+---
+
 ## A. Polar formulation vs. Rectangular formulation in computational efficiency
 
 ### Purpose
@@ -265,6 +279,8 @@ In this paper, the performance and characteristics of COSMIC were explored throu
 </figure>
 
 <br>
+
+---
 
 ## B. Relay event illustration
 
@@ -298,6 +314,8 @@ In this paper, the performance and characteristics of COSMIC were explored throu
 - $P_3$: UVLS relay took action and shed 25% of the initial load at the bus.
 
 <br>
+
+---
 
 ## C. Cascading outage examples
 
@@ -360,6 +378,8 @@ What we found here are ...
 
 <br>
 
+---
+
 ## D. N-2 contingency analysis
 
 ### Purpose
@@ -402,6 +422,8 @@ What we found here are ...
 </figure>
 
 <br>
+
+---
 
 ## E. Comparison with a dc cascading outage simulator
 
