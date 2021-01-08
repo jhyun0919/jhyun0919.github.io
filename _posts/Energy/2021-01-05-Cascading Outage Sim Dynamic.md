@@ -5,16 +5,25 @@ categories: [Research/Energy]
 tags: [Energy, Power, Cascading Outage, Dynamic, DAE]
 ---
 
+This article is about a review of the paper [1], and is the first part of a personal research project to apply Graph Neural Network (GNN) to the field of cascading outage prediction or detection.
 
-- [GoodNote](https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wMkdiT3EyOTc0TERRd0NUdWtmeVF3MzBnI0R5bmFtaWNfTW9kZWxpbmdfb2ZfQ2FzY2FkaW5nX0ZhaWx1cmVfaW5fUG93ZXJfU3lzdGVtcw== )
+The primary purpose is to create large-scale datasets for training GNN-based models through the cascading outage simulator presented in this paper.
+
+- [Research Notes in GoodNotes]()
+
+- [Paper Review in GoodNotes](https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wMkdiT3EyOTc0TERRd0NUdWtmeVF3MzBnI0R5bmFtaWNfTW9kZWxpbmdfb2ZfQ2FzY2FkaW5nX0ZhaWx1cmVfaW5fUG93ZXJfU3lzdGVtcw== )
 
 ---
 
 # 1. CASCADING OUTAGE SIMULATOR
 
+<br>
+
+## WHAT & WHY
+
 The importance of studying cascading outages has been recognized []. However, since electrical power networks are very large and complex systems [], understanding the many mechanisms by which cascading outages propagate is challenging [1].
 
-Cadcading outage simulators allow us to study a wide variety of different mechanisms of cascading outages.
+Cadcading outage simulators are designed to set and reproduce scenarios that can occur in the electric grid, and it allow us to study a wide variety of different mechanisms of cascading outages.
 
 <br>
 
@@ -22,7 +31,7 @@ Cadcading outage simulators allow us to study a wide variety of different mechan
 
 This paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system,  called **“Cascading Outage Simulator with Multiprocess Integration Capabilities” (COSMIC)**.
 
-In COSMIC, ...
+In COSMIC [1], ...
 
 - **Dynamic components** are modeled using **differential equations**.
 
@@ -30,9 +39,7 @@ In COSMIC, ...
 
 - **Discrete changes** (e.g., components failures, load shedding) are described by **a set of equations (constraints)**.
 
-Given dynamic data for a power system and a set of exogenous disturbances that may trigger a cascade, COSMIC uses a recursive process to compute the impact of the triggering event by solving the differential-algebraic equations (DAEs).
-
-COSMIC has the following advantages.
+COSMIC has the following benefits [1].
 
 - It provids an **open platform** for research and development.
 
@@ -46,9 +53,17 @@ COSMIC has the following advantages.
 
 # 2. HYBRID SYSTEM MODELING IN COSMIC
 
+<br>
+
 ## A. Hybrid differential-algebraic formulation
 
-Dynamic power networks are modeled as sets of DAEs.
+Dynamic power networks are modeled as sets of DAEs. Each DAE is composed of three parts:
+
+  ```
+  i. A set of Differential equations
+  ii. A set of Algebraic equations
+  iii. A set of Constarints
+  ```
 
 <br>
 
@@ -60,7 +75,7 @@ $$
 
 - $\mathbf{x}$ is a vector of **continuous state variables** that change with time according to a set of **differential equations**.
 
-- (1) represent the machine dynamics.
+- (1) represent the **machine dynamics**.
 
 - Check *APPENDIX* for more details.
 
@@ -74,7 +89,7 @@ $$
 
 - $\mathbf{y}$ is a vector fo **continuous state variables** that have pure **algebraic relationships** to other variables in the system.
 
-- (2) encapsulate the standard ac power flow equations.
+- (2) encapsulate the standard **ac power flow equations**.
 
 - The algebraic equations are largely dependent on the load models (ZIPE).
 
@@ -97,7 +112,9 @@ $$
 
 <br>
 
-**During cascading failures**, power systems undergo many discrete changes. The discrete event(s) will consequently **change the systems dynamic response and algebraic equations**, which may result in cascading failures, system islanding, and large blackouts.
+### cf. What happens during cascading failures?
+
+During cascading failures, power systems many undergo **discrete changes**. The discrete event(s) will consequently **change the systems dynamic response and algebraic equations**, which may result in cascading failures, system islanding, and large blackouts.
 
   <!-- - exogenous events (e.g., manual operations, weather) -->
 
@@ -140,7 +157,7 @@ COSMIC used the following two strategies to solve the hybrid DAE.
 
 <br>
 
-### i. Trapezoidal Rule
+### Trapezoidal Rule
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Trapezoidal_Rule.png" width="600" />
@@ -167,7 +184,7 @@ $$
 
 <br>
 
-### ii. DAE during discrete event
+### DAE during discrete event
 
 $$
 0 = \mathbf{x} + \frac{t_d-t}{2} [\mathbf{f}(t)+\mathbf{f}(t_d, \mathbf{x}_d, \mathbf{y}_d, \mathbf{z}_d)] \tag{4}
@@ -195,11 +212,11 @@ Because of the adaptive time step size, COSMIC retains $t_d$ from $t_d = t + \De
 
 <br>
 
-### iii. Time-Domain Simulation Algorithm
+### Time-Domain Simulation Algorithm
 
-The feature of this algorithm is that when network separation or a discrete event occurs, each sub-network or varied DAE are calculated in recursive in a **parallel** manner.
+The description of Time-Domain Simulation Algorithm implemented in COSMIC and a corresponding flowchart are as follows.
 
-A description of the algorithm and a corresponding flowchart are as follows.
+The feature of this algorithm that we need to focus is that when network separation occurs, each subnetwork is computed **independently** in a **recursive** manner.
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Algorithm.png" width="555" />
@@ -219,7 +236,7 @@ A description of the algorithm and a corresponding flowchart are as follows.
 
 # 3. EXPERIMENTS AND RESULTS
 
-다음과 같은 실험들을 통해.... 를 알아보았다고 한다...
+In this paper, the performance and characteristics of COSMIC were explored through several experiments as follows.
 
 <br>
 
@@ -228,6 +245,7 @@ A description of the algorithm and a corresponding flowchart are as follows.
 ### Purpose
 
 - To compare the computational efficiency of the two formulations.
+  - WHY???
 
 <br>
 
@@ -327,12 +345,18 @@ A description of the algorithm and a corresponding flowchart are as follows.
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Branch_Outage_and_Load_Shedding.png" width="900" />
-  <figcaption>Figure 9. Top panel shows the timeline of all branch outage events listed in Figure 8. Lower panel zooms in the associated load-shedding events [1]</figcaption>
+  <figcaption>Figure 9. Branch outage events & Load-shedding events listed in Figure 8 [1]</figcaption>
 </figure>
 
-The top panel in Fig. 9 shows the timeline of all branch outage events for the above cascading scenario, and the lower panel zooms in the load-shedding events.
+<br>
 
-In the early phase of this cascading outages, the occurrence of the components failed rela- tively slowly, however, it speeds up as the number of failures increased. Eventually the system condition was substantially compromised, which caused fast collapse and the majority of the branch outages as well as the load shedding events (see lower panel in Fig. 4).
+The top panel in Figure 9 shows the timeline of all branch outage events for the 2383-bus cascading scenario, and the lower panel zooms in the load-shedding events.
+
+What we found here are ...
+
+- In the early phase of this cascading outages, the occurrence of the components failed relatively slowly, but it speeds up as the number of failures increased (check top panel).
+
+- When the system condition was substantially compromised, fast collapse occurs and the majority of the branch undergo outages as well as the load shedding events (check lower panel).
 
 <br>
 
@@ -427,9 +451,11 @@ where
 
 # 4. CONCLUSION
 
-- COSMIC represents a power system as a set of hybrid discrete/continuous differential algebraic equations, simultaneously simulating protection systems and machine dynamics.
+Through the above experiments, the following conclusions are drawn.
 
-- By simulating 1200 randomly chosen N−2 contingencies for a 2383-bus test case, we found that COSMIC produces heavy-tailed blackout size distributions, which are typically found in both historical blackout data and cascading failure models [].
+- COSMIC represents a power system as a set of **hybrid discrete/continuous differential algebraic equations**, simultaneously simulating protection systems and machine dynamics.
+
+- From the N−2 contingency analysis, we found that COSMIC produces **heavy-tailed** blackout size distributions, which are typically found in both historical blackout data and cascading failure models [].
 
   - WHY???
 
@@ -437,11 +463,11 @@ where
 
   - WHY???
 
-- The blackout size results show that load models can substantially impact cascade sizes—cases that used constant impedance loads showed consistently smaller blackouts, relative to constant current, power or exponential models.
+- The blackout size results show that load models can substantially impact cascade sizes.
 
 - The contingency simulation results from COSMIC were compared to corresponding simulations from a dc power flow based quasi-steady-state cascading failure simulator, using a new metric. The two models largely agreed for the initial periods of cascading (for about 10 events), then diverged for later stages where dynamic phenomena drive the sequence of events.
 
-- Together these results illustrate that detailed dynamic models of cascading failure can be useful in understanding the relative importance of various features of these models.
+- Detailed dynamic models of cascading failure can be useful in understanding the relative importance of various features of these models.
 
 - The particular model used in this paper, COSMIC, is likely **too slow** for many large-scale statistical analyses, but comparing detailed models to simpler ones can be helpful in understanding the relative importance of various modeling assumptions that are necessary to understand complicated phenomena such as cascading.
 
@@ -453,7 +479,7 @@ where
 
 ## Purpose
 
-- Forcast or detect cascading outages in power systems.
+- Forcast or detect (in real-time) cascading outages in power systems.
 
 <br>
 
@@ -470,6 +496,8 @@ where
 - Need to introduce randomness to create large size of dataset.
 
 - How?
+
+- [generate_dataset.ipynb]()
 
 <br>
 
@@ -508,6 +536,8 @@ where
 - $P_{g,i}$
 
 - $D$
+
+<br>
 
 ### Equation for rotor angle
 
