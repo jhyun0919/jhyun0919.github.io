@@ -420,50 +420,26 @@ What we found here are ...
   <figcaption>Figure 10.  CCDF Demand Loss [1]</figcaption>
 </figure>
 
-<br>
+- Figure. 10 shows the complementary cumulative distribution function (CCDF) of demand losses for these four groups of simulations.
 
-#### Event Length
+- The CCDF plots of demand losses exhibit a heavy-tailed blackout size distribution, which are typically found in both historical blackout data and cascading failure models [].
+
+- The magenta trace indicates constant Z load, and shows the best performance -in terms of the average power loss and the probability of large blackout- within this set of 1200 random contingencies (listed in Table IV).
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Event_Length.png" width="600" />
+  <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Table_Event_Length.png" width="600" />
   <figcaption>Figure 11.  CCDF Event Length [1]</figcaption>
 </figure>
 
-<br>
+- As can be seen in Figure. 11, the probabilities of large demand losses varies from 2.5% to 3.5% for those four load configurations.
 
-#### Number of Branch Outages
-
-<figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Number_of_Branch_Outages.png" width="600" />
-  <figcaption>Figure 12.  CCDF Number of Branch Outages [1]</figcaption>
-</figure>
+- These results show that load models play an important role in dynamic simulation and may increase the frequency of nonconvergence if they are not properly modeled.
 
 <br>
 
 ---
 
 ## E. Comparison with a dc cascading outage simulator
-
-### DC model
-
-- Pros
-  - It is numerically stable, making it possible to produce results that can be statistically similar to data from real power systems [].
-
-- Cons
-  - It includes numerous simplifications that are substantially different from the “real” system.
-
-### Dynamic model
-
-- Pros
-  - It includes many mechanisms of cascading that cannot be represented in the dc model.
-
-- Cons
-  - ???
-
-
-<br>
-
----
 
 ### Purpose
 
@@ -483,13 +459,38 @@ What we found here are ...
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_COSMIC_vs_DC.png" width="600" />
-  <figcaption>Figure 13.  CCDF Demand Loss for COSMIC & DC Simulator [1]</figcaption>
+  <figcaption>Figure 12.  CCDF Demand Loss for COSMIC & DC Simulator [1]</figcaption>
 </figure>
 
-- the probability of demand losses in the dc simulator is lower than that of COSMIC for the same amount of demand losses. In particular, the largest demand loss in dc simulator is much smaller than in COSMIC (2639 MW versus 24602 MW, with probabilities 0.08% versus 2.5%). This large difference between them is not surprising because the dc model is much more stable and does not run into problems of nu- merical nonconvergence. Also, the protection algorithms differ somewhat between the two models. In addition, some of the contingencies do produce large blackouts in the dc simulator, which causes the fat tail that can be seen in Fig. 9. Numerical failures in solving the DAE system greatly con- tributed to the larger blackout sizes observed in COSMIC, be- cause COSMIC assumes that the network or sub-network in which the numerical failure occurred experienced a complete blackout. This illustrates a tradeoff that comes with using de- tailed nonlinear dynamic models: while the component models are more accurate, the many assumptions that are needed sub- stantially impact the outcomes, potentially in ways that are not fully accurate.
-It is possible that this result may be affected to some extent by the size of the sample set. The 1200 randomly selected con- tingency pairs represent 0.0278% of the total branch outage pairs. Extensive investigation of how different sampling approaches might impact the observed statistics remains for fu- ture work.
+- The probability of demand losses in the dc simulator is lower than that of COSMIC for the same amount of demand losses.
+
+  - The dc model is much more stable and does not run into problems of numerical nonconvergence. Also, the protection algorithms differ somewhat between the two models.
+
+- Some of the contingencies do produce large blackouts in the dc simulator, which causes the fat tail that can be seen in Figure 13. ???
+
+- Numerical failures in solving the DAE system greatly contributed to the larger blackout sizes observed in COSMIC, because COSMIC assumes that the network or sub-network in which the numerical failure occurred experienced a complete blackout. ???
 
 <br>
+
+### DC model
+
+- Pros
+  - It is numerically stable, making it possible to produce results that can be statistically similar to data from real power systems [].
+
+- Cons
+  - It includes numerous simplifications that are substantially different from the “real” system.
+
+### Dynamic model
+
+- Pros
+  - It includes many mechanisms of cascading that cannot be represented in the dc model.
+
+- Cons
+  - It needs many assumptions that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.
+
+<br>
+
+---
 
 #### Path Agreement Measurement
 
@@ -505,10 +506,18 @@ where
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/PAM.png" width="600" />
-  <figcaption>Figure 14. Statical Results for the Comparison between COSMIC & DC Simulator [1]</figcaption>
+  <figcaption>Figure 13. Statical Results for the Comparison between COSMIC & DC Simulator [1]</figcaption>
 </figure>
 
-- Table V shows that the average between the two models for the whole set of sequences is 0.1948, which is relatively low. This indicates that there are substantial differ- ences between cascade paths in the two models. Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (9). In order to control this, we computed only for the first ten branch outage events. The average R increased to 0.3487, and some of the cascading paths showed a perfect match ( ). This suggests that the cascading paths resulting from the two models tend to agree during the early stages of cascading, when nonlinear dynamics are less pronounced, but disagree during later stages.
+- Figure 13 shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.
+
+- Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (8).
+
+- In order to control this, we computed only for **the first ten branch outage events** (early stage).
+
+- The average R increased to 0.3487, and some of the cascading paths showed a perfect match ($R=1$).
+
+- This suggests that the cascading paths resulting from the **two models tend to agree during the early stages of cascading**, when nonlinear dynamics are less pronounced, but disagree during later stages.
 
 <br>
 
