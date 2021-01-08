@@ -2,12 +2,14 @@
 layout: post
 title: (Research Proj) Cascading Outage Simulator - Dynamic
 categories: [Research/Energy]
-tags: [Energy, Power, Cascading Outage, Dynamic, DAE]
+tags: [Energy, Power, Cascading Outage, Dynamic, DAE, Research Proj]
 ---
 
 This article is about a review of the paper [1], and is the first part of a personal research project to apply Graph Neural Network (GNN) to the field of cascading outage prediction or detection.
 
 The primary purpose is to create large-scale datasets for training GNN-based models through the cascading outage simulator presented in this paper.
+
+- [Git Repository](https://github.com/jhyun0919/GNN-and-Power-Systems/tree/master/Cascading%20Outage)
 
 - [Research Notes in GoodNotes]()
 
@@ -77,9 +79,7 @@ $$
 
 - $\mathbf{x}$ is a vector of **continuous state variables** that change with time according to a set of **differential equations**.
 
-- (1) represent the **machine dynamics**.
-
-- Check *APPENDIX* for more details.
+- (1) represent the **machine dynamics** (*APPENDIX - A*).
 
 <br>
 
@@ -91,9 +91,9 @@ $$
 
 - $\mathbf{y}$ is a vector fo **continuous state variables** that have pure **algebraic relationships** to other variables in the system.
 
-- (2) encapsulate the standard **ac power flow equations**.
+- (2) encapsulate the standard **ac power flow equations** (*APPENDIX - B*).
 
-- The algebraic equations are largely dependent on the load models (ZIPE).
+- (2) is largely dependent on the load models (Figure 1. ZIPE models).
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/COSMIC_load_type.png" width="666" />
@@ -108,9 +108,11 @@ $$
 \mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t))<0 \tag{3}
 $$
 
-- $\mathbf{z}$ is a vector of **state variables** that can only take **integer states** $( z_i ∈ [0, 1])$.
+- $\mathbf{z}$ is a vector of **state variables** (relay status) that can only take **integer states** $( z_i ∈ [0, 1])$.
 
-- A constraint $\mathbf{h_i}(...)<0$ fails (outage occurs), an associated **counter function** $\mathbf{d_i}$ (relay) activates.
+- (3) represent the **constraints**.
+
+- If a constraint $\mathbf{h_i}(...)<0$ fails (outage occurs), an associated **counter function** $\mathbf{d_i}$ (relay) activates.
 
 <br>
 
@@ -159,7 +161,7 @@ COSMIC used the following two strategies to solve the hybrid DAE.
 
   - During transition periods: small step size → **fine resolution**.
 
-  - During steady-state periods: large step size → **faster computation**s.
+  - During steady-state periods: large step size → **faster computation**.
 
 <br>
 
@@ -258,7 +260,7 @@ In this paper, the performance and characteristics of COSMIC were explored throu
 
 ### Purpose
 
-- To compare the computational efficiency of the two formulations.
+- To compare the computational efficiency of the polar and rectangular formulations of the model.
   - WHY???
 
 <br>
@@ -273,9 +275,14 @@ In this paper, the performance and characteristics of COSMIC were explored throu
 
 ### Results
 
+- From Figure 5. Table I, in 39-bus case, the rectangular formulation required fewer linear solves for different demand losses.
+
+- From Figure 5. Table II, in 2383-bus case, there was no significant improvement for the rectangular formulation over the polar formulation, and the number of linear solves that resulted from both forms were almost identical.
+  - WHY DENSITY OF JACOBIAN???
+
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/rect_polar_performance.png" width="600" />
-  <figcaption>Figure 5. performance [1]</figcaption>
+  <figcaption>Figure 5. Performance comparison between Rect & Polar.  [1]</figcaption>
 </figure>
 
 <br>
@@ -286,7 +293,7 @@ In this paper, the performance and characteristics of COSMIC were explored throu
 
 ### Purpose
 
-- To depict the functionality of how protective relays integrate with COSMIC’s time delay features.
+- To illustrate the different relay functions implemented in COSMIC and their time delay algorithms.
 
 <br>
 
@@ -321,7 +328,7 @@ In this paper, the performance and characteristics of COSMIC were explored throu
 
 ### Purpose
 
-- To demonstrates cascading outage examples.
+- To demonstrates how COSMIC processes cascading events such as line branch outages, load shedding, and is-landing.
 
 <br>
 
@@ -341,6 +348,16 @@ In this paper, the performance and characteristics of COSMIC were explored throu
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/39Bus_Case_Cascading_Outage_Example.png" width="600" />
   <figcaption>Figure 7. 39-Bus Case Cascading Outage Example [1]</figcaption>
 </figure>
+
+- At  $t=3.00$ sec, the system suffered a strong dynamic oscillation after the initial two exogenous events (branches 2–25 and 5–6).
+
+- At  $t=54.06$ sec, the first OC relay at branch 4–5 triggered.
+
+- At  $t=55.06$ and $t=55.07$ sec, load shedding at two buses (Bus 7 and Bus 8) occurred.
+
+- At $t=55.28$ sec, another two branches (10–13 and 13–14) shut down after OC relay trips. These events separated the system into two islands.
+
+- At $t=55.78$ sec, two branches (3–4 and 17–18) were taken off the grid and this resulted in another island. The system eventually ended up with three isolated networks.
 
 <br>
 
@@ -384,7 +401,7 @@ What we found here are ...
 
 ### Purpose
 
-- For contingency analysis
+- To studies the impact of different load modeling assumptions on cascading failure sizes.
 
 <br>
 
@@ -427,9 +444,30 @@ What we found here are ...
 
 ## E. Comparison with a dc cascading outage simulator
 
+### DC model
+
+- Pros
+  - It is numerically stable, making it possible to produce results that can be statistically similar to data from real power systems [].
+
+- Cons
+  - It includes numerous simplifications that are substantially different from the “real” system.
+
+### Dynamic model
+
+- Pros
+  - It includes many mechanisms of cascading that cannot be represented in the dc model.
+
+- Cons
+  - ???
+
+
+<br>
+
+---
+
 ### Purpose
 
-- To compare COSMIC vs. DC Simulator.
+- To compare results from COSMIC with results from a dc-power flow based model of cascading failure in order to understand similarities and differences between these two different modeling approaches.
 
 <br>
 
@@ -447,6 +485,9 @@ What we found here are ...
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_COSMIC_vs_DC.png" width="600" />
   <figcaption>Figure 13.  CCDF Demand Loss for COSMIC & DC Simulator [1]</figcaption>
 </figure>
+
+- the probability of demand losses in the dc simulator is lower than that of COSMIC for the same amount of demand losses. In particular, the largest demand loss in dc simulator is much smaller than in COSMIC (2639 MW versus 24602 MW, with probabilities 0.08% versus 2.5%). This large difference between them is not surprising because the dc model is much more stable and does not run into problems of nu- merical nonconvergence. Also, the protection algorithms differ somewhat between the two models. In addition, some of the contingencies do produce large blackouts in the dc simulator, which causes the fat tail that can be seen in Fig. 9. Numerical failures in solving the DAE system greatly con- tributed to the larger blackout sizes observed in COSMIC, be- cause COSMIC assumes that the network or sub-network in which the numerical failure occurred experienced a complete blackout. This illustrates a tradeoff that comes with using de- tailed nonlinear dynamic models: while the component models are more accurate, the many assumptions that are needed sub- stantially impact the outcomes, potentially in ways that are not fully accurate.
+It is possible that this result may be affected to some extent by the size of the sample set. The 1200 randomly selected con- tingency pairs represent 0.0278% of the total branch outage pairs. Extensive investigation of how different sampling approaches might impact the observed statistics remains for fu- ture work.
 
 <br>
 
@@ -466,6 +507,8 @@ where
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/PAM.png" width="600" />
   <figcaption>Figure 14. Statical Results for the Comparison between COSMIC & DC Simulator [1]</figcaption>
 </figure>
+
+- Table V shows that the average between the two models for the whole set of sequences is 0.1948, which is relatively low. This indicates that there are substantial differ- ences between cascade paths in the two models. Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (9). In order to control this, we computed only for the first ten branch outage events. The average R increased to 0.3487, and some of the cascading paths showed a perfect match ( ). This suggests that the cascading paths resulting from the two models tend to agree during the early stages of cascading, when nonlinear dynamics are less pronounced, but disagree during later stages.
 
 <br>
 
@@ -487,11 +530,11 @@ Through the above experiments, the following conclusions are drawn.
 
 - The blackout size results show that load models can substantially impact cascade sizes.
 
-- The contingency simulation results from COSMIC were compared to corresponding simulations from a dc power flow based quasi-steady-state cascading failure simulator, using a new metric. The two models largely agreed for the initial periods of cascading (for about 10 events), then diverged for later stages where dynamic phenomena drive the sequence of events.
+- The contingency simulation results from COSMIC were compared to corresponding simulations from a dc power flow based quasi-steady-state cascading failure simulator, using a new metric.
+
+- The two models largely agreed for the initial periods of cascading (for about 10 events), then diverged for later stages where dynamic phenomena drive the sequence of events.
 
 - Detailed dynamic models of cascading failure can be useful in understanding the relative importance of various features of these models.
-
-- The particular model used in this paper, COSMIC, is likely **too slow** for many large-scale statistical analyses, but comparing detailed models to simpler ones can be helpful in understanding the relative importance of various modeling assumptions that are necessary to understand complicated phenomena such as cascading.
 
 <br>
 
@@ -507,7 +550,7 @@ Through the above experiments, the following conclusions are drawn.
 
 ## Approach
 
-- Use a GNN based model to predict cascading outages.
+- Use a GNN based model to predict or detect cascading outages.
 
 <br>
 
@@ -541,7 +584,7 @@ Through the above experiments, the following conclusions are drawn.
 
 # 6. APPENDIX
 
-## A. Differential equations in dynamic power system
+## A. Differential equations in dynamic power system [1]
 
 ### Equation for rotor speed
 
@@ -581,8 +624,36 @@ etc.
 
 <br>
 
-## B. AC power flow equation
+## B. AC power flow equation []
 
+Relation between following three compenets.
+
+- **real/reactive power** injected into each bus ($P_i, Q_i; i=1, 2, ..., n$)
+
+- **bus voltage magnitude** of each bus ($V_i; i=1, 2, ..., n$)
+
+- **phase angle** of each bus ($\theta_i; i=1, 2, ..., n$).
+
+<!-- $$
+S_i = P_i + jQ_i\\
+= \bar{V_i} \bar{I_i}^*\\
+= \bar{V_i} ( \sum_{k=1}^{n} \bar{Y_{ik}} \bar{V_k} )^*\\
+$$ -->
+
+<br>
+
+$$
+P_i = V_i\sum_{k=1}^{n}\{ G_{ik} cos(\theta_i-\theta_k) +B_{ik}sin(\theta_i-\theta_k) \}
+$$
+
+$$
+Q_i = V_i\sum_{k=1}^{n}\{ G_{ik} sin(\theta_i-\theta_k) +B_{ik}cos(\theta_i-\theta_k) \}
+$$
+
+where
+- $n$ is the number of buses of the system.
+
+- $Y_{ik} = G_{ik} + j B_{ik}$ is (i, k)-th entry of Y-bus matrix.
 
 <br>
 
