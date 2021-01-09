@@ -5,15 +5,15 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Fri, 08 Jan 2021 23:04:35 -0600</pubDate>
+    <pubDate>Sat, 09 Jan 2021 13:26:03 -0600</pubDate>
     
       <item>
         <title></title>
-        <link>/2021/01/08/2020-12-15-Cascading-Outage-Sim-QSS.html</link>
-        <guid isPermaLink="true">/2021/01/08/2020-12-15-Cascading-Outage-Sim-QSS.html</guid>
+        <link>/2021/01/09/2020-12-15-Cascading-Outage-Sim-QSS.html</link>
+        <guid isPermaLink="true">/2021/01/09/2020-12-15-Cascading-Outage-Sim-QSS.html</guid>
         <description>&lt;p&gt;pros and cons of various cascading outage simulators.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 08 Jan 2021 23:04:35 -0600</pubDate>
+        <pubDate>Sat, 09 Jan 2021 13:26:03 -0600</pubDate>
       </item>
     
       <item>
@@ -26,7 +26,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/tree/master/Cascading%20Outage&quot;&gt;Git Repository&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/tree/master/Cascading%20Outage&quot;&gt;Research Project’s Git Repository&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wMkdiT3EyOTc0TERRd0NUdWtmeVF3MzBnI0R5bmFtaWNfTW9kZWxpbmdfb2ZfQ2FzY2FkaW5nX0ZhaWx1cmVfaW5fUG93ZXJfU3lzdGVtcw==&quot;&gt;Paper Review in GoodNotes&lt;/a&gt;&lt;/p&gt;
@@ -281,6 +281,8 @@ $$
 &lt;/ul&gt;
 
 &lt;p&gt;Because of the adaptive time step size, COSMIC retains $t_d$ from $t_d = t + \Delta t_d$, in which $\Delta t_d$ is found by &lt;strong&gt;linear interpolation&lt;/strong&gt; of two time steps.&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. HOW THE LINEAR INTERPOLATION WORKS IN HERE??? &lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -831,12 +833,12 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$\forall i \in N_G$ ($N_G$ is the set of all generator buses).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;= $M$ is a machine inertia constant.&lt;/p&gt;
-
-&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;$\forall i \in N_G$ ($N_G$ is the set of all generator buses).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$M$ is a machine inertia constant.&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;$w_i$ is a rotor speed.&lt;/p&gt;
   &lt;/li&gt;
@@ -877,7 +879,7 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;b-ac-power-flow-equation-9&quot;&gt;B. AC power flow equation [9]&lt;/h2&gt;
+&lt;h2 id=&quot;b-ac-power-flow-equation-10&quot;&gt;B. AC power flow equation [10]&lt;/h2&gt;
 
 &lt;p&gt;Relation between following three compenets.&lt;/p&gt;
 
