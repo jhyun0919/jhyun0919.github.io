@@ -660,7 +660,7 @@ etc.
 
 <br>
 
-## B. AC power flow equation [9]
+## B. AC power flow equation [10]
 
 Relation between following three compenets.
 
