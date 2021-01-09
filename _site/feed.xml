@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Fri, 08 Jan 2021 12:30:36 -0600</pubDate>
+    <pubDate>Fri, 08 Jan 2021 23:04:35 -0600</pubDate>
     
       <item>
         <title></title>
@@ -13,7 +13,7 @@
         <guid isPermaLink="true">/2021/01/08/2020-12-15-Cascading-Outage-Sim-QSS.html</guid>
         <description>&lt;p&gt;pros and cons of various cascading outage simulators.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 08 Jan 2021 12:30:36 -0600</pubDate>
+        <pubDate>Fri, 08 Jan 2021 23:04:35 -0600</pubDate>
       </item>
     
       <item>
@@ -26,7 +26,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;&quot;&gt;Research Notes in GoodNotes&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/tree/master/Cascading%20Outage&quot;&gt;Git Repository&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wMkdiT3EyOTc0TERRd0NUdWtmeVF3MzBnI0R5bmFtaWNfTW9kZWxpbmdfb2ZfQ2FzY2FkaW5nX0ZhaWx1cmVfaW5fUG93ZXJfU3lzdGVtcw==&quot;&gt;Paper Review in GoodNotes&lt;/a&gt;&lt;/p&gt;
@@ -41,7 +41,7 @@
 
 &lt;h2 id=&quot;what--why&quot;&gt;WHAT &amp;amp; WHY&lt;/h2&gt;
 
-&lt;p&gt;The importance of studying cascading outages has been recognized []. However, since electrical power networks are very large and complex systems [], understanding the many mechanisms by which cascading outages propagate is challenging [1].&lt;/p&gt;
+&lt;p&gt;The importance of studying cascading outages has been recognized [2]-[4]. However, since electrical power networks are very large and complex systems [5], understanding the many mechanisms by which cascading outages propagate is challenging [1].&lt;/p&gt;
 
 &lt;p&gt;Cadcading outage simulators are designed to set and reproduce scenarios that can occur in the electric grid, and it allow us to study a wide variety of different mechanisms of cascading outages.&lt;/p&gt;
 
@@ -51,7 +51,7 @@
 
 &lt;h2 id=&quot;in-the-paper&quot;&gt;IN THE PAPER&lt;/h2&gt;
 
-&lt;p&gt;This paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system,  called &lt;strong&gt;“Cascading Outage Simulator with Multiprocess Integration Capabilities” (COSMIC)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system,  called &lt;strong&gt;“Cascading Outage Simulator with Multiprocess Integration Capabilities” (COSMIC)&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;In COSMIC [1], …&lt;/p&gt;
 
@@ -109,10 +109,7 @@
     &lt;p&gt;$\mathbf{x}$ is a vector of &lt;strong&gt;continuous state variables&lt;/strong&gt; that change with time according to a set of &lt;strong&gt;differential equations&lt;/strong&gt;.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;(1) represent the &lt;strong&gt;machine dynamics&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Check &lt;em&gt;APPENDIX&lt;/em&gt; for more details.&lt;/p&gt;
+    &lt;p&gt;(1) represent the &lt;strong&gt;machine dynamics&lt;/strong&gt; (&lt;em&gt;APPENDIX - A&lt;/em&gt;).&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -127,12 +124,14 @@
     &lt;p&gt;$\mathbf{y}$ is a vector fo &lt;strong&gt;continuous state variables&lt;/strong&gt; that have pure &lt;strong&gt;algebraic relationships&lt;/strong&gt; to other variables in the system.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;(2) encapsulate the standard &lt;strong&gt;ac power flow equations&lt;/strong&gt;.&lt;/p&gt;
+    &lt;p&gt;(2) encapsulate the standard &lt;strong&gt;ac power flow equations&lt;/strong&gt; (&lt;em&gt;APPENDIX - B&lt;/em&gt;).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The algebraic equations are largely dependent on the load models (ZIPE).&lt;/p&gt;
+    &lt;p&gt;(2) is largely dependent on the load models (Figure 1. &lt;a href=&quot;https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wSXR2MFFaQkxqVHNDOERzS3dHYk94RVZ3I0xlY3R1cmVfbm90ZV9jaF8wNg==&quot;&gt;ZIP&lt;/a&gt;E models).&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;Q. WHAT IS EXPONENTIAL MODEL???&lt;/span&gt;&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/COSMIC_load_type.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
@@ -149,10 +148,13 @@ Figure 1. Illustrates a dramatic impact of load models on algebraic convergence.
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;$\mathbf{z}$ is a vector of &lt;strong&gt;state variables&lt;/strong&gt; that can only take &lt;strong&gt;integer states&lt;/strong&gt; $( z_i ∈ [0, 1])$.&lt;/p&gt;
+    &lt;p&gt;$\mathbf{z}$ is a vector of &lt;strong&gt;state variables&lt;/strong&gt; (relay status) that can only take &lt;strong&gt;integer states&lt;/strong&gt; $( z_i ∈ [0, 1])$.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;A constraint $\mathbf{h_i}(…)&amp;lt;0$ fails (outage occurs), an associated &lt;strong&gt;counter function&lt;/strong&gt; $\mathbf{d_i}$ (relay) activates.&lt;/p&gt;
+    &lt;p&gt;(3) represent the &lt;strong&gt;constraints&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If a constraint $\mathbf{h_i}(…)&amp;lt;0$ fails (outage occurs), an associated &lt;strong&gt;counter function&lt;/strong&gt; $\mathbf{d_i}$ (relay) activates.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -217,7 +219,7 @@ Figure 1. Illustrates a dramatic impact of load models on algebraic convergence.
         &lt;p&gt;During transition periods: small step size → &lt;strong&gt;fine resolution&lt;/strong&gt;.&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
-        &lt;p&gt;During steady-state periods: large step size → &lt;strong&gt;faster computation&lt;/strong&gt;s.&lt;/p&gt;
+        &lt;p&gt;During steady-state periods: large step size → &lt;strong&gt;faster computation&lt;/strong&gt;.&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -231,7 +233,7 @@ Figure 1. Illustrates a dramatic impact of load models on algebraic convergence.
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Trapezoidal_Rule.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
-Figure 2. Trapezoidal Rule []
+Figure 2. Trapezoidal Rule [6]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -258,6 +260,8 @@ $$
 &lt;h3 id=&quot;dae-during-discrete-event&quot;&gt;DAE during discrete event&lt;/h3&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;0 = \mathbf{x} + \frac{t_d-t}{2} [\mathbf{f}(t)+\mathbf{f}(t_d, \mathbf{x}_d, \mathbf{y}_d, \mathbf{z}_d)] \tag{4}&lt;/script&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. HOW TO APPLY TRAPEZOIDAL RULE TO A DISCRETE POINT??? &lt;/span&gt;&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;0=\mathbf{g}(t_d, \mathbf{x}_+, \mathbf{y}_+, \mathbf{z}) \tag{5}&lt;/script&gt;
 
@@ -319,12 +323,10 @@ Figure 4. Flowchart of Time-Domain Simulation Algorithm
 &lt;h3 id=&quot;purpose&quot;&gt;Purpose&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;To compare the computational efficiency of the two formulations.
-    &lt;ul&gt;
-      &lt;li&gt;WHY???&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;To compare the computational efficiency of the polar and rectangular formulations of the model.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHY DO WE NEED TO COMPARE THE PERFOMANCE BETWEEN RECT AND POLAR??? &lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -343,11 +345,22 @@ Figure 4. Flowchart of Time-Domain Simulation Algorithm
 
 &lt;h3 id=&quot;results&quot;&gt;Results&lt;/h3&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;On Table I, in 39-bus case, the rectangular formulation required fewer linear solves for different demand losses.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;On Table II, in 2383-bus case, there was no significant improvement for the rectangular formulation over the polar formulation, and the number of linear solves that resulted from both forms were almost identical.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/rect_polar_performance.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
-Figure 5. performance [1]
+Table I &amp;amp; Table II. Performance comparison between Rect &amp;amp; Polar [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHY DO WE NEED TO KNOW ABOUT THE DENSITY OF THE JACOBIAN MATRICES??? &lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -358,7 +371,7 @@ Figure 5. performance [1]
 &lt;h3 id=&quot;purpose-1&quot;&gt;Purpose&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;To depict the functionality of how protective relays integrate with COSMIC’s time delay features.&lt;/li&gt;
+  &lt;li&gt;To illustrate the different relay functions implemented in COSMIC and their time delay algorithms.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -375,7 +388,7 @@ Figure 5. performance [1]
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Relay_Events.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
-Figure 6. Bus voltage magnitudes when the branch from bus 6 to bus 9 in the 9-bus system is tripped. [1]
+Figure 5. Bus voltage magnitudes when the branch from bus 6 to bus 9 in the 9-bus system is tripped. [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -406,7 +419,7 @@ Figure 6. Bus voltage magnitudes when the branch from bus 6 to bus 9 in the 9-bu
 &lt;h3 id=&quot;purpose-2&quot;&gt;Purpose&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;To demonstrates cascading outage examples.&lt;/li&gt;
+  &lt;li&gt;To demonstrates how COSMIC processes cascading events such as line branch outages, load shedding, and is-landing.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -430,9 +443,27 @@ Figure 6. Bus voltage magnitudes when the branch from bus 6 to bus 9 in the 9-bu
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/39Bus_Case_Cascading_Outage_Example.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
-Figure 7. 39-Bus Case Cascading Outage Example [1]
+Table III. 39-Bus Case Cascading Outage Example [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;At  $t=3.00$ sec, the system suffered a strong dynamic oscillation after the initial two exogenous events (branches 2–25 and 5–6).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;At  $t=54.06$ sec, the first OC relay at branch 4–5 triggered.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;At  $t=55.06$ and $t=55.07$ sec, load shedding at two buses (Bus 7 and Bus 8) occurred.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;At $t=55.28$ sec, another two branches (10–13 and 13–14) shut down after OC relay trips. These events separated the system into two islands.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;At $t=55.78$ sec, two branches (3–4 and 17–18) were taken off the grid and this resulted in another island. The system eventually ended up with three isolated networks.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -440,7 +471,7 @@ Figure 7. 39-Bus Case Cascading Outage Example [1]
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/2383Bus_Case_Cascading_Outage_Example.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
-Figure 8. 2383-Bus Case Cascading Outage Example [1]
+Figure 6. 2383-Bus Case Cascading Outage Example [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -463,13 +494,13 @@ Figure 8. 2383-Bus Case Cascading Outage Example [1]
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Branch_Outage_and_Load_Shedding.png&quot; width=&quot;900&quot; /&gt;   &lt;figcaption&gt;
-Figure 9. Branch outage events &amp;amp; Load-shedding events listed in Figure 8 [1]
+Figure 7. Branch outage events &amp;amp; Load-shedding events listed in Figure 8 [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;The top panel in Figure 9 shows the timeline of all branch outage events for the 2383-bus cascading scenario, and the lower panel zooms in the load-shedding events.&lt;/p&gt;
+&lt;p&gt;The top panel in Figure 7 shows the timeline of all branch outage events for the 2383-bus cascading scenario, and the lower panel zooms in the load-shedding events.&lt;/p&gt;
 
 &lt;p&gt;What we found here are …&lt;/p&gt;
 
@@ -491,7 +522,7 @@ Figure 9. Branch outage events &amp;amp; Load-shedding events listed in Figure 8
 &lt;h3 id=&quot;purpose-3&quot;&gt;Purpose&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;For contingency analysis&lt;/li&gt;
+  &lt;li&gt;To studies the impact of different load modeling assumptions on cascading failure sizes.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -508,31 +539,39 @@ Figure 9. Branch outage events &amp;amp; Load-shedding events listed in Figure 8
 
 &lt;h4 id=&quot;demand-loss&quot;&gt;Demand Loss&lt;/h4&gt;
 
+&lt;p&gt;Figure 10 shows the complementary cumulative distribution function (CCDF) of demand losses for these four groups of simulations.&lt;/p&gt;
+
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Demand_Loss.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
-Figure 10. CCDF Demand Loss [1]
+Figure 8. CCDF Demand Loss [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The CCDF plots of demand losses exhibit a heavy-tailed blackout size distribution, which are typically found in both historical blackout data and cascading failure models [7].&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h4 id=&quot;event-length&quot;&gt;Event Length&lt;/h4&gt;
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHY A HEAVY-TAILED DIST IS EASILY FOUND IN HISTORICAL DATA AND CASCADING FAILURE MODELS??? &lt;/span&gt;&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Event_Length.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
-Figure 11. CCDF Event Length [1]
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/Table_Event_Length.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Table IV. Average demand loss, average branch outages, and the probabilityies of loss for different load models [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The constant Z load model ($Z_{100}I_0P_0E_0$) shows the best performance based on the average power loss and the probability of large blackout (listed in Table IV).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As can be seen in Table IV, the probabilities of large demand losses varies from 2.5% to 3.5% for those four load configurations.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;These results show that load models play an important role in dynamic simulation and may increase the frequency of nonconvergence if they are not properly modeled.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h4 id=&quot;number-of-branch-outages&quot;&gt;Number of Branch Outages&lt;/h4&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_Number_of_Branch_Outages.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
-Figure 12. CCDF Number of Branch Outages [1]
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHAT IS THE EXACT MEANDING OF NOT PROPERLY MODELED??? &lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -543,7 +582,12 @@ Figure 12. CCDF Number of Branch Outages [1]
 &lt;h3 id=&quot;purpose-4&quot;&gt;Purpose&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;To compare COSMIC vs. DC Simulator.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To compare results from COSMIC with results from a dc-power flow based model of cascading failure.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It will help us to understand similarities and differences between these two different modeling approaches.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -562,11 +606,72 @@ Figure 12. CCDF Number of Branch Outages [1]
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/CCDF_COSMIC_vs_DC.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
-Figure 13. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
+Figure 9. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The probability of demand losses in the dc simulator is lower than that of COSMIC for the same amount of demand losses.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The dc model is much more stable and does not run into problems of numerical nonconvergence.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;COSMIC assumes that the network or sub-network in which the numerical failure occurred experienced a complete blackout.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As a result, numerical failures in solving the DAE system greatly contributed to the larger blackout sizes. → It may deteriorate the accuracy.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;dc-model&quot;&gt;DC model&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pros&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;It is numerically stable, making it possible to produce results that can be statistically similar to data from real power systems [8].&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cons&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;It includes numerous simplifications that are substantially different from the “real” system.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;dynamic-model&quot;&gt;Dynamic model&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pros&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;It includes many mechanisms of cascading that cannot be represented in the dc model.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cons&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;It needs many assumptions that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;path-agreement-measurement&quot;&gt;Path Agreement Measurement&lt;/h4&gt;
 
@@ -585,9 +690,27 @@ Figure 13. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/PAM.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
-Figure 14. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulator [1]
+Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulator [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Figure 13 shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (8).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In order to control this, we computed only for &lt;strong&gt;the first ten branch outage events&lt;/strong&gt; (early stage).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The average R increased to 0.3487, and some of the cascading paths showed a perfect match ($R=1$).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;This suggests that the cascading paths resulting from the &lt;strong&gt;two models tend to agree during the early stages of cascading&lt;/strong&gt;, when nonlinear dynamics are less pronounced, but disagree during later stages.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -599,33 +722,22 @@ Figure 14. Statical Results for the Comparison between COSMIC &amp;amp; DC Simul
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;COSMIC represents a power system as a set of &lt;strong&gt;hybrid discrete/continuous differential algebraic equations&lt;/strong&gt;, simultaneously simulating protection systems and machine dynamics.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;COSMIC&lt;/strong&gt; represents a power system as a set of &lt;strong&gt;hybrid discrete/continuous differential algebraic equations&lt;/strong&gt;, simultaneously simulating protection systems and machine dynamics.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;From the N−2 contingency analysis, we found that COSMIC produces &lt;strong&gt;heavy-tailed&lt;/strong&gt; blackout size distributions, which are typically found in both historical blackout data and cascading failure models [].&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;WHY???&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;From the N−2 contingency analysis, we found that COSMIC produces heavy-tailed blackout size distributions, which are typically found in both historical blackout data and cascading failure models [7] (Figure 8).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The relative frequency of very large events may be exaggerated in dynamic model due to numerical non-convergence (about 3% of cases).&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;WHY???&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;From the N−2 contingency analysis, we found that the blackout size results show that load models can substantially impact cascade sizes (Table IV).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The blackout size results show that load models can substantially impact cascade sizes.&lt;/p&gt;
+    &lt;p&gt;From the comparison with a dc cascading outage simulator, we found that the relative frequency of very large events may be exaggerated in dynamic model due to numerical non-convergence (about 3% of cases).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The contingency simulation results from COSMIC were compared to corresponding simulations from a dc power flow based quasi-steady-state cascading failure simulator, using a new metric. The two models largely agreed for the initial periods of cascading (for about 10 events), then diverged for later stages where dynamic phenomena drive the sequence of events.&lt;/p&gt;
+    &lt;p&gt;From the comparison with a dc cascading outage simulator, we found that the two models largely agreed for the initial periods of cascading (for about 10 events), then diverged for later stages where dynamic phenomena drive the sequence of events.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Detailed dynamic models of cascading failure can be useful in understanding the relative importance of various features of these models.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The particular model used in this paper, COSMIC, is likely &lt;strong&gt;too slow&lt;/strong&gt; for many large-scale statistical analyses, but comparing detailed models to simpler ones can be helpful in understanding the relative importance of various modeling assumptions that are necessary to understand complicated phenomena such as cascading.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -646,7 +758,7 @@ Figure 14. Statical Results for the Comparison between COSMIC &amp;amp; DC Simul
 &lt;h2 id=&quot;approach&quot;&gt;Approach&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Use a GNN based model to predict cascading outages.&lt;/li&gt;
+  &lt;li&gt;Use a GNN based model to predict or detect cascading outages.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -660,7 +772,7 @@ Figure 14. Statical Results for the Comparison between COSMIC &amp;amp; DC Simul
     &lt;p&gt;Need to introduce randomness to create large size of dataset.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;How?&lt;/p&gt;
+    &lt;p&gt;Randomness will be given by the method that generated the uncertainty realization in [9].&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;&quot;&gt;generate_dataset.ipynb&lt;/a&gt;&lt;/p&gt;
@@ -690,11 +802,27 @@ Figure 14. Statical Results for the Comparison between COSMIC &amp;amp; DC Simul
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;h2 id=&quot;results-what-we-want-to-see&quot;&gt;Results (What we want to see…)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;High enough prediction or detection accuracy.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Extremely high computational efficiency compared to old methods.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GNN model having significantly fewer nodes (trainable parameters) than other deep learning models.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;6-appendix&quot;&gt;6. APPENDIX&lt;/h1&gt;
 
-&lt;h2 id=&quot;a-differential-equations-in-dynamic-power-system&quot;&gt;A. Differential equations in dynamic power system&lt;/h2&gt;
+&lt;h2 id=&quot;a-differential-equations-in-dynamic-power-system-1&quot;&gt;A. Differential equations in dynamic power system [1]&lt;/h2&gt;
 
 &lt;h3 id=&quot;equation-for-rotor-speed&quot;&gt;Equation for rotor speed&lt;/h3&gt;
 
@@ -703,17 +831,23 @@ Figure 14. Statical Results for the Comparison between COSMIC &amp;amp; DC Simul
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;$\forall i \in N_G$ ($N_G$ is the set of all generator buses).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;= $M$ is a machine inertia constant.&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;$w_i$&lt;/p&gt;
+    &lt;p&gt;$w_i$ is a rotor speed.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;$P_{m,i}$&lt;/p&gt;
+    &lt;p&gt;$P_{m,i}$ is the mechanical power input.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;$P_{g,i}$&lt;/p&gt;
+    &lt;p&gt;$P_{g,i}$ is the generator power output.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;$D$&lt;/p&gt;
+    &lt;p&gt;$D$ is a daping constant.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -727,13 +861,13 @@ Figure 14. Statical Results for the Comparison between COSMIC &amp;amp; DC Simul
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;$delta_i(t)$&lt;/p&gt;
+    &lt;p&gt;$delta_i(t)$ is the rotor angle.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;$f_0$&lt;/p&gt;
+    &lt;p&gt;$f_0$ is the nominal frequency.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;$w_i$&lt;/p&gt;
+    &lt;p&gt;$w_i$ is fortor speed.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -743,7 +877,43 @@ Figure 14. Statical Results for the Comparison between COSMIC &amp;amp; DC Simul
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;b-ac-power-flow-equation&quot;&gt;B. AC power flow equation&lt;/h2&gt;
+&lt;h2 id=&quot;b-ac-power-flow-equation-9&quot;&gt;B. AC power flow equation [9]&lt;/h2&gt;
+
+&lt;p&gt;Relation between following three compenets.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;real/reactive power&lt;/strong&gt; injected into each bus ($P_i, Q_i; i=1, 2, …, n$)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;bus voltage magnitude&lt;/strong&gt; of each bus ($V_i; i=1, 2, …, n$)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;phase angle&lt;/strong&gt; of each bus ($\theta_i; i=1, 2, …, n$).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- $$
+S_i = P_i + jQ_i\\
+= \bar{V_i} \bar{I_i}^*\\
+= \bar{V_i} ( \sum_{k=1}^{n} \bar{Y_{ik}} \bar{V_k} )^*\\
+$$ --&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P_i = V_i\sum_{k=1}^{n}\{ G_{ik} cos(\theta_i-\theta_k) +B_{ik}sin(\theta_i-\theta_k) \}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Q_i = V_i\sum_{k=1}^{n}\{ G_{ik} sin(\theta_i-\theta_k) +B_{ik}cos(\theta_i-\theta_k) \}&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;$n$ is the number of buses of the system.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$Y_{ik} = G_{ik} + j B_{ik}$ is (i, k)-th entry of Y-bus matrix.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -751,11 +921,23 @@ Figure 14. Statical Results for the Comparison between COSMIC &amp;amp; DC Simul
 &lt;h1 id=&quot;references&quot;&gt;REFERENCES&lt;/h1&gt;
 &lt;p&gt;[1] J. Song, E. Cotilla-Sanchez, G. Ghanavati and P. D. H. Hines, “Dynamic Modeling of Cascading Failure in Power Systems,” in IEEE Transactions on Power Systems, vol. 31, no. 3, pp. 2085-2095, May 2016.&lt;/p&gt;
 
-&lt;p&gt;[2]&lt;/p&gt;
+&lt;p&gt;[2] M. Papic et al., “Survey of tools for risk assessment of cascading out- ages,” in Proc. IEEE Power and Energy Soc. General Meeting, 2011, pp. 1–9.&lt;/p&gt;
 
-&lt;p&gt;[] “Trapezoidal Rule,” Math24, 30-Apr-2020. [Online]. Available: https://www.math24.net/trapezoidal-rule/. [Accessed: 07-Jan-2021].&lt;/p&gt;
+&lt;p&gt;[3] M. Vaiman et al., “Risk assessment of cascading outages: method- ologies and challenges,” IEEE Trans. Power Syst., vol. 27, no. 2, pp. 631–641, May 2012.&lt;/p&gt;
 
-&lt;p&gt;[]&lt;/p&gt;
+&lt;p&gt;[4] I. Dobson, B. A. Carreras, V. E. Lynch, and D. E. Newman, “Com- plex systems analysis of series of blackouts: cascading failure, critical points, and self-organization,” Chaos: Interdisciplinary J. Nonlinear Sci., vol. 17, no. 2, p. 026103, 2007.&lt;/p&gt;
+
+&lt;p&gt;[5] M. Eppstein and P. Hines, “A ‘random chemistry’ algorithm for iden- tifying collections of multiple contingencies that initiate cascading failure,” IEEE Trans. Power Syst., vol. 27, no. 3, pp. 1698–1705, Aug. 2012.&lt;/p&gt;
+
+&lt;p&gt;[6] “Trapezoidal Rule,” Math24, 30-Apr-2020. [Online]. Available: https://www.math24.net/trapezoidal-rule/. [Accessed: 07-Jan-2021].&lt;/p&gt;
+
+&lt;p&gt;[7] P. Hines, J. Apt, and S. Talukdar, “Large blackouts in North America: historical trends and policy implications,” Energy Policy, vol. 37, no. 12, pp. 5249–5259, 2009.&lt;/p&gt;
+
+&lt;p&gt;[8] B. A. Carreras, D. E. Newman, I. Dobson, and N. S. Degala, “Val- idating OPA with WECC data,” in 2013 46th Hawaii Int. Conf. on System Sciences (HICSS), Jan. 2013, pp. 2197–2204.&lt;/p&gt;
+
+&lt;p&gt;[9] D. Deka and S. Misra, “Learning for DC-OPF: Classifying active sets using neural nets,” 2019 IEEE Milan PowerTech, Milan, Italy, 2019, pp. 1-6.&lt;/p&gt;
+
+&lt;p&gt;[10] H.Zhu, “Lecture Note - Ch 06”, The University of Texas at Austin, Austin, TX, EE 369: POWER SYSTEMS ENGINEERING Course, Fall 2019&lt;/p&gt;
 </description>
         <pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate>
       </item>
@@ -1252,121 +1434,6 @@ Figure 1. Examples of Python Virtual Environment [2].
 &lt;a href=&quot;https://www.youtube.com/watch?v=uylHeDdlMrc&amp;amp;amp%3Bab_channel=sergiusheartless&quot;&gt;How to Speak - The Big Four&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 28 Dec 2020 00:00:00 -0600</pubDate>
-      </item>
-    
-      <item>
-        <title>Householder QR Factorization</title>
-        <link>/research/mathematics/2020/12/26/Householder.html</link>
-        <guid isPermaLink="true">/research/mathematics/2020/12/26/Householder.html</guid>
-        <description>&lt;p&gt;This article was written by referring to the &lt;em&gt;Fall 2020 Numerical Analysis: Linear Algebra Course&lt;/em&gt; and the following links.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-gram-schmidt.html&quot;&gt;ALAFF: Gram-Schmidt Orthogonalization&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/ULAFF/ALAFF&quot;&gt;ALAFF Git Repository&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;unitary-matrix&quot;&gt;Unitary Matrix&lt;/h1&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/reflector.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;!-- ###################################################################### --&gt;
-
-&lt;h1 id=&quot;householder-transformation&quot;&gt;Householder transformation&lt;/h1&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/Housev.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
-Figure 2.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/d8e7ad29b9e0de1bc78e7b4b70bd9b2f.js&quot;&gt;&lt;/script&gt;
- &lt;em&gt;Code 1. Householder transformation in python.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;!-- ###################################################################### --&gt;
-
-&lt;h1 id=&quot;householder-qr-factorization-algorithm&quot;&gt;Householder QR factorization algorithm&lt;/h1&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR_how.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
-Figure 3.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
-Figure 4.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/c65f24fb8416e3f50c8319d9da21f812.js&quot;&gt;&lt;/script&gt;
- &lt;em&gt;Code 2. Householder QR factorization in python.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/867a0d120db1ebe0e4ec0a19201f511a.js&quot;&gt;&lt;/script&gt;
- &lt;em&gt;Code 3. Householder LQ factorization in python.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;!-- ###################################################################### --&gt;
-
-&lt;h1 id=&quot;forming-q&quot;&gt;Forming Q&lt;/h1&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/FormQ_how.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
-Figure 5.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/FormQ.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
-Figure 6.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/9e626b4fa8f7066550540ab721b1114e.js&quot;&gt;&lt;/script&gt;
- &lt;em&gt;Code 4. Form Q from Householder QR factorization in python.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;!-- ###################################################################### --&gt;
-
-&lt;h1 id=&quot;applying-qh&quot;&gt;Applying QH&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;!-- ###################################################################### --&gt;
-
-&lt;h1 id=&quot;orthogonality-of-resulting-q&quot;&gt;Orthogonality of resulting Q&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/ALAFF-in-python/blob/main/Assignments/week03/test_orthogonality.ipynb&quot;&gt;test_orthogonality.ipynb&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- ###################################################################### --&gt;
-&lt;h1 id=&quot;blocked-householder-qr-factorization&quot;&gt;Blocked Householder QR factorization&lt;/h1&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR_blk.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
-Figure 7.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2&gt;&lt;br /&gt;&lt;/h2&gt;
-&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
-&lt;p&gt;[1]&lt;/p&gt;
-</description>
-        <pubDate>Sat, 26 Dec 2020 00:00:00 -0600</pubDate>
       </item>
     
       <item>
@@ -1978,6 +2045,120 @@ Figure 2. Checking the validation result with tensorboard.
 
 </description>
         <pubDate>Sun, 19 Jul 2020 00:00:00 -0500</pubDate>
+      </item>
+    
+      <item>
+        <title>(TF) Basic Steps for Training a Model</title>
+        <link>/research/ml&dl/2020/07/18/tf-basic-structure.html</link>
+        <guid isPermaLink="true">/research/ml&dl/2020/07/18/tf-basic-structure.html</guid>
+        <description>&lt;p&gt;TesorFlow is one of the most well-known deep learning frameworks. This posting will describe the basic steps for training a model with Tensorflow. Briefly, the basic steps for how to train a model through TensorFlow are as follow.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Load &amp;amp; pre-process the dataset&lt;/li&gt;
+  &lt;li&gt;Set a model&lt;/li&gt;
+  &lt;li&gt;Compile the model : set an optimizer, a loss function, &amp;amp; metrics&lt;/li&gt;
+  &lt;li&gt;Fit the model&lt;/li&gt;
+  &lt;li&gt;Evaluate the model&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/TF_Basic/basic%20structure.ipynb&quot;&gt;Park’s GitHub &amp;gt; Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/quickstart/beginner&quot;&gt;TensorFlow official website &amp;gt; TensorFlow 2 quickstart for beginners&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/quickstart/advanced&quot;&gt;TensorFlow official website &amp;gt; TensorFlow 2 quickstart for experts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tensorboard/get_started&quot;&gt;TensorFlow official website &amp;gt; Get started with TensorBoard&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h1&gt;
+
+&lt;p&gt;For the experiment to show the basic process of training a model with TensorFlow, we used the MNIST dataset. The given images are a grayscale, so we need a preprocessing process to scale the image data features from 0 to 1.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;2-set-a-model&quot;&gt;2. Set a model&lt;/h1&gt;
+
+&lt;p&gt;In this step, we designed the structure of a model. The model in this experiment was relatively simple, so it could be easier to construct the model using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/Sequential&quot;&gt;tf.keras.Sequential&lt;/a&gt;. However, we use custumized model for the experiment. This is because a custumized model must be used when constructing a more complex model in the future, and it is necessary to become familiar with it. More specifically, in case of the model becomes complicated and the input features do not flow sequentially, the model must be constructed in a custum manner. &lt;a href=&quot;https://www.tensorflow.org/tutorials/text/transformer&quot;&gt;Transformer model&lt;/a&gt; is a good example.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/36bc28aa8f6e9005494d40603cccd5e7.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;optional-set-callbacks&quot;&gt;(optional) Set callbacks&lt;/h2&gt;
+&lt;h2 id=&quot;checkpoint&quot;&gt;checkpoint&lt;/h2&gt;
+
+&lt;p&gt;We set &lt;em&gt;checkpoint&lt;/em&gt; callback to record the training process of the model.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e5a2c5bc5d9f9634c2d97ee93c998c52.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;tensorboard&quot;&gt;tensorboard&lt;/h2&gt;
+
+&lt;p&gt;We set &lt;em&gt;tensorboard&lt;/em&gt; callback to visualize the training process and strucutre of the model.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b8688659e5d183e5d82863d0972fc16d.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reduce-learning-rate&quot;&gt;reduce learning rate&lt;/h2&gt;
+
+&lt;p&gt;We set &lt;em&gt;reduce-learning-rate&lt;/em&gt; callback for better training result of the model.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/cfea4379c657f506dd3dbf7d4f0adc3d.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;3-compile-the-model&quot;&gt;3. Compile the model&lt;/h1&gt;
+&lt;h2 id=&quot;set-optimizer-loss-function--metrics&quot;&gt;Set optimizer, loss function, &amp;amp; metrics&lt;/h2&gt;
+
+&lt;p&gt;After constructing the model, you need to set the learning process by calling the &lt;em&gt;compile method&lt;/em&gt;. Compile method has three important parameters; &lt;em&gt;optimizer, loss, and metrics&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;optimizer&lt;/em&gt; sets up the training process. The &lt;em&gt;loss&lt;/em&gt; sets the loss function to be minimized during the optimization process. The &lt;em&gt;metrics&lt;/em&gt; are used to monitor training. These should be set differently depending on the type of feature data and the purpose of the model.&lt;/p&gt;
+
+&lt;p&gt;The model was compiled using the set optimizer, loss, and metrics.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/0f16de0b5385716af46692a163dc51dd.js&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;https://gist.github.com/jhyun0919/a5546b9e76e294ecc1362665cca1d048.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;4-fit-the-model&quot;&gt;4. Fit the model&lt;/h1&gt;
+
+&lt;p&gt;We conducted training using the preprocessed dataset and the compiled model.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/bbc01cdfc18a32a1afe05c30ef846ccf.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;optional-check-the-training-process-via-tensorboard&quot;&gt;(Optional) Check the training process via tensorboard&lt;/h2&gt;
+
+&lt;p&gt;Through the tensorboard callback set in the previous step, we visualized the training process and the model graph. Figure 1 shows the training process of the model.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e196847e8797b94e947fb43081c69014.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-19-tf basic structure/tensorboard eg.png&quot; width=&quot;95%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Checking the training process with tensorboard.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;optional-load-the-best-weights&quot;&gt;(Optional) Load the best weights&lt;/h2&gt;
+
+&lt;p&gt;Through the checkpoint callback set in the previous step, we loaded the weights showing the best performance.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e08262f64e42a6897de8cb360a7f3533.js&quot;&gt;&lt;/script&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h1&gt;
+
+&lt;p&gt;As a final step, we evaluated the performance of the model using the test dataset.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b83301942dc8f6ac7facbeafe47c0eb4.js&quot;&gt;&lt;/script&gt;
+&lt;/p&gt;
+</description>
+        <pubDate>Sat, 18 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
   </channel>
