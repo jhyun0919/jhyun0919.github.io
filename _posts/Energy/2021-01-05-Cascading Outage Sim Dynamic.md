@@ -224,6 +224,8 @@ where
 
 Because of the adaptive time step size, COSMIC retains $t_d$ from $t_d = t + \Delta t_d$, in which $\Delta t_d$ is found by **linear interpolation** of two time steps.
 
+<span style="color:green"> Q. HOW THE LINEAR INTERPOLATION WORKS IN HERE??? </span>
+
 <br>
 
 ---
@@ -628,7 +630,7 @@ where
 
 - $\forall i \in N_G$ ($N_G$ is the set of all generator buses).
 
-= $M$ is a machine inertia constant.
+- $M$ is a machine inertia constant.
 
 - $w_i$ is a rotor speed.
 
