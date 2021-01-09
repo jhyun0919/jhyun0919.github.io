@@ -9,7 +9,7 @@ This article is about a review of the paper [1], and is the first part of a pers
 
 The primary purpose is to create large-scale datasets for training GNN-based models through the cascading outage simulator presented in this paper.
 
-- [Git Repository](https://github.com/jhyun0919/GNN-and-Power-Systems/tree/master/Cascading%20Outage)
+- [Research Project's Git Repository](https://github.com/jhyun0919/GNN-and-Power-Systems/tree/master/Cascading%20Outage)
 
 - [Paper Review in GoodNotes](https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wMkdiT3EyOTc0TERRd0NUdWtmeVF3MzBnI0R5bmFtaWNfTW9kZWxpbmdfb2ZfQ2FzY2FkaW5nX0ZhaWx1cmVfaW5fUG93ZXJfU3lzdGVtcw== )
 
