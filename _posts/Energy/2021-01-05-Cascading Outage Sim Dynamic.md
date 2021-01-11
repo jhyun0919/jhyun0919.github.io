@@ -586,7 +586,7 @@ Through the above experiments, the following conclusions are drawn.
 
 - Randomness will be given by the method that generated the uncertainty realization in [[9]](https://arxiv.org/abs/1902.05607).
 
-- **WHICH FEATURES** should be given randomness?
+- **WHICH FEATURES** (e.g. $P_d, Q_d, P_g, Q_g$ or outage event time $t_{event}$) should be given randomness?
 
 - Codes
 
