@@ -566,9 +566,9 @@ Through the above experiments, the following conclusions are drawn.
 
 # 5. MY RESEASRCH PROJECT
 
-## Purpose
+## Purpose / Goal
 
-- Forcast or detect (in real-time) cascading outages in power systems.
+- **Forcast or detect** (in real-time) cascading outages in power systems.
 
 <br>
 
@@ -584,21 +584,25 @@ Through the above experiments, the following conclusions are drawn.
 
 - Need to introduce randomness to create large size of dataset.
 
-- Randomness will be given by the method that generated the uncertainty realization in [9].
+- Randomness will be given by the method that generated the uncertainty realization in [[9]](https://arxiv.org/abs/1902.05607).
 
-- [Generate N-2 Contingency Datasets.py](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py)
+- **WHICH FEATURES** should be given randomness?
 
-- [Generate Datasets.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb)
+- Codes
 
-- [Exploratory Data Analysis.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb)
+  - [Generate N-2 Contingency Datasets.py](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py)
+
+  - [Generate Datasets.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb)
+
+  - [Exploratory Data Analysis.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb)
 
 <br>
 
 ### Step 2. Model GNN Model Structure
 
-- Does the model sturcture is proper for the goal?
+- Does the model **STRUCTURE** is proper for the **GOAL**?
 
-- What is the strength of the model? and why?
+- What is the **STRENGTH** of the model **STRUCTURE**? and **WHY**?
 
 <br>
 
