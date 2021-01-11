@@ -586,7 +586,9 @@ Through the above experiments, the following conclusions are drawn.
 
 - Randomness will be given by the method that generated the uncertainty realization in [9].
 
-- [generate_dataset.ipynb]()
+- [Generate Dataset.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb)
+
+- [Exploratory Data Analysis.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb)
 
 <br>
 
@@ -689,6 +691,7 @@ Q_i = V_i\sum_{k=1}^{n}\{ G_{ik} sin(\theta_i-\theta_k) +B_{ik}cos(\theta_i-\the
 $$
 
 where
+
 - $n$ is the number of buses of the system.
 
 - $Y_{ik} = G_{ik} + j B_{ik}$ is (i, k)-th entry of Y-bus matrix.
@@ -696,7 +699,9 @@ where
 <br>
 
 ---
+
 # REFERENCES
+
 [1] J. Song, E. Cotilla-Sanchez, G. Ghanavati and P. D. H. Hines, "Dynamic Modeling of Cascading Failure in Power Systems," in IEEE Transactions on Power Systems, vol. 31, no. 3, pp. 2085-2095, May 2016.
 
 [2] M. Papic et al., “Survey of tools for risk assessment of cascading out- ages,” in Proc. IEEE Power and Energy Soc. General Meeting, 2011, pp. 1–9.
