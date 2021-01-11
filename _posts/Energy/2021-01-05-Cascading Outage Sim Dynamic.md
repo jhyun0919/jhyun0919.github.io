@@ -477,11 +477,11 @@ Figure 10 shows the complementary cumulative distribution function (CCDF) of dem
 
 - The probability of demand losses in the dc simulator is lower than that of COSMIC for the same amount of demand losses.
 
-- The dc model is much more stable and does not run into problems of numerical nonconvergence.
+- The dc model is much **more stable** and does not run into problems of numerical nonconvergence.
 
-- COSMIC assumes that the network or sub-network in which the numerical failure occurred experienced a complete blackout.
+- COSMIC assumes that the network or sub-network in which the **numerical failure** occurred experienced **a complete blackout**.
 
-- As a result, numerical failures in solving the DAE system greatly contributed to the larger blackout sizes. → It may deteriorate the accuracy.
+- As a result, numerical failures in solving the DAE system greatly contributed to the larger blackout sizes. → It may **deteriorate the accuracy**.
 
 <br>
 
@@ -491,11 +491,11 @@ Figure 10 shows the complementary cumulative distribution function (CCDF) of dem
 
 - Pros
 
-  - It is numerically stable, making it possible to produce results that can be statistically similar to data from real power systems [8].
+  - It is **numerically stable**, making it possible to produce results that can be statistically similar to data from real power systems [8].
 
 - Cons
 
-  - It includes numerous simplifications that are substantially different from the “real” system.
+  - It includes **numerous simplifications** that are substantially **different from the “real” system**.
 
 <br>
 
@@ -503,11 +503,11 @@ Figure 10 shows the complementary cumulative distribution function (CCDF) of dem
 
 - Pros
 
-  - It includes many mechanisms of cascading that cannot be represented in the dc model.
+  - It **includes many mechanisms** of cascading that cannot be represented in the dc model.
 
 - Cons
 
-  - It needs many assumptions that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.
+  - It needs **many assumptions** that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.
 
 <br>
 
