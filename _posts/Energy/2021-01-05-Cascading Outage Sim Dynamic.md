@@ -586,7 +586,9 @@ Through the above experiments, the following conclusions are drawn.
 
 - Randomness will be given by the method that generated the uncertainty realization in [9].
 
-- [Generate Dataset.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb)
+- [Generate N-2 Contingency Datasets.py](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py)
+
+- [Generate Datasets.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb)
 
 - [Exploratory Data Analysis.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb)
 
