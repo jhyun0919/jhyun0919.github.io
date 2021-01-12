@@ -622,7 +622,7 @@ Through the above experiments, the following conclusions are drawn.
 
 - Extremely high computational efficiency compared to old methods.
 
-- GNN model having significantly fewer nodes (trainable parameters) than other deep learning models.
+- A GNN based model having significantly fewer nodes (trainable parameters) than other deep learning models.
 
 <br>
 
