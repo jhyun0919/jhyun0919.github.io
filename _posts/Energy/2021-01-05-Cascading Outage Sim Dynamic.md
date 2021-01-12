@@ -588,7 +588,9 @@ Through the above experiments, the following conclusions are drawn.
 
   $$d := d + \mathcal{N}(\mu=0, \sigma_i = 0.03 * d)$$
 
-  - $d$ is a load with uncertainty & $\mathcal{N}$ is normal distribution.
+  - $d$ is a load with uncertainty.
+
+  - $\mathcal{N}$ is normal distribution with mean zero and standard deviation propotional to the load.
 
 <span style="color:green"> WHICH FEATURES (e.g. $P_d, Q_d, P_g, Q_g$ or outage event time $t_{event}$) SHOULD BE GIVEN RANDOMNESS? </span>
 
