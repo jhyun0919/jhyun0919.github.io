@@ -584,9 +584,13 @@ Through the above experiments, the following conclusions are drawn.
 
 - Need to introduce randomness to create large size of dataset.
 
-- Randomness will be given by the method that generated the uncertainty realization in [[9]](https://arxiv.org/abs/1902.05607).
+- Randomness will be given by the method that generated the uncertain loads in [[9]](https://arxiv.org/abs/1902.05607):
 
-- **WHICH FEATURES** (e.g. $P_d, Q_d, P_g, Q_g$ or outage event time $t_{event}$) should be given randomness?
+  $$d := d + \mathcal{N}(\mu=0, \sigma_i = 0.03 * d)$$
+
+  - $d$ is a load with uncertainty, and $\mathcal{N}$ is normal distribution.
+
+<span style="color:green"> WHICH FEATURES (e.g. $P_d, Q_d, P_g, Q_g$ or outage event time $t_{event}$) SHOULD BE GIVEN RANDOMNESS? </span>
 
 - Codes
 
