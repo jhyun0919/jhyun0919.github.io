@@ -582,7 +582,7 @@ Through the above experiments, the following conclusions are drawn.
 
 ### Step 1. Data Generation
 
-- Need to introduce randomness to create large size of dataset.
+- Need to introduce **randomness** to create large size of dataset.
 
 - Randomness will be given by the method that generated the uncertain loads in [[9]](https://arxiv.org/abs/1902.05607):
 
