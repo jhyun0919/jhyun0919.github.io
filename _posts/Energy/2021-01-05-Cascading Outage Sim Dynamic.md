@@ -586,7 +586,7 @@ Through the above experiments, the following conclusions are drawn.
 
 - Randomness will be given by the method that generated the uncertain loads in [[9]](https://arxiv.org/abs/1902.05607):
 
-  $$d := d + \mathcal{N}(\mu=0, \sigma_i = 0.03 * d)$$
+  $$d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)$$
 
   - $d$ is a load.
 
