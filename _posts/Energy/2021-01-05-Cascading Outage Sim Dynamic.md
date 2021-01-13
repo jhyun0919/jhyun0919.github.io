@@ -588,7 +588,7 @@ Through the above experiments, the following conclusions are drawn.
 
   $$d := d + \mathcal{N}(\mu=0, \sigma_i = 0.03 * d)$$
 
-  - $d$ is a load with uncertainty.
+  - $d$ is a load.
 
   - $\mathcal{N}$ is normal distribution with mean zero and standard deviation propotional to the load.
 
