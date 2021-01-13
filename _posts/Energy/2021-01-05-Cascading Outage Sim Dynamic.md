@@ -592,7 +592,7 @@ Through the above experiments, the following conclusions are drawn.
 
   - $\mathcal{N}$ is normal distribution with mean zero and standard deviation propotional to the load.
 
-<span style="color:green"> WHICH FEATURES (e.g. $P_d, Q_d, P_g, Q_g$ or outage event time $t_{event}$) SHOULD BE GIVEN RANDOMNESS? </span>
+<span style="color:green"> Q. WHICH FEATURES (e.g. $P_d, Q_d, P_g, Q_g$ or outage event time $t_{event}$) SHOULD BE GIVEN RANDOMNESS? </span>
 
 - Codes
 
