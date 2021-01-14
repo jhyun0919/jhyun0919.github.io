@@ -316,11 +316,11 @@ In this paper, the performance and characteristics of COSMIC were explored throu
   <figcaption>Figure 5. Bus voltage magnitudes when the branch from bus 6 to bus 9 in the 9-bus system is tripped.  [1]</figcaption>
 </figure>
 
-- A single-line outage was occured at $t=10$ seconds, and  DIST relay timer activate.
+- A single-line outage was occurred at $t=10$ seconds, and  DIST relay timer activate.
 
 - $t_{preset-delay}=0.5$
 
-- $P_1 (t=10.5)$: $t_{delay}$ ran out, and another line outage was occured.
+- $P_1 (t=10.5)$: $t_{delay}$ ran out, and another line outage was occurred.
 
 - $P_2$: the magenta voltage trace violated the limit, and UVLS relay timer activate.
 
