@@ -23,7 +23,7 @@ The primary purpose is to create large-scale datasets for training GNN-based mod
 
 The importance of studying cascading outages has been recognized [2]-[4]. However, since electrical power networks are very large and complex systems [5], understanding the many mechanisms by which cascading outages propagate is challenging [1].
 
-Cadcading outage simulators are designed to set and reproduce scenarios that can occur in the electric grid, and it allow us to study a wide variety of different mechanisms of cascading outages.
+Cascading outage simulators are designed to set and reproduce scenarios that can occur in the electric grid, and it allow us to study a wide variety of different mechanisms of cascading outages.
 
 <br>
 
