@@ -31,7 +31,7 @@ Cascading outage simulators are designed to set and reproduce scenarios that can
 
 ## IN THE PAPER
 
-The paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system,  called **“Cascading Outage Simulator with Multiprocess Integration Capabilities” (COSMIC)**.
+The paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system,  called **“Cascading Outage Simulator with Multi-process Integration Capabilities” (COSMIC)**.
 
 In COSMIC [1], ...
 
@@ -64,7 +64,7 @@ Dynamic power networks are modeled as sets of DAEs. Each DAE is composed of thre
   ```
   i. A set of Differential equations
   ii. A set of Algebraic equations
-  iii. A set of Constarints
+  iii. A set of Constraints
   ```
 
 <br>
@@ -87,7 +87,7 @@ $$
 \mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) =0 \tag{2}
 $$
 
-- $\mathbf{y}$ is a vector fo **continuous state variables** that have pure **algebraic relationships** to other variables in the system.
+- $\mathbf{y}$ is a vector of **continuous state variables** that have pure **algebraic relationships** to other variables in the system.
 
 - (2) encapsulate the standard **ac power flow equations** (*APPENDIX - B*).
 
