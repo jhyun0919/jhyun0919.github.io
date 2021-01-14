@@ -534,6 +534,8 @@ where
 
 - Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (8).
 
+<span style="color:green"> Q. WHY DC MODEL TENDS TO PRODEUCE LONGER SCENARIOS??? </span>
+
 - In order to control this, we computed only for **the first ten branch outage events** (early stage).
 
 - The average R increased to 0.3487, and some of the cascading paths showed a perfect match ($R=1$).
