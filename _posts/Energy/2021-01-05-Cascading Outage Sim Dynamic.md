@@ -568,7 +568,7 @@ Through the above experiments, the following conclusions are drawn.
 
 ## Purpose / Goal
 
-- **Forcast or detect** (in real-time) cascading outages in power systems.
+- **Forecast or detect** (in real-time) cascading outages in power systems.
 
 <br>
 
