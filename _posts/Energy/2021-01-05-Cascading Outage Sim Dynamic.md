@@ -532,7 +532,7 @@ where
 
 - Table V shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.
 
-- The dc model tends to produce longer cascades and consequently increase the denominator in (8).
+- Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (8).
 
 - In order to control this, we computed only for **the first ten branch outage events** (early stage).
 
