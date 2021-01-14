@@ -530,7 +530,7 @@ where
   <figcaption>Table V. Statical Results for the Comparison between COSMIC & DC Simulator [1]</figcaption>
 </figure>
 
-- Figure 13 shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.
+- Table V shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.
 
 - Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (8).
 
