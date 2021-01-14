@@ -604,15 +604,19 @@ Through the above experiments, the following conclusions are drawn.
 
 <br>
 
-### Step 2. Model GNN Model Structure
+### Step 2. Design the GNN Model Architecture
 
-- Does the model **STRUCTURE** is proper for the **GOAL**?
+- Does the model **ARCHITECTURE** is proper for the **GOAL**?
 
-- What is the **STRENGTH** of the model **STRUCTURE**? and **WHY**?
+- What is the **STRENGTH** of the model **ARCHITECTURE**? and **WHY**?
 
 <br>
 
-### Step 3. Train the Model & Tune the Hyper-parameters
+### Step 3. Train & Test the Model
+
+<br>
+
+### Step 4. Tune the Hyper-parameters
 
 - 🤔
 
