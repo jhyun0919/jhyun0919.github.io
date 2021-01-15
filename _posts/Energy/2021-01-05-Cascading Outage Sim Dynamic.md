@@ -513,7 +513,7 @@ Figure 10 shows the complementary cumulative distribution function (CCDF) of dem
 
 ---
 
-#### Path Agreement Measurement
+#### Path Agreement Measurement [9]
 
 $$
 R(m_1, m_2) = \sum_{i=1}^{|C|}\frac{1}{C} \frac{|A_i \cap B_i|}{|A_i \cup B_i|} \tag{8}
@@ -586,7 +586,7 @@ Through the above experiments, the following conclusions are drawn.
 
 - Need to introduce **randomness** to create large size of dataset.
 
-- Randomness will be given by the method that generated the uncertain loads in [[9]](https://arxiv.org/abs/1902.05607):
+- Randomness will be given by the method that generated the uncertain loads in [[10]](https://arxiv.org/abs/1902.05607):
 
   $$d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)$$
 
@@ -682,7 +682,7 @@ etc.
 
 <br>
 
-## B. AC power flow equation [10]
+## B. AC power flow equation [11]
 
 Relation between following three compenets.
 
@@ -736,6 +736,8 @@ where
 
 [8] B. A. Carreras, D. E. Newman, I. Dobson, and N. S. Degala, “Val- idating OPA with WECC data,” in 2013 46th Hawaii Int. Conf. on System Sciences (HICSS), Jan. 2013, pp. 2197–2204.
 
-[9] D. Deka and S. Misra, "Learning for DC-OPF: Classifying active sets using neural nets," 2019 IEEE Milan PowerTech, Milan, Italy, 2019, pp. 1-6.
+[9] R. Fitzmaurice, E. Cotilla-Sanchez, and P. Hines, “Evaluating the impact of modeling assumptions for cascading failure simulation,” in Proc. IEEE Power Energy Soc. General Meeting, Jul. 2012, pp. 1–8.
 
-[10] H.Zhu, “Lecture Note - Ch 06”, The University of Texas at Austin, Austin, TX, EE 369: POWER SYSTEMS ENGINEERING Course, Fall 2019
+[10] D. Deka and S. Misra, "Learning for DC-OPF: Classifying active sets using neural nets," 2019 IEEE Milan PowerTech, Milan, Italy, 2019, pp. 1-6.
+
+[11] H.Zhu, “Lecture Note - Ch 06”, The University of Texas at Austin, Austin, TX, EE 369: POWER SYSTEMS ENGINEERING Course, Fall 2019
