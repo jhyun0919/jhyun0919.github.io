@@ -722,19 +722,19 @@ where
 
 [1] J. Song, E. Cotilla-Sanchez, G. Ghanavati and P. D. H. Hines, "Dynamic Modeling of Cascading Failure in Power Systems," in IEEE Transactions on Power Systems, vol. 31, no. 3, pp. 2085-2095, May 2016.
 
-[2] M. Papic et al., “Survey of tools for risk assessment of cascading out- ages,” in Proc. IEEE Power and Energy Soc. General Meeting, 2011, pp. 1–9.
+[2] M. Papic et al., “Survey of tools for risk assessment of cascading outages,” in Proc. IEEE Power and Energy Soc. General Meeting, 2011, pp. 1–9.
 
-[3] M. Vaiman et al., “Risk assessment of cascading outages: method- ologies and challenges,” IEEE Trans. Power Syst., vol. 27, no. 2, pp. 631–641, May 2012.
+[3] M. Vaiman et al., “Risk assessment of cascading outages: methodologies and challenges,” IEEE Trans. Power Syst., vol. 27, no. 2, pp. 631–641, May 2012.
 
-[4] I. Dobson, B. A. Carreras, V. E. Lynch, and D. E. Newman, “Com- plex systems analysis of series of blackouts: cascading failure, critical points, and self-organization,” Chaos: Interdisciplinary J. Nonlinear Sci., vol. 17, no. 2, p. 026103, 2007.
+[4] I. Dobson, B. A. Carreras, V. E. Lynch, and D. E. Newman, “Complex systems analysis of series of blackouts: cascading failure, critical points, and self-organization,” Chaos: Interdisciplinary J. Nonlinear Sci., vol. 17, no. 2, p. 026103, 2007.
 
-[5] M. Eppstein and P. Hines, “A ‘random chemistry’ algorithm for iden- tifying collections of multiple contingencies that initiate cascading failure,” IEEE Trans. Power Syst., vol. 27, no. 3, pp. 1698–1705, Aug. 2012.
+[5] M. Eppstein and P. Hines, “A ‘random chemistry’ algorithm for identifying collections of multiple contingencies that initiate cascading failure,” IEEE Trans. Power Syst., vol. 27, no. 3, pp. 1698–1705, Aug. 2012.
 
 [6] “Trapezoidal Rule,” Math24, 30-Apr-2020. [Online]. Available: https://www.math24.net/trapezoidal-rule/. [Accessed: 07-Jan-2021].
 
 [7] P. Hines, J. Apt, and S. Talukdar, “Large blackouts in North America: historical trends and policy implications,” Energy Policy, vol. 37, no. 12, pp. 5249–5259, 2009.
 
-[8] B. A. Carreras, D. E. Newman, I. Dobson, and N. S. Degala, “Val- idating OPA with WECC data,” in 2013 46th Hawaii Int. Conf. on System Sciences (HICSS), Jan. 2013, pp. 2197–2204.
+[8] B. A. Carreras, D. E. Newman, I. Dobson, and N. S. Degala, “Validating OPA with WECC data,” in 2013 46th Hawaii Int. Conf. on System Sciences (HICSS), Jan. 2013, pp. 2197–2204.
 
 [9] R. Fitzmaurice, E. Cotilla-Sanchez, and P. Hines, “Evaluating the impact of modeling assumptions for cascading failure simulation,” in Proc. IEEE Power Energy Soc. General Meeting, Jul. 2012, pp. 1–8.
 
