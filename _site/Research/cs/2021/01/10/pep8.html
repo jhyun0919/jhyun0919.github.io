@@ -2,9 +2,9 @@
 <html class="no-js">
 <head>
 	<meta charset="utf-8">
-	<title> Park's Archive</title>
+	<title>(Python-Dev Tips) PEP8 | Park's Archive</title>
 	<meta name="description"
-		content="A website with blog posts and pages">
+		content="  Git Basic  Virtual Environment  PEP8  Jupyter">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -14,7 +14,7 @@
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/blog/page4/">
+	<link rel="canonical" href="/research/cs/2021/01/10/pep8.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Park's Archive"
@@ -31,6 +31,13 @@
 	
 
 	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+		integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
+		integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
+		crossorigin="anonymous"></script>
 	
 
 	<!-- Google Analytics -->
@@ -208,165 +215,117 @@
 
 <body>
   <div class="content">
-    <div class="home">
+    <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">(Python-Dev Tips) PEP8</h1>
+    
+    <p class="meta">
+      January 10, 2021
+      
+    </p>
+  </header>
+  <section class="post-content" style="width:77%; margin:0 auto;">
+    <ol>
+  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html">Git Basic</a></li>
+  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html">Virtual Environment</a></li>
+  <li><strong>PEP8</strong></li>
+  <li><a href="https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html">Jupyter</a></li>
+</ol>
 
-  
-  <div class="call-out"
-    style="background-image: url('/')">
-    <p>
- <h1>
-   Park's Research & Daily Life.
- </h1>
-</p>
+<hr />
 
-  </div>
-  
+<p>This article covers what is PEP 8 and how to follow this convention with minimal effort and no difficult. This posting referred to the following articles.</p>
 
-  <hr>
-  <h1 class="post-title" style="width:55%; margin:0 auto;">Recent Posts🤘</h1>
+<ul>
+  <li><a href="https://www.python.org/dev/peps/pep-0008/">PEP 8 – Style Guide for Python Code</a></li>
+  <li><a href="https://realpython.com/python-pep8/">How to Write Beautiful Python Code With PEP 8</a></li>
+  <li><a href="https://www.freecodecamp.org/news/auto-format-your-python-code-with-black/">How to Auto-Format Your Python Code with Black</a></li>
+</ul>
+
+<hr />
+<h1 id="what-is-pep-8">What is PEP 8</h1>
+
+<p><br /></p>
+
+<h1 id="why-we-need-pep-8">Why we need PEP 8</h1>
+
+<ul>
+  <li>Guidelines for writing Python.</li>
+  <li>Good Readability</li>
+  <li>Revisiting old project</li>
+  <li>Easy to spot bugs</li>
+  <li>Collaboration</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="auto-formatter">Auto-formatter</h1>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2020-10-03-pep8/programmer_meme.jpg" width="80%" />   <figcaption>
+"Any Questions?"
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h1 id="reference">Reference</h1>
+
+
+  </section>
+
   <br>
-
+  <br>
+  <br>
   
-  <div class="post-teaser">
-
-    <header style="width:55%; margin:0 auto;">
-      <h2>
-        <a class="post-link" href="/research/ml&dl/2020/07/20/how-to-choose-layer.html">
-          (TF) Which Layer Do I Need?
-        </a>
-      </h2>
-      <p class="meta">
-        July 20, 2020
-      </p>
-    </header>
-
-    <div class="excerpt" style="width:55%; margin:0 auto;">
-      <p>The structure of the deep learning model is designed differently depending on the types of data features and the...
-      <br>
-      <a class="button" href="/research/ml&dl/2020/07/20/how-to-choose-layer.html">
-        Continue reading
-      </a>
-      <br>
-    </div>
-
-  </div>
-  
-  <div class="post-teaser">
-
-    <header style="width:55%; margin:0 auto;">
-      <h2>
-        <a class="post-link" href="/research/ml&dl/2020/07/19/pytorch-basic-structure.html">
-          (PyTorch) Basic Steps for Training a Model
-        </a>
-      </h2>
-      <p class="meta">
-        July 19, 2020
-      </p>
-    </header>
-
-    <div class="excerpt" style="width:55%; margin:0 auto;">
-      <p>PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This posting will describe the...
-      <br>
-      <a class="button" href="/research/ml&dl/2020/07/19/pytorch-basic-structure.html">
-        Continue reading
-      </a>
-      <br>
-    </div>
-
-  </div>
-  
-  <div class="post-teaser">
-
-    <header style="width:55%; margin:0 auto;">
-      <h2>
-        <a class="post-link" href="/research/ml&dl/2020/07/18/tf-basic-structure.html">
-          (TF) Basic Steps for Training a Model
-        </a>
-      </h2>
-      <p class="meta">
-        July 18, 2020
-      </p>
-    </header>
-
-    <div class="excerpt" style="width:55%; margin:0 auto;">
-      <p>TesorFlow is one of the most well-known deep learning frameworks. This posting will describe the basic steps for training...
-      <br>
-      <a class="button" href="/research/ml&dl/2020/07/18/tf-basic-structure.html">
-        Continue reading
-      </a>
-      <br>
-    </div>
-
-  </div>
-  
-  <div class="post-teaser">
-
-    <header style="width:55%; margin:0 auto;">
-      <h2>
-        <a class="post-link" href="/research/ml&dl/2020/06/01/mnist.html">
-          (TF & PyTorch) MNIST tutorial
-        </a>
-      </h2>
-      <p class="meta">
-        June 1, 2020
-      </p>
-    </header>
-
-    <div class="excerpt" style="width:55%; margin:0 auto;">
-      <p>MNIST is the set of data for training the machine to learn handwritten numeral images, which is the most...
-      <br>
-      <a class="button" href="/research/ml&dl/2020/06/01/mnist.html">
-        Continue reading
-      </a>
-      <br>
-    </div>
-
-  </div>
-  
-  <div class="post-teaser">
-
-    <header style="width:55%; margin:0 auto;">
-      <h2>
-        <a class="post-link" href="/research/ml&dl/2019/10/21/dl_intro.html">
-          (TF & PyTorch) Introduction of becoming adept in DL frameworks
-        </a>
-      </h2>
-      <p class="meta">
-        October 21, 2019
-      </p>
-    </header>
-
-    <div class="excerpt" style="width:55%; margin:0 auto;">
-      <p>Due to rapid improvements in computing performance and the amount of data that is accumulated, deep learning is gaining...
-      <br>
-      <a class="button" href="/research/ml&dl/2019/10/21/dl_intro.html">
-        Continue reading
-      </a>
-      <br>
-    </div>
-
-  </div>
-  
-
-  
-  <div class="pagination">
+<footer>
+  <div class="tags">
     
-    <a href="/blog/page3" class="button">
-      <i class="fa fa-chevron-left"></i>
-      Prev
-    </a>
+    <a class="tag" href="/tags#CS">#CS</a>
     
+    <a class="tag" href="/tags#Dev">#Dev</a>
     
-    <a href="/blog/page5" class="button">
-      Next
-      <i class="fa fa-chevron-right"></i>
-    </a>
+    <a class="tag" href="/tags#Python">#Python</a>
     
   </div>
-  
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://park-archive.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
 </div>
+
+
+<!-- Post navigation -->
+
   </div>
   
+<script src="/assets/js/katex_init.js"></script>
+
 
 
 <footer class="site-footer">

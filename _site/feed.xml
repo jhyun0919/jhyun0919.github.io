@@ -5,33 +5,254 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sat, 09 Jan 2021 13:26:03 -0600</pubDate>
+    <pubDate>Tue, 26 Jan 2021 20:45:41 -0600</pubDate>
     
       <item>
-        <title></title>
-        <link>/2021/01/09/2020-12-15-Cascading-Outage-Sim-QSS.html</link>
-        <guid isPermaLink="true">/2021/01/09/2020-12-15-Cascading-Outage-Sim-QSS.html</guid>
-        <description>&lt;p&gt;pros and cons of various cascading outage simulators.&lt;/p&gt;
+        <title>(Research Proj) Genrerate Datasets for GNN</title>
+        <link>/research/energy/2021/01/19/Cascading-Outage-Gen-Dataset.html</link>
+        <guid isPermaLink="true">/research/energy/2021/01/19/Cascading-Outage-Gen-Dataset.html</guid>
+        <description>&lt;h1 id=&quot;generate-dataset&quot;&gt;Generate Dataset&lt;/h1&gt;
+
+&lt;h2 id=&quot;introduce-radomness&quot;&gt;Introduce Radomness&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;codes&quot;&gt;Codes&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;eda&quot;&gt;EDA&lt;/h1&gt;
+
+&lt;h2 id=&quot;converged-case&quot;&gt;Converged Case&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;not-converged-case&quot;&gt;Not Converged Case&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;check-distribution-of-the-data&quot;&gt;Check Distribution of the Data&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;data-pre-processing&quot;&gt;Data Pre-processing&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+
+&lt;p&gt;[1]&lt;/p&gt;
 </description>
-        <pubDate>Sat, 09 Jan 2021 13:26:03 -0600</pubDate>
+        <pubDate>Tue, 19 Jan 2021 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>Householder QR Factorization</title>
+        <link>/research/mathematics/2021/01/14/Householder.html</link>
+        <guid isPermaLink="true">/research/mathematics/2021/01/14/Householder.html</guid>
+        <description>&lt;p&gt;This article was written by referring to the &lt;em&gt;Fall 2020 Numerical Analysis: Linear Algebra Course&lt;/em&gt; and the following links.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-gram-schmidt.html&quot;&gt;ALAFF: Gram-Schmidt Orthogonalization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ULAFF/ALAFF&quot;&gt;ALAFF Git Repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;unitary-matrix&quot;&gt;Unitary Matrix&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/reflector.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!-- ###################################################################### --&gt;
+
+&lt;h1 id=&quot;householder-transformation&quot;&gt;Householder transformation&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/Housev.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 2.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/d8e7ad29b9e0de1bc78e7b4b70bd9b2f.js&quot;&gt;&lt;/script&gt;
+ &lt;em&gt;Code 1. Householder transformation in python.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!-- ###################################################################### --&gt;
+
+&lt;h1 id=&quot;householder-qr-factorization-algorithm&quot;&gt;Householder QR factorization algorithm&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR_how.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 3.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 4.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/c65f24fb8416e3f50c8319d9da21f812.js&quot;&gt;&lt;/script&gt;
+ &lt;em&gt;Code 2. Householder QR factorization in python.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/867a0d120db1ebe0e4ec0a19201f511a.js&quot;&gt;&lt;/script&gt;
+ &lt;em&gt;Code 3. Householder LQ factorization in python.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!-- ###################################################################### --&gt;
+
+&lt;h1 id=&quot;forming-q&quot;&gt;Forming Q&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/FormQ_how.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 5.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/FormQ.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 6.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/9e626b4fa8f7066550540ab721b1114e.js&quot;&gt;&lt;/script&gt;
+ &lt;em&gt;Code 4. Form Q from Householder QR factorization in python.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!-- ###################################################################### --&gt;
+
+&lt;h1 id=&quot;applying-qh&quot;&gt;Applying QH&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!-- ###################################################################### --&gt;
+
+&lt;h1 id=&quot;orthogonality-of-resulting-q&quot;&gt;Orthogonality of resulting Q&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/ALAFF-in-python/blob/main/Assignments/week03/test_orthogonality.ipynb&quot;&gt;test_orthogonality.ipynb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- ###################################################################### --&gt;
+&lt;h1 id=&quot;blocked-householder-qr-factorization&quot;&gt;Blocked Householder QR factorization&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR_blk.png&quot; width=&quot;70%&quot; /&gt;   &lt;figcaption&gt;
+Figure 7.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;&lt;br /&gt;&lt;/h2&gt;
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;p&gt;[1]&lt;/p&gt;
+</description>
+        <pubDate>Thu, 14 Jan 2021 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>(Research Proj) Designind the Model Architecture</title>
+        <link>/research/energy/2021/01/14/Cascading-Outage-Design-Model-Archi.html</link>
+        <guid isPermaLink="true">/research/energy/2021/01/14/Cascading-Outage-Design-Model-Archi.html</guid>
+        <description>&lt;h1 id=&quot;the-model-architecture&quot;&gt;The Model Architecture&lt;/h1&gt;
+
+&lt;p&gt;#&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+
+&lt;p&gt;[1]&lt;/p&gt;
+</description>
+        <pubDate>Thu, 14 Jan 2021 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>(Python-Dev Tips) PEP8</title>
+        <link>/research/cs/2021/01/10/pep8.html</link>
+        <guid isPermaLink="true">/research/cs/2021/01/10/pep8.html</guid>
+        <description>&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/01/git-tips.html&quot;&gt;Git Basic&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/02/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;PEP8&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This article covers what is PEP 8 and how to follow this convention with minimal effort and no difficult. This posting referred to the following articles.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.python.org/dev/peps/pep-0008/&quot;&gt;PEP 8 – Style Guide for Python Code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://realpython.com/python-pep8/&quot;&gt;How to Write Beautiful Python Code With PEP 8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.freecodecamp.org/news/auto-format-your-python-code-with-black/&quot;&gt;How to Auto-Format Your Python Code with Black&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;what-is-pep-8&quot;&gt;What is PEP 8&lt;/h1&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;why-we-need-pep-8&quot;&gt;Why we need PEP 8&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Guidelines for writing Python.&lt;/li&gt;
+  &lt;li&gt;Good Readability&lt;/li&gt;
+  &lt;li&gt;Revisiting old project&lt;/li&gt;
+  &lt;li&gt;Easy to spot bugs&lt;/li&gt;
+  &lt;li&gt;Collaboration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;auto-formatter&quot;&gt;Auto-formatter&lt;/h1&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-03-pep8/programmer_meme.jpg&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
+&quot;Any Questions?&quot;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+
+</description>
+        <pubDate>Sun, 10 Jan 2021 00:00:00 -0600</pubDate>
       </item>
     
       <item>
         <title>(Research Proj) Cascading Outage Simulator - Dynamic</title>
         <link>/research/energy/2021/01/05/Cascading-Outage-Sim-Dynamic.html</link>
         <guid isPermaLink="true">/research/energy/2021/01/05/Cascading-Outage-Sim-Dynamic.html</guid>
-        <description>&lt;p&gt;This article is about a review of the paper [1], and is the first part of a personal research project to apply Graph Neural Network (GNN) to the field of cascading outage prediction or detection.&lt;/p&gt;
+        <description>&lt;p&gt;This article is about a review of the paper &lt;a href=&quot;https://ieeexplore.ieee.org/document/7127056&quot;&gt;[1]&lt;/a&gt;, and is the first part of a personal research project to apply Graph Neural Network (GNN) to the field of cascading outage prediction or detection.&lt;/p&gt;
 
 &lt;p&gt;The primary purpose is to create large-scale datasets for training GNN-based models through the cascading outage simulator presented in this paper.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/tree/master/Cascading%20Outage&quot;&gt;Research Project’s Git Repository&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wMkdiT3EyOTc0TERRd0NUdWtmeVF3MzBnI0R5bmFtaWNfTW9kZWxpbmdfb2ZfQ2FzY2FkaW5nX0ZhaWx1cmVfaW5fUG93ZXJfU3lzdGVtcw==&quot;&gt;Paper Review in GoodNotes&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/tree/master/Cascading%20Outage&quot;&gt;Research Project’s Git Repository&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;!-- - [Paper Review in GoodNotes](https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wMkdiT3EyOTc0TERRd0NUdWtmeVF3MzBnI0R5bmFtaWNfTW9kZWxpbmdfb2ZfQ2FzY2FkaW5nX0ZhaWx1cmVfaW5fUG93ZXJfU3lzdGVtcw== ) --&gt;
 
 &lt;hr /&gt;
 
@@ -43,7 +264,7 @@
 
 &lt;p&gt;The importance of studying cascading outages has been recognized [2]-[4]. However, since electrical power networks are very large and complex systems [5], understanding the many mechanisms by which cascading outages propagate is challenging [1].&lt;/p&gt;
 
-&lt;p&gt;Cadcading outage simulators are designed to set and reproduce scenarios that can occur in the electric grid, and it allow us to study a wide variety of different mechanisms of cascading outages.&lt;/p&gt;
+&lt;p&gt;Cascading outage simulators are designed to set and reproduce scenarios that can occur in the electric grid, and it allow us to study a wide variety of different mechanisms of cascading outages.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -51,7 +272,7 @@
 
 &lt;h2 id=&quot;in-the-paper&quot;&gt;IN THE PAPER&lt;/h2&gt;
 
-&lt;p&gt;The paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system,  called &lt;strong&gt;“Cascading Outage Simulator with Multiprocess Integration Capabilities” (COSMIC)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system,  called &lt;strong&gt;“Cascading Outage Simulator with Multi-process Integration Capabilities” (COSMIC)&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;In COSMIC [1], …&lt;/p&gt;
 
@@ -95,7 +316,7 @@
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  i. A set of Differential equations
   ii. A set of Algebraic equations
-  iii. A set of Constarints
+  iii. A set of Constraints
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -121,7 +342,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;$\mathbf{y}$ is a vector fo &lt;strong&gt;continuous state variables&lt;/strong&gt; that have pure &lt;strong&gt;algebraic relationships&lt;/strong&gt; to other variables in the system.&lt;/p&gt;
+    &lt;p&gt;$\mathbf{y}$ is a vector of &lt;strong&gt;continuous state variables&lt;/strong&gt; that have pure &lt;strong&gt;algebraic relationships&lt;/strong&gt; to other variables in the system.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;(2) encapsulate the standard &lt;strong&gt;ac power flow equations&lt;/strong&gt; (&lt;em&gt;APPENDIX - B&lt;/em&gt;).&lt;/p&gt;
@@ -396,13 +617,13 @@ Figure 5. Bus voltage magnitudes when the branch from bus 6 to bus 9 in the 9-bu
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;A single-line outage was occured at $t=10$ seconds, and  DIST relay timer activate.&lt;/p&gt;
+    &lt;p&gt;A single-line outage was occurred at $t=10$ seconds, and  DIST relay timer activate.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;$t_{preset-delay}=0.5$&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;$P_1 (t=10.5)$: $t_{delay}$ ran out, and another line outage was occured.&lt;/p&gt;
+    &lt;p&gt;$P_1 (t=10.5)$: $t_{delay}$ ran out, and another line outage was occurred.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;$P_2$: the magenta voltage trace violated the limit, and UVLS relay timer activate.&lt;/p&gt;
@@ -617,13 +838,13 @@ Figure 9. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
     &lt;p&gt;The probability of demand losses in the dc simulator is lower than that of COSMIC for the same amount of demand losses.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The dc model is much more stable and does not run into problems of numerical nonconvergence.&lt;/p&gt;
+    &lt;p&gt;The dc model is much &lt;strong&gt;more stable&lt;/strong&gt; and does not run into problems of numerical nonconvergence.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;COSMIC assumes that the network or sub-network in which the numerical failure occurred experienced a complete blackout.&lt;/p&gt;
+    &lt;p&gt;COSMIC assumes that the network or sub-network in which the &lt;strong&gt;numerical failure&lt;/strong&gt; occurred experienced &lt;strong&gt;a complete blackout&lt;/strong&gt;.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;As a result, numerical failures in solving the DAE system greatly contributed to the larger blackout sizes. → It may deteriorate the accuracy.&lt;/p&gt;
+    &lt;p&gt;As a result, numerical failures in solving the DAE system greatly contributed to the larger blackout sizes. → It may &lt;strong&gt;deteriorate the accuracy&lt;/strong&gt;.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -638,14 +859,14 @@ Figure 9. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
     &lt;p&gt;Pros&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;It is numerically stable, making it possible to produce results that can be statistically similar to data from real power systems [8].&lt;/li&gt;
+      &lt;li&gt;It is &lt;strong&gt;numerically stable&lt;/strong&gt;, making it possible to produce results that can be statistically similar to data from real power systems [8].&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Cons&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;It includes numerous simplifications that are substantially different from the “real” system.&lt;/li&gt;
+      &lt;li&gt;It includes &lt;strong&gt;numerous simplifications&lt;/strong&gt; that are substantially &lt;strong&gt;different from the “real” system&lt;/strong&gt;.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -659,14 +880,14 @@ Figure 9. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
     &lt;p&gt;Pros&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;It includes many mechanisms of cascading that cannot be represented in the dc model.&lt;/li&gt;
+      &lt;li&gt;It &lt;strong&gt;includes many mechanisms&lt;/strong&gt; of cascading that cannot be represented in the dc model.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Cons&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;It needs many assumptions that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.&lt;/li&gt;
+      &lt;li&gt;It needs &lt;strong&gt;many assumptions&lt;/strong&gt; that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -675,7 +896,7 @@ Figure 9. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;path-agreement-measurement&quot;&gt;Path Agreement Measurement&lt;/h4&gt;
+&lt;h4 id=&quot;path-agreement-measurement-9&quot;&gt;Path Agreement Measurement [9]&lt;/h4&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;R(m_1, m_2) = \sum_{i=1}^{|C|}\frac{1}{C} \frac{|A_i \cap B_i|}{|A_i \cup B_i|} \tag{8}&lt;/script&gt;
 
@@ -698,11 +919,16 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Figure 13 shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.&lt;/p&gt;
+    &lt;p&gt;Table V shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (8).&lt;/p&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHY DC MODEL TENDS TO PRODEUCE LONGER SCENARIOS??? &lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;In order to control this, we computed only for &lt;strong&gt;the first ten branch outage events&lt;/strong&gt; (early stage).&lt;/p&gt;
   &lt;/li&gt;
@@ -749,10 +975,10 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 
 &lt;h1 id=&quot;5-my-reseasrch-project&quot;&gt;5. MY RESEASRCH PROJECT&lt;/h1&gt;
 
-&lt;h2 id=&quot;purpose-5&quot;&gt;Purpose&lt;/h2&gt;
+&lt;h2 id=&quot;purpose--goal&quot;&gt;Purpose / Goal&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Forcast or detect (in real-time) cascading outages in power systems.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Forecast or detect&lt;/strong&gt; (in real-time) cascading outages in power systems.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -771,32 +997,64 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Need to introduce randomness to create large size of dataset.&lt;/p&gt;
+    &lt;p&gt;Need to introduce &lt;strong&gt;randomness&lt;/strong&gt; to create large size of dataset.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Randomness will be given by the method that generated the uncertainty realization in [9].&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;&quot;&gt;generate_dataset.ipynb&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;Randomness will be given by the method that generated the uncertain loads in &lt;a href=&quot;https://arxiv.org/abs/1902.05607&quot;&gt;[10]&lt;/a&gt;:&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)&lt;/script&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;$d$ is a load.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;$\mathcal{N}$ is normal distribution with mean zero and standard deviation proportional to the load.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;step-2-model-gnn-model-structure&quot;&gt;Step 2. Model GNN Model Structure&lt;/h3&gt;
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHICH FEATURES (e.g. $P_d, Q_d, P_g, Q_g$ or outage event time $t_{event}$) SHOULD BE GIVEN RANDOMNESS? &lt;/span&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Does the model sturcture is proper for the goal?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;What is the strength of the model? and why?&lt;/p&gt;
+    &lt;p&gt;Codes&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py&quot;&gt;Generate N-2 Contingency Datasets.py&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb&quot;&gt;Generate Datasets.ipynb&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb&quot;&gt;Exploratory Data Analysis.ipynb&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;step-3-train-the-model--tune-the-hyper-parameters&quot;&gt;Step 3. Train the Model &amp;amp; Tune the Hyper-parameters&lt;/h3&gt;
+&lt;h3 id=&quot;step-2-design-the-gnn-model-architecture&quot;&gt;Step 2. Design the GNN Model Architecture&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Does the model &lt;strong&gt;ARCHITECTURE&lt;/strong&gt; is proper for the &lt;strong&gt;GOAL&lt;/strong&gt;?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the &lt;strong&gt;STRENGTH&lt;/strong&gt; of the model &lt;strong&gt;ARCHITECTURE&lt;/strong&gt;? and &lt;strong&gt;WHY&lt;/strong&gt;?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;step-3-train--test-the-model&quot;&gt;Step 3. Train &amp;amp; Test the Model&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;step-4-tune-the-hyper-parameters&quot;&gt;Step 4. Tune the Hyper-parameters&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;🤔&lt;/li&gt;
@@ -814,7 +1072,7 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
     &lt;p&gt;Extremely high computational efficiency compared to old methods.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;GNN model having significantly fewer nodes (trainable parameters) than other deep learning models.&lt;/p&gt;
+    &lt;p&gt;A GNN based model having significantly fewer nodes (trainable parameters) than other deep learning models.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -879,7 +1137,7 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;b-ac-power-flow-equation-10&quot;&gt;B. AC power flow equation [10]&lt;/h2&gt;
+&lt;h2 id=&quot;b-ac-power-flow-equation-11&quot;&gt;B. AC power flow equation [11]&lt;/h2&gt;
 
 &lt;p&gt;Relation between following three compenets.&lt;/p&gt;
 
@@ -908,6 +1166,7 @@ $$ --&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;Q_i = V_i\sum_{k=1}^{n}\{ G_{ik} sin(\theta_i-\theta_k) +B_{ik}cos(\theta_i-\theta_k) \}&lt;/script&gt;
 
 &lt;p&gt;where&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;$n$ is the number of buses of the system.&lt;/p&gt;
@@ -920,26 +1179,30 @@ $$ --&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
+
 &lt;h1 id=&quot;references&quot;&gt;REFERENCES&lt;/h1&gt;
+
 &lt;p&gt;[1] J. Song, E. Cotilla-Sanchez, G. Ghanavati and P. D. H. Hines, “Dynamic Modeling of Cascading Failure in Power Systems,” in IEEE Transactions on Power Systems, vol. 31, no. 3, pp. 2085-2095, May 2016.&lt;/p&gt;
 
-&lt;p&gt;[2] M. Papic et al., “Survey of tools for risk assessment of cascading out- ages,” in Proc. IEEE Power and Energy Soc. General Meeting, 2011, pp. 1–9.&lt;/p&gt;
+&lt;p&gt;[2] M. Papic et al., “Survey of tools for risk assessment of cascading outages,” in Proc. IEEE Power and Energy Soc. General Meeting, 2011, pp. 1–9.&lt;/p&gt;
 
-&lt;p&gt;[3] M. Vaiman et al., “Risk assessment of cascading outages: method- ologies and challenges,” IEEE Trans. Power Syst., vol. 27, no. 2, pp. 631–641, May 2012.&lt;/p&gt;
+&lt;p&gt;[3] M. Vaiman et al., “Risk assessment of cascading outages: methodologies and challenges,” IEEE Trans. Power Syst., vol. 27, no. 2, pp. 631–641, May 2012.&lt;/p&gt;
 
-&lt;p&gt;[4] I. Dobson, B. A. Carreras, V. E. Lynch, and D. E. Newman, “Com- plex systems analysis of series of blackouts: cascading failure, critical points, and self-organization,” Chaos: Interdisciplinary J. Nonlinear Sci., vol. 17, no. 2, p. 026103, 2007.&lt;/p&gt;
+&lt;p&gt;[4] I. Dobson, B. A. Carreras, V. E. Lynch, and D. E. Newman, “Complex systems analysis of series of blackouts: cascading failure, critical points, and self-organization,” Chaos: Interdisciplinary J. Nonlinear Sci., vol. 17, no. 2, p. 026103, 2007.&lt;/p&gt;
 
-&lt;p&gt;[5] M. Eppstein and P. Hines, “A ‘random chemistry’ algorithm for iden- tifying collections of multiple contingencies that initiate cascading failure,” IEEE Trans. Power Syst., vol. 27, no. 3, pp. 1698–1705, Aug. 2012.&lt;/p&gt;
+&lt;p&gt;[5] M. Eppstein and P. Hines, “A ‘random chemistry’ algorithm for identifying collections of multiple contingencies that initiate cascading failure,” IEEE Trans. Power Syst., vol. 27, no. 3, pp. 1698–1705, Aug. 2012.&lt;/p&gt;
 
 &lt;p&gt;[6] “Trapezoidal Rule,” Math24, 30-Apr-2020. [Online]. Available: https://www.math24.net/trapezoidal-rule/. [Accessed: 07-Jan-2021].&lt;/p&gt;
 
 &lt;p&gt;[7] P. Hines, J. Apt, and S. Talukdar, “Large blackouts in North America: historical trends and policy implications,” Energy Policy, vol. 37, no. 12, pp. 5249–5259, 2009.&lt;/p&gt;
 
-&lt;p&gt;[8] B. A. Carreras, D. E. Newman, I. Dobson, and N. S. Degala, “Val- idating OPA with WECC data,” in 2013 46th Hawaii Int. Conf. on System Sciences (HICSS), Jan. 2013, pp. 2197–2204.&lt;/p&gt;
+&lt;p&gt;[8] B. A. Carreras, D. E. Newman, I. Dobson, and N. S. Degala, “Validating OPA with WECC data,” in 2013 46th Hawaii Int. Conf. on System Sciences (HICSS), Jan. 2013, pp. 2197–2204.&lt;/p&gt;
 
-&lt;p&gt;[9] D. Deka and S. Misra, “Learning for DC-OPF: Classifying active sets using neural nets,” 2019 IEEE Milan PowerTech, Milan, Italy, 2019, pp. 1-6.&lt;/p&gt;
+&lt;p&gt;[9] R. Fitzmaurice, E. Cotilla-Sanchez, and P. Hines, “Evaluating the impact of modeling assumptions for cascading failure simulation,” in Proc. IEEE Power Energy Soc. General Meeting, Jul. 2012, pp. 1–8.&lt;/p&gt;
 
-&lt;p&gt;[10] H.Zhu, “Lecture Note - Ch 06”, The University of Texas at Austin, Austin, TX, EE 369: POWER SYSTEMS ENGINEERING Course, Fall 2019&lt;/p&gt;
+&lt;p&gt;[10] D. Deka and S. Misra, “Learning for DC-OPF: Classifying active sets using neural nets,” 2019 IEEE Milan PowerTech, Milan, Italy, 2019, pp. 1-6.&lt;/p&gt;
+
+&lt;p&gt;[11] H.Zhu, “Lecture Note - Ch 06”, The University of Texas at Austin, Austin, TX, EE 369: POWER SYSTEMS ENGINEERING Course, Fall 2019&lt;/p&gt;
 </description>
         <pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate>
       </item>
@@ -1854,313 +2117,6 @@ Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]
 &lt;p&gt;[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].&lt;/p&gt;
 </description>
         <pubDate>Tue, 21 Jul 2020 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(TF) Which Layer Do I Need?</title>
-        <link>/research/ml&dl/2020/07/20/how-to-choose-layer.html</link>
-        <guid isPermaLink="true">/research/ml&dl/2020/07/20/how-to-choose-layer.html</guid>
-        <description>&lt;p&gt;The structure of the deep learning model is designed differently depending on the types of data features and the objective of the model. More specifically, in order to select the type of layer used in the model, the characteristics of data features and the learning objectives of the model must be considered.&lt;/p&gt;
-
-&lt;p&gt;In order to find out which structure is most suitable, we experimented with fixing the type of dataset and the target of the model and changing the structure of the model. The dataset used in the experiment is MNIST. The types of models used in the experiment were as follows; &lt;em&gt;DenseNet&lt;/em&gt; using only &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense&quot;&gt;dense layer&lt;/a&gt;, &lt;em&gt;ConvNet&lt;/em&gt; using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/Conv2D&quot;&gt;convolutional layer&lt;/a&gt;, and &lt;em&gt;LstmNet&lt;/em&gt; using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM&quot;&gt;LSTM layer&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Full code of the experiments can be found at the following github repository.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/MNIST/how%20to%20choose%20layer.ipynb&quot;&gt;Park’s GitHub &amp;gt; How to choose layer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/neural_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Neural Network Example&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/convolutional_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Convolutional Neural Network Example&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1&quot;&gt;Irhum Shafkat’s Medium posting &amp;gt; Intuitively Understanding Convolutions for Deep Learning&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/recurrent_network.ipynb&quot;&gt;Aymeric Damien’s GitHub &amp;gt; Recurrent Neural Network Example&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn&quot;&gt;Simplilearn &amp;gt; Recurrent Neural Network Tutorial&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.slideshare.net/JiHyunPark18/understanding-lstm-and-its-diagrams&quot;&gt;Park’s SlideShare &amp;gt; Understanding LSTM&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;model-structures&quot;&gt;Model Structures&lt;/h1&gt;
-&lt;h2 id=&quot;dense-model&quot;&gt;Dense Model&lt;/h2&gt;
-
-&lt;p&gt;This model consisted only of dense layers. This is the simplest model of the neural network and works well for all types of data, but performance decreases when an input data becomes complicated or large. Therefore, dense layers are used in learning simple data. In addition, in the case of learning complex data, dense layers are used in the last part of the model, which is the stage where features are extracted and get simple enough.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/ff71e7f4416a2add611074ad39888eab.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;cnn-model&quot;&gt;CNN Model&lt;/h2&gt;
-
-&lt;p&gt;This model consisted of convolutional layers. This model is suitable when there are spatial relationship across the data. Figure 1 depicts how a convolutional layer works, and it helps understand why this model works well when there are spatial relationship across data.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/1043aeb7181b81ac0106d0bbcc0f74d3.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/cnn visualized.gif&quot; width=&quot;50%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1. Visualization of how the convolutional neural network layer works [1].
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;rnnlstm-model&quot;&gt;RNN(LSTM) Model&lt;/h2&gt;
-
-&lt;p&gt;This model consisted of LSTM layers. This model is suitable when there are temporal (sequential) relationship across the data. Figure 2 depicts how a LSTM layer works, and it helps understand why this model works well when there are temporal relationship across data.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/f6d3f2c79049c74b6a74b6b792e20ba7.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/rnn visualized.gif&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
-Figure 2. Visualization of how the recurrent neural network layer works [2].
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;experiment-result&quot;&gt;Experiment Result&lt;/h1&gt;
-
-&lt;p&gt;As a result of the experiment, the CNN model using a convolutional layer showed the highest performance for learning MNIST image data. Direct comparison was not possible because the number of trainable parameters differed for each model, but the result was obtained by adjusting hyper-parameters to obtain the best performance for each model.&lt;/p&gt;
-
-&lt;p&gt;To sum up, we have confirmed that it is best to use a convolutional layer when learning MNIST image data.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Accuracy&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Loss&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;DenseNet&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;0.9556&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;1.5092&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;ConvNet&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;0.9817&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;1.4793&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;LstmNet&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;0.9603&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;1.5015&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-20-how to choose layer/tensorboard result.png&quot; width=&quot;95%&quot; /&gt;   &lt;figcaption&gt;
-Figure 2. Checking the validation result with tensorboard.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;future-study&quot;&gt;Future Study&lt;/h1&gt;
-
-&lt;p&gt;In some cases, such as image data or stock data, we can know the nature of the feature data in advance and use the CNN or RNN layers respectively. However, it is difficult to fully understand the charactieristic of completely new feature data. In this case, it is difficult to make assumptions about the temporal/spatial relationships across the data. As a result, it is not easy to decide which layer to use.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/text/transformer&quot;&gt;Transformer&lt;/a&gt; is a model designed to solve this problem. Transformer is a model based on attention, it make no assumptions about the temporal/spatial relationships across the data [3]. In the next posting, we will discuss the structure and application of the Transformer.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
-
-&lt;p&gt;[1]I. Shafkat, “Intuitively Understanding Convolutions for Deep Learning,” Medium, 07-Jun-2018. [Online]. Available: https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1. [Accessed: 23-Jul-2020].&lt;/p&gt;
-
-&lt;p&gt;[2] A. Biswal, “Recurrent Neural Network Tutorial,” Simplilearn.com, 28-Apr-2020. [Online]. Available: https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn. [Accessed: 23-Jul-2020].&lt;/p&gt;
-
-&lt;p&gt;[3] “Transformer model for language understanding : TensorFlow Core,” TensorFlow. [Online]. Available: https://www.tensorflow.org/tutorials/text/transformer. [Accessed: 23-Jul-2020].&lt;/p&gt;
-</description>
-        <pubDate>Mon, 20 Jul 2020 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(PyTorch) Basic Steps for Training a Model</title>
-        <link>/research/ml&dl/2020/07/19/pytorch-basic-structure.html</link>
-        <guid isPermaLink="true">/research/ml&dl/2020/07/19/pytorch-basic-structure.html</guid>
-        <description>&lt;p&gt;PyTorch is one of the most well-known deep learning frameworks as well as Tensorflow. This posting will describe the basic steps for traing a model with PyTorch. Briefly, the basic steps of how to train a model are as follow.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Load &amp;amp; pre-process the dataset&lt;/li&gt;
-  &lt;li&gt;Set a model&lt;/li&gt;
-  &lt;li&gt;Set an optimizer &amp;amp; a loss function&lt;/li&gt;
-  &lt;li&gt;Train the model&lt;/li&gt;
-  &lt;li&gt;Evaluate the model&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_pytorch/blob/master/tutorials/01.%20basic/pytorch%20basic%20structure.ipynb&quot;&gt;Park’s GitHub &amp;gt; Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/@inmoonlight/pytorch%EB%A1%9C-%EB%94%A5%EB%9F%AC%EB%8B%9D%ED%95%98%EA%B8%B0-intro-afd9c67404c3&quot;&gt;JiHyung Moon’s Meduim Posting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html&quot;&gt;PyTorch official webpage &amp;gt; Tutorials &amp;gt; Visualizing Models, Data, and Training with TensorBoard&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h1&gt;
-
-&lt;p&gt;We used the &lt;em&gt;FashionMNIST&lt;/em&gt; dataset for the experiment. The dataset can be downloaded through &lt;em&gt;torchvision.datasets&lt;/em&gt;, and preprocessing can be performed through &lt;em&gt;transforms.Compose&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/6bd4ac356c46bfc7efe42e664ab83403.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;2-set-a-model&quot;&gt;2. Set a model&lt;/h1&gt;
-
-&lt;p&gt;We constructed a simple convolutional neural network model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/5023e2b1d56c0fe89961ba09ef192476.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;3-set-optimizer--loss-function&quot;&gt;3. Set optimizer &amp;amp; loss function&lt;/h1&gt;
-
-&lt;p&gt;We set the optimizer and loss function to train the model constructed in the previous step. The optimizer and loss function types were selected according to the type of the features of the given input data and the purpose of the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e916c7736f96b4c5df111d81bece262e.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;4-train-the-model&quot;&gt;4. Train the model&lt;/h1&gt;
-
-&lt;p&gt;In order to train a model, we must follow the following 5 steps.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;initialize the gradient&lt;/li&gt;
-  &lt;li&gt;forward propagation&lt;/li&gt;
-  &lt;li&gt;calculate the loss&lt;/li&gt;
-  &lt;li&gt;backward propagation&lt;/li&gt;
-  &lt;li&gt;optimize (update) the weights based on forward &amp;amp; backward propagation&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/93422cef8d6be9df23b2c8ecc55dc918.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h1&gt;
-
-&lt;p&gt;We used the validation dataset to measure the performance of the completed training model. Note that the evaluate process is very similar to the training process. However, in the evaluate process, &lt;em&gt;torch.no_grad()&lt;/em&gt; is required because the weights must never change.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/5cb29e6e63d6c0a68a70742b2a1eba9d.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 19 Jul 2020 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(TF) Basic Steps for Training a Model</title>
-        <link>/research/ml&dl/2020/07/18/tf-basic-structure.html</link>
-        <guid isPermaLink="true">/research/ml&dl/2020/07/18/tf-basic-structure.html</guid>
-        <description>&lt;p&gt;TesorFlow is one of the most well-known deep learning frameworks. This posting will describe the basic steps for training a model with Tensorflow. Briefly, the basic steps for how to train a model through TensorFlow are as follow.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Load &amp;amp; pre-process the dataset&lt;/li&gt;
-  &lt;li&gt;Set a model&lt;/li&gt;
-  &lt;li&gt;Compile the model : set an optimizer, a loss function, &amp;amp; metrics&lt;/li&gt;
-  &lt;li&gt;Fit the model&lt;/li&gt;
-  &lt;li&gt;Evaluate the model&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Full code can be found at the following github repository.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/deep_dive_into_tensorflow/blob/master/tutorials/TF_Basic/basic%20structure.ipynb&quot;&gt;Park’s GitHub &amp;gt; Basic Structure of Training a Model&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/quickstart/beginner&quot;&gt;TensorFlow official website &amp;gt; TensorFlow 2 quickstart for beginners&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tutorials/quickstart/advanced&quot;&gt;TensorFlow official website &amp;gt; TensorFlow 2 quickstart for experts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/tensorboard/get_started&quot;&gt;TensorFlow official website &amp;gt; Get started with TensorBoard&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;1-load--pre-process-the-dataset&quot;&gt;1. Load &amp;amp; pre-process the dataset&lt;/h1&gt;
-
-&lt;p&gt;For the experiment to show the basic process of training a model with TensorFlow, we used the MNIST dataset. The given images are a grayscale, so we need a preprocessing process to scale the image data features from 0 to 1.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/8a18592350c64011bb603bc359f32691.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;2-set-a-model&quot;&gt;2. Set a model&lt;/h1&gt;
-
-&lt;p&gt;In this step, we designed the structure of a model. The model in this experiment was relatively simple, so it could be easier to construct the model using &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/keras/Sequential&quot;&gt;tf.keras.Sequential&lt;/a&gt;. However, we use custumized model for the experiment. This is because a custumized model must be used when constructing a more complex model in the future, and it is necessary to become familiar with it. More specifically, in case of the model becomes complicated and the input features do not flow sequentially, the model must be constructed in a custum manner. &lt;a href=&quot;https://www.tensorflow.org/tutorials/text/transformer&quot;&gt;Transformer model&lt;/a&gt; is a good example.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/36bc28aa8f6e9005494d40603cccd5e7.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;optional-set-callbacks&quot;&gt;(optional) Set callbacks&lt;/h2&gt;
-&lt;h2 id=&quot;checkpoint&quot;&gt;checkpoint&lt;/h2&gt;
-
-&lt;p&gt;We set &lt;em&gt;checkpoint&lt;/em&gt; callback to record the training process of the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e5a2c5bc5d9f9634c2d97ee93c998c52.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;tensorboard&quot;&gt;tensorboard&lt;/h2&gt;
-
-&lt;p&gt;We set &lt;em&gt;tensorboard&lt;/em&gt; callback to visualize the training process and strucutre of the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b8688659e5d183e5d82863d0972fc16d.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;reduce-learning-rate&quot;&gt;reduce learning rate&lt;/h2&gt;
-
-&lt;p&gt;We set &lt;em&gt;reduce-learning-rate&lt;/em&gt; callback for better training result of the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/cfea4379c657f506dd3dbf7d4f0adc3d.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;3-compile-the-model&quot;&gt;3. Compile the model&lt;/h1&gt;
-&lt;h2 id=&quot;set-optimizer-loss-function--metrics&quot;&gt;Set optimizer, loss function, &amp;amp; metrics&lt;/h2&gt;
-
-&lt;p&gt;After constructing the model, you need to set the learning process by calling the &lt;em&gt;compile method&lt;/em&gt;. Compile method has three important parameters; &lt;em&gt;optimizer, loss, and metrics&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;The &lt;em&gt;optimizer&lt;/em&gt; sets up the training process. The &lt;em&gt;loss&lt;/em&gt; sets the loss function to be minimized during the optimization process. The &lt;em&gt;metrics&lt;/em&gt; are used to monitor training. These should be set differently depending on the type of feature data and the purpose of the model.&lt;/p&gt;
-
-&lt;p&gt;The model was compiled using the set optimizer, loss, and metrics.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/0f16de0b5385716af46692a163dc51dd.js&quot;&gt;&lt;/script&gt;
-   &lt;script src=&quot;https://gist.github.com/jhyun0919/a5546b9e76e294ecc1362665cca1d048.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;4-fit-the-model&quot;&gt;4. Fit the model&lt;/h1&gt;
-
-&lt;p&gt;We conducted training using the preprocessed dataset and the compiled model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/bbc01cdfc18a32a1afe05c30ef846ccf.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;optional-check-the-training-process-via-tensorboard&quot;&gt;(Optional) Check the training process via tensorboard&lt;/h2&gt;
-
-&lt;p&gt;Through the tensorboard callback set in the previous step, we visualized the training process and the model graph. Figure 1 shows the training process of the model.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e196847e8797b94e947fb43081c69014.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-19-tf basic structure/tensorboard eg.png&quot; width=&quot;95%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1. Checking the training process with tensorboard.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;optional-load-the-best-weights&quot;&gt;(Optional) Load the best weights&lt;/h2&gt;
-
-&lt;p&gt;Through the checkpoint callback set in the previous step, we loaded the weights showing the best performance.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/e08262f64e42a6897de8cb360a7f3533.js&quot;&gt;&lt;/script&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;5-evaluate-the-model&quot;&gt;5. Evaluate the model&lt;/h1&gt;
-
-&lt;p&gt;As a final step, we evaluated the performance of the model using the test dataset.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;  &lt;script src=&quot;https://gist.github.com/jhyun0919/b83301942dc8f6ac7facbeafe47c0eb4.js&quot;&gt;&lt;/script&gt;
-&lt;/p&gt;
-</description>
-        <pubDate>Sat, 18 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
   </channel>

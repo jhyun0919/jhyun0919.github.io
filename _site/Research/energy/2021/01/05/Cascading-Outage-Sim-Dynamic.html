@@ -225,18 +225,15 @@
     </p>
   </header>
   <section class="post-content" style="width:77%; margin:0 auto;">
-    <p>This article is about a review of the paper [1], and is the first part of a personal research project to apply Graph Neural Network (GNN) to the field of cascading outage prediction or detection.</p>
+    <p>This article is about a review of the paper <a href="https://ieeexplore.ieee.org/document/7127056">[1]</a>, and is the first part of a personal research project to apply Graph Neural Network (GNN) to the field of cascading outage prediction or detection.</p>
 
 <p>The primary purpose is to create large-scale datasets for training GNN-based models through the cascading outage simulator presented in this paper.</p>
 
 <ul>
-  <li>
-    <p><a href="https://github.com/jhyun0919/GNN-and-Power-Systems/tree/master/Cascading%20Outage">Research Project’s Git Repository</a></p>
-  </li>
-  <li>
-    <p><a href="https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wMkdiT3EyOTc0TERRd0NUdWtmeVF3MzBnI0R5bmFtaWNfTW9kZWxpbmdfb2ZfQ2FzY2FkaW5nX0ZhaWx1cmVfaW5fUG93ZXJfU3lzdGVtcw==">Paper Review in GoodNotes</a></p>
-  </li>
+  <li><a href="https://github.com/jhyun0919/GNN-and-Power-Systems/tree/master/Cascading%20Outage">Research Project’s Git Repository</a></li>
 </ul>
+
+<!-- - [Paper Review in GoodNotes](https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wMkdiT3EyOTc0TERRd0NUdWtmeVF3MzBnI0R5bmFtaWNfTW9kZWxpbmdfb2ZfQ2FzY2FkaW5nX0ZhaWx1cmVfaW5fUG93ZXJfU3lzdGVtcw== ) -->
 
 <hr />
 
@@ -248,7 +245,7 @@
 
 <p>The importance of studying cascading outages has been recognized [2]-[4]. However, since electrical power networks are very large and complex systems [5], understanding the many mechanisms by which cascading outages propagate is challenging [1].</p>
 
-<p>Cadcading outage simulators are designed to set and reproduce scenarios that can occur in the electric grid, and it allow us to study a wide variety of different mechanisms of cascading outages.</p>
+<p>Cascading outage simulators are designed to set and reproduce scenarios that can occur in the electric grid, and it allow us to study a wide variety of different mechanisms of cascading outages.</p>
 
 <p><br /></p>
 
@@ -256,7 +253,7 @@
 
 <h2 id="in-the-paper">IN THE PAPER</h2>
 
-<p>The paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system,  called <strong>“Cascading Outage Simulator with Multiprocess Integration Capabilities” (COSMIC)</strong>.</p>
+<p>The paper presents the design of and results from a new non-linear dynamic model of cascading failure in power system,  called <strong>“Cascading Outage Simulator with Multi-process Integration Capabilities” (COSMIC)</strong>.</p>
 
 <p>In COSMIC [1], …</p>
 
@@ -300,7 +297,7 @@
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  i. A set of Differential equations
   ii. A set of Algebraic equations
-  iii. A set of Constarints
+  iii. A set of Constraints
 </code></pre></div></div>
 
 <p><br /></p>
@@ -326,7 +323,7 @@
 
 <ul>
   <li>
-    <p>$\mathbf{y}$ is a vector fo <strong>continuous state variables</strong> that have pure <strong>algebraic relationships</strong> to other variables in the system.</p>
+    <p>$\mathbf{y}$ is a vector of <strong>continuous state variables</strong> that have pure <strong>algebraic relationships</strong> to other variables in the system.</p>
   </li>
   <li>
     <p>(2) encapsulate the standard <strong>ac power flow equations</strong> (<em>APPENDIX - B</em>).</p>
@@ -601,13 +598,13 @@ Figure 5. Bus voltage magnitudes when the branch from bus 6 to bus 9 in the 9-bu
 
 <ul>
   <li>
-    <p>A single-line outage was occured at $t=10$ seconds, and  DIST relay timer activate.</p>
+    <p>A single-line outage was occurred at $t=10$ seconds, and  DIST relay timer activate.</p>
   </li>
   <li>
     <p>$t_{preset-delay}=0.5$</p>
   </li>
   <li>
-    <p>$P_1 (t=10.5)$: $t_{delay}$ ran out, and another line outage was occured.</p>
+    <p>$P_1 (t=10.5)$: $t_{delay}$ ran out, and another line outage was occurred.</p>
   </li>
   <li>
     <p>$P_2$: the magenta voltage trace violated the limit, and UVLS relay timer activate.</p>
@@ -822,13 +819,13 @@ Figure 9. CCDF Demand Loss for COSMIC &amp; DC Simulator [1]
     <p>The probability of demand losses in the dc simulator is lower than that of COSMIC for the same amount of demand losses.</p>
   </li>
   <li>
-    <p>The dc model is much more stable and does not run into problems of numerical nonconvergence.</p>
+    <p>The dc model is much <strong>more stable</strong> and does not run into problems of numerical nonconvergence.</p>
   </li>
   <li>
-    <p>COSMIC assumes that the network or sub-network in which the numerical failure occurred experienced a complete blackout.</p>
+    <p>COSMIC assumes that the network or sub-network in which the <strong>numerical failure</strong> occurred experienced <strong>a complete blackout</strong>.</p>
   </li>
   <li>
-    <p>As a result, numerical failures in solving the DAE system greatly contributed to the larger blackout sizes. → It may deteriorate the accuracy.</p>
+    <p>As a result, numerical failures in solving the DAE system greatly contributed to the larger blackout sizes. → It may <strong>deteriorate the accuracy</strong>.</p>
   </li>
 </ul>
 
@@ -843,14 +840,14 @@ Figure 9. CCDF Demand Loss for COSMIC &amp; DC Simulator [1]
     <p>Pros</p>
 
     <ul>
-      <li>It is numerically stable, making it possible to produce results that can be statistically similar to data from real power systems [8].</li>
+      <li>It is <strong>numerically stable</strong>, making it possible to produce results that can be statistically similar to data from real power systems [8].</li>
     </ul>
   </li>
   <li>
     <p>Cons</p>
 
     <ul>
-      <li>It includes numerous simplifications that are substantially different from the “real” system.</li>
+      <li>It includes <strong>numerous simplifications</strong> that are substantially <strong>different from the “real” system</strong>.</li>
     </ul>
   </li>
 </ul>
@@ -864,14 +861,14 @@ Figure 9. CCDF Demand Loss for COSMIC &amp; DC Simulator [1]
     <p>Pros</p>
 
     <ul>
-      <li>It includes many mechanisms of cascading that cannot be represented in the dc model.</li>
+      <li>It <strong>includes many mechanisms</strong> of cascading that cannot be represented in the dc model.</li>
     </ul>
   </li>
   <li>
     <p>Cons</p>
 
     <ul>
-      <li>It needs many assumptions that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.</li>
+      <li>It needs <strong>many assumptions</strong> that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.</li>
     </ul>
   </li>
 </ul>
@@ -880,7 +877,7 @@ Figure 9. CCDF Demand Loss for COSMIC &amp; DC Simulator [1]
 
 <hr />
 
-<h4 id="path-agreement-measurement">Path Agreement Measurement</h4>
+<h4 id="path-agreement-measurement-9">Path Agreement Measurement [9]</h4>
 
 <script type="math/tex; mode=display">R(m_1, m_2) = \sum_{i=1}^{|C|}\frac{1}{C} \frac{|A_i \cap B_i|}{|A_i \cup B_i|} \tag{8}</script>
 
@@ -903,11 +900,16 @@ Table V. Statical Results for the Comparison between COSMIC &amp; DC Simulator [
 
 <ul>
   <li>
-    <p>Figure 13 shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.</p>
+    <p>Table V shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.</p>
   </li>
   <li>
     <p>Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (8).</p>
   </li>
+</ul>
+
+<p><span style="color:green"> Q. WHY DC MODEL TENDS TO PRODEUCE LONGER SCENARIOS??? </span></p>
+
+<ul>
   <li>
     <p>In order to control this, we computed only for <strong>the first ten branch outage events</strong> (early stage).</p>
   </li>
@@ -954,10 +956,10 @@ Table V. Statical Results for the Comparison between COSMIC &amp; DC Simulator [
 
 <h1 id="5-my-reseasrch-project">5. MY RESEASRCH PROJECT</h1>
 
-<h2 id="purpose-5">Purpose</h2>
+<h2 id="purpose--goal">Purpose / Goal</h2>
 
 <ul>
-  <li>Forcast or detect (in real-time) cascading outages in power systems.</li>
+  <li><strong>Forecast or detect</strong> (in real-time) cascading outages in power systems.</li>
 </ul>
 
 <p><br /></p>
@@ -976,32 +978,64 @@ Table V. Statical Results for the Comparison between COSMIC &amp; DC Simulator [
 
 <ul>
   <li>
-    <p>Need to introduce randomness to create large size of dataset.</p>
+    <p>Need to introduce <strong>randomness</strong> to create large size of dataset.</p>
   </li>
   <li>
-    <p>Randomness will be given by the method that generated the uncertainty realization in [9].</p>
-  </li>
-  <li>
-    <p><a href="">generate_dataset.ipynb</a></p>
+    <p>Randomness will be given by the method that generated the uncertain loads in <a href="https://arxiv.org/abs/1902.05607">[10]</a>:</p>
+
+    <script type="math/tex; mode=display">d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)</script>
+
+    <ul>
+      <li>
+        <p>$d$ is a load.</p>
+      </li>
+      <li>
+        <p>$\mathcal{N}$ is normal distribution with mean zero and standard deviation proportional to the load.</p>
+      </li>
+    </ul>
   </li>
 </ul>
 
-<p><br /></p>
-
-<h3 id="step-2-model-gnn-model-structure">Step 2. Model GNN Model Structure</h3>
+<p><span style="color:green"> Q. WHICH FEATURES (e.g. $P_d, Q_d, P_g, Q_g$ or outage event time $t_{event}$) SHOULD BE GIVEN RANDOMNESS? </span></p>
 
 <ul>
   <li>
-    <p>Does the model sturcture is proper for the goal?</p>
-  </li>
-  <li>
-    <p>What is the strength of the model? and why?</p>
+    <p>Codes</p>
+
+    <ul>
+      <li>
+        <p><a href="https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py">Generate N-2 Contingency Datasets.py</a></p>
+      </li>
+      <li>
+        <p><a href="https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb">Generate Datasets.ipynb</a></p>
+      </li>
+      <li>
+        <p><a href="https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb">Exploratory Data Analysis.ipynb</a></p>
+      </li>
+    </ul>
   </li>
 </ul>
 
 <p><br /></p>
 
-<h3 id="step-3-train-the-model--tune-the-hyper-parameters">Step 3. Train the Model &amp; Tune the Hyper-parameters</h3>
+<h3 id="step-2-design-the-gnn-model-architecture">Step 2. Design the GNN Model Architecture</h3>
+
+<ul>
+  <li>
+    <p>Does the model <strong>ARCHITECTURE</strong> is proper for the <strong>GOAL</strong>?</p>
+  </li>
+  <li>
+    <p>What is the <strong>STRENGTH</strong> of the model <strong>ARCHITECTURE</strong>? and <strong>WHY</strong>?</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="step-3-train--test-the-model">Step 3. Train &amp; Test the Model</h3>
+
+<p><br /></p>
+
+<h3 id="step-4-tune-the-hyper-parameters">Step 4. Tune the Hyper-parameters</h3>
 
 <ul>
   <li>🤔</li>
@@ -1019,7 +1053,7 @@ Table V. Statical Results for the Comparison between COSMIC &amp; DC Simulator [
     <p>Extremely high computational efficiency compared to old methods.</p>
   </li>
   <li>
-    <p>GNN model having significantly fewer nodes (trainable parameters) than other deep learning models.</p>
+    <p>A GNN based model having significantly fewer nodes (trainable parameters) than other deep learning models.</p>
   </li>
 </ul>
 
@@ -1084,7 +1118,7 @@ Table V. Statical Results for the Comparison between COSMIC &amp; DC Simulator [
 
 <p><br /></p>
 
-<h2 id="b-ac-power-flow-equation-10">B. AC power flow equation [10]</h2>
+<h2 id="b-ac-power-flow-equation-11">B. AC power flow equation [11]</h2>
 
 <p>Relation between following three compenets.</p>
 
@@ -1113,6 +1147,7 @@ $$ -->
 <script type="math/tex; mode=display">Q_i = V_i\sum_{k=1}^{n}\{ G_{ik} sin(\theta_i-\theta_k) +B_{ik}cos(\theta_i-\theta_k) \}</script>
 
 <p>where</p>
+
 <ul>
   <li>
     <p>$n$ is the number of buses of the system.</p>
@@ -1125,26 +1160,30 @@ $$ -->
 <p><br /></p>
 
 <hr />
+
 <h1 id="references">REFERENCES</h1>
+
 <p>[1] J. Song, E. Cotilla-Sanchez, G. Ghanavati and P. D. H. Hines, “Dynamic Modeling of Cascading Failure in Power Systems,” in IEEE Transactions on Power Systems, vol. 31, no. 3, pp. 2085-2095, May 2016.</p>
 
-<p>[2] M. Papic et al., “Survey of tools for risk assessment of cascading out- ages,” in Proc. IEEE Power and Energy Soc. General Meeting, 2011, pp. 1–9.</p>
+<p>[2] M. Papic et al., “Survey of tools for risk assessment of cascading outages,” in Proc. IEEE Power and Energy Soc. General Meeting, 2011, pp. 1–9.</p>
 
-<p>[3] M. Vaiman et al., “Risk assessment of cascading outages: method- ologies and challenges,” IEEE Trans. Power Syst., vol. 27, no. 2, pp. 631–641, May 2012.</p>
+<p>[3] M. Vaiman et al., “Risk assessment of cascading outages: methodologies and challenges,” IEEE Trans. Power Syst., vol. 27, no. 2, pp. 631–641, May 2012.</p>
 
-<p>[4] I. Dobson, B. A. Carreras, V. E. Lynch, and D. E. Newman, “Com- plex systems analysis of series of blackouts: cascading failure, critical points, and self-organization,” Chaos: Interdisciplinary J. Nonlinear Sci., vol. 17, no. 2, p. 026103, 2007.</p>
+<p>[4] I. Dobson, B. A. Carreras, V. E. Lynch, and D. E. Newman, “Complex systems analysis of series of blackouts: cascading failure, critical points, and self-organization,” Chaos: Interdisciplinary J. Nonlinear Sci., vol. 17, no. 2, p. 026103, 2007.</p>
 
-<p>[5] M. Eppstein and P. Hines, “A ‘random chemistry’ algorithm for iden- tifying collections of multiple contingencies that initiate cascading failure,” IEEE Trans. Power Syst., vol. 27, no. 3, pp. 1698–1705, Aug. 2012.</p>
+<p>[5] M. Eppstein and P. Hines, “A ‘random chemistry’ algorithm for identifying collections of multiple contingencies that initiate cascading failure,” IEEE Trans. Power Syst., vol. 27, no. 3, pp. 1698–1705, Aug. 2012.</p>
 
 <p>[6] “Trapezoidal Rule,” Math24, 30-Apr-2020. [Online]. Available: https://www.math24.net/trapezoidal-rule/. [Accessed: 07-Jan-2021].</p>
 
 <p>[7] P. Hines, J. Apt, and S. Talukdar, “Large blackouts in North America: historical trends and policy implications,” Energy Policy, vol. 37, no. 12, pp. 5249–5259, 2009.</p>
 
-<p>[8] B. A. Carreras, D. E. Newman, I. Dobson, and N. S. Degala, “Val- idating OPA with WECC data,” in 2013 46th Hawaii Int. Conf. on System Sciences (HICSS), Jan. 2013, pp. 2197–2204.</p>
+<p>[8] B. A. Carreras, D. E. Newman, I. Dobson, and N. S. Degala, “Validating OPA with WECC data,” in 2013 46th Hawaii Int. Conf. on System Sciences (HICSS), Jan. 2013, pp. 2197–2204.</p>
 
-<p>[9] D. Deka and S. Misra, “Learning for DC-OPF: Classifying active sets using neural nets,” 2019 IEEE Milan PowerTech, Milan, Italy, 2019, pp. 1-6.</p>
+<p>[9] R. Fitzmaurice, E. Cotilla-Sanchez, and P. Hines, “Evaluating the impact of modeling assumptions for cascading failure simulation,” in Proc. IEEE Power Energy Soc. General Meeting, Jul. 2012, pp. 1–8.</p>
 
-<p>[10] H.Zhu, “Lecture Note - Ch 06”, The University of Texas at Austin, Austin, TX, EE 369: POWER SYSTEMS ENGINEERING Course, Fall 2019</p>
+<p>[10] D. Deka and S. Misra, “Learning for DC-OPF: Classifying active sets using neural nets,” 2019 IEEE Milan PowerTech, Milan, Italy, 2019, pp. 1-6.</p>
+
+<p>[11] H.Zhu, “Lecture Note - Ch 06”, The University of Texas at Austin, Austin, TX, EE 369: POWER SYSTEMS ENGINEERING Course, Fall 2019</p>
 
   </section>
 

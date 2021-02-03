@@ -2,9 +2,9 @@
 <html class="no-js">
 <head>
 	<meta charset="utf-8">
-	<title> Park's Archive</title>
+	<title>Householder QR Factorization | Park's Archive</title>
 	<meta name="description"
-		content="">
+		content="This article was written by referring to the Fall 2020 Numerical Analysis: Linear Algebra Course and the following links.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -14,7 +14,7 @@
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/2021/01/09/2020-12-15-Cascading-Outage-Sim-QSS.html">
+	<link rel="canonical" href="/research/mathematics/2021/01/14/Householder.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Park's Archive"
@@ -217,15 +217,121 @@
   <div class="content">
     <article >
   <header style="background-image: url('/')">
-    <h1 class="title"></h1>
+    <h1 class="title">Householder QR Factorization</h1>
     
     <p class="meta">
-      January 9, 2021
+      January 14, 2021
       
     </p>
   </header>
   <section class="post-content" style="width:77%; margin:0 auto;">
-    <p>pros and cons of various cascading outage simulators.</p>
+    <p>This article was written by referring to the <em>Fall 2020 Numerical Analysis: Linear Algebra Course</em> and the following links.</p>
+
+<ul>
+  <li><a href="https://www.cs.utexas.edu/users/flame/laff/alaff/chapter03-gram-schmidt.html">ALAFF: Gram-Schmidt Orthogonalization</a></li>
+  <li><a href="https://github.com/ULAFF/ALAFF">ALAFF Git Repository</a></li>
+</ul>
+
+<hr />
+
+<h1 id="unitary-matrix">Unitary Matrix</h1>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-04-Householder/reflector.png" width="70%" />   <figcaption>
+Figure 1.
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<!-- ###################################################################### -->
+
+<h1 id="householder-transformation">Householder transformation</h1>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-04-Householder/Housev.png" width="70%" />   <figcaption>
+Figure 2.
+  </figcaption>
+</figure>
+
+<p>  <script src="https://gist.github.com/jhyun0919/d8e7ad29b9e0de1bc78e7b4b70bd9b2f.js"></script>
+ <em>Code 1. Householder transformation in python.</em></p>
+
+<p><br /></p>
+
+<!-- ###################################################################### -->
+
+<h1 id="householder-qr-factorization-algorithm">Householder QR factorization algorithm</h1>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR_how.png" width="70%" />   <figcaption>
+Figure 3.
+  </figcaption>
+</figure>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR.png" width="70%" />   <figcaption>
+Figure 4.
+  </figcaption>
+</figure>
+
+<p>  <script src="https://gist.github.com/jhyun0919/c65f24fb8416e3f50c8319d9da21f812.js"></script>
+ <em>Code 2. Householder QR factorization in python.</em></p>
+
+<p><br /></p>
+
+<p>  <script src="https://gist.github.com/jhyun0919/867a0d120db1ebe0e4ec0a19201f511a.js"></script>
+ <em>Code 3. Householder LQ factorization in python.</em></p>
+
+<p><br /></p>
+
+<!-- ###################################################################### -->
+
+<h1 id="forming-q">Forming Q</h1>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-04-Householder/FormQ_how.png" width="70%" />   <figcaption>
+Figure 5.
+  </figcaption>
+</figure>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-04-Householder/FormQ.png" width="70%" />   <figcaption>
+Figure 6.
+  </figcaption>
+</figure>
+
+<p>  <script src="https://gist.github.com/jhyun0919/9e626b4fa8f7066550540ab721b1114e.js"></script>
+ <em>Code 4. Form Q from Householder QR factorization in python.</em></p>
+
+<p><br /></p>
+
+<!-- ###################################################################### -->
+
+<h1 id="applying-qh">Applying QH</h1>
+
+<p><br /></p>
+
+<!-- ###################################################################### -->
+
+<h1 id="orthogonality-of-resulting-q">Orthogonality of resulting Q</h1>
+
+<ul>
+  <li><a href="https://github.com/jhyun0919/ALAFF-in-python/blob/main/Assignments/week03/test_orthogonality.ipynb">test_orthogonality.ipynb</a></li>
+</ul>
+
+<!-- ###################################################################### -->
+<h1 id="blocked-householder-qr-factorization">Blocked Householder QR factorization</h1>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-01-04-Householder/HQR_blk.png" width="70%" />   <figcaption>
+Figure 7.
+  </figcaption>
+</figure>
+
+<h2><br /></h2>
+<h1 id="references">References</h1>
+<p>[1]</p>
 
   </section>
 
@@ -233,6 +339,20 @@
   <br>
   <br>
   
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#Math">#Math</a>
+    
+    <a class="tag" href="/tags#Linear+Algebra">#Linear Algebra</a>
+    
+    <a class="tag" href="/tags#Mathematics">#Mathematics</a>
+    
+    <a class="tag" href="/tags#ALAFF">#ALAFF</a>
+    
+  </div>
+</footer>
+
 
 </article>
 
