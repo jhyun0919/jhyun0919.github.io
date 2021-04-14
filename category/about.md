@@ -13,21 +13,28 @@ My primary goal is to create a business model that can contribute substantially 
 ---
 
 # Experience
+
 - **KOREA ELECTRONICS TECHNOLOGY INSTITUTE**  *Sep. 17~Jun. 19*  @ Korea.
+
   - Researcher, Artificial Intelligence Research Center.
+
     - Worked on the ‘Companion Chatbot System’ based on Seq2Seq Natural Language Generation (NLG) & Rule-based algorithms as an Office Assistant.
-    - Participated in Fake News Challenge 2017 project.
 
 <br/>
 
+
 - **NANYANG TECHNOLOGICAL UNIVERSITY**  *Jan. 17~Aug. 17*  @ Singapore.
+
   - Student Research Assistant, Professor Xu Yan’s Research Lab.
+
     - Forecasted demand power with series data using Extreme Learning Machine (ELM) and Hierarchical-Extreme Learning Machine (H-ELM).
 
 <br/>
 
 - **KOREA ELECTRONICS TECHNOLOGY INSTITUTE**  *Sep. 15~Jul. 16*  @ Korea.
+
   - Researcher, Embedded & Software Research Center.
+
     - Conducted an efficient energy management project through monitoring and analyzing sensor data of buildings.
 
 ---
@@ -37,16 +44,25 @@ My primary goal is to create a business model that can contribute substantially 
 ---
 
 # Education
+
 - Master, ECE @ UT Austin
+
 - Bachelor, EE @ SKKU
 
 ---
 
 # Skills
+
 - Python (Tensorflow, PyTorch)
+
+- MATLAB
+
+- MATPOWER
 
 ---
 
 # Languages
+
 - Korean
+
 - English
