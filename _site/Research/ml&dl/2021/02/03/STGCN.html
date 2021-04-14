@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<title>(Paper Review) Spatio-Temporal Graph Convolutional Networks | Park's Archive</title>
+	<meta name="description"
+		content="TL; DR">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="/research/ml&dl/2021/02/03/STGCN.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Park's Archive"
+		href="/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet"
+		type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+		integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
+		integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
+		crossorigin="anonymous"></script>
+	
+
+	<!-- Google Analytics -->
+	
+	<script>
+		(function (i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-151012240-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	
+</head>
+<header class="site-header">
+	<div class="branding">
+		
+		<h1 class="site-title">
+			<a href="/">Park's Archive</a>
+		</h1>
+
+		<nav class="site-nav">
+			<ul>
+				
+				
+
+				<!-- Search bar -->
+				
+				<li>
+					<form action="/search.html" method="get">
+						<input type="text" id="search-box" name="query" placeholder="Search" class="">
+						<button type="submit" class="">
+							<i class="fa fa-fw fa-search"></i>
+						</button>
+					</form>
+				</li>
+				
+
+				<!-- Social icons from Font Awesome, ifenabled  -->
+				
+<li>
+	<a href="/feed.xml" title="Follow RSS feed">
+		<i class="fas fa-fw fa-rss"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="mailto:jhyun0919@utexas.edu" title="Email">
+		<i class="fas fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.facebook.com/park.jhyun0919" title="Follow on Facebook">
+		<i class="fab fa-fw fa-facebook"></i>
+	</a>
+</li>
+
+
+
+
+
+<li>
+	<a href="https://github.com/jhyun0919" title="Follow on GitHub">
+		<i class="fab fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+<li>
+	<a href="http://instagram.com/park._.shape" title="Follow on Instagram">
+		<i class="fab fa-fw fa-instagram"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/jhyun0919/" title="Follow on LinkedIn">
+		<i class="fab fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</ul>
+		</nav>
+	</div>
+
+	<div class="site-category">
+		<ul class='cat1'>
+			<li>
+				<a href="/">Home</a>
+			</li>
+
+			<li>
+				<a href="/">Research</a>
+				<ul>
+					<li>
+						<a href="/Research/CS">CS</a>
+					</li>
+					<li>
+						<a href="/Research/Meeting Log">Dr. Zhu's Group Meeting</a>
+					</li>
+					<li>
+						<a href="/Research/Energy">Energy</a>
+					</li>
+					<li>
+						<a href="/Research/Mathematics">Mathematics</a>
+					</li>
+					<li>
+						<a href="/Research/ML&DL">ML & DL</a>
+					</li>
+					<li>
+						<a href="/Research/RL">RL</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="/">Daily</a>
+				<ul>
+					<li>
+						<a href="/Daily/Essay">Essay</a>
+					</li>
+					<li>
+						<a href="/Daily/Travel">Travel</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="/about">About</a>
+			</li>
+
+
+		</ul>
+	</div>
+
+</header>
+
+<body>
+  <div class="content">
+    <article >
+  <header style="background-image: url('/')">
+    <h1 class="title">(Paper Review) Spatio-Temporal Graph Convolutional Networks</h1>
+    
+    <p class="meta">
+      February 3, 2021
+      
+    </p>
+  </header>
+  <section class="post-content" style="width:77%; margin:0 auto;">
+    <h4 id="tl-dr">TL; DR</h4>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="1-introduction">1. INTRODUCTION</h1>
+
+<h2 id="11-what-is-the-problem">1.1. What is the problem?</h2>
+
+<p>Transportation plays a vital role in everybody’s daily life. According to a survey in 2015, U.S. drivers spend about 48 minutes on average behind the wheel daily [2]. Under this circumstance, an accurate real-time forecast of traffic conditions is of paramount importance for road users, private sectors, and governments.</p>
+
+<p>There were many efforts to monitor the current status of traffic conditions and to predict the future. These studies aimed to contribute to widely used transportation services, such as flow control, route planning, and navigation.</p>
+
+<p><br /></p>
+
+<h2 id="12-history-of-previous-approaches">1.2. History of previous approaches</h2>
+
+<p>Previous studies on traffic prediction can be roughly divided into two categories: <strong>Dynamical modeling</strong> and <strong>Data-driven methods</strong>.</p>
+
+<p>Many researchers are shifting their attention to data-driven approaches, since dynamical modeling methods have drawbacks as follow. 😡</p>
+
+<ul>
+  <li>
+    <p>It requires sophisticated systematic programming.</p>
+  </li>
+  <li>
+    <p>It consumes massive computational power.</p>
+  </li>
+  <li>
+    <p>Impractical assumptions and simplifications among the modeling degrade the prediction accuracy.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p>As a result, <strong>Deep learning approaches</strong>, which are major representatives of data-driven approaches, have been widely and successfully applied to various traffic tasks. Significant progress has been made in following works. 😁</p>
+
+<ul>
+  <li>
+    <p>Deep belief network (DBN) [Jia et al., 2016; Huang et al., 2014]</p>
+  </li>
+  <li>
+    <p>Stacked auto-encoder (SAE) [Lv et al., 2015; Chen et al., 2016]</p>
+  </li>
+</ul>
+
+<p>However, it is difficult for these dense networks to extract spatial and temporal features from the input jointly. 😡</p>
+
+<p><br /></p>
+
+<p>To take full advantage of spatial features, some researchers use <strong>convolutional neural network (CNN)</strong> to capture adjacent relations among the traffic network, along with employing <strong>recurrent neural network (RNN)</strong> on time axis. 😁</p>
+
+<p>However, this approach has limitations as follow. 😡</p>
+
+<ul>
+  <li>
+    <p>The normal convolutional operation applied restricts the model to only process grid structures (e.g. images, videos) rather than general domains.</p>
+  </li>
+  <li>
+    <p>Rrecurrent networks for sequence learning require iterative training, which introduces error accumulation by steps.</p>
+  </li>
+  <li>
+    <p>RNN-based networks are widely known to be difficult to train and computationally heavy.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="13-proposed-approach">1.3. Proposed Approach</h2>
+
+<p>For overcoming the limitations of previous approaches, the author introduces several strategies to effectively model temporal dynamics and spatial dependencies of traffic flow. 😁</p>
+
+<ul>
+  <li>
+    <p>To fully utilize spatial information, the author models the traffic network by a general graph instead of treating it separately (e.g. grids or segments).</p>
+  </li>
+  <li>
+    <p>To handle the inherent deficiencies of recurrent networks, the author employs a fully convolutional structure on time axis.</p>
+  </li>
+</ul>
+
+<p>Above all, the author proposes a novel deep learning architecture, <strong>the spatio-temporal graph convolutional networks (STGCN)</strong>, for traffic forecasting tasks. 🤘
+<!-- This architecture comprises several spatio-temporal convolutional blocks, which are a combination of graph convolutional layers [Defferrard et al., 2016] and convolutional sequence learning layers, to model spatial and temporal dependencies. --></p>
+
+<p><span style="color:green"> Q. IS THERE ANY DRAWBACK??? </span>
+<br />
+<span style="color:blue"> A. </span>
+<br />
+<br /></p>
+
+<hr />
+
+<h1 id="2-preliminary">2. PRELIMINARY</h1>
+<h2 id="21-traffic-prediction-on-road-graphs">2.1. Traffic Prediction on Road Graphs</h2>
+<p><br /></p>
+
+<h4 id="traffic-forecast-as-a-typical-time-series-prediction-problem">Traffic forecast as a typical time-series prediction problem</h4>
+
+<p>Predicting the most likely traffic measurements (e.g. speed or traffic flow) in the next $H$ time steps given the previous $M$ traffic observations as,</p>
+
+<script type="math/tex; mode=display">\hat{v}_{t+1}, ..., \hat{v}_{t+H} = \underset{v_{t+1}, ..., v_{t+H}}{\mathrm{argmax}}\log{P(v_{t+1}, ..., v_{t+H} | v_{t-M+1}, ..., v_{t})}
+
+\tag{1}</script>
+
+<p>where $v_t \in \mathbb{R}^{n}$ is an observation vector of $n$ road segments at time step $t$, each element of which records historical observation for a single road segment.</p>
+
+<p><br /></p>
+
+<h4 id="graph-structured-traffic-time-series-problem">Graph structured traffic time series problem</h4>
+
+<p>In this work, the author defines the <strong>traffic network on a graph</strong> and focuses on <strong>structured traffic time series</strong>. The traffic network is represented as an undirected graph (or directed one) $\mathcal{G_t}$ with weights $w_{ij}$ as shown in Figure 1.</p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/graph_traffic_data.png" width="400" />   <figcaption>
+Figure 1. Graph-structured traffic data. [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>At the $t$-th time step, in graph $\mathcal{G}_t = (\mathcal{V}_t, \mathcal{E}, W)$,</p>
+
+<ul>
+  <li>
+    <p>$\mathcal{V}_t$ is a finite set of vertices, corresponding to the observations from $n$ monitor stations at time $t$.</p>
+  </li>
+  <li>
+    <p>$\mathcal{E}$ is a set of edges, indicating the connectedness between stations.</p>
+  </li>
+  <li>
+    <p>$W \in \mathbb{R}^{n \times n}$ denotes the weighted adgacency matrix of $\mathcal{G}_t$.</p>
+  </li>
+</ul>
+
+<p><span style="color:green"> Q. DOES EDGES CAN HAVE ITS OWN TIME VARIANT VARIABLES??? e.g. temperature of transmission lines in power sys… </span>
+<br />
+<span style="color:blue"> A. </span>
+<br />
+<br /></p>
+
+<h2 id="22-convolutions-on-graphs">2.2. Convolutions on Graphs</h2>
+
+<!-- A standard convolution for regular grids, such as images and video, is clearly not applicable to general graphs. There are two basic approaches currently exploring how to generalize CNNs to structured data forms.
+
+- Expanding the **spatial** definition of a convolution [5]
+
+- Manipulating in the **spectral** domain with graph Fourier transforms [6]
+
+The first approach, using spatial convolution, rearranges the vertices into certain grid forms which can be processed by normal convolutional operations.
+The second approach introduces the spectral framework to apply convolutions in spectral domains, often named as the spectral graph convolution.
+
+<span style="color:green">
+Q. PROS & CONS OF SPATIAL & SPECTRAL???
+</span>
+
+<br>
+
+<span style="color:green">
+Q. WHY AUTHOR CHOOSE SPECTRAL APPROACHES???
+</span>
+
+<br> -->
+
+<p>In this paper, the author introduces the notion of <strong>graph convolution operator</strong> “$*\mathcal{G}$”  based on <strong>the conception of spectral filtering</strong> [7, 8].</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned} y & = \Theta *\mathcal{G} x \\& = \Theta (L) x \\& = \Theta (U \Lambda U^T) x \\&= U \Theta (\Lambda) U^T x \end{aligned}
+\tag{2} %]]></script>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p>$x \in \mathbb{R}^{n}$ is a graph signal as an input (data from each vertex).</p>
+  </li>
+  <li>
+    <p>$y \in \mathbb{R}^{n}$ is filtered signal as an output.</p>
+  </li>
+  <li>
+    <p>$\Theta(\cdot)$ is a kernel (characteristic of the filter).</p>
+  </li>
+  <li>
+    <p>$U = [u_0, …, u_{n-1}] \in \mathbb{R}^{n\times n}$, Graph Fourier basis, is the matrix of eigenvectors of the normalized graph Laplacian $L$.</p>
+  </li>
+  <li>
+    <p>$\Lambda =diag([\lambda_0, …, \lambda_{n-1}]) \in \mathbb{R}^{n\times n}$ is the matrix of eigenvalues of the normalized graph Laplacian $L$.</p>
+
+    <p>(check details of Laplacian matrix in <a href="#appendix 6.1">appendix 6.1</a>)</p>
+  </li>
+</ul>
+
+<p>As a result, a graph signal $x$ is filtered by a kernel $\Theta$ can be defined with multiplication between $\Theta$ and graph Fourier transform $U^T x$ [7].</p>
+
+<p>(check details of graph Fourier transform in <a href="#appendix 6.2">appendix 6.2</a>)</p>
+
+<p>In addition, due to its matrix multiplication, the computational complexity of graph convolution is $\mathcal{O}(n^2)$.</p>
+
+<p><span style="color:green"> Q. WHY “NORMALIZED” L??? </span>
+<br />
+<span style="color:blue"> A. </span>
+<br />
+<br /></p>
+
+<!-- <span style="background-color: #FFFF00">Marked text</span> -->
+
+<hr />
+
+<h1 id="3-proposed-model">3. PROPOSED MODEL</h1>
+
+<h2 id="31-network-architecture">3.1. Network Architecture</h2>
+
+<p>The author proposed a model architecture called spatio-temporal graph convolutional networks (STGCN). As shown in Figure 2, STGCN is composed of several spatio-temporal convolutional blocks.
+Each spatio-temporal convolutional blocks is formed as a “sandwich” structure with two gated sequential convolution layers and one spatial graph convolution layer in between.</p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/stgcn_architecture.png" width="666" />   <figcaption>
+Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h2 id="32-graphs-cnns-for-extracting-spatial-features">3.2. Graphs CNNs for Extracting Spatial Features</h2>
+
+<p>The traffic network generally organizes as a graph structure. Since 2-D convolutions on grids can only capture the spatial locality, attributes of traffic networks (graph structured data) were not fully extracted by 2-D convolution filters.</p>
+
+<p>Accordingly, in STGCN, the graph convolution is employed directly on graph-structured data to extract highly meaningful patterns and features in the space domain.</p>
+
+<p>However, there are two issues of the graph convolution expressed in Eq. (2). 😡</p>
+
+<ul>
+  <li>
+    <p>The kernel is not localized in space yet.</p>
+  </li>
+  <li>
+    <p>The computation of kernel $\Theta$ in graph convolution by Eq. (2) can be expensive due to $\mathcal{O}(n^2)$ multiplications with graph Fourier basis.</p>
+  </li>
+</ul>
+
+<p>The authors applied two approximation strategies to overcome these issues. 😁</p>
+
+<p><br /></p>
+
+<h4 id="chebyshev-polynomials-approximation">Chebyshev Polynomials Approximation</h4>
+
+<p>Chebyshev polynomial $T_k(x)$ is used to approximate kernels as a truncated expansion of order $K-1$ as follows.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}\Theta (\Lambda) & = \sum_{k=0}^{K-1} \theta_k \Lambda^k \\ &\approx \sum_{k=0}^{K-1} \theta_k T_k(\tilde{\Lambda})\end{aligned} %]]></script>
+
+<p>where</p>
+<ul>
+  <li>
+    <p>$\tilde{\Lambda} = 2 \frac{\Lambda}{\lambda_{max}}-I_n$ ($\lambda_{max}$ denotes the largest eigenvalues of $L$).</p>
+  </li>
+  <li>
+    <p>$\theta \in \mathbb{R}^{n}$ is a vector of polynomial coefficient.</p>
+  </li>
+</ul>
+
+<p>(check details of Chebyshev polynomials approximation in <a href="#appendix 6.3">appendix 6.3</a>)</p>
+
+<p>Using the Chebyshev polynomials approximation, the graph convolution can then be rewritten as,</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned} \Theta*\mathcal{G}x  &= \Theta(L)x \\ &\approx \sum_{k=0}^{K-1} \theta_k T_k(\tilde{L})x \end{aligned}
+\tag{3} %]]></script>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p>$T_k(\tilde{L})\in\mathbb{R}^{n\times n}$ is the Chebyshev polynomial of order $k$</p>
+  </li>
+  <li>
+    <p>$\tilde{L} \in \mathbb{R}^{n \times n}$ the scaled Laplacian $\tilde{L} = 2\frac{L}{\lambda_{max}} - I_n$.</p>
+  </li>
+</ul>
+
+<p>As a result, we can localize the filter by restricting kernel $\Theta$ to a polynomial of order $k$.</p>
+
+<p>Moreover, by recursively computing $K$ convolutions through the polynomial approximation, the cost of Eq. (2) can be reduced to $\mathcal{O}(K|\mathcal{E}|)$ as Eq. (3) shows [8].</p>
+
+<p>(check details of Localized convolutions in <a href="#appendix 6.4">appendix 6.4</a>)</p>
+
+<p><span style="color:green"> Q. RESCALED??? WHY??? </span>
+<br />
+<span style="color:blue"> A. It makes eigenvalues in the range [-1, 1] to prepare the recursive computation below. </span>
+<br />
+<br /></p>
+
+<p><span style="color:green"> Q. WHY |E| IN COMPUTAIONAL COMPLEXITY??? </span>
+<br />
+<span style="color:blue"> A. </span></p>
+
+<p><br />
+<br /></p>
+
+<h4 id="1st-order-approximation">1st-order Approximation</h4>
+
+<p>A layer-wise linear formulation can be defined by stacking multiple localized graph convolutional layers with the first-order approximation of graph Laplacian [9].</p>
+
+<!-- Consequently, a deeper architecture can be constructed to recover spatial information in depth without being limited to the explicit parameterization given by the polynomials. -->
+
+<p>Due to the scaling and normalization in neural networks, we can further assume that $\lambda_{max} \approx 2$.</p>
+
+<p><span style="color:green"> Q. THE SCALING AND NORMALIZATION IN NEURAL NETS??? </span>
+<br />
+<span style="color:blue"> A. </span>
+<br />
+<br /></p>
+
+<p>Thus, the Eq. (3) can be simplified to,</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned} \Theta*\mathcal{G}x & \approx \theta_0x + \theta_1(\frac{2}{\lambda_{max}}L-I_n)x \\ &\approx \theta_0x - \theta_1(D^{-1/2}WD^{-1/2})x \end{aligned}
+\tag{4} %]]></script>
+
+<p>where $\theta_0$, $\theta_1$ are two shared parameters of the kernel.</p>
+
+<p>In order to constrain parameters and stabilize numerical performances, $\theta_0$ and $\theta_1$ are replaced by a single parameter $\theta$ by letting $\theta = \theta_0 = -\theta_1$.</p>
+
+<p>Then, the graph convolution can be alternatively expressed as,</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned} \Theta*\mathcal{G}x &= \theta(I_n + D^{-1/2}WD^{-1/2})x \\&= \theta(\tilde{D}^{-1/2}\tilde{W}\tilde{D}^{-1/2})x \end{aligned} \tag{5} %]]></script>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p>$W$ is renormalized by $\tilde{W} = W + I_n$</p>
+  </li>
+  <li>
+    <p>$D$ is renormalized by $\tilde{D_{ii}} = \sum_j{\tilde{W}_{ij}}$.</p>
+  </li>
+</ul>
+
+<!-- Applying a stack of graph convolutions with the 1st-order approximation vertically that achieves the similar effect as $K$-localized convolutions do horizontally, all of which exploit the information from the $(K-1)$-order neighborhood of central nodes. -->
+<p>The authors stack the 1st-order approximation $K$ layers vertically. In this scenario, $K$ is the number of successive filtering operations, and the stack achieves the similar effect as $K$-localized convolutions do horizontally.</p>
+
+<p>Additionally, the layer-wise linear structure is parameter-economic and highly efficient for large-scale graphs, since the order of the approximation is limited to one.</p>
+
+<p>(check details of Localized convolutions in <a href="#appendix 6.4">appendix 6.4</a>)</p>
+
+<p><br /></p>
+
+<h4 id="generalization-of-graph-convolutions">Generalization of Graph Convolutions</h4>
+
+<p>The graph convolution operator “$*\mathcal{G}$” defined on $x \in \mathbb{R}^n$ can be extended to multi-dimensional tensors.</p>
+
+<p>For a signal $C_i$ channels $X \in \mathbb{R}^{n \times C_i}$, the graph convolution can be generalized by,</p>
+
+<script type="math/tex; mode=display">y_i = \sum_{i=1}^{C_i} \Theta_{ij}(L)x_i \in \mathbb{R}^n, 1 \leq j \leq C_o \tag{6}</script>
+
+<p>with the $C_i \times C_o$ vectors of Chebyshev coefficients $\Theta_{ij} \in \mathbb{R}^K$ ($C_i$, $C_o$ are the size of input and output of the feature maps, respectively).</p>
+
+<p>The graph convolution for 2-D variables is denoted as “$\Theta *\mathcal{G}X$” with $\Theta \in \mathbb{R}^{K \times C_i \times C_o}$.</p>
+
+<p><br /></p>
+
+<h2 id="33-gated-cnns-for-extracting-temporal-features">3.3. Gated CNNs for Extracting Temporal Features</h2>
+
+<p>RNNs for traffic prediction still suffer from following. 😡</p>
+
+<ul>
+  <li>time-consuming iterations</li>
+  <li>complex gate mechanisms</li>
+  <li>slow response to dynamic changes.</li>
+</ul>
+
+<p>On the contrary, CNNs have the superiority as follows. 😁</p>
+
+<ul>
+  <li>fast training</li>
+  <li>simple structures</li>
+  <li>no dependency constraints to previous steps.</li>
+</ul>
+
+<p>The authors employ entire convolutional structures on time axis to capture temporal dynamic behaviors of traffic flows.</p>
+
+<p>This specific design allows parallel and controllable training procedures through multi-layer convolutional structures formed as hierarchical representations.</p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/temporal_gated_conv.png" width="273" />   <figcaption>
+Figure 3. Temporal Gated-Conv Block. [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>For each node in graph $\mathcal{G}$, the temporal convolution explores $K_t$ neighbors of input elements without padding which leading to shorten the length of sequences by $K_{t}-1$ each time. Thus, input of temporal convolution for each node can be regarded as a length-$M$ sequence with $C_i$ channels as $Y \in \mathbb{R}^{M \times C_i}$.</p>
+
+<p>The convolution kernel $\Gamma \in \mathbb{R}^{K_t \times C_i \times 2C_o}$ is designed to map the input $Y$ to a single output element $[P : Q] \in \mathbb{R}^{(M-K_t+1) \times (2C_o)}$ ($P, Q$ is split in half with the same size of channels).</p>
+
+<p>As a result, the temporal gated convolution can be defined as,</p>
+
+<script type="math/tex; mode=display">\Gamma * \tau Y=P \odot \sigma (Q) \in \mathbb{R}^{(M-K_t+1) \times C_o} \tag{7}</script>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p>$P, Q$ are input of gates in GLU respectively</p>
+  </li>
+  <li>
+    <p>$\odot$ denotes the element-wise Hadamard product.</p>
+
+    <!-- - Hadamard product (also known as the element-wise, entry wise or Schur product) -->
+  </li>
+  <li>
+    <p>$\sigma$ is sigmoid gate controls which input $P$ of the current states are relevant for discovering compositional structure and dynamic variances in time series.</p>
+  </li>
+</ul>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/GLU.png" width="444" />   <figcaption>
+Figure 4. Gated Linear Unit (GLU). [12]
+  </figcaption>
+</figure>
+
+<p><span style="color:green"> Q. WHY GLU, NOT ReLU OR SOMETHING ELSE??? </span>
+<br />
+<span style="color:blue"> A. </span>
+<br />
+<br /></p>
+
+<p>The non-linearity gates contribute to the exploiting of the full input filed through stacked temporal layers as well. Furthermore, residual connections are implemented among stacked temporal convolutional layers. Similarly, the temporal convolution can also be generalized to 3-D variables by employing the same convolution kernel $\Gamma$ to every node $\mathcal{Y}_i \in \mathbb{R}^{M \times C_i}$ (e.g. sensor stations) in $\mathcal{G}$ equally, noted as “$\Gamma * \tau \mathcal{Y}$” with $\mathcal{Y} \in \mathbb{R}^{M \times n \times C_i}$.</p>
+
+<p><br /></p>
+
+<h2 id="34-spatio-temporal-convolutional-block">3.4. Spatio-Temporal Convolutional Block</h2>
+
+<p>In order to fuse features from both spatial and temporal domains, the spatio-temporal convolutional block (ST-Conv block) is constructed to jointly process graph-structured time series.</p>
+
+<!-- The block itself can be stacked or extended based on the scale and complexity of particular cases. -->
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/st_conv_block.png" width="273" />   <figcaption>
+Figure 5. Spatio-Temporal Convolutional (ST-Conv) Block. [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<p>As illustrated in Figure 5, the spatial layer in the middle is to bridge two temporal layers which can achieve fast spatial-state propagation from graph convolution through temporal convolutions.</p>
+
+<p>The “sandwich” structure also helps the network sufficiently apply bottleneck strategy to achieve scale compression and feature squeezing by downscaling and upscaling of channels $C$ through the graph convolutional layer.</p>
+
+<p><span style="color:green"> Q. WHY IT HAS A SANDWICH STRUCTURE??? </span>
+<br />
+<span style="color:blue"> A. </span>
+<br />
+<br /></p>
+
+<p>Moreover, layer normalization is utilized within every ST-Conv block to prevent overfitting.</p>
+
+<p>The input and output of ST-Conv blocks are all 3-D tensors. For the input $v^l \in \mathbb{R}^{M \times n \times C^l}$ of block $l$, the output $v^{l+1} \in \mathbb{R}^{(M-2(K_t-1)) \times n \times C^{l+1}}$is computed by,</p>
+
+<script type="math/tex; mode=display">v^{l+1} = \Gamma_1^l * \tau ReLU(\Theta^l * \mathcal{G}(\Gamma_0^l * \tau v^l)) \tag{8}</script>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p>$\Gamma_0^l$, $\Gamma_1^l$ are the upper and lower temporal kernel within block $l$, respectively.</p>
+  </li>
+  <li>
+    <p>$\Theta^l$ is the spectral kernel of graph convolution</p>
+  </li>
+  <li>
+    <p>$ReLU(\cdot)$ denotes the rectified linear units function.</p>
+  </li>
+</ul>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/st_convs_fcn.png" width="273" />   <figcaption>
+Figure 6. The framework STGCN consists of two ST-Conv blocks and a fully-connected output layer in the end. [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h2 id="35-loss-function">3.5. Loss Function</h2>
+
+<p>We use L2 loss to measure the performance of our model.</p>
+
+<script type="math/tex; mode=display">L(\hat{v};W_{\theta})=\sum_{t}\| \hat{v}(v_{t-M+1}, ..., v_t, W_\theta) - v_{t+1} \|^2 \tag{9}</script>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p>$W_\theta$ are all trainable parameters in the model</p>
+  </li>
+  <li>
+    <p>$v_{t+1}$ is the ground truth</p>
+  </li>
+  <li>
+    <p>$\hat{v}(\cdot)$ denotes the model’s prediction</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="36-recap-of-the-main-characteristics-stgcn">3.6. Recap of the Main Characteristics STGCN</h2>
+
+<ul>
+  <li>
+    <p>STGCN is a universal framework to process structured time series. It is not only able to tackle traffic network modeling and prediction issues but also to be applied to more general spatio-temporal sequence learning tasks.</p>
+  </li>
+  <li>
+    <p>The spatio-temporal block combines graph convolutions and gated temporal convolutions, which can extract the most useful spatial features and capture the most essential temporal features coherently.</p>
+  </li>
+  <li>
+    <p>The model is entirely composed of convolutional structures and therefore achieves parallelization over input with fewer parameters and faster training speed. More importantly, this economic architecture allows the model to handle large-scale networks with more efficiency.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="4-experiments--results">4. EXPERIMENTS &amp; RESULTS</h1>
+
+<p><br /></p>
+
+<h2 id="41-dataset-description">4.1. Dataset Description</h2>
+
+<p><strong>BJER4</strong> was gathered from the major areas of east ring No.4 routes in Beijing City by double-loop detectors.</p>
+
+<ul>
+  <li>
+    <p>The traffic data are aggregated every 5 minutes.</p>
+  </li>
+  <li>
+    <p>There are 12 roads selected for the experiment.</p>
+  </li>
+</ul>
+
+<p><strong>PeMSD7</strong> was collected from Caltrans Performance Measurement System (PeMS) in real-time by over 39,000 sensor stations, deployed across the major metropolitan areas of California state highway system [Chen et al., 2001].</p>
+
+<ul>
+  <li>
+    <p>The traffic data are aggregated every 5 minutes.</p>
+  </li>
+  <li>
+    <p>The authors randomly select a medium and a large scale among the District 7 of California containing 228 and 1,026 stations, labeled as <strong>PeMSD7(M)</strong> and <strong>PeMSD7(L)</strong>, respectively, as data sources (shown in the left of Figure 7).</p>
+  </li>
+</ul>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/PeMS_PeMSD7.png" width="666" />   <figcaption>
+Figure 7. PeMS sensor network in District 7 of California (left), each dot denotes a sensor station; Heat map of weighted adjacency matrix in PeMSD7(M) (right). [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h2 id="42-data-preprocessing">4.2. Data Preprocessing</h2>
+
+<script type="math/tex; mode=display">% <![CDATA[
+w_{ij} = \begin{cases} exp(-\frac{d_{ij}^{2}}{\sigma^{2}})&, & i\neq j & \text{and} & exp(-\frac{d_{ij}^{2}}{\sigma^{2}}) \geq \epsilon \\ 0 &, & \text{otherwise} \end{cases}
+\tag{10} %]]></script>
+
+<p><br /></p>
+
+<h2 id="43-experimental-settings">4.3. Experimental Settings</h2>
+
+<p>All the tests use 60 minutes as the historical time window.</p>
+
+<script type="math/tex; mode=display">\hat{v}_{t+1}, ..., \hat{v}_{t+H} = \underset{v_{t+1}, ..., v_{t+H}}{\mathrm{argmax}}\log{P(v_{t+1}, ..., v_{t+H} | v_{t-M+1}, ..., v_{t})}
+
+\tag{1}</script>
+
+<p>With Eq. (1) and the time window setting, 12 observed data points ($M = 12$) are used to forecast traffic conditions in the next 15, 30, and 45 minutes ($H = 3, 6, 9$).</p>
+
+<p><br /></p>
+
+<h2 id="44-experimental-results">4.4. Experimental Results</h2>
+
+<h4 id="benefits-of-spatial-topology">Benefits of Spatial Topology</h4>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/table1.png" width="600" />   <figcaption>
+Table 1. Performance comparison of different approaches on the dataset BJER4. [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/table2.png" width="800" />   <figcaption>
+Table 2. Performance comparison of different approaches on the dataset PeMSD7. [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/result1.png" width="666" />   <figcaption>
+Figure 8. Speed prediction in the morning peak and evening rush hours of the dataset PeMSD7. [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<h4 id="training-efficiency-and-generalization">Training Efficiency and Generalization</h4>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/result2.png" width="666" />   <figcaption>
+Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the number of training epochs (right). (PeMSD7(M)) [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/table3.png" width="500" />   <figcaption>
+Table 3. Time consumptions of training on the dataset PeMSD7. [1]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="5-conclusion--future-work">5. CONCLUSION &amp; FUTURE WORK</h1>
+
+<p>In this paper,</p>
+
+<ul>
+  <li>we propose a novel deep learning framework STGCN for traffic prediction</li>
+  <li>integrating graph convolution and gated temporal convolution through spatio-temporal convolutional blocks.</li>
+</ul>
+
+<p>Experiments show that our model outperforms other state-of-the-art methods on two real-world datasets, indicating its great potentials on exploring spatio-temporal structures from the input.</p>
+
+<p>It also achieves</p>
+
+<ul>
+  <li>faster training</li>
+  <li>easier convergences</li>
+  <li>fewer parameters with flexibility and scalability</li>
+</ul>
+
+<p>These features are quite promising and practical for scholarly development and large-scale industry deployment. In the future, we will further optimize the network structure and parameter settings.</p>
+
+<p>Moreover, our proposed framework can be applied into more general spatio-temporal structured sequence forecasting scenarios, such as evolving of social networks, and preference prediction in recommendation systems, etc.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="6-appendix">6. APPENDIX</h1>
+
+<p><a name="appendix 6.1"></a></p>
+
+<h2 id="61-laplacian--symmetric-normalized-laplacian-10">6.1. Laplacian &amp; Symmetric normalized Laplacian [10]</h2>
+
+<p><br /></p>
+
+<h4 id="laplacian">Laplacian</h4>
+
+<p>Given a simple graph $\mathcal{G}$ with $n$ vertices, its Laplacian matrix $L_{n \times n}$ is defined as,</p>
+
+<script type="math/tex; mode=display">L = D - A</script>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p>$D$ is the degree matrix of the graph.</p>
+  </li>
+  <li>
+    <p>$A$ is adjacency matrix.</p>
+  </li>
+</ul>
+
+<p>The elements of $L$ are given by</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+L_{ij}:= \begin{cases} deg(v_i) &\text{if } i=j \\ -1 &\text{if } i\neq j \text{ and } v_i \text{ is adjacent to } v_j \\ 0 &\text{otherwise} \end{cases} %]]></script>
+
+<p>where</p>
+
+<ul>
+  <li>$deg(v_i)$ is the degree of the vertex $i$.</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="symmetric-normalized-laplacian">Symmetric normalized Laplacian</h4>
+
+<p>The symmetric normalized Laplacian matrix is defined as,</p>
+
+<script type="math/tex; mode=display">L = I - D^{-1/2} A D^{-1/2}</script>
+
+<p>The elements of $L^{sym}$ are given by</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+L_{ij}:=
+\begin{cases}
+1 &\text{if } i=j \text{ and } deg(v_i) \neq 0\\
+-\frac{1}{\sqrt{deg(v_i)deg(v_j)}} &\text{if } i\neq j \text{ and } v_i \text{ is adjacent to } v_j \\
+0 &\text{otherwise}
+\end{cases} %]]></script>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/laplacian_matrix.png" width="666" />   <figcaption>
+Figure 10. Example of a General Graph and its Degree, Adjacency, and Laplacian Matrix. [10]
+  </figcaption>
+</figure>
+
+<p><br /></p>
+
+<p><a name="appendix 6.2"></a></p>
+
+<h2 id="62-graph-fourier-transform">6.2. Graph Fourier transform</h2>
+
+<p>Graph Fourier transform is a mathematical transform which <em>eigendecomposes</em> the Laplacian matrix of a graph into eigenvalues and eigenvectors. Analogously to classical Fourier Transform, the <em>eigenvalues</em> represent <em>frequencies</em> and <em>eigenvectors</em> form what is known as <em>a graph Fourier basis</em> [11].</p>
+
+<p>Lets assume we have a graph $\mathcal{G}_t = (\mathcal{V}, \mathcal{E}, W)$, where $\mathcal{V}$ is a finite set of $|\mathcal{V}|=n$ verices, $\mathcal{E}$ is a set of edges, and $W \in \mathbb{R}^{n\times n}$ is a weighted adjacency matrix.</p>
+
+<p>The definition of Laplacian matrix is</p>
+
+<script type="math/tex; mode=display">L = I_n - D^{-\frac{1}{2}} W D^{-\frac{1}{2}} = U \Lambda U^T \in \mathbb{R}^{n\times n}</script>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p>$I_n$ is an identity matrix.</p>
+  </li>
+  <li>
+    <p>$D \in \mathbb{R}^{n\times n}$ is the diagonal degree matrix with $D_{ii} = \sum_{j}{W_{ij}}$.</p>
+  </li>
+  <li>
+    <p>$U = [u_0, …, u_{n-1}] \in \mathbb{R}^{n\times n}$ is a Graph Fourier basis.</p>
+  </li>
+  <li>
+    <p>$\Lambda =diag([\lambda_0, …, \lambda_{n-1}]) \in \mathbb{R}^{n\times n}$ is the diagonal matrix of eigenvalues of $L$.</p>
+  </li>
+</ul>
+
+<p>The <strong>graph Fourier transform</strong> of a signal $x \in \mathbb{R}^{n}$ is then deinfed as as $\hat{x} = U^{T}x \in \mathbb{R}^{n}$, and its inverse as $x=U\hat{x}$[13].</p>
+
+<p><br /></p>
+
+<p><a name="appendix 6.3"></a></p>
+
+<h2 id="63-chebyshev-polynomial--approximation-14-15">6.3. Chebyshev Polynomial &amp; Approximation [14, 15]</h2>
+
+<p>The Chebyshev polynomials are two sequences of polynomials related to the sine and cosine functions, notated as $T_n(x)$ and $U_n(x)$.</p>
+
+<script type="math/tex; mode=display">T_n(cos(\theta))=cos(n\theta)</script>
+
+<script type="math/tex; mode=display">U_n(cos(\theta))sin(\theta)=sin((n+1)\theta)</script>
+
+<p>The Chebyshev polynomials of the first kind are obtained from the recurrence relation as follows.</p>
+
+<script type="math/tex; mode=display">T_0(x)=1 \\
+T_1(x)=x \\
+T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)</script>
+
+<p>One can obtain polynomials very close to the optimal one by expanding the given function in terms of Chebyshev polynomials and then cutting off the expansion at the desired degree.</p>
+
+<script type="math/tex; mode=display">f(x) \approx \sum_{i=0}^{\infty}{c_i T_{i}(x)}</script>
+
+<p>This is similar to the Fourier analysis of the function, using the Chebyshev polynomials instead of the usual trigonometric functions.</p>
+
+<p><br /></p>
+
+<p><a name="appendix 6.4"></a></p>
+
+<h2 id="64-localized-convolutional-filter">6.4. Localized Convolutional Filter</h2>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned} y & = \Theta *\mathcal{G} x \\& = \Theta (L) x \\& = \Theta (U \Lambda U^T) x \\&= U \Theta (\Lambda) U^T x \end{aligned}
+\tag{2} %]]></script>
+
+<p>the simplest kernerl $\Theta(\cdot)$ is a non-parametic filter, i.e. the kernel parameters $\theta_k \in \mathbb{R}$  $(k=1, …, n)$ are all free.</p>
+
+<script type="math/tex; mode=display">\Theta(\Lambda) = diag(\theta)</script>
+
+<p>Not localized. 😡</p>
+
+<p>Two strategies to localize the filters in space. 😁</p>
+
+<p><br /></p>
+
+<h4 id="restricting-kernel-to-polynomial-by-chebyshev-approximation-horizontal-ver">Restricting kernel to polynomial by Chebyshev approximation (Horizontal ver.)</h4>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}\Theta(\Lambda) &= \sum_{k=0}^{K-1}{\theta_k \Lambda^{k}} \\ &\approx \sum_{k=0}^{K-1}{\theta_k T_{k}(\tilde{\Lambda})}\end{aligned} %]]></script>
+
+<p>where</p>
+<ul>
+  <li>
+    <p>$\tilde{\Lambda} = 2 \frac{\Lambda}{\lambda_{max}}-I_n$ ($\lambda_{max}$ denotes the largest eigenvalues of $L$).</p>
+  </li>
+  <li>
+    <p>$\theta \in \mathbb{R}^{n}$ is a vector of polynomial coefficient.</p>
+  </li>
+</ul>
+
+<p>keypoints</p>
+<ul>
+  <li>$U$ is unitary matrix.</li>
+  <li>$K$ as a radius of the conv filter.</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="applying-a-stack-of-1st-order-approximated-kernel-vertical-ver">Applying a stack of 1st-order approximated kernel (Vertical ver.)</h4>
+
+<p>By 1st-order approximation, we can get a simplified filter as follows.</p>
+
+<script type="math/tex; mode=display">\Theta(\Lambda) \approx \theta_0 + \theta_1(\frac{2}{\lambda_{max}}\Lambda-I_n)</script>
+
+<p>where $\theta_0$, $\theta_1$ are two shared parameters of the kernel.</p>
+
+<p>Applying a stack of graph convolutions with the 1st-order approximation vertically that achieves the similar effect as $K$-localized convolutions do horizontally, all of which exploit the information from the $(K-1)$-order neighborhood of central nodes [1].</p>
+
+<p><br /></p>
+
+<hr />
+<h1 id="reference">Reference</h1>
+
+<p>[1] B. Yu, H. Yin, and Z. Zhu, “Spatio-Temporal Graph Convolutional Networks: A Deep Learning Framework for Traffic Forecasting,” arXiv.org, 12-Jul-2018.</p>
+
+<p>[2] B. Tefft, S. Rosenbloom, R. Santos, and T. Triplett, “American Driving Survey: 2014 – 2015,” AAA Foundation, 14-Jun-2018. [Online]. Available: https://aaafoundation.org/american-driving-survey-2014-2015/. [Accessed: 15-Feb-2021].</p>
+
+<p>[3] Yuhan Jia, Jianping Wu, and Yiman Du, “Traffic speed prediction using deep learning method,” 2016 IEEE 19th International Conference on Intelligent Transportation Systems (ITSC), 2016.</p>
+
+<p>[4] Y. Lv, Y. Duan, W. Kang, Z. Li and F. Wang, “Traffic Flow Prediction With Big Data: A Deep Learning Approach,” in IEEE Transactions on Intelligent Transportation Systems, vol. 16, no. 2, pp. 865-873, April 2015, doi: 10.1109/TITS.2014.2345663.</p>
+
+<p>[5] M. Niepert, M. Ahmed, and K. Kutzkov, “Learning Convolutional Neural Networks for Graphs,” arXiv.org, 08-Jun-2016. [Online]. Available: https://arxiv.org/abs/1605.05273. [Accessed: 05-Apr-2021].</p>
+
+<p>[6] J. Bruna, W. Zaremba, A. Szlam, and Y. LeCun, “Spectral Networks and Locally Connected Networks on Graphs,” arXiv.org, 21-May-2014. [Online]. Available: https://arxiv.org/abs/1312.6203. [Accessed: 05-Apr-2021].</p>
+
+<p>[7] D. I. Shuman, S. K. Narang, P. Frossard, A. Ortega, and P. Vandergheynst, “The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains,” IEEE Signal Processing Magazine, vol. 30, no. 3, pp. 83–98, 2013.</p>
+
+<p>[8] M. Defferrard, X. Bresson, and P. Vandergheynst, “Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering,” arXiv.org, 05-Feb-2017. [Online]. Available: https://arxiv.org/abs/1606.09375. [Accessed: 05-Apr-2021].</p>
+
+<p>[9] T. N. Kipf and M. Welling, “Semi-Supervised Classification with Graph Convolutional Networks,” arXiv.org, 22-Feb-2017. [Online]. Available: https://arxiv.org/abs/1609.02907v4. [Accessed: 05-Apr-2021].</p>
+
+<p>[10] “Laplacian matrix,” Wikipedia, 10-Jan-2021. [Online]. Available: https://en.wikipedia.org/wiki/Laplacian_matrix. [Accessed: 03-Feb-2021].</p>
+
+<p>[11] “Graph Fourier Transform,” Wikipedia, 30-Dec-2020. [Online]. Available: https://en.wikipedia.org/wiki/Graph_Fourier_Transform. [Accessed: 01-Mar-2021].</p>
+
+<p>[12] M. Elbayad, “Rethinking the Design of Sequence-to-Sequence Models for Efficient Machine Translation,” TEL, 03-Nov-2020. [Online]. Available: https://tel.archives-ouvertes.fr/tel-02986998. [Accessed: 09-Apr-2021].</p>
+
+<p>[13] D. I. Shuman, S. K. Narang, P. Frossard, A. Ortega, and P. Vandergheynst, “The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains,” IEEE Signal Processing Magazine, vol. 30, no. 3, pp. 83–98, 2013.</p>
+
+<p>[14] “Chebyshev polynomials,” Wikipedia, 08-Apr-2021. [Online]. Available: https://en.wikipedia.org/wiki/Chebyshev_polynomials. [Accessed: 14-Apr-2021].</p>
+
+<p>[15] “Approximation theory,” 11-Jan-2021. [Online]. Available: https://en.wikipedia.org/wiki/Approximation_theory. [Accessed: 14-Apr-2021].</p>
+
+  </section>
+
+  <br>
+  <br>
+  <br>
+  
+<footer>
+  <div class="tags">
+    
+    <a class="tag" href="/tags#GCN">#GCN</a>
+    
+    <a class="tag" href="/tags#STGCN">#STGCN</a>
+    
+    <a class="tag" href="/tags#Research+Proj">#Research Proj</a>
+    
+  </div>
+</footer>
+
+
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://park-archive.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+</div>
+
+
+<!-- Post navigation -->
+
+  </div>
+  
+<script src="/assets/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+</p>
+</footer>
+
+
+</body>
+
+</html>
+
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script> -->
