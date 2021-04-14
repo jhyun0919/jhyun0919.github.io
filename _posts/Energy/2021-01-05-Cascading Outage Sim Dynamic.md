@@ -2,7 +2,7 @@
 layout: post
 title: (Research Proj) Cascading Outage Simulator - Dynamic
 categories: [Research/Energy]
-tags: [Energy, Power, Cascading Outage, Dynamic, DAE, Research Proj]
+tags: [Energy, Power, Cascading Outage, Dynamic, DAE, Research Proj, Paper review]
 ---
 
 This article is about a review of the paper [[1]](https://ieeexplore.ieee.org/document/7127056), and is the first part of a personal research project to apply Graph Neural Network (GNN) to the field of cascading outage prediction or detection.
