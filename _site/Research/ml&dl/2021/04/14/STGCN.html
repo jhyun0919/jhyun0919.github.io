@@ -2,9 +2,9 @@
 <html class="no-js">
 <head>
 	<meta charset="utf-8">
-	<title>(Paper Review) Spatio-Temporal Graph Convolutional Networks | Park's Archive</title>
+	<title>(Research Proj) Spatio-Temporal Graph Convolutional Networks | Park's Archive</title>
 	<meta name="description"
-		content="TL; DR">
+		content="This article is about a review of the paper [1], and is the second part of a personal research project to utilize the use of Graph Neural Network to the fiel...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
@@ -14,7 +14,7 @@
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="/research/ml&dl/2021/02/03/STGCN.html">
+	<link rel="canonical" href="/research/ml&dl/2021/04/14/STGCN.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="Park's Archive"
@@ -220,15 +220,21 @@
   <div class="content">
     <article >
   <header style="background-image: url('/')">
-    <h1 class="title">(Paper Review) Spatio-Temporal Graph Convolutional Networks</h1>
+    <h1 class="title">(Research Proj) Spatio-Temporal Graph Convolutional Networks</h1>
     
     <p class="meta">
-      February 3, 2021
+      April 14, 2021
       
     </p>
   </header>
   <section class="post-content" style="width:77%; margin:0 auto;">
-    <h4 id="tl-dr">TL; DR</h4>
+    <p>This article is about a review of the paper <a href="https://arxiv.org/abs/1709.04875">[1]</a>, and is the second part of a personal <a href="#my research proj">research project</a> to utilize the use of Graph Neural Network to the field of cascading outage prediction or detection.</p>
+
+<p>I plan to utilize the model architecture used in this paper for cascading outage prediction.</p>
+
+<ul>
+  <li><a href="https://github.com/jhyun0919/GNN-and-Power-Systems/tree/master/Cascading%20Outage">Research Project’s Git Repository</a></li>
+</ul>
 
 <p><br /></p>
 
@@ -246,9 +252,9 @@
 
 <h2 id="12-history-of-previous-approaches">1.2. History of previous approaches</h2>
 
-<p>Previous studies on traffic prediction can be roughly divided into two categories: <strong>Dynamical modeling</strong> and <strong>Data-driven methods</strong>.</p>
+<p>Previous studies on traffic prediction can be roughly divided into two categories: Dynamical modeling and Data-driven methods.</p>
 
-<p>Many researchers are shifting their attention to data-driven approaches, since dynamical modeling methods have drawbacks as follow. 😡</p>
+<p>Many researchers are shifting their attention to data-driven approaches, since <strong>dynamical modeling</strong> methods have drawbacks as follow. 😡</p>
 
 <ul>
   <li>
@@ -264,14 +270,14 @@
 
 <p><br /></p>
 
-<p>As a result, <strong>Deep learning approaches</strong>, which are major representatives of data-driven approaches, have been widely and successfully applied to various traffic tasks. Significant progress has been made in following works. 😁</p>
+<p>As a result, <strong>Deep learning approaches</strong>, which are major representatives of <strong>data-driven approaches</strong>, have been widely and successfully applied to various traffic tasks. Significant progress has been made in following works. 😁</p>
 
 <ul>
   <li>
-    <p>Deep belief network (DBN) [Jia et al., 2016; Huang et al., 2014]</p>
+    <p>Deep belief network (DBN) [3]</p>
   </li>
   <li>
-    <p>Stacked auto-encoder (SAE) [Lv et al., 2015; Chen et al., 2016]</p>
+    <p>Stacked auto-encoder (SAE) [4]</p>
   </li>
 </ul>
 
@@ -313,7 +319,7 @@
 <p>Above all, the author proposes a novel deep learning architecture, <strong>the spatio-temporal graph convolutional networks (STGCN)</strong>, for traffic forecasting tasks. 🤘
 <!-- This architecture comprises several spatio-temporal convolutional blocks, which are a combination of graph convolutional layers [Defferrard et al., 2016] and convolutional sequence learning layers, to model spatial and temporal dependencies. --></p>
 
-<p><span style="color:green"> Q. IS THERE ANY DRAWBACK??? </span>
+<p><span style="color:green"> Q. IS THERE ANY DRAWBACK IN STGCN??? </span>
 <br />
 <span style="color:blue"> A. </span>
 <br />
@@ -363,7 +369,7 @@ Figure 1. Graph-structured traffic data. [1]
   </li>
 </ul>
 
-<p><span style="color:green"> Q. DOES EDGES CAN HAVE ITS OWN TIME VARIANT VARIABLES??? e.g. temperature of transmission lines in power sys… </span>
+<p><span style="color:green"> Q. DOES EDGES CAN HAVE ITS OWN TIME VARIANT VARIABLES??? <br />   (e.g. temperature of transmission lines in power system) </span>
 <br />
 <span style="color:blue"> A. </span>
 <br />
@@ -416,13 +422,13 @@ Q. WHY AUTHOR CHOOSE SPECTRAL APPROACHES???
   <li>
     <p>$\Lambda =diag([\lambda_0, …, \lambda_{n-1}]) \in \mathbb{R}^{n\times n}$ is the matrix of eigenvalues of the normalized graph Laplacian $L$.</p>
 
-    <p>(check details of Laplacian matrix in <a href="#appendix 6.1">appendix 6.1</a>)</p>
+    <p>(check details of Laplacian matrix in <a href="#appendix 7.1">appendix 7.1</a>)</p>
   </li>
 </ul>
 
 <p>As a result, a graph signal $x$ is filtered by a kernel $\Theta$ can be defined with multiplication between $\Theta$ and graph Fourier transform $U^T x$ [7].</p>
 
-<p>(check details of graph Fourier transform in <a href="#appendix 6.2">appendix 6.2</a>)</p>
+<p>(check details of graph Fourier transform in <a href="#appendix 7.2">appendix 7.2</a>)</p>
 
 <p>In addition, due to its matrix multiplication, the computational complexity of graph convolution is $\mathcal{O}(n^2)$.</p>
 
@@ -489,7 +495,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
   </li>
 </ul>
 
-<p>(check details of Chebyshev polynomials approximation in <a href="#appendix 6.3">appendix 6.3</a>)</p>
+<p>(check details of Chebyshev polynomials approximation in <a href="#appendix 7.3">appendix 7.3</a>)</p>
 
 <p>Using the Chebyshev polynomials approximation, the graph convolution can then be rewritten as,</p>
 
@@ -512,7 +518,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 <p>Moreover, by recursively computing $K$ convolutions through the polynomial approximation, the cost of Eq. (2) can be reduced to $\mathcal{O}(K|\mathcal{E}|)$ as Eq. (3) shows [8].</p>
 
-<p>(check details of Localized convolutions in <a href="#appendix 6.4">appendix 6.4</a>)</p>
+<p>(check details of localizing convolution filters in <a href="#appendix 7.4">appendix 7.4</a>)</p>
 
 <p><span style="color:green"> Q. RESCALED??? WHY??? </span>
 <br />
@@ -572,7 +578,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 <p>Additionally, the layer-wise linear structure is parameter-economic and highly efficient for large-scale graphs, since the order of the approximation is limited to one.</p>
 
-<p>(check details of Localized convolutions in <a href="#appendix 6.4">appendix 6.4</a>)</p>
+<p>(check details of localizing convolution filters in <a href="#appendix 7.4">appendix 7.4</a>)</p>
 
 <p><br /></p>
 
@@ -595,17 +601,29 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 <p>RNNs for traffic prediction still suffer from following. 😡</p>
 
 <ul>
-  <li>time-consuming iterations</li>
-  <li>complex gate mechanisms</li>
-  <li>slow response to dynamic changes.</li>
+  <li>
+    <p>time-consuming iterations</p>
+  </li>
+  <li>
+    <p>complex gate mechanisms</p>
+  </li>
+  <li>
+    <p>slow response to dynamic changes.</p>
+  </li>
 </ul>
 
 <p>On the contrary, CNNs have the superiority as follows. 😁</p>
 
 <ul>
-  <li>fast training</li>
-  <li>simple structures</li>
-  <li>no dependency constraints to previous steps.</li>
+  <li>
+    <p>fast training</p>
+  </li>
+  <li>
+    <p>simple structures</p>
+  </li>
+  <li>
+    <p>no dependency constraints to previous steps.</p>
+  </li>
 </ul>
 
 <p>The authors employ entire convolutional structures on time axis to capture temporal dynamic behaviors of traffic flows.</p>
@@ -646,7 +664,7 @@ Figure 3. Temporal Gated-Conv Block. [1]
 
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/GLU.png" width="444" />   <figcaption>
-Figure 4. Gated Linear Unit (GLU). [12]
+Figure 4. Structure of Gated Linear Unit (GLU). [12]
   </figcaption>
 </figure>
 
@@ -738,13 +756,16 @@ Figure 6. The framework STGCN consists of two ST-Conv blocks and a fully-connect
 
 <ul>
   <li>
-    <p>STGCN is a universal framework to process structured time series. It is not only able to tackle traffic network modeling and prediction issues but also to be applied to more general spatio-temporal sequence learning tasks.</p>
+    <p>STGCN is a universal framework to process <strong>structured time series</strong>.</p>
   </li>
   <li>
-    <p>The spatio-temporal block combines graph convolutions and gated temporal convolutions, which can extract the most useful spatial features and capture the most essential temporal features coherently.</p>
+    <p>It is not only able to tackle traffic network modeling and prediction issues but also to be applied to more <strong>general spatio-temporal sequence learning tasks</strong>.</p>
   </li>
   <li>
-    <p>The model is entirely composed of convolutional structures and therefore achieves parallelization over input with fewer parameters and faster training speed. More importantly, this economic architecture allows the model to handle large-scale networks with more efficiency.</p>
+    <p>The spatio-temporal block combines graph convolutions and gated temporal convolutions, which can extract the most useful <strong>spatial features</strong> and capture the most essential <strong>temporal features</strong> coherently.</p>
+  </li>
+  <li>
+    <p>The model is entirely composed of convolutional structures and therefore achieves <strong>parallelization</strong> over input with fewer parameters and faster training speed.</p>
   </li>
 </ul>
 
@@ -758,7 +779,7 @@ Figure 6. The framework STGCN consists of two ST-Conv blocks and a fully-connect
 
 <h2 id="41-dataset-description">4.1. Dataset Description</h2>
 
-<p><strong>BJER4</strong> was gathered from the major areas of east ring No.4 routes in Beijing City by double-loop detectors.</p>
+<p><strong>BJER4</strong> was gathered from the major areas of east ring No.4 routes in <em>Beijing City</em> by double-loop detectors.</p>
 
 <ul>
   <li>
@@ -769,7 +790,7 @@ Figure 6. The framework STGCN consists of two ST-Conv blocks and a fully-connect
   </li>
 </ul>
 
-<p><strong>PeMSD7</strong> was collected from Caltrans Performance Measurement System (PeMS) in real-time by over 39,000 sensor stations, deployed across the major metropolitan areas of California state highway system [Chen et al., 2001].</p>
+<p><strong>PeMSD7</strong> was collected from Caltrans Performance Measurement System (PeMS) in real-time by over 39,000 sensor stations, deployed across the major metropolitan areas of <em>California state</em> highway system.</p>
 
 <ul>
   <li>
@@ -790,9 +811,21 @@ Figure 7. PeMS sensor network in District 7 of California (left), each dot denot
 
 <h2 id="42-data-preprocessing">4.2. Data Preprocessing</h2>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<ul>
+  <li>
+    <p>Interpolation method: Linear interpolation</p>
+  </li>
+  <li>
+    <p>Normalization method: Z-score</p>
+  </li>
+</ul>
+
+<!-- - The weighted adjacency matrix $W$
+
+$$
 w_{ij} = \begin{cases} exp(-\frac{d_{ij}^{2}}{\sigma^{2}})&, & i\neq j & \text{and} & exp(-\frac{d_{ij}^{2}}{\sigma^{2}}) \geq \epsilon \\ 0 &, & \text{otherwise} \end{cases}
-\tag{10} %]]></script>
+\tag{10}
+$$ -->
 
 <p><br /></p>
 
@@ -808,9 +841,69 @@ w_{ij} = \begin{cases} exp(-\frac{d_{ij}^{2}}{\sigma^{2}})&, & i\neq j & \text{a
 
 <p><br /></p>
 
+<h4 id="evaluation-metric">Evaluation Metric</h4>
+
+<p>To measure and evaluate the performance of different methods, three following metrics are adopted.</p>
+
+<ul>
+  <li>
+    <p>Mean Absolute Errors (MAE)</p>
+  </li>
+  <li>
+    <p>Mean Absolute Percentage Errors (MAPE)</p>
+  </li>
+  <li>
+    <p>Root Mean Squared Errors (RMSE)</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="baselines">Baselines</h4>
+
+<p>The authors set up two types of models based on STGCN framework.</p>
+
+<ul>
+  <li>
+    <p>STGCN(Cheb) with the Chebyshev polynomials approximation</p>
+  </li>
+  <li>
+    <p>STGCN(1st) with the 1st-order approximation ($K=1$).</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p>STGCN based models are compared with following baselines.</p>
+
+<ul>
+  <li>
+    <p>Historical Average (HA)</p>
+  </li>
+  <li>
+    <p>Linear Support Victor Regression (LSVR)</p>
+  </li>
+  <li>
+    <p>Auto-Regressive Integrated Moving Average (ARIMA)</p>
+  </li>
+  <li>
+    <p>Feed-Forward Neural Network (FNN)</p>
+  </li>
+  <li>
+    <p>Full-Connected LSTM (FC-LSTM)</p>
+  </li>
+  <li>
+    <p>Graph Convolutional GRU (GCGRU)</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
 <h2 id="44-experimental-results">4.4. Experimental Results</h2>
 
 <h4 id="benefits-of-spatial-topology">Benefits of Spatial Topology</h4>
+
+<p>Through effectively utlizing spatial structure of the given data, the STGCN based models have achieved a significant improvement on short and mid-and-long term forecasting.</p>
 
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/table1.png" width="600" />   <figcaption>
@@ -838,58 +931,237 @@ Figure 8. Speed prediction in the morning peak and evening rush hours of the dat
 
 <h4 id="training-efficiency-and-generalization">Training Efficiency and Generalization</h4>
 
-<figure align="center">
-<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/result2.png" width="666" />   <figcaption>
-Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the number of training epochs (right). (PeMSD7(M)) [1]
-  </figcaption>
-</figure>
-
-<p><br /></p>
+<p>To see the benefits of the convolution along time axis in our proposal, we summarize the comparison of training time between STGCN and GCGRU in Table 3.</p>
 
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/table3.png" width="500" />   <figcaption>
 Table 3. Time consumptions of training on the dataset PeMSD7. [1]
   </figcaption>
 </figure>
-
 <p><br /></p>
+
+<p>In order to further investigate the performance of compared deep learning models, the authors plot the RMSE and MAE of the test set of PeMSD7(M) during the training process, see Figure 9.</p>
+
+<p>Those figures also suggest that the models can achieve muchfaster training procedure and easier convergences. Thanks to the special designs in ST-Conv blocks, the models have superior performances in balancing time consumption and parameter settings.</p>
+
+<p><span style="color:green"> Q. HOW IT ACHIEVES SUPERIOR PERFORMANCE IN BALANCING TIME COMSUMPTION &amp; PARAMETER SETTING??? </span>
+<br />
+<span style="color:blue"> A. </span>
+<br />
+<br /></p>
+
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/result2.png" width="666" />   <figcaption>
+Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the number of training epochs (right). (PeMSD7(M)) [1]
+  </figcaption>
+</figure>
+<p><br /></p>
+
+<p>Moreover, the number of parameters in STGCN ($4.54 \times 10^5$) only accounts for around two third of GCGRU, and saving over 95% parameters compared to FC-LSTM.</p>
 
 <p><br /></p>
 
 <hr />
 
-<h1 id="5-conclusion--future-work">5. CONCLUSION &amp; FUTURE WORK</h1>
+<h1 id="5-conclusion">5. CONCLUSION</h1>
 
-<p>In this paper,</p>
-
-<ul>
-  <li>we propose a novel deep learning framework STGCN for traffic prediction</li>
-  <li>integrating graph convolution and gated temporal convolution through spatio-temporal convolutional blocks.</li>
-</ul>
-
-<p>Experiments show that our model outperforms other state-of-the-art methods on two real-world datasets, indicating its great potentials on exploring spatio-temporal structures from the input.</p>
-
-<p>It also achieves</p>
+<p>In this paper, the authors propose</p>
 
 <ul>
-  <li>faster training</li>
-  <li>easier convergences</li>
-  <li>fewer parameters with flexibility and scalability</li>
+  <li>
+    <p>A novel deep learning framework STGCN for traffic prediction.</p>
+  </li>
+  <li>
+    <p>Integrating graph convolution and gated temporal convolution through spatio-temporal convolutional blocks.</p>
+  </li>
 </ul>
+
+<p>The experiments shows</p>
+
+<ul>
+  <li>
+    <p>Benefits of spatial topology</p>
+
+    <ul>
+      <li>
+        <p>The model outperforms other state-of-the-art methods on two real-world datasets.</p>
+      </li>
+      <li>
+        <p>The results indicate its great potentials on exploring spatio-temporal structures from the input.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Training efficiency and generalization</p>
+
+    <ul>
+      <li>
+        <p>Faster training (parallelization).</p>
+      </li>
+      <li>
+        <p>Fewer parameters with flexibility and scalability.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><span style="color:green"> Q. WHY/HOW IT ACHEIVES FELXIBILITY AND SCALABILITY??? </span>
+<br />
+<span style="color:blue"> A. </span>
+<br />
+<br /></p>
 
 <p>These features are quite promising and practical for scholarly development and large-scale industry deployment. In the future, we will further optimize the network structure and parameter settings.</p>
 
-<p>Moreover, our proposed framework can be applied into more general spatio-temporal structured sequence forecasting scenarios, such as evolving of social networks, and preference prediction in recommendation systems, etc.</p>
+<p>Moreover, the proposed framework can be applied into more general spatio-temporal structured sequence forecasting scenarios, such as evolving of social networks, and preference prediction in recommendation systems, etc.</p>
+
+<p><br /></p>
+
+<hr />
+<p><a name="my research proj"></a></p>
+
+<h1 id="6-my-research-project">6. MY RESEARCH PROJECT</h1>
+
+<h2 id="purpose--goal">Purpose / Goal</h2>
+
+<ul>
+  <li><strong>Forecast or detect</strong> (in real-time) cascading outages in power systems.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="approach">Approach</h2>
+
+<ul>
+  <li>Use a GNN based model to predict or detect cascading outages.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="experiments">Experiments</h2>
+
+<h3 id="step-1-data-generation">Step 1. Data Generation</h3>
+
+<ul>
+  <li>
+    <p>Need to introduce <strong>randomness</strong> to create large size of dataset.</p>
+  </li>
+  <li>
+    <p>Randomness will be given by the method that generated the uncertain loads in <a href="https://arxiv.org/abs/1902.05607">[16]</a>:</p>
+
+    <script type="math/tex; mode=display">d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)</script>
+
+    <ul>
+      <li>
+        <p>$d$ is a load.</p>
+      </li>
+      <li>
+        <p>$\mathcal{N}$ is normal distribution with mean zero and standard deviation proportional to the load.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><span style="color:green"> Q. WHICH FEATURES (e.g. $P_d, Q_d, P_g, Q_g$ or outage event time $t_{event}$) SHOULD BE GIVEN RANDOMNESS? </span>
+<br />
+<span style="color:blue"> A. </span>
+<br /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>Codes</p>
+
+    <ul>
+      <li>
+        <p><a href="https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py">Generate N-2 Contingency Datasets.py</a></p>
+      </li>
+      <li>
+        <p><a href="https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb">Generate Datasets.ipynb</a></p>
+      </li>
+      <li>
+        <p><a href="https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb">Exploratory Data Analysis.ipynb</a></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="step-2-design-the-gnn-model-architecture">Step 2. Design the GNN Model Architecture</h3>
+
+<ul>
+  <li>
+    <p>The model should able to utilze <strong>spatial</strong> and <strong>temporal</strong> feature of the data.</p>
+
+    <ul>
+      <li>
+        <p><em>graph structured</em> data: spatial feature</p>
+      </li>
+      <li>
+        <p><em>time series</em> data: temporal feature</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Models based on <strong>STGCN architecture</strong> [1] can extract and learn the both features (spatial &amp; temporal) from the data.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>Codes</p>
+
+    <ul>
+      <li>yet ready…😭</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="step-3-train--test-the-model">Step 3. Train &amp; Test the Model</h3>
+
+<ul>
+  <li>🤔</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="step-4-tune-the-hyper-parameters">Step 4. Tune the Hyper-parameters</h3>
+
+<ul>
+  <li>🤔</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="results-what-we-want-to-see">Results (What we want to see…)</h2>
+
+<ul>
+  <li>
+    <p>High enough prediction (or detection) accuracy.</p>
+  </li>
+  <li>
+    <p>Extremely high computational efficiency compared to old methods.</p>
+  </li>
+  <li>
+    <p>A GNN based model having significantly fewer nodes (trainable parameters) than other deep learning models.</p>
+  </li>
+</ul>
 
 <p><br /></p>
 
 <hr />
 
-<h1 id="6-appendix">6. APPENDIX</h1>
+<h1 id="7-appendix">7. APPENDIX</h1>
 
-<p><a name="appendix 6.1"></a></p>
+<p><a name="appendix 7.1"></a></p>
 
-<h2 id="61-laplacian--symmetric-normalized-laplacian-10">6.1. Laplacian &amp; Symmetric normalized Laplacian [10]</h2>
+<h2 id="71-laplacian--symmetric-normalized-laplacian-10">7.1. Laplacian &amp; Symmetric normalized Laplacian [10]</h2>
 
 <p><br /></p>
 
@@ -947,9 +1219,9 @@ Figure 10. Example of a General Graph and its Degree, Adjacency, and Laplacian M
 
 <p><br /></p>
 
-<p><a name="appendix 6.2"></a></p>
+<p><a name="appendix 7.2"></a></p>
 
-<h2 id="62-graph-fourier-transform">6.2. Graph Fourier transform</h2>
+<h2 id="72-graph-fourier-transform">7.2. Graph Fourier transform</h2>
 
 <p>Graph Fourier transform is a mathematical transform which <em>eigendecomposes</em> the Laplacian matrix of a graph into eigenvalues and eigenvectors. Analogously to classical Fourier Transform, the <em>eigenvalues</em> represent <em>frequencies</em> and <em>eigenvectors</em> form what is known as <em>a graph Fourier basis</em> [11].</p>
 
@@ -976,13 +1248,13 @@ Figure 10. Example of a General Graph and its Degree, Adjacency, and Laplacian M
   </li>
 </ul>
 
-<p>The <strong>graph Fourier transform</strong> of a signal $x \in \mathbb{R}^{n}$ is then deinfed as as $\hat{x} = U^{T}x \in \mathbb{R}^{n}$, and its inverse as $x=U\hat{x}$[13].</p>
+<p>The <strong>graph Fourier transform</strong> of a signal $x \in \mathbb{R}^{n}$ is then deinfed as as $\hat{x} = U^{T}x \in \mathbb{R}^{n}$, and its inverse as $x=U\hat{x}$ [13].</p>
 
 <p><br /></p>
 
-<p><a name="appendix 6.3"></a></p>
+<p><a name="appendix 7.3"></a></p>
 
-<h2 id="63-chebyshev-polynomial--approximation-14-15">6.3. Chebyshev Polynomial &amp; Approximation [14, 15]</h2>
+<h2 id="73-chebyshev-polynomial--approximation-14-15">7.3. Chebyshev Polynomial &amp; Approximation [14, 15]</h2>
 
 <p>The Chebyshev polynomials are two sequences of polynomials related to the sine and cosine functions, notated as $T_n(x)$ and $U_n(x)$.</p>
 
@@ -1004,9 +1276,9 @@ T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)</script>
 
 <p><br /></p>
 
-<p><a name="appendix 6.4"></a></p>
+<p><a name="appendix 7.4"></a></p>
 
-<h2 id="64-localized-convolutional-filter">6.4. Localized Convolutional Filter</h2>
+<h2 id="74-localizing-convolutional-filter-in-space">7.4. Localizing Convolutional Filter in Space</h2>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{aligned} y & = \Theta *\mathcal{G} x \\& = \Theta (L) x \\& = \Theta (U \Lambda U^T) x \\&= U \Theta (\Lambda) U^T x \end{aligned}
@@ -1016,13 +1288,13 @@ T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)</script>
 
 <script type="math/tex; mode=display">\Theta(\Lambda) = diag(\theta)</script>
 
-<p>Not localized. 😡</p>
+<p>The non-parametic filter is not localized in space. 😡</p>
 
 <p>Two strategies to localize the filters in space. 😁</p>
 
 <p><br /></p>
 
-<h4 id="restricting-kernel-to-polynomial-by-chebyshev-approximation-horizontal-ver">Restricting kernel to polynomial by Chebyshev approximation (Horizontal ver.)</h4>
+<h4 id="a-restricting-kernel-to-polynomial-by-chebyshev-approximation-horizontal-ver">A. Restricting kernel to polynomial by Chebyshev approximation (Horizontal ver.)</h4>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{aligned}\Theta(\Lambda) &= \sum_{k=0}^{K-1}{\theta_k \Lambda^{k}} \\ &\approx \sum_{k=0}^{K-1}{\theta_k T_{k}(\tilde{\Lambda})}\end{aligned} %]]></script>
@@ -1045,7 +1317,7 @@ T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)</script>
 
 <p><br /></p>
 
-<h4 id="applying-a-stack-of-1st-order-approximated-kernel-vertical-ver">Applying a stack of 1st-order approximated kernel (Vertical ver.)</h4>
+<h4 id="b-applying-a-stack-of-1st-order-approximated-kernel-vertical-ver">B. Applying a stack of 1st-order approximated kernel (Vertical ver.)</h4>
 
 <p>By 1st-order approximation, we can get a simplified filter as follows.</p>
 
@@ -1090,6 +1362,8 @@ T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)</script>
 
 <p>[15] “Approximation theory,” 11-Jan-2021. [Online]. Available: https://en.wikipedia.org/wiki/Approximation_theory. [Accessed: 14-Apr-2021].</p>
 
+<p>[16] D. Deka and S. Misra, “Learning for DC-OPF: Classifying active sets using neural nets,” 2019 IEEE Milan PowerTech, Milan, Italy, 2019, pp. 1-6.</p>
+
   </section>
 
   <br>
@@ -1104,6 +1378,8 @@ T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)</script>
     <a class="tag" href="/tags#STGCN">#STGCN</a>
     
     <a class="tag" href="/tags#Research+Proj">#Research Proj</a>
+    
+    <a class="tag" href="/tags#Paper+review">#Paper review</a>
     
   </div>
 </footer>
