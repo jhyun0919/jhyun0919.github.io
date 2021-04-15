@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Thu, 15 Apr 2021 00:33:26 -0500</pubDate>
+    <pubDate>Thu, 15 Apr 2021 13:58:32 -0500</pubDate>
     
       <item>
         <title>(Research Proj) Spatio-Temporal Graph Convolutional Networks</title>
@@ -305,7 +305,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. RESCALED??? WHY??? &lt;/span&gt;
 &lt;br /&gt;
-&lt;span style=&quot;color:blue&quot;&gt; A. It makes eigenvalues in the range [-1, 1] to prepare the recursive computation below. &lt;/span&gt;
+&lt;span style=&quot;color:blue&quot;&gt; A. It makes eigenvalues in the range [-1, 1] to prepare for the recursive computation. &lt;/span&gt;
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
@@ -603,6 +603,9 @@ Figure 7. PeMS sensor network in District 7 of California (left), each dot denot
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}Z &amp;= \frac{x-\mu}{\sigma}, \\ &amp; \text{where } \mu \text{ is mean and } \sigma \text{ is standard deviation}.\end{aligned} %]]&gt;&lt;/script&gt;
+
 &lt;!-- - The weighted adjacency matrix $W$
 
 $$
@@ -629,18 +632,28 @@ $$ --&gt;
 &lt;p&gt;To measure and evaluate the performance of different methods, three following metrics are adopted.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Mean Absolute Errors (MAE)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Mean Absolute Percentage Errors (MAPE)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Root Mean Squared Errors (RMSE)&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Mean Absolute Errors (MAE)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{1}{n}\sum_{1}^{n}{\| y_i - \hat{y_i} \|}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mean Absolute Percentage Errors (MAPE)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{100}{n}\sum_{1}^{n}{ \frac{y_i - \hat{y_i}}{y_i} }&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Root Mean Squared Errors (RMSE)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{1}{n}\sum_{1}^{n}{\sqrt{(y_i - \hat{y_i})^2}}&lt;/script&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHY DO WE NEED MULTIPLE METRICS??? &lt;/span&gt;
+&lt;br /&gt;
+&lt;span style=&quot;color:blue&quot;&gt; A. &lt;/span&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;baselines&quot;&gt;Baselines&lt;/h4&gt;
 
@@ -664,7 +677,7 @@ $$ --&gt;
     &lt;p&gt;Historical Average (HA)&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Linear Support Victor Regression (LSVR)&lt;/p&gt;
+    &lt;p&gt;Linear Support Vector Regression (LSVR)&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Auto-Regressive Integrated Moving Average (ARIMA)&lt;/p&gt;
@@ -899,7 +912,7 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
     &lt;p&gt;Codes&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;yet ready…😭&lt;/li&gt;
+      &lt;li&gt;yet not ready…😭&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -1052,10 +1065,11 @@ T_1(x)=x \\
 T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)&lt;/script&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/Chebyshev_Polynomials_of_the_First_Kind.png&quot; width=&quot;400&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/Chebyshev_Polynomials_of_the_First_Kind.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
 Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [14]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;One can obtain polynomials very close to the optimal one by expanding the given function in terms of Chebyshev polynomials and then cutting off the expansion at the desired degree.&lt;/p&gt;
 
@@ -1069,26 +1083,33 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 
 &lt;h2 id=&quot;74-localizing-convolutional-filter-in-space&quot;&gt;7.4. Localizing Convolutional Filter in Space&lt;/h2&gt;
 
+&lt;p&gt;The Eq. (2) represents spectral filtering of graph signal.&lt;/p&gt;
+
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{aligned} y &amp; = \Theta *\mathcal{G} x \\&amp; = \Theta (L) x \\&amp; = \Theta (U \Lambda U^T) x \\&amp;= U \Theta (\Lambda) U^T x \end{aligned}
 \tag{2} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;the simplest kernerl $\Theta(\cdot)$ is a non-parametic filter, i.e. the kernel parameters $\theta_k \in \mathbb{R}$  $(k=1, …, n)$ are all free.&lt;/p&gt;
+&lt;p&gt;The filter is characterized by its kernel ($\Theta(\cdot)$), and the simplest kernerl we can imagine is a non-parametic filter, i.e. the kernel parameters $\theta_k \in \mathbb{R}$  $(k=1, …, n)$ are all free.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\Theta(\Lambda) = diag(\theta)&lt;/script&gt;
 
-&lt;p&gt;The non-parametic filter is not localized in space. 😡&lt;/p&gt;
+&lt;p&gt;In this case, the filter has a limitaion that it is not localized in space. 😡&lt;/p&gt;
 
-&lt;p&gt;Two strategies to localize the filters in space. 😁&lt;/p&gt;
+&lt;p&gt;However, this issue can be solved by following two strategies. 😁&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;a-restricting-kernel-to-polynomial-by-chebyshev-approximation-horizontal-ver&quot;&gt;A. Restricting kernel to polynomial by Chebyshev approximation (Horizontal ver.)&lt;/h4&gt;
 
+&lt;p&gt;We can localize the filter in space by restricting the kernel to a polynomial [8]. As a result, the convolutional filter is restricted as a polynomial filter. Moreover, by using Chebyshev approximation, we could limit the radius of the convolutional operation.&lt;/p&gt;
+
+&lt;p&gt;The localized filter can be expressed as follows.&lt;/p&gt;
+
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{aligned}\Theta(\Lambda) &amp;= \sum_{k=0}^{K-1}{\theta_k \Lambda^{k}} \\ &amp;\approx \sum_{k=0}^{K-1}{\theta_k T_{k}(\tilde{\Lambda})}\end{aligned} %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;where&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;$\tilde{\Lambda} = 2 \frac{\Lambda}{\lambda_{max}}-I_n$ ($\lambda_{max}$ denotes the largest eigenvalues of $L$).&lt;/p&gt;
@@ -1096,12 +1117,9 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
   &lt;li&gt;
     &lt;p&gt;$\theta \in \mathbb{R}^{n}$ is a vector of polynomial coefficient.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;keypoints&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;$U$ is unitary matrix.&lt;/li&gt;
-  &lt;li&gt;$K$ as a radius of the conv filter.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$K$ is a radius of the convolutional filter.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;

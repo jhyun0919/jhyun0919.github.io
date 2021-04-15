@@ -522,7 +522,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 <p><span style="color:green"> Q. RESCALED??? WHY??? </span>
 <br />
-<span style="color:blue"> A. It makes eigenvalues in the range [-1, 1] to prepare the recursive computation below. </span>
+<span style="color:blue"> A. It makes eigenvalues in the range [-1, 1] to prepare for the recursive computation. </span>
 <br />
 <br /></p>
 
@@ -820,6 +820,9 @@ Figure 7. PeMS sensor network in District 7 of California (left), each dot denot
   </li>
 </ul>
 
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}Z &= \frac{x-\mu}{\sigma}, \\ & \text{where } \mu \text{ is mean and } \sigma \text{ is standard deviation}.\end{aligned} %]]></script>
+
 <!-- - The weighted adjacency matrix $W$
 
 $$
@@ -846,18 +849,28 @@ $$ -->
 <p>To measure and evaluate the performance of different methods, three following metrics are adopted.</p>
 
 <ul>
-  <li>
-    <p>Mean Absolute Errors (MAE)</p>
-  </li>
-  <li>
-    <p>Mean Absolute Percentage Errors (MAPE)</p>
-  </li>
-  <li>
-    <p>Root Mean Squared Errors (RMSE)</p>
-  </li>
+  <li>Mean Absolute Errors (MAE)</li>
 </ul>
 
-<p><br /></p>
+<script type="math/tex; mode=display">\frac{1}{n}\sum_{1}^{n}{\| y_i - \hat{y_i} \|}</script>
+
+<ul>
+  <li>Mean Absolute Percentage Errors (MAPE)</li>
+</ul>
+
+<script type="math/tex; mode=display">\frac{100}{n}\sum_{1}^{n}{ \frac{y_i - \hat{y_i}}{y_i} }</script>
+
+<ul>
+  <li>Root Mean Squared Errors (RMSE)</li>
+</ul>
+
+<script type="math/tex; mode=display">\frac{1}{n}\sum_{1}^{n}{\sqrt{(y_i - \hat{y_i})^2}}</script>
+
+<p><span style="color:green"> Q. WHY DO WE NEED MULTIPLE METRICS??? </span>
+<br />
+<span style="color:blue"> A. </span>
+<br />
+<br /></p>
 
 <h4 id="baselines">Baselines</h4>
 
@@ -881,7 +894,7 @@ $$ -->
     <p>Historical Average (HA)</p>
   </li>
   <li>
-    <p>Linear Support Victor Regression (LSVR)</p>
+    <p>Linear Support Vector Regression (LSVR)</p>
   </li>
   <li>
     <p>Auto-Regressive Integrated Moving Average (ARIMA)</p>
@@ -1116,7 +1129,7 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
     <p>Codes</p>
 
     <ul>
-      <li>yet ready…😭</li>
+      <li>yet not ready…😭</li>
     </ul>
   </li>
 </ul>
@@ -1269,10 +1282,11 @@ T_1(x)=x \\
 T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)</script>
 
 <figure align="center">
-<img src="https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/Chebyshev_Polynomials_of_the_First_Kind.png" width="400" />   <figcaption>
+<img src="https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/Chebyshev_Polynomials_of_the_First_Kind.png" width="600" />   <figcaption>
 Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [14]
   </figcaption>
 </figure>
+<p><br /></p>
 
 <p>One can obtain polynomials very close to the optimal one by expanding the given function in terms of Chebyshev polynomials and then cutting off the expansion at the desired degree.</p>
 
@@ -1286,26 +1300,33 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 
 <h2 id="74-localizing-convolutional-filter-in-space">7.4. Localizing Convolutional Filter in Space</h2>
 
+<p>The Eq. (2) represents spectral filtering of graph signal.</p>
+
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{aligned} y & = \Theta *\mathcal{G} x \\& = \Theta (L) x \\& = \Theta (U \Lambda U^T) x \\&= U \Theta (\Lambda) U^T x \end{aligned}
 \tag{2} %]]></script>
 
-<p>the simplest kernerl $\Theta(\cdot)$ is a non-parametic filter, i.e. the kernel parameters $\theta_k \in \mathbb{R}$  $(k=1, …, n)$ are all free.</p>
+<p>The filter is characterized by its kernel ($\Theta(\cdot)$), and the simplest kernerl we can imagine is a non-parametic filter, i.e. the kernel parameters $\theta_k \in \mathbb{R}$  $(k=1, …, n)$ are all free.</p>
 
 <script type="math/tex; mode=display">\Theta(\Lambda) = diag(\theta)</script>
 
-<p>The non-parametic filter is not localized in space. 😡</p>
+<p>In this case, the filter has a limitaion that it is not localized in space. 😡</p>
 
-<p>Two strategies to localize the filters in space. 😁</p>
+<p>However, this issue can be solved by following two strategies. 😁</p>
 
 <p><br /></p>
 
 <h4 id="a-restricting-kernel-to-polynomial-by-chebyshev-approximation-horizontal-ver">A. Restricting kernel to polynomial by Chebyshev approximation (Horizontal ver.)</h4>
 
+<p>We can localize the filter in space by restricting the kernel to a polynomial [8]. As a result, the convolutional filter is restricted as a polynomial filter. Moreover, by using Chebyshev approximation, we could limit the radius of the convolutional operation.</p>
+
+<p>The localized filter can be expressed as follows.</p>
+
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{aligned}\Theta(\Lambda) &= \sum_{k=0}^{K-1}{\theta_k \Lambda^{k}} \\ &\approx \sum_{k=0}^{K-1}{\theta_k T_{k}(\tilde{\Lambda})}\end{aligned} %]]></script>
 
 <p>where</p>
+
 <ul>
   <li>
     <p>$\tilde{\Lambda} = 2 \frac{\Lambda}{\lambda_{max}}-I_n$ ($\lambda_{max}$ denotes the largest eigenvalues of $L$).</p>
@@ -1313,12 +1334,9 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
   <li>
     <p>$\theta \in \mathbb{R}^{n}$ is a vector of polynomial coefficient.</p>
   </li>
-</ul>
-
-<p>keypoints</p>
-<ul>
-  <li>$U$ is unitary matrix.</li>
-  <li>$K$ as a radius of the conv filter.</li>
+  <li>
+    <p>$K$ is a radius of the convolutional filter.</p>
+  </li>
 </ul>
 
 <p><br /></p>
