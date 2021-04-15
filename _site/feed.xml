@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Wed, 14 Apr 2021 20:00:32 -0500</pubDate>
+    <pubDate>Thu, 15 Apr 2021 00:33:26 -0500</pubDate>
     
       <item>
         <title>(Research Proj) Spatio-Temporal Graph Convolutional Networks</title>
@@ -131,7 +131,7 @@
 &lt;p&gt;In this work, the author defines the &lt;strong&gt;traffic network on a graph&lt;/strong&gt; and focuses on &lt;strong&gt;structured traffic time series&lt;/strong&gt;. The traffic network is represented as an undirected graph (or directed one) $\mathcal{G_t}$ with weights $w_{ij}$ as shown in Figure 1.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/graph_traffic_data.png&quot; width=&quot;400&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/graph_traffic_data.png&quot; width=&quot;400&quot; /&gt;   &lt;figcaption&gt;
 Figure 1. Graph-structured traffic data. [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -233,7 +233,7 @@ Q. WHY AUTHOR CHOOSE SPECTRAL APPROACHES???
 Each spatio-temporal convolutional blocks is formed as a “sandwich” structure with two gated sequential convolution layers and one spatial graph convolution layer in between.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/stgcn_architecture.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/stgcn_architecture.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
 Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -414,7 +414,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 &lt;p&gt;This specific design allows parallel and controllable training procedures through multi-layer convolutional structures formed as hierarchical representations.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/temporal_gated_conv.png&quot; width=&quot;273&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/temporal_gated_conv.png&quot; width=&quot;273&quot; /&gt;   &lt;figcaption&gt;
 Figure 3. Temporal Gated-Conv Block. [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -446,7 +446,7 @@ Figure 3. Temporal Gated-Conv Block. [1]
 &lt;/ul&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/GLU.png&quot; width=&quot;444&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/GLU.png&quot; width=&quot;444&quot; /&gt;   &lt;figcaption&gt;
 Figure 4. Structure of Gated Linear Unit (GLU). [12]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -468,7 +468,7 @@ Figure 4. Structure of Gated Linear Unit (GLU). [12]
 &lt;!-- The block itself can be stacked or extended based on the scale and complexity of particular cases. --&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/st_conv_block.png&quot; width=&quot;273&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/st_conv_block.png&quot; width=&quot;273&quot; /&gt;   &lt;figcaption&gt;
 Figure 5. Spatio-Temporal Convolutional (ST-Conv) Block. [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -506,7 +506,7 @@ Figure 5. Spatio-Temporal Convolutional (ST-Conv) Block. [1]
 &lt;/ul&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/st_convs_fcn.png&quot; width=&quot;273&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/st_convs_fcn.png&quot; width=&quot;273&quot; /&gt;   &lt;figcaption&gt;
 Figure 6. The framework STGCN consists of two ST-Conv blocks and a fully-connected output layer in the end. [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -585,7 +585,7 @@ Figure 6. The framework STGCN consists of two ST-Conv blocks and a fully-connect
 &lt;/ul&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/PeMS_PeMSD7.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/PeMS_PeMSD7.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
 Figure 7. PeMS sensor network in District 7 of California (left), each dot denotes a sensor station; Heat map of weighted adjacency matrix in PeMSD7(M) (right). [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -689,7 +689,7 @@ $$ --&gt;
 &lt;p&gt;Through effectively utlizing spatial structure of the given data, the STGCN based models have achieved a significant improvement on short and mid-and-long term forecasting.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/table1.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/table1.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
 Table 1. Performance comparison of different approaches on the dataset BJER4. [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -697,7 +697,7 @@ Table 1. Performance comparison of different approaches on the dataset BJER4. [1
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/table2.png&quot; width=&quot;800&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/table2.png&quot; width=&quot;800&quot; /&gt;   &lt;figcaption&gt;
 Table 2. Performance comparison of different approaches on the dataset PeMSD7. [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -705,7 +705,7 @@ Table 2. Performance comparison of different approaches on the dataset PeMSD7. [
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/result1.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/result1.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
 Figure 8. Speed prediction in the morning peak and evening rush hours of the dataset PeMSD7. [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -717,7 +717,7 @@ Figure 8. Speed prediction in the morning peak and evening rush hours of the dat
 &lt;p&gt;To see the benefits of the convolution along time axis in our proposal, we summarize the comparison of training time between STGCN and GCGRU in Table 3.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/table3.png&quot; width=&quot;500&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/table3.png&quot; width=&quot;500&quot; /&gt;   &lt;figcaption&gt;
 Table 3. Time consumptions of training on the dataset PeMSD7. [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -734,7 +734,7 @@ Table 3. Time consumptions of training on the dataset PeMSD7. [1]
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/result2.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/result2.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
 Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the number of training epochs (right). (PeMSD7(M)) [1]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -995,7 +995,7 @@ L_{ij}:=
 \end{cases} %]]&gt;&lt;/script&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-02-03-STGCN/laplacian_matrix.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/laplacian_matrix.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
 Figure 10. Example of a General Graph and its Degree, Adjacency, and Laplacian Matrix. [10]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -1050,6 +1050,12 @@ Figure 10. Example of a General Graph and its Degree, Adjacency, and Laplacian M
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;T_0(x)=1 \\
 T_1(x)=x \\
 T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)&lt;/script&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/Chebyshev_Polynomials_of_the_First_Kind.png&quot; width=&quot;400&quot; /&gt;   &lt;figcaption&gt;
+Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [14]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;One can obtain polynomials very close to the optimal one by expanding the given function in terms of Chebyshev polynomials and then cutting off the expansion at the desired degree.&lt;/p&gt;
 
@@ -1225,51 +1231,6 @@ T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)&lt;/script&gt;
 
 </description>
         <pubDate>Fri, 09 Apr 2021 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>(Research Proj) Genrerate Datasets for GNN</title>
-        <link>/research/energy/2021/01/19/Cascading-Outage-Gen-Dataset.html</link>
-        <guid isPermaLink="true">/research/energy/2021/01/19/Cascading-Outage-Gen-Dataset.html</guid>
-        <description>&lt;h1 id=&quot;generate-dataset&quot;&gt;Generate Dataset&lt;/h1&gt;
-
-&lt;h2 id=&quot;introduce-radomness&quot;&gt;Introduce Radomness&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;codes&quot;&gt;Codes&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;eda&quot;&gt;EDA&lt;/h1&gt;
-
-&lt;h2 id=&quot;converged-case&quot;&gt;Converged Case&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;not-converged-case&quot;&gt;Not Converged Case&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;check-distribution-of-the-data&quot;&gt;Check Distribution of the Data&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;data-pre-processing&quot;&gt;Data Pre-processing&lt;/h1&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
-
-&lt;p&gt;[1]&lt;/p&gt;
-</description>
-        <pubDate>Tue, 19 Jan 2021 00:00:00 -0600</pubDate>
       </item>
     
       <item>
@@ -3236,6 +3197,88 @@ Figure 4. Git Command Line Tutorial Screenshot.
 &lt;p&gt;This pattern is identically applied to the people around me. The one who I love (or loved) is not remembered as her bright and shining moments that all the others could have seen. I memorized her in a way that no one could imagine. It does not have to be pretty or lovely. It just needs to be my little secret between her and me. These secrets comfort me and give strength, even though I can no longer be together with her.&lt;/p&gt;
 </description>
         <pubDate>Tue, 18 Aug 2020 00:00:00 -0500</pubDate>
+      </item>
+    
+      <item>
+        <title>Geometric Meaning of Hessian Matrix</title>
+        <link>/research/mathematics/2020/07/21/geometric-meaning-of-hessian.html</link>
+        <guid isPermaLink="true">/research/mathematics/2020/07/21/geometric-meaning-of-hessian.html</guid>
+        <description>&lt;p&gt;Starting with the definition of the Hessian Matrix, this posting will focus on the geometric meaning of the Hessian matrix. Also, we will discuss the eigenvalues and eigenvectors of the Hessian and introduce the application of it.&lt;/p&gt;
+
+&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://angeloyeo.github.io/2020/06/17/Hessian.html&quot;&gt;Donghoon Yeo’s blog posting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hessian_matrix&quot;&gt;Wikipedia &amp;gt; Hessian&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;hessian-matrix&quot;&gt;Hessian Matrix&lt;/h1&gt;
+
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;In mathematics, the Hessian matrix or Hessian is a square matrix of second-order partial derivatives of a scalar-valued function, or scalar field. It describes the local curvature of a function of many variables. [1]&lt;/p&gt;
+
+&lt;p&gt;Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$ and outputting a scalar $f(x) ∈ ℝ$. If all second partial derivatives of $f$ exist and are continuous over the domain of the function, then the Hessian matrix $H$ of $f$ is a square n×n matrix, usually defined and arranged as follows; [1]&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
+Figure 1. Definition of Hessian matrix. [1]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;geometric-meaning&quot;&gt;Geometric Meaning&lt;/h2&gt;
+
+&lt;p&gt;First of all, it is well known that &lt;strong&gt;all matrices can be considered as linear transformations&lt;/strong&gt;. Likewise, we can think of &lt;strong&gt;a Hessian matrix as a linear transformation&lt;/strong&gt;. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is &lt;strong&gt;to make a given function more convex or concave&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s look at the Hessian’s geometric meaning in detail through examples.
+The Hessian matrices corresponding to Figure 2 and 3 are as follow;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{bmatrix}2 &amp; 1\\1 &amp; 2\\\end{bmatrix} and \begin{bmatrix}2 &amp; 0\\0 &amp; -2\\\end{bmatrix}. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The things to note here are, &lt;strong&gt;the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation.&lt;/strong&gt; More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, if some of the eigenvalues are positive, and some are negative (Figure 3), the given function is converted to a saddle shape. To recapitulate, &lt;strong&gt;by using the main feature of the geometric transformation shown by the Hessian, we could emphasize the gradient change of the given function.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian gif 01.gif&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
+Figure 2. Example of Hessian transform making the given function more convex. [2]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian gif 02.gif&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
+Figure 3. Example of Hessian transform making the given function to a saddle shape function. [2]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;applications&quot;&gt;Applications&lt;/h2&gt;
+
+&lt;p&gt;Using the feature that the Hessian emphasizes the gradient change, it can be used as a filter that detects the contour (edge) of a specific object in a given image, which is considered as a function at this point. Figure 4 shows the description of edge detection and the Hessian’s eigenvalues, and Figure 5 shows an application detecting the vessel using the Hessian.&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/application 02.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
+Figure 4. Edge detection using Hessian's eigenvalues [3]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/application 01.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
+Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;p&gt;[1] “Hessian matrix,” Wikipedia, 24-Jun-2020. [Online]. Available: https://en.wikipedia.org/wiki/Hessian_matrix. [Accessed: 21-Jul-2020].&lt;/p&gt;
+
+&lt;p&gt;[2] Y. D. Yeo, “Geometrical meaning of Hessian Matrix,” 17-Jun-2020. [Online]. Available: https://angeloyeo.github.io/2020/06/17/Hessian.html. [Accessed: 21-Jul-2020].&lt;/p&gt;
+
+&lt;p&gt;[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].&lt;/p&gt;
+</description>
+        <pubDate>Tue, 21 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
   </channel>
