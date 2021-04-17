@@ -307,7 +307,7 @@
 
 <h3 id="i-a-set-of-differential-equations">i. A set of Differential equations</h3>
 
-<script type="math/tex; mode=display">\frac{d\mathbf{x}}{dt}=\mathbf{f}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) \tag{1}</script>
+\[\frac{d\mathbf{x}}{dt}=\mathbf{f}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) \tag{1}\]
 
 <ul>
   <li>
@@ -322,7 +322,7 @@
 
 <h3 id="ii-a-set-of-algebraic-equations">ii. A set of Algebraic equations</h3>
 
-<script type="math/tex; mode=display">\mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) =0 \tag{2}</script>
+\[\mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) =0 \tag{2}\]
 
 <ul>
   <li>
@@ -348,8 +348,7 @@ Figure 1. Illustrates a dramatic impact of load models on algebraic convergence.
 
 <h3 id="iii-a-set-of-constarints">iii. A set of Constarints</h3>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t))<0 \tag{3} %]]></script>
+\[\mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t))&lt;0 \tag{3}\]
 
 <ul>
   <li>
@@ -442,7 +441,7 @@ Figure 2. Trapezoidal Rule [6]
   </figcaption>
 </figure>
 
-<script type="math/tex; mode=display">\int_{a}^{b} f(x) \,dx = \frac{\Delta x}{2}[f(x_0) + 2f(x_1) +... + 2f(x_{n-1}) + f(x_n)]</script>
+\[\int_{a}^{b} f(x) \,dx = \frac{\Delta x}{2}[f(x_0) + 2f(x_1) +... + 2f(x_{n-1}) + f(x_n)]\]
 
 <!-- <p style="text-align: center;"> ↓ </p>
 
@@ -464,15 +463,15 @@ $$
 
 <h3 id="dae-during-discrete-event">DAE during discrete event</h3>
 
-<script type="math/tex; mode=display">0 = \mathbf{x} + \frac{t_d-t}{2} [\mathbf{f}(t)+\mathbf{f}(t_d, \mathbf{x}_d, \mathbf{y}_d, \mathbf{z}_d)] \tag{4}</script>
+\[0 = \mathbf{x} + \frac{t_d-t}{2} [\mathbf{f}(t)+\mathbf{f}(t_d, \mathbf{x}_d, \mathbf{y}_d, \mathbf{z}_d)] \tag{4}\]
 
 <p><span style="color:green"> Q. HOW TO APPLY TRAPEZOIDAL RULE TO A DISCRETE POINT??? </span></p>
 
-<script type="math/tex; mode=display">0=\mathbf{g}(t_d, \mathbf{x}_+, \mathbf{y}_+, \mathbf{z}) \tag{5}</script>
+\[0=\mathbf{g}(t_d, \mathbf{x}_+, \mathbf{y}_+, \mathbf{z}) \tag{5}\]
 
-<script type="math/tex; mode=display">0>\mathbf{h}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{6}</script>
+\[0&gt;\mathbf{h}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{6}\]
 
-<script type="math/tex; mode=display">0=\mathbf{d}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{7}</script>
+\[0=\mathbf{d}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{7}\]
 
 <p>where</p>
 
@@ -882,7 +881,7 @@ Figure 9. CCDF Demand Loss for COSMIC &amp; DC Simulator [1]
 
 <h4 id="path-agreement-measurement-9">Path Agreement Measurement [9]</h4>
 
-<script type="math/tex; mode=display">R(m_1, m_2) = \sum_{i=1}^{|C|}\frac{1}{C} \frac{|A_i \cap B_i|}{|A_i \cup B_i|} \tag{8}</script>
+\[R(m_1, m_2) = \sum_{i=1}^{|C|}\frac{1}{C} \frac{|A_i \cap B_i|}{|A_i \cup B_i|} \tag{8}\]
 
 <p>where</p>
 
@@ -986,7 +985,7 @@ Table V. Statical Results for the Comparison between COSMIC &amp; DC Simulator [
   <li>
     <p>Randomness will be given by the method that generated the uncertain loads in <a href="https://arxiv.org/abs/1902.05607">[10]</a>:</p>
 
-    <script type="math/tex; mode=display">d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)</script>
+\[d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)\]
 
     <ul>
       <li>
@@ -1070,7 +1069,7 @@ Table V. Statical Results for the Comparison between COSMIC &amp; DC Simulator [
 
 <h3 id="equation-for-rotor-speed">Equation for rotor speed</h3>
 
-<script type="math/tex; mode=display">M \frac{dw_i}{dt} = P_{m,i} - P_{g,i} - D(w_i-1)</script>
+\[M \frac{dw_i}{dt} = P_{m,i} - P_{g,i} - D(w_i-1)\]
 
 <p>where</p>
 
@@ -1099,7 +1098,7 @@ Table V. Statical Results for the Comparison between COSMIC &amp; DC Simulator [
 
 <h3 id="equation-for-rotor-angle">Equation for rotor angle</h3>
 
-<script type="math/tex; mode=display">\frac{d\delta_i(t)}{dt} = 2 \pi f_0 (w_i-1)</script>
+\[\frac{d\delta_i(t)}{dt} = 2 \pi f_0 (w_i-1)\]
 
 <p>where</p>
 
@@ -1145,9 +1144,9 @@ $$ -->
 
 <p><br /></p>
 
-<script type="math/tex; mode=display">P_i = V_i\sum_{k=1}^{n}\{ G_{ik} cos(\theta_i-\theta_k) +B_{ik}sin(\theta_i-\theta_k) \}</script>
+\[P_i = V_i\sum_{k=1}^{n}\{ G_{ik} cos(\theta_i-\theta_k) +B_{ik}sin(\theta_i-\theta_k) \}\]
 
-<script type="math/tex; mode=display">Q_i = V_i\sum_{k=1}^{n}\{ G_{ik} sin(\theta_i-\theta_k) +B_{ik}cos(\theta_i-\theta_k) \}</script>
+\[Q_i = V_i\sum_{k=1}^{n}\{ G_{ik} sin(\theta_i-\theta_k) +B_{ik}cos(\theta_i-\theta_k) \}\]
 
 <p>where</p>
 

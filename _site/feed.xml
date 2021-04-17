@@ -5,7 +5,300 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Thu, 15 Apr 2021 13:58:32 -0500</pubDate>
+    <pubDate>Sat, 17 Apr 2021 13:17:21 -0500</pubDate>
+    
+      <item>
+        <title>Dr. Zhu's Group Meeting Log</title>
+        <link>/research/meeting%20log/2021/04/16/Dr-Zhu-Group-Meeting-Log.html</link>
+        <guid isPermaLink="true">/research/meeting%20log/2021/04/16/Dr-Zhu-Group-Meeting-Log.html</guid>
+        <description>&lt;h2 id=&quot;grid-aware-machine-learning-for-distribution-system-modeling-monitoring-and-optimization&quot;&gt;Grid-Aware Machine Learning for Distribution System Modeling, Monitoring, and Optimization&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The contents covered in this article are credited to the speaker of the meeting, Dr. Zhu, and her research group members.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;tl-dr&quot;&gt;TL; DR&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;speaker&quot;&gt;Speaker&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Shanny Lin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Abstract or Short Brief&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;keywords&quot;&gt;Keywords&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;modeling, monitoring, optimization&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;partial observability&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CVaR&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;group-meeting-recap&quot;&gt;Group Meeting Recap&lt;/h2&gt;
+
+&lt;h3 id=&quot;motivation&quot;&gt;Motivation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;problem-formulation&quot;&gt;Problem Formulation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;How to estimate an accurate model of the power system?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;How to address monitoring and optimization tasks under limited observability?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;proposed-approach&quot;&gt;Proposed Approach&lt;/h3&gt;
+
+&lt;h4 id=&quot;modeling&quot;&gt;Modeling&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Linearized distribution flow model&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\begin{aligned}
+\mathbf{v} &amp;amp; \approx \mathbf{Rp} + \mathbf{Xq} \\
+&amp;amp; = \mathbf{M}^{-T}\mathbf{D}_{r}\mathbf{M}^{-1}\mathbf{p} + \mathbf{M}^{-T}\mathbf{D}_{x}\mathbf{M}^{-1}\mathbf{q}
+\end{aligned}
+\tag{1}\]
+
+&lt;ul&gt;
+  &lt;li&gt;Bi-linear regression with Group-LASSO regularization&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\min_{\mathbf{\theta}, \{\tilde{\mathbf{s}}^{\mathcal{U}}_{t}\}}{\sum_{t}^{T}{\| \tilde{\mathbf{v}}_t} - \mathbf{A}(\tilde{\mathbf{s}}^{\mathcal{O}}_{t})\mathbf{\theta} - \mathbf{A}(\tilde{\mathbf{s}}^{\mathcal{U}}_{t})\mathbf{\theta} \|_2^2 + \lambda \| \tilde{\mathbf{s}}^{\mathcal{U}}_{t} \|_G}
+\tag{2}\]
+
+&lt;ul&gt;
+  &lt;li&gt;Alternating Minimization (AM)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;monitoring&quot;&gt;Monitoring&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;DER visibility by leveraging heterogenous &amp;amp; dynamic data.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Smart meter data ($\mathbf{\Gamma}$)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;D-PMU data ($\mathbf{Z}$)&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Spatio-temporal learning&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+\[\begin{aligned}
+\begin{bmatrix} \mathbf{P} \\ \mathbf{Q} \end{bmatrix} &amp;amp;= \mathbf{L} + \mathbf{DU} \\
+&amp;amp; = \mathbf{L} + \begin{bmatrix} \mathbf{D}^{P} \\ \mathbf{D}^{Q} \end{bmatrix}
+\end{aligned}
+\tag{3}\]
+
+\[\begin{aligned}
+\min&amp;amp;_{\mathbf{L}, \mathbf{D}}{\|\mathbf{L}\|_{*} + \lambda\|\mathbf{D}\|_{G}} \\
+&amp;amp; \text{s.to } \mathbf{L} + \mathbf{D}\mathbf{U} \text{ satisfies error bound for } \mathbf{\Gamma} \text{ and } \mathbf{Z}
+\end{aligned}
+\tag{4}\]
+
+\[\begin{aligned}
+\min&amp;amp;_{\mathbf{v}, \mathbf{D}}{\frac{1}{2} \|\mathbf{v}\|_{2}^{2} + \lambda\|\mathbf{D}\|_{G}}\\
+&amp;amp; \text{s.to } \mathbf{uv^{T}} + \mathbf{D}\mathbf{U} \text{ satisfies error bound for } \mathbf{\Gamma} \text{ and } \mathbf{Z}
+\end{aligned}
+\tag{5}\]
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;optimization&quot;&gt;Optimization&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DER optimization&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\begin{aligned}
+\mathbf{\hat{q}} = &amp;amp; \min_{\mathbf{q} \in \mathcal{Q}}{Losses(\mathbf{q})} \\
+&amp;amp; \text{s.to } \begin{bmatrix} \mathbf{Xq} + \mathbf{y} - \mathbf{\bar{v}} \\ -\mathbf{Xq} - \mathbf{y} + \mathbf{\underline{v}} \end{bmatrix} \leq\mathbf{0}
+\end{aligned}
+\tag{6}\]
+
+&lt;ul&gt;
+  &lt;li&gt;Graph learning&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\min_{\Phi}{Avg(\| \Phi(\mathbf{z}) -  \mathbf{\hat{q}}\|_{2}^{2})}
+\tag{7}\]
+
+\[\mathbf{z}_{l+1} = \sigma(\mathbf{W}_l\mathbf{z}_l\mathbf{H}_l + \mathbf{b}_l)
+\tag{8}\]
+
+&lt;ul&gt;
+  &lt;li&gt;Conditional Value-at-Risk (CVaR) method.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;experiment--result&quot;&gt;Experiment &amp;amp; Result&lt;/h3&gt;
+
+&lt;h4 id=&quot;modeling-1&quot;&gt;Modeling&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Line reactance estimation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;monitoring-1&quot;&gt;Monitoring&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DER visibility&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;optimization-1&quot;&gt;Optimization&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Graph learning vs. Local learning&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;future-study&quot;&gt;Future Study&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;what-i-benefit&quot;&gt;What I Benefit&lt;/h2&gt;
+
+&lt;h3 id=&quot;regularizer&quot;&gt;Regularizer&lt;/h3&gt;
+
+&lt;h4 id=&quot;lasso-and-ridge-regressions&quot;&gt;Lasso and Ridge Regressions&lt;/h4&gt;
+
+&lt;p&gt;Given a dataset ${X,y}$ where $X$ is the feature and $y$ is the label for regression, we simply model it as has a linear relationship $y = X\beta$. With regularization, the optimization problem of Lasso and Ridge regressions are&lt;/p&gt;
+
+&lt;p&gt;\(\beta^{*} = \argmin_{\beta} {\| y - X\beta \|_2^2} + \lambda \| \beta \|_{1}\)
+\(\beta^{*} = \argmin_{\beta} {\| y - X\beta \|_2^2} + \lambda \| \beta \|_{2}\)&lt;/p&gt;
+
+&lt;p&gt;Due to the shape of their constraints boundary, LASSO encourage sparse solution to the optimal pronblem.&lt;/p&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/lasso-vs-ridge.png&quot; width=&quot;500&quot; /&gt;   &lt;figcaption&gt;
+Figure . Conventional Explanation to Sparsity Caused by Lasso. []
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;group-lasso&quot;&gt;Group LASSO&lt;/h4&gt;
+
+&lt;h4 id=&quot;group-lasso-vs-lasso-&quot;&gt;Group-LASSO vs. LASSO []&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;cvar&quot;&gt;CVaR&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;throw-back-the-q&quot;&gt;Throw back the Q&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-i-contribute&quot;&gt;What I Contribute&lt;/h2&gt;
+
+&lt;h4 id=&quot;the-framework-of-researchstudy&quot;&gt;The framework of research/study&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Motivation&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Problem Formulation&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Proposed Approach&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Experiment &amp;amp; Result&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Future Study&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The above list is the framework of research that Dr. Zhu discussed at the start of this year. Almost all research papers have been written along this process, which is also the basic step of our research.&lt;/p&gt;
+
+&lt;p&gt;However, it was not easy for me to summarize the contents of today’s meeting with this framework since there are three main topics in a single speech. From my point of view, one of each topic is good enough for one individual presentation, and it would have been easier for me to fit the contents into this framework.&lt;/p&gt;
+
+&lt;p&gt;Therefore, I strongly suggest conducting our research and preparing our speech with this framework; then, it will help us draw better results in our research and deliver the main points more clearly to others.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;resting&quot;&gt;Resting&lt;/h4&gt;
+
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/Decanting-Guide.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
+Figure . Decanting Guide []
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;It is said that decanting is necessary to enjoy wine in it’s best quality. Likewise, our slides do want to have resting.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;[] L. Mao, “Group Lasso,” Lei Mao’s Log Book. [Online]. Available: https://leimao.github.io/blog/Group-Lasso/. [Accessed: 17-Apr-2021].&lt;/p&gt;
+
+&lt;p&gt;[] “Lasso (statistics),” Wikipedia, 14-Apr-2021. [Online]. Available: https://en.wikipedia.org/wiki/Lasso_(statistics). [Accessed: 17-Apr-2021].&lt;/p&gt;
+
+&lt;p&gt;[] E. Golman, “The Ultimate Guide to Decanting &amp;amp; Aerating Kosher Wine,” Kosherwine.com, 18-Dec-2020. [Online]. Available: https://www.kosherwine.com/discover/the-ultimate-guide-to-decanting-kosher-wine. [Accessed: 17-Apr-2021].&lt;/p&gt;
+
+&lt;p&gt;[]&lt;/p&gt;
+</description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 -0500</pubDate>
+      </item>
     
       <item>
         <title>(Research Proj) Spatio-Temporal Graph Convolutional Networks</title>
@@ -118,9 +411,9 @@
 
 &lt;p&gt;Predicting the most likely traffic measurements (e.g. speed or traffic flow) in the next $H$ time steps given the previous $M$ traffic observations as,&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{v}_{t+1}, ..., \hat{v}_{t+H} = \underset{v_{t+1}, ..., v_{t+H}}{\mathrm{argmax}}\log{P(v_{t+1}, ..., v_{t+H} | v_{t-M+1}, ..., v_{t})}
+\[\hat{v}_{t+1}, ..., \hat{v}_{t+H} = \underset{v_{t+1}, ..., v_{t+H}}{\mathrm{argmax}}\log{P(v_{t+1}, ..., v_{t+H} | v_{t-M+1}, ..., v_{t})}
 
-\tag{1}&lt;/script&gt;
+\tag{1}\]
 
 &lt;p&gt;where $v_t \in \mathbb{R}^{n}$ is an observation vector of $n$ road segments at time step $t$, each element of which records historical observation for a single road segment.&lt;/p&gt;
 
@@ -183,9 +476,8 @@ Q. WHY AUTHOR CHOOSE SPECTRAL APPROACHES???
 
 &lt;p&gt;In this paper, the author introduces the notion of &lt;strong&gt;graph convolution operator&lt;/strong&gt; “$*\mathcal{G}$”  based on &lt;strong&gt;the conception of spectral filtering&lt;/strong&gt; [7, 8].&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned} y &amp; = \Theta *\mathcal{G} x \\&amp; = \Theta (L) x \\&amp; = \Theta (U \Lambda U^T) x \\&amp;= U \Theta (\Lambda) U^T x \end{aligned}
-\tag{2} %]]&gt;&lt;/script&gt;
+\[\begin{aligned} y &amp;amp; = \Theta *\mathcal{G} x \\&amp;amp; = \Theta (L) x \\&amp;amp; = \Theta (U \Lambda U^T) x \\&amp;amp;= U \Theta (\Lambda) U^T x \end{aligned}
+\tag{2}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -265,8 +557,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 &lt;p&gt;Chebyshev polynomial $T_k(x)$ is used to approximate kernels as a truncated expansion of order $K-1$ as follows.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}\Theta (\Lambda) &amp; = \sum_{k=0}^{K-1} \theta_k \Lambda^k \\ &amp;\approx \sum_{k=0}^{K-1} \theta_k T_k(\tilde{\Lambda})\end{aligned} %]]&gt;&lt;/script&gt;
+\[\begin{aligned}\Theta (\Lambda) &amp;amp; = \sum_{k=0}^{K-1} \theta_k \Lambda^k \\ &amp;amp;\approx \sum_{k=0}^{K-1} \theta_k T_k(\tilde{\Lambda})\end{aligned}\]
 
 &lt;p&gt;where&lt;/p&gt;
 &lt;ul&gt;
@@ -282,9 +573,8 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 &lt;p&gt;Using the Chebyshev polynomials approximation, the graph convolution can then be rewritten as,&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned} \Theta*\mathcal{G}x  &amp;= \Theta(L)x \\ &amp;\approx \sum_{k=0}^{K-1} \theta_k T_k(\tilde{L})x \end{aligned}
-\tag{3} %]]&gt;&lt;/script&gt;
+\[\begin{aligned} \Theta*\mathcal{G}x  &amp;amp;= \Theta(L)x \\ &amp;amp;\approx \sum_{k=0}^{K-1} \theta_k T_k(\tilde{L})x \end{aligned}
+\tag{3}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -332,9 +622,8 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 &lt;p&gt;Thus, the Eq. (3) can be simplified to,&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned} \Theta*\mathcal{G}x &amp; \approx \theta_0x + \theta_1(\frac{2}{\lambda_{max}}L-I_n)x \\ &amp;\approx \theta_0x - \theta_1(D^{-1/2}WD^{-1/2})x \end{aligned}
-\tag{4} %]]&gt;&lt;/script&gt;
+\[\begin{aligned} \Theta*\mathcal{G}x &amp;amp; \approx \theta_0x + \theta_1(\frac{2}{\lambda_{max}}L-I_n)x \\ &amp;amp;\approx \theta_0x - \theta_1(D^{-1/2}WD^{-1/2})x \end{aligned}
+\tag{4}\]
 
 &lt;p&gt;where $\theta_0$, $\theta_1$ are two shared parameters of the kernel.&lt;/p&gt;
 
@@ -342,8 +631,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 &lt;p&gt;Then, the graph convolution can be alternatively expressed as,&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned} \Theta*\mathcal{G}x &amp;= \theta(I_n + D^{-1/2}WD^{-1/2})x \\&amp;= \theta(\tilde{D}^{-1/2}\tilde{W}\tilde{D}^{-1/2})x \end{aligned} \tag{5} %]]&gt;&lt;/script&gt;
+\[\begin{aligned} \Theta*\mathcal{G}x &amp;amp;= \theta(I_n + D^{-1/2}WD^{-1/2})x \\&amp;amp;= \theta(\tilde{D}^{-1/2}\tilde{W}\tilde{D}^{-1/2})x \end{aligned} \tag{5}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -371,7 +659,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 &lt;p&gt;For a signal $C_i$ channels $X \in \mathbb{R}^{n \times C_i}$, the graph convolution can be generalized by,&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;y_i = \sum_{i=1}^{C_i} \Theta_{ij}(L)x_i \in \mathbb{R}^n, 1 \leq j \leq C_o \tag{6}&lt;/script&gt;
+\[y_i = \sum_{i=1}^{C_i} \Theta_{ij}(L)x_i \in \mathbb{R}^n, 1 \leq j \leq C_o \tag{6}\]
 
 &lt;p&gt;with the $C_i \times C_o$ vectors of Chebyshev coefficients $\Theta_{ij} \in \mathbb{R}^K$ ($C_i$, $C_o$ are the size of input and output of the feature maps, respectively).&lt;/p&gt;
 
@@ -427,7 +715,7 @@ Figure 3. Temporal Gated-Conv Block. [1]
 
 &lt;p&gt;As a result, the temporal gated convolution can be defined as,&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Gamma * \tau Y=P \odot \sigma (Q) \in \mathbb{R}^{(M-K_t+1) \times C_o} \tag{7}&lt;/script&gt;
+\[\Gamma * \tau Y=P \odot \sigma (Q) \in \mathbb{R}^{(M-K_t+1) \times C_o} \tag{7}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -479,7 +767,7 @@ Figure 5. Spatio-Temporal Convolutional (ST-Conv) Block. [1]
 
 &lt;p&gt;The “sandwich” structure also helps the network sufficiently apply bottleneck strategy to achieve scale compression and feature squeezing by downscaling and upscaling of channels $C$ through the graph convolutional layer.&lt;/p&gt;
 
-&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHY IT HAS A SANDWICH STRUCTURE??? &lt;/span&gt;
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHY IT HAS SANDWICH STRUCTURE??? &lt;/span&gt;
 &lt;br /&gt;
 &lt;span style=&quot;color:blue&quot;&gt; A. &lt;/span&gt;
 &lt;br /&gt;
@@ -489,7 +777,7 @@ Figure 5. Spatio-Temporal Convolutional (ST-Conv) Block. [1]
 
 &lt;p&gt;The input and output of ST-Conv blocks are all 3-D tensors. For the input $v^l \in \mathbb{R}^{M \times n \times C^l}$ of block $l$, the output $v^{l+1} \in \mathbb{R}^{(M-2(K_t-1)) \times n \times C^{l+1}}$is computed by,&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;v^{l+1} = \Gamma_1^l * \tau ReLU(\Theta^l * \mathcal{G}(\Gamma_0^l * \tau v^l)) \tag{8}&lt;/script&gt;
+\[v^{l+1} = \Gamma_1^l * \tau ReLU(\Theta^l * \mathcal{G}(\Gamma_0^l * \tau v^l)) \tag{8}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -517,7 +805,7 @@ Figure 6. The framework STGCN consists of two ST-Conv blocks and a fully-connect
 
 &lt;p&gt;We use L2 loss to measure the performance of our model.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;L(\hat{v};W_{\theta})=\sum_{t}\| \hat{v}(v_{t-M+1}, ..., v_t, W_\theta) - v_{t+1} \|^2 \tag{9}&lt;/script&gt;
+\[L(\hat{v};W_{\theta})=\sum_{t}\| \hat{v}(v_{t-M+1}, ..., v_t, W_\theta) - v_{t+1} \|^2 \tag{9}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -603,8 +891,7 @@ Figure 7. PeMS sensor network in District 7 of California (left), each dot denot
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}Z &amp;= \frac{x-\mu}{\sigma}, \\ &amp; \text{where } \mu \text{ is mean and } \sigma \text{ is standard deviation}.\end{aligned} %]]&gt;&lt;/script&gt;
+\[\begin{aligned}Z &amp;amp;= \frac{x-\mu}{\sigma}, \\ &amp;amp; \text{where } \mu \text{ is mean and } \sigma \text{ is standard deviation}.\end{aligned}\]
 
 &lt;!-- - The weighted adjacency matrix $W$
 
@@ -619,9 +906,9 @@ $$ --&gt;
 
 &lt;p&gt;All the tests use 60 minutes as the historical time window.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{v}_{t+1}, ..., \hat{v}_{t+H} = \underset{v_{t+1}, ..., v_{t+H}}{\mathrm{argmax}}\log{P(v_{t+1}, ..., v_{t+H} | v_{t-M+1}, ..., v_{t})}
+\[\hat{v}_{t+1}, ..., \hat{v}_{t+H} = \underset{v_{t+1}, ..., v_{t+H}}{\mathrm{argmax}}\log{P(v_{t+1}, ..., v_{t+H} | v_{t-M+1}, ..., v_{t})}
 
-\tag{1}&lt;/script&gt;
+\tag{1}\]
 
 &lt;p&gt;With Eq. (1) and the time window setting, 12 observed data points ($M = 12$) are used to forecast traffic conditions in the next 15, 30, and 45 minutes ($H = 3, 6, 9$).&lt;/p&gt;
 
@@ -635,19 +922,19 @@ $$ --&gt;
   &lt;li&gt;Mean Absolute Errors (MAE)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{1}{n}\sum_{1}^{n}{\| y_i - \hat{y_i} \|}&lt;/script&gt;
+\[\frac{1}{n}\sum_{1}^{n}{\| y_i - \hat{y_i} \|}\]
 
 &lt;ul&gt;
   &lt;li&gt;Mean Absolute Percentage Errors (MAPE)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{100}{n}\sum_{1}^{n}{ \frac{y_i - \hat{y_i}}{y_i} }&lt;/script&gt;
+\[\frac{100}{n}\sum_{1}^{n}{ \frac{y_i - \hat{y_i}}{y_i} }\]
 
 &lt;ul&gt;
   &lt;li&gt;Root Mean Squared Errors (RMSE)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{1}{n}\sum_{1}^{n}{\sqrt{(y_i - \hat{y_i})^2}}&lt;/script&gt;
+\[\frac{1}{n}\sum_{1}^{n}{\sqrt{(y_i - \hat{y_i})^2}}\]
 
 &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHY DO WE NEED MULTIPLE METRICS??? &lt;/span&gt;
 &lt;br /&gt;
@@ -845,7 +1132,7 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
   &lt;li&gt;
     &lt;p&gt;Randomness will be given by the method that generated the uncertain loads in &lt;a href=&quot;https://arxiv.org/abs/1902.05607&quot;&gt;[16]&lt;/a&gt;:&lt;/p&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)&lt;/script&gt;
+\[d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)\]
 
     &lt;ul&gt;
       &lt;li&gt;
@@ -965,7 +1252,7 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
 
 &lt;p&gt;Given a simple graph $\mathcal{G}$ with $n$ vertices, its Laplacian matrix $L_{n \times n}$ is defined as,&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;L = D - A&lt;/script&gt;
+\[L = D - A\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -980,8 +1267,7 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
 
 &lt;p&gt;The elements of $L$ are given by&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-L_{ij}:= \begin{cases} deg(v_i) &amp;\text{if } i=j \\ -1 &amp;\text{if } i\neq j \text{ and } v_i \text{ is adjacent to } v_j \\ 0 &amp;\text{otherwise} \end{cases} %]]&gt;&lt;/script&gt;
+\[L_{ij}:= \begin{cases} deg(v_i) &amp;amp;\text{if } i=j \\ -1 &amp;amp;\text{if } i\neq j \text{ and } v_i \text{ is adjacent to } v_j \\ 0 &amp;amp;\text{otherwise} \end{cases}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -995,17 +1281,16 @@ L_{ij}:= \begin{cases} deg(v_i) &amp;\text{if } i=j \\ -1 &amp;\text{if } i\neq 
 
 &lt;p&gt;The symmetric normalized Laplacian matrix is defined as,&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;L = I - D^{-1/2} A D^{-1/2}&lt;/script&gt;
+\[L = I - D^{-1/2} A D^{-1/2}\]
 
 &lt;p&gt;The elements of $L^{sym}$ are given by&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-L_{ij}:=
+\[L_{ij}:=
 \begin{cases}
-1 &amp;\text{if } i=j \text{ and } deg(v_i) \neq 0\\
--\frac{1}{\sqrt{deg(v_i)deg(v_j)}} &amp;\text{if } i\neq j \text{ and } v_i \text{ is adjacent to } v_j \\
-0 &amp;\text{otherwise}
-\end{cases} %]]&gt;&lt;/script&gt;
+1 &amp;amp;\text{if } i=j \text{ and } deg(v_i) \neq 0\\
+-\frac{1}{\sqrt{deg(v_i)deg(v_j)}} &amp;amp;\text{if } i\neq j \text{ and } v_i \text{ is adjacent to } v_j \\
+0 &amp;amp;\text{otherwise}
+\end{cases}\]
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/laplacian_matrix.png&quot; width=&quot;666&quot; /&gt;   &lt;figcaption&gt;
@@ -1025,7 +1310,7 @@ Figure 10. Example of a General Graph and its Degree, Adjacency, and Laplacian M
 
 &lt;p&gt;The definition of Laplacian matrix is&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;L = I_n - D^{-\frac{1}{2}} W D^{-\frac{1}{2}} = U \Lambda U^T \in \mathbb{R}^{n\times n}&lt;/script&gt;
+\[L = I_n - D^{-\frac{1}{2}} W D^{-\frac{1}{2}} = U \Lambda U^T \in \mathbb{R}^{n\times n}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -1054,15 +1339,15 @@ Figure 10. Example of a General Graph and its Degree, Adjacency, and Laplacian M
 
 &lt;p&gt;The Chebyshev polynomials are two sequences of polynomials related to the sine and cosine functions, notated as $T_n(x)$ and $U_n(x)$.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;T_n(cos(\theta))=cos(n\theta)&lt;/script&gt;
+\[T_n(cos(\theta))=cos(n\theta)\]
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;U_n(cos(\theta))sin(\theta)=sin((n+1)\theta)&lt;/script&gt;
+\[U_n(cos(\theta))sin(\theta)=sin((n+1)\theta)\]
 
 &lt;p&gt;The Chebyshev polynomials of the first kind are obtained from the recurrence relation as follows.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;T_0(x)=1 \\
+\[T_0(x)=1 \\
 T_1(x)=x \\
-T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)&lt;/script&gt;
+T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)\]
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/Chebyshev_Polynomials_of_the_First_Kind.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
@@ -1073,7 +1358,7 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 
 &lt;p&gt;One can obtain polynomials very close to the optimal one by expanding the given function in terms of Chebyshev polynomials and then cutting off the expansion at the desired degree.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x) \approx \sum_{i=0}^{\infty}{c_i T_{i}(x)}&lt;/script&gt;
+\[f(x) \approx \sum_{i=0}^{\infty}{c_i T_{i}(x)}\]
 
 &lt;p&gt;This is similar to the Fourier analysis of the function, using the Chebyshev polynomials instead of the usual trigonometric functions.&lt;/p&gt;
 
@@ -1085,13 +1370,12 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 
 &lt;p&gt;The Eq. (2) represents spectral filtering of graph signal.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned} y &amp; = \Theta *\mathcal{G} x \\&amp; = \Theta (L) x \\&amp; = \Theta (U \Lambda U^T) x \\&amp;= U \Theta (\Lambda) U^T x \end{aligned}
-\tag{2} %]]&gt;&lt;/script&gt;
+\[\begin{aligned} y &amp;amp; = \Theta *\mathcal{G} x \\&amp;amp; = \Theta (L) x \\&amp;amp; = \Theta (U \Lambda U^T) x \\&amp;amp;= U \Theta (\Lambda) U^T x \end{aligned}
+\tag{2}\]
 
 &lt;p&gt;The filter is characterized by its kernel ($\Theta(\cdot)$), and the simplest kernerl we can imagine is a non-parametic filter, i.e. the kernel parameters $\theta_k \in \mathbb{R}$  $(k=1, …, n)$ are all free.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Theta(\Lambda) = diag(\theta)&lt;/script&gt;
+\[\Theta(\Lambda) = diag(\theta)\]
 
 &lt;p&gt;In this case, the filter has a limitaion that it is not localized in space. 😡&lt;/p&gt;
 
@@ -1105,8 +1389,7 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 
 &lt;p&gt;The localized filter can be expressed as follows.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{aligned}\Theta(\Lambda) &amp;= \sum_{k=0}^{K-1}{\theta_k \Lambda^{k}} \\ &amp;\approx \sum_{k=0}^{K-1}{\theta_k T_{k}(\tilde{\Lambda})}\end{aligned} %]]&gt;&lt;/script&gt;
+\[\begin{aligned}\Theta(\Lambda) &amp;amp;= \sum_{k=0}^{K-1}{\theta_k \Lambda^{k}} \\ &amp;amp;\approx \sum_{k=0}^{K-1}{\theta_k T_{k}(\tilde{\Lambda})}\end{aligned}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -1128,7 +1411,7 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 
 &lt;p&gt;By 1st-order approximation, we can get a simplified filter as follows.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Theta(\Lambda) \approx \theta_0 + \theta_1(\frac{2}{\lambda_{max}}\Lambda-I_n)&lt;/script&gt;
+\[\Theta(\Lambda) \approx \theta_0 + \theta_1(\frac{2}{\lambda_{max}}\Lambda-I_n)\]
 
 &lt;p&gt;where $\theta_0$, $\theta_1$ are two shared parameters of the kernel.&lt;/p&gt;
 
@@ -1172,83 +1455,6 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 &lt;p&gt;[16] D. Deka and S. Misra, “Learning for DC-OPF: Classifying active sets using neural nets,” 2019 IEEE Milan PowerTech, Milan, Italy, 2019, pp. 1-6.&lt;/p&gt;
 </description>
         <pubDate>Wed, 14 Apr 2021 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>Dr. Zhu's Group Meeting Log</title>
-        <link>/research/meeting%20log/2021/04/09/Dr-Zhu-Group-Meeting-Log.html</link>
-        <guid isPermaLink="true">/research/meeting%20log/2021/04/09/Dr-Zhu-Group-Meeting-Log.html</guid>
-        <description>&lt;h2 id=&quot;grid-aware-machine-leraning-for-distribution-sustem-modeling-monitoring-and-optimization&quot;&gt;Grid-Aware Machine Leraning for Distribution Sustem Modeling, Monitoring, and Optimization&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;The contents covered in this article are credited to the speaker of the meeting, Dr. Zhu, and her research group members.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;tl-dr&quot;&gt;TL; DR&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;speaker&quot;&gt;Speaker&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Shanny Lin&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Abstract or Short Brief&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&quot;keywords&quot;&gt;Keywords&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Linearize Distribution Flow model&lt;/li&gt;
-  &lt;li&gt;Graph Theory&lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;group-meeting-recap&quot;&gt;Group Meeting Recap&lt;/h2&gt;
-
-&lt;h3 id=&quot;motivation&quot;&gt;Motivation&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;problem-formulation&quot;&gt;Problem Formulation&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;proposed-approach&quot;&gt;Proposed Approach&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;result&quot;&gt;Result&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;future-study&quot;&gt;Future Study&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;what-i-benefit&quot;&gt;What I Benefit&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what-i-contribute&quot;&gt;What I Contribute&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-
-</description>
-        <pubDate>Fri, 09 Apr 2021 00:00:00 -0500</pubDate>
       </item>
     
       <item>
@@ -1503,7 +1709,7 @@ Figure 7.
 
 &lt;h3 id=&quot;i-a-set-of-differential-equations&quot;&gt;i. A set of Differential equations&lt;/h3&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{d\mathbf{x}}{dt}=\mathbf{f}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) \tag{1}&lt;/script&gt;
+\[\frac{d\mathbf{x}}{dt}=\mathbf{f}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) \tag{1}\]
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -1518,7 +1724,7 @@ Figure 7.
 
 &lt;h3 id=&quot;ii-a-set-of-algebraic-equations&quot;&gt;ii. A set of Algebraic equations&lt;/h3&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) =0 \tag{2}&lt;/script&gt;
+\[\mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) =0 \tag{2}\]
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -1544,8 +1750,7 @@ Figure 1. Illustrates a dramatic impact of load models on algebraic convergence.
 
 &lt;h3 id=&quot;iii-a-set-of-constarints&quot;&gt;iii. A set of Constarints&lt;/h3&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t))&lt;0 \tag{3} %]]&gt;&lt;/script&gt;
+\[\mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t))&amp;lt;0 \tag{3}\]
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -1638,7 +1843,7 @@ Figure 2. Trapezoidal Rule [6]
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\int_{a}^{b} f(x) \,dx = \frac{\Delta x}{2}[f(x_0) + 2f(x_1) +... + 2f(x_{n-1}) + f(x_n)]&lt;/script&gt;
+\[\int_{a}^{b} f(x) \,dx = \frac{\Delta x}{2}[f(x_0) + 2f(x_1) +... + 2f(x_{n-1}) + f(x_n)]\]
 
 &lt;!-- &lt;p style=&quot;text-align: center;&quot;&gt; ↓ &lt;/p&gt;
 
@@ -1660,15 +1865,15 @@ $$
 
 &lt;h3 id=&quot;dae-during-discrete-event&quot;&gt;DAE during discrete event&lt;/h3&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;0 = \mathbf{x} + \frac{t_d-t}{2} [\mathbf{f}(t)+\mathbf{f}(t_d, \mathbf{x}_d, \mathbf{y}_d, \mathbf{z}_d)] \tag{4}&lt;/script&gt;
+\[0 = \mathbf{x} + \frac{t_d-t}{2} [\mathbf{f}(t)+\mathbf{f}(t_d, \mathbf{x}_d, \mathbf{y}_d, \mathbf{z}_d)] \tag{4}\]
 
 &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. HOW TO APPLY TRAPEZOIDAL RULE TO A DISCRETE POINT??? &lt;/span&gt;&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;0=\mathbf{g}(t_d, \mathbf{x}_+, \mathbf{y}_+, \mathbf{z}) \tag{5}&lt;/script&gt;
+\[0=\mathbf{g}(t_d, \mathbf{x}_+, \mathbf{y}_+, \mathbf{z}) \tag{5}\]
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;0&gt;\mathbf{h}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{6}&lt;/script&gt;
+\[0&amp;gt;\mathbf{h}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{6}\]
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;0=\mathbf{d}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{7}&lt;/script&gt;
+\[0=\mathbf{d}(t_d, \mathbf{x}_+, \mathbf{y}_+) \tag{7}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -2078,7 +2283,7 @@ Figure 9. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
 
 &lt;h4 id=&quot;path-agreement-measurement-9&quot;&gt;Path Agreement Measurement [9]&lt;/h4&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;R(m_1, m_2) = \sum_{i=1}^{|C|}\frac{1}{C} \frac{|A_i \cap B_i|}{|A_i \cup B_i|} \tag{8}&lt;/script&gt;
+\[R(m_1, m_2) = \sum_{i=1}^{|C|}\frac{1}{C} \frac{|A_i \cap B_i|}{|A_i \cup B_i|} \tag{8}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -2182,7 +2387,7 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
   &lt;li&gt;
     &lt;p&gt;Randomness will be given by the method that generated the uncertain loads in &lt;a href=&quot;https://arxiv.org/abs/1902.05607&quot;&gt;[10]&lt;/a&gt;:&lt;/p&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)&lt;/script&gt;
+\[d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)\]
 
     &lt;ul&gt;
       &lt;li&gt;
@@ -2266,7 +2471,7 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 
 &lt;h3 id=&quot;equation-for-rotor-speed&quot;&gt;Equation for rotor speed&lt;/h3&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;M \frac{dw_i}{dt} = P_{m,i} - P_{g,i} - D(w_i-1)&lt;/script&gt;
+\[M \frac{dw_i}{dt} = P_{m,i} - P_{g,i} - D(w_i-1)\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -2295,7 +2500,7 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 
 &lt;h3 id=&quot;equation-for-rotor-angle&quot;&gt;Equation for rotor angle&lt;/h3&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{d\delta_i(t)}{dt} = 2 \pi f_0 (w_i-1)&lt;/script&gt;
+\[\frac{d\delta_i(t)}{dt} = 2 \pi f_0 (w_i-1)\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -2341,9 +2546,9 @@ $$ --&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P_i = V_i\sum_{k=1}^{n}\{ G_{ik} cos(\theta_i-\theta_k) +B_{ik}sin(\theta_i-\theta_k) \}&lt;/script&gt;
+\[P_i = V_i\sum_{k=1}^{n}\{ G_{ik} cos(\theta_i-\theta_k) +B_{ik}sin(\theta_i-\theta_k) \}\]
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Q_i = V_i\sum_{k=1}^{n}\{ G_{ik} sin(\theta_i-\theta_k) +B_{ik}cos(\theta_i-\theta_k) \}&lt;/script&gt;
+\[Q_i = V_i\sum_{k=1}^{n}\{ G_{ik} sin(\theta_i-\theta_k) +B_{ik}cos(\theta_i-\theta_k) \}\]
 
 &lt;p&gt;where&lt;/p&gt;
 
@@ -2439,102 +2644,98 @@ $$ --&gt;
       &lt;li&gt;Step 1. Compute the direction of the vectors.&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;N.A. \ (q_0 \parallel a_0)&lt;/script&gt;
+\[N.A. \ (q_0 \parallel a_0)\]
 
     &lt;ul&gt;
       &lt;li&gt;Stpe 2. Compute the magnitude of the normalizer.&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\rho_{0, 0}=\|a_0\|_2&lt;/script&gt;
+\[\rho_{0, 0}=\|a_0\|_2\]
 
     &lt;ul&gt;
       &lt;li&gt;Step 3. Compute a unit vector.&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;q_0=a_0/\rho_{0, 0}&lt;/script&gt;
+\[q_0=a_0/\rho_{0, 0}\]
 
     &lt;ul&gt;
       &lt;li&gt;Result&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;a_0=q_0\rho_{0, 0}&lt;/script&gt;
+\[a_0=q_0\rho_{0, 0}\]
   &lt;/li&gt;
   &lt;li&gt;Compute the vector $q_1$ ($i=1$)
     &lt;ul&gt;
       &lt;li&gt;Step 1. Compute the direction of the vectors.&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\rho_{0, 1}=q_0^{H}a_1&lt;/script&gt;
+\[\rho_{0, 1}=q_0^{H}a_1\]
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;a_{1}^{\perp}=a_1-\rho_{0, 1}q_0&lt;/script&gt;
+\[a_{1}^{\perp}=a_1-\rho_{0, 1}q_0\]
 
     &lt;ul&gt;
       &lt;li&gt;Step 2. Compute the magnitude of the normalizer.&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\rho_{1, 1}=\|a_1^\perp\|_2&lt;/script&gt;
+\[\rho_{1, 1}=\|a_1^\perp\|_2\]
 
     &lt;ul&gt;
       &lt;li&gt;Step 3. Compute a unit vector.&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;q_1=a_1^\perp/\rho_{1, 1}&lt;/script&gt;
+\[q_1=a_1^\perp/\rho_{1, 1}\]
 
     &lt;ul&gt;
       &lt;li&gt;Result&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\left[\begin{array}{c|c}a_{0} &amp; a_{1}\end{array}
+\[\left[\begin{array}{c|c}a_{0} &amp;amp; a_{1}\end{array}
       \right]=
-      \left[\begin{array}{c|c}q_{0} &amp; q_{1}\end{array}
+      \left[\begin{array}{c|c}q_{0} &amp;amp; q_{1}\end{array}
       \right]
       \left[\begin{array}{c|c}
-      \rho_{0, 0} &amp; \rho_{0, 1} \\
+      \rho_{0, 0} &amp;amp; \rho_{0, 1} \\
       \hline
-      0 &amp; \rho_{1, 1}
+      0 &amp;amp; \rho_{1, 1}
       \end{array}
-      \right] %]]&gt;&lt;/script&gt;
+      \right]\]
   &lt;/li&gt;
   &lt;li&gt;Compute the vector $q_2$ ($i=2$)
     &lt;ul&gt;
       &lt;li&gt;Step 1. Compute the direction of the vectors.&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{bmatrix}\rho_{0, 2} \\ \rho_{1, 2}\end{bmatrix}=\begin{bmatrix}q_{0} &amp; q_{1}\end{bmatrix}^Ha_2 %]]&gt;&lt;/script&gt;
+\[\begin{bmatrix}\rho_{0, 2} \\ \rho_{1, 2}\end{bmatrix}=\begin{bmatrix}q_{0} &amp;amp; q_{1}\end{bmatrix}^Ha_2\]
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} &amp; q_{1}\end{bmatrix}\begin{bmatrix}\rho_{0, 2} \\ \rho_{1, 2}\end{bmatrix} %]]&gt;&lt;/script&gt;
+\[a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} &amp;amp; q_{1}\end{bmatrix}\begin{bmatrix}\rho_{0, 2} \\ \rho_{1, 2}\end{bmatrix}\]
 
     &lt;ul&gt;
       &lt;li&gt;Step 2. Compute the magnitude of the normalizer.&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;\rho_{2, 2}=\|a_2^\perp\|_2&lt;/script&gt;
+\[\rho_{2, 2}=\|a_2^\perp\|_2\]
 
     &lt;ul&gt;
       &lt;li&gt;Step 3. Compute a unit vector.&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;q_2=a_2^\perp/\rho_{2, 2}&lt;/script&gt;
+\[q_2=a_2^\perp/\rho_{2, 2}\]
 
     &lt;ul&gt;
       &lt;li&gt;Result&lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\left[\begin{array}{c|c}a_{0} \ a_{1}&amp; a_{2}\end{array}
+\[\left[\begin{array}{c|c}a_{0} \ a_{1}&amp;amp; a_{2}\end{array}
       \right]=
-      \left[\begin{array}{c|c}q_{0} \ q_{1} &amp; q_{2}\end{array}
+      \left[\begin{array}{c|c}q_{0} \ q_{1} &amp;amp; q_{2}\end{array}
       \right]
       \left[\begin{array}{cc|c}
-      \rho_{0, 0}  &amp; \rho_{0, 1} &amp; \rho_{0, 2} \\
-      0 &amp; \rho_{1, 1} &amp; \rho_{1, 2}\\
+      \rho_{0, 0}  &amp;amp; \rho_{0, 1} &amp;amp; \rho_{0, 2} \\
+      0 &amp;amp; \rho_{1, 1} &amp;amp; \rho_{1, 2}\\
       \hline
-      0 &amp; 0 &amp; \rho_{2, 2}
+      0 &amp;amp; 0 &amp;amp; \rho_{2, 2}
       \end{array}
-      \right] %]]&gt;&lt;/script&gt;
+      \right]\]
   &lt;/li&gt;
   &lt;li&gt;keep do the routine till $i=n-1$
     &lt;ul&gt;
@@ -2546,7 +2747,7 @@ a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} &amp; q_{1}\end{bmatrix}\begin{bmatrix}\r
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;A = QR&lt;/script&gt;
+\[A = QR\]
 
 &lt;p&gt;What we should pay attention to in the final result ($A = QR$) are …&lt;/p&gt;
 
@@ -2578,18 +2779,17 @@ a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} &amp; q_{1}\end{bmatrix}\begin{bmatrix}\r
 
 &lt;p&gt;Partition the given matrices as follows.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\left[\begin{array}{c|cc}A_{0} &amp; a_{1} &amp; A_{2}\end{array}
+\[\left[\begin{array}{c|cc}A_{0} &amp;amp; a_{1} &amp;amp; A_{2}\end{array}
         \right]=
-        \left[\begin{array}{c|cc}Q_{0} &amp; q_{1} &amp; Q_{2}\end{array}
+        \left[\begin{array}{c|cc}Q_{0} &amp;amp; q_{1} &amp;amp; Q_{2}\end{array}
         \right]
         \left[\begin{array}{c|cc}
-        R_{0, 0}  &amp; r_{0, 1} &amp; R_{0, 2} \\
+        R_{0, 0}  &amp;amp; r_{0, 1} &amp;amp; R_{0, 2} \\
         \hline
-        0 &amp; \rho_{1, 1} &amp; r_{1, 2}^T\\
-        0 &amp; 0 &amp; R_{2, 2}
+        0 &amp;amp; \rho_{1, 1} &amp;amp; r_{1, 2}^T\\
+        0 &amp;amp; 0 &amp;amp; R_{2, 2}
         \end{array}
-        \right] %]]&gt;&lt;/script&gt;
+        \right]\]
 
 &lt;p&gt;Assume that $Q_0$ and $R_{0,0}$ have already been computed.&lt;/p&gt;
 
@@ -2651,18 +2851,17 @@ Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of
 
 &lt;p&gt;Partition the given matrices as follows.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\left[\begin{array}{c|cc}A_{0} &amp; a_{1} &amp; A_{2}\end{array}
+\[\left[\begin{array}{c|cc}A_{0} &amp;amp; a_{1} &amp;amp; A_{2}\end{array}
         \right]=
-        \left[\begin{array}{c|cc}Q_{0} &amp; q_{1} &amp; Q_{2}\end{array}
+        \left[\begin{array}{c|cc}Q_{0} &amp;amp; q_{1} &amp;amp; Q_{2}\end{array}
         \right]
         \left[\begin{array}{c|cc}
-        R_{0, 0}  &amp; r_{0, 1} &amp; R_{0, 2} \\
+        R_{0, 0}  &amp;amp; r_{0, 1} &amp;amp; R_{0, 2} \\
         \hline
-        0 &amp; \rho_{1, 1} &amp; r_{1, 2}^T\\
-        0 &amp; 0 &amp; R_{2, 2}
+        0 &amp;amp; \rho_{1, 1} &amp;amp; r_{1, 2}^T\\
+        0 &amp;amp; 0 &amp;amp; R_{2, 2}
         \end{array}
-        \right] %]]&gt;&lt;/script&gt;
+        \right]\]
 
 &lt;p&gt;Assume that $a_1$ and $A_2$ are known.&lt;/p&gt;
 
@@ -3252,8 +3451,7 @@ Figure 1. Definition of Hessian matrix. [1]
 &lt;p&gt;Let’s look at the Hessian’s geometric meaning in detail through examples.
 The Hessian matrices corresponding to Figure 2 and 3 are as follow;&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{bmatrix}2 &amp; 1\\1 &amp; 2\\\end{bmatrix} and \begin{bmatrix}2 &amp; 0\\0 &amp; -2\\\end{bmatrix}. %]]&gt;&lt;/script&gt;
+\[\begin{bmatrix}2 &amp;amp; 1\\1 &amp;amp; 2\\\end{bmatrix} and \begin{bmatrix}2 &amp;amp; 0\\0 &amp;amp; -2\\\end{bmatrix}.\]
 
 &lt;p&gt;The things to note here are, &lt;strong&gt;the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation.&lt;/strong&gt; More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, if some of the eigenvalues are positive, and some are negative (Figure 3), the given function is converted to a saddle shape. To recapitulate, &lt;strong&gt;by using the main feature of the geometric transformation shown by the Hessian, we could emphasize the gradient change of the given function.&lt;/strong&gt;&lt;/p&gt;
 

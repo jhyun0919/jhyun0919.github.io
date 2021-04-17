@@ -267,102 +267,98 @@
       <li>Step 1. Compute the direction of the vectors.</li>
     </ul>
 
-    <script type="math/tex; mode=display">N.A. \ (q_0 \parallel a_0)</script>
+\[N.A. \ (q_0 \parallel a_0)\]
 
     <ul>
       <li>Stpe 2. Compute the magnitude of the normalizer.</li>
     </ul>
 
-    <script type="math/tex; mode=display">\rho_{0, 0}=\|a_0\|_2</script>
+\[\rho_{0, 0}=\|a_0\|_2\]
 
     <ul>
       <li>Step 3. Compute a unit vector.</li>
     </ul>
 
-    <script type="math/tex; mode=display">q_0=a_0/\rho_{0, 0}</script>
+\[q_0=a_0/\rho_{0, 0}\]
 
     <ul>
       <li>Result</li>
     </ul>
 
-    <script type="math/tex; mode=display">a_0=q_0\rho_{0, 0}</script>
+\[a_0=q_0\rho_{0, 0}\]
   </li>
   <li>Compute the vector $q_1$ ($i=1$)
     <ul>
       <li>Step 1. Compute the direction of the vectors.</li>
     </ul>
 
-    <script type="math/tex; mode=display">\rho_{0, 1}=q_0^{H}a_1</script>
+\[\rho_{0, 1}=q_0^{H}a_1\]
 
-    <script type="math/tex; mode=display">a_{1}^{\perp}=a_1-\rho_{0, 1}q_0</script>
+\[a_{1}^{\perp}=a_1-\rho_{0, 1}q_0\]
 
     <ul>
       <li>Step 2. Compute the magnitude of the normalizer.</li>
     </ul>
 
-    <script type="math/tex; mode=display">\rho_{1, 1}=\|a_1^\perp\|_2</script>
+\[\rho_{1, 1}=\|a_1^\perp\|_2\]
 
     <ul>
       <li>Step 3. Compute a unit vector.</li>
     </ul>
 
-    <script type="math/tex; mode=display">q_1=a_1^\perp/\rho_{1, 1}</script>
+\[q_1=a_1^\perp/\rho_{1, 1}\]
 
     <ul>
       <li>Result</li>
     </ul>
 
-    <script type="math/tex; mode=display">% <![CDATA[
-\left[\begin{array}{c|c}a_{0} & a_{1}\end{array}
+\[\left[\begin{array}{c|c}a_{0} &amp; a_{1}\end{array}
       \right]=
-      \left[\begin{array}{c|c}q_{0} & q_{1}\end{array}
+      \left[\begin{array}{c|c}q_{0} &amp; q_{1}\end{array}
       \right]
       \left[\begin{array}{c|c}
-      \rho_{0, 0} & \rho_{0, 1} \\
+      \rho_{0, 0} &amp; \rho_{0, 1} \\
       \hline
-      0 & \rho_{1, 1}
+      0 &amp; \rho_{1, 1}
       \end{array}
-      \right] %]]></script>
+      \right]\]
   </li>
   <li>Compute the vector $q_2$ ($i=2$)
     <ul>
       <li>Step 1. Compute the direction of the vectors.</li>
     </ul>
 
-    <script type="math/tex; mode=display">% <![CDATA[
-\begin{bmatrix}\rho_{0, 2} \\ \rho_{1, 2}\end{bmatrix}=\begin{bmatrix}q_{0} & q_{1}\end{bmatrix}^Ha_2 %]]></script>
+\[\begin{bmatrix}\rho_{0, 2} \\ \rho_{1, 2}\end{bmatrix}=\begin{bmatrix}q_{0} &amp; q_{1}\end{bmatrix}^Ha_2\]
 
-    <script type="math/tex; mode=display">% <![CDATA[
-a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} & q_{1}\end{bmatrix}\begin{bmatrix}\rho_{0, 2} \\ \rho_{1, 2}\end{bmatrix} %]]></script>
+\[a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} &amp; q_{1}\end{bmatrix}\begin{bmatrix}\rho_{0, 2} \\ \rho_{1, 2}\end{bmatrix}\]
 
     <ul>
       <li>Step 2. Compute the magnitude of the normalizer.</li>
     </ul>
 
-    <script type="math/tex; mode=display">\rho_{2, 2}=\|a_2^\perp\|_2</script>
+\[\rho_{2, 2}=\|a_2^\perp\|_2\]
 
     <ul>
       <li>Step 3. Compute a unit vector.</li>
     </ul>
 
-    <script type="math/tex; mode=display">q_2=a_2^\perp/\rho_{2, 2}</script>
+\[q_2=a_2^\perp/\rho_{2, 2}\]
 
     <ul>
       <li>Result</li>
     </ul>
 
-    <script type="math/tex; mode=display">% <![CDATA[
-\left[\begin{array}{c|c}a_{0} \ a_{1}& a_{2}\end{array}
+\[\left[\begin{array}{c|c}a_{0} \ a_{1}&amp; a_{2}\end{array}
       \right]=
-      \left[\begin{array}{c|c}q_{0} \ q_{1} & q_{2}\end{array}
+      \left[\begin{array}{c|c}q_{0} \ q_{1} &amp; q_{2}\end{array}
       \right]
       \left[\begin{array}{cc|c}
-      \rho_{0, 0}  & \rho_{0, 1} & \rho_{0, 2} \\
-      0 & \rho_{1, 1} & \rho_{1, 2}\\
+      \rho_{0, 0}  &amp; \rho_{0, 1} &amp; \rho_{0, 2} \\
+      0 &amp; \rho_{1, 1} &amp; \rho_{1, 2}\\
       \hline
-      0 & 0 & \rho_{2, 2}
+      0 &amp; 0 &amp; \rho_{2, 2}
       \end{array}
-      \right] %]]></script>
+      \right]\]
   </li>
   <li>keep do the routine till $i=n-1$
     <ul>
@@ -374,7 +370,7 @@ a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} & q_{1}\end{bmatrix}\begin{bmatrix}\rho_{
   </li>
 </ul>
 
-<script type="math/tex; mode=display">A = QR</script>
+\[A = QR\]
 
 <p>What we should pay attention to in the final result ($A = QR$) are …</p>
 
@@ -406,18 +402,17 @@ a_{2}^{\perp}=a_2-\begin{bmatrix}q_{0} & q_{1}\end{bmatrix}\begin{bmatrix}\rho_{
 
 <p>Partition the given matrices as follows.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\left[\begin{array}{c|cc}A_{0} & a_{1} & A_{2}\end{array}
+\[\left[\begin{array}{c|cc}A_{0} &amp; a_{1} &amp; A_{2}\end{array}
         \right]=
-        \left[\begin{array}{c|cc}Q_{0} & q_{1} & Q_{2}\end{array}
+        \left[\begin{array}{c|cc}Q_{0} &amp; q_{1} &amp; Q_{2}\end{array}
         \right]
         \left[\begin{array}{c|cc}
-        R_{0, 0}  & r_{0, 1} & R_{0, 2} \\
+        R_{0, 0}  &amp; r_{0, 1} &amp; R_{0, 2} \\
         \hline
-        0 & \rho_{1, 1} & r_{1, 2}^T\\
-        0 & 0 & R_{2, 2}
+        0 &amp; \rho_{1, 1} &amp; r_{1, 2}^T\\
+        0 &amp; 0 &amp; R_{2, 2}
         \end{array}
-        \right] %]]></script>
+        \right]\]
 
 <p>Assume that $Q_0$ and $R_{0,0}$ have already been computed.</p>
 
@@ -479,18 +474,17 @@ Figure 1. Classical Gram-Schmidt algorithm for computing the QR factorization of
 
 <p>Partition the given matrices as follows.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\left[\begin{array}{c|cc}A_{0} & a_{1} & A_{2}\end{array}
+\[\left[\begin{array}{c|cc}A_{0} &amp; a_{1} &amp; A_{2}\end{array}
         \right]=
-        \left[\begin{array}{c|cc}Q_{0} & q_{1} & Q_{2}\end{array}
+        \left[\begin{array}{c|cc}Q_{0} &amp; q_{1} &amp; Q_{2}\end{array}
         \right]
         \left[\begin{array}{c|cc}
-        R_{0, 0}  & r_{0, 1} & R_{0, 2} \\
+        R_{0, 0}  &amp; r_{0, 1} &amp; R_{0, 2} \\
         \hline
-        0 & \rho_{1, 1} & r_{1, 2}^T\\
-        0 & 0 & R_{2, 2}
+        0 &amp; \rho_{1, 1} &amp; r_{1, 2}^T\\
+        0 &amp; 0 &amp; R_{2, 2}
         \end{array}
-        \right] %]]></script>
+        \right]\]
 
 <p>Assume that $a_1$ and $A_2$ are known.</p>
 

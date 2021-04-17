@@ -335,9 +335,9 @@
 
 <p>Predicting the most likely traffic measurements (e.g. speed or traffic flow) in the next $H$ time steps given the previous $M$ traffic observations as,</p>
 
-<script type="math/tex; mode=display">\hat{v}_{t+1}, ..., \hat{v}_{t+H} = \underset{v_{t+1}, ..., v_{t+H}}{\mathrm{argmax}}\log{P(v_{t+1}, ..., v_{t+H} | v_{t-M+1}, ..., v_{t})}
+\[\hat{v}_{t+1}, ..., \hat{v}_{t+H} = \underset{v_{t+1}, ..., v_{t+H}}{\mathrm{argmax}}\log{P(v_{t+1}, ..., v_{t+H} | v_{t-M+1}, ..., v_{t})}
 
-\tag{1}</script>
+\tag{1}\]
 
 <p>where $v_t \in \mathbb{R}^{n}$ is an observation vector of $n$ road segments at time step $t$, each element of which records historical observation for a single road segment.</p>
 
@@ -400,9 +400,8 @@ Q. WHY AUTHOR CHOOSE SPECTRAL APPROACHES???
 
 <p>In this paper, the author introduces the notion of <strong>graph convolution operator</strong> “$*\mathcal{G}$”  based on <strong>the conception of spectral filtering</strong> [7, 8].</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{aligned} y & = \Theta *\mathcal{G} x \\& = \Theta (L) x \\& = \Theta (U \Lambda U^T) x \\&= U \Theta (\Lambda) U^T x \end{aligned}
-\tag{2} %]]></script>
+\[\begin{aligned} y &amp; = \Theta *\mathcal{G} x \\&amp; = \Theta (L) x \\&amp; = \Theta (U \Lambda U^T) x \\&amp;= U \Theta (\Lambda) U^T x \end{aligned}
+\tag{2}\]
 
 <p>where</p>
 
@@ -482,8 +481,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 <p>Chebyshev polynomial $T_k(x)$ is used to approximate kernels as a truncated expansion of order $K-1$ as follows.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{aligned}\Theta (\Lambda) & = \sum_{k=0}^{K-1} \theta_k \Lambda^k \\ &\approx \sum_{k=0}^{K-1} \theta_k T_k(\tilde{\Lambda})\end{aligned} %]]></script>
+\[\begin{aligned}\Theta (\Lambda) &amp; = \sum_{k=0}^{K-1} \theta_k \Lambda^k \\ &amp;\approx \sum_{k=0}^{K-1} \theta_k T_k(\tilde{\Lambda})\end{aligned}\]
 
 <p>where</p>
 <ul>
@@ -499,9 +497,8 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 <p>Using the Chebyshev polynomials approximation, the graph convolution can then be rewritten as,</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{aligned} \Theta*\mathcal{G}x  &= \Theta(L)x \\ &\approx \sum_{k=0}^{K-1} \theta_k T_k(\tilde{L})x \end{aligned}
-\tag{3} %]]></script>
+\[\begin{aligned} \Theta*\mathcal{G}x  &amp;= \Theta(L)x \\ &amp;\approx \sum_{k=0}^{K-1} \theta_k T_k(\tilde{L})x \end{aligned}
+\tag{3}\]
 
 <p>where</p>
 
@@ -549,9 +546,8 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 <p>Thus, the Eq. (3) can be simplified to,</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{aligned} \Theta*\mathcal{G}x & \approx \theta_0x + \theta_1(\frac{2}{\lambda_{max}}L-I_n)x \\ &\approx \theta_0x - \theta_1(D^{-1/2}WD^{-1/2})x \end{aligned}
-\tag{4} %]]></script>
+\[\begin{aligned} \Theta*\mathcal{G}x &amp; \approx \theta_0x + \theta_1(\frac{2}{\lambda_{max}}L-I_n)x \\ &amp;\approx \theta_0x - \theta_1(D^{-1/2}WD^{-1/2})x \end{aligned}
+\tag{4}\]
 
 <p>where $\theta_0$, $\theta_1$ are two shared parameters of the kernel.</p>
 
@@ -559,8 +555,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 <p>Then, the graph convolution can be alternatively expressed as,</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{aligned} \Theta*\mathcal{G}x &= \theta(I_n + D^{-1/2}WD^{-1/2})x \\&= \theta(\tilde{D}^{-1/2}\tilde{W}\tilde{D}^{-1/2})x \end{aligned} \tag{5} %]]></script>
+\[\begin{aligned} \Theta*\mathcal{G}x &amp;= \theta(I_n + D^{-1/2}WD^{-1/2})x \\&amp;= \theta(\tilde{D}^{-1/2}\tilde{W}\tilde{D}^{-1/2})x \end{aligned} \tag{5}\]
 
 <p>where</p>
 
@@ -588,7 +583,7 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 <p>For a signal $C_i$ channels $X \in \mathbb{R}^{n \times C_i}$, the graph convolution can be generalized by,</p>
 
-<script type="math/tex; mode=display">y_i = \sum_{i=1}^{C_i} \Theta_{ij}(L)x_i \in \mathbb{R}^n, 1 \leq j \leq C_o \tag{6}</script>
+\[y_i = \sum_{i=1}^{C_i} \Theta_{ij}(L)x_i \in \mathbb{R}^n, 1 \leq j \leq C_o \tag{6}\]
 
 <p>with the $C_i \times C_o$ vectors of Chebyshev coefficients $\Theta_{ij} \in \mathbb{R}^K$ ($C_i$, $C_o$ are the size of input and output of the feature maps, respectively).</p>
 
@@ -644,7 +639,7 @@ Figure 3. Temporal Gated-Conv Block. [1]
 
 <p>As a result, the temporal gated convolution can be defined as,</p>
 
-<script type="math/tex; mode=display">\Gamma * \tau Y=P \odot \sigma (Q) \in \mathbb{R}^{(M-K_t+1) \times C_o} \tag{7}</script>
+\[\Gamma * \tau Y=P \odot \sigma (Q) \in \mathbb{R}^{(M-K_t+1) \times C_o} \tag{7}\]
 
 <p>where</p>
 
@@ -696,7 +691,7 @@ Figure 5. Spatio-Temporal Convolutional (ST-Conv) Block. [1]
 
 <p>The “sandwich” structure also helps the network sufficiently apply bottleneck strategy to achieve scale compression and feature squeezing by downscaling and upscaling of channels $C$ through the graph convolutional layer.</p>
 
-<p><span style="color:green"> Q. WHY IT HAS A SANDWICH STRUCTURE??? </span>
+<p><span style="color:green"> Q. WHY IT HAS SANDWICH STRUCTURE??? </span>
 <br />
 <span style="color:blue"> A. </span>
 <br />
@@ -706,7 +701,7 @@ Figure 5. Spatio-Temporal Convolutional (ST-Conv) Block. [1]
 
 <p>The input and output of ST-Conv blocks are all 3-D tensors. For the input $v^l \in \mathbb{R}^{M \times n \times C^l}$ of block $l$, the output $v^{l+1} \in \mathbb{R}^{(M-2(K_t-1)) \times n \times C^{l+1}}$is computed by,</p>
 
-<script type="math/tex; mode=display">v^{l+1} = \Gamma_1^l * \tau ReLU(\Theta^l * \mathcal{G}(\Gamma_0^l * \tau v^l)) \tag{8}</script>
+\[v^{l+1} = \Gamma_1^l * \tau ReLU(\Theta^l * \mathcal{G}(\Gamma_0^l * \tau v^l)) \tag{8}\]
 
 <p>where</p>
 
@@ -734,7 +729,7 @@ Figure 6. The framework STGCN consists of two ST-Conv blocks and a fully-connect
 
 <p>We use L2 loss to measure the performance of our model.</p>
 
-<script type="math/tex; mode=display">L(\hat{v};W_{\theta})=\sum_{t}\| \hat{v}(v_{t-M+1}, ..., v_t, W_\theta) - v_{t+1} \|^2 \tag{9}</script>
+\[L(\hat{v};W_{\theta})=\sum_{t}\| \hat{v}(v_{t-M+1}, ..., v_t, W_\theta) - v_{t+1} \|^2 \tag{9}\]
 
 <p>where</p>
 
@@ -820,8 +815,7 @@ Figure 7. PeMS sensor network in District 7 of California (left), each dot denot
   </li>
 </ul>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{aligned}Z &= \frac{x-\mu}{\sigma}, \\ & \text{where } \mu \text{ is mean and } \sigma \text{ is standard deviation}.\end{aligned} %]]></script>
+\[\begin{aligned}Z &amp;= \frac{x-\mu}{\sigma}, \\ &amp; \text{where } \mu \text{ is mean and } \sigma \text{ is standard deviation}.\end{aligned}\]
 
 <!-- - The weighted adjacency matrix $W$
 
@@ -836,9 +830,9 @@ $$ -->
 
 <p>All the tests use 60 minutes as the historical time window.</p>
 
-<script type="math/tex; mode=display">\hat{v}_{t+1}, ..., \hat{v}_{t+H} = \underset{v_{t+1}, ..., v_{t+H}}{\mathrm{argmax}}\log{P(v_{t+1}, ..., v_{t+H} | v_{t-M+1}, ..., v_{t})}
+\[\hat{v}_{t+1}, ..., \hat{v}_{t+H} = \underset{v_{t+1}, ..., v_{t+H}}{\mathrm{argmax}}\log{P(v_{t+1}, ..., v_{t+H} | v_{t-M+1}, ..., v_{t})}
 
-\tag{1}</script>
+\tag{1}\]
 
 <p>With Eq. (1) and the time window setting, 12 observed data points ($M = 12$) are used to forecast traffic conditions in the next 15, 30, and 45 minutes ($H = 3, 6, 9$).</p>
 
@@ -852,19 +846,19 @@ $$ -->
   <li>Mean Absolute Errors (MAE)</li>
 </ul>
 
-<script type="math/tex; mode=display">\frac{1}{n}\sum_{1}^{n}{\| y_i - \hat{y_i} \|}</script>
+\[\frac{1}{n}\sum_{1}^{n}{\| y_i - \hat{y_i} \|}\]
 
 <ul>
   <li>Mean Absolute Percentage Errors (MAPE)</li>
 </ul>
 
-<script type="math/tex; mode=display">\frac{100}{n}\sum_{1}^{n}{ \frac{y_i - \hat{y_i}}{y_i} }</script>
+\[\frac{100}{n}\sum_{1}^{n}{ \frac{y_i - \hat{y_i}}{y_i} }\]
 
 <ul>
   <li>Root Mean Squared Errors (RMSE)</li>
 </ul>
 
-<script type="math/tex; mode=display">\frac{1}{n}\sum_{1}^{n}{\sqrt{(y_i - \hat{y_i})^2}}</script>
+\[\frac{1}{n}\sum_{1}^{n}{\sqrt{(y_i - \hat{y_i})^2}}\]
 
 <p><span style="color:green"> Q. WHY DO WE NEED MULTIPLE METRICS??? </span>
 <br />
@@ -1062,7 +1056,7 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
   <li>
     <p>Randomness will be given by the method that generated the uncertain loads in <a href="https://arxiv.org/abs/1902.05607">[16]</a>:</p>
 
-    <script type="math/tex; mode=display">d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)</script>
+\[d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)\]
 
     <ul>
       <li>
@@ -1182,7 +1176,7 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
 
 <p>Given a simple graph $\mathcal{G}$ with $n$ vertices, its Laplacian matrix $L_{n \times n}$ is defined as,</p>
 
-<script type="math/tex; mode=display">L = D - A</script>
+\[L = D - A\]
 
 <p>where</p>
 
@@ -1197,8 +1191,7 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
 
 <p>The elements of $L$ are given by</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-L_{ij}:= \begin{cases} deg(v_i) &\text{if } i=j \\ -1 &\text{if } i\neq j \text{ and } v_i \text{ is adjacent to } v_j \\ 0 &\text{otherwise} \end{cases} %]]></script>
+\[L_{ij}:= \begin{cases} deg(v_i) &amp;\text{if } i=j \\ -1 &amp;\text{if } i\neq j \text{ and } v_i \text{ is adjacent to } v_j \\ 0 &amp;\text{otherwise} \end{cases}\]
 
 <p>where</p>
 
@@ -1212,17 +1205,16 @@ L_{ij}:= \begin{cases} deg(v_i) &\text{if } i=j \\ -1 &\text{if } i\neq j \text{
 
 <p>The symmetric normalized Laplacian matrix is defined as,</p>
 
-<script type="math/tex; mode=display">L = I - D^{-1/2} A D^{-1/2}</script>
+\[L = I - D^{-1/2} A D^{-1/2}\]
 
 <p>The elements of $L^{sym}$ are given by</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-L_{ij}:=
+\[L_{ij}:=
 \begin{cases}
-1 &\text{if } i=j \text{ and } deg(v_i) \neq 0\\
--\frac{1}{\sqrt{deg(v_i)deg(v_j)}} &\text{if } i\neq j \text{ and } v_i \text{ is adjacent to } v_j \\
-0 &\text{otherwise}
-\end{cases} %]]></script>
+1 &amp;\text{if } i=j \text{ and } deg(v_i) \neq 0\\
+-\frac{1}{\sqrt{deg(v_i)deg(v_j)}} &amp;\text{if } i\neq j \text{ and } v_i \text{ is adjacent to } v_j \\
+0 &amp;\text{otherwise}
+\end{cases}\]
 
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/laplacian_matrix.png" width="666" />   <figcaption>
@@ -1242,7 +1234,7 @@ Figure 10. Example of a General Graph and its Degree, Adjacency, and Laplacian M
 
 <p>The definition of Laplacian matrix is</p>
 
-<script type="math/tex; mode=display">L = I_n - D^{-\frac{1}{2}} W D^{-\frac{1}{2}} = U \Lambda U^T \in \mathbb{R}^{n\times n}</script>
+\[L = I_n - D^{-\frac{1}{2}} W D^{-\frac{1}{2}} = U \Lambda U^T \in \mathbb{R}^{n\times n}\]
 
 <p>where</p>
 
@@ -1271,15 +1263,15 @@ Figure 10. Example of a General Graph and its Degree, Adjacency, and Laplacian M
 
 <p>The Chebyshev polynomials are two sequences of polynomials related to the sine and cosine functions, notated as $T_n(x)$ and $U_n(x)$.</p>
 
-<script type="math/tex; mode=display">T_n(cos(\theta))=cos(n\theta)</script>
+\[T_n(cos(\theta))=cos(n\theta)\]
 
-<script type="math/tex; mode=display">U_n(cos(\theta))sin(\theta)=sin((n+1)\theta)</script>
+\[U_n(cos(\theta))sin(\theta)=sin((n+1)\theta)\]
 
 <p>The Chebyshev polynomials of the first kind are obtained from the recurrence relation as follows.</p>
 
-<script type="math/tex; mode=display">T_0(x)=1 \\
+\[T_0(x)=1 \\
 T_1(x)=x \\
-T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)</script>
+T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)\]
 
 <figure align="center">
 <img src="https://jhyun0919.github.io/assets/img/2021-04-14-STGCN/Chebyshev_Polynomials_of_the_First_Kind.png" width="600" />   <figcaption>
@@ -1290,7 +1282,7 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 
 <p>One can obtain polynomials very close to the optimal one by expanding the given function in terms of Chebyshev polynomials and then cutting off the expansion at the desired degree.</p>
 
-<script type="math/tex; mode=display">f(x) \approx \sum_{i=0}^{\infty}{c_i T_{i}(x)}</script>
+\[f(x) \approx \sum_{i=0}^{\infty}{c_i T_{i}(x)}\]
 
 <p>This is similar to the Fourier analysis of the function, using the Chebyshev polynomials instead of the usual trigonometric functions.</p>
 
@@ -1302,13 +1294,12 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 
 <p>The Eq. (2) represents spectral filtering of graph signal.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{aligned} y & = \Theta *\mathcal{G} x \\& = \Theta (L) x \\& = \Theta (U \Lambda U^T) x \\&= U \Theta (\Lambda) U^T x \end{aligned}
-\tag{2} %]]></script>
+\[\begin{aligned} y &amp; = \Theta *\mathcal{G} x \\&amp; = \Theta (L) x \\&amp; = \Theta (U \Lambda U^T) x \\&amp;= U \Theta (\Lambda) U^T x \end{aligned}
+\tag{2}\]
 
 <p>The filter is characterized by its kernel ($\Theta(\cdot)$), and the simplest kernerl we can imagine is a non-parametic filter, i.e. the kernel parameters $\theta_k \in \mathbb{R}$  $(k=1, …, n)$ are all free.</p>
 
-<script type="math/tex; mode=display">\Theta(\Lambda) = diag(\theta)</script>
+\[\Theta(\Lambda) = diag(\theta)\]
 
 <p>In this case, the filter has a limitaion that it is not localized in space. 😡</p>
 
@@ -1322,8 +1313,7 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 
 <p>The localized filter can be expressed as follows.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{aligned}\Theta(\Lambda) &= \sum_{k=0}^{K-1}{\theta_k \Lambda^{k}} \\ &\approx \sum_{k=0}^{K-1}{\theta_k T_{k}(\tilde{\Lambda})}\end{aligned} %]]></script>
+\[\begin{aligned}\Theta(\Lambda) &amp;= \sum_{k=0}^{K-1}{\theta_k \Lambda^{k}} \\ &amp;\approx \sum_{k=0}^{K-1}{\theta_k T_{k}(\tilde{\Lambda})}\end{aligned}\]
 
 <p>where</p>
 
@@ -1345,7 +1335,7 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 
 <p>By 1st-order approximation, we can get a simplified filter as follows.</p>
 
-<script type="math/tex; mode=display">\Theta(\Lambda) \approx \theta_0 + \theta_1(\frac{2}{\lambda_{max}}\Lambda-I_n)</script>
+\[\Theta(\Lambda) \approx \theta_0 + \theta_1(\frac{2}{\lambda_{max}}\Lambda-I_n)\]
 
 <p>where $\theta_0$, $\theta_1$ are two shared parameters of the kernel.</p>
 
