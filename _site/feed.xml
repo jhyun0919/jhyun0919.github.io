@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sat, 17 Apr 2021 13:17:21 -0500</pubDate>
+    <pubDate>Sat, 17 Apr 2021 15:21:54 -0500</pubDate>
     
       <item>
         <title>Dr. Zhu's Group Meeting Log</title>
@@ -36,15 +36,9 @@
 &lt;h4 id=&quot;keywords&quot;&gt;Keywords&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;modeling, monitoring, optimization&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;partial observability&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CVaR&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;modeling, monitoring, optimization&lt;/li&gt;
+  &lt;li&gt;partial observability&lt;/li&gt;
+  &lt;li&gt;CVaR&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -78,6 +72,8 @@
 
 &lt;h3 id=&quot;proposed-approach&quot;&gt;Proposed Approach&lt;/h3&gt;
 
+&lt;p&gt;&lt;a name=&quot;Eq. (2)&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
 &lt;h4 id=&quot;modeling&quot;&gt;Modeling&lt;/h4&gt;
 
 &lt;ul&gt;
@@ -91,14 +87,20 @@
 \tag{1}\]
 
 &lt;ul&gt;
-  &lt;li&gt;Bi-linear regression with Group-LASSO regularization&lt;/li&gt;
+  &lt;li&gt;Bi-linear regression with &lt;a href=&quot;#Group-LASSO&quot;&gt;Group-LASSO regularization&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 \[\min_{\mathbf{\theta}, \{\tilde{\mathbf{s}}^{\mathcal{U}}_{t}\}}{\sum_{t}^{T}{\| \tilde{\mathbf{v}}_t} - \mathbf{A}(\tilde{\mathbf{s}}^{\mathcal{O}}_{t})\mathbf{\theta} - \mathbf{A}(\tilde{\mathbf{s}}^{\mathcal{U}}_{t})\mathbf{\theta} \|_2^2 + \lambda \| \tilde{\mathbf{s}}^{\mathcal{U}}_{t} \|_G}
 \tag{2}\]
 
 &lt;ul&gt;
-  &lt;li&gt;Alternating Minimization (AM)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Alternating Minimization (AM)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;between $\mathbf{\theta}$ and ${\tilde{\mathbf{s}}^{\mathcal{U}}_{t}}$&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -211,16 +213,21 @@
 
 &lt;h2 id=&quot;what-i-benefit&quot;&gt;What I Benefit&lt;/h2&gt;
 
-&lt;h3 id=&quot;regularizer&quot;&gt;Regularizer&lt;/h3&gt;
+&lt;p&gt;&lt;a name=&quot;Group-LASSO&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;lasso-and-ridge-regressions&quot;&gt;Lasso and Ridge Regressions&lt;/h4&gt;
+&lt;h3 id=&quot;regularization&quot;&gt;Regularization&lt;/h3&gt;
 
-&lt;p&gt;Given a dataset ${X,y}$ where $X$ is the feature and $y$ is the label for regression, we simply model it as has a linear relationship $y = X\beta$. With regularization, the optimization problem of Lasso and Ridge regressions are&lt;/p&gt;
+&lt;h4 id=&quot;lasso-and-ridge-regressions-&quot;&gt;Lasso and Ridge Regressions []&lt;/h4&gt;
 
-&lt;p&gt;\(\beta^{*} = \argmin_{\beta} {\| y - X\beta \|_2^2} + \lambda \| \beta \|_{1}\)
-\(\beta^{*} = \argmin_{\beta} {\| y - X\beta \|_2^2} + \lambda \| \beta \|_{2}\)&lt;/p&gt;
+&lt;p&gt;Given a dataset ${X,y}$ where $X$ is the feature and $y$ is the label for regression, we simply model it as has a linear relationship $y = X\beta$. With regularization, we can control the degree of freedom of the model parameter ($\beta$) and able to avoid the risk of overfitting.&lt;/p&gt;
 
-&lt;p&gt;Due to the shape of their constraints boundary, LASSO encourage sparse solution to the optimal pronblem.&lt;/p&gt;
+&lt;p&gt;The two representative regularizations are LASSO (L1) and Ridge (L2), and they are defined as follows.&lt;/p&gt;
+
+\[\beta^{*} = \underset{\beta}{\mathrm{argmin}} {\| y - X\beta \|_2^2} + \lambda \| \beta \|_{1}\]
+
+\[\beta^{*} = \underset{\beta}{\mathrm{argmin}} {\| y - X\beta \|_2^2} + \lambda \| \beta \|_{2}\]
+
+&lt;p&gt;Due to the shape of their constraints boundary (norm ball shape), LASSO encourage a sparse result as a solution of the optimal problem.&lt;/p&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/lasso-vs-ridge.png&quot; width=&quot;500&quot; /&gt;   &lt;figcaption&gt;
@@ -231,7 +238,23 @@ Figure . Conventional Explanation to Sparsity Caused by Lasso. []
 
 &lt;h4 id=&quot;group-lasso&quot;&gt;Group LASSO&lt;/h4&gt;
 
-&lt;h4 id=&quot;group-lasso-vs-lasso-&quot;&gt;Group-LASSO vs. LASSO []&lt;/h4&gt;
+&lt;p&gt;Suppose the weights in $\beta$ could be grouped, the new weight vector becomes $\beta_G = { \beta^{(1)}, \beta^{(2)},⋯,\beta^{(m)} }$. Each $\beta^{(l)}$ for $1 \leq l \leq m$ represents a group of weights from $\beta$.&lt;/p&gt;
+
+&lt;p&gt;We further group $X$ accordingly. We denote $X(l)$ as the submatrix of $X$ with columns corresponding to the weights in $\beta^{(l)}$. The optimization problem becomes&lt;/p&gt;
+
+\[\beta^{*} = \underset{\beta}{\mathrm{argmin}} {\| y - \sum_{l=1}^{m}{X^{(l)}\beta^{(l)}} \|_2^2} + \lambda \sum_{l=1}^{m} \sqrt{p_{l}}\| \beta^{(l)} \|_{1}\]
+
+&lt;p&gt;where $p^{(l)}$ represents the number of weights in $\beta^{(l)}$.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;why-do-we-need-grouping&quot;&gt;Why do we need GROUPING?&lt;/h4&gt;
+
+&lt;p&gt;Usually, the variables of the minimization problem are not correlated. However, when there are certain constraints or correlation between variables, we need to group them appropriately.&lt;/p&gt;
+
+&lt;p&gt;The power injections as minimization variables, covered in the presentation , is a good example. Since power is comprised of active and reactive power, the variable of &lt;a href=&quot;#Eq. (2)&quot;&gt;the minimization problem of Eq. (2)&lt;/a&gt; has to be grouped as follows.&lt;/p&gt;
+
+\[\tilde{\mathbf{s}}_{t}\ = \begin{bmatrix} \tilde{p}_n &amp;amp; \tilde{q}_n \end{bmatrix}\]
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -239,13 +262,15 @@ Figure . Conventional Explanation to Sparsity Caused by Lasso. []
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;throw-back-the-q&quot;&gt;Throw back the Q&lt;/h3&gt;
+&lt;h3 id=&quot;throw-back-the-question&quot;&gt;Throw back the Question&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;what-i-contribute&quot;&gt;What I Contribute&lt;/h2&gt;
 
-&lt;h4 id=&quot;the-framework-of-researchstudy&quot;&gt;The framework of research/study&lt;/h4&gt;
+&lt;h3 id=&quot;the-framework-of-researchstudy&quot;&gt;The framework of research/study&lt;/h3&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -273,7 +298,7 @@ Figure . Conventional Explanation to Sparsity Caused by Lasso. []
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;resting&quot;&gt;Resting&lt;/h4&gt;
+&lt;h3 id=&quot;resting&quot;&gt;Resting&lt;/h3&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
 &lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/Decanting-Guide.png&quot; width=&quot;600&quot; /&gt;   &lt;figcaption&gt;
@@ -292,6 +317,8 @@ Figure . Decanting Guide []
 &lt;p&gt;[] L. Mao, “Group Lasso,” Lei Mao’s Log Book. [Online]. Available: https://leimao.github.io/blog/Group-Lasso/. [Accessed: 17-Apr-2021].&lt;/p&gt;
 
 &lt;p&gt;[] “Lasso (statistics),” Wikipedia, 14-Apr-2021. [Online]. Available: https://en.wikipedia.org/wiki/Lasso_(statistics). [Accessed: 17-Apr-2021].&lt;/p&gt;
+
+&lt;p&gt;[] P. P. H. Winston, “How to Speak,” MIT OpenCourseWare. [Online]. Available: https://ocw.mit.edu/resources/res-tll-005-how-to-speak-january-iap-2018/. [Accessed: 17-Apr-2021].&lt;/p&gt;
 
 &lt;p&gt;[] E. Golman, “The Ultimate Guide to Decanting &amp;amp; Aerating Kosher Wine,” Kosherwine.com, 18-Dec-2020. [Online]. Available: https://www.kosherwine.com/discover/the-ultimate-guide-to-decanting-kosher-wine. [Accessed: 17-Apr-2021].&lt;/p&gt;
 
