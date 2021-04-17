@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dr. Zhu's Group Meeting Log
+title: (eiting👷🏻‍♂️) Dr. Zhu's Group Meeting Log
 categories: [Research/Meeting Log]
 tags: [Group Meeting]
 ---
