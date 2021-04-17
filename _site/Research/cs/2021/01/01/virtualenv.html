@@ -282,27 +282,19 @@ Figure 1. Examples of Python Virtual Environment [2].
 <p>We can create a new virtual environment with the following commands and manage packages in the corresponding virtual environment for each project.</p>
 
 <ul>
-  <li>
-    <p>Create a new virtual environmnet</p>
-
+  <li>Create a new virtual environmnet  <br /><br />
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda create <span class="nt">--name</span> ENVNAME
 </code></pre></div>    </div>
   </li>
-  <li>
-    <p>Activate a named environment</p>
-
+  <li>Activate a named environment  <br /><br />
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda activate ENVNAME
 </code></pre></div>    </div>
   </li>
-  <li>
-    <p>Install a package</p>
-
+  <li>Install a package  <br /><br />
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda <span class="nb">install </span>PKGNAME
 </code></pre></div>    </div>
   </li>
-  <li>
-    <p>Deactivate current environment</p>
-
+  <li>Deactivate current environment  <br /><br />
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda deactivate ENVNAME
 </code></pre></div>    </div>
   </li>
@@ -313,9 +305,7 @@ Figure 1. Examples of Python Virtual Environment [2].
 <p>And, we can clearly provide the dependency for the project to other developers through the following commands.</p>
 
 <ul>
-  <li>
-    <p>Exporting the <em>envname.yml</em></p>
-
+  <li>Exporting the <em>envname.yml</em>  <br /><br />
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda <span class="nb">env export</span> <span class="nt">--name</span> ENVNAME <span class="o">&gt;</span> envname.yml
 </code></pre></div>    </div>
   </li>
@@ -326,9 +316,7 @@ Figure 1. Examples of Python Virtual Environment [2].
 <p>Finally, we can create a virtual environment that matches the developer’s development environment on our local PC through the <em>envname.yml</em>.</p>
 
 <ul>
-  <li>
-    <p>Creating an environment from an <em>envname.yml</em></p>
-
+  <li>Creating an environment from an <em>envname.yml</em>  <br /><br />
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>conda <span class="nb">env </span>create <span class="nt">--file</span> envname.yml
 </code></pre></div>    </div>
   </li>

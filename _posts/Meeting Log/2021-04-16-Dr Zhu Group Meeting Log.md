@@ -46,9 +46,8 @@ The contents covered in this article are credited to the speaker of the meeting,
 
 ### Problem Formulation
 
-- How to estimate an accurate model of the power system?
-
-- How to address monitoring and optimization tasks under limited observability?
+- How to estimate an accurate model of the power system?<br><br>
+- How to address monitoring and optimization tasks under limited observability? <br><br>
 
 <br>
 <br>
@@ -76,21 +75,18 @@ $$
 \tag{2}
 $$
 
-- Alternating Minimization (AM)
-
+- Alternating Minimization (AM)<br><br>
   - between $\mathbf{\theta}$ and $\{\tilde{\mathbf{s}}^{\mathcal{U}}_{t}\}$
 
 <br>
 
 #### Monitoring
 
-- DER visibility by leveraging heterogenous & dynamic data.
+- DER visibility by leveraging heterogenous & dynamic data.<br><br>
+  - Smart meter data ($\mathbf{\Gamma}$)<br><br>
+  - D-PMU data ($\mathbf{Z}$)<br><br>
 
-  - Smart meter data ($\mathbf{\Gamma}$)
-
-  - D-PMU data ($\mathbf{Z}$)
-
-- Spatio-temporal learning
+- Spatio-temporal learning<br><br>
 
 $$
 \begin{aligned}
@@ -248,15 +244,11 @@ $$
 
 ### The framework of research/study
 
-1. Motivation
-
-2. Problem Formulation
-
-3. Proposed Approach
-
-4. Experiment & Result
-
-5. Future Study
+1. Motivation  <br><br>
+2. Problem Formulation  <br><br>
+3. Proposed Approach  <br><br>
+4. Experiment & Result  <br><br>
+5. Future Study  <br><br>
 
 The above list is the framework of research that Dr. Zhu discussed at the start of this year. Almost all research papers have been written along this process, which is also the basic step of our research.
 

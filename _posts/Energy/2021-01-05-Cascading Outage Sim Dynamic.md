@@ -35,19 +35,15 @@ The paper presents the design of and results from a new non-linear dynamic model
 
 In COSMIC [1], ...
 
-- **Dynamic components** are modeled using **differential equations**.
-
-- **Power flows** are represented using **non-linear power flow equations**.
-
-- **Discrete changes** (e.g., components failures, load shedding) are described by **a set of equations (constraints)**.
+- **Dynamic components** are modeled using **differential equations**.  <br><br>
+- **Power flows** are represented using **non-linear power flow equations**.  <br><br>
+- **Discrete changes** (e.g., components failures, load shedding) are described by **a set of equations (constraints)**.  <br><br>
 
 COSMIC has the following benefits [1].
 
-- It provids an **open platform** for research and development.
-
-- The **dynamic/adaptive time step** and **recursive islanded time horizons** implemented in this simulator which allows for faster computations during, near, steady-state regimes, and fine resolution during transient phases.
-
-- It can be easily integrated with High Performance Computing (HPC) clusters to **run many simulations simultaneously** at a much lower cost.
+- It provids an **open platform** for research and development.  <br><br>
+- The **dynamic/adaptive time step** and **recursive islanded time horizons** implemented in this simulator which allows for faster computations during, near, steady-state regimes, and fine resolution during transient phases.  <br><br>
+- It can be easily integrated with High Performance Computing (HPC) clusters to **run many simulations simultaneously** at a much lower cost.  <br><br>
 
 <br>
 
@@ -75,9 +71,8 @@ $$
 \frac{d\mathbf{x}}{dt}=\mathbf{f}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) \tag{1}
 $$
 
-- $\mathbf{x}$ is a vector of **continuous state variables** that change with time according to a set of **differential equations**.
-
-- (1) represent the **machine dynamics** (*APPENDIX - A*).
+- $\mathbf{x}$ is a vector of **continuous state variables** that change with time according to a set of **differential equations**.  <br><br>
+- (1) represent the **machine dynamics** (*APPENDIX - A*).  <br><br>
 
 <br>
 
@@ -87,11 +82,9 @@ $$
 \mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) =0 \tag{2}
 $$
 
-- $\mathbf{y}$ is a vector of **continuous state variables** that have pure **algebraic relationships** to other variables in the system.
-
-- (2) encapsulate the standard **ac power flow equations** (*APPENDIX - B*).
-
-- (2) is largely dependent on the load models (Figure 1. [ZIP](https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wSXR2MFFaQkxqVHNDOERzS3dHYk94RVZ3I0xlY3R1cmVfbm90ZV9jaF8wNg==)E models).
+- $\mathbf{y}$ is a vector of **continuous state variables** that have pure **algebraic relationships** to other variables in the system.  <br><br>
+- (2) encapsulate the standard **ac power flow equations** (*APPENDIX - B*).  <br><br>
+- (2) is largely dependent on the load models (Figure 1. [ZIP](https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wSXR2MFFaQkxqVHNDOERzS3dHYk94RVZ3I0xlY3R1cmVfbm90ZV9jaF8wNg==)E models).  <br><br>
 
 <span style="color:green">Q. WHAT IS EXPONENTIAL MODEL???</span>
 
@@ -108,11 +101,9 @@ $$
 \mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t))<0 \tag{3}
 $$
 
-- $\mathbf{z}$ is a vector of **state variables** (relay status) that can only take **integer states** $( z_i ∈ [0, 1])$.
-
-- (3) represent the **constraints**.
-
-- If a constraint $\mathbf{h_i}(...)<0$ fails (outage occurs), an associated **counter function** $\mathbf{d_i}$ (relay) activates.
+- $\mathbf{z}$ is a vector of **state variables** (relay status) that can only take **integer states** $( z_i ∈ [0, 1])$.  <br><br>
+- (3) represent the **constraints**.  <br><br>
+- If a constraint $\mathbf{h_i}(...)<0$ fails (outage occurs), an associated **counter function** $\mathbf{d_i}$ (relay) activates.  <br><br>
 
 <br>
 
@@ -136,15 +127,11 @@ Major disturbances cause system oscillations, and these oscillations may natural
 
 Five types of protective relays are modeled in COSMIC:
 
-- Over-current (OC) relays
-
-- Distance (DIST) relays
-
-- Temperature (TEMP) relays
-
-- Under-voltage load shedding (UVLS) relays
-
-- Under-frequency load shedding (UFLS)
+- Over-current (OC) relays  <br><br>
+- Distance (DIST) relays  <br><br>
+- Temperature (TEMP) relays  <br><br>
+- Under-voltage load shedding (UVLS) relays  <br><br>
+- Under-frequency load shedding (UFLS)  <br><br>
 
 <br>
 
@@ -154,14 +141,10 @@ Five types of protective relays are modeled in COSMIC:
 
 COSMIC used the following two strategies to solve the hybrid DAE.
 
-- COSMIC uses the **trapezoidal rule** to simultaneously integrate and solve the differential and algebraic equations.
-  <!-- - numerical stability -->
-
-- COSMIC implements a **variable time-step size** in order to trade-off between the diverse time-scales of the dynamics.
-
-  - During transition periods: small step size → **fine resolution**.
-
-  - During steady-state periods: large step size → **faster computation**.
+- COSMIC uses the **trapezoidal rule** to simultaneously integrate and solve the differential and algebraic equations.  <br><br>
+- COSMIC implements a **variable time-step size** in order to trade-off between the diverse time-scales of the dynamics.  <br><br>
+  - During transition periods: small step size → **fine resolution**.  <br><br>
+  - During steady-state periods: large step size → **faster computation**.  <br><br>
 
 <br>
 
@@ -218,9 +201,8 @@ $$
 
 where
 
-- $t$ is the previous time point.
-
-- $t_d$ is the point a discrete event occurs.
+- $t$ is the previous time point.  <br><br>
+- $t_d$ is the point a discrete event occurs.  <br><br>
 
 Because of the adaptive time step size, COSMIC retains $t_d$ from $t_d = t + \Delta t_d$, in which $\Delta t_d$ is found by **linear interpolation** of two time steps.
 
@@ -272,17 +254,15 @@ In this paper, the performance and characteristics of COSMIC were explored throu
 
 ### Used test systems
 
-- 39-bus system
-
-- 2383-bus system
+- 39-bus system  <br><br>
+- 2383-bus system  <br><br>
 
 <br>
 
 ### Results
 
-- On Table I, in 39-bus case, the rectangular formulation required fewer linear solves for different demand losses.
-
-- On Table II, in 2383-bus case, there was no significant improvement for the rectangular formulation over the polar formulation, and the number of linear solves that resulted from both forms were almost identical.
+- On Table I, in 39-bus case, the rectangular formulation required fewer linear solves for different demand losses.  <br><br>
+- On Table II, in 2383-bus case, there was no significant improvement for the rectangular formulation over the polar formulation, and the number of linear solves that resulted from both forms were almost identical.  <br><br>
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/rect_polar_performance.png" width="600" />
@@ -316,16 +296,11 @@ In this paper, the performance and characteristics of COSMIC were explored throu
   <figcaption>Figure 5. Bus voltage magnitudes when the branch from bus 6 to bus 9 in the 9-bus system is tripped.  [1]</figcaption>
 </figure>
 
-- A single-line outage was occurred at $t=10$ seconds, and  DIST relay timer activate.
-
-- $t_{preset-delay}=0.5$
-
-- $P_1 (t=10.5)$: $t_{delay}$ ran out, and another line outage was occurred.
-
-- $P_2$: the magenta voltage trace violated the limit, and UVLS relay timer activate.
-
-- $P_3$: UVLS relay took action and shed 25% of the initial load at the bus.
-
+- A single-line outage was occurred at $t=10$ seconds, and  DIST relay timer activate.  <br><br>
+- $t_{preset-delay}=0.5$  <br><br>
+- $P_1 (t=10.5)$: $t_{delay}$ ran out, and another line outage was occurred.  <br><br>
+- $P_2$: the magenta voltage trace violated the limit, and UVLS relay timer activate.  <br><br>
+- $P_3$: UVLS relay took action and shed 25% of the initial load at the bus.  <br><br>
 <br>
 
 ---
@@ -340,9 +315,8 @@ In this paper, the performance and characteristics of COSMIC were explored throu
 
 ### Used test systems
 
-- 39-bus system
-
-- 2383-bus system
+- 39-bus system  <br><br>
+- 2383-bus system  <br><br>
 
 <br>
 
@@ -355,15 +329,11 @@ In this paper, the performance and characteristics of COSMIC were explored throu
   <figcaption>Table III. 39-Bus Case Cascading Outage Example [1]</figcaption>
 </figure>
 
-- At  $t=3.00$ sec, the system suffered a strong dynamic oscillation after the initial two exogenous events (branches 2–25 and 5–6).
-
-- At  $t=54.06$ sec, the first OC relay at branch 4–5 triggered.
-
-- At  $t=55.06$ and $t=55.07$ sec, load shedding at two buses (Bus 7 and Bus 8) occurred.
-
-- At $t=55.28$ sec, another two branches (10–13 and 13–14) shut down after OC relay trips. These events separated the system into two islands.
-
-- At $t=55.78$ sec, two branches (3–4 and 17–18) were taken off the grid and this resulted in another island. The system eventually ended up with three isolated networks.
+- At  $t=3.00$ sec, the system suffered a strong dynamic oscillation after the initial two exogenous events (branches 2–25 and 5–6).  <br><br>
+- At  $t=54.06$ sec, the first OC relay at branch 4–5 triggered.  <br><br>
+- At  $t=55.06$ and $t=55.07$ sec, load shedding at two buses (Bus 7 and Bus 8) occurred.  <br><br>
+- At $t=55.28$ sec, another two branches (10–13 and 13–14) shut down after OC relay trips. These events separated the system into two islands.  <br><br>
+- At $t=55.78$ sec, two branches (3–4 and 17–18) were taken off the grid and this resulted in another island. The system eventually ended up with three isolated networks.  <br><br>
 
 <br>
 
@@ -374,13 +344,10 @@ In this paper, the performance and characteristics of COSMIC were explored throu
   <figcaption>Figure 6.  2383-Bus Case Cascading Outage Example [1]</figcaption>
 </figure>
 
-- Number 0 with black highlights denotes the two initial events (N-2 contingency).
-
-- Other sequential numbers indicate the rest of the branch outages.
-
-- In this example, 24 branches are off-line and cause a small island (within the dashed circle) in the end.
-
-- The dots with additional red squares indicate buses where load shedding happens.
+- Number 0 with black highlights denotes the two initial events (N-2 contingency).  <br><br>
+- Other sequential numbers indicate the rest of the branch outages.  <br><br>
+- In this example, 24 branches are off-line and cause a small island (within the dashed circle) in the end.  <br><br>
+- The dots with additional red squares indicate buses where load shedding happens.  <br><br>
 
 <br>
 
@@ -395,9 +362,8 @@ The top panel in Figure 7 shows the timeline of all branch outage events for the
 
 What we found here are ...
 
-- In the early phase of this cascading outages, the occurrence of the components failed relatively slowly, but it speeds up as the number of failures increased (check top panel).
-
-- When the system condition was substantially compromised, fast collapse occurs and the majority of the branch undergo outages as well as the load shedding events (check lower panel).
+- In the early phase of this cascading outages, the occurrence of the components failed relatively slowly, but it speeds up as the number of failures increased (check top panel).  <br><br>
+- When the system condition was substantially compromised, fast collapse occurs and the majority of the branch undergo outages as well as the load shedding events (check lower panel).  <br><br>
 
 <br>
 
@@ -438,11 +404,9 @@ Figure 10 shows the complementary cumulative distribution function (CCDF) of dem
   <figcaption>Table IV.  Average demand loss, average branch outages, and the probabilityies of loss for different load models [1]</figcaption>
 </figure>
 
-- The constant Z load model ($Z_{100}I_0P_0E_0$) shows the best performance based on the average power loss and the probability of large blackout (listed in Table IV).
-
-- As can be seen in Table IV, the probabilities of large demand losses varies from 2.5% to 3.5% for those four load configurations.
-
-- These results show that load models play an important role in dynamic simulation and may increase the frequency of nonconvergence if they are not properly modeled.
+- The constant Z load model ($Z_{100}I_0P_0E_0$) shows the best performance based on the average power loss and the probability of large blackout (listed in Table IV).  <br><br>
+- As can be seen in Table IV, the probabilities of large demand losses varies from 2.5% to 3.5% for those four load configurations.  <br><br>
+- These results show that load models play an important role in dynamic simulation and may increase the frequency of nonconvergence if they are not properly modeled.  <br><br>
 
 <span style="color:green"> Q. WHAT IS THE EXACT MEANDING OF NOT PROPERLY MODELED??? </span>
 
@@ -454,9 +418,8 @@ Figure 10 shows the complementary cumulative distribution function (CCDF) of dem
 
 ### Purpose
 
-- To compare results from COSMIC with results from a dc-power flow based model of cascading failure.
-
-- It will help us to understand similarities and differences between these two different modeling approaches.
+- To compare results from COSMIC with results from a dc-power flow based model of cascading failure.  <br><br>
+- It will help us to understand similarities and differences between these two different modeling approaches.  <br><br>
 
 <br>
 
@@ -475,13 +438,10 @@ Figure 10 shows the complementary cumulative distribution function (CCDF) of dem
   <figcaption>Figure 9.  CCDF Demand Loss for COSMIC & DC Simulator [1]</figcaption>
 </figure>
 
-- The probability of demand losses in the dc simulator is lower than that of COSMIC for the same amount of demand losses.
-
-- The dc model is much **more stable** and does not run into problems of numerical nonconvergence.
-
-- COSMIC assumes that the network or sub-network in which the **numerical failure** occurred experienced **a complete blackout**.
-
-- As a result, numerical failures in solving the DAE system greatly contributed to the larger blackout sizes. → It may **deteriorate the accuracy**.
+- The probability of demand losses in the dc simulator is lower than that of COSMIC for the same amount of demand losses.  <br><br>
+- The dc model is much **more stable** and does not run into problems of numerical nonconvergence.  <br><br>
+- COSMIC assumes that the network or sub-network in which the **numerical failure** occurred experienced **a complete blackout**.  <br><br>
+- As a result, numerical failures in solving the DAE system greatly contributed to the larger blackout sizes. → It may **deteriorate the accuracy**.  <br><br>
 
 <br>
 
@@ -489,25 +449,19 @@ Figure 10 shows the complementary cumulative distribution function (CCDF) of dem
 
 ### DC model
 
-- Pros
-
-  - It is **numerically stable**, making it possible to produce results that can be statistically similar to data from real power systems [8].
-
-- Cons
-
-  - It includes **numerous simplifications** that are substantially **different from the “real” system**.
+- Pros  <br><br>
+  - It is **numerically stable**, making it possible to produce results that can be statistically similar to data from real power systems [8].  <br><br>
+- Cons  <br><br>
+  - It includes **numerous simplifications** that are substantially **different from the “real” system**.  <br><br>
 
 <br>
 
 ### Dynamic model
 
-- Pros
-
-  - It **includes many mechanisms** of cascading that cannot be represented in the dc model.
-
-- Cons
-
-  - It needs **many assumptions** that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.
+- Pros  <br><br>
+  - It **includes many mechanisms** of cascading that cannot be represented in the dc model.  <br><br>
+- Cons  <br><br>
+  - It needs **many assumptions** that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.  <br><br>
 
 <br>
 
@@ -521,26 +475,22 @@ $$
 
 where
 
-- models $m_1$ and $m_2$ are both subjected to the same set of exogenous contingencies $C=${$c_1,c_2,...$}.
-
-- It measures the average agreement in the set of dependent events that result from each contingency in each model.
+- models $m_1$ and $m_2$ are both subjected to the same set of exogenous contingencies $C=${$c_1,c_2,...$}.  <br><br>
+- It measures the average agreement in the set of dependent events that result from each contingency in each model.  <br><br>
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-01-05-COSMIC/PAM.png" width="600" />
   <figcaption>Table V. Statical Results for the Comparison between COSMIC & DC Simulator [1]</figcaption>
 </figure>
 
-- Table V shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.
-
-- Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (8).
+- Table V shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.  <br><br>
+- Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (8).  <br><br>
 
 <span style="color:green"> Q. WHY DC MODEL TENDS TO PRODEUCE LONGER SCENARIOS??? </span>
 
-- In order to control this, we computed only for **the first ten branch outage events** (early stage).
-
-- The average R increased to 0.3487, and some of the cascading paths showed a perfect match ($R=1$).
-
-- This suggests that the cascading paths resulting from the **two models tend to agree during the early stages of cascading**, when nonlinear dynamics are less pronounced, but disagree during later stages.
+- In order to control this, we computed only for **the first ten branch outage events** (early stage).  <br><br>
+- The average R increased to 0.3487, and some of the cascading paths showed a perfect match ($R=1$).  <br><br>
+- This suggests that the cascading paths resulting from the **two models tend to agree during the early stages of cascading**, when nonlinear dynamics are less pronounced, but disagree during later stages.  <br><br>
 
 <br>
 
@@ -550,18 +500,12 @@ where
 
 Through the above experiments, the following conclusions are drawn.
 
-- **COSMIC** represents a power system as a set of **hybrid discrete/continuous differential algebraic equations**, simultaneously simulating protection systems and machine dynamics.
-
-- From the N−2 contingency analysis, we found that COSMIC produces heavy-tailed blackout size distributions, which are typically found in both historical blackout data and cascading failure models [7] (Figure 8).
-
-- From the N−2 contingency analysis, we found that the blackout size results show that load models can substantially impact cascade sizes (Table IV).
-
-- From the comparison with a dc cascading outage simulator, we found that the relative frequency of very large events may be exaggerated in dynamic model due to numerical non-convergence (about 3% of cases).
-
-- From the comparison with a dc cascading outage simulator, we found that the two models largely agreed for the initial periods of cascading (for about 10 events), then diverged for later stages where dynamic phenomena drive the sequence of events.
-
-- Detailed dynamic models of cascading failure can be useful in understanding the relative importance of various features of these models.
-
+- **COSMIC** represents a power system as a set of **hybrid discrete/continuous differential algebraic equations**, simultaneously simulating protection systems and machine dynamics.  <br><br>
+- From the N−2 contingency analysis, we found that COSMIC produces heavy-tailed blackout size distributions, which are typically found in both historical blackout data and cascading failure models [7] (Figure 8).  <br><br>
+- From the N−2 contingency analysis, we found that the blackout size results show that load models can substantially impact cascade sizes (Table IV).  <br><br>
+- From the comparison with a dc cascading outage simulator, we found that the relative frequency of very large events may be exaggerated in dynamic model due to numerical non-convergence (about 3% of cases).  <br><br>
+- From the comparison with a dc cascading outage simulator, we found that the two models largely agreed for the initial periods of cascading (for about 10 events), then diverged for later stages where dynamic phenomena drive the sequence of events.  <br><br>
+- Detailed dynamic models of cascading failure can be useful in understanding the relative importance of various features of these models.  <br><br>
 <br>
 
 ---
@@ -584,33 +528,27 @@ Through the above experiments, the following conclusions are drawn.
 
 ### Step 1. Data Generation
 
-- Need to introduce **randomness** to create large size of dataset.
-
-- Randomness will be given by the method that generated the uncertain loads in [[10]](https://arxiv.org/abs/1902.05607):
+- Need to introduce **randomness** to create large size of dataset.  <br><br>
+- Randomness will be given by the method that generated the uncertain loads in [[10]](https://arxiv.org/abs/1902.05607):  <br><br>
 
   $$d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)$$
 
-  - $d$ is a load.
-
-  - $\mathcal{N}$ is normal distribution with mean zero and standard deviation proportional to the load.
+  - $d$ is a load.  <br><br>
+  - $\mathcal{N}$ is normal distribution with mean zero and standard deviation proportional to the load.  <br><br>
 
 <span style="color:green"> Q. WHICH FEATURES (e.g. $P_d, Q_d, P_g, Q_g$ or outage event time $t_{event}$) SHOULD BE GIVEN RANDOMNESS? </span>
 
-- Codes
-
-  - [Generate N-2 Contingency Datasets.py](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py)
-
-  - [Generate Datasets.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb)
-
-  - [Exploratory Data Analysis.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb)
+- Codes  <br><br>
+  - [Generate N-2 Contingency Datasets.py](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py)  <br><br>
+  - [Generate Datasets.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb)  <br><br>
+  - [Exploratory Data Analysis.ipynb](https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb)  <br><br>
 
 <br>
 
 ### Step 2. Design the GNN Model Architecture
 
-- Does the model **ARCHITECTURE** is proper for the **GOAL**?
-
-- What is the **STRENGTH** of the model **ARCHITECTURE**? and **WHY**?
+- Does the model **ARCHITECTURE** is proper for the **GOAL**?  <br><br>
+- What is the **STRENGTH** of the model **ARCHITECTURE**? and **WHY**?  <br><br>
 
 <br>
 
@@ -626,11 +564,9 @@ Through the above experiments, the following conclusions are drawn.
 
 ## Results (What we want to see...)
 
-- High enough prediction or detection accuracy.
-
-- Extremely high computational efficiency compared to old methods.
-
-- A GNN based model having significantly fewer nodes (trainable parameters) than other deep learning models.
+- High enough prediction or detection accuracy.  <br><br>
+- Extremely high computational efficiency compared to old methods.  <br><br>
+- A GNN based model having significantly fewer nodes (trainable parameters) than other deep learning models.  <br><br>
 
 <br>
 
@@ -648,17 +584,12 @@ $$
 
 where
 
-- $\forall i \in N_G$ ($N_G$ is the set of all generator buses).
-
-- $M$ is a machine inertia constant.
-
-- $w_i$ is a rotor speed.
-
-- $P_{m,i}$ is the mechanical power input.
-
-- $P_{g,i}$ is the generator power output.
-
-- $D$ is a daping constant.
+- $\forall i \in N_G$ ($N_G$ is the set of all generator buses).  <br><br>
+- $M$ is a machine inertia constant.  <br><br>
+- $w_i$ is a rotor speed.  <br><br>
+- $P_{m,i}$ is the mechanical power input.  <br><br>
+- $P_{g,i}$ is the generator power output.  <br><br>
+- $D$ is a daping constant.  <br><br>
 
 <br>
 
@@ -670,11 +601,9 @@ $$
 
 where
 
-- $delta_i(t)$ is the rotor angle.
-
-- $f_0$ is the nominal frequency.
-
-- $w_i$ is fortor speed.
+- $delta_i(t)$ is the rotor angle.  <br><br>
+- $f_0$ is the nominal frequency.  <br><br>
+- $w_i$ is fortor speed.  <br><br>
 
 <br>
 
@@ -686,11 +615,9 @@ etc.
 
 Relation between following three compenets.
 
-- **real/reactive power** injected into each bus ($P_i, Q_i; i=1, 2, ..., n$)
-
-- **bus voltage magnitude** of each bus ($V_i; i=1, 2, ..., n$)
-
-- **phase angle** of each bus ($\theta_i; i=1, 2, ..., n$).
+- **real/reactive power** injected into each bus ($P_i, Q_i; i=1, 2, ..., n$)  <br><br>
+- **bus voltage magnitude** of each bus ($V_i; i=1, 2, ..., n$)  <br><br>
+- **phase angle** of each bus ($\theta_i; i=1, 2, ..., n$).  <br><br>
 
 <!-- $$
 S_i = P_i + jQ_i\\
@@ -710,9 +637,8 @@ $$
 
 where
 
-- $n$ is the number of buses of the system.
-
-- $Y_{ik} = G_{ik} + j B_{ik}$ is (i, k)-th entry of Y-bus matrix.
+- $n$ is the number of buses of the system.  <br><br>
+- $Y_{ik} = G_{ik} + j B_{ik}$ is (i, k)-th entry of Y-bus matrix.  <br><br>
 
 <br>
 

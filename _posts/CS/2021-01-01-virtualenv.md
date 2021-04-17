@@ -51,26 +51,22 @@ We will introduce basic anaconda usages. For more details, you can refer to the 
 
 We can create a new virtual environment with the following commands and manage packages in the corresponding virtual environment for each project.
 
-- Create a new virtual environmnet
-
+- Create a new virtual environmnet  <br><br>
     ```shell
     $ conda create --name ENVNAME
     ```
 
-- Activate a named environment
-
+- Activate a named environment  <br><br>
     ```shell
     $ conda activate ENVNAME
     ```
 
-- Install a package
-
+- Install a package  <br><br>
     ```shell
     $ conda install PKGNAME
     ```
 
-- Deactivate current environment
-
+- Deactivate current environment  <br><br>
     ```shell
     $ conda deactivate ENVNAME
     ```
@@ -79,8 +75,7 @@ We can create a new virtual environment with the following commands and manage p
 
 And, we can clearly provide the dependency for the project to other developers through the following commands.
 
-- Exporting the *envname.yml*
-
+- Exporting the *envname.yml*  <br><br>
     ```shell
     $ conda env export --name ENVNAME > envname.yml
     ```
@@ -89,8 +84,7 @@ And, we can clearly provide the dependency for the project to other developers t
 
 Finally, we can create a virtual environment that matches the developer's development environment on our local PC through the *envname.yml*.
 
-- Creating an environment from an *envname.yml*
-
+- Creating an environment from an *envname.yml*  <br><br>
     ```shell
     $ conda env create --file envname.yml
     ```

@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sat, 17 Apr 2021 15:23:28 -0500</pubDate>
+    <pubDate>Sat, 17 Apr 2021 16:18:44 -0500</pubDate>
     
       <item>
         <title>Dr. Zhu's Group Meeting Log</title>
@@ -59,12 +59,8 @@
 &lt;h3 id=&quot;problem-formulation&quot;&gt;Problem Formulation&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;How to estimate an accurate model of the power system?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;How to address monitoring and optimization tasks under limited observability?&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;How to estimate an accurate model of the power system?&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;How to address monitoring and optimization tasks under limited observability? &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
@@ -94,9 +90,7 @@
 \tag{2}\]
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Alternating Minimization (AM)&lt;/p&gt;
-
+  &lt;li&gt;Alternating Minimization (AM)&lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
       &lt;li&gt;between $\mathbf{\theta}$ and ${\tilde{\mathbf{s}}^{\mathcal{U}}_{t}}$&lt;/li&gt;
     &lt;/ul&gt;
@@ -108,21 +102,13 @@
 &lt;h4 id=&quot;monitoring&quot;&gt;Monitoring&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;DER visibility by leveraging heterogenous &amp;amp; dynamic data.&lt;/p&gt;
-
+  &lt;li&gt;DER visibility by leveraging heterogenous &amp;amp; dynamic data.&lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;Smart meter data ($\mathbf{\Gamma}$)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;D-PMU data ($\mathbf{Z}$)&lt;/p&gt;
-      &lt;/li&gt;
+      &lt;li&gt;Smart meter data ($\mathbf{\Gamma}$)&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;D-PMU data ($\mathbf{Z}$)&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Spatio-temporal learning&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Spatio-temporal learning&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 \[\begin{aligned}
@@ -273,21 +259,11 @@ Figure . Conventional Explanation to Sparsity Caused by Lasso. []
 &lt;h3 id=&quot;the-framework-of-researchstudy&quot;&gt;The framework of research/study&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Motivation&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Problem Formulation&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Proposed Approach&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Experiment &amp;amp; Result&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Future Study&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Motivation  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Problem Formulation  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Proposed Approach  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Experiment &amp;amp; Result  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Future Study  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;The above list is the framework of research that Dr. Zhu discussed at the start of this year. Almost all research papers have been written along this process, which is also the basic step of our research.&lt;/p&gt;
@@ -360,15 +336,9 @@ Figure . Decanting Guide []
 &lt;p&gt;Many researchers are shifting their attention to data-driven approaches, since &lt;strong&gt;dynamical modeling&lt;/strong&gt; methods have drawbacks as follow. 😡&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;It requires sophisticated systematic programming.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;It consumes massive computational power.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Impractical assumptions and simplifications among the modeling degrade the prediction accuracy.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;It requires sophisticated systematic programming. &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;It consumes massive computational power. &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Impractical assumptions and simplifications among the modeling degrade the prediction accuracy. &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -376,12 +346,8 @@ Figure . Decanting Guide []
 &lt;p&gt;As a result, &lt;strong&gt;Deep learning approaches&lt;/strong&gt;, which are major representatives of &lt;strong&gt;data-driven approaches&lt;/strong&gt;, have been widely and successfully applied to various traffic tasks. Significant progress has been made in following works. 😁&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Deep belief network (DBN) [3]&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Stacked auto-encoder (SAE) [4]&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Deep belief network (DBN) [3] &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Stacked auto-encoder (SAE) [4] &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;However, it is difficult for these dense networks to extract spatial and temporal features from the input jointly. 😡&lt;/p&gt;
@@ -393,15 +359,9 @@ Figure . Decanting Guide []
 &lt;p&gt;However, this approach has limitations as follow. 😡&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The normal convolutional operation applied restricts the model to only process grid structures (e.g. images, videos) rather than general domains.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Rrecurrent networks for sequence learning require iterative training, which introduces error accumulation by steps.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;RNN-based networks are widely known to be difficult to train and computationally heavy.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;The normal convolutional operation applied restricts the model to only process grid structures (e.g. images, videos) rather than general domains.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Rrecurrent networks for sequence learning require iterative training, which introduces error accumulation by steps.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;RNN-based networks are widely known to be difficult to train and computationally heavy.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -411,12 +371,8 @@ Figure . Decanting Guide []
 &lt;p&gt;For overcoming the limitations of previous approaches, the author introduces several strategies to effectively model temporal dynamics and spatial dependencies of traffic flow. 😁&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;To fully utilize spatial information, the author models the traffic network by a general graph instead of treating it separately (e.g. grids or segments).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;To handle the inherent deficiencies of recurrent networks, the author employs a fully convolutional structure on time axis.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;To fully utilize spatial information, the author models the traffic network by a general graph instead of treating it separately (e.g. grids or segments).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;To handle the inherent deficiencies of recurrent networks, the author employs a fully convolutional structure on time axis.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Above all, the author proposes a novel deep learning architecture, &lt;strong&gt;the spatio-temporal graph convolutional networks (STGCN)&lt;/strong&gt;, for traffic forecasting tasks. 🤘
@@ -461,15 +417,9 @@ Figure 1. Graph-structured traffic data. [1]
 &lt;p&gt;At the $t$-th time step, in graph $\mathcal{G}_t = (\mathcal{V}_t, \mathcal{E}, W)$,&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\mathcal{V}_t$ is a finite set of vertices, corresponding to the observations from $n$ monitor stations at time $t$.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\mathcal{E}$ is a set of edges, indicating the connectedness between stations.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$W \in \mathbb{R}^{n \times n}$ denotes the weighted adgacency matrix of $\mathcal{G}_t$.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$\mathcal{V}_t$ is a finite set of vertices, corresponding to the observations from $n$ monitor stations at time $t$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$\mathcal{E}$ is a set of edges, indicating the connectedness between stations.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$W \in \mathbb{R}^{n \times n}$ denotes the weighted adgacency matrix of $\mathcal{G}_t$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. DOES EDGES CAN HAVE ITS OWN TIME VARIANT VARIABLES??? &lt;br /&gt;   (e.g. temperature of transmission lines in power system) &lt;/span&gt;
@@ -509,23 +459,12 @@ Q. WHY AUTHOR CHOOSE SPECTRAL APPROACHES???
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$x \in \mathbb{R}^{n}$ is a graph signal as an input (data from each vertex).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$y \in \mathbb{R}^{n}$ is filtered signal as an output.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\Theta(\cdot)$ is a kernel (characteristic of the filter).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$U = [u_0, …, u_{n-1}] \in \mathbb{R}^{n\times n}$, Graph Fourier basis, is the matrix of eigenvectors of the normalized graph Laplacian $L$.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\Lambda =diag([\lambda_0, …, \lambda_{n-1}]) \in \mathbb{R}^{n\times n}$ is the matrix of eigenvalues of the normalized graph Laplacian $L$.&lt;/p&gt;
-
-    &lt;p&gt;(check details of Laplacian matrix in &lt;a href=&quot;#appendix 7.1&quot;&gt;appendix 7.1&lt;/a&gt;)&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$x \in \mathbb{R}^{n}$ is a graph signal as an input (data from each vertex).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$y \in \mathbb{R}^{n}$ is filtered signal as an output.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$\Theta(\cdot)$ is a kernel (characteristic of the filter).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$U = [u_0, …, u_{n-1}] \in \mathbb{R}^{n\times n}$, Graph Fourier basis, is the matrix of eigenvectors of the normalized graph Laplacian $L$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$\Lambda =diag([\lambda_0, …, \lambda_{n-1}]) \in \mathbb{R}^{n\times n}$ is the matrix of eigenvalues of the normalized graph Laplacian $L$.  &lt;br /&gt;&lt;br /&gt;
+(check details of Laplacian matrix in &lt;a href=&quot;#appendix 7.1&quot;&gt;appendix 7.1&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;As a result, a graph signal $x$ is filtered by a kernel $\Theta$ can be defined with multiplication between $\Theta$ and graph Fourier transform $U^T x$ [7].&lt;/p&gt;
@@ -568,12 +507,8 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 &lt;p&gt;However, there are two issues of the graph convolution expressed in Eq. (2). 😡&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The kernel is not localized in space yet.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The computation of kernel $\Theta$ in graph convolution by Eq. (2) can be expensive due to $\mathcal{O}(n^2)$ multiplications with graph Fourier basis.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;The kernel is not localized in space yet.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The computation of kernel $\Theta$ in graph convolution by Eq. (2) can be expensive due to $\mathcal{O}(n^2)$ multiplications with graph Fourier basis.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The authors applied two approximation strategies to overcome these issues. 😁&lt;/p&gt;
@@ -588,15 +523,10 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 
 &lt;p&gt;where&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\tilde{\Lambda} = 2 \frac{\Lambda}{\lambda_{max}}-I_n$ ($\lambda_{max}$ denotes the largest eigenvalues of $L$).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\theta \in \mathbb{R}^{n}$ is a vector of polynomial coefficient.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$\tilde{\Lambda} = 2 \frac{\Lambda}{\lambda_{max}}-I_n$ ($\lambda_{max}$ denotes the largest eigenvalues of $L$).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$\theta \in \mathbb{R}^{n}$ is a vector of polynomial coefficient.  &lt;br /&gt;&lt;br /&gt;
+(check details of Chebyshev polynomials approximation in &lt;a href=&quot;#appendix 7.3&quot;&gt;appendix 7.3&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;(check details of Chebyshev polynomials approximation in &lt;a href=&quot;#appendix 7.3&quot;&gt;appendix 7.3&lt;/a&gt;)&lt;/p&gt;
 
 &lt;p&gt;Using the Chebyshev polynomials approximation, the graph convolution can then be rewritten as,&lt;/p&gt;
 
@@ -606,12 +536,8 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$T_k(\tilde{L})\in\mathbb{R}^{n\times n}$ is the Chebyshev polynomial of order $k$&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\tilde{L} \in \mathbb{R}^{n \times n}$ the scaled Laplacian $\tilde{L} = 2\frac{L}{\lambda_{max}} - I_n$.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$T_k(\tilde{L})\in\mathbb{R}^{n\times n}$ is the Chebyshev polynomial of order $k$  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$\tilde{L} \in \mathbb{R}^{n \times n}$ the scaled Laplacian $\tilde{L} = 2\frac{L}{\lambda_{max}} - I_n$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;As a result, we can localize the filter by restricting kernel $\Theta$ to a polynomial of order $k$.&lt;/p&gt;
@@ -663,12 +589,8 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$W$ is renormalized by $\tilde{W} = W + I_n$&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$D$ is renormalized by $\tilde{D_{ii}} = \sum_j{\tilde{W}_{ij}}$.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$W$ is renormalized by $\tilde{W} = W + I_n$  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$D$ is renormalized by $\tilde{D_{ii}} = \sum_j{\tilde{W}_{ij}}$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- Applying a stack of graph convolutions with the 1st-order approximation vertically that achieves the similar effect as $K$-localized convolutions do horizontally, all of which exploit the information from the $(K-1)$-order neighborhood of central nodes. --&gt;
@@ -699,29 +621,17 @@ Figure 2. Architecture of spatio-temporal graph convolutional networks (STGCN). 
 &lt;p&gt;RNNs for traffic prediction still suffer from following. 😡&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;time-consuming iterations&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;complex gate mechanisms&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;slow response to dynamic changes.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;time-consuming iterations  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;complex gate mechanisms  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;slow response to dynamic changes.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;On the contrary, CNNs have the superiority as follows. 😁&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;fast training&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;simple structures&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;no dependency constraints to previous steps.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;fast training  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;simple structures  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;no dependency constraints to previous steps.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The authors employ entire convolutional structures on time axis to capture temporal dynamic behaviors of traffic flows.&lt;/p&gt;
@@ -747,17 +657,9 @@ Figure 3. Temporal Gated-Conv Block. [1]
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$P, Q$ are input of gates in GLU respectively&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\odot$ denotes the element-wise Hadamard product.&lt;/p&gt;
-
-    &lt;!-- - Hadamard product (also known as the element-wise, entry wise or Schur product) --&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\sigma$ is sigmoid gate controls which input $P$ of the current states are relevant for discovering compositional structure and dynamic variances in time series.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$P, Q$ are input of gates in GLU respectively  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$\odot$ denotes the element-wise Hadamard product.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$\sigma$ is sigmoid gate controls which input $P$ of the current states are relevant for discovering compositional structure and dynamic variances in time series.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
@@ -809,15 +711,9 @@ Figure 5. Spatio-Temporal Convolutional (ST-Conv) Block. [1]
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\Gamma_0^l$, $\Gamma_1^l$ are the upper and lower temporal kernel within block $l$, respectively.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\Theta^l$ is the spectral kernel of graph convolution&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$ReLU(\cdot)$ denotes the rectified linear units function.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$\Gamma_0^l$, $\Gamma_1^l$ are the upper and lower temporal kernel within block $l$, respectively.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$\Theta^l$ is the spectral kernel of graph convolution  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$ReLU(\cdot)$ denotes the rectified linear units function.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
@@ -837,15 +733,9 @@ Figure 6. The framework STGCN consists of two ST-Conv blocks and a fully-connect
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$W_\theta$ are all trainable parameters in the model&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$v_{t+1}$ is the ground truth&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\hat{v}(\cdot)$ denotes the model’s prediction&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$W_\theta$ are all trainable parameters in the model  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$v_{t+1}$ is the ground truth  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$\hat{v}(\cdot)$ denotes the model’s prediction  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -853,18 +743,10 @@ Figure 6. The framework STGCN consists of two ST-Conv blocks and a fully-connect
 &lt;h2 id=&quot;36-recap-of-the-main-characteristics-stgcn&quot;&gt;3.6. Recap of the Main Characteristics STGCN&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;STGCN is a universal framework to process &lt;strong&gt;structured time series&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;It is not only able to tackle traffic network modeling and prediction issues but also to be applied to more &lt;strong&gt;general spatio-temporal sequence learning tasks&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The spatio-temporal block combines graph convolutions and gated temporal convolutions, which can extract the most useful &lt;strong&gt;spatial features&lt;/strong&gt; and capture the most essential &lt;strong&gt;temporal features&lt;/strong&gt; coherently.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The model is entirely composed of convolutional structures and therefore achieves &lt;strong&gt;parallelization&lt;/strong&gt; over input with fewer parameters and faster training speed.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;STGCN is a universal framework to process &lt;strong&gt;structured time series&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;It is not only able to tackle traffic network modeling and prediction issues but also to be applied to more &lt;strong&gt;general spatio-temporal sequence learning tasks&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The spatio-temporal block combines graph convolutions and gated temporal convolutions, which can extract the most useful &lt;strong&gt;spatial features&lt;/strong&gt; and capture the most essential &lt;strong&gt;temporal features&lt;/strong&gt; coherently.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The model is entirely composed of convolutional structures and therefore achieves &lt;strong&gt;parallelization&lt;/strong&gt; over input with fewer parameters and faster training speed.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -880,23 +762,15 @@ Figure 6. The framework STGCN consists of two ST-Conv blocks and a fully-connect
 &lt;p&gt;&lt;strong&gt;BJER4&lt;/strong&gt; was gathered from the major areas of east ring No.4 routes in &lt;em&gt;Beijing City&lt;/em&gt; by double-loop detectors.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The traffic data are aggregated every 5 minutes.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;There are 12 roads selected for the experiment.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;The traffic data are aggregated every 5 minutes.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;There are 12 roads selected for the experiment.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;PeMSD7&lt;/strong&gt; was collected from Caltrans Performance Measurement System (PeMS) in real-time by over 39,000 sensor stations, deployed across the major metropolitan areas of &lt;em&gt;California state&lt;/em&gt; highway system.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The traffic data are aggregated every 5 minutes.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The authors randomly select a medium and a large scale among the District 7 of California containing 228 and 1,026 stations, labeled as &lt;strong&gt;PeMSD7(M)&lt;/strong&gt; and &lt;strong&gt;PeMSD7(L)&lt;/strong&gt;, respectively, as data sources (shown in the left of Figure 7).&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;The traffic data are aggregated every 5 minutes.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The authors randomly select a medium and a large scale among the District 7 of California containing 228 and 1,026 stations, labeled as &lt;strong&gt;PeMSD7(M)&lt;/strong&gt; and &lt;strong&gt;PeMSD7(L)&lt;/strong&gt;, respectively, as data sources (shown in the left of Figure 7).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
@@ -910,12 +784,8 @@ Figure 7. PeMS sensor network in District 7 of California (left), each dot denot
 &lt;h2 id=&quot;42-data-preprocessing&quot;&gt;4.2. Data Preprocessing&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Interpolation method: Linear interpolation&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Normalization method: Z-score&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Interpolation method: Linear interpolation  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Normalization method: Z-score  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 \[\begin{aligned}Z &amp;amp;= \frac{x-\mu}{\sigma}, \\ &amp;amp; \text{where } \mu \text{ is mean and } \sigma \text{ is standard deviation}.\end{aligned}\]
@@ -974,12 +844,8 @@ $$ --&gt;
 &lt;p&gt;The authors set up two types of models based on STGCN framework.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;STGCN(Cheb) with the Chebyshev polynomials approximation&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;STGCN(1st) with the 1st-order approximation ($K=1$).&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;STGCN(Cheb) with the Chebyshev polynomials approximation  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;STGCN(1st) with the 1st-order approximation ($K=1$).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -987,24 +853,12 @@ $$ --&gt;
 &lt;p&gt;STGCN based models are compared with following baselines.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Historical Average (HA)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Linear Support Vector Regression (LSVR)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Auto-Regressive Integrated Moving Average (ARIMA)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Feed-Forward Neural Network (FNN)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Full-Connected LSTM (FC-LSTM)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Graph Convolutional GRU (GCGRU)&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Historical Average (HA)  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Linear Support Vector Regression (LSVR)  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Auto-Regressive Integrated Moving Average (ARIMA)  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Feed-Forward Neural Network (FNN)  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Full-Connected LSTM (FC-LSTM)  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Graph Convolutional GRU (GCGRU)  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1078,39 +932,23 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
 &lt;p&gt;In this paper, the authors propose&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;A novel deep learning framework STGCN for traffic prediction.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Integrating graph convolution and gated temporal convolution through spatio-temporal convolutional blocks.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;A novel deep learning framework STGCN for traffic prediction.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Integrating graph convolution and gated temporal convolution through spatio-temporal convolutional blocks.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The experiments shows&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Benefits of spatial topology&lt;/p&gt;
-
+  &lt;li&gt;Benefits of spatial topology  &lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;The model outperforms other state-of-the-art methods on two real-world datasets.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;The results indicate its great potentials on exploring spatio-temporal structures from the input.&lt;/p&gt;
-      &lt;/li&gt;
+      &lt;li&gt;The model outperforms other state-of-the-art methods on two real-world datasets.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;The results indicate its great potentials on exploring spatio-temporal structures from the input.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Training efficiency and generalization&lt;/p&gt;
-
+  &lt;li&gt;Training efficiency and generalization  &lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;Faster training (parallelization).&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Fewer parameters with flexibility and scalability.&lt;/p&gt;
-      &lt;/li&gt;
+      &lt;li&gt;Faster training (parallelization).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;Fewer parameters with flexibility and scalability.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -1153,21 +991,15 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
 &lt;h3 id=&quot;step-1-data-generation&quot;&gt;Step 1. Data Generation&lt;/h3&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;Need to introduce &lt;strong&gt;randomness&lt;/strong&gt; to create large size of dataset.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Need to introduce &lt;strong&gt;randomness&lt;/strong&gt; to create large size of dataset.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Randomness will be given by the method that generated the uncertain loads in &lt;a href=&quot;https://arxiv.org/abs/1902.05607&quot;&gt;[16]&lt;/a&gt;:&lt;/p&gt;
+    &lt;p&gt;Randomness will be given by the method that generated the uncertain loads in &lt;a href=&quot;https://arxiv.org/abs/1902.05607&quot;&gt;[16]&lt;/a&gt;:  &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 \[d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)\]
 
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;$d$ is a load.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;$\mathcal{N}$ is normal distribution with mean zero and standard deviation proportional to the load.&lt;/p&gt;
-      &lt;/li&gt;
+      &lt;li&gt;$d$ is a load.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;$\mathcal{N}$ is normal distribution with mean zero and standard deviation proportional to the load.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -1180,19 +1012,11 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Codes&lt;/p&gt;
-
+  &lt;li&gt;Codes  &lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py&quot;&gt;Generate N-2 Contingency Datasets.py&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb&quot;&gt;Generate Datasets.ipynb&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb&quot;&gt;Exploratory Data Analysis.ipynb&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py&quot;&gt;Generate N-2 Contingency Datasets.py&lt;/a&gt;  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb&quot;&gt;Generate Datasets.ipynb&lt;/a&gt;  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb&quot;&gt;Exploratory Data Analysis.ipynb&lt;/a&gt;  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -1202,31 +1026,21 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
 &lt;h3 id=&quot;step-2-design-the-gnn-model-architecture&quot;&gt;Step 2. Design the GNN Model Architecture&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The model should able to utilze &lt;strong&gt;spatial&lt;/strong&gt; and &lt;strong&gt;temporal&lt;/strong&gt; feature of the data.&lt;/p&gt;
-
+  &lt;li&gt;The model should able to utilze &lt;strong&gt;spatial&lt;/strong&gt; and &lt;strong&gt;temporal&lt;/strong&gt; feature of the data.  &lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;em&gt;graph structured&lt;/em&gt; data: spatial feature&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;em&gt;time series&lt;/em&gt; data: temporal feature&lt;/p&gt;
-      &lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;graph structured&lt;/em&gt; data: spatial feature  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;time series&lt;/em&gt; data: temporal feature  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Models based on &lt;strong&gt;STGCN architecture&lt;/strong&gt; [1] can extract and learn the both features (spatial &amp;amp; temporal) from the data.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Models based on &lt;strong&gt;STGCN architecture&lt;/strong&gt; [1] can extract and learn the both features (spatial &amp;amp; temporal) from the data.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Codes&lt;/p&gt;
-
+  &lt;li&gt;Codes  &lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;yet not ready…😭&lt;/li&gt;
+      &lt;li&gt;yet not ready…😭  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -1252,15 +1066,9 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
 &lt;h2 id=&quot;results-what-we-want-to-see&quot;&gt;Results (What we want to see…)&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;High enough prediction (or detection) accuracy.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Extremely high computational efficiency compared to old methods.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A GNN based model having significantly fewer nodes (trainable parameters) than other deep learning models.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;High enough prediction (or detection) accuracy.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Extremely high computational efficiency compared to old methods.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;A GNN based model having significantly fewer nodes (trainable parameters) than other deep learning models.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1284,12 +1092,8 @@ Figure 9. Test RMSE versus the training time (left); Test MAE ver- sus the numbe
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$D$ is the degree matrix of the graph.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$A$ is adjacency matrix.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$D$ is the degree matrix of the graph.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$A$ is adjacency matrix.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The elements of $L$ are given by&lt;/p&gt;
@@ -1342,21 +1146,13 @@ Figure 10. Example of a General Graph and its Degree, Adjacency, and Laplacian M
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$I_n$ is an identity matrix.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$D \in \mathbb{R}^{n\times n}$ is the diagonal degree matrix with $D_{ii} = \sum_{j}{W_{ij}}$.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$U = [u_0, …, u_{n-1}] \in \mathbb{R}^{n\times n}$ is a Graph Fourier basis.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\Lambda =diag([\lambda_0, …, \lambda_{n-1}]) \in \mathbb{R}^{n\times n}$ is the diagonal matrix of eigenvalues of $L$.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$I_n$ is an identity matrix.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$D \in \mathbb{R}^{n\times n}$ is the diagonal degree matrix with $D_{ii} = \sum_{j}{W_{ij}}$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$U = [u_0, …, u_{n-1}] \in \mathbb{R}^{n\times n}$ is a Graph Fourier basis.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$\Lambda =diag([\lambda_0, …, \lambda_{n-1}]) \in \mathbb{R}^{n\times n}$ is the diagonal matrix of eigenvalues of $L$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The &lt;strong&gt;graph Fourier transform&lt;/strong&gt; of a signal $x \in \mathbb{R}^{n}$ is then deinfed as as $\hat{x} = U^{T}x \in \mathbb{R}^{n}$, and its inverse as $x=U\hat{x}$ [13].&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;graph Fourier transform&lt;/strong&gt; of a signal $x \in \mathbb{R}^{n}$ is then deinfed as as $\hat{x} = U^{T}x \in \mathbb{R}^{n}$, and its inverse as $x=U\hat{x}$ [13].  &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -1421,15 +1217,9 @@ Figure 11. Plot of the first five Tn Chebyshev polynomials of the first kind. [1
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\tilde{\Lambda} = 2 \frac{\Lambda}{\lambda_{max}}-I_n$ ($\lambda_{max}$ denotes the largest eigenvalues of $L$).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\theta \in \mathbb{R}^{n}$ is a vector of polynomial coefficient.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$K$ is a radius of the convolutional filter.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$\tilde{\Lambda} = 2 \frac{\Lambda}{\lambda_{max}}-I_n$ ($\lambda_{max}$ denotes the largest eigenvalues of $L$).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$\theta \in \mathbb{R}^{n}$ is a vector of polynomial coefficient.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$K$ is a radius of the convolutional filter.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1690,29 +1480,17 @@ Figure 7.
 &lt;p&gt;In COSMIC [1], …&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Dynamic components&lt;/strong&gt; are modeled using &lt;strong&gt;differential equations&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Power flows&lt;/strong&gt; are represented using &lt;strong&gt;non-linear power flow equations&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Discrete changes&lt;/strong&gt; (e.g., components failures, load shedding) are described by &lt;strong&gt;a set of equations (constraints)&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Dynamic components&lt;/strong&gt; are modeled using &lt;strong&gt;differential equations&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Power flows&lt;/strong&gt; are represented using &lt;strong&gt;non-linear power flow equations&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Discrete changes&lt;/strong&gt; (e.g., components failures, load shedding) are described by &lt;strong&gt;a set of equations (constraints)&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;COSMIC has the following benefits [1].&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;It provids an &lt;strong&gt;open platform&lt;/strong&gt; for research and development.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The &lt;strong&gt;dynamic/adaptive time step&lt;/strong&gt; and &lt;strong&gt;recursive islanded time horizons&lt;/strong&gt; implemented in this simulator which allows for faster computations during, near, steady-state regimes, and fine resolution during transient phases.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;It can be easily integrated with High Performance Computing (HPC) clusters to &lt;strong&gt;run many simulations simultaneously&lt;/strong&gt; at a much lower cost.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;It provids an &lt;strong&gt;open platform&lt;/strong&gt; for research and development.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The &lt;strong&gt;dynamic/adaptive time step&lt;/strong&gt; and &lt;strong&gt;recursive islanded time horizons&lt;/strong&gt; implemented in this simulator which allows for faster computations during, near, steady-state regimes, and fine resolution during transient phases.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;It can be easily integrated with High Performance Computing (HPC) clusters to &lt;strong&gt;run many simulations simultaneously&lt;/strong&gt; at a much lower cost.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1739,12 +1517,8 @@ Figure 7.
 \[\frac{d\mathbf{x}}{dt}=\mathbf{f}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) \tag{1}\]
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\mathbf{x}$ is a vector of &lt;strong&gt;continuous state variables&lt;/strong&gt; that change with time according to a set of &lt;strong&gt;differential equations&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;(1) represent the &lt;strong&gt;machine dynamics&lt;/strong&gt; (&lt;em&gt;APPENDIX - A&lt;/em&gt;).&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$\mathbf{x}$ is a vector of &lt;strong&gt;continuous state variables&lt;/strong&gt; that change with time according to a set of &lt;strong&gt;differential equations&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;(1) represent the &lt;strong&gt;machine dynamics&lt;/strong&gt; (&lt;em&gt;APPENDIX - A&lt;/em&gt;).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1754,15 +1528,9 @@ Figure 7.
 \[\mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) =0 \tag{2}\]
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\mathbf{y}$ is a vector of &lt;strong&gt;continuous state variables&lt;/strong&gt; that have pure &lt;strong&gt;algebraic relationships&lt;/strong&gt; to other variables in the system.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;(2) encapsulate the standard &lt;strong&gt;ac power flow equations&lt;/strong&gt; (&lt;em&gt;APPENDIX - B&lt;/em&gt;).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;(2) is largely dependent on the load models (Figure 1. &lt;a href=&quot;https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wSXR2MFFaQkxqVHNDOERzS3dHYk94RVZ3I0xlY3R1cmVfbm90ZV9jaF8wNg==&quot;&gt;ZIP&lt;/a&gt;E models).&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$\mathbf{y}$ is a vector of &lt;strong&gt;continuous state variables&lt;/strong&gt; that have pure &lt;strong&gt;algebraic relationships&lt;/strong&gt; to other variables in the system.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;(2) encapsulate the standard &lt;strong&gt;ac power flow equations&lt;/strong&gt; (&lt;em&gt;APPENDIX - B&lt;/em&gt;).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;(2) is largely dependent on the load models (Figure 1. &lt;a href=&quot;https://goodnotes.com/shares/#aHR0cHM6Ly93d3cuaWNsb3VkLmNvbS9zaGFyZS8wSXR2MFFaQkxqVHNDOERzS3dHYk94RVZ3I0xlY3R1cmVfbm90ZV9jaF8wNg==&quot;&gt;ZIP&lt;/a&gt;E models).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt;Q. WHAT IS EXPONENTIAL MODEL???&lt;/span&gt;&lt;/p&gt;
@@ -1780,15 +1548,9 @@ Figure 1. Illustrates a dramatic impact of load models on algebraic convergence.
 \[\mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t))&amp;lt;0 \tag{3}\]
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\mathbf{z}$ is a vector of &lt;strong&gt;state variables&lt;/strong&gt; (relay status) that can only take &lt;strong&gt;integer states&lt;/strong&gt; $( z_i ∈ [0, 1])$.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;(3) represent the &lt;strong&gt;constraints&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;If a constraint $\mathbf{h_i}(…)&amp;lt;0$ fails (outage occurs), an associated &lt;strong&gt;counter function&lt;/strong&gt; $\mathbf{d_i}$ (relay) activates.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$\mathbf{z}$ is a vector of &lt;strong&gt;state variables&lt;/strong&gt; (relay status) that can only take &lt;strong&gt;integer states&lt;/strong&gt; $( z_i ∈ [0, 1])$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;(3) represent the &lt;strong&gt;constraints&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;If a constraint $\mathbf{h_i}(…)&amp;lt;0$ fails (outage occurs), an associated &lt;strong&gt;counter function&lt;/strong&gt; $\mathbf{d_i}$ (relay) activates.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1814,21 +1576,11 @@ Figure 1. Illustrates a dramatic impact of load models on algebraic convergence.
 &lt;p&gt;Five types of protective relays are modeled in COSMIC:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Over-current (OC) relays&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Distance (DIST) relays&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Temperature (TEMP) relays&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Under-voltage load shedding (UVLS) relays&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Under-frequency load shedding (UFLS)&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Over-current (OC) relays  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Distance (DIST) relays  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Temperature (TEMP) relays  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Under-voltage load shedding (UVLS) relays  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Under-frequency load shedding (UFLS)  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1840,20 +1592,11 @@ Figure 1. Illustrates a dramatic impact of load models on algebraic convergence.
 &lt;p&gt;COSMIC used the following two strategies to solve the hybrid DAE.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;COSMIC uses the &lt;strong&gt;trapezoidal rule&lt;/strong&gt; to simultaneously integrate and solve the differential and algebraic equations.
-&lt;!-- - numerical stability --&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;COSMIC implements a &lt;strong&gt;variable time-step size&lt;/strong&gt; in order to trade-off between the diverse time-scales of the dynamics.&lt;/p&gt;
-
+  &lt;li&gt;COSMIC uses the &lt;strong&gt;trapezoidal rule&lt;/strong&gt; to simultaneously integrate and solve the differential and algebraic equations.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;COSMIC implements a &lt;strong&gt;variable time-step size&lt;/strong&gt; in order to trade-off between the diverse time-scales of the dynamics.  &lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;During transition periods: small step size → &lt;strong&gt;fine resolution&lt;/strong&gt;.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;During steady-state periods: large step size → &lt;strong&gt;faster computation&lt;/strong&gt;.&lt;/p&gt;
-      &lt;/li&gt;
+      &lt;li&gt;During transition periods: small step size → &lt;strong&gt;fine resolution&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;During steady-state periods: large step size → &lt;strong&gt;faster computation&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -1905,12 +1648,8 @@ $$
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$t$ is the previous time point.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$t_d$ is the point a discrete event occurs.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$t$ is the previous time point.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$t_d$ is the point a discrete event occurs.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Because of the adaptive time step size, COSMIC retains $t_d$ from $t_d = t + \Delta t_d$, in which $\Delta t_d$ is found by &lt;strong&gt;linear interpolation&lt;/strong&gt; of two time steps.&lt;/p&gt;
@@ -1968,12 +1707,8 @@ Figure 4. Flowchart of Time-Domain Simulation Algorithm
 &lt;h3 id=&quot;used-test-systems&quot;&gt;Used test systems&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;39-bus system&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;2383-bus system&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;39-bus system  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;2383-bus system  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1981,12 +1716,8 @@ Figure 4. Flowchart of Time-Domain Simulation Algorithm
 &lt;h3 id=&quot;results&quot;&gt;Results&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;On Table I, in 39-bus case, the rectangular formulation required fewer linear solves for different demand losses.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;On Table II, in 2383-bus case, there was no significant improvement for the rectangular formulation over the polar formulation, and the number of linear solves that resulted from both forms were almost identical.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;On Table I, in 39-bus case, the rectangular formulation required fewer linear solves for different demand losses.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;On Table II, in 2383-bus case, there was no significant improvement for the rectangular formulation over the polar formulation, and the number of linear solves that resulted from both forms were almost identical.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
@@ -2028,24 +1759,13 @@ Figure 5. Bus voltage magnitudes when the branch from bus 6 to bus 9 in the 9-bu
 &lt;/figure&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;A single-line outage was occurred at $t=10$ seconds, and  DIST relay timer activate.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$t_{preset-delay}=0.5$&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$P_1 (t=10.5)$: $t_{delay}$ ran out, and another line outage was occurred.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$P_2$: the magenta voltage trace violated the limit, and UVLS relay timer activate.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$P_3$: UVLS relay took action and shed 25% of the initial load at the bus.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;A single-line outage was occurred at $t=10$ seconds, and  DIST relay timer activate.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$t_{preset-delay}=0.5$  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$P_1 (t=10.5)$: $t_{delay}$ ran out, and another line outage was occurred.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$P_2$: the magenta voltage trace violated the limit, and UVLS relay timer activate.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$P_3$: UVLS relay took action and shed 25% of the initial load at the bus.  &lt;br /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -2062,12 +1782,8 @@ Figure 5. Bus voltage magnitudes when the branch from bus 6 to bus 9 in the 9-bu
 &lt;h3 id=&quot;used-test-systems-2&quot;&gt;Used test systems&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;39-bus system&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;2383-bus system&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;39-bus system  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;2383-bus system  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2083,21 +1799,11 @@ Table III. 39-Bus Case Cascading Outage Example [1]
 &lt;/figure&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;At  $t=3.00$ sec, the system suffered a strong dynamic oscillation after the initial two exogenous events (branches 2–25 and 5–6).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;At  $t=54.06$ sec, the first OC relay at branch 4–5 triggered.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;At  $t=55.06$ and $t=55.07$ sec, load shedding at two buses (Bus 7 and Bus 8) occurred.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;At $t=55.28$ sec, another two branches (10–13 and 13–14) shut down after OC relay trips. These events separated the system into two islands.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;At $t=55.78$ sec, two branches (3–4 and 17–18) were taken off the grid and this resulted in another island. The system eventually ended up with three isolated networks.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;At  $t=3.00$ sec, the system suffered a strong dynamic oscillation after the initial two exogenous events (branches 2–25 and 5–6).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;At  $t=54.06$ sec, the first OC relay at branch 4–5 triggered.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;At  $t=55.06$ and $t=55.07$ sec, load shedding at two buses (Bus 7 and Bus 8) occurred.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;At $t=55.28$ sec, another two branches (10–13 and 13–14) shut down after OC relay trips. These events separated the system into two islands.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;At $t=55.78$ sec, two branches (3–4 and 17–18) were taken off the grid and this resulted in another island. The system eventually ended up with three isolated networks.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2111,18 +1817,10 @@ Figure 6. 2383-Bus Case Cascading Outage Example [1]
 &lt;/figure&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Number 0 with black highlights denotes the two initial events (N-2 contingency).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Other sequential numbers indicate the rest of the branch outages.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;In this example, 24 branches are off-line and cause a small island (within the dashed circle) in the end.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The dots with additional red squares indicate buses where load shedding happens.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Number 0 with black highlights denotes the two initial events (N-2 contingency).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Other sequential numbers indicate the rest of the branch outages.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;In this example, 24 branches are off-line and cause a small island (within the dashed circle) in the end.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The dots with additional red squares indicate buses where load shedding happens.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2140,12 +1838,8 @@ Figure 7. Branch outage events &amp;amp; Load-shedding events listed in Figure 8
 &lt;p&gt;What we found here are …&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;In the early phase of this cascading outages, the occurrence of the components failed relatively slowly, but it speeds up as the number of failures increased (check top panel).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;When the system condition was substantially compromised, fast collapse occurs and the majority of the branch undergo outages as well as the load shedding events (check lower panel).&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;In the early phase of this cascading outages, the occurrence of the components failed relatively slowly, but it speeds up as the number of failures increased (check top panel).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;When the system condition was substantially compromised, fast collapse occurs and the majority of the branch undergo outages as well as the load shedding events (check lower panel).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2195,15 +1889,9 @@ Table IV. Average demand loss, average branch outages, and the probabilityies of
 &lt;/figure&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The constant Z load model ($Z_{100}I_0P_0E_0$) shows the best performance based on the average power loss and the probability of large blackout (listed in Table IV).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;As can be seen in Table IV, the probabilities of large demand losses varies from 2.5% to 3.5% for those four load configurations.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;These results show that load models play an important role in dynamic simulation and may increase the frequency of nonconvergence if they are not properly modeled.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;The constant Z load model ($Z_{100}I_0P_0E_0$) shows the best performance based on the average power loss and the probability of large blackout (listed in Table IV).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;As can be seen in Table IV, the probabilities of large demand losses varies from 2.5% to 3.5% for those four load configurations.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;These results show that load models play an important role in dynamic simulation and may increase the frequency of nonconvergence if they are not properly modeled.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHAT IS THE EXACT MEANDING OF NOT PROPERLY MODELED??? &lt;/span&gt;&lt;/p&gt;
@@ -2217,12 +1905,8 @@ Table IV. Average demand loss, average branch outages, and the probabilityies of
 &lt;h3 id=&quot;purpose-4&quot;&gt;Purpose&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;To compare results from COSMIC with results from a dc-power flow based model of cascading failure.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;It will help us to understand similarities and differences between these two different modeling approaches.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;To compare results from COSMIC with results from a dc-power flow based model of cascading failure.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;It will help us to understand similarities and differences between these two different modeling approaches.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2246,18 +1930,10 @@ Figure 9. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
 &lt;/figure&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The probability of demand losses in the dc simulator is lower than that of COSMIC for the same amount of demand losses.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The dc model is much &lt;strong&gt;more stable&lt;/strong&gt; and does not run into problems of numerical nonconvergence.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;COSMIC assumes that the network or sub-network in which the &lt;strong&gt;numerical failure&lt;/strong&gt; occurred experienced &lt;strong&gt;a complete blackout&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;As a result, numerical failures in solving the DAE system greatly contributed to the larger blackout sizes. → It may &lt;strong&gt;deteriorate the accuracy&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;The probability of demand losses in the dc simulator is lower than that of COSMIC for the same amount of demand losses.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The dc model is much &lt;strong&gt;more stable&lt;/strong&gt; and does not run into problems of numerical nonconvergence.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;COSMIC assumes that the network or sub-network in which the &lt;strong&gt;numerical failure&lt;/strong&gt; occurred experienced &lt;strong&gt;a complete blackout&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;As a result, numerical failures in solving the DAE system greatly contributed to the larger blackout sizes. → It may &lt;strong&gt;deteriorate the accuracy&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2267,18 +1943,14 @@ Figure 9. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
 &lt;h3 id=&quot;dc-model&quot;&gt;DC model&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Pros&lt;/p&gt;
-
+  &lt;li&gt;Pros  &lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;It is &lt;strong&gt;numerically stable&lt;/strong&gt;, making it possible to produce results that can be statistically similar to data from real power systems [8].&lt;/li&gt;
+      &lt;li&gt;It is &lt;strong&gt;numerically stable&lt;/strong&gt;, making it possible to produce results that can be statistically similar to data from real power systems [8].  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Cons&lt;/p&gt;
-
+  &lt;li&gt;Cons  &lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;It includes &lt;strong&gt;numerous simplifications&lt;/strong&gt; that are substantially &lt;strong&gt;different from the “real” system&lt;/strong&gt;.&lt;/li&gt;
+      &lt;li&gt;It includes &lt;strong&gt;numerous simplifications&lt;/strong&gt; that are substantially &lt;strong&gt;different from the “real” system&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -2288,18 +1960,14 @@ Figure 9. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
 &lt;h3 id=&quot;dynamic-model&quot;&gt;Dynamic model&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Pros&lt;/p&gt;
-
+  &lt;li&gt;Pros  &lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;It &lt;strong&gt;includes many mechanisms&lt;/strong&gt; of cascading that cannot be represented in the dc model.&lt;/li&gt;
+      &lt;li&gt;It &lt;strong&gt;includes many mechanisms&lt;/strong&gt; of cascading that cannot be represented in the dc model.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Cons&lt;/p&gt;
-
+  &lt;li&gt;Cons  &lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;It needs &lt;strong&gt;many assumptions&lt;/strong&gt; that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.&lt;/li&gt;
+      &lt;li&gt;It needs &lt;strong&gt;many assumptions&lt;/strong&gt; that are needed substantially impact the outcomes, potentially in ways that are not fully accurate.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -2315,12 +1983,8 @@ Figure 9. CCDF Demand Loss for COSMIC &amp;amp; DC Simulator [1]
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;models $m_1$ and $m_2$ are both subjected to the same set of exogenous contingencies $C=${$c_1,c_2,…$}.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;It measures the average agreement in the set of dependent events that result from each contingency in each model.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;models $m_1$ and $m_2$ are both subjected to the same set of exogenous contingencies $C=${$c_1,c_2,…$}.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;It measures the average agreement in the set of dependent events that result from each contingency in each model.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;figure align=&quot;center&quot;&gt;
@@ -2330,26 +1994,16 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 &lt;/figure&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Table V shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (8).&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Table V shows that the average between the two models for the whole set of sequences is 0.1948, which means that there are substantial differences between cascade paths in the two models.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Part of the reason is that the dc model tends to produce longer cascades and consequently increase the denominator in (8).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHY DC MODEL TENDS TO PRODEUCE LONGER SCENARIOS??? &lt;/span&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;In order to control this, we computed only for &lt;strong&gt;the first ten branch outage events&lt;/strong&gt; (early stage).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The average R increased to 0.3487, and some of the cascading paths showed a perfect match ($R=1$).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;This suggests that the cascading paths resulting from the &lt;strong&gt;two models tend to agree during the early stages of cascading&lt;/strong&gt;, when nonlinear dynamics are less pronounced, but disagree during later stages.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;In order to control this, we computed only for &lt;strong&gt;the first ten branch outage events&lt;/strong&gt; (early stage).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The average R increased to 0.3487, and some of the cascading paths showed a perfect match ($R=1$).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;This suggests that the cascading paths resulting from the &lt;strong&gt;two models tend to agree during the early stages of cascading&lt;/strong&gt;, when nonlinear dynamics are less pronounced, but disagree during later stages.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2361,27 +2015,14 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 &lt;p&gt;Through the above experiments, the following conclusions are drawn.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;COSMIC&lt;/strong&gt; represents a power system as a set of &lt;strong&gt;hybrid discrete/continuous differential algebraic equations&lt;/strong&gt;, simultaneously simulating protection systems and machine dynamics.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;From the N−2 contingency analysis, we found that COSMIC produces heavy-tailed blackout size distributions, which are typically found in both historical blackout data and cascading failure models [7] (Figure 8).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;From the N−2 contingency analysis, we found that the blackout size results show that load models can substantially impact cascade sizes (Table IV).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;From the comparison with a dc cascading outage simulator, we found that the relative frequency of very large events may be exaggerated in dynamic model due to numerical non-convergence (about 3% of cases).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;From the comparison with a dc cascading outage simulator, we found that the two models largely agreed for the initial periods of cascading (for about 10 events), then diverged for later stages where dynamic phenomena drive the sequence of events.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Detailed dynamic models of cascading failure can be useful in understanding the relative importance of various features of these models.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;COSMIC&lt;/strong&gt; represents a power system as a set of &lt;strong&gt;hybrid discrete/continuous differential algebraic equations&lt;/strong&gt;, simultaneously simulating protection systems and machine dynamics.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;From the N−2 contingency analysis, we found that COSMIC produces heavy-tailed blackout size distributions, which are typically found in both historical blackout data and cascading failure models [7] (Figure 8).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;From the N−2 contingency analysis, we found that the blackout size results show that load models can substantially impact cascade sizes (Table IV).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;From the comparison with a dc cascading outage simulator, we found that the relative frequency of very large events may be exaggerated in dynamic model due to numerical non-convergence (about 3% of cases).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;From the comparison with a dc cascading outage simulator, we found that the two models largely agreed for the initial periods of cascading (for about 10 events), then diverged for later stages where dynamic phenomena drive the sequence of events.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Detailed dynamic models of cascading failure can be useful in understanding the relative importance of various features of these models.  &lt;br /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -2408,21 +2049,15 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 &lt;h3 id=&quot;step-1-data-generation&quot;&gt;Step 1. Data Generation&lt;/h3&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;Need to introduce &lt;strong&gt;randomness&lt;/strong&gt; to create large size of dataset.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Need to introduce &lt;strong&gt;randomness&lt;/strong&gt; to create large size of dataset.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Randomness will be given by the method that generated the uncertain loads in &lt;a href=&quot;https://arxiv.org/abs/1902.05607&quot;&gt;[10]&lt;/a&gt;:&lt;/p&gt;
+    &lt;p&gt;Randomness will be given by the method that generated the uncertain loads in &lt;a href=&quot;https://arxiv.org/abs/1902.05607&quot;&gt;[10]&lt;/a&gt;:  &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 \[d := d + \mathcal{N}(\mu=0, \sigma = 0.03 * d)\]
 
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;$d$ is a load.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;$\mathcal{N}$ is normal distribution with mean zero and standard deviation proportional to the load.&lt;/p&gt;
-      &lt;/li&gt;
+      &lt;li&gt;$d$ is a load.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;$\mathcal{N}$ is normal distribution with mean zero and standard deviation proportional to the load.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -2430,19 +2065,11 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. WHICH FEATURES (e.g. $P_d, Q_d, P_g, Q_g$ or outage event time $t_{event}$) SHOULD BE GIVEN RANDOMNESS? &lt;/span&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Codes&lt;/p&gt;
-
+  &lt;li&gt;Codes  &lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py&quot;&gt;Generate N-2 Contingency Datasets.py&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb&quot;&gt;Generate Datasets.ipynb&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb&quot;&gt;Exploratory Data Analysis.ipynb&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/gen_dataset_n_2.py&quot;&gt;Generate N-2 Contingency Datasets.py&lt;/a&gt;  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/1.%20Generate%20Datasets.ipynb&quot;&gt;Generate Datasets.ipynb&lt;/a&gt;  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/jhyun0919/GNN-and-Power-Systems/blob/master/Cascading%20Outage/codes/2.%20EDA.ipynb&quot;&gt;Exploratory Data Analysis.ipynb&lt;/a&gt;  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -2452,12 +2079,8 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 &lt;h3 id=&quot;step-2-design-the-gnn-model-architecture&quot;&gt;Step 2. Design the GNN Model Architecture&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Does the model &lt;strong&gt;ARCHITECTURE&lt;/strong&gt; is proper for the &lt;strong&gt;GOAL&lt;/strong&gt;?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;What is the &lt;strong&gt;STRENGTH&lt;/strong&gt; of the model &lt;strong&gt;ARCHITECTURE&lt;/strong&gt;? and &lt;strong&gt;WHY&lt;/strong&gt;?&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Does the model &lt;strong&gt;ARCHITECTURE&lt;/strong&gt; is proper for the &lt;strong&gt;GOAL&lt;/strong&gt;?  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;What is the &lt;strong&gt;STRENGTH&lt;/strong&gt; of the model &lt;strong&gt;ARCHITECTURE&lt;/strong&gt;? and &lt;strong&gt;WHY&lt;/strong&gt;?  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2477,15 +2100,9 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 &lt;h2 id=&quot;results-what-we-want-to-see&quot;&gt;Results (What we want to see…)&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;High enough prediction or detection accuracy.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Extremely high computational efficiency compared to old methods.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A GNN based model having significantly fewer nodes (trainable parameters) than other deep learning models.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;High enough prediction or detection accuracy.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Extremely high computational efficiency compared to old methods.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;A GNN based model having significantly fewer nodes (trainable parameters) than other deep learning models.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2503,24 +2120,12 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\forall i \in N_G$ ($N_G$ is the set of all generator buses).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$M$ is a machine inertia constant.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$w_i$ is a rotor speed.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$P_{m,i}$ is the mechanical power input.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$P_{g,i}$ is the generator power output.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$D$ is a daping constant.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$\forall i \in N_G$ ($N_G$ is the set of all generator buses).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$M$ is a machine inertia constant.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$w_i$ is a rotor speed.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$P_{m,i}$ is the mechanical power input.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$P_{g,i}$ is the generator power output.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$D$ is a daping constant.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2532,15 +2137,9 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$delta_i(t)$ is the rotor angle.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$f_0$ is the nominal frequency.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$w_i$ is fortor speed.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$delta_i(t)$ is the rotor angle.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$f_0$ is the nominal frequency.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$w_i$ is fortor speed.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2554,15 +2153,9 @@ Table V. Statical Results for the Comparison between COSMIC &amp;amp; DC Simulat
 &lt;p&gt;Relation between following three compenets.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;real/reactive power&lt;/strong&gt; injected into each bus ($P_i, Q_i; i=1, 2, …, n$)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;bus voltage magnitude&lt;/strong&gt; of each bus ($V_i; i=1, 2, …, n$)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;phase angle&lt;/strong&gt; of each bus ($\theta_i; i=1, 2, …, n$).&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;real/reactive power&lt;/strong&gt; injected into each bus ($P_i, Q_i; i=1, 2, …, n$)  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;bus voltage magnitude&lt;/strong&gt; of each bus ($V_i; i=1, 2, …, n$)  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;phase angle&lt;/strong&gt; of each bus ($\theta_i; i=1, 2, …, n$).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!-- $$
@@ -2580,12 +2173,8 @@ $$ --&gt;
 &lt;p&gt;where&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$n$ is the number of buses of the system.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$Y_{ik} = G_{ik} + j B_{ik}$ is (i, k)-th entry of Y-bus matrix.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;$n$ is the number of buses of the system.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$Y_{ik} = G_{ik} + j B_{ik}$ is (i, k)-th entry of Y-bus matrix.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2779,18 +2368,10 @@ $$ --&gt;
 &lt;p&gt;What we should pay attention to in the final result ($A = QR$) are …&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;All column vectors of $Q$, the new basis {$q_0, … , q_{n-1}$}, are unit vector and mutually orthogonal, which means $Q$ is an &lt;strong&gt;unitary matrix&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The matrix $R$ is &lt;strong&gt;upper triangular matrix&lt;/strong&gt; and $rank(R)=m$.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The dot product of $Q$ and $R$, which is equal to $A$, can be regarded as a &lt;strong&gt;linear combination&lt;/strong&gt; of $Q$’s column vectors.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The result of &lt;strong&gt;Gram-Shmidt Process&lt;/strong&gt; can be regarded as a result of &lt;strong&gt;QR factorization&lt;/strong&gt; (decomposotion).&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;All column vectors of $Q$, the new basis {$q_0, … , q_{n-1}$}, are unit vector and mutually orthogonal, which means $Q$ is an &lt;strong&gt;unitary matrix&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The matrix $R$ is &lt;strong&gt;upper triangular matrix&lt;/strong&gt; and $rank(R)=m$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The dot product of $Q$ and $R$, which is equal to $A$, can be regarded as a &lt;strong&gt;linear combination&lt;/strong&gt; of $Q$’s column vectors.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The result of &lt;strong&gt;Gram-Shmidt Process&lt;/strong&gt; can be regarded as a result of &lt;strong&gt;QR factorization&lt;/strong&gt; (decomposotion).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2947,12 +2528,8 @@ Figure 2. Alternative Modified Gram-Schmidt algorithm for computing the QR facto
 &lt;p&gt;The advantages of being able to have an orthonormal basis are following [4].&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;We can express any  $v \in \mathbb{C}^n$ as a &lt;strong&gt;linear combination of coefficients&lt;/strong&gt;, which will allows us to have an &lt;strong&gt;explicit formula&lt;/strong&gt; expressing $v$ with the orthonormal basis.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The explicit formula is very useful when dealing with &lt;strong&gt;projection onto subspace&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;We can express any  $v \in \mathbb{C}^n$ as a &lt;strong&gt;linear combination of coefficients&lt;/strong&gt;, which will allows us to have an &lt;strong&gt;explicit formula&lt;/strong&gt; expressing $v$ with the orthonormal basis.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;The explicit formula is very useful when dealing with &lt;strong&gt;projection onto subspace&lt;/strong&gt;.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -3026,27 +2603,19 @@ Figure 1. Examples of Python Virtual Environment [2].
 &lt;p&gt;We can create a new virtual environment with the following commands and manage packages in the corresponding virtual environment for each project.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Create a new virtual environmnet&lt;/p&gt;
-
+  &lt;li&gt;Create a new virtual environmnet  &lt;br /&gt;&lt;br /&gt;
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda create &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; ENVNAME
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Activate a named environment&lt;/p&gt;
-
+  &lt;li&gt;Activate a named environment  &lt;br /&gt;&lt;br /&gt;
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda activate ENVNAME
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Install a package&lt;/p&gt;
-
+  &lt;li&gt;Install a package  &lt;br /&gt;&lt;br /&gt;
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;PKGNAME
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Deactivate current environment&lt;/p&gt;
-
+  &lt;li&gt;Deactivate current environment  &lt;br /&gt;&lt;br /&gt;
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda deactivate ENVNAME
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
@@ -3057,9 +2626,7 @@ Figure 1. Examples of Python Virtual Environment [2].
 &lt;p&gt;And, we can clearly provide the dependency for the project to other developers through the following commands.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Exporting the &lt;em&gt;envname.yml&lt;/em&gt;&lt;/p&gt;
-
+  &lt;li&gt;Exporting the &lt;em&gt;envname.yml&lt;/em&gt;  &lt;br /&gt;&lt;br /&gt;
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;env export&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; ENVNAME &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; envname.yml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
@@ -3070,9 +2637,7 @@ Figure 1. Examples of Python Virtual Environment [2].
 &lt;p&gt;Finally, we can create a virtual environment that matches the developer’s development environment on our local PC through the &lt;em&gt;envname.yml&lt;/em&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Creating an environment from an &lt;em&gt;envname.yml&lt;/em&gt;&lt;/p&gt;
-
+  &lt;li&gt;Creating an environment from an &lt;em&gt;envname.yml&lt;/em&gt;  &lt;br /&gt;&lt;br /&gt;
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda &lt;span class=&quot;nb&quot;&gt;env &lt;/span&gt;create &lt;span class=&quot;nt&quot;&gt;--file&lt;/span&gt; envname.yml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
