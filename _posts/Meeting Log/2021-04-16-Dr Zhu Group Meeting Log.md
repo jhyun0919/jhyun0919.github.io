@@ -26,9 +26,7 @@ The contents covered in this article are credited to the speaker of the meeting,
 #### Keywords
 
 - modeling, monitoring, optimization
-
 - partial observability
-
 - CVaR
 
 <br>
