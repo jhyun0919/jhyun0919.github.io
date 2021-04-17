@@ -5,7 +5,7 @@ categories: [Research/Meeting Log]
 tags: [Group Meeting]
 ---
 
-## Grid-Aware Machine Learning for Distribution System Modeling, Monitoring, and Optimization
+### Speech Title: Grid-Aware Machine Learning for Distribution System Modeling, Monitoring, and Optimization
 
 ---
 
