@@ -5,13 +5,13 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sat, 17 Apr 2021 16:35:58 -0500</pubDate>
+    <pubDate>Sun, 18 Apr 2021 18:07:39 -0500</pubDate>
     
       <item>
         <title>(eiting👷🏻‍♂️) Dr. Zhu's Group Meeting Log</title>
         <link>/research/meeting%20log/2021/04/16/Dr-Zhu-Group-Meeting-Log.html</link>
         <guid isPermaLink="true">/research/meeting%20log/2021/04/16/Dr-Zhu-Group-Meeting-Log.html</guid>
-        <description>&lt;h3 id=&quot;speech-title-grid-aware-machine-learning-for-distribution-system-modeling-monitoring-and-optimization&quot;&gt;Speech Title: Grid-Aware Machine Learning for Distribution System Modeling, Monitoring, and Optimization&lt;/h3&gt;
+        <description>&lt;h3 id=&quot;speech-title-grid-aware-machine-learning-for-distribution-system-modeling-monitoring-and-optimization&quot;&gt;&lt;strong&gt;Speech Title&lt;/strong&gt;: Grid-Aware Machine Learning for Distribution System Modeling, Monitoring, and Optimization&lt;/h3&gt;
 
 &lt;hr /&gt;
 
@@ -36,9 +36,23 @@
 &lt;h4 id=&quot;keywords&quot;&gt;Keywords&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;modeling, monitoring, optimization&lt;/li&gt;
-  &lt;li&gt;partial observability&lt;/li&gt;
-  &lt;li&gt;CVaR&lt;/li&gt;
+  &lt;li&gt;modeling
+    &lt;ul&gt;
+      &lt;li&gt;partial observability&lt;/li&gt;
+      &lt;li&gt;linearized distribution model&lt;/li&gt;
+      &lt;li&gt;alternating minimization  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;monitoring
+    &lt;ul&gt;
+      &lt;li&gt;sptio-temporal learning  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;optimization
+    &lt;ul&gt;
+      &lt;li&gt;graph learning, CVaR  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -68,8 +82,6 @@
 
 &lt;h3 id=&quot;proposed-approach&quot;&gt;Proposed Approach&lt;/h3&gt;
 
-&lt;p&gt;&lt;a name=&quot;Eq. (2)&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
 &lt;h4 id=&quot;modeling&quot;&gt;Modeling&lt;/h4&gt;
 
 &lt;ul&gt;
@@ -82,17 +94,29 @@
 \end{aligned}
 \tag{1}\]
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+\[\begin{aligned}
+\tilde{\mathbf{v}_t} &amp;amp; := \mathbf{v}_t - \mathbf{v}_{t-1} \\
+&amp;amp; = \mathbf{R}(\mathbf{r})\tilde{\mathbf{p}_t} + \mathbf{X}(\mathbf{x})\tilde{\mathbf{q}_t} \\
+&amp;amp; = \mathbf{A}(\begin{bmatrix} \tilde{p}_n ; \tilde{q}_n \end{bmatrix})\mathbf{\theta} \\
+&amp;amp; = \mathbf{A}(\tilde{\mathbf{s}}_{t})\mathbf{\theta}
+\end{aligned}
+\tag{2}\]
+
+&lt;p&gt;&lt;a name=&quot;Eq. (3)&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;Bi-linear regression with &lt;a href=&quot;#Group-LASSO&quot;&gt;Group-LASSO regularization&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-\[\min_{\mathbf{\theta}, \{\tilde{\mathbf{s}}^{\mathcal{U}}_{t}\}}{\sum_{t}^{T}{\| \tilde{\mathbf{v}}_t} - \mathbf{A}(\tilde{\mathbf{s}}^{\mathcal{O}}_{t})\mathbf{\theta} - \mathbf{A}(\tilde{\mathbf{s}}^{\mathcal{U}}_{t})\mathbf{\theta} \|_2^2 + \lambda \| \tilde{\mathbf{s}}^{\mathcal{U}}_{t} \|_G}
-\tag{2}\]
+\[\min_{\mathbf{\theta}, \{\tilde{\mathbf{s}}^{\mathcal{u}}_{t}\}}{\sum_{t}^{T}{\| \tilde{\mathbf{v}}_t} - \mathbf{A}(\tilde{\mathbf{s}}^{\mathcal{o}}_{t})\mathbf{\theta} - \mathbf{A}(\tilde{\mathbf{s}}^{\mathcal{u}}_{t})\mathbf{\theta} \|_2^2 + \lambda \| \tilde{\mathbf{s}}^{\mathcal{u}}_{t} \|_G}
+\tag{3}\]
 
 &lt;ul&gt;
   &lt;li&gt;Alternating Minimization (AM)&lt;br /&gt;&lt;br /&gt;
     &lt;ul&gt;
-      &lt;li&gt;between $\mathbf{\theta}$ and ${\tilde{\mathbf{s}}^{\mathcal{U}}_{t}}$&lt;/li&gt;
+      &lt;li&gt;between $\mathbf{\theta}$ and ${\tilde{\mathbf{s}}^{\mathcal{u}}_{t}}$&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -108,26 +132,30 @@
       &lt;li&gt;D-PMU data ($\mathbf{Z}$)&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Spatio-temporal learning&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Spatio-temporal learning [] &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 \[\begin{aligned}
 \begin{bmatrix} \mathbf{P} \\ \mathbf{Q} \end{bmatrix} &amp;amp;= \mathbf{L} + \mathbf{DU} \\
 &amp;amp; = \mathbf{L} + \begin{bmatrix} \mathbf{D}^{P} \\ \mathbf{D}^{Q} \end{bmatrix}
 \end{aligned}
-\tag{3}\]
+\tag{4}\]
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 \[\begin{aligned}
 \min&amp;amp;_{\mathbf{L}, \mathbf{D}}{\|\mathbf{L}\|_{*} + \lambda\|\mathbf{D}\|_{G}} \\
 &amp;amp; \text{s.to } \mathbf{L} + \mathbf{D}\mathbf{U} \text{ satisfies error bound for } \mathbf{\Gamma} \text{ and } \mathbf{Z}
 \end{aligned}
-\tag{4}\]
+\tag{5}\]
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 \[\begin{aligned}
 \min&amp;amp;_{\mathbf{v}, \mathbf{D}}{\frac{1}{2} \|\mathbf{v}\|_{2}^{2} + \lambda\|\mathbf{D}\|_{G}}\\
 &amp;amp; \text{s.to } \mathbf{uv^{T}} + \mathbf{D}\mathbf{U} \text{ satisfies error bound for } \mathbf{\Gamma} \text{ and } \mathbf{Z}
 \end{aligned}
-\tag{5}\]
+\tag{6}\]
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -141,20 +169,20 @@
 \mathbf{\hat{q}} = &amp;amp; \min_{\mathbf{q} \in \mathcal{Q}}{Losses(\mathbf{q})} \\
 &amp;amp; \text{s.to } \begin{bmatrix} \mathbf{Xq} + \mathbf{y} - \mathbf{\bar{v}} \\ -\mathbf{Xq} - \mathbf{y} + \mathbf{\underline{v}} \end{bmatrix} \leq\mathbf{0}
 \end{aligned}
-\tag{6}\]
+\tag{7}\]
 
 &lt;ul&gt;
   &lt;li&gt;Graph learning&lt;/li&gt;
 &lt;/ul&gt;
 
 \[\min_{\Phi}{Avg(\| \Phi(\mathbf{z}) -  \mathbf{\hat{q}}\|_{2}^{2})}
-\tag{7}\]
-
-\[\mathbf{z}_{l+1} = \sigma(\mathbf{W}_l\mathbf{z}_l\mathbf{H}_l + \mathbf{b}_l)
 \tag{8}\]
 
+\[\mathbf{z}_{l+1} = \sigma(\mathbf{W}_l\mathbf{z}_l\mathbf{H}_l + \mathbf{b}_l)
+\tag{9}\]
+
 &lt;ul&gt;
-  &lt;li&gt;Conditional Value-at-Risk (CVaR) method.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#CVaR&quot;&gt;Conditional Value-at-Risk (CVaR)&lt;/a&gt; method.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
@@ -165,7 +193,14 @@
 &lt;h4 id=&quot;modeling-1&quot;&gt;Modeling&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Line reactance estimation&lt;/li&gt;
+  &lt;li&gt;Experiment: Line reactance estimation  &lt;br /&gt;&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Zero injection: $\tilde{\mathbf{s}}^{\mathcal{u}}_{t} = 0$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;Projection: $\mathbf{P}(\tilde{\mathbf{v}}_t - \mathbf{A}(\tilde{\mathbf{s}}_t^o)\mathbf{\theta} - \mathbf{A}(\tilde{\mathbf{s}}_t^u)\mathbf{\theta} )$ such that $\mathbf{PA}(\tilde{\mathbf{s}}_t^u) = \mathbf{0}$. &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;AM &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Result&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -173,7 +208,13 @@
 &lt;h4 id=&quot;monitoring-1&quot;&gt;Monitoring&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;DER visibility&lt;/li&gt;
+  &lt;li&gt;Experiment: DER visibility by leveraging heterogeneous &amp;amp; dynamic data.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Result  &lt;br /&gt;&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Recieving operating curves for EV event identification under $\kappa$ number of D-PMU. &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;PV output estimation using aggregated power data &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -181,16 +222,38 @@
 &lt;h4 id=&quot;optimization-1&quot;&gt;Optimization&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Graph learning vs. Local learning&lt;/li&gt;
+  &lt;li&gt;Experiment: Graph learning (w/o CVaR).  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Result  &lt;br /&gt;&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;GNN reduces average voltage deviation per node.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;Histogram of voltage deviation shows &lt;em&gt;under-voltage cases&lt;/em&gt;.  &lt;br /&gt;&lt;br /&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Need CVaR!&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Modeling  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Monitoring  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Optimization  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h3 id=&quot;future-study&quot;&gt;Future Study&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;Online implementation for modeling.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Online implementation for DER visibility.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;CVaR-aware GNN learning for DER optimization.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -230,7 +293,7 @@ Figure . Conventional Explanation to Sparsity Caused by Lasso. []
 
 \[\beta^{*} = \underset{\beta}{\mathrm{argmin}} {\| y - \sum_{l=1}^{m}{X^{(l)}\beta^{(l)}} \|_2^2} + \lambda \sum_{l=1}^{m} \sqrt{p_{l}}\| \beta^{(l)} \|_{1}\]
 
-&lt;p&gt;where $p^{(l)}$ represents the number of weights in $\beta^{(l)}$.&lt;/p&gt;
+&lt;p&gt;where $p_{l}$ represents the number of weights in $\beta^{(l)}$.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -238,17 +301,14 @@ Figure . Conventional Explanation to Sparsity Caused by Lasso. []
 
 &lt;p&gt;Usually, the variables of the minimization problem are not correlated. However, when there are certain constraints or correlation between variables, we need to group them appropriately.&lt;/p&gt;
 
-&lt;p&gt;The power injections as minimization variables, covered in the presentation , is a good example. Since power is comprised of active and reactive power, the variable of &lt;a href=&quot;#Eq. (2)&quot;&gt;the minimization problem of Eq. (2)&lt;/a&gt; has to be grouped as follows.&lt;/p&gt;
+&lt;p&gt;The power injections as minimization variables, covered in the presentation , is a good example. Since power is comprised of active and reactive power, the variable of &lt;a href=&quot;#Eq. (3)&quot;&gt;the minimization problem of Eq. (3)&lt;/a&gt; has to be grouped as follows.&lt;/p&gt;
 
-\[\tilde{\mathbf{s}}_{t}\ = \begin{bmatrix} \tilde{p}_n &amp;amp; \tilde{q}_n \end{bmatrix}\]
+\[\tilde{\mathbf{s}}_{t} = \begin{bmatrix} \tilde{p}_n ; \tilde{q}_n \end{bmatrix}\]
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;a name=&quot;CVaR&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;cvar&quot;&gt;CVaR&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;throw-back-the-question&quot;&gt;Throw back the Question&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -257,14 +317,12 @@ Figure . Conventional Explanation to Sparsity Caused by Lasso. []
 &lt;h2 id=&quot;what-i-contribute&quot;&gt;What I Contribute&lt;/h2&gt;
 
 &lt;h3 id=&quot;the-framework-of-researchstudy&quot;&gt;The framework of research/study&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Motivation  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Problem Formulation  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Proposed Approach  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Experiment &amp;amp; Result  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;Future Study  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  1. Motivation
+  2. Problem Formulation
+  3. Proposed Approach
+  4. Experiment &amp;amp; Result
+  5. Future Study
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The above list is the framework of research that Dr. Zhu discussed at the start of this year. Almost all research papers have been written along this process, which is also the basic step of our research.&lt;/p&gt;
 
@@ -290,13 +348,15 @@ Figure . Decanting Guide []
 
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
 
-&lt;p&gt;[] L. Mao, “Group Lasso,” Lei Mao’s Log Book. [Online]. Available: https://leimao.github.io/blog/Group-Lasso/. [Accessed: 17-Apr-2021].&lt;/p&gt;
+&lt;p&gt;[1]S. Lin and H. Zhu, “Enhancing the Spatio-temporal Observability of Grid-Edge Resources in Distribution Grids”, arXiv.org, 2021. [Online]. Available: https://arxiv.org/pdf/2102.07801.pdf. [Accessed: 18-Apr-2021].&lt;/p&gt;
 
-&lt;p&gt;[] “Lasso (statistics),” Wikipedia, 14-Apr-2021. [Online]. Available: https://en.wikipedia.org/wiki/Lasso_(statistics). [Accessed: 17-Apr-2021].&lt;/p&gt;
+&lt;p&gt;[]L. Mao, “Group Lasso,” Lei Mao’s Log Book. [Online]. Available: https://leimao.github.io/blog/Group-Lasso/. [Accessed: 17-Apr-2021].&lt;/p&gt;
 
-&lt;p&gt;[] P. P. H. Winston, “How to Speak,” MIT OpenCourseWare. [Online]. Available: https://ocw.mit.edu/resources/res-tll-005-how-to-speak-january-iap-2018/. [Accessed: 17-Apr-2021].&lt;/p&gt;
+&lt;p&gt;[]“Lasso (statistics),” Wikipedia, 14-Apr-2021. [Online]. Available: https://en.wikipedia.org/wiki/Lasso_(statistics). [Accessed: 17-Apr-2021].&lt;/p&gt;
 
-&lt;p&gt;[] E. Golman, “The Ultimate Guide to Decanting &amp;amp; Aerating Kosher Wine,” Kosherwine.com, 18-Dec-2020. [Online]. Available: https://www.kosherwine.com/discover/the-ultimate-guide-to-decanting-kosher-wine. [Accessed: 17-Apr-2021].&lt;/p&gt;
+&lt;p&gt;[]P. P. H. Winston, “How to Speak,” MIT OpenCourseWare. [Online]. Available: https://ocw.mit.edu/resources/res-tll-005-how-to-speak-january-iap-2018/. [Accessed: 17-Apr-2021].&lt;/p&gt;
+
+&lt;p&gt;[]E. Golman, “The Ultimate Guide to Decanting &amp;amp; Aerating Kosher Wine,” Kosherwine.com, 18-Dec-2020. [Online]. Available: https://www.kosherwine.com/discover/the-ultimate-guide-to-decanting-kosher-wine. [Accessed: 17-Apr-2021].&lt;/p&gt;
 
 &lt;p&gt;[]&lt;/p&gt;
 </description>
