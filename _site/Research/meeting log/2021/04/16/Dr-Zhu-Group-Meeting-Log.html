@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
 	<meta charset="utf-8">
-	<title>(eiting👷🏻‍♂️) Dr. Zhu's Group Meeting Log | Park's Archive</title>
+	<title>Dr. Zhu's Group Meeting Log | Park's Archive</title>
 	<meta name="description"
 		content="Speech Title: Grid-Aware Machine Learning for Distribution System Modeling, Monitoring, and Optimization">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -220,7 +220,7 @@
   <div class="content">
     <article >
   <header style="background-image: url('/')">
-    <h1 class="title">(eiting👷🏻‍♂️) Dr. Zhu's Group Meeting Log</h1>
+    <h1 class="title">Dr. Zhu's Group Meeting Log</h1>
     
     <p class="meta">
       April 16, 2021
@@ -572,20 +572,45 @@ Figure 4. Conventional Explanation to Sparsity Caused by Lasso. [3]
 
 <h3 id="risk-management">Risk management</h3>
 
+<figure align="center">
+<img src="https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/CVaR.png" width="700" />   <figcaption>
+Figure 5. VaR and CVaR. [5]
+  </figcaption>
+</figure>
+<p><br /></p>
+
 <h4 id="value-at-risk-var">Value-at-Risk (VaR)</h4>
+
+\[\begin{aligned}
+\int_{-\infty}^{VaR_{\beta}}&amp;{f_{X}(x)}dx = 1 - \beta \\
+&amp; \text{where } f_{X}(x) \text{ is the marginal probability function of } X \\ 
+&amp; \text{and } \beta \in [0, 1] \text{ is the confidence level.}
+\end{aligned}\]
+
+<p><br /></p>
+
+<p>            or equivalently</p>
+
+\[P[x \leq VaR_{\beta}] = 1 - \beta\]
 
 <p><br /></p>
 
 <h4 id="conditional-value-at-risk-cvar">Conditional Value-at-Risk (CVaR)</h4>
 
-\[CVaR = \frac{1}{1-c} \int_{-1}^{VAR}{xp(x)}dx\]
+\[\begin{aligned}
+CVaR_{\beta} = &amp; \frac{1}{1-\beta} \int_{-\infty}^{VaR_{\beta}}{x f_{X}(x)}dx \\
+&amp; \text{where } f_{X}(x) \text{ is the marginal probability function of } X
+\end{aligned}\]
 
-<p>where</p>
-<ul>
-  <li>$p(x)dx$: the probability density of getting a return with value “$x$” <br /><br /></li>
-  <li>$c$: the cut-off point on the distribution where the analyst sets the $VaR$ breakpoint <br /><br /></li>
-  <li>$VaR$: the agreed-upon $VaR$ level <br /><br /></li>
-</ul>
+<p><br /></p>
+
+<p>            or equivalently</p>
+
+\[CVaR_{\beta} = E[x | x \leq VaR_{\beta}]\]
+
+<p><br /></p>
+
+<p>The “CVaR at $(1-\beta)$% level” is the expected return on $X$ in the worst $(1-\beta)$% of cases. CVaR is an alternative to VaR that is more sensitive to the shape of the tail of the loss distribution [6].</p>
 
 <p><br /></p>
 
@@ -633,11 +658,15 @@ Figure . Decanting Guide [4]
 
 <p>[1]S. Lin and H. Zhu, “Enhancing the Spatio-temporal Observability of Grid-Edge Resources in Distribution Grids”, arXiv.org, 2021. [Online]. Available: https://arxiv.org/pdf/2102.07801.pdf. [Accessed: 18-Apr-2021].</p>
 
-<p>[2]E. Candès, X. Li, Y. Ma and J. Wright, “Robust principal component analysis?”, Journal of the ACM, vol. 58, no. 3, pp. 1-37, 2011. Available: 10.1145/1970392.1970395 [Accessed 19 April 2021].</p>
+<p>[2]E. Candès, X. Li, Y. Ma and J. Wright, “Robust principal component analysis?”, Journal of the ACM, vol. 58, no. 3, pp. 1-37, 2011. Available: 10.1145/1970392.1970395 [Accessed: 17-Apr-2021].</p>
 
 <p>[3]L. Mao, “Group Lasso,” Lei Mao’s Log Book. [Online]. Available: https://leimao.github.io/blog/Group-Lasso/. [Accessed: 17-Apr-2021].</p>
 
 <p>[4]E. Golman, “The Ultimate Guide to Decanting &amp; Aerating Kosher Wine,” Kosherwine.com, 18-Dec-2020. [Online]. Available: https://www.kosherwine.com/discover/the-ultimate-guide-to-decanting-kosher-wine. [Accessed: 17-Apr-2021].</p>
+
+<p>[5]”Measuring and Modifying Risks. CFA Level 1 - AnalystPrep”, AnalystPrep. CFA® Exam Study Notes, 2021. [Online]. Available: https://analystprep.com/cfa-level-1-exam/portfolio-management/measuring-modifying-risks/. [Accessed: 17-Apr-2021].</p>
+
+<p>[6]”Expected shortfall - Wikipedia”, En.wikipedia.org, 2021. [Online]. Available: https://en.wikipedia.org/wiki/Expected_shortfall. [Accessed: 17-Apr-2021].</p>
 
   </section>
 

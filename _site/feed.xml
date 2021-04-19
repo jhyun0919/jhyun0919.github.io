@@ -5,10 +5,10 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Mon, 19 Apr 2021 01:43:02 -0500</pubDate>
+    <pubDate>Mon, 19 Apr 2021 11:51:02 -0500</pubDate>
     
       <item>
-        <title>(eiting👷🏻‍♂️) Dr. Zhu's Group Meeting Log</title>
+        <title>Dr. Zhu's Group Meeting Log</title>
         <link>/research/meeting%20log/2021/04/16/Dr-Zhu-Group-Meeting-Log.html</link>
         <guid isPermaLink="true">/research/meeting%20log/2021/04/16/Dr-Zhu-Group-Meeting-Log.html</guid>
         <description>&lt;h3 id=&quot;speech-title-grid-aware-machine-learning-for-distribution-system-modeling-monitoring-and-optimization&quot;&gt;&lt;strong&gt;Speech Title&lt;/strong&gt;: Grid-Aware Machine Learning for Distribution System Modeling, Monitoring, and Optimization&lt;/h3&gt;
@@ -355,20 +355,45 @@ Figure 4. Conventional Explanation to Sparsity Caused by Lasso. [3]
 
 &lt;h3 id=&quot;risk-management&quot;&gt;Risk management&lt;/h3&gt;
 
+&lt;figure align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/CVaR.png&quot; width=&quot;700&quot; /&gt;   &lt;figcaption&gt;
+Figure 5. VaR and CVaR. [5]
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h4 id=&quot;value-at-risk-var&quot;&gt;Value-at-Risk (VaR)&lt;/h4&gt;
+
+\[\begin{aligned}
+\int_{-\infty}^{VaR_{\beta}}&amp;amp;{f_{X}(x)}dx = 1 - \beta \\
+&amp;amp; \text{where } f_{X}(x) \text{ is the marginal probability function of } X \\ 
+&amp;amp; \text{and } \beta \in [0, 1] \text{ is the confidence level.}
+\end{aligned}\]
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;            or equivalently&lt;/p&gt;
+
+\[P[x \leq VaR_{\beta}] = 1 - \beta\]
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;conditional-value-at-risk-cvar&quot;&gt;Conditional Value-at-Risk (CVaR)&lt;/h4&gt;
 
-\[CVaR = \frac{1}{1-c} \int_{-1}^{VAR}{xp(x)}dx\]
+\[\begin{aligned}
+CVaR_{\beta} = &amp;amp; \frac{1}{1-\beta} \int_{-\infty}^{VaR_{\beta}}{x f_{X}(x)}dx \\
+&amp;amp; \text{where } f_{X}(x) \text{ is the marginal probability function of } X
+\end{aligned}\]
 
-&lt;p&gt;where&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;$p(x)dx$: the probability density of getting a return with value “$x$” &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;$c$: the cut-off point on the distribution where the analyst sets the $VaR$ breakpoint &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;$VaR$: the agreed-upon $VaR$ level &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;            or equivalently&lt;/p&gt;
+
+\[CVaR_{\beta} = E[x | x \leq VaR_{\beta}]\]
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The “CVaR at $(1-\beta)$% level” is the expected return on $X$ in the worst $(1-\beta)$% of cases. CVaR is an alternative to VaR that is more sensitive to the shape of the tail of the loss distribution [6].&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -416,11 +441,15 @@ Figure . Decanting Guide [4]
 
 &lt;p&gt;[1]S. Lin and H. Zhu, “Enhancing the Spatio-temporal Observability of Grid-Edge Resources in Distribution Grids”, arXiv.org, 2021. [Online]. Available: https://arxiv.org/pdf/2102.07801.pdf. [Accessed: 18-Apr-2021].&lt;/p&gt;
 
-&lt;p&gt;[2]E. Candès, X. Li, Y. Ma and J. Wright, “Robust principal component analysis?”, Journal of the ACM, vol. 58, no. 3, pp. 1-37, 2011. Available: 10.1145/1970392.1970395 [Accessed 19 April 2021].&lt;/p&gt;
+&lt;p&gt;[2]E. Candès, X. Li, Y. Ma and J. Wright, “Robust principal component analysis?”, Journal of the ACM, vol. 58, no. 3, pp. 1-37, 2011. Available: 10.1145/1970392.1970395 [Accessed: 17-Apr-2021].&lt;/p&gt;
 
 &lt;p&gt;[3]L. Mao, “Group Lasso,” Lei Mao’s Log Book. [Online]. Available: https://leimao.github.io/blog/Group-Lasso/. [Accessed: 17-Apr-2021].&lt;/p&gt;
 
 &lt;p&gt;[4]E. Golman, “The Ultimate Guide to Decanting &amp;amp; Aerating Kosher Wine,” Kosherwine.com, 18-Dec-2020. [Online]. Available: https://www.kosherwine.com/discover/the-ultimate-guide-to-decanting-kosher-wine. [Accessed: 17-Apr-2021].&lt;/p&gt;
+
+&lt;p&gt;[5]”Measuring and Modifying Risks. CFA Level 1 - AnalystPrep”, AnalystPrep. CFA® Exam Study Notes, 2021. [Online]. Available: https://analystprep.com/cfa-level-1-exam/portfolio-management/measuring-modifying-risks/. [Accessed: 17-Apr-2021].&lt;/p&gt;
+
+&lt;p&gt;[6]”Expected shortfall - Wikipedia”, En.wikipedia.org, 2021. [Online]. Available: https://en.wikipedia.org/wiki/Expected_shortfall. [Accessed: 17-Apr-2021].&lt;/p&gt;
 </description>
         <pubDate>Fri, 16 Apr 2021 00:00:00 -0500</pubDate>
       </item>
