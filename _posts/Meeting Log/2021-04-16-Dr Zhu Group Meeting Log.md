@@ -250,9 +250,9 @@ $$
 
 <a name="Group-LASSO"></a>
 
-### Regularization
+### Regularization [3]
 
-#### Lasso and Ridge Regressions [3]
+#### Lasso and Ridge Regressions
 
 Given a dataset ${X,y}$ where $X$ is the feature and $y$ is the label for regression, we simply model it as has a linear relationship $y = X\beta$. With regularization, we can control the degree of freedom of the model parameter ($\beta$) and able to avoid the risk of overfitting.
 
