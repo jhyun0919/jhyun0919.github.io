@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (eiting👷🏻‍♂️) Dr. Zhu's Group Meeting Log
+title: Dr. Zhu's Group Meeting Log
 categories: [Research/Meeting Log]
 tags: [Group Meeting]
 ---
@@ -305,20 +305,53 @@ $$
 
 ### Risk management
 
+<figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/CVaR.png" width="700" />
+  <figcaption>Figure 5. VaR and CVaR. [5]</figcaption>
+</figure>
+<br>
+
 #### Value-at-Risk (VaR)
+
+$$
+\begin{aligned}
+\int_{-\infty}^{VaR_{\beta}}&{f_{X}(x)}dx = 1 - \beta \\
+& \text{where } f_{X}(x) \text{ is the marginal probability function of } X \\ 
+& \text{and } \beta \in [0, 1] \text{ is the confidence level.}
+\end{aligned}
+$$
 
 <br>
 
-#### Conditional Value-at-Risk (CVaR)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or equivalently
 
 $$
-CVaR = \frac{1}{1-c} \int_{-1}^{VAR}{xp(x)}dx
+P[x \leq VaR_{\beta}] = 1 - \beta
 $$
 
-where
-- $p(x)dx$: the probability density of getting a return with value “$x$” <br><br>
-- $c$: the cut-off point on the distribution where the analyst sets the $VaR$ breakpoint <br><br>
-- $VaR$: the agreed-upon $VaR$ level <br><br>
+<br>
+
+#### Conditional Value-at-Risk (CVaR) 
+
+$$
+\begin{aligned}
+CVaR_{\beta} = & \frac{1}{1-\beta} \int_{-\infty}^{VaR_{\beta}}{x f_{X}(x)}dx \\
+& \text{where } f_{X}(x) \text{ is the marginal probability function of } X
+\end{aligned}
+$$
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or equivalently
+
+$$
+CVaR_{\beta} = E[x | x \leq VaR_{\beta}]
+$$
+
+<br>
+
+The "CVaR at $(1-\beta)$% level" is the expected return on $X$ in the worst $(1-\beta)$% of cases. CVaR is an alternative to VaR that is more sensitive to the shape of the tail of the loss distribution [6].
+
 
 <br>
 
@@ -366,8 +399,12 @@ For this reason, I suggest giving resting to your slides; then, it will allow yo
 
 [1]S. Lin and H. Zhu, "Enhancing the Spatio-temporal Observability of Grid-Edge Resources in Distribution Grids", arXiv.org, 2021. [Online]. Available: https://arxiv.org/pdf/2102.07801.pdf. [Accessed: 18-Apr-2021].
 
-[2]E. Candès, X. Li, Y. Ma and J. Wright, "Robust principal component analysis?", Journal of the ACM, vol. 58, no. 3, pp. 1-37, 2011. Available: 10.1145/1970392.1970395 [Accessed 19 April 2021].
+[2]E. Candès, X. Li, Y. Ma and J. Wright, "Robust principal component analysis?", Journal of the ACM, vol. 58, no. 3, pp. 1-37, 2011. Available: 10.1145/1970392.1970395 [Accessed: 17-Apr-2021].
 
 [3]L. Mao, “Group Lasso,” Lei Mao's Log Book. [Online]. Available: https://leimao.github.io/blog/Group-Lasso/. [Accessed: 17-Apr-2021].
 
 [4]E. Golman, “The Ultimate Guide to Decanting &amp; Aerating Kosher Wine,” Kosherwine.com, 18-Dec-2020. [Online]. Available: https://www.kosherwine.com/discover/the-ultimate-guide-to-decanting-kosher-wine. [Accessed: 17-Apr-2021].
+
+[5]"Measuring and Modifying Risks. CFA Level 1 - AnalystPrep", AnalystPrep. CFA® Exam Study Notes, 2021. [Online]. Available: https://analystprep.com/cfa-level-1-exam/portfolio-management/measuring-modifying-risks/. [Accessed: 17-Apr-2021].
+
+[6]"Expected shortfall - Wikipedia", En.wikipedia.org, 2021. [Online]. Available: https://en.wikipedia.org/wiki/Expected_shortfall. [Accessed: 17-Apr-2021].
