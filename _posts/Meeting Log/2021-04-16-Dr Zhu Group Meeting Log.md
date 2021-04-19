@@ -21,20 +21,26 @@ The contents covered in this article are credited to the speaker of the meeting,
 
 - Shanny Lin
 
-> Abstract or Short Brief
+<br>
+
+#### Abstract
+> Under limited obsevability conditions, the speaker presents approaches to modeling, monitoring, and optimization of distribution systems.
+
+<br>
 
 #### Keywords
 
+- limited observability  <br><br>
 - modeling
-  - partial observability
   - linearized distribution model
   - alternating minimization  <br><br>
 - monitoring
+  - heterogeneous & dynamic data
   - sptio-temporal learning  <br><br>
 - optimization
-  - graph learning, CVaR  <br><br>
+  - graph learning
+  - Conditional Value-at-Risk (CVaR)  <br><br>
 
-<br>
 
 ---
 
@@ -42,22 +48,14 @@ The contents covered in this article are credited to the speaker of the meeting,
 
 ### Motivation
 
-- 
-
-
-
-<br>
-<br>
-
-### Problem Formulation
-
+- Accurate network model is crucial for distributed energy resource (DER) monitoring and optimization. <br><br>
 - How to estimate an accurate model of the power system?<br><br>
 - How to address monitoring and optimization tasks under limited observability? <br><br>
 
 <br>
 <br>
 
-### Proposed Approach
+### Problem Formulation
 
 #### Modeling
 
@@ -73,6 +71,8 @@ $$
 
 <br>
 
+- Difference between two consequtive time instance
+
 $$
 \begin{aligned}
 \tilde{\mathbf{v}_t} & := \mathbf{v}_t - \mathbf{v}_{t-1} \\
@@ -85,42 +85,76 @@ $$
 
 <a name="Eq. (3)"></a>
 
-- Bi-linear regression with <a href="#Group-LASSO">Group-LASSO regularization</a>
+- Estimate line parameter $\mathbf{\theta}$ bi-linear regression problem with <a href="#Group-LASSO">Group-LASSO regularization</a>
 
 $$
 \min_{\mathbf{\theta}, \{\tilde{\mathbf{s}}^{\mathcal{u}}_{t}\}}{\sum_{t}^{T}{\| \tilde{\mathbf{v}}_t} - \mathbf{A}(\tilde{\mathbf{s}}^{\mathcal{o}}_{t})\mathbf{\theta} - \mathbf{A}(\tilde{\mathbf{s}}^{\mathcal{u}}_{t})\mathbf{\theta} \|_2^2 + \lambda \| \tilde{\mathbf{s}}^{\mathcal{u}}_{t} \|_G}
 \tag{3}
 $$
 
-- Alternating Minimization (AM)<br><br>
-  - between $\mathbf{\theta}$ and $\{\tilde{\mathbf{s}}^{\mathcal{u}}_{t}\}$
-
+<br>
 <br>
 
 #### Monitoring
 
 - DER visibility by leveraging heterogenous & dynamic data.<br><br>
-  - Smart meter data ($\mathbf{\Gamma}$)<br><br>
-  - D-PMU data ($\mathbf{Z}$)<br><br>
-
-- Spatio-temporal learning [] <br><br>
+  - Smart meter data ($\mathbf{\Gamma}$): lacks in time resolution <br><br>
+  - D-PMU data ($\mathbf{Z}$): lacks in spatial diversity <br><br>
+- Active power matrix decompsition to low rank plus sparse model [2].<br><br>
 
 $$
 \begin{aligned}
 \begin{bmatrix} \mathbf{P} \\ \mathbf{Q} \end{bmatrix} &= \mathbf{L} + \mathbf{DU} \\
 & = \mathbf{L} + \begin{bmatrix} \mathbf{D}^{P} \\ \mathbf{D}^{Q} \end{bmatrix}
 \end{aligned}
-\tag{4}
+\tag{5}
 $$
 
 <br>
+<br>
+
+#### Optimization
+
+- Optimal DER reactive power support problem
+
+$$
+\begin{aligned}
+\mathbf{\hat{q}} = \min_{\mathbf{q} \in \mathcal{Q}}&{Losses(\mathbf{q})} \\
+& \text{s.to } \begin{bmatrix} \mathbf{Xq} + \mathbf{y} - \mathbf{\bar{v}} \\ -\mathbf{Xq} - \mathbf{y} + \mathbf{\underline{v}} \end{bmatrix} \leq\mathbf{0}
+\end{aligned}
+\tag{6}
+$$
+
+- DER optimization <br><br>
+  - Fast-acting DER inverter control
+
+$$
+\min_{\Phi}{Avg(\| \Phi(\mathbf{z}) -  \mathbf{\hat{q}}\|_{2}^{2})}
+\tag{7}
+$$
+
+<br>
+<br>
+
+### Proposed Approach
+
+#### Modeling
+
+- Alternating Minimization (AM)<br><br>
+  - Update $\mathbf{\theta}$ and $\{\tilde{\mathbf{s}}^{\mathcal{u}}_{t}\}$, alternatively.
+
+<br>
+
+#### Monitoring
+
+- Spatio-temporal learning [1]<br><br>
 
 $$
 \begin{aligned}
 \min&_{\mathbf{L}, \mathbf{D}}{\|\mathbf{L}\|_{*} + \lambda\|\mathbf{D}\|_{G}} \\
 & \text{s.to } \mathbf{L} + \mathbf{D}\mathbf{U} \text{ satisfies error bound for } \mathbf{\Gamma} \text{ and } \mathbf{Z}
 \end{aligned}
-\tag{5}
+\tag{8}
 $$
 
 <br>
@@ -130,36 +164,19 @@ $$
 \min&_{\mathbf{v}, \mathbf{D}}{\frac{1}{2} \|\mathbf{v}\|_{2}^{2} + \lambda\|\mathbf{D}\|_{G}}\\
 & \text{s.to } \mathbf{uv^{T}} + \mathbf{D}\mathbf{U} \text{ satisfies error bound for } \mathbf{\Gamma} \text{ and } \mathbf{Z}
 \end{aligned}
-\tag{6}
+\tag{9}
 $$
 
 <br>
 
 #### Optimization
 
-- DER optimization
-
-$$
-\begin{aligned}
-\mathbf{\hat{q}} = & \min_{\mathbf{q} \in \mathcal{Q}}{Losses(\mathbf{q})} \\
-& \text{s.to } \begin{bmatrix} \mathbf{Xq} + \mathbf{y} - \mathbf{\bar{v}} \\ -\mathbf{Xq} - \mathbf{y} + \mathbf{\underline{v}} \end{bmatrix} \leq\mathbf{0}
-\end{aligned}
-\tag{7}
-$$
-
 - Graph learning
 
 $$
-\min_{\Phi}{Avg(\| \Phi(\mathbf{z}) -  \mathbf{\hat{q}}\|_{2}^{2})}
-\tag{8}
-$$
-
-$$
 \mathbf{z}_{l+1} = \sigma(\mathbf{W}_l\mathbf{z}_l\mathbf{H}_l + \mathbf{b}_l)
-\tag{9}
+\tag{10}
 $$
-
-- <a href="#CVaR">Conditional Value-at-Risk (CVaR)</a> method.
 
 <br>
 <br>
@@ -171,9 +188,14 @@ $$
 - Experiment: Line reactance estimation  <br><br>
   - Zero injection: $\tilde{\mathbf{s}}^{\mathcal{u}}_{t} = 0$.  <br><br>
   - Projection: $\mathbf{P}(\tilde{\mathbf{v}}_t - \mathbf{A}(\tilde{\mathbf{s}}_t^o)\mathbf{\theta} - \mathbf{A}(\tilde{\mathbf{s}}_t^u)\mathbf{\theta} )$ such that $\mathbf{PA}(\tilde{\mathbf{s}}_t^u) = \mathbf{0}$. <br><br>
-  - AM <br><br>
+  - Alternating Minimization (AM) <br><br>
 
 - Result
+
+<figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/modeling_result.png" width="400" />
+  <figcaption>Figure 1. Error of estimated system models (line parameters).</figcaption>
+</figure>
 
 <br>
 
@@ -181,8 +203,11 @@ $$
 
 - Experiment: DER visibility by leveraging heterogeneous & dynamic data.  <br><br>
 - Result  <br><br>
-  - Recieving operating curves for EV event identification under $\kappa$ number of D-PMU. <br><br>
-  - PV output estimation using aggregated power data <br><br>
+
+<figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/monitoring_result.png" width="600" />
+  <figcaption>Figure 2. Recieving operating curves for EV event identification under 𝜅 number of D-PMU (left), and PV output estimation using aggregated power data (right).</figcaption>
+</figure>
 
 <br>
 
@@ -190,9 +215,12 @@ $$
 
 - Experiment: Graph learning (w/o CVaR).  <br><br>
 - Result  <br><br>
-  - GNN reduces average voltage deviation per node.  <br><br>
-  - Histogram of voltage deviation shows *under-voltage cases*.  <br><br>
-    - Need CVaR!
+  - Under voltage issue → it needs  <a href="#CVaR">Conditional Value-at-Risk (CVaR)</a>.
+
+<figure align="center">
+  <img src="https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/optim_result.png" width="600" />
+  <figcaption>Figure 3. Scatter plots of average voltage deviation per node of GNN and local models (left), and Histogram of voltage deviation showing under-voltage cases (right).</figcaption>
+</figure>
 
 <br>
 <br>
@@ -200,8 +228,11 @@ $$
 ### Conclusion
 
 - Modeling  <br><br>
+  - Estimated network line parameters under partial observability by solving a bi-linear regression problem by using AM algorithm.  <br><br>
 - Monitoring  <br><br>
+  - Improved DER visibility by leveraging heterogeneous & dynamic data.  <br><br>
 - Optimization  <br><br>
+  - Showed the need for CVaR method.  <br><br>
 
 <br>
 
@@ -221,7 +252,7 @@ $$
 
 ### Regularization
 
-#### Lasso and Ridge Regressions []
+#### Lasso and Ridge Regressions [3]
 
 Given a dataset ${X,y}$ where $X$ is the feature and $y$ is the label for regression, we simply model it as has a linear relationship $y = X\beta$. With regularization, we can control the degree of freedom of the model parameter ($\beta$) and able to avoid the risk of overfitting.
 
@@ -239,7 +270,7 @@ Due to the shape of their constraints boundary (norm ball shape), LASSO encourag
 
 <figure align="center">
   <img src="https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/lasso-vs-ridge.png" width="500" />
-  <figcaption>Figure . Conventional Explanation to Sparsity Caused by Lasso. []</figcaption>
+  <figcaption>Figure 4. Conventional Explanation to Sparsity Caused by Lasso. [3]</figcaption>
 </figure>
 <br>
 
@@ -260,9 +291,9 @@ where $p_{l}$ represents the number of weights in $\beta^{(l)}$.
 
 #### Why do we need GROUPING?
 
-Usually, the variables of the minimization problem are not correlated. However, when there are certain constraints or correlation between variables, we need to group them appropriately.
+Usually, the variables of the minimization problem are not correlated. However, when there are certain constraints or correlations between variables, we need to group them appropriately.
 
-The power injections as minimization variables, covered in the presentation , is a good example. Since power is comprised of active and reactive power, the variable of <a href="#Eq. (3)">the minimization problem of Eq. (3)</a> has to be grouped as follows.
+The power injection as a minimization variable, covered in the presentation, is a good example. Since power is comprised of active and reactive power, the variable of <a href="#Eq. (3)">the minimization problem of Eq. (3)</a> has to be grouped as follows.
 
 $$
 \tilde{\mathbf{s}}_{t} = \begin{bmatrix} \tilde{p}_n ; \tilde{q}_n \end{bmatrix}
@@ -271,9 +302,23 @@ $$
 <br>
 
 <a name="CVaR"></a>
-### CVaR
 
+### Risk management
 
+#### Value-at-Risk (VaR)
+
+<br>
+
+#### Conditional Value-at-Risk (CVaR)
+
+$$
+CVaR = \frac{1}{1-c} \int_{-1}^{VAR}{xp(x)}dx
+$$
+
+where
+- $p(x)dx$: the probability density of getting a return with value “$x$” <br><br>
+- $c$: the cut-off point on the distribution where the analyst sets the $VaR$ breakpoint <br><br>
+- $VaR$: the agreed-upon $VaR$ level <br><br>
 
 <br>
 
@@ -292,23 +337,27 @@ $$
 
 The above list is the framework of research that Dr. Zhu discussed at the start of this year. Almost all research papers have been written along this process, which is also the basic step of our research.
 
-However, it was not easy for me to summarize the contents of today's meeting with this framework since there are three main topics in a single speech. From my point of view, one of each topic is good enough for one individual presentation, and it would have been easier for me to fit the contents into this framework.
+However, it was not easy for me to summarize the contents of today's meeting with this framework since there are three main topics in a single speech. Especially, it was hard to find the problem formulation part for monitoring. From my point of view, one of each topic is good enough for one individual presentation, and it would have been easier for me to fit the contents into this framework.
 
 Therefore, I strongly suggest conducting our research and preparing our speech with this framework; then, it will help us draw better results in our research and deliver the main points more clearly to others.
 
+<br>
 <br>
 
 ### Resting
 
 <figure align="center">
-  <img src="https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/Decanting-Guide.png" width="600" />
-  <figcaption>Figure . Decanting Guide []</figcaption>
+  <img src="https://jhyun0919.github.io/assets/img/2021-04-16-Dr Zhu Group Meeting Log/Decanting-Guide.png" width="500" />
+  <figcaption>Figure . Decanting Guide [4]</figcaption>
 </figure>
 
-It is said that decanting is necessary to enjoy wine in it's best quality. Likewise, our slides do want to have resting.
+It is said that decanting is necessary to enjoy wine in its best quality. Likewise, our slides do want to have resting.
 
+I think that taking some rest after writing (or making presentation slides) will introduce us to a higher level. To be more specific, it keeps us away from what we wrote and resets our minds, making us read more objectively.
 
+For this reason, I suggest giving resting to your slides; then, it will allow you to have better results and makes you more confident in your speech.
 
+<br>
 <br>
 
 ---
@@ -317,12 +366,8 @@ It is said that decanting is necessary to enjoy wine in it's best quality. Likew
 
 [1]S. Lin and H. Zhu, "Enhancing the Spatio-temporal Observability of Grid-Edge Resources in Distribution Grids", arXiv.org, 2021. [Online]. Available: https://arxiv.org/pdf/2102.07801.pdf. [Accessed: 18-Apr-2021].
 
-[]L. Mao, “Group Lasso,” Lei Mao's Log Book. [Online]. Available: https://leimao.github.io/blog/Group-Lasso/. [Accessed: 17-Apr-2021].
+[2]E. Candès, X. Li, Y. Ma and J. Wright, "Robust principal component analysis?", Journal of the ACM, vol. 58, no. 3, pp. 1-37, 2011. Available: 10.1145/1970392.1970395 [Accessed 19 April 2021].
 
-[]“Lasso (statistics),” Wikipedia, 14-Apr-2021. [Online]. Available: https://en.wikipedia.org/wiki/Lasso_(statistics). [Accessed: 17-Apr-2021].
+[3]L. Mao, “Group Lasso,” Lei Mao's Log Book. [Online]. Available: https://leimao.github.io/blog/Group-Lasso/. [Accessed: 17-Apr-2021].
 
-[]P. P. H. Winston, “How to Speak,” MIT OpenCourseWare. [Online]. Available: https://ocw.mit.edu/resources/res-tll-005-how-to-speak-january-iap-2018/. [Accessed: 17-Apr-2021].
-
-[]E. Golman, “The Ultimate Guide to Decanting &amp; Aerating Kosher Wine,” Kosherwine.com, 18-Dec-2020. [Online]. Available: https://www.kosherwine.com/discover/the-ultimate-guide-to-decanting-kosher-wine. [Accessed: 17-Apr-2021].
-
-[] 
+[4]E. Golman, “The Ultimate Guide to Decanting &amp; Aerating Kosher Wine,” Kosherwine.com, 18-Dec-2020. [Online]. Available: https://www.kosherwine.com/discover/the-ultimate-guide-to-decanting-kosher-wine. [Accessed: 17-Apr-2021].
