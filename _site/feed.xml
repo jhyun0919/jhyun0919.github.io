@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Mon, 19 Apr 2021 11:51:02 -0500</pubDate>
+    <pubDate>Mon, 19 Apr 2021 12:15:23 -0500</pubDate>
     
       <item>
         <title>Dr. Zhu's Group Meeting Log</title>
@@ -308,9 +308,9 @@ Figure 3. Scatter plots of average voltage deviation per node of GNN and local m
 
 &lt;p&gt;&lt;a name=&quot;Group-LASSO&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;regularization&quot;&gt;Regularization&lt;/h3&gt;
+&lt;h3 id=&quot;regularization-3&quot;&gt;Regularization [3]&lt;/h3&gt;
 
-&lt;h4 id=&quot;lasso-and-ridge-regressions-3&quot;&gt;Lasso and Ridge Regressions [3]&lt;/h4&gt;
+&lt;h4 id=&quot;lasso-and-ridge-regressions&quot;&gt;Lasso and Ridge Regressions&lt;/h4&gt;
 
 &lt;p&gt;Given a dataset ${X,y}$ where $X$ is the feature and $y$ is the label for regression, we simply model it as has a linear relationship $y = X\beta$. With regularization, we can control the degree of freedom of the model parameter ($\beta$) and able to avoid the risk of overfitting.&lt;/p&gt;
 
