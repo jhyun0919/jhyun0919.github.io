@@ -326,7 +326,7 @@ $$
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or equivalently
 
 $$
-P[x \leq VaR_{\beta}] = 1 - \beta
+P[x \geq VaR_{\beta}] = 1 - \beta
 $$
 
 <br>
@@ -345,7 +345,7 @@ $$
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or equivalently
 
 $$
-CVaR_{\beta} = E[x | x \leq VaR_{\beta}]
+CVaR_{\beta} = E[x | x \geq VaR_{\beta}]
 $$
 
 <br>
