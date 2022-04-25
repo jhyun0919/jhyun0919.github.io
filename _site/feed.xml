@@ -5,7 +5,43 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Mon, 19 Apr 2021 20:06:22 -0500</pubDate>
+    <pubDate>Sun, 24 Apr 2022 23:17:39 -0500</pubDate>
+    
+      <item>
+        <title>My thoughts on the relationship I had, have &amp; might have...</title>
+        <link>/daily/essay/2022/04/24/my-thoughts-on-the-relationship.html</link>
+        <guid isPermaLink="true">/daily/essay/2022/04/24/my-thoughts-on-the-relationship.html</guid>
+        <description>&lt;p&gt;Family, friends, lovers, etc. We form relationships with people as we go through our lives. I, too, live-in relationships with people; some people come closer to me, and some gradually move away.&lt;/p&gt;
+
+&lt;p&gt;Some relationships are still with me, and some have already been broken and become a part of the past. Among them, the people I remember having a good relationship with were those who accepted me as I was. Furthermore, they helped me become that kind of person too. In particular, among the words I heard, the one that moved me the most was “&lt;strong&gt;You are the person who makes my weakness a strength.&lt;/strong&gt;” These words made me a more mature person who cherished the relationship more.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://www.instagram.com/p/CcSR-7Pr--R/&quot;&gt; &lt;img src=&quot;https://github.com/jhyun0919/jhyun0919.github.io/blob/master/assets/img/2022-04-24-my%20thoughts%20on%20the%20relationship.md/Peanuts.png?raw=true&quot; width=&quot;66%&quot; /&gt;     &lt;figcaption align=&quot;center&quot;&gt;
+Figure 1. A picture captured from MISA's work
+    &lt;/figcaption&gt;
+ &lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;To those who will become close to me in the future, can I accept them as they are and approach me as I am? I may not be able to give a definitive answer to this question right now, but I pray that I will have the courage to share the precious values I have received from those I have had relationships with so far.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 24 Apr 2022 00:00:00 -0500</pubDate>
+      </item>
+    
+      <item>
+        <title>(Python-Dev Tips) Jupyter</title>
+        <link>/research/cs/2021/12/25/jupyter.html</link>
+        <guid isPermaLink="true">/research/cs/2021/12/25/jupyter.html</guid>
+        <description>
+</description>
+        <pubDate>Sat, 25 Dec 2021 00:00:00 -0600</pubDate>
+      </item>
+    
+      <item>
+        <title>Locational Marginal Pricing (LMP)</title>
+        <link>/research/energy/2021/06/06/LMP.html</link>
+        <guid isPermaLink="true">/research/energy/2021/06/06/LMP.html</guid>
+        <description>
+</description>
+        <pubDate>Sun, 06 Jun 2021 00:00:00 -0500</pubDate>
+      </item>
     
       <item>
         <title>Dr. Zhu's Group Meeting Log</title>
@@ -570,7 +606,7 @@ Figure 1. Graph-structured traffic data. [1]
 &lt;ul&gt;
   &lt;li&gt;$\mathcal{V}_t$ is a finite set of vertices, corresponding to the observations from $n$ monitor stations at time $t$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
   &lt;li&gt;$\mathcal{E}$ is a set of edges, indicating the connectedness between stations.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;$W \in \mathbb{R}^{n \times n}$ denotes the weighted adgacency matrix of $\mathcal{G}_t$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;$W \in \mathbb{R}^{n \times n}$ denotes the weighted adjacency matrix of $\mathcal{G}_t$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Q. DOES EDGES CAN HAVE ITS OWN TIME VARIANT VARIABLES??? &lt;br /&gt;   (e.g. temperature of transmission lines in power system) &lt;/span&gt;
@@ -1639,7 +1675,7 @@ Figure 7.
 &lt;p&gt;COSMIC has the following benefits [1].&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;It provids an &lt;strong&gt;open platform&lt;/strong&gt; for research and development.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;It provides an &lt;strong&gt;open platform&lt;/strong&gt; for research and development.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
   &lt;li&gt;The &lt;strong&gt;dynamic/adaptive time step&lt;/strong&gt; and &lt;strong&gt;recursive islanded time horizons&lt;/strong&gt; implemented in this simulator which allows for faster computations during, near, steady-state regimes, and fine resolution during transient phases.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
   &lt;li&gt;It can be easily integrated with High Performance Computing (HPC) clusters to &lt;strong&gt;run many simulations simultaneously&lt;/strong&gt; at a much lower cost.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1676,7 +1712,7 @@ Figure 7.
 
 &lt;h3 id=&quot;ii-a-set-of-algebraic-equations&quot;&gt;ii. A set of Algebraic equations&lt;/h3&gt;
 
-\[\mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) =0 \tag{2}\]
+\[\mathbf{g}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) = 0 \tag{2}\]
 
 &lt;ul&gt;
   &lt;li&gt;$\mathbf{y}$ is a vector of &lt;strong&gt;continuous state variables&lt;/strong&gt; that have pure &lt;strong&gt;algebraic relationships&lt;/strong&gt; to other variables in the system.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
@@ -1696,7 +1732,7 @@ Figure 1. Illustrates a dramatic impact of load models on algebraic convergence.
 
 &lt;h3 id=&quot;iii-a-set-of-constarints&quot;&gt;iii. A set of Constarints&lt;/h3&gt;
 
-\[\mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t))&amp;lt;0 \tag{3}\]
+\[\mathbf{h}(t, \mathbf{x}(t), \mathbf{y}(t), \mathbf{z}(t)) &amp;lt; 0 \tag{3}\]
 
 &lt;ul&gt;
   &lt;li&gt;$\mathbf{z}$ is a vector of &lt;strong&gt;state variables&lt;/strong&gt; (relay status) that can only take &lt;strong&gt;integer states&lt;/strong&gt; $( z_i ∈ [0, 1])$.  &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
@@ -2846,14 +2882,14 @@ Figure 1. Examples of Python Virtual Environment [2].
     
       <item>
         <title>Laïcité</title>
-        <link>/daily/essay/2020/12/12/essay.html</link>
-        <guid isPermaLink="true">/daily/essay/2020/12/12/essay.html</guid>
+        <link>/daily/essay/2020/12/12/La%C3%AFcit%C3%A9.html</link>
+        <guid isPermaLink="true">/daily/essay/2020/12/12/La%C3%AFcit%C3%A9.html</guid>
         <description>&lt;p&gt;Recently, I have finished two final exams, and one left next Thursday. I think it is a good moment to start again to write what I have been thinking these days. Looking back at the end of the semester, I realized that a lot had happened globally, which I have not thought deeply about due to my hectic school life. For instance, the pandemic broke out, and we are living in the era of New Normal. Also, there was a presidential election in the US. In my thought, these are the most notable or significant events of this year. However, in this article, I would like to share my view about what happened in France.&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://bdidier.fr/wp-content/uploads/1250_portail_laic.jpg&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption align=&quot;center&quot;&gt;
-(https://bdidier.fr/4eme-la-laicite/)
-  &lt;/figcaption&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://bdidier.fr/4eme-la-laicite/&quot;&gt; &lt;img src=&quot;https://bdidier.fr/wp-content/uploads/1250_portail_laic.jpg&quot; width=&quot;90%&quot; /&gt;     &lt;figcaption align=&quot;center&quot;&gt;
+Figure 1. A illustration for Laïcité
+    &lt;/figcaption&gt;
+ &lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;In October, a French middle school teacher was attacked and beheaded by a terrorist. Similar incidents have been happening after this incident, and it reminded me of the terror in Paris four years ago. Behind these tragedies, we all know there are complex religious problems. Several factors may be responsible for the continued occurrence of these incidents in France. In my respect, it has a lot to do with Laicite (Secularism).&lt;/p&gt;
 
@@ -2862,382 +2898,6 @@ Figure 1. Examples of Python Virtual Environment [2].
 &lt;p&gt;However, a series of these thoughts can be taken as a challenge or blasphemy for violent and radical religious groups. In my opinion, these groups are very likely to use violence in the form of retaliation when society becomes unstable. As a result, ironically, the society where rational judgment can be made is exposed to the risk of terror. As far as religion is concerned, I think France has a society with good conditions for making rational judgments. Simultaneously, the country is exposed to violence in an unstable period due to the pandemic. I hope they will overcome this crisis well without further tragedy, and others will be able to learn the unique way of their thinking.&lt;/p&gt;
 </description>
         <pubDate>Sat, 12 Dec 2020 00:00:00 -0600</pubDate>
-      </item>
-    
-      <item>
-        <title>(Python-Dev Tips) Git Basic</title>
-        <link>/research/cs/2020/10/01/git-tips.html</link>
-        <guid isPermaLink="true">/research/cs/2020/10/01/git-tips.html</guid>
-        <description>&lt;p&gt;Starting with this posting, we will upload a series of articles that can help with Python development. The series will be written in four articles, and the contents are as follows, and if necessary, additional posts will be uploaded as a separate series.&lt;/p&gt;
-
-&lt;p&gt;In this article, we will show you what Git is and Why do we need it. Also, we will give a brief intro to how we can start and use Git.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Git Basic&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2021/01/01/virtualenv.html&quot;&gt;Virtual Environment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/03/pep8.html&quot;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jhyun0919.github.io/research/cs/2020/10/04/jupyter.html&quot;&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;what-is-git&quot;&gt;What is Git&lt;/h1&gt;
-
-&lt;p&gt;Git is a free and open-source distributed &lt;strong&gt;version control&lt;/strong&gt; system designed to handle everything from small to very large projects with speed and efficiency [1]. It provides us a history of content changes and facilitates collaborative changes to files [2].&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/git.jpeg&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1. Examples of Using Git [3].
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;why-do-we-need-git&quot;&gt;Why Do We Need Git&lt;/h1&gt;
-&lt;p&gt;When we work on a project and do something creative and productive, we repeat the following four steps [2].&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Create things.&lt;/li&gt;
-  &lt;li&gt;Save things.&lt;/li&gt;
-  &lt;li&gt;Edit things.&lt;/li&gt;
-  &lt;li&gt;Save the things again.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;By repeating the above steps, we add new things, delete unnecessary ones, request modifications, and make corrections where necessary. To make this process straightforward and efficient, we turn to the help of &lt;strong&gt;version control&lt;/strong&gt;. Through the version control system, we can easily track the followings [2].&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;When we did it.&lt;/li&gt;
-  &lt;li&gt;Why we did it.&lt;/li&gt;
-  &lt;li&gt;What the contents of the change.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This makes it possible to efficiently understand the project’s process and be more productive when revisiting the project in the future.&lt;/p&gt;
-
-&lt;p&gt;For these reasons, we cannot overemphasize the necessity of version control when working on projects through collaboration as well as personal projects. By using &lt;strong&gt;Git&lt;/strong&gt;, we can take these benefits of version control.&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/gitflow.png&quot; width=&quot;80%&quot; /&gt;   &lt;figcaption&gt;
-Figure 2. Workflow with Git [4].
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;basic-git-commands&quot;&gt;Basic Git Commands&lt;/h1&gt;
-
-&lt;p&gt;The following are essential terminal commands for Git. It may be difficult to memorize, but it is good to understand only its purpose. As long as you understand each command’s purpose, you can easily use Git through a GUI, which will be covered in the following section.&lt;/p&gt;
-
-&lt;p&gt;For reference, the contents are referred to as the following links.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dev.to/dhruv/essential-git-commands-every-developer-should-know-2fl&quot;&gt;Essential git commands every developer should know&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dzone.com/articles/top-20-git-commands-with-examples&quot;&gt;Top 20 Git Commands With Examples&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-init&quot;&gt;git init&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git init &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;project-name]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command is used to start a new repository.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-clone&quot;&gt;git clone&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;url]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command is used to obtain a repository from an existing URL.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-add&quot;&gt;git add&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;file-name]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command adds a file to the staging area.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-rm&quot;&gt;git rm&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;file-name]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command deletes the file from your working directory and stages the deletion.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-commit&quot;&gt;git commit&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; “Message to go with the commit here”
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command records or snapshots the file permanently in the version history.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-status&quot;&gt;git status&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command lists all the files that have to be committed.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-push&quot;&gt;git push&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;variable name] master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command sends the committed changes of master branch to your remote repository.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;variable name] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command sends the branch commits to your remote repository.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-branch&quot;&gt;git branch&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command lists all the local branches in the current repository.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command creates a new branch.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command deletes the feature branch.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-checkout&quot;&gt;git checkout&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command is used to switch from one branch to another.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command creates a new branch and also switches to it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-pull&quot;&gt;git pull&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git pull &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;repository &lt;span class=&quot;nb&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command fetches and merges changes on the remote server to your working directory.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-merge&quot;&gt;git merge&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;branch-name]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command merges the specified branch’s history into the current branch.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-diff&quot;&gt;git diff&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git diff
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command shows the file differences which are not yet staged.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git diff &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;first branch-name] &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;second branch-name]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command shows the differences between the two branches mentioned.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;git-stash&quot;&gt;git stash&lt;/h2&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash save
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command temporarily stores all the modified tracked files.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash pop
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command restores the most recently stashed files.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash list
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command lists all stashed changesets.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash drop
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;This command discards the most recently stashed changeset.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;gitkraken&quot;&gt;GitKraken&lt;/h1&gt;
-
-&lt;p&gt;There is an entry barrier to use the commands described above in a terminal window. For those who have difficulty using Git in a terminal window, we suggest to use a &lt;strong&gt;GUI&lt;/strong&gt; called &lt;strong&gt;GitKraken&lt;/strong&gt;. With GitKraken, you can intuitively and easily manage projects without memorizing all the git commands. Figure 3. is a screenshot of GitKraken.&lt;/p&gt;
-
-&lt;p&gt;We can do the basic operation as the git commands described above through the buttons in Area 1.
-In Area 2, GitKraken shows the files that have been modified compared to the log, whether these files are added in the staging area, and allows us to commit.
-Lastly, in Area 3, it shows us the workflow of the project.&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/gitkraken eg.png&quot; width=&quot;100%&quot; /&gt;   &lt;figcaption&gt;
-Figure 3. GitKraken Screenshot.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;one-more-thing-&quot;&gt;One More Thing 😜&lt;/h1&gt;
-
-&lt;p&gt;Those who want to use Git only with commands in a terminal window, not using a GUI, or who want to have a deeper understanding, can learn without losing interest through the quest-game-type tutorial provided at the following link.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://learngitbranching.js.org/?locale=en&quot;&gt;Git Tutorial Quest Game&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-10-01-git/git tutorial.gif&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
-Figure 4. Git Command Line Tutorial Screenshot.
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
-&lt;p&gt;[1] Git. [Online]. Available: https://git-scm.com/. [Accessed: 01-Oct-2020].&lt;/p&gt;
-
-&lt;p&gt;[2] “Git Basics Episode 1,” Git. [Online]. Available: https://git-scm.com/video/what-is-version-control. [Accessed: 01-Oct-2020].&lt;/p&gt;
-
-&lt;p&gt;[3] S. C. Atuonwu, “5 Git Commands You Should Know, with Code Examples,” freeCodeCamp.org, 10-Jun-2020. [Online]. Available: https://www.freecodecamp.org/news/5-git-commands-you-should-know-with-code-examples/. [Accessed: 01-Oct-2020].&lt;/p&gt;
-
-&lt;p&gt;[4] Atlassian, “Gitflow Workflow: Atlassian Git Tutorial,” Atlassian. [Online]. Available: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow. [Accessed: 01-Oct-2020].&lt;/p&gt;
-</description>
-        <pubDate>Thu, 01 Oct 2020 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>The shape of someone or something that I love</title>
-        <link>/daily/essay/2020/08/18/essay.html</link>
-        <guid isPermaLink="true">/daily/essay/2020/08/18/essay.html</guid>
-        <description>&lt;p&gt;Whenever I come back to Korea, 떡볶이 has always been the first food that I had. Briefly speaking, this food is just some rice cakes with spicy sauce. Compare to other Korean foods, 떡볶이 might seem shabby. However, this food is one of the reasons why I love and how I remember this place. Why did I pick 떡볶이 instead of other fancy dishes, and why am I so into it? I guess this is because it is my unique way of engraving memories in this country.&lt;/p&gt;
-
-&lt;p&gt;Likewise, most people who have not grown up in this country might come up with great landmarks when they imagine Korea. However, as a born and raised person in Korea, the shape of this country in my heart is not like that. It could be the small marketplace in my old hometown, or it could be the parking lot in front of my apartment building, where I used to ride a bike and roller skates. It is kind of a secret between me and the place that I love.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https://media.giphy.com/media/9G0AdBbVrkV3O/giphy.gif&quot; width=&quot;444&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This pattern is identically applied to the people around me. The one who I love (or loved) is not remembered as her bright and shining moments that all the others could have seen. I memorized her in a way that no one could imagine. It does not have to be pretty or lovely. It just needs to be my little secret between her and me. These secrets comfort me and give strength, even though I can no longer be together with her.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 18 Aug 2020 00:00:00 -0500</pubDate>
-      </item>
-    
-      <item>
-        <title>Geometric Meaning of Hessian Matrix</title>
-        <link>/research/mathematics/2020/07/21/geometric-meaning-of-hessian.html</link>
-        <guid isPermaLink="true">/research/mathematics/2020/07/21/geometric-meaning-of-hessian.html</guid>
-        <description>&lt;p&gt;Starting with the definition of the Hessian Matrix, this posting will focus on the geometric meaning of the Hessian matrix. Also, we will discuss the eigenvalues and eigenvectors of the Hessian and introduce the application of it.&lt;/p&gt;
-
-&lt;p&gt;This post was written with reference to the following materials.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://angeloyeo.github.io/2020/06/17/Hessian.html&quot;&gt;Donghoon Yeo’s blog posting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hessian_matrix&quot;&gt;Wikipedia &amp;gt; Hessian&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;hessian-matrix&quot;&gt;Hessian Matrix&lt;/h1&gt;
-
-&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
-&lt;p&gt;In mathematics, the Hessian matrix or Hessian is a square matrix of second-order partial derivatives of a scalar-valued function, or scalar field. It describes the local curvature of a function of many variables. [1]&lt;/p&gt;
-
-&lt;p&gt;Suppose $f : ℝ^n → ℝ$ is a function taking as input a vector $x ∈ ℝ^n$ and outputting a scalar $f(x) ∈ ℝ$. If all second partial derivatives of $f$ exist and are continuous over the domain of the function, then the Hessian matrix $H$ of $f$ is a square n×n matrix, usually defined and arranged as follows; [1]&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
-Figure 1. Definition of Hessian matrix. [1]
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;geometric-meaning&quot;&gt;Geometric Meaning&lt;/h2&gt;
-
-&lt;p&gt;First of all, it is well known that &lt;strong&gt;all matrices can be considered as linear transformations&lt;/strong&gt;. Likewise, we can think of &lt;strong&gt;a Hessian matrix as a linear transformation&lt;/strong&gt;. Geometrically, the main feature of the linear transformation performed by the Hessian matrix is &lt;strong&gt;to make a given function more convex or concave&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Let’s look at the Hessian’s geometric meaning in detail through examples.
-The Hessian matrices corresponding to Figure 2 and 3 are as follow;&lt;/p&gt;
-
-\[\begin{bmatrix}2 &amp;amp; 1\\1 &amp;amp; 2\\\end{bmatrix} and \begin{bmatrix}2 &amp;amp; 0\\0 &amp;amp; -2\\\end{bmatrix}.\]
-
-&lt;p&gt;The things to note here are, &lt;strong&gt;the eigenvectors of the Hessian matrix represent the principal axis of transformation and the eigenvalues represent the degree of transformation.&lt;/strong&gt; More specifically, if the eigenvalues are all positive (Figure 2), it makes the given function more convex. Conversely, if the eigenvalues are all negative, it makes the given function more concave. However, if some of the eigenvalues are positive, and some are negative (Figure 3), the given function is converted to a saddle shape. To recapitulate, &lt;strong&gt;by using the main feature of the geometric transformation shown by the Hessian, we could emphasize the gradient change of the given function.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian gif 01.gif&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
-Figure 2. Example of Hessian transform making the given function more convex. [2]
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/hessian gif 02.gif&quot; width=&quot;90%&quot; /&gt;   &lt;figcaption&gt;
-Figure 3. Example of Hessian transform making the given function to a saddle shape function. [2]
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;applications&quot;&gt;Applications&lt;/h2&gt;
-
-&lt;p&gt;Using the feature that the Hessian emphasizes the gradient change, it can be used as a filter that detects the contour (edge) of a specific object in a given image, which is considered as a function at this point. Figure 4 shows the description of edge detection and the Hessian’s eigenvalues, and Figure 5 shows an application detecting the vessel using the Hessian.&lt;/p&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/application 02.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
-Figure 4. Edge detection using Hessian's eigenvalues [3]
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure align=&quot;center&quot;&gt;
-&lt;img src=&quot;https://jhyun0919.github.io/assets/img/2020-07-21-geometric meaning of hessian/application 01.png&quot; width=&quot;60%&quot; /&gt;   &lt;figcaption&gt;
-Figure 5. Hessian's applicaiton: Frangi filter for vessel detection. [2]
-  &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-&lt;p&gt;[1] “Hessian matrix,” Wikipedia, 24-Jun-2020. [Online]. Available: https://en.wikipedia.org/wiki/Hessian_matrix. [Accessed: 21-Jul-2020].&lt;/p&gt;
-
-&lt;p&gt;[2] Y. D. Yeo, “Geometrical meaning of Hessian Matrix,” 17-Jun-2020. [Online]. Available: https://angeloyeo.github.io/2020/06/17/Hessian.html. [Accessed: 21-Jul-2020].&lt;/p&gt;
-
-&lt;p&gt;[3] “Hessian Matrix of the image,” Stack Overflow, 01-Sep-1963. [Online]. Available: https://stackoverflow.com/questions/22378360/hessian-matrix-of-the-image. [Accessed: 21-Jul-2020].&lt;/p&gt;
-</description>
-        <pubDate>Tue, 21 Jul 2020 00:00:00 -0500</pubDate>
       </item>
     
   </channel>
