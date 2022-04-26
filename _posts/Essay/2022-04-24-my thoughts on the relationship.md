@@ -8,6 +8,7 @@ tags: [Essay]
 Family, friends, lovers, etc. We form relationships with people as we go through our lives. I, too, live-in relationships with people; some people come closer to me, and some gradually move away.
 
 Some relationships are still with me, and some have already been broken and become a part of the past. Among them, the people I remember having a good relationship with were those who accepted me as I was. Furthermore, they helped me become that kind of person too. In particular, among the words I heard from them, the one that moved me the most was "**You are the person who makes my weakness a strength.**"
+
 Looking back, I think the reason she was able to say those words to me was that she first showed me who she was and accepted me as I was. In my thought, I was not that kind of person at all. However, her words led me to have an opportunity to become a mature person who cherished the relationship more.
 
 <p align="center">
