@@ -19,4 +19,4 @@ Looking back, I think she was able to say those words to me because she first sh
 </p>
 <br>
 
-To those who will become close to me in the future, can I accept them as they are and approach me as I am? I may not be able to give a definitive answer to this question right now, but I pray that I will have the courage to share the precious values I have received from those I have had relationships with so far.
+To those who will become close to me in the future, can I accept them as they are and approach me as I am? I may not be able to give a definitive answer to this question right now, but I pray that I could have the courage to share the precious values I have received from those I have had relationships with so far.
