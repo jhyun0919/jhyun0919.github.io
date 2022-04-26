@@ -9,7 +9,7 @@ Family, friends, lovers, etc. We form relationships with people as we go through
 
 Some relationships are still with me, and some have already been broken and become a part of the past. Among them, the people I remember having a good relationship with were those who accepted me as I was. Furthermore, they helped me become that kind of person too. In particular, among the words I heard from them, the one that moved me the most was "**You are the person who makes my weakness a strength.**"
 
-Looking back, I think she was able to say those words to me because she first showed me who she was and hugged me as I was. Not because I was that kind of person. In my thought, I was not the person she described. However, her words led me to have an opportunity to become a mature person who cherished the relationship more.
+Looking back, I think she was able to say those words to me not because I was that kind of person but because she first showed me who she was and hugged me as I was. In my thought, I was not the person she described. However, her words led me to have an opportunity to become a mature person who cherished the relationship more.
 
 <p align="center">
 <a href="https://www.instagram.com/p/CcSR-7Pr--R/">
